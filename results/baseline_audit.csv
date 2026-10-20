@@ -1,0 +1,16 @@
+case_id,line,column,message
+T03,2,1,Expected ; before 'int'.
+T04,1,12,Expected ) before '{'.
+T04,3,1,Expected expression before '}'.
+T05,1,11,Expected ) before ']'.
+T05,3,1,Expected expression before '}'.
+T06,2,1,Expected ; before 'int'.
+T07,2,15,Expected ) before '{'.
+T07,5,1,Expected expression before '}'.
+T08,4,1,Expected } before 'end of file'.
+T09,2,1,Expected ; before 'int'.
+T09,3,11,Expected ) before '{'.
+T09,5,1,Expected expression before '}'.
+T10,3,5,Expected ; before 'int'.
+T11,1,13,Expected ) before ']'.
+T11,3,1,Expected expression before '}'.

@@ -1,0 +1,4 @@
+mode,tp,fp,fn,precision_pct,recall_pct,f1_pct
+Panic mode,10,5,1,66.67,90.91,76.92
+Heuristic,11,0,0,100.0,100.0,100.0
+Grammar-validated,11,0,0,100.0,100.0,100.0

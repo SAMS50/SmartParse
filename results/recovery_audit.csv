@@ -1,0 +1,13 @@
+case_id,mode,statement_attempts,returned_statements,failed_statements,returned_with_repairs,diagnostics,repairs,reached_eof
+S01,heuristic,4,4,0,3,3,3,True
+S01,validated,4,4,0,3,3,3,True
+S02,heuristic,6,6,0,2,2,2,True
+S02,validated,6,6,0,2,2,2,True
+S03,heuristic,4,4,0,1,1,1,True
+S03,validated,4,4,0,1,1,1,True
+S04,heuristic,7,7,0,4,2,2,True
+S04,validated,7,7,0,4,2,2,True
+S05,heuristic,9,9,0,0,0,0,True
+S05,validated,9,9,0,0,0,0,True
+S06,heuristic,4,4,0,2,2,2,True
+S06,validated,4,4,0,2,2,2,True

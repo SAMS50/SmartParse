@@ -1,0 +1,10 @@
+workload,mode,median_ms
+Labelled,Panic mode,0.4762
+Labelled,Heuristic,0.5057
+Labelled,Grammar-validated,0.4935
+Ambiguous,Panic mode,0.1855
+Ambiguous,Heuristic,0.1851
+Ambiguous,Grammar-validated,0.361
+Stress,Panic mode,0.3196
+Stress,Heuristic,0.3504
+Stress,Grammar-validated,0.3742

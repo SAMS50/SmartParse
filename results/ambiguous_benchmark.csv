@@ -1,0 +1,13 @@
+id,name,mode,expected_operation,chosen_operation,correct_repair,strict_parse_completed,candidate_count,grammar_probes,diagnostic_count
+A01,Extra semicolon in if condition,heuristic,delete,delete,1,1,2,0,1
+A01,Extra semicolon in if condition,validated,delete,delete,1,1,2,1,1
+A02,Wrong closer in if condition,heuristic,substitute,substitute,1,1,2,0,1
+A02,Wrong closer in if condition,validated,substitute,substitute,1,1,2,1,1
+A03,Extra semicolon in while condition,heuristic,delete,delete,1,1,2,0,1
+A03,Extra semicolon in while condition,validated,delete,delete,1,1,2,1,1
+A04,Wrong closer in while condition,heuristic,substitute,substitute,1,1,2,0,1
+A04,Wrong closer in while condition,validated,substitute,substitute,1,1,2,1,1
+A05,Extra semicolon before if block,heuristic,delete,delete,1,1,2,0,1
+A05,Extra semicolon before if block,validated,delete,delete,1,1,2,1,1
+A06,Wrong closer before if block,heuristic,substitute,substitute,1,1,2,0,1
+A06,Wrong closer before if block,validated,substitute,substitute,1,1,2,1,1

@@ -1,0 +1,37 @@
+mode,case_id,case_name,expected_errors,diagnostics,tp,fp,fn,repairs,grammar_probes,skipped_tokens
+panic,T01,Valid declarations,0,0,0,0,0,0,0,0
+panic,T02,Valid for loop,0,0,0,0,0,0,0,0
+panic,T03,Missing semicolon,1,1,1,0,0,0,0,4
+panic,T04,Missing parenthesis,1,2,1,1,0,0,0,7
+panic,T05,Wrong closing bracket,1,2,1,1,0,0,0,8
+panic,T06,Two missing semicolons,2,1,1,0,1,0,0,8
+panic,T07,Nested missing parenthesis,1,2,1,1,0,0,0,7
+panic,T08,Missing closing brace,1,1,1,0,0,0,0,0
+panic,T09,Two independent errors,2,3,2,1,0,0,0,11
+panic,T10,Missing semicolon in block,1,1,1,0,0,0,0,4
+panic,T11,Wrong bracket in while,1,2,1,1,0,0,0,8
+panic,T12,Valid nested function,0,0,0,0,0,0,0,0
+heuristic,T01,Valid declarations,0,0,0,0,0,0,0,
+heuristic,T02,Valid for loop,0,0,0,0,0,0,0,
+heuristic,T03,Missing semicolon,1,1,1,0,0,1,0,
+heuristic,T04,Missing parenthesis,1,1,1,0,0,1,0,
+heuristic,T05,Wrong closing bracket,1,1,1,0,0,1,0,
+heuristic,T06,Two missing semicolons,2,2,2,0,0,2,0,
+heuristic,T07,Nested missing parenthesis,1,1,1,0,0,1,0,
+heuristic,T08,Missing closing brace,1,1,1,0,0,1,0,
+heuristic,T09,Two independent errors,2,2,2,0,0,2,0,
+heuristic,T10,Missing semicolon in block,1,1,1,0,0,1,0,
+heuristic,T11,Wrong bracket in while,1,1,1,0,0,1,0,
+heuristic,T12,Valid nested function,0,0,0,0,0,0,0,
+grammar_validated,T01,Valid declarations,0,0,0,0,0,0,0,
+grammar_validated,T02,Valid for loop,0,0,0,0,0,0,0,
+grammar_validated,T03,Missing semicolon,1,1,1,0,0,1,0,
+grammar_validated,T04,Missing parenthesis,1,1,1,0,0,1,0,
+grammar_validated,T05,Wrong closing bracket,1,1,1,0,0,1,0,
+grammar_validated,T06,Two missing semicolons,2,2,2,0,0,2,0,
+grammar_validated,T07,Nested missing parenthesis,1,1,1,0,0,1,0,
+grammar_validated,T08,Missing closing brace,1,1,1,0,0,1,0,
+grammar_validated,T09,Two independent errors,2,2,2,0,0,2,0,
+grammar_validated,T10,Missing semicolon in block,1,1,1,0,0,1,0,
+grammar_validated,T11,Wrong bracket in while,1,1,1,0,0,1,0,
+grammar_validated,T12,Valid nested function,0,0,0,0,0,0,0,

@@ -1,0 +1,10 @@
+workload,mode,programs,repetitions,median_ms,mean_ms,min_ms,max_ms
+labelled,panic,12,3,0.501,0.5085666666666666,0.4984,0.5263
+labelled,heuristic,12,3,0.536,0.535,0.5246,0.5444
+labelled,grammar_validated,12,3,0.5391,0.5382666666666667,0.5219,0.5538
+ambiguous,panic,6,3,0.208,0.2662333333333333,0.2078,0.3829
+ambiguous,heuristic,6,3,0.2062,0.2248,0.2022,0.266
+ambiguous,grammar_validated,6,3,0.4255,0.42283333333333334,0.4094,0.4336
+stress,panic,6,3,0.7131,0.6841666666666666,0.3805,0.9589
+stress,heuristic,6,3,0.5891,0.6819999999999999,0.4342,1.0227
+stress,grammar_validated,6,3,0.7442,0.8274333333333334,0.6331,1.105

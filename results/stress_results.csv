@@ -1,0 +1,13 @@
+case_id,case_name,mode,diagnostics,repairs,reached_eof,grammar_probes,meets_minimum
+S01,Three missing semicolons,heuristic,3,3,True,0,True
+S01,Three missing semicolons,validated,3,3,True,0,True
+S02,Errors in separate blocks,heuristic,2,2,True,0,True
+S02,Errors in separate blocks,validated,2,2,True,0,True
+S03,Errors followed by valid code,heuristic,1,1,True,0,True
+S03,Errors followed by valid code,validated,1,1,True,0,True
+S04,Nested missing parenthesis,heuristic,2,2,True,0,True
+S04,Nested missing parenthesis,validated,2,2,True,0,True
+S05,Valid nested program,heuristic,0,0,True,0,True
+S05,Valid nested program,validated,0,0,True,0,True
+S06,Ambiguous repair after earlier error,heuristic,2,2,True,0,True
+S06,Ambiguous repair after earlier error,validated,2,2,True,1,True
