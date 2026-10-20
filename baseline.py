@@ -7,36 +7,87 @@ class PanicModeParser(Parser):
     Traditional panic-mode recovery baseline.
 
     Uses the same lexer and grammar as SmartParse,
-    but disables context-aware local token repairs.
+    but disables context-aware token repairs.
+
+    Synchronization tokens:
+        ;
+        }
+
+    Closing braces are preserved for enclosing
+    blocks whenever recovery occurs inside one.
     """
 
     def __init__(self, tokens):
-        super().__init__(tokens)
+        super().__init__(
+            tokens,
+            validate_repairs=False
+        )
+
         self.skipped_tokens = 0
         self.recovery_events = []
 
+        # Tracks blocks entered by the baseline parser.
+        self.block_depth = 0
+
     def expect(self, value):
-        # No insertion, deletion, or substitution.
+        """
+        Strict token expectation.
+
+        No insertion, deletion, or substitution.
+        """
         if self.at(value):
             return self.take()
 
         raise ParseError(self.peek(), value)
+
+    def block(self):
+        """
+        Parse a block while tracking its nesting depth.
+
+        This ensures that a closing brace can be
+        preserved for the correct enclosing block.
+        """
+        self.expect("{")
+        self.block_depth += 1
+
+        try:
+            while (
+                self.peek().kind != "EOF"
+                and not self.at("}")
+            ):
+                self.safe_statement()
+
+            self.expect("}")
+
+        finally:
+            self.block_depth -= 1
 
     def panic_recover(self, error):
         token = error.token
         start = self.i
         skipped = []
 
-        # Skip tokens until a synchronization point.
+        # Skip until a statement/block boundary.
         while (
             self.peek().kind != "EOF"
             and self.peek().value not in (";", "}")
         ):
             skipped.append(self.take().value)
 
-        # Consume semicolon to resume after statement.
+        synchronization_token = self.peek().value
+
         if self.at(";"):
+            # Semicolon terminates the failed statement.
             self.take()
+
+        elif self.at("}") and self.block_depth == 0:
+            # At top level, no enclosing block can
+            # consume this brace. Discard it to
+            # guarantee forward progress.
+            skipped.append(self.take().value)
+
+        # Inside a block, leave '}' untouched.
+        # The enclosing block() will consume it.
 
         self.skipped_tokens += len(skipped)
 
@@ -51,7 +102,9 @@ class PanicModeParser(Parser):
             "column": token.col,
             "expected": error.expected,
             "skipped": skipped,
-            "start_index": start
+            "start_index": start,
+            "sync_token": synchronization_token,
+            "block_depth": self.block_depth
         })
 
     def safe_statement(self):
@@ -59,17 +112,26 @@ class PanicModeParser(Parser):
 
         try:
             self.statement()
+
         except ParseError as error:
             self.panic_recover(error)
 
-        # Prevent infinite loops when a closing brace
-        # remains at the same position.
-        if self.i == start and self.peek().kind != "EOF":
+        # If a closing brace belongs to an enclosing
+        # block, do not consume it here.
+        if (
+            self.i == start
+            and self.peek().kind != "EOF"
+        ):
+            if self.at("}") and self.block_depth > 0:
+                return
+
+            # Other unhandled tokens must advance.
             self.take()
 
 
 def analyze_baseline(source):
     tokens = tokenize(source)
+
     parser = PanicModeParser(tokens)
     parser.parse()
 
@@ -91,7 +153,9 @@ if __name__ == "__main__":
 
     try:
         with open(
-            sys.argv[1], "r", encoding="utf-8"
+            sys.argv[1],
+            "r",
+            encoding="utf-8"
         ) as file:
             source = file.read()
 
@@ -112,15 +176,17 @@ if __name__ == "__main__":
             f"\nDiagnostics: "
             f"{len(result['diagnostics'])}"
         )
+
         print(
             f"Skipped tokens: "
             f"{result['skipped_tokens']}"
         )
+
         print(
             f"Recovery events: "
             f"{len(result['recovery_events'])}"
         )
 
-    except (OSError, Exception) as error:
+    except Exception as error:
         print(f"Error: {error}")
         sys.exit(1)
