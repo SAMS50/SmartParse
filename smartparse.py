@@ -45,8 +45,7 @@ def tokenize(source):
 
         if kind == "MISMATCH":
             raise LexError(
-                f"Unexpected character {value!r} "
-                f"at {line}:{col}"
+                f"Unexpected character {value!r} at {line}:{col}"
             )
 
         if kind not in {"SPACE", "NEWLINE", "COMMENT"}:
@@ -74,18 +73,18 @@ class ParseError(Exception):
         self.token = token
         self.expected = expected
         super().__init__(
-            f"Expected {expected} at "
-            f"{token.line}:{token.col}"
+            f"Expected {expected} at {token.line}:{token.col}"
         )
 
 
 class Parser:
-    def __init__(self, tokens):
+    def __init__(self, tokens, validate_repairs=True):
         self.tokens = tokens
         self.i = 0
         self.diagnostics = []
         self.repairs = []
         self.max_errors = 50
+        self.validate_repairs = validate_repairs
 
     def peek(self, offset=0):
         return self.tokens[
@@ -120,7 +119,6 @@ class Parser:
 
         token = self.peek()
         index = self.i
-
         candidates = rank_candidates(
             self.tokens, index, value
         )
@@ -129,6 +127,12 @@ class Parser:
             raise ParseError(token, value)
 
         chosen = candidates[0]
+        validation = None
+
+        if self.validate_repairs and len(candidates) > 1:
+            chosen, validation = choose_validated_candidate(
+                self.tokens, index, candidates
+            )
 
         if chosen.operation == "insert":
             message = (
@@ -170,10 +174,13 @@ class Parser:
             "reason": chosen.reason,
             "context": context(
                 self.tokens, index, value
-            )
+            ),
+            "grammar_validation": validation
         })
 
-        return Token(value, value, token.line, token.col)
+        return Token(
+            value, value, token.line, token.col
+        )
 
     def identifier(self):
         if self.peek().kind != "ID":
@@ -202,14 +209,12 @@ class Parser:
 
     def panic_recover(self, error):
         token = error.token
-
         self.report(
             token,
             f"Expected {error.expected} before "
             f"'{token.value or 'end of file'}'."
         )
 
-        # Synchronize at a statement boundary.
         while (
             self.peek().kind != "EOF"
             and self.peek().value not in (";", "}")
@@ -251,11 +256,10 @@ class Parser:
             self.expect(";")
 
     def declaration(self, require_semicolon=True):
-        self.take()  # type
+        self.take()
         self.identifier()
 
         if self.accept("("):
-            # Function declaration/definition.
             if not self.at(")"):
                 self.parameter()
                 while self.accept(","):
@@ -322,21 +326,20 @@ class Parser:
         self.take()
         self.expect("(")
 
-        # Initialization
         if self.peek().value in ("int", "float"):
-            self.declaration(require_semicolon=False)
+            self.declaration(
+                require_semicolon=False
+            )
         elif not self.at(";"):
             self.expression()
 
         self.expect(";")
 
-        # Condition
         if not self.at(";"):
             self.expression()
 
         self.expect(";")
 
-        # Update
         if not self.at(")"):
             self.expression()
 
@@ -369,7 +372,9 @@ class Parser:
         ):
             operator = self.take().value
             prec = precedence[operator]
-            next_prec = prec if operator == "=" else prec + 1
+            next_prec = (
+                prec if operator == "=" else prec + 1
+            )
             self.expression(next_prec)
 
     def unary(self):
@@ -380,7 +385,6 @@ class Parser:
 
         self.primary()
 
-        # Function calls and postfix operations.
         while True:
             if self.accept("("):
                 if not self.at(")"):
@@ -409,11 +413,162 @@ class Parser:
             )
 
 
+class StrictParser(Parser):
+    """
+    Uses the same grammar but never performs
+    automatic repairs or panic-mode recovery.
+    """
+
+    def __init__(self, tokens):
+        super().__init__(
+            tokens, validate_repairs=False
+        )
+
+    def expect(self, value):
+        if self.at(value):
+            return self.take()
+        raise ParseError(self.peek(), value)
+
+    def safe_statement(self):
+        self.statement()
+
+
+def apply_candidate(tokens, index, candidate):
+    """
+    Build a temporary token stream.
+    The original tokens are never modified.
+    """
+    trial = list(tokens)
+    current = trial[index]
+    expected = candidate.expected
+
+    replacement = Token(
+        expected, expected,
+        current.line, current.col
+    )
+
+    if candidate.operation == "insert":
+        trial.insert(index, replacement)
+
+    elif candidate.operation == "substitute":
+        trial[index] = replacement
+
+    elif candidate.operation == "delete":
+        del trial[index]
+
+    else:
+        raise ValueError(
+            f"Unknown operation: {candidate.operation}"
+        )
+
+    return trial
+
+
+def probe_candidate(tokens, index, candidate):
+    """
+    Strictly parse a candidate's temporary token stream.
+
+    Returns:
+    - progress: number of original-position tokens
+      reached beyond the repair point
+    - completed: whether the whole trial parsed
+
+    This is a global-prefix check, not a full
+    continuation from the current parser call stack.
+    """
+    trial = apply_candidate(
+        tokens, index, candidate
+    )
+
+    parser = StrictParser(trial)
+    completed = False
+
+    try:
+        parser.parse()
+        completed = True
+    except ParseError:
+        pass
+
+    # Convert the trial index back to an approximate
+    # original token position.
+    position = parser.i
+
+    if candidate.operation == "insert":
+        if position > index:
+            position -= 1
+
+    elif candidate.operation == "delete":
+        if position >= index:
+            position += 1
+
+    progress = max(0, position - index)
+
+    return {
+        "progress": progress,
+        "completed": completed
+    }
+
+
+def choose_validated_candidate(
+    tokens, index, candidates
+):
+    """
+    Use strict grammar progress to break or overturn
+    heuristic rankings when alternatives exist.
+
+    Candidates remain restricted to the existing
+    context-aware generator.
+    """
+    evaluations = []
+
+    for candidate in candidates:
+        result = probe_candidate(
+            tokens, index, candidate
+        )
+
+        evaluations.append({
+            "candidate": candidate,
+            "progress": result["progress"],
+            "completed": result["completed"]
+        })
+
+    # Prefer a candidate that parses to EOF.
+    # Otherwise prefer the one that gets farther.
+    # Use existing heuristic score for ties.
+    evaluations.sort(
+        key=lambda item: (
+            item["completed"],
+            item["progress"],
+            item["candidate"].score
+        ),
+        reverse=True
+    )
+
+    best = evaluations[0]
+
+    details = {
+        "method": "strict_grammar_probe",
+        "candidates_tested": len(evaluations),
+        "progress": best["progress"],
+        "completed": best["completed"],
+        "alternatives": [
+            {
+                "operation": item["candidate"].operation,
+                "progress": item["progress"],
+                "completed": item["completed"],
+                "heuristic_score": item["candidate"].score
+            }
+            for item in evaluations
+        ]
+    }
+
+    return best["candidate"], details
+
+
 def analyze(source):
     tokens = tokenize(source)
     parser = Parser(tokens)
     parser.parse()
-
     return tokens, parser.diagnostics, parser.repairs
 
 
@@ -428,14 +583,17 @@ def main():
         ) as file:
             source = file.read()
 
-        tokens, diagnostics, repairs = analyze(source)
+        tokens, diagnostics, repairs = analyze(
+            source
+        )
 
         if not diagnostics:
             print("No syntax errors detected.")
         else:
             for error in diagnostics:
                 print(
-                    f"{error['line']}:{error['column']}: "
+                    f"{error['line']}:"
+                    f"{error['column']}: "
                     f"{error['message']}"
                 )
 
@@ -446,12 +604,26 @@ def main():
 
         if repairs:
             print("\nRecovery operations:")
+
             for repair in repairs:
                 print(
                     f"  {repair['operation']}: "
                     f"{repair['token']} "
                     f"(score: {repair['score']})"
                 )
+
+                validation = repair[
+                    "grammar_validation"
+                ]
+
+                if validation is not None:
+                    print(
+                        "    Grammar probe: "
+                        f"{validation['progress']} "
+                        "tokens of progress, "
+                        f"{validation['candidates_tested']} "
+                        "candidates tested"
+                    )
 
         return 0
 
