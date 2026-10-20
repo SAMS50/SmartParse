@@ -1,0 +1,25 @@
+parser,case_id,case_name,ground_truth,diagnostics,true_positive,false_positive,false_negative,precision,recall,complete_detection,local_repairs,skipped_tokens
+smartparse,T01,Valid declarations,0,0,0,0,0,,,True,0,
+smartparse,T02,Valid for loop,0,0,0,0,0,,,True,0,
+smartparse,T03,Missing semicolon,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T04,Missing parenthesis,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T05,Wrong closing bracket,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T06,Two missing semicolons,2,2,2,0,0,1.0,1.0,True,2,
+smartparse,T07,Nested missing parenthesis,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T08,Missing closing brace,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T09,Two independent errors,2,2,2,0,0,1.0,1.0,True,2,
+smartparse,T10,Missing semicolon in block,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T11,Wrong bracket in while,1,1,1,0,0,1.0,1.0,True,1,
+smartparse,T12,Valid nested function,0,0,0,0,0,,,True,0,
+panic,T01,Valid declarations,0,0,0,0,0,,,True,0,0
+panic,T02,Valid for loop,0,0,0,0,0,,,True,0,0
+panic,T03,Missing semicolon,1,1,1,0,0,1.0,1.0,True,0,4
+panic,T04,Missing parenthesis,1,2,1,1,0,0.5,1.0,True,0,6
+panic,T05,Wrong closing bracket,1,2,1,1,0,0.5,1.0,True,0,7
+panic,T06,Two missing semicolons,2,1,1,0,1,1.0,0.5,False,0,8
+panic,T07,Nested missing parenthesis,1,2,1,1,0,0.5,1.0,True,0,6
+panic,T08,Missing closing brace,1,1,1,0,0,1.0,1.0,True,0,0
+panic,T09,Two independent errors,2,3,2,1,0,0.6667,1.0,True,0,10
+panic,T10,Missing semicolon in block,1,1,1,0,0,1.0,1.0,True,0,4
+panic,T11,Wrong bracket in while,1,2,1,1,0,0.5,1.0,True,0,7
+panic,T12,Valid nested function,0,0,0,0,0,,,True,0,0
