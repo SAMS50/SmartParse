@@ -37,8 +37,7 @@ class LexError(Exception):
 
 def tokenize(source):
     tokens = []
-    line = 1
-    col = 1
+    line, col = 1, 1
 
     for match in PATTERN.finditer(source):
         kind = match.lastgroup
@@ -46,7 +45,8 @@ def tokenize(source):
 
         if kind == "MISMATCH":
             raise LexError(
-                f"Unexpected character {value!r} at {line}:{col}"
+                f"Unexpected character {value!r} "
+                f"at {line}:{col}"
             )
 
         if kind not in {"SPACE", "NEWLINE", "COMMENT"}:
@@ -55,15 +55,12 @@ def tokenize(source):
                 else "KEYWORD" if value in KEYWORDS
                 else kind
             )
-
             tokens.append(
                 Token(token_kind, value, line, col)
             )
 
-        lines = value.count("\n")
-
-        if lines:
-            line += lines
+        if "\n" in value:
+            line += value.count("\n")
             col = len(value.rsplit("\n", 1)[-1]) + 1
         else:
             col += len(value)
@@ -88,151 +85,199 @@ class Parser:
         self.i = 0
         self.diagnostics = []
         self.repairs = []
+        self.max_errors = 50
 
-    def peek(self):
-        return self.tokens[self.i]
+    def peek(self, offset=0):
+        return self.tokens[
+            min(self.i + offset, len(self.tokens) - 1)
+        ]
 
     def at(self, value):
         return self.peek().value == value
 
     def take(self):
-        tok = self.peek()
-
-        if tok.kind != "EOF":
+        token = self.peek()
+        if token.kind != "EOF":
             self.i += 1
-
-        return tok
+        return token
 
     def accept(self, value):
         if self.at(value):
             return self.take()
         return None
 
+    def report(self, token, message):
+        if len(self.diagnostics) < self.max_errors:
+            self.diagnostics.append({
+                "line": token.line,
+                "column": token.col,
+                "message": message
+            })
+
     def expect(self, value):
         if self.at(value):
             return self.take()
 
-        tok = self.peek()
-        error_index = self.i
+        token = self.peek()
+        index = self.i
 
         candidates = rank_candidates(
-            self.tokens, self.i, value
+            self.tokens, index, value
         )
 
         if not candidates:
-            raise ParseError(tok, value)
+            raise ParseError(token, value)
 
         chosen = candidates[0]
 
         if chosen.operation == "insert":
             message = (
                 f"Missing '{value}' before "
-                f"'{tok.value or 'end of file'}'."
+                f"'{token.value or 'end of file'}'."
             )
 
         elif chosen.operation == "substitute":
             message = (
                 f"Expected '{value}' instead "
-                f"of '{tok.value}'."
+                f"of '{token.value}'."
             )
             self.take()
 
         elif chosen.operation == "delete":
             message = (
-                f"Unexpected '{tok.value}' "
+                f"Unexpected '{token.value}' "
                 f"before '{value}'."
             )
             self.take()
             self.take()
 
-        self.diagnostics.append({
-            "line": tok.line,
-            "column": tok.col,
-            "message": message
-        })
+        else:
+            raise ParseError(token, value)
+
+        self.report(token, message)
 
         self.repairs.append({
             "operation": chosen.operation,
             "token": value,
             "from": (
-                tok.value
+                token.value
                 if chosen.operation != "insert"
                 else None
             ),
-            "line": tok.line,
-            "column": tok.col,
+            "line": token.line,
+            "column": token.col,
             "score": chosen.score,
             "reason": chosen.reason,
             "context": context(
-                self.tokens, error_index, value
+                self.tokens, index, value
             )
         })
 
-        # Virtual token: source code is unchanged.
-        return Token(value, value, tok.line, tok.col)
+        return Token(value, value, token.line, token.col)
+
+    def identifier(self):
+        if self.peek().kind != "ID":
+            raise ParseError(
+                self.peek(), "identifier"
+            )
+        return self.take()
 
     def parse(self):
         while self.peek().kind != "EOF":
-            start = self.i
-
-            try:
-                self.statement()
-            except ParseError as error:
-                self.recover(error)
-
-            if self.i == start:
-                self.take()
-
+            if len(self.diagnostics) >= self.max_errors:
+                break
+            self.safe_statement()
         return self.diagnostics
 
-    def statement(self):
-        if self.peek().value in ("int", "float", "void"):
+    def safe_statement(self):
+        start = self.i
+
+        try:
+            self.statement()
+        except ParseError as error:
+            self.panic_recover(error)
+
+        if self.i == start and self.peek().kind != "EOF":
             self.take()
-            self.expect_identifier()
 
-            if self.accept("("):
-                if not self.at(")"):
-                    self.parameter()
+    def panic_recover(self, error):
+        token = error.token
 
-                    while self.accept(","):
-                        self.parameter()
+        self.report(
+            token,
+            f"Expected {error.expected} before "
+            f"'{token.value or 'end of file'}'."
+        )
 
-                self.expect(")")
-                self.block()
+        # Synchronize at a statement boundary.
+        while (
+            self.peek().kind != "EOF"
+            and self.peek().value not in (";", "}")
+        ):
+            self.take()
 
-            else:
-                if self.accept("="):
-                    self.expression()
+        if self.at(";"):
+            self.take()
 
-                self.expect(";")
+    def statement(self):
+        value = self.peek().value
 
-        elif self.at("{"):
+        if value in ("int", "float", "void"):
+            self.declaration()
+
+        elif value == "{":
             self.block()
 
-        elif self.peek().value in ("if", "while"):
+        elif value == "if":
+            self.if_statement()
+
+        elif value == "while":
+            self.while_statement()
+
+        elif value == "for":
+            self.for_statement()
+
+        elif value == "return":
             self.take()
-            self.expect("(")
-            self.expression()
-            self.expect(")")
-            self.statement()
-
-            if self.at("else"):
-                self.take()
-                self.statement()
-
-        elif self.at("return"):
-            self.take()
-
             if not self.at(";"):
                 self.expression()
-
             self.expect(";")
 
-        elif self.at(";"):
+        elif value == ";":
             self.take()
 
         else:
             self.expression()
+            self.expect(";")
+
+    def declaration(self, require_semicolon=True):
+        self.take()  # type
+        self.identifier()
+
+        if self.accept("("):
+            # Function declaration/definition.
+            if not self.at(")"):
+                self.parameter()
+                while self.accept(","):
+                    self.parameter()
+
+            self.expect(")")
+
+            if self.at("{"):
+                self.block()
+            elif require_semicolon:
+                self.expect(";")
+            return
+
+        if self.accept("="):
+            self.expression()
+
+        while self.accept(","):
+            self.identifier()
+            if self.accept("="):
+                self.expression()
+
+        if require_semicolon:
             self.expect(";")
 
     def parameter(self):
@@ -242,15 +287,7 @@ class Parser:
             raise ParseError(self.peek(), "type")
 
         self.take()
-        self.expect_identifier()
-
-    def expect_identifier(self):
-        if self.peek().kind != "ID":
-            raise ParseError(
-                self.peek(), "identifier"
-            )
-
-        return self.take()
+        self.identifier()
 
     def block(self):
         self.expect("{")
@@ -258,35 +295,56 @@ class Parser:
         while (
             not self.at("}")
             and self.peek().kind != "EOF"
+            and len(self.diagnostics) < self.max_errors
         ):
-            start = self.i
-
-            try:
-                self.statement()
-            except ParseError as error:
-                self.recover(error)
-
-            if self.i == start:
-                self.take()
+            self.safe_statement()
 
         self.expect("}")
 
-    def expression(self, min_prec=0):
-        if self.peek().value in ("!", "-", "+"):
-            self.take()
-            self.expression(8)
+    def if_statement(self):
+        self.take()
+        self.expect("(")
+        self.expression()
+        self.expect(")")
+        self.statement()
 
-        elif self.accept("("):
+        if self.accept("else"):
+            self.statement()
+
+    def while_statement(self):
+        self.take()
+        self.expect("(")
+        self.expression()
+        self.expect(")")
+        self.statement()
+
+    def for_statement(self):
+        self.take()
+        self.expect("(")
+
+        # Initialization
+        if self.peek().value in ("int", "float"):
+            self.declaration(require_semicolon=False)
+        elif not self.at(";"):
             self.expression()
-            self.expect(")")
 
-        elif self.peek().kind in ("ID", "NUMBER"):
-            self.take()
+        self.expect(";")
 
-        else:
-            raise ParseError(
-                self.peek(), "expression"
-            )
+        # Condition
+        if not self.at(";"):
+            self.expression()
+
+        self.expect(";")
+
+        # Update
+        if not self.at(")"):
+            self.expression()
+
+        self.expect(")")
+        self.statement()
+
+    def expression(self, min_prec=0):
+        self.unary()
 
         precedence = {
             "=": 1,
@@ -311,38 +369,44 @@ class Parser:
         ):
             operator = self.take().value
             prec = precedence[operator]
-
-            next_prec = (
-                prec if operator == "="
-                else prec + 1
-            )
-
+            next_prec = prec if operator == "=" else prec + 1
             self.expression(next_prec)
 
-    def recover(self, error):
-        tok = error.token
-        expected = error.expected
+    def unary(self):
+        if self.peek().value in ("!", "-", "+"):
+            self.take()
+            self.unary()
+            return
 
-        # Fallback recovery for unsupported repairs.
-        message = (
-            f"Expected {expected} before "
-            f"'{tok.value or 'end of file'}'."
-        )
+        self.primary()
 
-        while (
-            self.peek().kind != "EOF"
-            and self.peek().value not in (";", "}")
-        ):
+        # Function calls and postfix operations.
+        while True:
+            if self.accept("("):
+                if not self.at(")"):
+                    self.expression()
+                    while self.accept(","):
+                        self.expression()
+                self.expect(")")
+
+            elif self.peek().value in ("++", "--"):
+                self.take()
+
+            else:
+                break
+
+    def primary(self):
+        if self.accept("("):
+            self.expression()
+            self.expect(")")
+
+        elif self.peek().kind in ("ID", "NUMBER"):
             self.take()
 
-        if self.at(";"):
-            self.take()
-
-        self.diagnostics.append({
-            "line": tok.line,
-            "column": tok.col,
-            "message": message
-        })
+        else:
+            raise ParseError(
+                self.peek(), "expression"
+            )
 
 
 def analyze(source):
@@ -350,48 +414,38 @@ def analyze(source):
     parser = Parser(tokens)
     parser.parse()
 
-    return (
-        tokens,
-        parser.diagnostics,
-        parser.repairs
-    )
+    return tokens, parser.diagnostics, parser.repairs
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 2:
-        print(
-            "Usage: python smartparse.py example.c"
-        )
-        sys.exit(2)
+        print("Usage: python smartparse.py example.c")
+        return 2
 
     try:
         with open(
-            sys.argv[1], encoding="utf-8"
+            sys.argv[1], "r", encoding="utf-8"
         ) as file:
             source = file.read()
 
-        tokens, diagnostics, repairs = analyze(
-            source
-        )
+        tokens, diagnostics, repairs = analyze(source)
 
-        if diagnostics:
-            for diagnostic in diagnostics:
-                print(
-                    f"{diagnostic['line']}:"
-                    f"{diagnostic['column']}: "
-                    f"{diagnostic['message']}"
-                )
-        else:
+        if not diagnostics:
             print("No syntax errors detected.")
+        else:
+            for error in diagnostics:
+                print(
+                    f"{error['line']}:{error['column']}: "
+                    f"{error['message']}"
+                )
 
         print(
-            f"Tokens: {len(tokens) - 1}; "
+            f"\nTokens: {len(tokens) - 1}; "
             f"Diagnostics: {len(diagnostics)}"
         )
 
         if repairs:
             print("\nRecovery operations:")
-
             for repair in repairs:
                 print(
                     f"  {repair['operation']}: "
@@ -399,6 +453,12 @@ if __name__ == "__main__":
                     f"(score: {repair['score']})"
                 )
 
-    except LexError as error:
-        print(f"Lexical error: {error}")
-        sys.exit(1)
+        return 0
+
+    except (LexError, OSError) as error:
+        print(f"Error: {error}")
+        return 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
