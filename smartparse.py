@@ -85,6 +85,7 @@ class Parser:
         self.repairs = []
         self.max_errors = 50
         self.validate_repairs = validate_repairs
+        self.statement_starts = []
 
     def peek(self, offset=0):
         return self.tokens[
@@ -129,9 +130,18 @@ class Parser:
         chosen = candidates[0]
         validation = None
 
-        if self.validate_repairs and len(candidates) > 1:
-            chosen, validation = choose_validated_candidate(
-                self.tokens, index, candidates
+        if (
+            self.validate_repairs
+            and len(candidates) > 1
+            and self.statement_starts
+        ):
+            from local_validation import choose_candidate
+
+            chosen, validation = choose_candidate(
+                self.tokens,
+                self.statement_starts[-1],
+                index,
+                candidates
             )
 
         if chosen.operation == "insert":
@@ -225,6 +235,14 @@ class Parser:
             self.take()
 
     def statement(self):
+        self.statement_starts.append(self.i)
+
+        try:
+            return self._statement()
+        finally:
+            self.statement_starts.pop()
+
+    def _statement(self):
         value = self.peek().value
 
         if value in ("int", "float", "void"):
@@ -414,11 +432,6 @@ class Parser:
 
 
 class StrictParser(Parser):
-    """
-    Uses the same grammar but never performs
-    automatic repairs or panic-mode recovery.
-    """
-
     def __init__(self, tokens):
         super().__init__(
             tokens, validate_repairs=False
@@ -433,53 +446,18 @@ class StrictParser(Parser):
         self.statement()
 
 
+# Compatibility functions from Milestone 6.
+# Existing tests and scripts can continue using them.
+
 def apply_candidate(tokens, index, candidate):
-    """
-    Build a temporary token stream.
-    The original tokens are never modified.
-    """
-    trial = list(tokens)
-    current = trial[index]
-    expected = candidate.expected
-
-    replacement = Token(
-        expected, expected,
-        current.line, current.col
-    )
-
-    if candidate.operation == "insert":
-        trial.insert(index, replacement)
-
-    elif candidate.operation == "substitute":
-        trial[index] = replacement
-
-    elif candidate.operation == "delete":
-        del trial[index]
-
-    else:
-        raise ValueError(
-            f"Unknown operation: {candidate.operation}"
-        )
-
-    return trial
+    from local_validation import apply_candidate as apply
+    return apply(tokens, index, candidate)
 
 
 def probe_candidate(tokens, index, candidate):
-    """
-    Strictly parse a candidate's temporary token stream.
-
-    Returns:
-    - progress: number of original-position tokens
-      reached beyond the repair point
-    - completed: whether the whole trial parsed
-
-    This is a global-prefix check, not a full
-    continuation from the current parser call stack.
-    """
     trial = apply_candidate(
         tokens, index, candidate
     )
-
     parser = StrictParser(trial)
     completed = False
 
@@ -489,52 +467,32 @@ def probe_candidate(tokens, index, candidate):
     except ParseError:
         pass
 
-    # Convert the trial index back to an approximate
-    # original token position.
     position = parser.i
 
-    if candidate.operation == "insert":
-        if position > index:
-            position -= 1
-
-    elif candidate.operation == "delete":
-        if position >= index:
-            position += 1
-
-    progress = max(0, position - index)
+    if candidate.operation == "insert" and position > index:
+        position -= 1
+    elif candidate.operation == "delete" and position >= index:
+        position += 1
 
     return {
-        "progress": progress,
+        "progress": max(0, position - index),
         "completed": completed
     }
 
 
-def choose_validated_candidate(
-    tokens, index, candidates
-):
-    """
-    Use strict grammar progress to break or overturn
-    heuristic rankings when alternatives exist.
-
-    Candidates remain restricted to the existing
-    context-aware generator.
-    """
+def choose_validated_candidate(tokens, index, candidates):
     evaluations = []
 
     for candidate in candidates:
         result = probe_candidate(
             tokens, index, candidate
         )
-
         evaluations.append({
             "candidate": candidate,
             "progress": result["progress"],
             "completed": result["completed"]
         })
 
-    # Prefer a candidate that parses to EOF.
-    # Otherwise prefer the one that gets farther.
-    # Use existing heuristic score for ties.
     evaluations.sort(
         key=lambda item: (
             item["completed"],
@@ -546,7 +504,7 @@ def choose_validated_candidate(
 
     best = evaluations[0]
 
-    details = {
+    return best["candidate"], {
         "method": "strict_grammar_probe",
         "candidates_tested": len(evaluations),
         "progress": best["progress"],
@@ -561,8 +519,6 @@ def choose_validated_candidate(
             for item in evaluations
         ]
     }
-
-    return best["candidate"], details
 
 
 def analyze(source):
@@ -618,7 +574,7 @@ def main():
 
                 if validation is not None:
                     print(
-                        "    Grammar probe: "
+                        "    Local grammar probe: "
                         f"{validation['progress']} "
                         "tokens of progress, "
                         f"{validation['candidates_tested']} "
