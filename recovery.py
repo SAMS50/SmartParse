@@ -15,6 +15,7 @@ class Candidate:
     actual: str
     score: float
     reason: str
+    factors: tuple = ()
 
 
 # MODULE 1: CONTEXT ANALYZER
@@ -47,7 +48,9 @@ def context(tokens, index, expected):
 
 # MODULE 2 + 3: CANDIDATE GENERATOR AND RANKER
 
-def rank_candidates(tokens, index, expected):
+def rank_candidates(tokens, index, expected, mode="contextual"):
+    if mode not in ("contextual", "legacy"):
+        raise ValueError("mode must be contextual or legacy")
     ctx = context(tokens, index, expected)
 
     actual = ctx['current']
@@ -108,6 +111,9 @@ def rank_candidates(tokens, index, expected):
             )
         )
 
+    if mode == "contextual":
+        candidates = [contextual_score(c, ctx, tokens, index) for c in candidates]
+
     # Higher score = better candidate
     return sorted(
         candidates,
@@ -116,3 +122,50 @@ def rank_candidates(tokens, index, expected):
 
 def generate_candidates(tokens, index, expected):
     return rank_candidates(tokens, index, expected)
+
+def contextual_score(candidate, ctx, tokens, index):
+    """Explainable ranking from local evidence; no universal operation preference.
+
+    Weights are initial design hypotheses, not learned probabilities.
+    Candidate eligibility is unchanged from Review 2.
+    """
+    operation = candidate.operation
+    expected = candidate.expected
+    actual = ctx["current"]
+    following = ctx["next"]
+    nesting = ctx["nesting"]
+    matching = {")": "(", "}": "{", "]": "["}
+    factors = []
+
+    # Each candidate is a one-token edit, so none gets an automatic advantage.
+    factors.append(("single_token_edit", 10))
+
+    if operation == "insert":
+        factors.append(("statement_or_block_boundary", 25))
+        if expected == ";" and actual in BOUNDARIES:
+            factors.append(("statement_boundary_fit", 25))
+        if expected in matching and matching[expected] in nesting:
+            factors.append(("unclosed_matching_opener", 30))
+        if actual == "{" and expected == ")":
+            factors.append(("block_starts_after_condition", 15))
+        if tokens[index].kind == "EOF":
+            factors.append(("missing_at_eof", 20))
+
+    elif operation == "substitute":
+        factors.append(("wrong_closing_delimiter", 25))
+        if expected in matching and matching[expected] in nesting:
+            factors.append(("matching_opener_in_context", 30))
+        if actual in matching and matching[actual] not in nesting:
+            factors.append(("unexpected_closer", 15))
+
+    elif operation == "delete":
+        # Strong direct evidence: after removing current token, the parser's
+        # expected token is exactly the next token.
+        if following == expected:
+            factors.append(("next_token_is_expected", 55))
+        if actual in (";", ",", ")", "]", "}"):
+            factors.append(("extra_punctuation", 15))
+
+    score = sum(value for _, value in factors)
+    return Candidate(operation, expected, actual, score,
+                     candidate.reason, tuple(factors))

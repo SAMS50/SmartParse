@@ -78,13 +78,14 @@ class ParseError(Exception):
 
 
 class Parser:
-    def __init__(self, tokens, validate_repairs=True):
+    def __init__(self, tokens, validate_repairs=True, scoring_mode="contextual"):
         self.tokens = tokens
         self.i = 0
         self.diagnostics = []
         self.repairs = []
         self.max_errors = 50
         self.validate_repairs = validate_repairs
+        self.scoring_mode = scoring_mode
         self.statement_starts = []
 
     def peek(self, offset=0):
@@ -121,7 +122,7 @@ class Parser:
         token = self.peek()
         index = self.i
         candidates = rank_candidates(
-            self.tokens, index, value
+            self.tokens, index, value, mode=self.scoring_mode
         )
 
         if not candidates:
@@ -181,6 +182,8 @@ class Parser:
             "line": token.line,
             "column": token.col,
             "score": chosen.score,
+            "score_factors": dict(chosen.factors),
+            "scoring_mode": self.scoring_mode,
             "reason": chosen.reason,
             "context": context(
                 self.tokens, index, value
