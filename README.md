@@ -2,7 +2,49 @@
 
 **Start here:** [Final release and evaluation guide](FINAL_RELEASE.md). This is a research prototype for a **restricted C-like grammar**, not a complete C compiler. The optional CGAR mode supplies bounded whole-program grammar-verified *suggestions* with conservative abstention; it does not guarantee programmer intent.
 
-Quick start (from `smartparse_work`):
+## Extended C Analysis CLI
+
+Install Python 3.12 and an external Clang or GCC toolchain, then run from this
+checkout. The analysis CLI uses only Python's standard library; Matplotlib is
+needed only for the original research plots. Put `clang`/`gcc` on PATH or pass an
+explicit executable. For Clang installation, see the
+[official getting-started guide](https://clang.llvm.org/get_started.html) and
+[toolchain configuration guide](https://clang.llvm.org/docs/Toolchain.html).
+The compiler also needs the target C headers used by your source.
+
+For real C programs, use the separate compiler-backed pipeline:
+
+```powershell
+python analyze_c.py "C:\My Project\program.c"
+python analyze_c.py program.c --compiler gcc --std c11 -I "include folder" -D COUNT=10 --json
+python analyze_c.py program.c --static-analysis --timeout 60
+```
+
+`analyze_c.py` attributes syntax/type diagnostics and warnings to external
+GCC/Clang, and optional static-analysis findings to Clang Static Analyzer.
+SmartParse/CGAR remains the original restricted-grammar research mode. The CLI
+does not run the C program or edit its source. A completed check does not prove
+absence of runtime or logic bugs.
+
+Exit codes: **0** completed without errors or analyzer findings (compiler warnings
+may remain); **1** source errors or potential analyzer findings; **2** invalid CLI
+arguments; **3** failed/incomplete requested analysis, including missing compilers,
+missing headers, or timeout. Incomplete analysis takes precedence over findings.
+
+See [Extended C usage, reporting schema, and limitations](extended_c/README.md).
+
+Acceptance evidence: [Milestone 5 report](acceptance/FINAL_ACCEPTANCE_REPORT.md).
+The supplied 500-line numbered sample was found in Downloads and checked using a
+separate line-preserving cleaned copy: GCC 6.3 reported 6 errors, 14 warnings, and
+3 notes. These include cascades and are not independent bug counts. A later Windows
+search found Clang 17.0.2 bundled with the Android NDK, outside PATH: all **237 tests
+now pass, with no skips**, including live memory-analyzer checks. Clang reports
+7 errors, 12 warnings, and 11 notes on the unchanged cleaned sample; its frontend
+errors prevent a completed sample static-analysis pass. Final acceptance remains
+pending user review. The original Phase 5H research release and its results remain
+separate.
+
+Quick start for the original research modes (from the repository directory):
 
 ```powershell
 python -m unittest discover -v
