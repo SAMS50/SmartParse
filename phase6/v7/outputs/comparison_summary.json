@@ -1,0 +1,307 @@
+{
+  "baseline": {
+    "established_root_ids": [
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free",
+      "M6:condition_boundary",
+      "M6:condition_pair",
+      "M6:condition_three",
+      "M6:dead_store"
+    ],
+    "conditional_support_ids": [
+      "M6:precision_context",
+      "M6:precision_literal",
+      "M6:scanf_unbounded",
+      "M6:scanf_width"
+    ],
+    "reviewed_same_root_duplicate_records": 5,
+    "statuses": {
+      "completed": 69,
+      "blocked": 5
+    },
+    "total_diagnostic_records": 92,
+    "primary_diagnostic_groups": 50,
+    "corrected_and_modular_control_warnings": [],
+    "invocations": 1624,
+    "seconds": 352.656,
+    "previous_roots": [
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free",
+      "M6:condition_boundary",
+      "M6:condition_pair",
+      "M6:condition_three",
+      "M6:dead_store"
+    ],
+    "new_roots_vs_baseline": [],
+    "new_families": []
+  },
+  "gcc14": {
+    "established_root_ids": [
+      "M5:allocation_size",
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free",
+      "NEW:alloc_helper_bad",
+      "NEW:alloc_literal_bad",
+      "NEW:alloc_variable_bad",
+      "NEW:overlap_bad"
+    ],
+    "conditional_support_ids": [
+      "REVIEW:alloc_unknown"
+    ],
+    "reviewed_same_root_duplicate_records": 10,
+    "statuses": {
+      "completed": 69,
+      "partial": 5
+    },
+    "total_diagnostic_records": 83,
+    "primary_diagnostic_groups": 63,
+    "corrected_and_modular_control_warnings": [],
+    "invocations": 148,
+    "seconds": 22.269,
+    "previous_roots": [
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free"
+    ],
+    "new_roots_vs_baseline": [
+      "M5:allocation_size",
+      "NEW:alloc_helper_bad",
+      "NEW:alloc_literal_bad",
+      "NEW:alloc_variable_bad",
+      "NEW:overlap_bad"
+    ],
+    "new_families": [
+      "allocation_extent",
+      "overlapping_copy"
+    ]
+  },
+  "gcc16": {
+    "established_root_ids": [
+      "M5:allocation_size",
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free",
+      "NEW:alloc_helper_bad",
+      "NEW:alloc_literal_bad",
+      "NEW:alloc_variable_bad",
+      "NEW:overlap_bad"
+    ],
+    "conditional_support_ids": [
+      "REVIEW:alloc_unknown"
+    ],
+    "reviewed_same_root_duplicate_records": 11,
+    "statuses": {
+      "completed": 69,
+      "partial": 5
+    },
+    "total_diagnostic_records": 61,
+    "primary_diagnostic_groups": 61,
+    "corrected_and_modular_control_warnings": [],
+    "invocations": 148,
+    "seconds": 20.215,
+    "previous_roots": [
+      "M5:double_free",
+      "M5:fixed_bounds",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M5:use_after_free"
+    ],
+    "new_roots_vs_baseline": [
+      "M5:allocation_size",
+      "NEW:alloc_helper_bad",
+      "NEW:alloc_literal_bad",
+      "NEW:alloc_variable_bad",
+      "NEW:overlap_bad"
+    ],
+    "new_families": [
+      "allocation_extent",
+      "overlapping_copy"
+    ]
+  },
+  "cppcheck": {
+    "established_root_ids": [
+      "M5:double_free",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M6:condition_boundary",
+      "M6:condition_pair",
+      "M6:condition_three",
+      "NEW:late_widen_bad",
+      "NEW:overlap_bad"
+    ],
+    "conditional_support_ids": [
+      "M6:scanf_unbounded"
+    ],
+    "reviewed_same_root_duplicate_records": 0,
+    "statuses": {
+      "completed": 73,
+      "partial": 1
+    },
+    "total_diagnostic_records": 47,
+    "primary_diagnostic_groups": 47,
+    "corrected_and_modular_control_warnings": [],
+    "invocations": 148,
+    "seconds": 14.653,
+    "previous_roots": [
+      "M5:double_free",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:stream",
+      "M5:string_bounds",
+      "M6:condition_boundary",
+      "M6:condition_pair",
+      "M6:condition_three"
+    ],
+    "new_roots_vs_baseline": [
+      "NEW:late_widen_bad",
+      "NEW:overlap_bad"
+    ],
+    "new_families": [
+      "late_signed_widen",
+      "overlapping_copy"
+    ]
+  },
+  "tidy17": {
+    "established_root_ids": [
+      "M5:double_free",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:use_after_free",
+      "NEW:late_widen_bad"
+    ],
+    "conditional_support_ids": [
+      "M6:precision_context",
+      "M6:precision_literal"
+    ],
+    "reviewed_same_root_duplicate_records": 0,
+    "statuses": {
+      "completed": 69,
+      "partial": 5
+    },
+    "total_diagnostic_records": 47,
+    "primary_diagnostic_groups": 26,
+    "corrected_and_modular_control_warnings": [
+      {
+        "case": "holdout-unsigned_modular_control",
+        "diagnostic": {
+          "file": "C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v7/fixtures/unsigned_modular_control.c",
+          "line": 2,
+          "column": 64,
+          "severity": "warning",
+          "message": "either cast from 'unsigned int' to 'unsigned long long' is ineffective, or there is loss of precision before the conversion",
+          "diagnostic_id": "bugprone-misplaced-widening-cast",
+          "category": "semantic/type",
+          "related": [],
+          "context_note": false,
+          "column_kind": "compiler-reported",
+          "raw_continuation": [
+            "unsigned long long probe(void){unsigned a=65536,b=65536;return (unsigned long long)(a*b);}",
+            "                                                               ^",
+            "1 warning generated."
+          ],
+          "source_bound": true,
+          "source_snippet": "unsigned long long probe(void){unsigned a=65536,b=65536;return (unsigned long long)(a*b);}",
+          "id": "X-689f6c7c7bb51ff26813",
+          "tool": {
+            "id": "tidy17",
+            "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+            "kind": "tidy",
+            "version": "17.0.2",
+            "format": "tidy-text",
+            "checks": [
+              "bugprone-integer-division",
+              "bugprone-misplaced-widening-cast",
+              "bugprone-sizeof-expression",
+              "clang-analyzer-core.NullDereference",
+              "clang-analyzer-core.StackAddressEscape",
+              "clang-analyzer-unix.Malloc",
+              "clang-analyzer-unix.MallocSizeof",
+              "clang-analyzer-unix.cstring.BadSizeArg"
+            ]
+          },
+          "configuration": {
+            "standard": "c11",
+            "include_dirs": [],
+            "defines": [],
+            "path_prepend": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin",
+            "shell": false,
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+              "--config={}",
+              "--checks=-*,bugprone-integer-division,bugprone-misplaced-widening-cast,bugprone-sizeof-expression,clang-analyzer-core.NullDereference,clang-analyzer-core.StackAddressEscape,clang-analyzer-unix.Malloc,clang-analyzer-unix.MallocSizeof,clang-analyzer-unix.cstring.BadSizeArg",
+              "--warnings-as-errors=",
+              "--use-color=false",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+              "--",
+              "-x",
+              "c",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-ferror-limit=20"
+            ]
+          },
+          "review_status": "tool_reported_unverified",
+          "confidence": "review_suggestion",
+          "provenance": {
+            "original_source": true,
+            "repair_conditioned": false,
+            "isolation_conditioned": false
+          },
+          "duplicates_existing": "unknown_pending_root_review"
+        }
+      }
+    ],
+    "invocations": 148,
+    "seconds": 26.318,
+    "previous_roots": [
+      "M5:double_free",
+      "M5:leak",
+      "M5:null",
+      "M5:stack_escape",
+      "M5:use_after_free"
+    ],
+    "new_roots_vs_baseline": [
+      "NEW:late_widen_bad"
+    ],
+    "new_families": [
+      "late_signed_widen"
+    ]
+  }
+}

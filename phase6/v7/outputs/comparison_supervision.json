@@ -1,0 +1,5922 @@
+[
+  {
+    "tool": "gcc14",
+    "case": "v5-allocation_size_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-allocation_size_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.828,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-allocation_size_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-allocation_size_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-allocation_size_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.515,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-allocation_size_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-double_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-double_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.406,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-double_free_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-double_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-double_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.688,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-double_free_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-fixed_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-fixed_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-fixed_bounds_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-fixed_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-fixed_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.688,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-fixed_bounds_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-leak_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-leak_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.797,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-leak_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-leak_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-leak_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-leak_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-malformed_semantic.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-malformed_syntax.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-null_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-null_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-null_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-null_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-null_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-null_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-stack_escape_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-stack_escape_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 2.187,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-stack_escape_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-stack_escape_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-stack_escape_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.297,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-stack_escape_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-stream_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-stream_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.281,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-stream_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-stream_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-stream_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-stream_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-string_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-string_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.438,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-string_bounds_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-string_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-string_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.39,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-string_bounds_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-unknown_extent",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-unknown_extent"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.562,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-unknown_extent.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-use_after_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-use_after_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.61,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-use_after_free_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-use_after_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-use_after_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.407,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-use_after_free_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v5-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v5-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.265,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v5-valid.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-allocation_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-allocation_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-allocation_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-allocation_index",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-allocation_index"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.406,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-allocation_index.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-allocation_literal",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-allocation_literal"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.391,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-allocation_literal.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-allocation_sizeof",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-allocation_sizeof"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.984,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-allocation_sizeof.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.797,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_boundary_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_boundary_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_boundary_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_boundary_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_boundary_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_boundary_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_three_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_three_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_three_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-contradiction_three_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-contradiction_three_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-contradiction_three_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-conversion_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-conversion_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-conversion_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-different_variables",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-different_variables"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.782,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-different_variables.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-macro_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-macro_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-macro_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-malformed_semantic.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-malformed_syntax.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-overwrite_assignment_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-overwrite_assignment_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 2.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-overwrite_assignment_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-overwrite_assignment_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-overwrite_assignment_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 2.125,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-overwrite_assignment_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-overwrite_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-overwrite_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.688,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-overwrite_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-overwrite_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-overwrite_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-overwrite_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_deliberate",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_deliberate"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.313,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_deliberate.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_exact",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_exact"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.953,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_exact.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.984,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_integer_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_integer_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_integer_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_literal_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_literal_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.281,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_literal_review.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_macro",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_macro"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_macro.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_review.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-precision_zero",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-precision_zero"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-precision_zero.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_character_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_character_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_character_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.64,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_local_name",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_local_name"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_local_name.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_suppressed",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_suppressed"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_suppressed.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_unbounded",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_unbounded"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.813,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_unbounded.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.859,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_unknown.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-scanf_width_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-scanf_width_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-scanf_width_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-side_effect_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-side_effect_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.765,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-side_effect_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-swap_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-swap_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-swap_unknown.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-unsigned_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-unsigned_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.86,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-unsigned_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.016,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-valid.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "v6-volatile_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "v6-volatile_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.687,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\v6-volatile_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_helper_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_helper_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.282,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_helper_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_helper_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_helper_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_helper_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_literal_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_literal_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.938,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_literal_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_literal_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_literal_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_literal_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.907,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_unknown.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_variable_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_variable_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_variable_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-alloc_variable_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-alloc_variable_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-alloc_variable_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-late_widen_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-late_widen_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-late_widen_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-late_widen_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-late_widen_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-late_widen_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-overlap_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-overlap_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-overlap_bad.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-overlap_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-overlap_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-overlap_good.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "holdout-unsigned_modular_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "holdout-unsigned_modular_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\holdout-unsigned_modular_control.log"
+  },
+  {
+    "tool": "gcc14",
+    "case": "benchmark",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc14",
+      "--case",
+      "benchmark"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc14\\benchmark.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-allocation_size_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-allocation_size_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.188,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-allocation_size_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-allocation_size_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-allocation_size_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.437,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-allocation_size_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-double_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-double_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.438,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-double_free_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-double_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-double_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.172,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-double_free_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-fixed_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-fixed_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-fixed_bounds_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-fixed_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-fixed_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.89,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-fixed_bounds_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-leak_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-leak_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.969,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-leak_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-leak_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-leak_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-leak_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.485,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-malformed_semantic.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-malformed_syntax.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-null_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-null_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-null_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-null_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-null_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-null_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-stack_escape_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-stack_escape_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-stack_escape_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-stack_escape_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-stack_escape_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-stack_escape_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-stream_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-stream_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.093,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-stream_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-stream_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-stream_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-stream_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-string_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-string_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.938,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-string_bounds_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-string_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-string_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-string_bounds_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-unknown_extent",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-unknown_extent"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-unknown_extent.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-use_after_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-use_after_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.718,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-use_after_free_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-use_after_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-use_after_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.562,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-use_after_free_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v5-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v5-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v5-valid.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-allocation_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-allocation_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-allocation_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-allocation_index",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-allocation_index"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.735,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-allocation_index.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-allocation_literal",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-allocation_literal"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-allocation_literal.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-allocation_sizeof",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-allocation_sizeof"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-allocation_sizeof.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_boundary_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_boundary_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.109,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_boundary_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_boundary_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_boundary_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.921,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_boundary_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.797,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_three_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_three_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_three_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-contradiction_three_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-contradiction_three_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.359,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-contradiction_three_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-conversion_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-conversion_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.547,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-conversion_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-different_variables",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-different_variables"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-different_variables.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-macro_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-macro_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.219,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-macro_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-malformed_semantic.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-malformed_syntax.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-overwrite_assignment_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-overwrite_assignment_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.39,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-overwrite_assignment_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-overwrite_assignment_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-overwrite_assignment_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.735,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-overwrite_assignment_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-overwrite_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-overwrite_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-overwrite_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-overwrite_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-overwrite_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.562,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-overwrite_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_deliberate",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_deliberate"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.593,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_deliberate.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_exact",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_exact"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_exact.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_integer_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_integer_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_integer_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_literal_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_literal_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.188,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_literal_review.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_macro",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_macro"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.813,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_macro.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_review.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-precision_zero",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-precision_zero"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.25,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-precision_zero.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_character_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_character_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.344,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_character_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_local_name",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_local_name"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_local_name.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_suppressed",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_suppressed"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.39,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_suppressed.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_unbounded",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_unbounded"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.36,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_unbounded.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_unknown.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-scanf_width_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-scanf_width_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-scanf_width_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-side_effect_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-side_effect_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.657,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-side_effect_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-swap_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-swap_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-swap_unknown.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-unsigned_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-unsigned_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-unsigned_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.703,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-valid.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "v6-volatile_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "v6-volatile_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\v6-volatile_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_helper_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_helper_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.438,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_helper_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_helper_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_helper_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.437,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_helper_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_literal_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_literal_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.797,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_literal_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_literal_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_literal_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.563,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_literal_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.563,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_unknown.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_variable_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_variable_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.735,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_variable_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-alloc_variable_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-alloc_variable_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.062,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-alloc_variable_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-late_widen_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-late_widen_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-late_widen_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-late_widen_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-late_widen_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-late_widen_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-overlap_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-overlap_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.922,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-overlap_bad.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-overlap_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-overlap_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-overlap_good.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "holdout-unsigned_modular_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "holdout-unsigned_modular_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.765,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\holdout-unsigned_modular_control.log"
+  },
+  {
+    "tool": "gcc16",
+    "case": "benchmark",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "gcc16",
+      "--case",
+      "benchmark"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.485,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\gcc16\\benchmark.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-allocation_size_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-allocation_size_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-allocation_size_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-allocation_size_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-allocation_size_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.547,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-allocation_size_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-double_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-double_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-double_free_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-double_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-double_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.437,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-double_free_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-fixed_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-fixed_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.562,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-fixed_bounds_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-fixed_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-fixed_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-fixed_bounds_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-leak_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-leak_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-leak_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-leak_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-leak_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.485,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-leak_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-malformed_semantic.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-malformed_syntax.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-null_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-null_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-null_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-null_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-null_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.828,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-null_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-stack_escape_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-stack_escape_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-stack_escape_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-stack_escape_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-stack_escape_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-stack_escape_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-stream_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-stream_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.437,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-stream_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-stream_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-stream_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 2.172,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-stream_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-string_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-string_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.703,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-string_bounds_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-string_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-string_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-string_bounds_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-unknown_extent",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-unknown_extent"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-unknown_extent.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-use_after_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-use_after_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-use_after_free_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-use_after_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-use_after_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-use_after_free_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v5-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v5-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.078,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v5-valid.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-allocation_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-allocation_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-allocation_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-allocation_index",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-allocation_index"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-allocation_index.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-allocation_literal",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-allocation_literal"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-allocation_literal.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-allocation_sizeof",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-allocation_sizeof"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.735,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-allocation_sizeof.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_boundary_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_boundary_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_boundary_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_boundary_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_boundary_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_boundary_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.406,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_three_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_three_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.359,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_three_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-contradiction_three_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-contradiction_three_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-contradiction_three_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-conversion_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-conversion_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-conversion_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-different_variables",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-different_variables"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-different_variables.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-macro_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-macro_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.468,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-macro_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-malformed_semantic.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-malformed_syntax.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-overwrite_assignment_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-overwrite_assignment_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-overwrite_assignment_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-overwrite_assignment_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-overwrite_assignment_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.438,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-overwrite_assignment_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-overwrite_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-overwrite_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.344,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-overwrite_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-overwrite_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-overwrite_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-overwrite_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_deliberate",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_deliberate"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_deliberate.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_exact",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_exact"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.359,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_exact.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.406,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_integer_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_integer_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_integer_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_literal_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_literal_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.391,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_literal_review.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_macro",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_macro"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.391,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_macro.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_review.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-precision_zero",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-precision_zero"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-precision_zero.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_character_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_character_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.391,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_character_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.562,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_local_name",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_local_name"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_local_name.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_suppressed",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_suppressed"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_suppressed.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_unbounded",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_unbounded"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.437,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_unbounded.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.391,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_unknown.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-scanf_width_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-scanf_width_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.454,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-scanf_width_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-side_effect_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-side_effect_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-side_effect_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-swap_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-swap_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.563,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-swap_unknown.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-unsigned_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-unsigned_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-unsigned_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.64,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-valid.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "v6-volatile_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "v6-volatile_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\v6-volatile_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_helper_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_helper_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.407,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_helper_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_helper_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_helper_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_helper_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_literal_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_literal_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_literal_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_literal_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_literal_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_literal_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.547,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_unknown.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_variable_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_variable_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.406,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_variable_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-alloc_variable_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-alloc_variable_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-alloc_variable_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-late_widen_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-late_widen_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-late_widen_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-late_widen_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-late_widen_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.938,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-late_widen_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-overlap_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-overlap_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-overlap_bad.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-overlap_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-overlap_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-overlap_good.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "holdout-unsigned_modular_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "holdout-unsigned_modular_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.312,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\holdout-unsigned_modular_control.log"
+  },
+  {
+    "tool": "cppcheck",
+    "case": "benchmark",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "cppcheck",
+      "--case",
+      "benchmark"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\cppcheck\\benchmark.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-allocation_size_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-allocation_size_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.938,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-allocation_size_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-allocation_size_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-allocation_size_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.187,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-allocation_size_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-double_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-double_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-double_free_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-double_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-double_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.515,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-double_free_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-fixed_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-fixed_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-fixed_bounds_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-fixed_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-fixed_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.593,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-fixed_bounds_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-leak_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-leak_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.063,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-leak_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-leak_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-leak_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.843,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-leak_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.64,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-malformed_semantic.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.641,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-malformed_syntax.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-null_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-null_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.297,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-null_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-null_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-null_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.813,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-null_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-stack_escape_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-stack_escape_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.891,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-stack_escape_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-stack_escape_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-stack_escape_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-stack_escape_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-stream_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-stream_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.765,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-stream_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-stream_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-stream_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-stream_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-string_bounds_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-string_bounds_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.688,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-string_bounds_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-string_bounds_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-string_bounds_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.593,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-string_bounds_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-unknown_extent",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-unknown_extent"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-unknown_extent.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-use_after_free_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-use_after_free_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.532,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-use_after_free_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-use_after_free_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-use_after_free_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.547,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-use_after_free_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v5-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v5-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v5-valid.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-allocation_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-allocation_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-allocation_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-allocation_index",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-allocation_index"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.047,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-allocation_index.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-allocation_literal",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-allocation_literal"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.782,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-allocation_literal.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-allocation_sizeof",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-allocation_sizeof"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.844,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-allocation_sizeof.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.844,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_boundary_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_boundary_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_boundary_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_boundary_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_boundary_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.25,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_boundary_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_three_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_three_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_three_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-contradiction_three_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-contradiction_three_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-contradiction_three_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-conversion_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-conversion_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.844,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-conversion_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-different_variables",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-different_variables"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.484,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-different_variables.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-macro_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-macro_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.531,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-macro_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-malformed_semantic",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-malformed_semantic"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.094,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-malformed_semantic.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-malformed_syntax",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-malformed_syntax"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-malformed_syntax.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-overwrite_assignment_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-overwrite_assignment_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-overwrite_assignment_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-overwrite_assignment_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-overwrite_assignment_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-overwrite_assignment_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-overwrite_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-overwrite_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-overwrite_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-overwrite_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-overwrite_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-overwrite_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_deliberate",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_deliberate"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.891,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_deliberate.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_exact",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_exact"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.922,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_exact.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.844,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_integer_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_integer_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.656,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_integer_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_literal_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_literal_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.688,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_literal_review.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_macro",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_macro"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_macro.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_review",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_review"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.25,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_review.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-precision_zero",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-precision_zero"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.047,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-precision_zero.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_character_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_character_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.297,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_character_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_local_name",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_local_name"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_local_name.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_suppressed",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_suppressed"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.703,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_suppressed.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_unbounded",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_unbounded"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_unbounded.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_unknown.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-scanf_width_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-scanf_width_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.813,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-scanf_width_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-side_effect_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-side_effect_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-side_effect_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-swap_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-swap_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-swap_unknown.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-unsigned_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-unsigned_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-unsigned_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-valid",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-valid"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-valid.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "v6-volatile_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "v6-volatile_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.157,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\v6-volatile_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_helper_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_helper_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.625,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_helper_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_helper_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_helper_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.125,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_helper_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_literal_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_literal_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.453,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_literal_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_literal_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_literal_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 1.328,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_literal_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.719,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_unknown.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_variable_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_variable_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.797,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_variable_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-alloc_variable_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-alloc_variable_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.703,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-alloc_variable_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-late_widen_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-late_widen_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.734,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-late_widen_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-late_widen_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-late_widen_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.594,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-late_widen_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-overlap_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-overlap_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-overlap_bad.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-overlap_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-overlap_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.656,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-overlap_good.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "holdout-unsigned_modular_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "holdout-unsigned_modular_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\holdout-unsigned_modular_control.log"
+  },
+  {
+    "tool": "tidy17",
+    "case": "benchmark",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v7.run_comparison",
+      "--worker",
+      "--tool",
+      "tidy17",
+      "--case",
+      "benchmark"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 0.875,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\comparison\\tidy17\\benchmark.log"
+  }
+]

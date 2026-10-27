@@ -1,0 +1,10 @@
+{
+  "protected_files": 1025,
+  "changed_protected_files": [],
+  "frozen_files": 87,
+  "changed_frozen_files": [],
+  "historical_csvs": 17,
+  "legacy_csv_writes_restored": [
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\results\\verified_performance.csv"
+  ]
+}

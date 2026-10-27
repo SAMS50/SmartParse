@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gcc14",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "14.2.0",
+    "format": "gcc-json",
+    "diagnostic_format": "json"
+  },
+  {
+    "id": "gcc16",
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "16.1.0",
+    "format": "gcc-sarif",
+    "diagnostic_format": "sarif-stderr"
+  },
+  {
+    "id": "cppcheck",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+    "kind": "cppcheck",
+    "version": "2.16.0",
+    "format": "cppcheck-xml"
+  },
+  {
+    "id": "tidy17",
+    "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+    "kind": "tidy",
+    "version": "17.0.2",
+    "format": "tidy-text",
+    "checks": [
+      "bugprone-integer-division",
+      "bugprone-misplaced-widening-cast",
+      "bugprone-sizeof-expression",
+      "clang-analyzer-core.NullDereference",
+      "clang-analyzer-core.StackAddressEscape",
+      "clang-analyzer-unix.Malloc",
+      "clang-analyzer-unix.MallocSizeof",
+      "clang-analyzer-unix.cstring.BadSizeArg"
+    ]
+  }
+]

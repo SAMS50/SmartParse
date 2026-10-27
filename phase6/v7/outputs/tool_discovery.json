@@ -1,0 +1,91 @@
+{
+  "roots": [
+    "C:\\MinGW",
+    "C:\\msys64",
+    "C:\\Program Files",
+    "C:\\Program Files (x86)",
+    "C:\\ProgramData\\chocolatey",
+    "C:\\Users\\saami\\AppData\\Local\\Programs",
+    "C:\\android-sdk\\ndk"
+  ],
+  "directories_examined": 7419,
+  "search_cutoff": true,
+  "search_seconds": 29.156,
+  "tools": [
+    {
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "returncode": 0,
+      "stdout": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0\r\nCopyright (C) 2016 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+      "stderr": "",
+      "fanalyzer": {
+        "returncode": 1,
+        "stderr": "gcc.exe: error: unrecognized command line option '-fanalyzer'\r\n"
+      }
+    },
+    {
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\clang-tidy.exe",
+      "error": "compiler call timed out; recovery stopped without further invocations"
+    },
+    {
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "error": "compiler call timed out; recovery stopped without further invocations"
+    },
+    {
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "error": "compiler call timed out; recovery stopped without further invocations"
+    },
+    {
+      "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+      "error": "compiler call timed out; recovery stopped without further invocations"
+    }
+  ],
+  "usage": {
+    "compiler_invocations": 3,
+    "elapsed_seconds": 9.14,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+        "stderr": "",
+        "elapsed_seconds": 0.25
+      },
+      {
+        "number": 2,
+        "role": "fanalyzer_probe",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-fsyntax-only",
+          "-fanalyzer",
+          "-"
+        ],
+        "status": "completed",
+        "returncode": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "gcc.exe: error: unrecognized command line option '-fanalyzer'\r\n",
+        "elapsed_seconds": 0.062
+      },
+      {
+        "number": 3,
+        "role": "version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\clang-tidy.exe",
+          "--version"
+        ],
+        "status": "timed_out",
+        "returncode": null,
+        "stderr": "",
+        "elapsed_seconds": 8.828
+      }
+    ]
+  },
+  "pyyaml_available": true
+}

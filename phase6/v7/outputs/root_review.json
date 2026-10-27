@@ -1,0 +1,1343 @@
+{
+  "reference_fingerprint": "4d738db08a893af75d4003a7576746ab460463cca2d50e3068b1979b0dec1aca",
+  "reviewer": "Codex-source-review",
+  "decisions": [
+    {
+      "tool": "baseline",
+      "root_id": "M5:null",
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "evidence": [
+        {
+          "case": "v5-null_bad",
+          "diagnostic_id": "core.NullDereference",
+          "line": 1,
+          "message": "Dereference of null pointer (loaded from variable 'p')",
+          "evidence_hash": "56e79c0087d44fa7ef0efffc7a650e6990d11572db222b4b7fe727c8bae968ad"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:null Source inspection: int f(void) { int *p=0; return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:double_free",
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "evidence": [
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "unix.Malloc",
+          "line": 2,
+          "message": "Attempt to free released memory",
+          "evidence_hash": "797bec24cea71c9abc17c62a3093e71294f2057e52fc28e7a78928970cf87961"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:double_free Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:use_after_free",
+      "source_sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "evidence": [
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "unix.Malloc",
+          "line": 2,
+          "message": "Use of memory after it is freed",
+          "evidence_hash": "efcef913e9ffec1879b026e03f9f6cebc90e72677d40d0540e4cfca63472b5de"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:use_after_free Source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:leak",
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "evidence": [
+        {
+          "case": "v5-leak_bad",
+          "diagnostic_id": "unix.Malloc",
+          "line": 2,
+          "message": "Potential leak of memory pointed to by 'p'",
+          "evidence_hash": "e68e964d663955d4c95a1fe594c0aef4155b19a3a168eb7b40c88ca2022e3e10"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:leak Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:stack_escape",
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "evidence": [
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "-Wreturn-stack-address",
+          "line": 1,
+          "message": "address of stack memory associated with local variable 'values' returned",
+          "evidence_hash": "f0043957c7dbf9d8d5d39ac5c94ae95aa92aa1f95d320fef57ffb3d6dd75113e"
+        },
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "core.StackAddressEscape",
+          "line": 1,
+          "message": "Address of stack memory associated with local variable 'values' returned to caller",
+          "evidence_hash": "cca3a99bdf476eb67e11fe414b2b53f7b0d9dd10a051f4a9762f8ef7e7316513"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stack_escape Source inspection: int *f(void) { int values[2]={0}; return values; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:fixed_bounds",
+      "source_sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+      "evidence": [
+        {
+          "case": "v5-fixed_bounds_bad",
+          "diagnostic_id": "alpha.security.ArrayBoundV2",
+          "line": 2,
+          "message": "Out of bound memory access (access exceeds upper limit of memory block)",
+          "evidence_hash": "6be0aee5332256b192604307b92b60a5c166a66450ab7de24b13e4ca9fba2a32"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:fixed_bounds Source inspection: #include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:string_bounds",
+      "source_sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "evidence": [
+        {
+          "case": "v5-string_bounds_bad",
+          "diagnostic_id": "-Wfortify-source",
+          "line": 2,
+          "message": "'strcpy' will always overflow; destination buffer has size 4, but the source string has length 7 (including NUL byte)",
+          "evidence_hash": "1a21cab4bcb61653cc6abdf0c157c3f2687a5baf3825b8723862cb642667ce17"
+        },
+        {
+          "case": "v5-string_bounds_bad",
+          "diagnostic_id": "alpha.unix.cstring.OutOfBounds",
+          "line": 2,
+          "message": "String copy function overflows the destination buffer",
+          "evidence_hash": "18a07227a8e255fd2fbcffa1b05b5b72b473f1607afe0d2f951b9a8f90cb5c28"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:string_bounds Source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M5:stream",
+      "source_sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "evidence": [
+        {
+          "case": "v5-stream_bad",
+          "diagnostic_id": "alpha.unix.Stream",
+          "line": 2,
+          "message": "Opened stream never closed. Potential resource leak",
+          "evidence_hash": "2bb2bc1b3c1caaee415225ccfdeb36bb37015a43543bf431b3dfec2e771c56c1"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stream Source inspection: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:condition_pair",
+      "source_sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88",
+      "evidence": [
+        {
+          "case": "v6-contradiction_bad",
+          "diagnostic_id": "-Wtautological-overlap-compare",
+          "line": 1,
+          "message": "overlapping comparisons always evaluate to false",
+          "evidence_hash": "487e406f742bf74b26311c748cc0cbac6b7ef80dccfee063d038dbc8553b1b2c"
+        },
+        {
+          "case": "v6-contradiction_bad",
+          "diagnostic_id": "SP6.contradictory_int_conjunction",
+          "line": 1,
+          "message": "Signed-int constraints have an empty intersection; this condition cannot be true.",
+          "evidence_hash": "5fe210fd40e059d21579e1cff511a74e8fb634af79822f6df10135ac3e9a08e4"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_pair Source inspection: int f(int x) { if (x < 5 && x > 10) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:condition_boundary",
+      "source_sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6",
+      "evidence": [
+        {
+          "case": "v6-contradiction_boundary_bad",
+          "diagnostic_id": "-Wtautological-overlap-compare",
+          "line": 1,
+          "message": "overlapping comparisons always evaluate to false",
+          "evidence_hash": "880f88cae1a01c61050531a7301d6f8dfd53f277f627e2c899755bd78e7434af"
+        },
+        {
+          "case": "v6-contradiction_boundary_bad",
+          "diagnostic_id": "SP6.contradictory_int_conjunction",
+          "line": 1,
+          "message": "Signed-int constraints have an empty intersection; this condition cannot be true.",
+          "evidence_hash": "0bedbfc59d4c20db94c862dedb2d5ff62f1b440904c4699c3e17566052158137"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_boundary Source inspection: int f(int x) { if (x <= 5 && x > 5) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:condition_three",
+      "source_sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e",
+      "evidence": [
+        {
+          "case": "v6-contradiction_three_bad",
+          "diagnostic_id": "SP6.contradictory_int_conjunction",
+          "line": 1,
+          "message": "Signed-int constraints have an empty intersection; this condition cannot be true.",
+          "evidence_hash": "1d7bd33af65eb29fc9e43a2f04506ab84a9f7d7d1b883d5e7ca5c1646d7e8850"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_three Source inspection: int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:dead_store",
+      "source_sha256": "3edf10fad406d21cda10955ee9dbcb7cc7f5c89d8d73ee01c868dbcdf32ee5b0",
+      "evidence": [
+        {
+          "case": "v6-overwrite_assignment_bad",
+          "diagnostic_id": "deadcode.DeadStores",
+          "line": 1,
+          "message": "Value stored to 'result' is never read",
+          "evidence_hash": "06ccb2629e26ede193645436992f4b8db16cdc9efc28ef3b33b6aa4b77d940f9"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:dead_store Source inspection: int f(int x) { int result; result=x; result=1; return result; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:scanf_width",
+      "source_sha256": "cdc8cdc25078384f418a0e9bc152a91957accbaf34b3771b2038f3ca66aab1a7",
+      "evidence": [
+        {
+          "case": "v6-scanf_width_bad",
+          "diagnostic_id": "-Wfortify-source",
+          "line": 2,
+          "message": "'scanf' may overflow; destination buffer in argument 2 has size 4, but the corresponding specifier may require size 5",
+          "evidence_hash": "38e4ec4ad116af5b73e8b85c9934bcfeb85a8fc75b15f2bd16fec535b0b7776c"
+        },
+        {
+          "case": "v6-scanf_width_bad",
+          "diagnostic_id": "SP6.fixed_buffer_input",
+          "line": 2,
+          "message": "Conversion width plus terminating NUL can exceed the known array capacity.",
+          "evidence_hash": "5495c5aacaf715a1a0521b81faba31249617d36becd0ce8881a8fa9cd6a6689a"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:scanf_width Source inspection: #include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%4s\", buffer); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:scanf_unbounded",
+      "source_sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556",
+      "evidence": [
+        {
+          "case": "v6-scanf_unbounded",
+          "diagnostic_id": "SP6.fixed_buffer_input",
+          "line": 2,
+          "message": "No conversion width bounds input to this known char array.",
+          "evidence_hash": "b9c6915552ba6170edfefcac816d653b6623ad14d2ebc23040c7751ec798bef8"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:scanf_unbounded Source inspection: #include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%s\", buffer); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:precision_context",
+      "source_sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696",
+      "evidence": [
+        {
+          "case": "v6-precision_review",
+          "diagnostic_id": "SP6.integer_division_to_float",
+          "line": 1,
+          "message": "Integer division occurs before the implicit floating conversion; any fractional part is already discarded.",
+          "evidence_hash": "766a6b7c330a54e96b63968ea723a219be077fec36b3134b6006f8a41a81628d"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:precision_context Source inspection: double f(int total, int count) { return total / count; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "baseline",
+      "root_id": "M6:precision_literal",
+      "source_sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a",
+      "evidence": [
+        {
+          "case": "v6-precision_literal_review",
+          "diagnostic_id": "SP6.integer_division_to_float",
+          "line": 1,
+          "message": "Integer division occurs before the implicit floating conversion; any fractional part is already discarded.",
+          "evidence_hash": "0106ce72ff3be4984662ec948360a70a522915ff0181e3cf342c417339640991"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:precision_literal Source inspection: double f(void) { return 7 / 2; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:null",
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "evidence": [
+        {
+          "case": "v5-null_bad",
+          "diagnostic_id": "-Wanalyzer-null-dereference",
+          "line": 1,
+          "message": "dereference of NULL 'p'",
+          "evidence_hash": "00aed1480255dc9985d29069f64b7742fcfb4cdc5894d84ca6dc944c985623f9"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:null Source inspection: int f(void) { int *p=0; return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:double_free",
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "evidence": [
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "-Wuse-after-free",
+          "line": 2,
+          "message": "pointer 'p' used after 'free'",
+          "evidence_hash": "19904dc1d3ad0ec473b9c68313faaee70ac937600e723ecc46f45440737382c5"
+        },
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "-Wanalyzer-double-free",
+          "line": 2,
+          "message": "double-'free' of 'p'",
+          "evidence_hash": "de75a80d835cf7e9db572b316b4e68421f8ea834904750dc117114d3d2385ae5"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:double_free Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:use_after_free",
+      "source_sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "evidence": [
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "-Wuse-after-free",
+          "line": 2,
+          "message": "pointer 'p' used after 'free'",
+          "evidence_hash": "ecb3d3e33636ccc263de6fd836150f7b9bddbbdc6c11287b9bf4186a3517c168"
+        },
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "-Wanalyzer-use-after-free",
+          "line": 2,
+          "message": "use after 'free' of 'p'",
+          "evidence_hash": "c040cdde817bbdb2819e3e133bd0be69094a3f8a490aba5887f96ad587b890d0"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:use_after_free Source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:leak",
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "evidence": [
+        {
+          "case": "v5-leak_bad",
+          "diagnostic_id": "-Wanalyzer-malloc-leak",
+          "line": 2,
+          "message": "leak of 'p'",
+          "evidence_hash": "2715c07d51bed00c23411da1a98f1d0c6e5be24c51ced6fb230bc5170914b463"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:leak Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:stack_escape",
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "evidence": [
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "-Wreturn-local-addr",
+          "line": 1,
+          "message": "function returns address of local variable",
+          "evidence_hash": "aba043c603d406f670c67de403f64194535b2121d6fb44125a33a48ed67d0302"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stack_escape Source inspection: int *f(void) { int values[2]={0}; return values; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:allocation_size",
+      "source_sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1",
+      "evidence": [
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "e9916c93d529e8861cc9efdd4a1bc81882f28612376cab8491f9e308c70dd317"
+        },
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "1c41e9db0de4650a8a969125781e3b03fcf55ad016af38426b53fe9b5535314a"
+        },
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "4e5d1a9ccfdae0832e88ea103e70a80abd45ecebbc583e66eac353507b84b58a"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "1d1dab1677ebc0ec2f7e47edc091cea98d39cb81927f2c394232b2d716c0c2a1"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "e2727299fc1a94ac74dbd9e77cce0e05f3fdac40f66be22e2d4de9eb76ae26d5"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "01198ab3c589517b23bd150999549d1ab97bdd79831098f624d3a483ecabd54e"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:allocation_size Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(1); if (!p) return; *p=1; free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:fixed_bounds",
+      "source_sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+      "evidence": [
+        {
+          "case": "v5-fixed_bounds_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "b002bc629fda4fa81d815367df0e7d611b12b4f2a18cb845bee4100e4c60c236"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:fixed_bounds Source inspection: #include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:string_bounds",
+      "source_sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "evidence": [
+        {
+          "case": "v5-string_bounds_bad",
+          "diagnostic_id": "-Wstringop-overflow=",
+          "line": 2,
+          "message": "'__builtin_memcpy' writing 7 bytes into a region of size 4 overflows the destination",
+          "evidence_hash": "92ca5adf91855ae55f4a558d6e16ea2dfe382a88195d979d0791e73fbe63c956"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:string_bounds Source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "M5:stream",
+      "source_sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "evidence": [
+        {
+          "case": "v5-stream_bad",
+          "diagnostic_id": "-Wanalyzer-file-leak",
+          "line": 2,
+          "message": "leak of FILE 'stream'",
+          "evidence_hash": "067e02fb61d3d5a78372a903f1a5209030f4246052a3d4683127cfa3193565fa"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stream Source inspection: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "NEW:alloc_literal_bad",
+      "source_sha256": "75c89ac33235872456b71a0572af9061bc6b796f8d8dfff0e0ecb1084b682309",
+      "evidence": [
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "c4e2f46fde8d56ecfadc71b60f60df75b4b894a2649c0d47d934c48eea4f57ee"
+        },
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "53b7cab0db3102cd293b40462b83d072a6de8e465f8c1f4e8cb7d622f64b5919"
+        },
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "ef0b4dd6d5dca7397d265711be359a92b00bc6208f1aae0b96366e422207d42c"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nvoid probe(void){ int *slot=malloc(1); if(!slot)return; *slot=42; free(slot); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "NEW:alloc_variable_bad",
+      "source_sha256": "0a085f718c64d42a02f7a8222fc1dbce4b2c34fed46f2e0b7eb20479df6465a5",
+      "evidence": [
+        {
+          "case": "holdout-alloc_variable_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "66f84f45d3196b83318a028f5064d78d221dc8cd61fee9af6392a6e5352d0f63"
+        },
+        {
+          "case": "holdout-alloc_variable_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "1c04a49753b72b486ff9aa78ca94c897e997fb6d599c69b97ebd6be0fb427f3c"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nvoid probe(void){ size_t bytes=1; int *slot=malloc(bytes); if(!slot)return; *slot=42; free(slot); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "NEW:alloc_helper_bad",
+      "source_sha256": "15169f61912bbb693e838c34c894c57013d8de77bfffcea71a06ca3aec26713c",
+      "evidence": [
+        {
+          "case": "holdout-alloc_helper_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 3,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "72bf80be80681881e63b4f1fcd1c7c3a5eb3fd46f807ec2b0b0f05994a422439"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nstatic void *reserve(void){return malloc(1);}\nvoid probe(void){int *slot=reserve();if(!slot)return;*slot=42;free(slot);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "NEW:overlap_bad",
+      "source_sha256": "e8f5d72de0c6b2b195d77eb7c6d1f280a666bc1808b809f09218bb1c7c3fee2b",
+      "evidence": [
+        {
+          "case": "holdout-overlap_bad",
+          "diagnostic_id": "-Wanalyzer-overlapping-buffers",
+          "line": 2,
+          "message": "overlapping buffers passed as arguments to 'memcpy'",
+          "evidence_hash": "dd415dd928efb6b4524c273bbab1d4505a5d146311e688b8b085a26da9fa1180"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "memcpy source [0,5) overlaps destination [1,6); memmove counterpart is valid. Source inspection: #include <string.h>\nvoid probe(void){char bytes[8]=\"abcdef\";memcpy(bytes+1,bytes,5);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc14",
+      "root_id": "REVIEW:alloc_unknown",
+      "source_sha256": "61e0a530c2e7dd35e7def2f4d6393384d5b459268d8a6f7a1d25d1a23cdf3931",
+      "evidence": [
+        {
+          "case": "holdout-alloc_unknown",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "72f20fa6cad2d7a251e703591ac26e925fcdc695505420b7936e35ddee23cd2f"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "Caller-provided byte extent is unknown; no unconditional allocation defect is established. Source inspection: #include <stdlib.h>\nvoid probe(size_t bytes){int *slot=malloc(bytes);if(!slot)return;*slot=42;free(slot);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:null",
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "evidence": [
+        {
+          "case": "v5-null_bad",
+          "diagnostic_id": "-Wanalyzer-null-dereference",
+          "line": 1,
+          "message": "dereference of NULL 'p'",
+          "evidence_hash": "6e42ae67efac611e5deb0b723d6699543cf130cd9c3d029bb76cb554768082ae"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:null Source inspection: int f(void) { int *p=0; return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:double_free",
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "evidence": [
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "-Wuse-after-free",
+          "line": 2,
+          "message": "pointer 'p' used after 'free'",
+          "evidence_hash": "e87027c370186ea78fc917790d6fe2ea3ed766d00f982a604419e08a8f01ff4e"
+        },
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "-Wanalyzer-double-free",
+          "line": 2,
+          "message": "double-'free' of 'p'",
+          "evidence_hash": "aa33d3bc54c5ed44bf2ec989d371cad9d1bc7ff44034fcf9b4fa7c421e0a6834"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:double_free Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:use_after_free",
+      "source_sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "evidence": [
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "-Wuse-after-free",
+          "line": 2,
+          "message": "pointer 'p' used after 'free'",
+          "evidence_hash": "baa9bdc73c938fa3dd1ce2c6c8fe95f6786751e55f1846c993558dd5acdceb48"
+        },
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "-Wanalyzer-use-after-free",
+          "line": 2,
+          "message": "use after 'free' of 'p'",
+          "evidence_hash": "ab2f901e5c7bd69d4c084c31f299e52bb5edfd610a5f1807f135e82d09af0008"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:use_after_free Source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:leak",
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "evidence": [
+        {
+          "case": "v5-leak_bad",
+          "diagnostic_id": "-Wanalyzer-malloc-leak",
+          "line": 2,
+          "message": "leak of 'p'",
+          "evidence_hash": "c9d76f89c05279d77d555086453d01458438ed2f7919dfc89f993ba9f74da784"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:leak Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:stack_escape",
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "evidence": [
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "-Wreturn-local-addr",
+          "line": 1,
+          "message": "function returns address of local variable",
+          "evidence_hash": "bcbf5cef10d0defc2cae4edb2ebdb8b0501660afb6dbfdb8b2ed6a7ee3cf2916"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stack_escape Source inspection: int *f(void) { int values[2]={0}; return values; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:allocation_size",
+      "source_sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1",
+      "evidence": [
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "ab5f69ebd60640622e20cec302e3fa5e1114ccbe629975577f223540ad6fe50b"
+        },
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "e973b74ee806b71a1acadda1dfe8c359a0fcc43d979274a72da36eeb3b857f44"
+        },
+        {
+          "case": "v5-allocation_size_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "3843c48d2d9c77d5ac4e29bbd9fcdaa6c4b97f3264e32385a9b295874f342726"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "9075239963da2d390a9351493ed426b89c69835e274c9f1fbe0cc6e5f4276fbb"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "212a0266137aa9867c28794a86d6efd964f46f025895b871b18b4e7771301b87"
+        },
+        {
+          "case": "v6-allocation_literal",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "58c778985507f523fc0ec8ec350a6c7c5978128f350732841f6962c585aed8c3"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:allocation_size Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(1); if (!p) return; *p=1; free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:fixed_bounds",
+      "source_sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+      "evidence": [
+        {
+          "case": "v5-fixed_bounds_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "3a45e8e101c187dfbe11d8dbc5e6ab1e0d8d78e437b3d20f1acd73231ec1733f"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:fixed_bounds Source inspection: #include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:string_bounds",
+      "source_sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "evidence": [
+        {
+          "case": "v5-string_bounds_bad",
+          "diagnostic_id": "-Wstringop-overflow=",
+          "line": 2,
+          "message": "'__builtin_memcpy' writing 7 bytes into a region of size 4 overflows the destination",
+          "evidence_hash": "d5fc4663af5454e6600f275892165a913e056892a7bd5e2879148e726bf739e6"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:string_bounds Source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "M5:stream",
+      "source_sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "evidence": [
+        {
+          "case": "v5-stream_bad",
+          "diagnostic_id": "-Wanalyzer-file-leak",
+          "line": 2,
+          "message": "leak of FILE 'stream'",
+          "evidence_hash": "f9ed51d9302bc09435d21ef7be62e2790b52f7ca8ed413d89748a03d6053747f"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stream Source inspection: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "NEW:alloc_literal_bad",
+      "source_sha256": "75c89ac33235872456b71a0572af9061bc6b796f8d8dfff0e0ecb1084b682309",
+      "evidence": [
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Walloc-size",
+          "line": 2,
+          "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+          "evidence_hash": "32bfa207a14b1028b0be4222fdfbb7cc57c63e95dc6ace4c65c5c071ff91813e"
+        },
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "9c3ee3fe34a65897c7bd5b131162678af1ae9e043c13865e2805a336ba582fc1"
+        },
+        {
+          "case": "holdout-alloc_literal_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "4559bb2c3da79abc4b2de7a034e84eb36e8fdef9d7ab79293abe08146524e77e"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nvoid probe(void){ int *slot=malloc(1); if(!slot)return; *slot=42; free(slot); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "NEW:alloc_variable_bad",
+      "source_sha256": "0a085f718c64d42a02f7a8222fc1dbce4b2c34fed46f2e0b7eb20479df6465a5",
+      "evidence": [
+        {
+          "case": "holdout-alloc_variable_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "c51daea76a31a4d20a249a4e35bb41f694be6e6f3e868b3fa6a7476033f6a512"
+        },
+        {
+          "case": "holdout-alloc_variable_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 2,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "3af58231863f35ba1a78852cc0a7e45e1a2763afca90bb1c4e7b618afa180109"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nvoid probe(void){ size_t bytes=1; int *slot=malloc(bytes); if(!slot)return; *slot=42; free(slot); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "NEW:alloc_helper_bad",
+      "source_sha256": "15169f61912bbb693e838c34c894c57013d8de77bfffcea71a06ca3aec26713c",
+      "evidence": [
+        {
+          "case": "holdout-alloc_helper_bad",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 3,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "a0ae588f92efd9c049009e30c8f543040893700b1b52a39a40100d8e5e4e8a28"
+        },
+        {
+          "case": "holdout-alloc_helper_bad",
+          "diagnostic_id": "-Wanalyzer-out-of-bounds",
+          "line": 3,
+          "message": "heap-based buffer overflow",
+          "evidence_hash": "b34a0bd581c87681d40e01d63dd53b51d973ad52ac551295266c0e652211508b"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Successful allocation extent is one byte; an int store requires four bytes on verified target. Source inspection: #include <stdlib.h>\nstatic void *reserve(void){return malloc(1);}\nvoid probe(void){int *slot=reserve();if(!slot)return;*slot=42;free(slot);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "NEW:overlap_bad",
+      "source_sha256": "e8f5d72de0c6b2b195d77eb7c6d1f280a666bc1808b809f09218bb1c7c3fee2b",
+      "evidence": [
+        {
+          "case": "holdout-overlap_bad",
+          "diagnostic_id": "-Wanalyzer-overlapping-buffers",
+          "line": 2,
+          "message": "overlapping buffers passed as arguments to 'memcpy'",
+          "evidence_hash": "fc77b45ef11b1969791a4d1df73b55719dee4b85c92a3c3abdf1656b69c39a07"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "memcpy source [0,5) overlaps destination [1,6); memmove counterpart is valid. Source inspection: #include <string.h>\nvoid probe(void){char bytes[8]=\"abcdef\";memcpy(bytes+1,bytes,5);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "gcc16",
+      "root_id": "REVIEW:alloc_unknown",
+      "source_sha256": "61e0a530c2e7dd35e7def2f4d6393384d5b459268d8a6f7a1d25d1a23cdf3931",
+      "evidence": [
+        {
+          "case": "holdout-alloc_unknown",
+          "diagnostic_id": "-Wanalyzer-allocation-size",
+          "line": 2,
+          "message": "allocated buffer size is not a multiple of the pointee's size",
+          "evidence_hash": "d012449c46f99bdc529f94a272664aa216cae7e5ecbc367fabb54ef09eae73a5"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "Caller-provided byte extent is unknown; no unconditional allocation defect is established. Source inspection: #include <stdlib.h>\nvoid probe(size_t bytes){int *slot=malloc(bytes);if(!slot)return;*slot=42;free(slot);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:null",
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "evidence": [
+        {
+          "case": "v5-null_bad",
+          "diagnostic_id": "nullPointer",
+          "line": 1,
+          "message": "Null pointer dereference: p",
+          "evidence_hash": "1b49b226ba1ddd7b5916265520bd6564b50c37fc14b837385cd55029b821c958"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:null Source inspection: int f(void) { int *p=0; return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:double_free",
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "evidence": [
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "doubleFree",
+          "line": 2,
+          "message": "Memory pointed to by 'p' is freed twice.",
+          "evidence_hash": "e5161305d1b7dafa7bdaad8c7cc83baa181bdb83d17e97c7debcc85aa16e7071"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:double_free Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:leak",
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "evidence": [
+        {
+          "case": "v5-leak_bad",
+          "diagnostic_id": "memleak",
+          "line": 2,
+          "message": "Memory leak: p",
+          "evidence_hash": "66ed832331557f79eaf6aa824b72c0006bb46bdd3683a9c12ac8ecb4a802bdd1"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:leak Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:stack_escape",
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "evidence": [
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "returnDanglingLifetime",
+          "line": 1,
+          "message": "Returning pointer to local variable 'values' that will be invalid when returning.",
+          "evidence_hash": "870f23a86c9a88adcabacf42b7dbe06b0d722bb909fc2b1c77da8f24061babfc"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stack_escape Source inspection: int *f(void) { int values[2]={0}; return values; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:string_bounds",
+      "source_sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "evidence": [
+        {
+          "case": "v5-string_bounds_bad",
+          "diagnostic_id": "bufferAccessOutOfBounds",
+          "line": 2,
+          "message": "Buffer is accessed out of bounds: buffer",
+          "evidence_hash": "182e7b4ad70ad0f9aced12d2d7d99442fa5a670e3401f6a5c9086b175d00cff7"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:string_bounds Source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M5:stream",
+      "source_sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "evidence": [
+        {
+          "case": "v5-stream_bad",
+          "diagnostic_id": "resourceLeak",
+          "line": 2,
+          "message": "Resource leak: stream",
+          "evidence_hash": "ef6ee6f99bab10406db0bac2f4c6309500e93e1a44a74e4ec672c6f1f954223e"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stream Source inspection: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M6:condition_pair",
+      "source_sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88",
+      "evidence": [
+        {
+          "case": "v6-contradiction_bad",
+          "diagnostic_id": "incorrectLogicOperator",
+          "line": 1,
+          "message": "Logical conjunction always evaluates to false: x < 5 && x > 10. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+          "evidence_hash": "dda3ba5befa4dd38f3de4cdb23b4eb62cd8eb4d05bd1e9a8e9d4770e7a51bc5c"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_pair Source inspection: int f(int x) { if (x < 5 && x > 10) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M6:condition_boundary",
+      "source_sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6",
+      "evidence": [
+        {
+          "case": "v6-contradiction_boundary_bad",
+          "diagnostic_id": "incorrectLogicOperator",
+          "line": 1,
+          "message": "Logical conjunction always evaluates to false: x <= 5 && x > 5. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+          "evidence_hash": "bc98d523f5aaeeaaab3f274bc7ae1a16c08d086c140fce556f69e555ac9c4e1c"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_boundary Source inspection: int f(int x) { if (x <= 5 && x > 5) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M6:condition_three",
+      "source_sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e",
+      "evidence": [
+        {
+          "case": "v6-contradiction_three_bad",
+          "diagnostic_id": "incorrectLogicOperator",
+          "line": 1,
+          "message": "Logical conjunction always evaluates to false: x <= 5 && x == 6. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+          "evidence_hash": "1aeeb77312188c13b6abc5f443eac2d8ca422d05fbd226ffe834abf5361b1cc0"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:condition_three Source inspection: int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "M6:scanf_unbounded",
+      "source_sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556",
+      "evidence": [
+        {
+          "case": "v6-scanf_unbounded",
+          "diagnostic_id": "invalidscanf",
+          "line": 2,
+          "message": "scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\\012\\012Sample program that can crash:\\012\\012#include <stdio.h>\\012int main()\\012{\\012    char c[5];\\012    scanf(\"%s\", c);\\012    return 0;\\012}\\012\\012Typing in 5 or more characters may make the program crash. The correct usage here is 'scanf(\"%4s\", c);', as the maximum field width does not include the terminating null byte.\\012Source: http://linux.die.net/man/3/scanf\\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c",
+          "evidence_hash": "159da0a1152b1aaa89eb39e3fb79784c0bb586330381b558052fb7d4bb3b0216"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:scanf_unbounded Source inspection: #include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%s\", buffer); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "NEW:late_widen_bad",
+      "source_sha256": "1eeec08199f940e467b7ae1da9ef2a5117421931afbd47330a669e766a967e32",
+      "evidence": [
+        {
+          "case": "holdout-late_widen_bad",
+          "diagnostic_id": "integerOverflow",
+          "line": 3,
+          "message": "Signed integer overflow for expression 'a*b'.",
+          "evidence_hash": "e5cf3a10e9ea0b17918564fbe46bd701c5a5f2bcf8fb833b8155f962632eaef9"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Static assertion fixes INT_MAX; 50000*50000 overflows int before widening. Source inspection: #include <limits.h>\n_Static_assert(INT_MAX==2147483647,\"32-bit int oracle\");\nlong long probe(void){int a=50000,b=50000;return (long long)(a*b);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "cppcheck",
+      "root_id": "NEW:overlap_bad",
+      "source_sha256": "e8f5d72de0c6b2b195d77eb7c6d1f280a666bc1808b809f09218bb1c7c3fee2b",
+      "evidence": [
+        {
+          "case": "holdout-overlap_bad",
+          "diagnostic_id": "overlappingWriteFunction",
+          "line": 2,
+          "message": "Overlapping read/write in memcpy() is undefined behavior",
+          "evidence_hash": "fce57d0c4535c11bacfb16fec9c423f80f796989e0f2847635f52a4b09314ff9"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "memcpy source [0,5) overlaps destination [1,6); memmove counterpart is valid. Source inspection: #include <string.h>\nvoid probe(void){char bytes[8]=\"abcdef\";memcpy(bytes+1,bytes,5);}",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M5:null",
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "evidence": [
+        {
+          "case": "v5-null_bad",
+          "diagnostic_id": "clang-analyzer-core.NullDereference",
+          "line": 1,
+          "message": "Dereference of null pointer (loaded from variable 'p')",
+          "evidence_hash": "b5fd40ba57e4c1b7d5ba939337b79d06e101ac7208fcce871986c73f6819201d"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:null Source inspection: int f(void) { int *p=0; return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M5:double_free",
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "evidence": [
+        {
+          "case": "v5-double_free_bad",
+          "diagnostic_id": "clang-analyzer-unix.Malloc",
+          "line": 2,
+          "message": "Attempt to free released memory",
+          "evidence_hash": "41d9fffa7d4877034583e65709f203e270cd76e2c7fe23415876fc486e2e2bcf"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:double_free Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M5:use_after_free",
+      "source_sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "evidence": [
+        {
+          "case": "v5-use_after_free_bad",
+          "diagnostic_id": "clang-analyzer-unix.Malloc",
+          "line": 2,
+          "message": "Use of memory after it is freed",
+          "evidence_hash": "eda17c847ba044d0640bd28ea8b483da55229a745c5b0838da9d63c7485e0f2a"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:use_after_free Source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M5:leak",
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "evidence": [
+        {
+          "case": "v5-leak_bad",
+          "diagnostic_id": "clang-analyzer-unix.Malloc",
+          "line": 2,
+          "message": "Potential leak of memory pointed to by 'p'",
+          "evidence_hash": "048a48e1d1ad51651fddfa7b702bfce259424dce406d65cb24550c2dfaf66ab2"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:leak Source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M5:stack_escape",
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "evidence": [
+        {
+          "case": "v5-stack_escape_bad",
+          "diagnostic_id": "clang-analyzer-core.StackAddressEscape",
+          "line": 1,
+          "message": "Address of stack memory associated with local variable 'values' returned to caller",
+          "evidence_hash": "e17f0f60fee855e36a8f98d88e332c89824eebac24763dfc8d735f6440b705a3"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "M5:stack_escape Source inspection: int *f(void) { int values[2]={0}; return values; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M6:precision_context",
+      "source_sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696",
+      "evidence": [
+        {
+          "case": "v6-precision_review",
+          "diagnostic_id": "bugprone-integer-division",
+          "line": 1,
+          "message": "result of integer division used in a floating point context; possible loss of precision",
+          "evidence_hash": "4921c960876712ab8ed2fea8200d2d01c6263258a01bccfd9f67566ed5ad83d2"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:precision_context Source inspection: double f(int total, int count) { return total / count; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "M6:precision_literal",
+      "source_sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a",
+      "evidence": [
+        {
+          "case": "v6-precision_literal_review",
+          "diagnostic_id": "bugprone-integer-division",
+          "line": 1,
+          "message": "result of integer division used in a floating point context; possible loss of precision",
+          "evidence_hash": "b7efab29682ab9266c40ad048bcd43b135f783072fbb6120cbace83f7b8a0cc6"
+        }
+      ],
+      "decision": "conditional_support",
+      "reviewer": "Codex-source-review",
+      "rationale": "M6:precision_literal Source inspection: double f(void) { return 7 / 2; }",
+      "independent_human_review_pending": true
+    },
+    {
+      "tool": "tidy17",
+      "root_id": "NEW:late_widen_bad",
+      "source_sha256": "1eeec08199f940e467b7ae1da9ef2a5117421931afbd47330a669e766a967e32",
+      "evidence": [
+        {
+          "case": "holdout-late_widen_bad",
+          "diagnostic_id": "bugprone-misplaced-widening-cast",
+          "line": 3,
+          "message": "either cast from 'int' to 'long long' is ineffective, or there is loss of precision before the conversion",
+          "evidence_hash": "f41d3d63cead75b926d13a4d0b500eb2fc8b16b6bb53f59283e4b06f73b00b65"
+        }
+      ],
+      "decision": "agent_source_supported",
+      "reviewer": "Codex-source-review",
+      "rationale": "Static assertion fixes INT_MAX; 50000*50000 overflows int before widening. Source inspection: #include <limits.h>\n_Static_assert(INT_MAX==2147483647,\"32-bit int oracle\");\nlong long probe(void){int a=50000,b=50000;return (long long)(a*b);}",
+      "independent_human_review_pending": true
+    }
+  ],
+  "precision": null,
+  "recall": null,
+  "independent_human_adjudication_pending": true
+}

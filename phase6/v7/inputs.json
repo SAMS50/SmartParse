@@ -1,0 +1,376 @@
+{
+  "schema_version": "1.0",
+  "standard": "c11",
+  "inputs": {
+    "v5-allocation_size_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\allocation_size_bad.c",
+      "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1",
+      "cohort": "v5"
+    },
+    "v5-allocation_size_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\allocation_size_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e",
+      "cohort": "v5"
+    },
+    "v5-double_free_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+      "sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "cohort": "v5"
+    },
+    "v5-double_free_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_good.c",
+      "sha256": "472af7a2abdb96cc60171d951fd7e3fb387333a6de0c9b516ffbbdd5e0de4689",
+      "cohort": "v5"
+    },
+    "v5-fixed_bounds_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+      "cohort": "v5"
+    },
+    "v5-fixed_bounds_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_good.c",
+      "sha256": "a1d3302fcb71d84309916e35033b021137d170f676bd511ab6763c1600b19d49",
+      "cohort": "v5"
+    },
+    "v5-leak_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+      "sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "cohort": "v5"
+    },
+    "v5-leak_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e",
+      "cohort": "v5"
+    },
+    "v5-malformed_semantic": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\malformed_semantic.c",
+      "sha256": "c736b46ddb45cc74f8934470d209aa0321ab2daeada9f51ccc80de7bcb3f98c4",
+      "cohort": "v5"
+    },
+    "v5-malformed_syntax": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\malformed_syntax.c",
+      "sha256": "71835568646eba218ce5ed007443ca750d61266c918aa966368dcfc7c5a29619",
+      "cohort": "v5"
+    },
+    "v5-null_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_bad.c",
+      "sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "cohort": "v5"
+    },
+    "v5-null_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_good.c",
+      "sha256": "763d4b20f52e5241724497e5dc88bb6dc95219c8f7c3ac225d731452828a5e5b",
+      "cohort": "v5"
+    },
+    "v5-stack_escape_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_bad.c",
+      "sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "cohort": "v5"
+    },
+    "v5-stack_escape_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_good.c",
+      "sha256": "7460bd088d2189f3029eb79f01a324c46cdd76d898b2eb335871d068868cd54f",
+      "cohort": "v5"
+    },
+    "v5-stream_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+      "sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "cohort": "v5"
+    },
+    "v5-stream_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_good.c",
+      "sha256": "6eb86607e78f987eccca0f99e14ad13cac9cbc4634b0e220f2c6cf120f96fb0a",
+      "cohort": "v5"
+    },
+    "v5-string_bounds_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\string_bounds_bad.c",
+      "sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "cohort": "v5"
+    },
+    "v5-string_bounds_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\string_bounds_good.c",
+      "sha256": "ed583bfd68219c5814a518fddff332a5a9704a908421b80b8f60b0a9515a5b93",
+      "cohort": "v5"
+    },
+    "v5-unknown_extent": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\unknown_extent.c",
+      "sha256": "13e18bd9d27b46c081a31096d300d7bcb66128696003991094c93f4605d27f23",
+      "cohort": "v5"
+    },
+    "v5-use_after_free_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "cohort": "v5"
+    },
+    "v5-use_after_free_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_good.c",
+      "sha256": "04ad456ecddb394da9a3634648baf3916b6e7344aaaf7c309b6c977f63155251",
+      "cohort": "v5"
+    },
+    "v5-valid": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\valid.c",
+      "sha256": "4f4e4fecd33a47f72e2c599736a8775ecf79710ac5d80040106e51beb34a0ba7",
+      "cohort": "v5"
+    },
+    "v6-allocation_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e",
+      "cohort": "v6"
+    },
+    "v6-allocation_index": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+      "sha256": "2245680aafd361df4ce467785d7d8520a8a0f2191b192127987892c51d4242b6",
+      "cohort": "v6"
+    },
+    "v6-allocation_literal": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_literal.c",
+      "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1",
+      "cohort": "v6"
+    },
+    "v6-allocation_sizeof": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_sizeof.c",
+      "sha256": "855c05f014aac2ed7c24eec7028776e757fca22ab22e843fabb839c05886e3ce",
+      "cohort": "v6"
+    },
+    "v6-contradiction_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c",
+      "sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88",
+      "cohort": "v6"
+    },
+    "v6-contradiction_boundary_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_boundary_bad.c",
+      "sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6",
+      "cohort": "v6"
+    },
+    "v6-contradiction_boundary_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_boundary_good.c",
+      "sha256": "fe8135d75d4110dc795bcf6d533c4672f839866d0fe119349274bdc4c5bb6880",
+      "cohort": "v6"
+    },
+    "v6-contradiction_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_good.c",
+      "sha256": "0f5a54893f327af94e180b6f0adbeacc148501b158f00634165ff0dff5e3a0f9",
+      "cohort": "v6"
+    },
+    "v6-contradiction_three_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c",
+      "sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e",
+      "cohort": "v6"
+    },
+    "v6-contradiction_three_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_good.c",
+      "sha256": "320ef0b2bbfcd53e5f1116f2c4043f593ea7e9b1dbb044b05f7a3d2719dc1abe",
+      "cohort": "v6"
+    },
+    "v6-conversion_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\conversion_control.c",
+      "sha256": "c973a9e20e1fad8b436cf8a0ddec992b34a0d56754fff79080ccba33bd658b1a",
+      "cohort": "v6"
+    },
+    "v6-different_variables": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\different_variables.c",
+      "sha256": "a5d47450123bbf7f6fbb90e3de67b37e3fc081c3b2b4b74b86e00cfcd45e907a",
+      "cohort": "v6"
+    },
+    "v6-macro_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\macro_control.c",
+      "sha256": "ea82929c3eb45efc008e6d9c48637f1f7d446b1fc41b20f30a1b898e9388297d",
+      "cohort": "v6"
+    },
+    "v6-malformed_semantic": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_semantic.c",
+      "sha256": "b65d83579a7dccb68512f7b8183580569bea8d2144243f383997b6879625056f",
+      "cohort": "v6"
+    },
+    "v6-malformed_syntax": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+      "sha256": "47f6f3b61714840c93296b1a0c773d4148e830c1b36b5b031dc940762024aff4",
+      "cohort": "v6"
+    },
+    "v6-overwrite_assignment_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_bad.c",
+      "sha256": "3edf10fad406d21cda10955ee9dbcb7cc7f5c89d8d73ee01c868dbcdf32ee5b0",
+      "cohort": "v6"
+    },
+    "v6-overwrite_assignment_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_good.c",
+      "sha256": "ff910e34185d93aee55e355be186b88b66cf7df0e9ce9665dbcac5e65bccd3bb",
+      "cohort": "v6"
+    },
+    "v6-overwrite_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_bad.c",
+      "sha256": "97933e8c77cf99d1d19587be3b46ef679d4a582e37b83e469986f3510d3eb468",
+      "cohort": "v6"
+    },
+    "v6-overwrite_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_good.c",
+      "sha256": "8d6dd8ceaac79043399f9b45a0a634e8b216253de8d667c2197142960573f09d",
+      "cohort": "v6"
+    },
+    "v6-precision_deliberate": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_deliberate.c",
+      "sha256": "96bb7de890fbe8e495361fdc7db92dadd02c911bd7b48c4e7e5e55768cf38098",
+      "cohort": "v6"
+    },
+    "v6-precision_exact": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_exact.c",
+      "sha256": "be240537714f9d5055eb07553c1609224f32ef6f008ca7713e06eccd223c61f0",
+      "cohort": "v6"
+    },
+    "v6-precision_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_good.c",
+      "sha256": "3f3e1b78c6292cc188dc49f65f2ff2fea4ecafa0e86cbf2ae128d64816db2e50",
+      "cohort": "v6"
+    },
+    "v6-precision_integer_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_integer_control.c",
+      "sha256": "c249dcb0d59ec57d0cabd1cd524e408768f7c6a924f9d47749e1f6b620533feb",
+      "cohort": "v6"
+    },
+    "v6-precision_literal_review": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_literal_review.c",
+      "sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a",
+      "cohort": "v6"
+    },
+    "v6-precision_macro": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_macro.c",
+      "sha256": "ecc046820124939fdef1c83cbbc8b2b4144ae8fc1adc86651d5eff653451c6c7",
+      "cohort": "v6"
+    },
+    "v6-precision_review": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_review.c",
+      "sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696",
+      "cohort": "v6"
+    },
+    "v6-precision_zero": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_zero.c",
+      "sha256": "0604c8b0fc09b1871199c763a843a2559026ddb29e818a74f91068bdaa2237db",
+      "cohort": "v6"
+    },
+    "v6-scanf_character_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_character_good.c",
+      "sha256": "91210eaa644b53a754f550bb713dd7824795d3af8e02bc9dc1baef2feafebdb9",
+      "cohort": "v6"
+    },
+    "v6-scanf_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_good.c",
+      "sha256": "2f3d13ed766af67f0f9f5307a3b0bd41172a0f900aac703bce9cade154b7deb0",
+      "cohort": "v6"
+    },
+    "v6-scanf_local_name": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_local_name.c",
+      "sha256": "961cca838de274de894ed195106d96a0205880371e0cd407e652c59a43c909ef",
+      "cohort": "v6"
+    },
+    "v6-scanf_suppressed": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_suppressed.c",
+      "sha256": "388bbd2bf187d74dce23b65a237dcb527277d436c6726f0e22842b05438bc83e",
+      "cohort": "v6"
+    },
+    "v6-scanf_unbounded": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unbounded.c",
+      "sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556",
+      "cohort": "v6"
+    },
+    "v6-scanf_unknown": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unknown.c",
+      "sha256": "26b680e4b14fdd3612b857d8f571e5013e9bffee95190657c231de8be98e394a",
+      "cohort": "v6"
+    },
+    "v6-scanf_width_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_width_bad.c",
+      "sha256": "cdc8cdc25078384f418a0e9bc152a91957accbaf34b3771b2038f3ca66aab1a7",
+      "cohort": "v6"
+    },
+    "v6-side_effect_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\side_effect_control.c",
+      "sha256": "195c772d919a5d82dfe01bcb10bb5e4ce0d9fd4b8cef9bf471d1c9ff29f61aaa",
+      "cohort": "v6"
+    },
+    "v6-swap_unknown": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\swap_unknown.c",
+      "sha256": "6b3429093b58a6770ef0e4850b3c45c8299177f2c215d05bf22a3e5032687044",
+      "cohort": "v6"
+    },
+    "v6-unsigned_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\unsigned_control.c",
+      "sha256": "3020132a6d148f3810abaf1c763509644dc22883a8ddd0b82d30125fb3e77535",
+      "cohort": "v6"
+    },
+    "v6-valid": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\valid.c",
+      "sha256": "1a0efe604440d96561e3075b2ec8bb90f8847d9709d24add37f9ea016221918c",
+      "cohort": "v6"
+    },
+    "v6-volatile_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\volatile_control.c",
+      "sha256": "eb27b13d02f54649905cfbcc931e905dd23e39176cf216ca77eb068e75621547",
+      "cohort": "v6"
+    },
+    "holdout-alloc_helper_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_helper_bad.c",
+      "sha256": "15169f61912bbb693e838c34c894c57013d8de77bfffcea71a06ca3aec26713c",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_helper_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_helper_good.c",
+      "sha256": "a9d00012e9ff06cfdfe6ab19ee4e1d86fe7f6dcc45dc01bcb54b4fe7d52f5d6b",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_literal_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_literal_bad.c",
+      "sha256": "75c89ac33235872456b71a0572af9061bc6b796f8d8dfff0e0ecb1084b682309",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_literal_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_literal_good.c",
+      "sha256": "1cd071095125c9165039656c67b8417266301bbb228df671b46844e9d185f376",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_unknown": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_unknown.c",
+      "sha256": "61e0a530c2e7dd35e7def2f4d6393384d5b459268d8a6f7a1d25d1a23cdf3931",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_variable_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_variable_bad.c",
+      "sha256": "0a085f718c64d42a02f7a8222fc1dbce4b2c34fed46f2e0b7eb20479df6465a5",
+      "cohort": "new-holdout"
+    },
+    "holdout-alloc_variable_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_variable_good.c",
+      "sha256": "7ecb8d55e2ca667bd14c276df906fa2847ff5974f3361cde30024fb9e6b1b2ed",
+      "cohort": "new-holdout"
+    },
+    "holdout-late_widen_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\late_widen_bad.c",
+      "sha256": "1eeec08199f940e467b7ae1da9ef2a5117421931afbd47330a669e766a967e32",
+      "cohort": "new-holdout"
+    },
+    "holdout-late_widen_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\late_widen_good.c",
+      "sha256": "b5c418bad6af4627fdd8a9da4b50cf36986d7ef72c662eb646003fb55892d2a3",
+      "cohort": "new-holdout"
+    },
+    "holdout-overlap_bad": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\overlap_bad.c",
+      "sha256": "e8f5d72de0c6b2b195d77eb7c6d1f280a666bc1808b809f09218bb1c7c3fee2b",
+      "cohort": "new-holdout"
+    },
+    "holdout-overlap_good": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\overlap_good.c",
+      "sha256": "10fbc5ac6e1aaab5e4513a7d2500cea9704f031374647bca5e44aa51097965de",
+      "cohort": "new-holdout"
+    },
+    "holdout-unsigned_modular_control": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+      "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+      "cohort": "new-holdout"
+    },
+    "benchmark": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "cohort": "benchmark"
+    }
+  }
+}

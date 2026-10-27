@@ -1,0 +1,32 @@
+{
+  "baseline_roots": 12,
+  "augmented_roots": 18,
+  "new_program_root_ids": [
+    "M5:allocation_size",
+    "NEW:alloc_helper_bad",
+    "NEW:alloc_literal_bad",
+    "NEW:alloc_variable_bad",
+    "NEW:late_widen_bad",
+    "NEW:overlap_bad"
+  ],
+  "new_families": [
+    "allocation_extent",
+    "late_signed_widen",
+    "overlapping_copy"
+  ],
+  "family_units_note": "One existing allocation root plus three new program variants share the allocation-extent family; source-identical v5/v6 copies are aliases, not extra roots.",
+  "benchmark_new_source_supported_roots": [
+    "ROOT-L0065",
+    "ROOT-L0078",
+    "ROOT-L0081",
+    "ROOT-L0263",
+    "ROOT-L0271",
+    "ROOT-L0287",
+    "ROOT-L0307",
+    "ROOT-L0308",
+    "ROOT-L0368"
+  ],
+  "independent_human_review_pending": true,
+  "precision": null,
+  "recall": null
+}

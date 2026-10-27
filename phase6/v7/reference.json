@@ -1,0 +1,561 @@
+{
+  "schema": "smartparse.external_source_review",
+  "schema_version": "1.0",
+  "units": [
+    {
+      "id": "M5:null",
+      "cases": [
+        "v5-null_bad"
+      ],
+      "source_sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "core.NullDereference",
+        "-Wanalyzer-(?:possible-)?null-dereference",
+        "nullPointer",
+        "clang-analyzer-core.NullDereference"
+      ],
+      "message_pattern": "null",
+      "conditional": false,
+      "family": "null",
+      "description": "M5:null",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int f(void) { int *p=0; return *p; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:double_free",
+      "cases": [
+        "v5-double_free_bad"
+      ],
+      "source_sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.Malloc",
+        "-Wanalyzer-double-free",
+        "-Wuse-after-free",
+        "doubleFree",
+        "clang-analyzer-unix.Malloc"
+      ],
+      "message_pattern": "free|released",
+      "conditional": false,
+      "family": "double_free",
+      "description": "M5:double_free",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:use_after_free",
+      "cases": [
+        "v5-use_after_free_bad"
+      ],
+      "source_sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.Malloc",
+        "-Wanalyzer-use-after-free",
+        "-Wuse-after-free",
+        "deallocuse",
+        "clang-analyzer-unix.Malloc"
+      ],
+      "message_pattern": "freed|after",
+      "conditional": false,
+      "family": "use_after_free",
+      "description": "M5:use_after_free",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:leak",
+      "cases": [
+        "v5-leak_bad"
+      ],
+      "source_sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.Malloc",
+        "-Wanalyzer-malloc-leak",
+        "memleak",
+        "clang-analyzer-unix.Malloc"
+      ],
+      "message_pattern": "leak",
+      "conditional": false,
+      "family": "leak",
+      "description": "M5:leak",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:stack_escape",
+      "cases": [
+        "v5-stack_escape_bad"
+      ],
+      "source_sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "core.StackAddressEscape",
+        "-Wreturn-stack-address",
+        "-Wreturn-local-addr",
+        "returnDanglingLifetime",
+        "clang-analyzer-core.StackAddressEscape",
+        "clang-diagnostic-return-stack-address"
+      ],
+      "message_pattern": "local|stack",
+      "conditional": false,
+      "family": "stack_escape",
+      "description": "M5:stack_escape",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int *f(void) { int values[2]={0}; return values; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:allocation_size",
+      "cases": [
+        "v5-allocation_size_bad",
+        "v6-allocation_literal"
+      ],
+      "source_sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.MallocSizeof",
+        "-Walloc-size",
+        "-Wanalyzer-allocation-size",
+        "-Wanalyzer-out-of-bounds",
+        "mallocSizeof",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "size|bound|overflow",
+      "conditional": false,
+      "family": "allocation_extent",
+      "description": "M5:allocation_size",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid f(void) { int *p=malloc(1); if (!p) return; *p=1; free(p); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:fixed_bounds",
+      "cases": [
+        "v5-fixed_bounds_bad"
+      ],
+      "source_sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "alpha.security.ArrayBoundV2",
+        "-Wanalyzer-out-of-bounds",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "bound|overflow",
+      "conditional": false,
+      "family": "fixed_bounds",
+      "description": "M5:fixed_bounds",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:string_bounds",
+      "cases": [
+        "v5-string_bounds_bad"
+      ],
+      "source_sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "alpha.unix.cstring.OutOfBounds",
+        "-Wfortify-source",
+        "-Wstringop-overflow=?",
+        "bufferAccessOutOfBounds",
+        "clang-diagnostic-fortify-source"
+      ],
+      "message_pattern": "bound|overflow|size",
+      "conditional": false,
+      "family": "string_bounds",
+      "description": "M5:string_bounds",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M5:stream",
+      "cases": [
+        "v5-stream_bad"
+      ],
+      "source_sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "alpha.unix.Stream",
+        "-Wanalyzer-file-leak",
+        "resourceLeak"
+      ],
+      "message_pattern": "leak|never closed",
+      "conditional": false,
+      "family": "stream",
+      "description": "M5:stream",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:condition_pair",
+      "cases": [
+        "v6-contradiction_bad"
+      ],
+      "source_sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "-Wtautological-overlap-compare",
+        "SP6.contradictory_int_conjunction",
+        "alpha.deadcode.UnreachableCode",
+        "incorrectLogicOperator",
+        "clang-diagnostic-tautological-overlap-compare"
+      ],
+      "message_pattern": "false|empty intersection|never executed",
+      "conditional": false,
+      "family": "M6:condition_pair",
+      "description": "M6:condition_pair",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int f(int x) { if (x < 5 && x > 10) return 1; return 0; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:condition_boundary",
+      "cases": [
+        "v6-contradiction_boundary_bad"
+      ],
+      "source_sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "-Wtautological-overlap-compare",
+        "SP6.contradictory_int_conjunction",
+        "alpha.deadcode.UnreachableCode",
+        "incorrectLogicOperator",
+        "clang-diagnostic-tautological-overlap-compare"
+      ],
+      "message_pattern": "false|empty intersection|never executed",
+      "conditional": false,
+      "family": "M6:condition_boundary",
+      "description": "M6:condition_boundary",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int f(int x) { if (x <= 5 && x > 5) return 1; return 0; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:condition_three",
+      "cases": [
+        "v6-contradiction_three_bad"
+      ],
+      "source_sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "SP6.contradictory_int_conjunction",
+        "alpha.deadcode.UnreachableCode",
+        "incorrectLogicOperator",
+        "clang-diagnostic-tautological-overlap-compare"
+      ],
+      "message_pattern": "false|empty intersection|never executed",
+      "conditional": false,
+      "family": "M6:condition_three",
+      "description": "M6:condition_three",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:dead_store",
+      "cases": [
+        "v6-overwrite_assignment_bad"
+      ],
+      "source_sha256": "3edf10fad406d21cda10955ee9dbcb7cc7f5c89d8d73ee01c868dbcdf32ee5b0",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "deadcode.DeadStores",
+        "clang-analyzer-deadcode.DeadStores"
+      ],
+      "message_pattern": "never read",
+      "conditional": false,
+      "family": "M6:dead_store",
+      "description": "M6:dead_store",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "int f(int x) { int result; result=x; result=1; return result; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:scanf_width",
+      "cases": [
+        "v6-scanf_width_bad"
+      ],
+      "source_sha256": "cdc8cdc25078384f418a0e9bc152a91957accbaf34b3771b2038f3ca66aab1a7",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "-Wfortify-source",
+        "SP6.fixed_buffer_input",
+        "invalidscanf",
+        "clang-diagnostic-fortify-source"
+      ],
+      "message_pattern": "scanf|conversion width|capacity",
+      "conditional": true,
+      "family": "M6:scanf_width",
+      "description": "M6:scanf_width",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%4s\", buffer); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:scanf_unbounded",
+      "cases": [
+        "v6-scanf_unbounded"
+      ],
+      "source_sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "SP6.fixed_buffer_input",
+        "invalidscanf",
+        "clang-diagnostic-fortify-source"
+      ],
+      "message_pattern": "scanf|conversion width|capacity",
+      "conditional": true,
+      "family": "M6:scanf_unbounded",
+      "description": "M6:scanf_unbounded",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%s\", buffer); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:precision_context",
+      "cases": [
+        "v6-precision_review"
+      ],
+      "source_sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "SP6.integer_division_to_float",
+        "bugprone-integer-division"
+      ],
+      "message_pattern": "integer division",
+      "conditional": true,
+      "family": "M6:precision_context",
+      "description": "M6:precision_context",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "double f(int total, int count) { return total / count; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "M6:precision_literal",
+      "cases": [
+        "v6-precision_literal_review"
+      ],
+      "source_sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a",
+      "anchors": [
+        1
+      ],
+      "identifier_patterns": [
+        "SP6.integer_division_to_float",
+        "bugprone-integer-division"
+      ],
+      "message_pattern": "integer division",
+      "conditional": true,
+      "family": "M6:precision_literal",
+      "description": "M6:precision_literal",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "double f(void) { return 7 / 2; }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "NEW:alloc_literal_bad",
+      "cases": [
+        "holdout-alloc_literal_bad"
+      ],
+      "source_sha256": "75c89ac33235872456b71a0572af9061bc6b796f8d8dfff0e0ecb1084b682309",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.MallocSizeof",
+        "-Walloc-size",
+        "-Wanalyzer-allocation-size",
+        "-Wanalyzer-out-of-bounds",
+        "mallocSizeof",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "size|bound|overflow",
+      "conditional": false,
+      "family": "allocation_extent",
+      "description": "Successful allocation extent is one byte; an int store requires four bytes on verified target.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid probe(void){ int *slot=malloc(1); if(!slot)return; *slot=42; free(slot); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "NEW:alloc_variable_bad",
+      "cases": [
+        "holdout-alloc_variable_bad"
+      ],
+      "source_sha256": "0a085f718c64d42a02f7a8222fc1dbce4b2c34fed46f2e0b7eb20479df6465a5",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.MallocSizeof",
+        "-Walloc-size",
+        "-Wanalyzer-allocation-size",
+        "-Wanalyzer-out-of-bounds",
+        "mallocSizeof",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "size|bound|overflow",
+      "conditional": false,
+      "family": "allocation_extent",
+      "description": "Successful allocation extent is one byte; an int store requires four bytes on verified target.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid probe(void){ size_t bytes=1; int *slot=malloc(bytes); if(!slot)return; *slot=42; free(slot); }",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "NEW:alloc_helper_bad",
+      "cases": [
+        "holdout-alloc_helper_bad"
+      ],
+      "source_sha256": "15169f61912bbb693e838c34c894c57013d8de77bfffcea71a06ca3aec26713c",
+      "anchors": [
+        1,
+        2,
+        3
+      ],
+      "identifier_patterns": [
+        "unix.MallocSizeof",
+        "-Walloc-size",
+        "-Wanalyzer-allocation-size",
+        "-Wanalyzer-out-of-bounds",
+        "mallocSizeof",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "size|bound|overflow",
+      "conditional": false,
+      "family": "allocation_extent",
+      "description": "Successful allocation extent is one byte; an int store requires four bytes on verified target.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nstatic void *reserve(void){return malloc(1);}\nvoid probe(void){int *slot=reserve();if(!slot)return;*slot=42;free(slot);}",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "NEW:late_widen_bad",
+      "cases": [
+        "holdout-late_widen_bad"
+      ],
+      "source_sha256": "1eeec08199f940e467b7ae1da9ef2a5117421931afbd47330a669e766a967e32",
+      "anchors": [
+        1,
+        2,
+        3
+      ],
+      "identifier_patterns": [
+        "integerOverflow",
+        "bugprone-misplaced-widening-cast"
+      ],
+      "message_pattern": "overflow|ineffective|precision",
+      "conditional": false,
+      "family": "late_signed_widen",
+      "description": "Static assertion fixes INT_MAX; 50000*50000 overflows int before widening.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <limits.h>\n_Static_assert(INT_MAX==2147483647,\"32-bit int oracle\");\nlong long probe(void){int a=50000,b=50000;return (long long)(a*b);}",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "NEW:overlap_bad",
+      "cases": [
+        "holdout-overlap_bad"
+      ],
+      "source_sha256": "e8f5d72de0c6b2b195d77eb7c6d1f280a666bc1808b809f09218bb1c7c3fee2b",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "-Wanalyzer-overlapping-buffers",
+        "overlappingWriteFunction",
+        "alpha.unix.cstring.BufferOverlap"
+      ],
+      "message_pattern": "overlap",
+      "conditional": false,
+      "family": "overlapping_copy",
+      "description": "memcpy source [0,5) overlaps destination [1,6); memmove counterpart is valid.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <string.h>\nvoid probe(void){char bytes[8]=\"abcdef\";memcpy(bytes+1,bytes,5);}",
+      "review_status": "Agent source review; independent human adjudication pending."
+    },
+    {
+      "id": "REVIEW:alloc_unknown",
+      "cases": [
+        "holdout-alloc_unknown"
+      ],
+      "source_sha256": "61e0a530c2e7dd35e7def2f4d6393384d5b459268d8a6f7a1d25d1a23cdf3931",
+      "anchors": [
+        1,
+        2
+      ],
+      "identifier_patterns": [
+        "unix.MallocSizeof",
+        "-Walloc-size",
+        "-Wanalyzer-allocation-size",
+        "-Wanalyzer-out-of-bounds",
+        "mallocSizeof",
+        "bufferAccessOutOfBounds"
+      ],
+      "message_pattern": "size|bound|overflow",
+      "conditional": true,
+      "family": "allocation_extent",
+      "description": "Caller-provided byte extent is unknown; no unconditional allocation defect is established.",
+      "reviewer": "Codex-source-review",
+      "source_rationale": "#include <stdlib.h>\nvoid probe(size_t bytes){int *slot=malloc(bytes);if(!slot)return;*slot=42;free(slot);}",
+      "review_status": "Agent source review; independent human adjudication pending."
+    }
+  ],
+  "precision": null,
+  "recall": null,
+  "scope": "Root/program units; aliases with identical source content share one unit. Conditional intent/input targets never count as established defects."
+}
