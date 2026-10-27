@@ -4,6 +4,7 @@ import re
 import sys
 
 from recovery import context, rank_candidates
+from cgar import search as cgar_search
 
 
 @dataclass(frozen=True)
@@ -78,15 +79,37 @@ class ParseError(Exception):
 
 
 class Parser:
-    def __init__(self, tokens, validate_repairs=True, scoring_mode="contextual"):
+    def __init__(self, tokens, validate_repairs=True, scoring_mode="contextual", validation_policy="all", validation_margin=10, multi_token_recovery=False, adaptive_recovery=False, recovery_max_edits=3, recovery_max_nodes=64, verified_cgar=False, verified_max_edits=3, verified_max_nodes=150):
         self.tokens = tokens
+        self.verified_cgar = verified_cgar
+        if verified_max_edits < 1 or verified_max_nodes < 1:
+            raise ValueError("verified CGAR budgets must be positive")
+        self.verified_max_edits = verified_max_edits
+        self.verified_max_nodes = verified_max_nodes
+        self.verified_cgar_status = "not_attempted"
+        self.verified_cgar_advice = None
         self.i = 0
         self.diagnostics = []
         self.repairs = []
         self.max_errors = 50
         self.validate_repairs = validate_repairs
         self.scoring_mode = scoring_mode
+        if validation_policy not in ("all", "selective"):
+            raise ValueError("validation_policy must be all or selective")
+        if validation_margin < 0:
+            raise ValueError("validation_margin must be nonnegative")
+        self.validation_policy = validation_policy
+        self.validation_margin = validation_margin
+        self.validation_stats = {"eligible": 0, "probed": 0, "skipped_confident": 0}
         self.statement_starts = []
+        if recovery_max_edits < 1 or recovery_max_nodes < 1:
+            raise ValueError("recovery budgets must be positive")
+        self.adaptive_recovery = adaptive_recovery
+        self.recovery_max_edits = recovery_max_edits
+        self.recovery_max_nodes = recovery_max_nodes
+        self.adaptive_stats = {"attempted": 0, "accepted": 0}
+        self.multi_token_recovery = multi_token_recovery
+        self.multi_token_stats = {"attempted": 0, "accepted": 0}
 
     def peek(self, offset=0):
         return self.tokens[
@@ -115,9 +138,89 @@ class Parser:
                 "message": message
             })
 
+    def _try_bounded_pair(self, expected):
+        """Recognize a two-edit punctuation pattern at an expected closer.
+
+        Delete a redundant punctuation token followed by a mismatched closer.
+        This deliberately bounded, evidence-based rule never scans further than
+        the next token and never modifies the original source token objects.
+        """
+        if expected not in (")", "}", "]"):
+            return None
+        first = self.peek()
+        second = self.peek(1)
+        if first.value not in (";", ",") or second.value not in (")", "}", "]"):
+            return None
+        if second.value == expected:
+            return None  # Already handled by the single-token deletion rule.
+        self.multi_token_stats["attempted"] += 1
+        # A mismatched closer immediately after stray punctuation provides
+        # evidence for exactly two edits: delete then substitute.
+        self.take()
+        self.take()
+        self.multi_token_stats["accepted"] += 1
+        edits = (
+            ("delete", first, first.value, "remove stray punctuation before mismatched closer"),
+            ("substitute", second, second.value, "replace mismatched closing delimiter"),
+        )
+        for operation, original, actual, reason in edits:
+            message = (f"Unexpected '{actual}' before '{expected}'." if operation == "delete"
+                       else f"Expected '{expected}' instead of '{actual}'.")
+            self.report(original, message)
+            self.repairs.append({
+                "operation": operation, "token": expected, "from": actual,
+                "line": original.line, "column": original.col,
+                "score": None, "score_factors": {"bounded_two_edit_pattern": 1},
+                "scoring_mode": self.scoring_mode, "reason": reason,
+                "context": context(self.tokens, self.i - 2, expected),
+                "grammar_validation": None,
+                "multi_token": True,
+            })
+        return Token(expected, expected, second.line, second.col)
+
+    def _try_adaptive(self, expected):
+        self.adaptive_stats["attempted"] += 1
+        plan = cgar_search(self.tokens, self.i, expected,
+                           max_edits=self.recovery_max_edits,
+                           max_nodes=self.recovery_max_nodes)
+        if plan is None:
+            return None
+        start = self.i
+        for operation, original, replacement in plan.edits:
+            self.report(original, (f"Unexpected '{original.value}' before '{expected}'."
+                         if operation == "delete" else
+                         f"Expected '{replacement}' instead of '{original.value}' ."))
+            self.repairs.append({
+                "operation": operation,
+                "token": replacement if replacement is not None else expected,
+                "from": original.value, "line": original.line,
+                "column": original.col, "score": None,
+                "score_factors": {"cgar_budgeted_search": 1},
+                "scoring_mode": self.scoring_mode,
+                "reason": plan.evidence,
+                "context": context(self.tokens, start, expected),
+                "grammar_validation": None, "multi_token": True,
+                "adaptive_recovery": True,
+            })
+        for _ in range(plan.consumed):
+            self.take()
+        self.adaptive_stats["accepted"] += 1
+        last = self.tokens[start + plan.consumed - 1]
+        return Token(expected, expected, last.line, last.col)
+
     def expect(self, value):
         if self.at(value):
             return self.take()
+
+        if self.adaptive_recovery:
+            repaired = self._try_adaptive(value)
+            if repaired is not None:
+                return repaired
+
+        if self.multi_token_recovery:
+            paired = self._try_bounded_pair(value)
+            if paired is not None:
+                return paired
 
         token = self.peek()
         index = self.i
@@ -136,14 +239,24 @@ class Parser:
             and len(candidates) > 1
             and self.statement_starts
         ):
-            from local_validation import choose_candidate
-
-            chosen, validation = choose_candidate(
-                self.tokens,
-                self.statement_starts[-1],
-                index,
-                candidates
+            self.validation_stats["eligible"] += 1
+            margin = candidates[0].score - candidates[1].score
+            should_probe = (
+                self.validation_policy == "all"
+                or margin <= self.validation_margin
             )
+            if should_probe:
+                from local_validation import choose_candidate
+
+                chosen, validation = choose_candidate(
+                    self.tokens,
+                    self.statement_starts[-1],
+                    index,
+                    candidates
+                )
+                self.validation_stats["probed"] += 1
+            else:
+                self.validation_stats["skipped_confident"] += 1
 
         if chosen.operation == "insert":
             message = (
@@ -202,7 +315,70 @@ class Parser:
             )
         return self.take()
 
+    def _try_verified_cgar(self):
+        """Opt-in whole-program advisor; never changes the caller's tokens.
+
+        Only a strictly valid proposed correction is used to report repairs.
+        Abstentions fall through to the existing recovery pipeline.
+        """
+        from cgar_reliable import advise
+        from cgar_verified import _strict_error
+        from difflib import SequenceMatcher
+
+        # Token values separated by whitespace preserve lexical token boundaries.
+        # The planner works on token indices, while diagnostics use original locations.
+        source = " ".join(t.value for t in self.tokens if t.kind != "EOF")
+        try:
+            advice = advise(source, max_edits=self.verified_max_edits,
+                            max_nodes=self.verified_max_nodes)
+        except (ValueError, LexError):
+            self.verified_cgar_status = "abstain"
+            return False
+        self.verified_cgar_advice = advice
+        self.verified_cgar_status = advice.status
+        if advice.status != "verified_candidate" or advice.result is None:
+            return False
+        corrected = advice.result.corrected
+        if _strict_error(corrected) is not None:
+            self.verified_cgar_status = "abstain"
+            return False
+
+        original = [t for t in self.tokens if t.kind != "EOF"]
+        proposed = [t for t in corrected if t.kind != "EOF"]
+        matcher = SequenceMatcher(a=[t.value for t in original],
+                                  b=[t.value for t in proposed], autojunk=False)
+        changes = []
+        for tag, a0, a1, b0, b1 in matcher.get_opcodes():
+            if tag == "equal":
+                continue
+            anchor = self.tokens[min(a0, len(self.tokens) - 1)]
+            before = " ".join(t.value for t in original[a0:a1])
+            after = " ".join(t.value for t in proposed[b0:b1])
+            operation = {"insert": "insert", "delete": "delete", "replace": "substitute"}[tag]
+            changes.append((anchor, operation, before, after))
+        if not changes:
+            self.verified_cgar_status = "unchanged"
+            return False
+        for token, operation, before, after in changes:
+            message = (f"CGAR suggested {operation}: "
+                       f"{before!r} -> {after!r}; grammar-verified, intent unconfirmed.")
+            self.report(token, message)
+            self.repairs.append({
+                "operation": operation, "token": after or None,
+                "from": before or None, "line": token.line, "column": token.col,
+                "score": None, "score_factors": {"strict_grammar_verified": 1},
+                "scoring_mode": self.scoring_mode,
+                "reason": "Whole-program grammar-verified candidate; author intent not proven",
+                "context": None, "grammar_validation": "whole_program_pass",
+                "verified_cgar": True,
+            })
+        self.i = len(self.tokens) - 1
+        return True
+
     def parse(self):
+        if self.verified_cgar and self.i == 0:
+            if self._try_verified_cgar():
+                return self.diagnostics
         while self.peek().kind != "EOF":
             if len(self.diagnostics) >= self.max_errors:
                 break

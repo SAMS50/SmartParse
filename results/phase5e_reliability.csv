@@ -1,0 +1,17 @@
+case,category,status,exact_reference,wrong_suggestion,explanation
+S01,missing_semicolon,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S02,wrong_closer,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S03,missing_and_wrong,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S04,extra_punctuation,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S05,extra_two_punctuation,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S06,missing_closer,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S07,extra_semicolon,ambiguous_valid,0,0,Consecutive semicolons are legal empty statements; removal may change intent.
+S08,missing_block_close,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S09,valid,unchanged,1,0,Input already parses under the supported grammar.
+S10,valid_nested,unchanged,1,0,Input already parses under the supported grammar.
+S11,incomplete_expression,abstain,0,0,No safe grammar-verified repair found within the search budget; no value was guessed.
+S12,missing_identifier,abstain,0,0,No safe grammar-verified repair found within the search budget; no value was guessed.
+S13,wrong_operator,verified_candidate,1,0,Declaration expects an initializer operator; replacing == with = parses.
+S14,missing_two_semicolons,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S15,wrong_block_closer,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.
+S16,extra_comma,verified_candidate,1,0,Candidate passes strict grammar validation; programmer intent remains unverified.

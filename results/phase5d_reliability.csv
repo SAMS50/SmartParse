@@ -1,0 +1,17 @@
+case,category,requires_edit,plan_found,grammar_valid,exact_reference,wrong_valid_repair,abstained,edits,explored,median_ms,existing_parser_repairs,existing_parser_diagnostics,suggested
+S01,missing_semicolon,1,1,1,1,0,0,1,2,0.0348,1,1,"(('insert', 4, ';'),)"
+S02,wrong_closer,1,1,1,1,0,0,1,4,0.0773,1,1,"(('substitute', 5, ']->)'),)"
+S03,missing_and_wrong,1,1,1,1,0,0,2,5,0.0817,2,2,"(('insert', 4, ';'), ('substitute', 10, ']->)'))"
+S04,extra_punctuation,1,1,1,1,0,0,1,3,0.0491,1,1,"(('delete', 5, ';'),)"
+S05,extra_two_punctuation,1,1,1,1,0,0,2,6,0.0756,1,3,"(('delete', 5, ';'), ('delete', 5, ','))"
+S06,missing_closer,1,1,1,1,0,0,1,2,0.0342,1,1,"(('insert', 5, ')'),)"
+S07,extra_semicolon,1,1,1,0,1,0,0,1,0.0131,0,0,()
+S08,missing_block_close,1,1,1,1,0,0,1,2,0.0341,1,1,"(('insert', 11, '}'),)"
+S09,valid,0,1,1,1,0,0,0,1,0.011,0,0,()
+S10,valid_nested,0,1,1,1,0,0,0,1,0.0304,0,0,()
+S11,incomplete_expression,1,0,0,0,0,1,0,,0.016,0,1,NONE
+S12,missing_identifier,1,0,0,0,0,1,0,,0.0083,0,1,NONE
+S13,wrong_operator,1,0,0,0,0,1,0,,0.0176,0,1,NONE
+S14,missing_two_semicolons,1,1,1,1,0,0,2,3,0.0341,2,2,"(('insert', 4, ';'), ('insert', 9, ';'))"
+S15,wrong_block_closer,1,1,1,1,0,0,2,3,0.0501,1,2,"(('delete', 11, ']'), ('insert', 11, '}'))"
+S16,extra_comma,1,1,1,1,0,0,1,2,0.0178,0,1,"(('delete', 3, ','),)"

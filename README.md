@@ -1,3 +1,19 @@
+# SmartParse — Final project release (Phase 5H)
+
+**Start here:** [Final release and evaluation guide](FINAL_RELEASE.md). This is a research prototype for a **restricted C-like grammar**, not a complete C compiler. The optional CGAR mode supplies bounded whole-program grammar-verified *suggestions* with conservative abstention; it does not guarantee programmer intent.
+
+Quick start (from `smartparse_work`):
+
+```powershell
+python -m unittest discover -v
+python demo.py --example multiple --mode cgar
+python phase5g_eval.py --repeats 5
+```
+
+The latest four-mode comparison is in `PHASE5G_NOTES.md` and `FINAL_RELEASE.md`. Historical results and conclusions below describe **earlier experiments** and must not be treated as a head-to-head exact-repair accuracy comparison with CGAR.
+
+---
+
 
 # SmartParse
 ### A Context-Aware Error Recovery System for Improved Compiler Diagnostics
