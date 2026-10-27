@@ -1,0 +1,6 @@
+test_two_rounds_and_edit_budget (phase6.v3.test_recovery.LiveRecoveryTests.test_two_rounds_and_edit_budget) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.643s
+
+OK

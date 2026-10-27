@@ -1,0 +1,6 @@
+test_spaces_unicode_crlf_json_cli (phase6.v4.test_isolation.LiveTests.test_spaces_unicode_crlf_json_cli) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.165s
+
+OK

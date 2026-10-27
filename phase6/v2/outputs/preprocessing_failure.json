@@ -1,0 +1,625 @@
+{
+  "schema": "smartparse.analysis_eligibility",
+  "schema_version": "1.0",
+  "manifest": {
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c",
+      "sha256": "5ec54002c0607e948d0a4a413712d8f7dedc684db2c367c3193f59a687858157",
+      "bytes": 82,
+      "physical_lines": 2,
+      "encoding": "UTF-8",
+      "original_source_unchanged": true,
+      "pre_analysis_sha256": "5ec54002c0607e948d0a4a413712d8f7dedc684db2c367c3193f59a687858157"
+    },
+    "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+    "requested_standard": null,
+    "include_directories": [],
+    "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures",
+    "macro_definitions": [],
+    "locale": {
+      "LC_ALL": "C",
+      "LANG": "C"
+    },
+    "include_environment": {
+      "CPATH": null,
+      "C_INCLUDE_PATH": null,
+      "INCLUDE": null,
+      "SDKROOT": null
+    },
+    "tool_contexts": {
+      "compiler": {
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "requested_standard": null,
+        "standard_selection": "compiler_default",
+        "target": "x86_64-w64-windows-gnu",
+        "target_basis": "driver -dumpmachine, no target override supported by this mode",
+        "standard_macros": {
+          "__SIZEOF_POINTER__": "8",
+          "__STDC_VERSION__": "201710L",
+          "__STDC__": "1"
+        },
+        "system_include_paths": [
+          "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+          "C:/MinGW/mingw32/include",
+          "C:/MinGW/include"
+        ],
+        "enabled_default_checkers": null,
+        "checker_selection": "not_requested",
+        "probes": {
+          "target": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-dumpmachine"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "14ca52f473c03e43adcd02ecd2a6da4e554e7261eb736bfcbf935762772e3ba2",
+            "stdout_bytes": 23
+          },
+          "standard_macros": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-dM",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "31767a9fe8821454353b4c28b5a156ea1ed7aa73036ce6a7c710e2fb6cc8f78f",
+            "stdout_bytes": 13075
+          },
+          "include_search": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-v",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\r\n (in-process)\r\n \"C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\" -cc1 -triple x86_64-w64-windows-gnu -E -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name - -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -resource-dir C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17 -internal-isystem C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include -internal-isystem C:/MinGW/mingw32/include -internal-isystem C:/MinGW/mingw32/usr/include -internal-isystem C:/MinGW/include -fdebug-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o - -x c -\r\nclang -cc1 version 17.0.2 based upon LLVM 17.0.2 default target x86_64-w64-windows-gnu\r\nignoring nonexistent directory \"C:/MinGW/mingw32/usr/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include\r\n C:/MinGW/mingw32/include\r\n C:/MinGW/include\r\nEnd of search list.\r\n",
+            "stdout_sha256": "4bf30b2f3e0bd46aad5129c162b8d6b0449442808e67c754bf7e0bb3505eecc1",
+            "stdout_bytes": 132
+          }
+        },
+        "capabilities": {
+          "syntax_only": "verified by existing compiler discovery",
+          "validated_optional_flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ],
+          "target_query": "observed",
+          "standard_metadata": "observed",
+          "include_search": "observed",
+          "enabled_checker_list": "not requested",
+          "ast_inventory": "partial"
+        }
+      },
+      "analyzer": {
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "requested_standard": null,
+        "standard_selection": "compiler_default",
+        "target": "x86_64-w64-windows-gnu",
+        "target_basis": "driver -dumpmachine, no target override supported by this mode",
+        "standard_macros": {
+          "__SIZEOF_POINTER__": "8",
+          "__STDC_VERSION__": "201710L",
+          "__STDC__": "1"
+        },
+        "system_include_paths": [
+          "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+          "C:/MinGW/mingw32/include",
+          "C:/MinGW/include"
+        ],
+        "enabled_default_checkers": [
+          "apiModeling.Errno",
+          "core.CallAndMessageModeling",
+          "apiModeling.StdCLibraryFunctions",
+          "apiModeling.TrustNonnull",
+          "apiModeling.TrustReturnsNonnull",
+          "apiModeling.llvm.CastValue",
+          "apiModeling.llvm.ReturnValue",
+          "core.CallAndMessage",
+          "core.DivideZero",
+          "core.DynamicTypePropagation",
+          "core.NonNullParamChecker",
+          "core.NonnilStringConstants",
+          "core.NullDereference",
+          "core.StackAddrEscapeBase",
+          "core.StackAddressEscape",
+          "core.UndefinedBinaryOperatorResult",
+          "core.VLASize",
+          "core.builtin.BuiltinFunctions",
+          "core.builtin.NoReturnFunctions",
+          "core.uninitialized.ArraySubscript",
+          "core.uninitialized.Assign",
+          "core.uninitialized.Branch",
+          "core.uninitialized.CapturedBlockVariable",
+          "core.uninitialized.UndefReturn",
+          "deadcode.DeadStores",
+          "nullability.NullabilityBase",
+          "nullability.NullPassedToNonnull",
+          "nullability.NullReturnedFromNonnull",
+          "security.insecureAPI.SecuritySyntaxChecker",
+          "security.insecureAPI.UncheckedReturn",
+          "security.insecureAPI.getpw",
+          "security.insecureAPI.gets",
+          "security.insecureAPI.mkstemp",
+          "security.insecureAPI.mktemp",
+          "security.insecureAPI.vfork",
+          "unix.API",
+          "unix.cstring.CStringModeling",
+          "unix.DynamicMemoryModeling",
+          "unix.Malloc",
+          "unix.MallocSizeof",
+          "unix.MismatchedDeallocator",
+          "unix.Vfork",
+          "unix.cstring.BadSizeArg",
+          "unix.cstring.NullArg"
+        ],
+        "checker_selection": "driver_defaults",
+        "probes": {
+          "target": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-dumpmachine"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "14ca52f473c03e43adcd02ecd2a6da4e554e7261eb736bfcbf935762772e3ba2",
+            "stdout_bytes": 23
+          },
+          "standard_macros": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-dM",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "31767a9fe8821454353b4c28b5a156ea1ed7aa73036ce6a7c710e2fb6cc8f78f",
+            "stdout_bytes": 13075
+          },
+          "include_search": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-v",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\r\n (in-process)\r\n \"C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\" -cc1 -triple x86_64-w64-windows-gnu -E -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name - -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -resource-dir C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17 -internal-isystem C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include -internal-isystem C:/MinGW/mingw32/include -internal-isystem C:/MinGW/mingw32/usr/include -internal-isystem C:/MinGW/include -fdebug-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o - -x c -\r\nclang -cc1 version 17.0.2 based upon LLVM 17.0.2 default target x86_64-w64-windows-gnu\r\nignoring nonexistent directory \"C:/MinGW/mingw32/usr/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include\r\n C:/MinGW/mingw32/include\r\n C:/MinGW/include\r\nEnd of search list.\r\n",
+            "stdout_sha256": "4bf30b2f3e0bd46aad5129c162b8d6b0449442808e67c754bf7e0bb3505eecc1",
+            "stdout_bytes": 132
+          },
+          "enabled_checkers": {
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--analyze",
+              "-x",
+              "c",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-Xanalyzer",
+              "-analyzer-output=text",
+              "-o",
+              "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-eligibility-q68lxemt\\checkers.txt",
+              "-Xclang",
+              "-analyzer-list-enabled-checkers",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stderr": "",
+            "stdout_sha256": "6515f897a5ca55e700707f119243fcbda12a6d6b3b884645ce6f7701665b322d",
+            "stdout_bytes": 1211
+          }
+        },
+        "capabilities": {
+          "syntax_only": "verified by existing compiler discovery",
+          "validated_optional_flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ],
+          "target_query": "observed",
+          "standard_metadata": "observed",
+          "include_search": "observed",
+          "enabled_checker_list": "observed",
+          "ast_inventory": "not requested"
+        }
+      }
+    },
+    "warning_options": {
+      "compiler": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses"
+      ],
+      "analyzer": []
+    },
+    "checker_options": "driver defaults; observed enabled list in analyzer context, unknown if query unavailable"
+  },
+  "stages": {
+    "compiler": {
+      "completion": "partial",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "partial",
+      "returncode": 1
+    },
+    "preprocessing_probe": {
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "-x",
+        "c",
+        "-E",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c"
+      ],
+      "status": "failed",
+      "returncode": 1,
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c:1:10: fatal error: 'eligibility_intentionally_missing.h' file not found\r\n#include \"eligibility_intentionally_missing.h\"\r\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n1 error generated.\r\n",
+      "stdout_sha256": "8c7e5d8944e8635d867b87924f8cd997e93d063f688997fa0047401f65b9b564",
+      "stdout_bytes": 345
+    }
+  },
+  "blockers": [
+    {
+      "stage": "compiler",
+      "category": "preprocessing/configuration",
+      "message": "'eligibility_intentionally_missing.h' file not found",
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c",
+        "line": 1,
+        "column": 10
+      },
+      "basis": "compiler-reported error; not a new independent defect"
+    },
+    {
+      "stage": "compiler",
+      "category": "analyzer limitations",
+      "message": "Compiler could not finish analysis normally",
+      "location": null,
+      "basis": "tool completion issue"
+    },
+    {
+      "stage": "analyzer",
+      "category": "preprocessing/configuration",
+      "message": "'eligibility_intentionally_missing.h' file not found",
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c",
+        "line": 1,
+        "column": 10
+      },
+      "basis": "compiler-reported error; not a new independent defect"
+    },
+    {
+      "stage": "analyzer",
+      "category": "analyzer limitations",
+      "message": "Clang Static Analyzer did not finish normally",
+      "location": null,
+      "basis": "tool completion issue"
+    },
+    {
+      "stage": "preprocessing_probe",
+      "category": "preprocessing/configuration",
+      "message": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c:1:10: fatal error: 'eligibility_intentionally_missing.h' file not found\r\n#include \"eligibility_intentionally_missing.h\"\r\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n1 error generated.\r\n",
+      "location": null,
+      "basis": "independent preprocessing-only invocation"
+    }
+  ],
+  "region_inventory": {
+    "status": "partial",
+    "regions": [
+      {
+        "id": "function:47:unaffected",
+        "kind": "function",
+        "name": "unaffected",
+        "mapping": "physical-main-file-byte-offsets",
+        "start_byte": 47,
+        "end_byte_exclusive": 81,
+        "start_line": 2,
+        "end_line": 2,
+        "reliability": "validated_ast_range"
+      }
+    ],
+    "exclusions": [],
+    "basis": "Clang AST offsets verified against main-file bytes; partial AST never establishes analysis coverage",
+    "probe": {
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-Xclang",
+        "-ast-dump=json",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c"
+      ],
+      "status": "failed",
+      "returncode": 1,
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c:1:10: fatal error: 'eligibility_intentionally_missing.h' file not found\r\n#include \"eligibility_intentionally_missing.h\"\r\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n1 error generated.\r\n",
+      "stdout_sha256": "709501ff4730127231b1bf94952c34f098862443360b2387a66cb52e0e5b5c4c",
+      "stdout_bytes": 5130
+    },
+    "capability_probe": {
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-Xclang",
+        "-ast-dump=json",
+        "-"
+      ],
+      "status": "completed",
+      "returncode": 0,
+      "stderr": "",
+      "stdout_sha256": "d9ea1cb53d553b0875484faccb65ffd15355316da24e7c835e26ff54200906ea",
+      "stdout_bytes": 5047
+    },
+    "configured_definitions_complete": false
+  },
+  "regions": [
+    {
+      "id": "translation_unit",
+      "kind": "translation_unit",
+      "name": null,
+      "start_line": 1,
+      "end_line": 2,
+      "mapping": "original physical file; configured preprocessing only",
+      "compiler_coverage": {
+        "status": "blocked",
+        "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+      },
+      "analyzer_coverage": {
+        "status": "blocked",
+        "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+      }
+    },
+    {
+      "id": "function:47:unaffected",
+      "kind": "function",
+      "name": "unaffected",
+      "mapping": "physical-main-file-byte-offsets",
+      "start_byte": 47,
+      "end_byte_exclusive": 81,
+      "start_line": 2,
+      "end_line": 2,
+      "reliability": "validated_ast_range",
+      "compiler_coverage": {
+        "status": "blocked",
+        "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+      },
+      "analyzer_coverage": {
+        "status": "blocked",
+        "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+      }
+    }
+  ],
+  "mapping": {
+    "source_edits_applied": false,
+    "function_locations": "physical byte offsets and lines in hashed main file",
+    "diagnostic_locations": "compiler-reported; #line/presumed filenames are retained without unverified physical remapping",
+    "macros": "macro-generated/ambiguous bodies excluded; inactive branches are not claimed covered",
+    "headers": "header diagnostics retained in original analysis; main-file inventory is not header coverage"
+  },
+  "analysis": {
+    "schema_version": "1.0",
+    "analysis_mode": "extended_c",
+    "status": "partial",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 1
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c",
+        "line": 1,
+        "column": 10,
+        "severity": "fatal error",
+        "message": "'eligibility_intentionally_missing.h' file not found",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "#include \"eligibility_intentionally_missing.h\"",
+        "diagnostic_id": null
+      }
+    ],
+    "tool_issues": [
+      "Compiler could not finish analysis normally"
+    ],
+    "execution": {
+      "returncode": 1,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c:1:10: fatal error: 'eligibility_intentionally_missing.h' file not found\r\n#include \"eligibility_intentionally_missing.h\"\r\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n1 error generated.\r\n"
+    },
+    "unrecognized_output": [],
+    "static_analysis": {
+      "schema_version": "1.0",
+      "analysis_mode": "clang_static_analyzer",
+      "status": "partial",
+      "compiler": {
+        "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "backend": "clang",
+        "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+        "flags": [
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info"
+        ]
+      },
+      "summary": {
+        "total_diagnostics": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 0,
+          "semantic/type": 0,
+          "compiler warning": 0,
+          "unknown": 1
+        }
+      },
+      "diagnostics": [
+        {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c",
+          "line": 1,
+          "column": 10,
+          "severity": "fatal error",
+          "message": "'eligibility_intentionally_missing.h' file not found",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "#include \"eligibility_intentionally_missing.h\"",
+          "diagnostic_id": null
+        }
+      ],
+      "tool_issues": [
+        "Clang Static Analyzer did not finish normally"
+      ],
+      "execution": {
+        "returncode": 1,
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "--analyze",
+          "-x",
+          "c",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-Xanalyzer",
+          "-analyzer-output=text",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-analyzer-rbirp0mm\\analysis.txt",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c"
+        ]
+      },
+      "raw_output": {
+        "stdout": "",
+        "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\preprocessing_failure.c:1:10: fatal error: 'eligibility_intentionally_missing.h' file not found\r\n#include \"eligibility_intentionally_missing.h\"\r\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n1 error generated.\r\n"
+      },
+      "unrecognized_output": [],
+      "findings": [],
+      "findings_summary": {
+        "total_diagnostics": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 0,
+          "semantic/type": 0,
+          "compiler warning": 0,
+          "unknown": 0
+        }
+      }
+    }
+  }
+}

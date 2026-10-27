@@ -1,0 +1,6 @@
+test_duplicate_and_excluded_findings_not_counted (phase6.v4.test_isolation.LiveTests.test_duplicate_and_excluded_findings_not_counted) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.794s
+
+OK

@@ -1,0 +1,383 @@
+{
+  "baseline": {
+    "reports": 22,
+    "completed": 20,
+    "partial": 2,
+    "compiler_invocations": 429,
+    "analyzer_invocations": 51,
+    "elapsed_seconds_sum": 90.516,
+    "per_case": [
+      {
+        "case": "allocation_size_bad",
+        "status": "completed",
+        "calls": 30,
+        "analyzer_calls": 9,
+        "seconds": 6.688,
+        "primary_observations": 0
+      },
+      {
+        "case": "allocation_size_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.953,
+        "primary_observations": 0
+      },
+      {
+        "case": "double_free_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.313,
+        "primary_observations": 1
+      },
+      {
+        "case": "double_free_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.563,
+        "primary_observations": 0
+      },
+      {
+        "case": "fixed_bounds_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.953,
+        "primary_observations": 0
+      },
+      {
+        "case": "fixed_bounds_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.875,
+        "primary_observations": 0
+      },
+      {
+        "case": "leak_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 6.312,
+        "primary_observations": 1
+      },
+      {
+        "case": "leak_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.14,
+        "primary_observations": 0
+      },
+      {
+        "case": "malformed_semantic",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.25,
+        "primary_observations": 0
+      },
+      {
+        "case": "malformed_syntax",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.234,
+        "primary_observations": 0
+      },
+      {
+        "case": "null_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.984,
+        "primary_observations": 1
+      },
+      {
+        "case": "null_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.219,
+        "primary_observations": 0
+      },
+      {
+        "case": "stack_escape_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.157,
+        "primary_observations": 1
+      },
+      {
+        "case": "stack_escape_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.093,
+        "primary_observations": 0
+      },
+      {
+        "case": "stream_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.266,
+        "primary_observations": 0
+      },
+      {
+        "case": "stream_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.687,
+        "primary_observations": 0
+      },
+      {
+        "case": "string_bounds_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.094,
+        "primary_observations": 0
+      },
+      {
+        "case": "string_bounds_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.531,
+        "primary_observations": 0
+      },
+      {
+        "case": "unknown_extent",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.063,
+        "primary_observations": 0
+      },
+      {
+        "case": "use_after_free_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.188,
+        "primary_observations": 1
+      },
+      {
+        "case": "use_after_free_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.828,
+        "primary_observations": 0
+      },
+      {
+        "case": "valid",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 4.125,
+        "primary_observations": 0
+      }
+    ]
+  },
+  "configured": {
+    "reports": 23,
+    "completed": 21,
+    "partial": 2,
+    "compiler_invocations": 459,
+    "analyzer_invocations": 56,
+    "elapsed_seconds_sum": 69.189,
+    "per_case": [
+      {
+        "case": "allocation_size_bad",
+        "status": "completed",
+        "calls": 30,
+        "analyzer_calls": 9,
+        "seconds": 3.89,
+        "primary_observations": 0
+      },
+      {
+        "case": "allocation_size_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.187,
+        "primary_observations": 0
+      },
+      {
+        "case": "double_free_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.188,
+        "primary_observations": 1
+      },
+      {
+        "case": "double_free_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.015,
+        "primary_observations": 0
+      },
+      {
+        "case": "fixed_bounds_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.547,
+        "primary_observations": 1
+      },
+      {
+        "case": "fixed_bounds_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.407,
+        "primary_observations": 0
+      },
+      {
+        "case": "leak_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.375,
+        "primary_observations": 1
+      },
+      {
+        "case": "leak_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.593,
+        "primary_observations": 0
+      },
+      {
+        "case": "malformed_isolated",
+        "status": "completed",
+        "calls": 30,
+        "analyzer_calls": 5,
+        "seconds": 5.204,
+        "primary_observations": 1
+      },
+      {
+        "case": "malformed_semantic",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.563,
+        "primary_observations": 0
+      },
+      {
+        "case": "malformed_syntax",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.422,
+        "primary_observations": 0
+      },
+      {
+        "case": "null_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.391,
+        "primary_observations": 1
+      },
+      {
+        "case": "null_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.25,
+        "primary_observations": 0
+      },
+      {
+        "case": "stack_escape_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.094,
+        "primary_observations": 1
+      },
+      {
+        "case": "stack_escape_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.828,
+        "primary_observations": 0
+      },
+      {
+        "case": "stream_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.579,
+        "primary_observations": 1
+      },
+      {
+        "case": "stream_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.172,
+        "primary_observations": 0
+      },
+      {
+        "case": "string_bounds_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.328,
+        "primary_observations": 1
+      },
+      {
+        "case": "string_bounds_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.953,
+        "primary_observations": 0
+      },
+      {
+        "case": "unknown_extent",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.594,
+        "primary_observations": 0
+      },
+      {
+        "case": "use_after_free_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.516,
+        "primary_observations": 1
+      },
+      {
+        "case": "use_after_free_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.859,
+        "primary_observations": 0
+      },
+      {
+        "case": "valid",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.234,
+        "primary_observations": 0
+      }
+    ],
+    "includes_additional_conditioned_report": true
+  }
+}

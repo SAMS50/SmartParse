@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:smartparse:analysis-eligibility:1.0",
+  "title": "SmartParse opt-in analysis eligibility envelope",
+  "type": "object",
+  "required": ["schema", "schema_version", "manifest", "stages", "blockers", "region_inventory", "regions", "mapping", "analysis"],
+  "properties": {
+    "schema": {"const": "smartparse.analysis_eligibility"},
+    "schema_version": {"const": "1.0"},
+    "manifest": {
+      "type": "object",
+      "required": ["source", "working_directory", "requested_standard", "include_directories", "macro_definitions", "tool_contexts", "warning_options", "checker_options"],
+      "properties": {
+        "source": {
+          "type": "object",
+          "required": ["path", "sha256", "original_source_unchanged", "pre_analysis_sha256"],
+          "properties": {
+            "path": {"type": "string"},
+            "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+            "pre_analysis_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+            "original_source_unchanged": {"type": ["boolean", "null"]},
+            "encoding": {"enum": ["UTF-8", "unknown/non-UTF-8"]},
+            "bytes": {"type": "integer", "minimum": 0},
+            "physical_lines": {"type": "integer", "minimum": 0}
+          }
+        },
+        "requested_standard": {"type": ["string", "null"]},
+        "working_directory": {"type": "string"},
+        "include_directories": {"type": "array", "items": {"type": "object", "required": ["provided", "resolved"]}},
+        "macro_definitions": {"type": "array", "items": {"type": "string"}},
+        "tool_contexts": {"type": "object"},
+        "warning_options": {"type": "object"},
+        "checker_options": {"type": "string"}
+      }
+    },
+    "stages": {
+      "type": "object",
+      "required": ["compiler", "analyzer", "preprocessing_probe"],
+      "properties": {
+        "compiler": {"$ref": "#/$defs/stage"},
+        "analyzer": {"$ref": "#/$defs/stage"},
+        "preprocessing_probe": {"type": "object", "required": ["status"]}
+      }
+    },
+    "blockers": {"type": "array", "items": {"$ref": "#/$defs/blocker"}},
+    "region_inventory": {"type": "object", "required": ["status", "regions", "exclusions", "basis"]},
+    "regions": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/region"}},
+    "mapping": {"type": "object", "required": ["source_edits_applied"], "properties": {"source_edits_applied": {"const": false}}},
+    "analysis": {"type": "object", "required": ["schema_version", "analysis_mode", "status", "diagnostics", "summary", "raw_output"]}
+  },
+  "$defs": {
+    "stage": {
+      "type": "object", "required": ["completion", "returncode"],
+      "properties": {
+        "completion": {"enum": ["completed", "failed", "partial", "timed_out", "unavailable", "not_attempted"]},
+        "returncode": {"type": ["integer", "null"]}
+      }
+    },
+    "coverage": {
+      "type": "object", "required": ["status", "reason"],
+      "properties": {
+        "status": {"enum": ["completed", "blocked", "not_attempted", "unknown"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "blocker": {
+      "type": "object", "required": ["stage", "category", "message", "location", "basis"],
+      "properties": {
+        "stage": {"type": "string"},
+        "category": {"enum": ["preprocessing/configuration", "syntax", "semantic/type", "timeout", "analyzer limitations"]},
+        "message": {"type": "string"},
+        "location": {"type": ["object", "null"]},
+        "basis": {"type": "string"}
+      }
+    },
+    "region": {
+      "type": "object", "required": ["id", "kind", "name", "start_line", "end_line", "compiler_coverage", "analyzer_coverage"],
+      "properties": {
+        "id": {"type": "string"},
+        "kind": {"enum": ["translation_unit", "function"]},
+        "name": {"type": ["string", "null"]},
+        "start_line": {"type": ["integer", "null"], "minimum": 1},
+        "end_line": {"type": ["integer", "null"], "minimum": 0},
+        "compiler_coverage": {"$ref": "#/$defs/coverage"},
+        "analyzer_coverage": {"$ref": "#/$defs/coverage"}
+      },
+      "if": {"properties": {"kind": {"const": "function"}}},
+      "then": {
+        "required": ["start_byte", "end_byte_exclusive", "reliability"],
+        "properties": {"reliability": {"const": "validated_ast_range"}}
+      }
+    }
+  }
+}

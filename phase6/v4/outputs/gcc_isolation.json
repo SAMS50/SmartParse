@@ -1,0 +1,522 @@
+{
+  "schema": "smartparse.unaffected_regions",
+  "schema_version": "1.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c",
+    "sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541",
+    "original_unchanged": true
+  },
+  "recovery_report": {
+    "schema": "smartparse.repair_for_analysis",
+    "schema_version": "1.0",
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c",
+      "sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541",
+      "original_unchanged": true
+    },
+    "baseline": {
+      "immutable": true,
+      "source_sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541",
+      "analysis": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\MinGW\\bin\\gcc.exe",
+          "backend": "gcc",
+          "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 0,
+          "errors": 0,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 0,
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": ""
+        },
+        "unrecognized_output": []
+      },
+      "eligibility": {
+        "schema": "smartparse.analysis_eligibility",
+        "schema_version": "1.0",
+        "manifest": {
+          "source": {
+            "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c",
+            "sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541",
+            "bytes": 40,
+            "physical_lines": 4,
+            "original_source_unchanged": true,
+            "pre_analysis_sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541",
+            "snapshot_kind": "original",
+            "original_file_sha256": "ef313903a7afa2895d407eb8bdbe0e699419c8a3e8d952648bd09e59805b6541"
+          },
+          "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+          "requested_standard": null,
+          "include_directories": [],
+          "macro_definitions": [],
+          "warning_options": {
+            "compiler": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-fmax-errors=0"
+            ],
+            "analyzer": []
+          },
+          "checker_options": "driver defaults; query recorded if static analysis requested",
+          "tool_contexts": {
+            "compiler": {
+              "compiler": {
+                "path": "C:\\MinGW\\bin\\gcc.exe",
+                "backend": "gcc",
+                "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+                "flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-fmax-errors=0"
+                ]
+              },
+              "target": "mingw32",
+              "standard_macros": {
+                "__SIZEOF_POINTER__": "4",
+                "__STDC_VERSION__": "201112L",
+                "__STDC__": "1"
+              },
+              "system_include_paths": [
+                "c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/include",
+                "c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/../../../../include",
+                "c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/include-fixed",
+                "c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"
+              ]
+            }
+          },
+          "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures",
+          "include_environment": {
+            "CPATH": null,
+            "C_INCLUDE_PATH": null,
+            "INCLUDE": null,
+            "SDKROOT": null
+          }
+        },
+        "stages": {
+          "compiler": {
+            "completion": "completed",
+            "returncode": 0,
+            "frontend_accepted": true
+          },
+          "analyzer": {
+            "completion": "not_attempted",
+            "returncode": null
+          },
+          "preprocessing_probe": {
+            "status": "see_recovery_budget_log"
+          }
+        },
+        "blockers": [],
+        "region_inventory": {
+          "status": "unsupported",
+          "regions": [],
+          "exclusions": [],
+          "basis": "No verified Clang AST inventory available"
+        },
+        "regions": [
+          {
+            "id": "translation_unit",
+            "kind": "translation_unit",
+            "name": null,
+            "start_line": 1,
+            "end_line": 4,
+            "compiler_coverage": {
+              "status": "completed",
+              "reason": "Configured frontend accepted this translation unit; not a static-analysis or all-configurations claim."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          }
+        ],
+        "mapping": {
+          "source_edits_applied": false,
+          "private_overlay_edits": false,
+          "function_locations": "physical bytes of this source snapshot; variant maps stored in recovery provenance"
+        },
+        "analysis": {
+          "schema_version": "1.0",
+          "analysis_mode": "extended_c",
+          "status": "completed",
+          "compiler": {
+            "path": "C:\\MinGW\\bin\\gcc.exe",
+            "backend": "gcc",
+            "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+            "flags": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-fmax-errors=0"
+            ]
+          },
+          "summary": {
+            "total_diagnostics": 0,
+            "errors": 0,
+            "warnings": 0,
+            "notes": 0,
+            "categories": {
+              "syntax": 0,
+              "semantic/type": 0,
+              "compiler warning": 0,
+              "unknown": 0
+            }
+          },
+          "diagnostics": [],
+          "tool_issues": [],
+          "execution": {
+            "returncode": 0,
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-fmax-errors=0",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c"
+            ]
+          },
+          "raw_output": {
+            "stdout": "",
+            "stderr": ""
+          },
+          "unrecognized_output": []
+        }
+      },
+      "analysis_sha256": "da3eb47e1ea385aa7a6670192a98f2ca9ebeff9df1ca7b8b78804015a238d8dd"
+    },
+    "recovery": {
+      "enabled": false,
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 64,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 90,
+        "call_seconds": 10
+      },
+      "candidates": [],
+      "accepted_variants": [],
+      "non_whitelisted_suggestions": [],
+      "stop_reason": "repair_not_requested",
+      "eligibility_change": {
+        "baseline_frontend_accepted": true,
+        "final_frontend_accepted": true,
+        "frontend_newly_eligible": false,
+        "analyzer_newly_completed": false,
+        "function_path_coverage_certified": false,
+        "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+      },
+      "temporary_workspace_removed": true,
+      "usage": {
+        "compiler_invocations": 13,
+        "elapsed_seconds": 1.5,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+            "stderr": "",
+            "elapsed_seconds": 0.079
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.141
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.141
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.14
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.11
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fmax-errors=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 9,
+            "role": "target_context",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-dumpmachine"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "107353f636c46e95d852b2e328a81a24e9b1f8e2a85e5fb3a63e7a792897954b",
+            "stderr": "",
+            "elapsed_seconds": 0.047
+          },
+          {
+            "number": 10,
+            "role": "standard_context",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-E",
+              "-dM",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "45e6155562c012631a8d6cf24b7e551a7f25d3dcf694ae71ffed5a54727609cd",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 11,
+            "role": "include_context",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-E",
+              "-v",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "d686b7c96f287611c05956174de3ec0ef964e821d5f89f358429648a9f8ae11c",
+            "stderr": "Using built-in specs.\r\nCOLLECT_GCC=C:\\MinGW\\bin\\gcc.exe\r\nTarget: mingw32\r\nConfigured with: ../src/gcc-6.3.0/configure --build=x86_64-pc-linux-gnu --host=mingw32 --target=mingw32 --with-gmp=/mingw --with-mpfr --with-mpc=/mingw --with-isl=/mingw --prefix=/mingw --disable-win32-registry --with-arch=i586 --with-tune=generic --enable-languages=c,c++,objc,obj-c++,fortran,ada --with-pkgversion='MinGW.org GCC-6.3.0-1' --enable-static --enable-shared --enable-threads --with-dwarf2 --disable-sjlj-exceptions --enable-version-specific-runtime-libs --with-libiconv-prefix=/mingw --with-libintl-prefix=/mingw --enable-libstdcxx-debug --enable-libgomp --disable-libvtv --enable-nls\r\nThread model: win32\r\ngcc version 6.3.0 (MinGW.org GCC-6.3.0-1) \r\nCOLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic' '-march=i586'\r\n c:/mingw/bin/../libexec/gcc/mingw32/6.3.0/cc1.exe -E -quiet -v -iprefix c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/ - -mtune=generic -march=i586\r\nignoring duplicate directory \"c:/mingw/lib/gcc/../../lib/gcc/mingw32/6.3.0/include\"\r\nignoring duplicate directory \"/mingw/lib/gcc/mingw32/6.3.0/../../../../include\"\r\nignoring duplicate directory \"c:/mingw/lib/gcc/../../include\"\r\nignoring duplicate directory \"c:/mingw/lib/gcc/../../lib/gcc/mingw32/6.3.0/include-fixed\"\r\nignoring duplicate directory \"c:/mingw/lib/gcc/../../lib/gcc/mingw32/6.3.0/../../../../mingw32/include\"\r\nignoring duplicate directory \"/mingw/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/include\r\n c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/../../../../include\r\n c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/include-fixed\r\n c:\\mingw\\bin\\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include\r\nEnd of search list.\r\nCOMPILER_PATH=c:/mingw/bin/../libexec/gcc/mingw32/6.3.0/;c:/mingw/bin/../libexec/gcc/;c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/\r\nLIBRARY_PATH=c:/mingw/bin/../lib/gcc/mingw32/6.3.0/;c:/mingw/bin/../lib/gcc/;c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/lib/;c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../\r\nCOLLECT_GCC_OPTIONS='-E' '-v' '-mtune=generic' '-march=i586'\r\n",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 12,
+            "role": "compiler_validation",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-fmax-errors=0",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 13,
+            "role": "preprocessing_guard",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-E",
+              "-P",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\valid.c"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "91b7789d7c8653abc3f46632efe8444af9b52367551cc9cb750698c176c6c410",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          }
+        ]
+      },
+      "budget_exhausted": false
+    },
+    "repair_conditioned_findings": []
+  },
+  "isolation": {
+    "enabled": true,
+    "experimental": true,
+    "limits": {
+      "exclusions": 8,
+      "variants": 1,
+      "invocations": 64,
+      "analyzer_invocations": 5,
+      "total_seconds": 120,
+      "call_seconds": 10
+    },
+    "status": "abstained",
+    "reason": "isolation requires selected Clang",
+    "inventory": [],
+    "excluded_functions": [],
+    "retained_functions": [],
+    "blockers": [],
+    "variant": null,
+    "eligibility_improved": false,
+    "function_path_coverage_certified": false,
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 13,
+      "analyzer_invocations": 0,
+      "elapsed_seconds": 1.515,
+      "isolation_calls": []
+    }
+  },
+  "baseline_static_analysis": null,
+  "isolation_conditioned_findings": [],
+  "unique_additional_findings": [],
+  "suppressed_findings": []
+}

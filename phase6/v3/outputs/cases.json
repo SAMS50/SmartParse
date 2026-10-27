@@ -1,0 +1,591 @@
+[
+  {
+    "case": "benchmark_disabled",
+    "exit_code": 3,
+    "elapsed_seconds": 3.171,
+    "baseline_summary": {
+      "total_diagnostics": 30,
+      "errors": 7,
+      "warnings": 12,
+      "notes": 11,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 5,
+        "compiler warning": 12,
+        "unknown": 11
+      }
+    },
+    "baseline_analysis_sha256": "681fd27d465e339b91faf4c6bfb01be02c2c06576e2f246da675152b51d0e180",
+    "candidate_edits": [],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "repair_not_requested",
+    "compiler_invocations": 18,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "benchmark_repair",
+    "exit_code": 3,
+    "elapsed_seconds": 7.797,
+    "baseline_summary": {
+      "total_diagnostics": 30,
+      "errors": 7,
+      "warnings": 12,
+      "notes": 11,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 5,
+        "compiler warning": 12,
+        "unknown": 11
+      }
+    },
+    "baseline_analysis_sha256": "681fd27d465e339b91faf4c6bfb01be02c2c06576e2f246da675152b51d0e180",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 30,
+        "column": 21,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      },
+      {
+        "id": "C2",
+        "line": 82,
+        "column": 13,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 2,
+    "final_summary": {
+      "total_diagnostics": 31,
+      "errors": 5,
+      "warnings": 14,
+      "notes": 12,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 5,
+        "compiler warning": 14,
+        "unknown": 12
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: remaining blockers require semantic assumptions",
+    "compiler_invocations": 29,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "positive_declaration",
+    "exit_code": 1,
+    "elapsed_seconds": 3.016,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "f8d1a86d2519fb6948e24a8eab4824f642fa332c0d71826decb5a1c9ace7a3cc",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 1,
+        "column": 22,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 1,
+    "final_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": true,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "frontend_accepted",
+    "compiler_invocations": 22,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "positive_return",
+    "exit_code": 1,
+    "elapsed_seconds": 2.89,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "3118ab8040e440a039dbfcb991e88c53c49a1c82466fedbaa8f1f6d190628abd",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 2,
+        "column": 13,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 1,
+    "final_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": true,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "frontend_accepted",
+    "compiler_invocations": 22,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "positive_analyzer",
+    "exit_code": 1,
+    "elapsed_seconds": 3.766,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "c6c317b7f2589bb5ae89d48f2efe5bb4236a8babd93cd3b6cb8b9d172e175284",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 1,
+        "column": 16,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 1,
+    "final_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": true,
+      "analyzer_newly_completed": true,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "frontend_accepted",
+    "compiler_invocations": 26,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "positive_two",
+    "exit_code": 1,
+    "elapsed_seconds": 4.156,
+    "baseline_summary": {
+      "total_diagnostics": 2,
+      "errors": 2,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "1e3f1f9a777df3877bec94f84584489b76c773136d8ce5409b9049dd9a893fb3",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 1,
+        "column": 20,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      },
+      {
+        "id": "C2",
+        "line": 2,
+        "column": 21,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 2,
+    "final_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": true,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "frontend_accepted",
+    "compiler_invocations": 26,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "unicode_crlf",
+    "exit_code": 1,
+    "elapsed_seconds": 3.265,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "5b8fd33f83bac83b8939937e8681f5942df1363ffdd4a842a710a9ccc63aaebb",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 2,
+        "column": 15,
+        "status": "accepted",
+        "reason": "machine fix-it + unique AST boundary + strict compiler error-subset + preprocessing token guard"
+      }
+    ],
+    "accepted_variants": 1,
+    "final_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": true,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "frontend_accepted",
+    "compiler_invocations": 22,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_unbraced",
+    "exit_code": 1,
+    "elapsed_seconds": 2.406,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "920aeea54ec12a9b79ada29dd12ff3c9f6298b0bab1ffe6bd9606c1932a35fc5",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 2,
+        "column": 24,
+        "status": "rejected",
+        "reason": "no unique admissible AST boundary"
+      }
+    ],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no unique whitelisted candidate passed validation",
+    "compiler_invocations": 19,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_macro",
+    "exit_code": 1,
+    "elapsed_seconds": 2.5,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "b492dfcc46a527b76b83f644f6b219cf61cd93f194ade7a9261840e97de01643",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 3,
+        "column": 18,
+        "status": "rejected",
+        "reason": "no unique admissible AST boundary"
+      }
+    ],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no unique whitelisted candidate passed validation",
+    "compiler_invocations": 19,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_header",
+    "exit_code": 1,
+    "elapsed_seconds": 3.032,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "61be320b735053a7ddfdce5ee0652e0a35c819da5d4c96bb242ce605b3fcf6f8",
+    "candidate_edits": [
+      {
+        "id": "C1",
+        "line": 1,
+        "column": 28,
+        "status": "rejected",
+        "reason": "fix-it is not in the main source"
+      }
+    ],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no unique whitelisted candidate passed validation",
+    "compiler_invocations": 19,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_expression",
+    "exit_code": 1,
+    "elapsed_seconds": 2.422,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 1,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "45503ac82651f4af958043a1ba8eb3055e09a3410deeddb89b92c3ecbdb39c12",
+    "candidate_edits": [],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no unique whitelisted candidate passed validation",
+    "compiler_invocations": 19,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_semantic",
+    "exit_code": 1,
+    "elapsed_seconds": 2.156,
+    "baseline_summary": {
+      "total_diagnostics": 1,
+      "errors": 1,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 1,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "59bda957ce85629fae336718a7a4ff726fd1e6af2e9b74c3b7fdb2fe119a6c2d",
+    "candidate_edits": [],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no syntax blocker eligible for punctuation recovery",
+    "compiler_invocations": 15,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "negative_legal",
+    "exit_code": 0,
+    "elapsed_seconds": 2.36,
+    "baseline_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "baseline_analysis_sha256": "7ee0b82186ae50a787747e065f2f337d873f666ecf63facb1fc9f4064c175362",
+    "candidate_edits": [],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": true,
+      "final_frontend_accepted": true,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "abstained: no syntax blocker eligible for punctuation recovery",
+    "compiler_invocations": 15,
+    "temporary_workspace_removed": true
+  },
+  {
+    "case": "invocation_budget",
+    "exit_code": 3,
+    "elapsed_seconds": 0.468,
+    "baseline_summary": null,
+    "baseline_analysis_sha256": null,
+    "candidate_edits": [],
+    "accepted_variants": 0,
+    "final_summary": null,
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "stop_reason": "compiler invocation budget exhausted",
+    "compiler_invocations": 1,
+    "temporary_workspace_removed": true
+  }
+]

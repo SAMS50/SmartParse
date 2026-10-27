@@ -1,0 +1,152 @@
+[
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.PolicyTests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 0.313,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\PolicyTests.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_baseline_and_memory_have_same_default_null_checker",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 7.375,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_baseline_and_memory_have_same_default_null_checker.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_corrected_bounds_has_no_strong_claims",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.859,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_corrected_bounds_has_no_strong_claims.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_disabled_by_default",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 2.203,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_disabled_by_default.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_invocation_budget",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 0.469,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_invocation_budget.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_isolated_findings_cannot_export_unconditionally",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 7.766,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_isolated_findings_cannot_export_unconditionally.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_malformed_ast_abstains_without_claim",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.812,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_malformed_ast_abstains_without_claim.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_malformed_source_is_blocked",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 3.828,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_malformed_source_is_blocked.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_timeout_and_cleanup",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.422,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_timeout_and_cleanup.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v5.test_detection.LiveTests.test_unknown_extent_no_naming_based_claim",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 7.266,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\test_unknown_extent_no_naming_based_claim.txt"
+  }
+]

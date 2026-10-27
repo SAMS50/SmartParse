@@ -1,0 +1,4846 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "1.0.0",
+  "scope": "Potential operation defects; no successful whole-program execution is asserted past earlier undefined behavior.",
+  "historical_baseline": {
+    "entries": 68,
+    "clang_matched_entries": 16,
+    "reference_sha256": "9d22c0d448edeb138098e4a4e4e85093abd3f70851e7a8b168ffc8b520a1e1c7",
+    "reference_path": "acceptance/sample_reference.json",
+    "meaning": "Frozen Phase 5 comparison, not Phase 6 recall"
+  },
+  "sources": {
+    "sample-500-cleaned": {
+      "path": "acceptance/cleaned/c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "line_mapping": "identity with original numbered source; no source edits in Phase 6"
+    }
+  },
+  "reference_review": "Single-reviewer provisional migration; independent oracle adjudication pending.",
+  "defects": [
+    {
+      "id": "SP6-L0030-01",
+      "historical_entry": 1,
+      "historical_line": 30,
+      "source_id": "sample-500-cleaned",
+      "category": "syntax",
+      "tags": [
+        "syntax"
+      ],
+      "description": "Missing semicolon after global_count declaration",
+      "source_locations": [
+        30
+      ],
+      "sink_locations": [
+        30
+      ],
+      "diagnostic_anchors": [
+        30,
+        31
+      ],
+      "triggering_conditions": [
+        "Parse the global declaration before global_label."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0030",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Missing semicolon after global_count declaration",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "expected",
+              "';'|semicolon"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0055-01",
+      "historical_entry": 2,
+      "historical_line": 55,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Out-of-bounds writes to students at i == MAX_ITEMS",
+      "source_locations": [
+        46,
+        55
+      ],
+      "sink_locations": [
+        56,
+        57,
+        59
+      ],
+      "diagnostic_anchors": [
+        55,
+        56,
+        57,
+        59
+      ],
+      "triggering_conditions": [
+        "Initialization reaches i == MAX_ITEMS."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0055",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0055-02"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Out-of-bounds writes to students at i == MAX_ITEMS",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|buffer overflow|array.*(index|bound)",
+              "students"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0055-02",
+      "historical_entry": 2,
+      "historical_line": 55,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Out-of-bounds read of scores at i == MAX_ITEMS",
+      "source_locations": [
+        47,
+        55
+      ],
+      "sink_locations": [
+        58
+      ],
+      "diagnostic_anchors": [
+        47,
+        55,
+        58
+      ],
+      "triggering_conditions": [
+        "Initialization reaches i == MAX_ITEMS and reads scores[i]."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0055",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0055-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Out-of-bounds read of scores at i == MAX_ITEMS",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|buffer overflow|array.*(index|bound)",
+              "scores"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0065-01",
+      "historical_entry": 3,
+      "historical_line": 65,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "runtime"
+      ],
+      "description": "Passes zero count to average, causing integer division by zero at 99",
+      "source_locations": [
+        65
+      ],
+      "sink_locations": [
+        65
+      ],
+      "diagnostic_anchors": [
+        65,
+        99
+      ],
+      "triggering_conditions": [
+        "Examine average(scores, 0) with count == 0 and its integer division."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0065",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Passes zero count to average, causing integer division by zero at 99",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "division by zero|divide.*zero"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0071-01",
+      "historical_entry": 4,
+      "historical_line": 71,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Invalid free of pointer returned from expired stack buffer",
+      "source_locations": [
+        68,
+        129
+      ],
+      "sink_locations": [
+        70
+      ],
+      "diagnostic_anchors": [
+        70
+      ],
+      "triggering_conditions": [
+        "A result from duplicate_text outlives its local buffer and is passed to free/printf."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0129",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0071-02"
+        },
+        {
+          "kind": "causally_related",
+          "target": "SP6-L0129-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Invalid free of pointer returned from expired stack buffer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "non.heap|stack.*free|invalid.*free"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0071-02",
+      "historical_entry": 4,
+      "historical_line": 71,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Use of pointer into expired duplicate_text stack buffer",
+      "source_locations": [
+        68,
+        129
+      ],
+      "sink_locations": [
+        71
+      ],
+      "diagnostic_anchors": [
+        71
+      ],
+      "triggering_conditions": [
+        "duplicate_text has returned and printf attempts to read its expired local buffer."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0129",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0071-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Use of pointer into expired duplicate_text stack buffer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "dangling|stack.*(expired|return)|use.after.scope"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0074-01",
+      "historical_entry": 5,
+      "historical_line": 74,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Copies string longer than error.message capacity",
+      "source_locations": [
+        74
+      ],
+      "sink_locations": [
+        74
+      ],
+      "diagnostic_anchors": [
+        74
+      ],
+      "triggering_conditions": [
+        "Execute the strcpy with the 49-byte literal and 32-byte field."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0074",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Copies string longer than error.message capacity",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow|destination.*size"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0078-01",
+      "historical_entry": 6,
+      "historical_line": 78,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "runtime"
+      ],
+      "description": "unsafe_divide called with zero divisor",
+      "source_locations": [
+        78
+      ],
+      "sink_locations": [
+        78
+      ],
+      "diagnostic_anchors": [
+        78,
+        142
+      ],
+      "triggering_conditions": [
+        "Examine unsafe_divide(5, 0) with b == 0."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0078",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "unsafe_divide called with zero divisor",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "division by zero|divide.*zero"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0081-01",
+      "historical_entry": 7,
+      "historical_line": 81,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "reset_student called with null pointer",
+      "source_locations": [
+        81
+      ],
+      "sink_locations": [
+        81
+      ],
+      "diagnostic_anchors": [
+        81,
+        134
+      ],
+      "triggering_conditions": [
+        "Examine reset_student(NULL)."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0081",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "reset_student called with null pointer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "dereference|access|argument"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0082-01",
+      "historical_entry": 8,
+      "historical_line": 82,
+      "source_id": "sample-500-cleaned",
+      "category": "syntax",
+      "tags": [
+        "syntax"
+      ],
+      "description": "Missing semicolon after return 0",
+      "source_locations": [
+        82
+      ],
+      "sink_locations": [
+        82
+      ],
+      "diagnostic_anchors": [
+        82,
+        83
+      ],
+      "triggering_conditions": [
+        "Parse main return statement before its closing brace."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0082",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Missing semicolon after return 0",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "expected",
+              "';'|semicolon"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0088-01",
+      "historical_entry": 9,
+      "historical_line": 88,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "add_numbers subtracts instead of adding (name-based intended contract)",
+      "source_locations": [
+        88
+      ],
+      "sink_locations": [
+        88
+      ],
+      "diagnostic_anchors": [
+        88
+      ],
+      "triggering_conditions": [
+        "Inputs a,b differ such that subtraction disagrees with the claimed addition contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0088",
+          "statement": "application contract must establish: add_numbers subtracts instead of adding (name-based intended contract)",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0088",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "add_numbers subtracts instead of adding (name-based intended contract)",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "addition|subtract|postcondition|assertion"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0096-01",
+      "historical_entry": 10,
+      "historical_line": 96,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "average inclusive loop reads beyond count elements",
+      "source_locations": [
+        96
+      ],
+      "sink_locations": [
+        96
+      ],
+      "diagnostic_anchors": [
+        96,
+        97
+      ],
+      "triggering_conditions": [
+        "Inclusive loop reaches index count."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0096",
+          "statement": "count denotes the actual accessible element extent",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0096",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "average inclusive loop reads beyond count elements",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0099-01",
+      "historical_entry": 11,
+      "historical_line": 99,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Integer division truncates before conversion to double",
+      "source_locations": [
+        99
+      ],
+      "sink_locations": [
+        99
+      ],
+      "diagnostic_anchors": [
+        99
+      ],
+      "triggering_conditions": [
+        "Nonzero count does not divide the sum exactly; zero divisor is a separate issue."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0099",
+          "statement": "application contract must establish: Integer division truncates before conversion to double",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0099",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Integer division truncates before conversion to double",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "integer division|loss of precision|truncat"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0104-01",
+      "historical_entry": 12,
+      "historical_line": 104,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Assignment in condition; intended comparison requires application-intent review",
+      "source_locations": [
+        104
+      ],
+      "sink_locations": [
+        104
+      ],
+      "diagnostic_anchors": [
+        104
+      ],
+      "triggering_conditions": [
+        "print_student is invoked; assignment sets student to null and condition is false."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0104",
+          "statement": "application contract must establish: Assigns null instead of comparing; subsequent dereference null",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0104",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0104-02"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Assignment in condition; intended comparison requires application-intent review",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "assignment",
+              "condition|truth value"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0104-02",
+      "historical_entry": 12,
+      "historical_line": 104,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "logic"
+      ],
+      "description": "Dereference after unconditional assignment of null to student",
+      "source_locations": [
+        104
+      ],
+      "sink_locations": [
+        108
+      ],
+      "diagnostic_anchors": [
+        104,
+        108
+      ],
+      "triggering_conditions": [
+        "student = NULL executes, false branch continues to student->id/name/score at 108."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0104",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0104-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Dereference after unconditional assignment of null to student",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "dereference|access"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0114-01",
+      "historical_entry": 13,
+      "historical_line": 114,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "find_student inclusive loop reads past count elements",
+      "source_locations": [
+        114
+      ],
+      "sink_locations": [
+        114
+      ],
+      "diagnostic_anchors": [
+        114
+      ],
+      "triggering_conditions": [
+        "Search reaches index count before returning."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0114",
+          "statement": "count denotes the actual accessible element extent",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0114",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "find_student inclusive loop reads past count elements",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0115-01",
+      "historical_entry": 14,
+      "historical_line": 115,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Assigns id instead of comparing",
+      "source_locations": [
+        115
+      ],
+      "sink_locations": [
+        115
+      ],
+      "diagnostic_anchors": [
+        115
+      ],
+      "triggering_conditions": [
+        "Search condition executes and modifies an element id."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0115",
+          "statement": "application contract must establish: Assigns id instead of comparing",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0115",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Assigns id instead of comparing",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "assignment",
+              "condition|truth value"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0119-01",
+      "historical_entry": 15,
+      "historical_line": 119,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Returns 1 when not found; expected sentinel not specified",
+      "source_locations": [
+        119
+      ],
+      "sink_locations": [
+        119
+      ],
+      "diagnostic_anchors": [
+        119
+      ],
+      "triggering_conditions": [
+        "No element matches the requested id."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0119",
+          "statement": "application contract must establish: Returns 1 when not found; expected sentinel not specified",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0119",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns 1 when not found; expected sentinel not specified",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "sentinel|postcondition|assertion"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0128-01",
+      "historical_entry": 16,
+      "historical_line": 128,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Unbounded copy into fixed stack buffer for arbitrary input",
+      "source_locations": [
+        128
+      ],
+      "sink_locations": [
+        128
+      ],
+      "diagnostic_anchors": [
+        128
+      ],
+      "triggering_conditions": [
+        "Non-null input exceeds the local buffer capacity."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0128",
+          "statement": "input length may exceed BUFFER_SIZE-1; no external input bound is guaranteed",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0128",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Unbounded copy into fixed stack buffer for arbitrary input",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow|out.of.bounds"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0129-01",
+      "historical_entry": 17,
+      "historical_line": 129,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Returns address of local buffer",
+      "source_locations": [
+        129
+      ],
+      "sink_locations": [
+        129
+      ],
+      "diagnostic_anchors": [
+        129
+      ],
+      "triggering_conditions": [
+        "duplicate_text returns its local buffer address."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0129",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns address of local buffer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "address",
+              "local|stack"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0149-01",
+      "historical_entry": 18,
+      "historical_line": 149,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Assigns active instead of checking it",
+      "source_locations": [
+        149
+      ],
+      "sink_locations": [
+        149
+      ],
+      "diagnostic_anchors": [
+        149
+      ],
+      "triggering_conditions": [
+        "An inactive element is examined and overwritten."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0149",
+          "statement": "application contract must establish: Assigns active instead of checking it",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0149",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Assigns active instead of checking it",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "assignment",
+              "condition|truth value"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0164-01",
+      "historical_entry": 19,
+      "historical_line": 164,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Semicolon makes if body empty; following block executes unconditionally",
+      "source_locations": [
+        164
+      ],
+      "sink_locations": [
+        164
+      ],
+      "diagnostic_anchors": [
+        164,
+        165
+      ],
+      "triggering_conditions": [
+        "Condition is false but the following block still runs."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0164",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Semicolon makes if body empty; following block executes unconditionally",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "empty body|empty-body|does not guard"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0173-01",
+      "historical_entry": 20,
+      "historical_line": 173,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "maximum returns a even when b is larger",
+      "source_locations": [
+        173
+      ],
+      "sink_locations": [
+        173
+      ],
+      "diagnostic_anchors": [
+        172,
+        173,
+        174
+      ],
+      "triggering_conditions": [
+        "a < b under a maximum-value contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0173",
+          "statement": "application contract must establish: maximum returns a even when b is larger",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0173",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "maximum returns a even when b is larger",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "postcondition|identical.*branch|repeated.*branch"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0179-01",
+      "historical_entry": 21,
+      "historical_line": 179,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "is_even returns nonzero for odd values (name-based contract)",
+      "source_locations": [
+        179
+      ],
+      "sink_locations": [
+        179
+      ],
+      "diagnostic_anchors": [
+        179
+      ],
+      "triggering_conditions": [
+        "An even value is passed under a nonzero-means-even contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0179",
+          "statement": "application contract must establish: is_even returns nonzero for odd values (name-based contract)",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0179",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "is_even returns nonzero for odd values (name-based contract)",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "postcondition|assertion"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0187-01",
+      "historical_entry": 22,
+      "historical_line": 187,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "clamp returns low rather than high for values above high",
+      "source_locations": [
+        187
+      ],
+      "sink_locations": [
+        187
+      ],
+      "diagnostic_anchors": [
+        187
+      ],
+      "triggering_conditions": [
+        "value > high and low != high under clamp contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0187",
+          "statement": "application contract must establish: clamp returns low rather than high for values above high",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0187",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "clamp returns low rather than high for values above high",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "postcondition|assertion|clamp"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0194-01",
+      "historical_entry": 23,
+      "historical_line": 194,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "runtime"
+      ],
+      "description": "Negating INT_MIN overflows signed int",
+      "source_locations": [
+        194
+      ],
+      "sink_locations": [
+        194
+      ],
+      "diagnostic_anchors": [
+        194
+      ],
+      "triggering_conditions": [
+        "value == INT_MIN."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0194",
+          "statement": "INT_MIN is permitted as an input",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0194",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Negating INT_MIN overflows signed int",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow",
+              "negat|signed|integer"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0202-01",
+      "historical_entry": 24,
+      "historical_line": 202,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "sum_array inclusive loop reads one element too far",
+      "source_locations": [
+        202
+      ],
+      "sink_locations": [
+        202
+      ],
+      "diagnostic_anchors": [
+        202,
+        203
+      ],
+      "triggering_conditions": [
+        "Loop reaches index length."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0202",
+          "statement": "length is the accessible number of array elements",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0202",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "sum_array inclusive loop reads one element too far",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0209-01",
+      "historical_entry": 25,
+      "historical_line": 209,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "strncpy may leave destination unterminated",
+      "source_locations": [
+        209
+      ],
+      "sink_locations": [
+        209
+      ],
+      "diagnostic_anchors": [
+        209
+      ],
+      "triggering_conditions": [
+        "source length is at least NAME_SIZE."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0209",
+          "statement": "destination must be a NUL-terminated string for its subsequent consumer",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0209",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "strncpy may leave destination unterminated",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "terminat|strncpy.*truncat"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0214-01",
+      "historical_entry": 26,
+      "historical_line": 214,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Indexes length rather than length-1 under length-element contract",
+      "source_locations": [
+        214
+      ],
+      "sink_locations": [
+        214
+      ],
+      "diagnostic_anchors": [
+        214
+      ],
+      "triggering_conditions": [
+        "Index length is evaluated."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0214",
+          "statement": "length is the accessible number of array elements",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0214",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Indexes length rather than length-1 under length-element contract",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0219-01",
+      "historical_entry": 27,
+      "historical_line": 219,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Writes size+1 bytes under size-byte buffer contract",
+      "source_locations": [
+        219
+      ],
+      "sink_locations": [
+        219
+      ],
+      "diagnostic_anchors": [
+        219
+      ],
+      "triggering_conditions": [
+        "memset writes size+1 bytes."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0219",
+          "statement": "size is the capacity in bytes, not the intended prefix length",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0219",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Writes size+1 bytes under size-byte buffer contract",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|overflow"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0224-01",
+      "historical_entry": 28,
+      "historical_line": 224,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Compares pointer identity rather than string contents; intended equality uncertain",
+      "source_locations": [
+        224
+      ],
+      "sink_locations": [
+        224
+      ],
+      "diagnostic_anchors": [
+        224
+      ],
+      "triggering_conditions": [
+        "Equal text exists at different addresses under content-equality contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0224",
+          "statement": "application contract must establish: Compares pointer identity rather than string contents; intended equality uncertain",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0224",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Compares pointer identity rather than string contents; intended equality uncertain",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "pointer.*compar|compar.*pointer"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0229-01",
+      "historical_entry": 29,
+      "historical_line": 229,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "strcat capacity precondition not checked; caller may supply insufficient space",
+      "source_locations": [
+        229
+      ],
+      "sink_locations": [
+        229
+      ],
+      "diagnostic_anchors": [
+        229
+      ],
+      "triggering_conditions": [
+        "Suffix and terminator exceed available capacity."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0229",
+          "statement": "text capacity is insufficient for the suffix including NUL",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0229",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "strcat capacity precondition not checked; caller may supply insufficient space",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow|out.of.bounds"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0236-01",
+      "historical_entry": 30,
+      "historical_line": 236,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Returns address of local int",
+      "source_locations": [
+        236
+      ],
+      "sink_locations": [
+        236
+      ],
+      "diagnostic_anchors": [
+        236
+      ],
+      "triggering_conditions": [
+        "make_integer returns its local address."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0236",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns address of local int",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "address",
+              "local|stack"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0245-01",
+      "historical_entry": 31,
+      "historical_line": 245,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Writes terminator outside size-byte allocation",
+      "source_locations": [
+        245
+      ],
+      "sink_locations": [
+        245
+      ],
+      "diagnostic_anchors": [
+        245
+      ],
+      "triggering_conditions": [
+        "malloc succeeds and buffer[size] is written."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0245",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Writes terminator outside size-byte allocation",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|overflow"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0252-01",
+      "historical_entry": 32,
+      "historical_line": 252,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Double-free for nonnull allocated pointer",
+      "source_locations": [
+        252
+      ],
+      "sink_locations": [
+        252
+      ],
+      "diagnostic_anchors": [
+        252
+      ],
+      "triggering_conditions": [
+        "First free releases a valid allocation; second free repeats release."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0252",
+          "statement": "pointer is a nonnull live heap allocation owned by this call",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0252",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Double-free for nonnull allocated pointer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "double.free|released memory|already.*freed"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0257-01",
+      "historical_entry": 33,
+      "historical_line": 257,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Null dereference possible unless caller guarantees valid pointer",
+      "source_locations": [
+        257
+      ],
+      "sink_locations": [
+        257
+      ],
+      "diagnostic_anchors": [
+        257
+      ],
+      "triggering_conditions": [
+        "pointer is invalid/null when dereferenced."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0257",
+          "statement": "a caller can pass a null or otherwise invalid pointer",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0257",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Null dereference possible unless caller guarantees valid pointer",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null|invalid pointer",
+              "dereference|access"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0263-01",
+      "historical_entry": 34,
+      "historical_line": 263,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Stores escaping address of local variable",
+      "source_locations": [
+        263
+      ],
+      "sink_locations": [
+        263
+      ],
+      "diagnostic_anchors": [
+        263
+      ],
+      "triggering_conditions": [
+        "Function returns after publishing address of local value."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0263",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Stores escaping address of local variable",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "stack.*address|address.*local|stack.*escap"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0271-01",
+      "historical_entry": 35,
+      "historical_line": 271,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Allocation leaked at function exit",
+      "source_locations": [
+        271
+      ],
+      "sink_locations": [
+        271
+      ],
+      "diagnostic_anchors": [
+        268,
+        271
+      ],
+      "triggering_conditions": [
+        "malloc succeeds and function exits without transfer/release."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0271",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Allocation leaked at function exit",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "leak",
+              "memory|allocation|values"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0278-01",
+      "historical_entry": 36,
+      "historical_line": 278,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Use of null stream after failed fopen",
+      "source_locations": [
+        276
+      ],
+      "sink_locations": [
+        278
+      ],
+      "diagnostic_anchors": [
+        278,
+        280
+      ],
+      "triggering_conditions": [
+        "fopen fails, or conversion fails while stream is valid; separate atoms below."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0278",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0278-02"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Use of null stream after failed fopen",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "stream|file|fscanf|argument"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0278-02",
+      "historical_entry": 36,
+      "historical_line": 278,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Return of uninitialized value after failed input conversion on a valid stream",
+      "source_locations": [
+        277,
+        278
+      ],
+      "sink_locations": [
+        280
+      ],
+      "diagnostic_anchors": [
+        277,
+        278,
+        280
+      ],
+      "triggering_conditions": [
+        "fopen succeeds; fscanf returns no assigned value; return reads uninitialized value."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0278-02",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0278-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Return of uninitialized value after failed input conversion on a valid stream",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "uninitiali",
+              "value|return"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0286-01",
+      "historical_entry": 37,
+      "historical_line": 286,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Unchecked fopen failure passed to fprintf",
+      "source_locations": [
+        286
+      ],
+      "sink_locations": [
+        286
+      ],
+      "diagnostic_anchors": [
+        286
+      ],
+      "triggering_conditions": [
+        "fopen fails before fprintf."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0286",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Unchecked fopen failure passed to fprintf",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "stream|file|fprintf|argument"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0287-01",
+      "historical_entry": 38,
+      "historical_line": 287,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "resource"
+      ],
+      "description": "write_report does not fclose successful stream",
+      "source_locations": [
+        287
+      ],
+      "sink_locations": [
+        287
+      ],
+      "diagnostic_anchors": [
+        287
+      ],
+      "triggering_conditions": [
+        "fopen succeeds and write_report returns without fclose."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0287",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "write_report does not fclose successful stream",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "leak|not closed",
+              "stream|file"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0292-01",
+      "historical_entry": 39,
+      "historical_line": 292,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "sscanf %d expects int pointer, receives int",
+      "source_locations": [
+        292
+      ],
+      "sink_locations": [
+        292
+      ],
+      "diagnostic_anchors": [
+        292
+      ],
+      "triggering_conditions": [
+        "Format %d consumes the variadic int value where int* is required."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0292",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "sscanf %d expects int pointer, receives int",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "format",
+              "int\\s*\\*|int\\*|pointer"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0299-01",
+      "historical_entry": 40,
+      "historical_line": 299,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Unbounded scanf %s can overflow 8-byte name",
+      "source_locations": [
+        299
+      ],
+      "sink_locations": [
+        299
+      ],
+      "diagnostic_anchors": [
+        299
+      ],
+      "triggering_conditions": [
+        "Input word is longer than the destination capacity."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0299",
+          "statement": "input may contain a word longer than seven characters",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0299",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Unbounded scanf %s can overflow 8-byte name",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "scanf|format",
+              "width|overflow|bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0307-01",
+      "historical_entry": 41,
+      "historical_line": 307,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "resource"
+      ],
+      "description": "file_exists leaks successful fopen stream",
+      "source_locations": [
+        307
+      ],
+      "sink_locations": [
+        307
+      ],
+      "diagnostic_anchors": [
+        307
+      ],
+      "triggering_conditions": [
+        "fopen succeeds and early return bypasses fclose."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0307",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "file_exists leaks successful fopen stream",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "leak|not closed",
+              "stream|file"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0308-01",
+      "historical_entry": 42,
+      "historical_line": 308,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "fclose called on null after failed fopen",
+      "source_locations": [
+        308
+      ],
+      "sink_locations": [
+        308
+      ],
+      "diagnostic_anchors": [
+        308
+      ],
+      "triggering_conditions": [
+        "fopen fails and fclose receives null."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0308",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "fclose called on null after failed fopen",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "fclose|stream|file|argument"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0317-01",
+      "historical_entry": 43,
+      "historical_line": 317,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Loop condition inconsistent with intended factorial contract",
+      "source_locations": [
+        317
+      ],
+      "sink_locations": [
+        317
+      ],
+      "diagnostic_anchors": [
+        317
+      ],
+      "triggering_conditions": [
+        "n > 1 skips factorial loop; n <= 1 can enter a growing signed-arithmetic loop."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0317",
+          "statement": "application contract must establish: Factorial loop comparison reversed for typical n>1; possible signed overflow for others",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0317",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0317-02"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Loop condition inconsistent with intended factorial contract",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "loop|factorial",
+              "condition|progress|postcondition"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0317-02",
+      "historical_entry": 43,
+      "historical_line": 317,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "logic"
+      ],
+      "description": "Signed arithmetic overflow on a sufficiently long entered factorial loop",
+      "source_locations": [
+        315,
+        317
+      ],
+      "sink_locations": [
+        318
+      ],
+      "diagnostic_anchors": [
+        315,
+        317,
+        318
+      ],
+      "triggering_conditions": [
+        "n <= 1 permits repeated multiplication until signed result or loop index overflows."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0317-02",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0317-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Signed arithmetic overflow on a sufficiently long entered factorial loop",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "signed|integer",
+              "overflow"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0330-01",
+      "historical_entry": 44,
+      "historical_line": 330,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "binary_search low=mid can prevent progress",
+      "source_locations": [
+        330
+      ],
+      "sink_locations": [
+        330
+      ],
+      "diagnostic_anchors": [
+        330
+      ],
+      "triggering_conditions": [
+        "Target is absent and an iteration computes mid == low without progressing."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0330",
+          "statement": "finite sorted array with accessible length elements; search must terminate",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0330",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "binary_search low=mid can prevent progress",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "infinite loop|no progress|non.terminat"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0340-01",
+      "historical_entry": 46,
+      "historical_line": 340,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Reverse loop iterates entire array rather than half",
+      "source_locations": [
+        340
+      ],
+      "sink_locations": [
+        340
+      ],
+      "diagnostic_anchors": [
+        340
+      ],
+      "triggering_conditions": [
+        "All-index swap loop processes both members of each pair."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0340",
+          "statement": "application contract must establish: Reverse loop iterates entire array rather than half",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0340",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Reverse loop iterates entire array rather than half",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "reversal|reverse|postcondition"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0342-01",
+      "historical_entry": 45,
+      "historical_line": 342,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "reverse_array indexes length on first iteration",
+      "source_locations": [
+        342
+      ],
+      "sink_locations": [
+        342
+      ],
+      "diagnostic_anchors": [
+        342,
+        343
+      ],
+      "triggering_conditions": [
+        "Nonempty reversal reaches first iteration with length-element extent."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0342",
+          "statement": "length is the accessible number of array elements",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0342",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "reverse_array indexes length on first iteration",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0351-01",
+      "historical_entry": 47,
+      "historical_line": 351,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Assigns target instead of comparing",
+      "source_locations": [
+        351
+      ],
+      "sink_locations": [
+        351
+      ],
+      "diagnostic_anchors": [
+        351
+      ],
+      "triggering_conditions": [
+        "Loop condition assigns target to array element instead of testing equality."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0351",
+          "statement": "application contract must establish: Assigns target instead of comparing",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0351",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Assigns target instead of comparing",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "assignment",
+              "condition|truth value"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0368-01",
+      "historical_entry": 48,
+      "historical_line": 368,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Month less than 1 AND greater than 12 is impossible",
+      "source_locations": [
+        368
+      ],
+      "sink_locations": [
+        368
+      ],
+      "diagnostic_anchors": [
+        368
+      ],
+      "triggering_conditions": [
+        "Any month is evaluated; conjunction requires mutually exclusive ranges."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0368",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Month less than 1 AND greater than 12 is impossible",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "always false|mutually exclusive|contradict|impossible"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0377-01",
+      "historical_entry": 49,
+      "historical_line": 377,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Accepts int outside named enum values; legal C, domain contract uncertain",
+      "source_locations": [
+        377
+      ],
+      "sink_locations": [
+        377
+      ],
+      "diagnostic_anchors": [
+        377
+      ],
+      "triggering_conditions": [
+        "value is outside the named enum domain under an application-domain contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0377",
+          "statement": "application contract must establish: Accepts int outside named enum values; legal C, domain contract uncertain",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0377",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Accepts int outside named enum values; legal C, domain contract uncertain",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "enum|domain"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0382-01",
+      "historical_entry": 50,
+      "historical_line": 382,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "runtime"
+      ],
+      "description": "Floating division by zero: behavior depends on floating implementation/environment, not integer UB",
+      "source_locations": [
+        382
+      ],
+      "sink_locations": [
+        382
+      ],
+      "diagnostic_anchors": [
+        382
+      ],
+      "triggering_conditions": [
+        "Floating numerator divided by zero; environment and intended behavior are unresolved."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0382",
+          "statement": "application contract must establish: Floating division by zero: behavior depends on floating implementation/environment, not integer UB",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0382",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Floating division by zero: behavior depends on floating implementation/environment, not integer UB",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "division by zero"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0387-01",
+      "historical_entry": 51,
+      "historical_line": 387,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Unbounded strcpy may overflow student name for long input",
+      "source_locations": [
+        387
+      ],
+      "sink_locations": [
+        387
+      ],
+      "diagnostic_anchors": [
+        387
+      ],
+      "triggering_conditions": [
+        "Input name exceeds field capacity."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0387",
+          "statement": "name may exceed NAME_SIZE-1 characters",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0387",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Unbounded strcpy may overflow student name for long input",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow|out.of.bounds"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0393-01",
+      "historical_entry": 52,
+      "historical_line": 393,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "Returns string pointer from int-returning function",
+      "source_locations": [
+        393
+      ],
+      "sink_locations": [
+        393
+      ],
+      "diagnostic_anchors": [
+        393
+      ],
+      "triggering_conditions": [
+        "Return string literal from int-returning function."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0393",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns string pointer from int-returning function",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "pointer",
+              "integer|int"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0405-01",
+      "historical_entry": 53,
+      "historical_line": 405,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "Nonvoid function falls through for nonpositive value; using absent return value is problematic",
+      "source_locations": [
+        405
+      ],
+      "sink_locations": [
+        405
+      ],
+      "diagnostic_anchors": [
+        405
+      ],
+      "triggering_conditions": [
+        "value <= 0 falls through; caller uses return value."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0405",
+          "statement": "the missing return value is used when the nonpositive branch is taken",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0405",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Nonvoid function falls through for nonpositive value; using absent return value is problematic",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "non.void|return",
+              "end|fall|not return"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0409-01",
+      "historical_entry": 54,
+      "historical_line": 409,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "Too few arguments to add_numbers",
+      "source_locations": [
+        409
+      ],
+      "sink_locations": [
+        409
+      ],
+      "diagnostic_anchors": [
+        409
+      ],
+      "triggering_conditions": [
+        "Call add_numbers with one argument against a two-argument prototype."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0409",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Too few arguments to add_numbers",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "too few arguments|not enough arguments"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0414-01",
+      "historical_entry": 55,
+      "historical_line": 414,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "mystery_value undeclared (later use is same root issue)",
+      "source_locations": [
+        414
+      ],
+      "sink_locations": [
+        414
+      ],
+      "diagnostic_anchors": [
+        414,
+        415
+      ],
+      "triggering_conditions": [
+        "Resolve either use of mystery_value; no declaration exists."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0414",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "mystery_value undeclared (later use is same root issue)",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "undeclared",
+              "mystery_value"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0421-01",
+      "historical_entry": 56,
+      "historical_line": 421,
+      "source_id": "sample-500-cleaned",
+      "category": "semantic/type",
+      "tags": [
+        "semantic/type"
+      ],
+      "description": "printf %d expects int but receives long; type mismatch even on Windows equal-width types",
+      "source_locations": [
+        421
+      ],
+      "sink_locations": [
+        421
+      ],
+      "diagnostic_anchors": [
+        421
+      ],
+      "triggering_conditions": [
+        "Consume long with printf %d."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0421",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "printf %d expects int but receives long; type mismatch even on Windows equal-width types",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "format",
+              "long"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0427-01",
+      "historical_entry": 57,
+      "historical_line": 427,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Concurrent global increment is unsafe only if threads actually share it; no threading in sample",
+      "source_locations": [
+        427
+      ],
+      "sink_locations": [
+        427
+      ],
+      "diagnostic_anchors": [
+        427
+      ],
+      "triggering_conditions": [
+        "Two threads access global_count without synchronization; no such threads are established here."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0427",
+          "statement": "application contract must establish: Concurrent global increment is unsafe only if threads actually share it; no threading in sample",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0427",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Concurrent global increment is unsafe only if threads actually share it; no threading in sample",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "data race|race condition"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0432-01",
+      "historical_entry": 58,
+      "historical_line": 432,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Allocation omits terminator byte consumed by strcpy",
+      "source_locations": [
+        432
+      ],
+      "sink_locations": [
+        433
+      ],
+      "diagnostic_anchors": [
+        432,
+        433
+      ],
+      "triggering_conditions": [
+        "Allocate strlen(text) bytes then copy terminator; allocation failure and prior ownership are separate atoms."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0432",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0432-02"
+        },
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0432-03"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Allocation omits terminator byte consumed by strcpy",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "overflow|out.of.bounds|allocation.*size"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0432-02",
+      "historical_entry": 58,
+      "historical_line": 432,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Null destination passed to strcpy when allocation fails",
+      "source_locations": [
+        432
+      ],
+      "sink_locations": [
+        433
+      ],
+      "diagnostic_anchors": [
+        432,
+        433
+      ],
+      "triggering_conditions": [
+        "malloc returns NULL; strcpy is called with the null destination and valid text."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0432-02",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0432-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Null destination passed to strcpy when allocation fails",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "argument|destination|strcpy"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0432-03",
+      "historical_entry": 58,
+      "historical_line": 432,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Loss of previously owned global allocation when pointer is overwritten",
+      "source_locations": [
+        432
+      ],
+      "sink_locations": [
+        432
+      ],
+      "diagnostic_anchors": [
+        432
+      ],
+      "triggering_conditions": [
+        "global_label is the last owning reference to prior allocation; assignment overwrites that reference."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0432-PRIOR",
+          "statement": "global_label owns an unreleased allocation before this call",
+          "basis": "caller/global-state precondition not established"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0432-03",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0432-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Loss of previously owned global allocation when pointer is overwritten",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "leak",
+              "global_label|allocation|memory"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0439-01",
+      "historical_entry": 59,
+      "historical_line": 439,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Writes through freed global_label; pointer may also be null",
+      "source_locations": [
+        439
+      ],
+      "sink_locations": [
+        439
+      ],
+      "diagnostic_anchors": [
+        439
+      ],
+      "triggering_conditions": [
+        "Reset writes global_label after free; initial null state is a separate path."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0439",
+          "statement": "global_label refers to a previously successful allocation on entry",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0439",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0439-02"
+        },
+        {
+          "kind": "causally_related",
+          "target": "SP6-L0432-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Writes through freed global_label; pointer may also be null",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "use.after.free|freed memory|released memory"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0439-02",
+      "historical_entry": 59,
+      "historical_line": 439,
+      "source_id": "sample-500-cleaned",
+      "category": "memory safety",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Null write when reset_global_label is called in initial null state",
+      "source_locations": [
+        31,
+        438
+      ],
+      "sink_locations": [
+        439
+      ],
+      "diagnostic_anchors": [
+        31,
+        438,
+        439
+      ],
+      "triggering_conditions": [
+        "global_label is NULL; free(NULL) is harmless, then global_label[0] dereferences null."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0439-NULL",
+          "statement": "reset_global_label is callable while global_label is null",
+          "basis": "entry contract not established"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0439-02",
+      "relationships": [
+        {
+          "kind": "split_from_same_historical_entry",
+          "target": "SP6-L0439-01"
+        }
+      ],
+      "admissible_evidence": {
+        "meaning": "Null write when reset_global_label is called in initial null state",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "null",
+              "dereference|access"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0445-01",
+      "historical_entry": 60,
+      "historical_line": 445,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Returns comparison to 2 after toggling to 0 or 1; intended return contract uncertain",
+      "source_locations": [
+        445
+      ],
+      "sink_locations": [
+        445
+      ],
+      "diagnostic_anchors": [
+        445
+      ],
+      "triggering_conditions": [
+        "Toggle yields only 0/1, yet comparison to 2 is returned."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0445",
+          "statement": "application contract must establish: Returns comparison to 2 after toggling to 0 or 1; intended return contract uncertain",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0445",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns comparison to 2 after toggling to 0 or 1; intended return contract uncertain",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "always false|range|postcondition"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0451-01",
+      "historical_entry": 61,
+      "historical_line": 451,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Integer division before multiply loses fractional percentage",
+      "source_locations": [
+        451
+      ],
+      "sink_locations": [
+        451
+      ],
+      "diagnostic_anchors": [
+        451
+      ],
+      "triggering_conditions": [
+        "part is not divisible by nonzero whole under fractional-percentage intent."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0451",
+          "statement": "application contract must establish: Integer division before multiply loses fractional percentage",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0451",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Integer division before multiply loses fractional percentage",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "precision|truncat|integer division"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0456-01",
+      "historical_entry": 62,
+      "historical_line": 456,
+      "source_id": "sample-500-cleaned",
+      "category": "undefined behavior",
+      "tags": [
+        "runtime"
+      ],
+      "description": "Modulo zero possible unless caller guarantees nonzero b",
+      "source_locations": [
+        456
+      ],
+      "sink_locations": [
+        456
+      ],
+      "diagnostic_anchors": [
+        456
+      ],
+      "triggering_conditions": [
+        "b == 0 when modulo is evaluated."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0456",
+          "statement": "b may be zero under the caller contract",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0456",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Modulo zero possible unless caller guarantees nonzero b",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "modulo.*zero|division by zero|remainder.*zero"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0464-01",
+      "historical_entry": 63,
+      "historical_line": 464,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "sign_of returns positive 1 for negatives (name-based contract)",
+      "source_locations": [
+        464
+      ],
+      "sink_locations": [
+        464
+      ],
+      "diagnostic_anchors": [
+        464
+      ],
+      "triggering_conditions": [
+        "value < 0 under conventional sign contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0464",
+          "statement": "application contract must establish: sign_of returns positive 1 for negatives (name-based contract)",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0464",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "sign_of returns positive 1 for negatives (name-based contract)",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "postcondition|identical.*branch|repeated.*branch"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0474-01",
+      "historical_entry": 64,
+      "historical_line": 474,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "initialize_scores writes count index beyond count elements",
+      "source_locations": [
+        474
+      ],
+      "sink_locations": [
+        474
+      ],
+      "diagnostic_anchors": [
+        474
+      ],
+      "triggering_conditions": [
+        "Write occurs at index count."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0474",
+          "statement": "count is the number of accessible scores elements",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0474",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "initialize_scores writes count index beyond count elements",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0479-01",
+      "historical_entry": 65,
+      "historical_line": 479,
+      "source_id": "sample-500-cleaned",
+      "category": "bounds",
+      "tags": [
+        "memory safety"
+      ],
+      "description": "Allows index MAX_ITEMS for a MAX_ITEMS-element array; actual parameter capacity unspecified",
+      "source_locations": [
+        479
+      ],
+      "sink_locations": [
+        479
+      ],
+      "diagnostic_anchors": [
+        479,
+        481
+      ],
+      "triggering_conditions": [
+        "index == MAX_ITEMS passes guard."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0479",
+          "statement": "scores contains exactly MAX_ITEMS elements",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "conditional",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-L0479",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Allows index MAX_ITEMS for a MAX_ITEMS-element array; actual parameter capacity unspecified",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "out.of.bounds|array.*bound"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0486-01",
+      "historical_entry": 66,
+      "historical_line": 486,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "swap loses original a before storing into b",
+      "source_locations": [
+        486
+      ],
+      "sink_locations": [
+        486
+      ],
+      "diagnostic_anchors": [
+        486,
+        487
+      ],
+      "triggering_conditions": [
+        "Distinct a,b point to unequal values under swap contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0486",
+          "statement": "application contract must establish: swap loses original a before storing into b",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0486",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "swap loses original a before storing into b",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "swap|overwritten|lost.*value|postcondition"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0494-01",
+      "historical_entry": 67,
+      "historical_line": 494,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Uses multicharacter literal backslash-zero instead of null character",
+      "source_locations": [
+        494
+      ],
+      "sink_locations": [
+        494
+      ],
+      "diagnostic_anchors": [
+        494
+      ],
+      "triggering_conditions": [
+        "Compare char to multicharacter backslash-zero constant."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "compiler",
+      "root_cause_id": "ROOT-L0494",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Uses multicharacter literal backslash-zero instead of null character",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "multi.character|multi-character|comparison.*always true"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    },
+    {
+      "id": "SP6-L0496-01",
+      "historical_entry": 68,
+      "historical_line": 496,
+      "source_id": "sample-500-cleaned",
+      "category": "program logic",
+      "tags": [
+        "logic"
+      ],
+      "description": "Returns length-1 rather than length (name-based contract)",
+      "source_locations": [
+        496
+      ],
+      "sink_locations": [
+        496
+      ],
+      "diagnostic_anchors": [
+        496
+      ],
+      "triggering_conditions": [
+        "Terminating loop completes under length-return contract."
+      ],
+      "required_contracts": [
+        {
+          "id": "C-L0496",
+          "statement": "application contract must establish: Returns length-1 rather than length (name-based contract)",
+          "basis": "explicit evaluation assumption, not inferred as satisfied"
+        }
+      ],
+      "oracle_status": "uncertain",
+      "required_analysis": "logic",
+      "root_cause_id": "ROOT-L0496",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Returns length-1 rather than length (name-based contract)",
+        "rules": [
+          {
+            "backends": [
+              "gcc",
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "error",
+              "fatal error",
+              "warning"
+            ],
+            "message_all": [
+              "postcondition|length.*off.by.one"
+            ]
+          }
+        ],
+        "rejected_evidence": [
+          "notes alone",
+          "line proximity without matching meaning",
+          "unrelated undeclared-name/type cascade"
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex source review",
+        "status": "provisional single-reviewer reference",
+        "rationale": "Migrated from frozen oracle and inspected source; conditions/intent are explicit, not presumed."
+      }
+    }
+  ]
+}

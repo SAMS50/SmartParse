@@ -1,0 +1,6 @@
+test_global_state_and_initialization_abstain (phase6.v4.test_isolation.LiveTests.test_global_state_and_initialization_abstain) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.765s
+
+OK

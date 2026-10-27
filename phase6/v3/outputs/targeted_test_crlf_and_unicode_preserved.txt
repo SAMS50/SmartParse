@@ -1,0 +1,6 @@
+test_crlf_and_unicode_preserved (phase6.v3.test_recovery.LiveRecoveryTests.test_crlf_and_unicode_preserved) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.984s
+
+OK

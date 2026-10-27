@@ -1,0 +1,26 @@
+test_crlf_unicode_mapping_is_byte_accurate (phase6.v3.test_recovery.PolicyTests.test_crlf_unicode_mapping_is_byte_accurate) ... ok
+test_duplicate_ast_boundary_is_ambiguous (phase6.v3.test_recovery.PolicyTests.test_duplicate_ast_boundary_is_ambiguous) ... ok
+test_header_fixit_is_not_main_file_repair (phase6.v3.test_recovery.PolicyTests.test_header_fixit_is_not_main_file_repair) ... ok
+test_insertion_requires_machine_range_and_ast (phase6.v3.test_recovery.PolicyTests.test_insertion_requires_machine_range_and_ast) ... ok
+test_invalid_machine_coordinates_rejected (phase6.v3.test_recovery.PolicyTests.test_invalid_machine_coordinates_rejected) ... ok
+test_machine_fixits_decode_windows_paths_and_octal_utf8 (phase6.v3.test_recovery.PolicyTests.test_machine_fixits_decode_windows_paths_and_octal_utf8) ... ok
+test_macro_range_is_not_trusted (phase6.v3.test_recovery.PolicyTests.test_macro_range_is_not_trusted) ... ok
+test_new_semantic_error_is_not_an_old_error_match (phase6.v3.test_recovery.PolicyTests.test_new_semantic_error_is_not_an_old_error_match) ... ok
+test_non_semicolon_and_nonzero_range_rejected (phase6.v3.test_recovery.PolicyTests.test_non_semicolon_and_nonzero_range_rejected) ... ok
+test_overlapping_edits_rejected (phase6.v3.test_recovery.PolicyTests.test_overlapping_edits_rejected) ... ok
+test_preprocessing_guard_requires_only_one_semicolon_token (phase6.v3.test_recovery.PolicyTests.test_preprocessing_guard_requires_only_one_semicolon_token) ... ok
+test_presumed_line_directive_abstains (phase6.v3.test_recovery.PolicyTests.test_presumed_line_directive_abstains) ... ok
+test_unbraced_return_is_not_whitelisted (phase6.v3.test_recovery.PolicyTests.test_unbraced_return_is_not_whitelisted) ... ok
+test_unknown_encoding_is_not_reencoded (phase6.v3.test_recovery.PolicyTests.test_unknown_encoding_is_not_reencoded) ... ok
+test_all_calls_count_and_use_no_shell (phase6.v3.test_recovery.BudgetTests.test_all_calls_count_and_use_no_shell) ... ok
+test_call_timeout_clamped_to_remaining_total (phase6.v3.test_recovery.BudgetTests.test_call_timeout_clamped_to_remaining_total) ... ok
+test_call_timeout_latches_stop (phase6.v3.test_recovery.BudgetTests.test_call_timeout_latches_stop) ... ok
+test_file_capture_preserves_binary_output (phase6.v3.test_recovery.BudgetTests.test_file_capture_preserves_binary_output) ... ok
+test_policy_has_hard_ceilings (phase6.v3.test_recovery.BudgetTests.test_policy_has_hard_ceilings) ... ok
+test_real_timeout_does_not_wait_for_inherited_output_pipe (phase6.v3.test_recovery.BudgetTests.test_real_timeout_does_not_wait_for_inherited_output_pipe) ... ok
+test_total_deadline_stops_before_spawn (phase6.v3.test_recovery.BudgetTests.test_total_deadline_stops_before_spawn) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.210s
+
+OK

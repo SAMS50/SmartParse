@@ -1,0 +1,67 @@
+[
+  {
+    "case": "gcc_baseline",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v4",
+      "phase6/v4/fixtures/valid.c",
+      "--compiler",
+      "gcc",
+      "--json"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 20,
+    "elapsed_seconds": 2.172,
+    "cleanup": null,
+    "log": "phase6\\v4\\outputs\\gcc_baseline.json",
+    "compiler": {
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "backend": "gcc",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0"
+      ]
+    },
+    "isolation": "isolation_not_requested"
+  },
+  {
+    "case": "gcc_isolation",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v4",
+      "phase6/v4/fixtures/valid.c",
+      "--compiler",
+      "gcc",
+      "--json",
+      "--isolate-unaffected"
+    ],
+    "exit_code": 3,
+    "timed_out": false,
+    "timeout_seconds": 20,
+    "elapsed_seconds": 1.937,
+    "cleanup": null,
+    "log": "phase6\\v4\\outputs\\gcc_isolation.json",
+    "compiler": {
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "backend": "gcc",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0"
+      ]
+    },
+    "isolation": "isolation requires selected Clang"
+  }
+]

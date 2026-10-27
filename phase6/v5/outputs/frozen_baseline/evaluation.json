@@ -1,0 +1,1474 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "scope": {
+    "dataset": "6f98d4d26f66db4d1dd1deda933c797fdb8c7ed9dfb00d2bf7b79776879ea260",
+    "runs": "c65acb1acbbac45e448947b331e290f448ac201b36dfdfdfc0350cf6ab608ea9"
+  },
+  "dataset_sources": {
+    "null_bad": {
+      "path": "phase6\\v5\\fixtures\\null_bad.c",
+      "sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e"
+    },
+    "null_good": {
+      "path": "phase6\\v5\\fixtures\\null_good.c",
+      "sha256": "763d4b20f52e5241724497e5dc88bb6dc95219c8f7c3ac225d731452828a5e5b"
+    },
+    "double_free_bad": {
+      "path": "phase6\\v5\\fixtures\\double_free_bad.c",
+      "sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4"
+    },
+    "double_free_good": {
+      "path": "phase6\\v5\\fixtures\\double_free_good.c",
+      "sha256": "472af7a2abdb96cc60171d951fd7e3fb387333a6de0c9b516ffbbdd5e0de4689"
+    },
+    "use_after_free_bad": {
+      "path": "phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72"
+    },
+    "use_after_free_good": {
+      "path": "phase6\\v5\\fixtures\\use_after_free_good.c",
+      "sha256": "04ad456ecddb394da9a3634648baf3916b6e7344aaaf7c309b6c977f63155251"
+    },
+    "leak_bad": {
+      "path": "phase6\\v5\\fixtures\\leak_bad.c",
+      "sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c"
+    },
+    "leak_good": {
+      "path": "phase6\\v5\\fixtures\\leak_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+    },
+    "stack_escape_bad": {
+      "path": "phase6\\v5\\fixtures\\stack_escape_bad.c",
+      "sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756"
+    },
+    "stack_escape_good": {
+      "path": "phase6\\v5\\fixtures\\stack_escape_good.c",
+      "sha256": "7460bd088d2189f3029eb79f01a324c46cdd76d898b2eb335871d068868cd54f"
+    },
+    "allocation_size_bad": {
+      "path": "phase6\\v5\\fixtures\\allocation_size_bad.c",
+      "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1"
+    },
+    "allocation_size_good": {
+      "path": "phase6\\v5\\fixtures\\allocation_size_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+    },
+    "fixed_bounds_bad": {
+      "path": "phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3"
+    },
+    "fixed_bounds_good": {
+      "path": "phase6\\v5\\fixtures\\fixed_bounds_good.c",
+      "sha256": "a1d3302fcb71d84309916e35033b021137d170f676bd511ab6763c1600b19d49"
+    },
+    "string_bounds_bad": {
+      "path": "phase6\\v5\\fixtures\\string_bounds_bad.c",
+      "sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b"
+    },
+    "string_bounds_good": {
+      "path": "phase6\\v5\\fixtures\\string_bounds_good.c",
+      "sha256": "ed583bfd68219c5814a518fddff332a5a9704a908421b80b8f60b0a9515a5b93"
+    },
+    "stream_bad": {
+      "path": "phase6\\v5\\fixtures\\stream_bad.c",
+      "sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3"
+    },
+    "stream_good": {
+      "path": "phase6\\v5\\fixtures\\stream_good.c",
+      "sha256": "6eb86607e78f987eccca0f99e14ad13cac9cbc4634b0e220f2c6cf120f96fb0a"
+    }
+  },
+  "reference_review": "Agent source review, provisional; independent human review pending.",
+  "input_manifest": [
+    {
+      "id": "v5-allocation_size_bad-baseline",
+      "source_bindings": {
+        "allocation_size_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\allocation_size_bad.c"
+          ],
+          "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_size_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_size_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-allocation_size_good-baseline",
+      "source_bindings": {
+        "allocation_size_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\allocation_size_good.c"
+          ],
+          "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_size_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_size_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-double_free_bad-baseline",
+      "source_bindings": {
+        "double_free_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c"
+          ],
+          "sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "double_free_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "double_free_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-double_free_good-baseline",
+      "source_bindings": {
+        "double_free_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_good.c"
+          ],
+          "sha256": "472af7a2abdb96cc60171d951fd7e3fb387333a6de0c9b516ffbbdd5e0de4689"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "double_free_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "double_free_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-fixed_bounds_bad-baseline",
+      "source_bindings": {
+        "fixed_bounds_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c"
+          ],
+          "sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "fixed_bounds_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "fixed_bounds_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-fixed_bounds_good-baseline",
+      "source_bindings": {
+        "fixed_bounds_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_good.c"
+          ],
+          "sha256": "a1d3302fcb71d84309916e35033b021137d170f676bd511ab6763c1600b19d49"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "fixed_bounds_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "fixed_bounds_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-leak_bad-baseline",
+      "source_bindings": {
+        "leak_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c"
+          ],
+          "sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "leak_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "leak_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-leak_good-baseline",
+      "source_bindings": {
+        "leak_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_good.c"
+          ],
+          "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "leak_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "leak_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-null_bad-baseline",
+      "source_bindings": {
+        "null_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_bad.c"
+          ],
+          "sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "null_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "null_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-null_good-baseline",
+      "source_bindings": {
+        "null_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_good.c"
+          ],
+          "sha256": "763d4b20f52e5241724497e5dc88bb6dc95219c8f7c3ac225d731452828a5e5b"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "null_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "null_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-stack_escape_bad-baseline",
+      "source_bindings": {
+        "stack_escape_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_bad.c"
+          ],
+          "sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "stack_escape_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "stack_escape_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-stack_escape_good-baseline",
+      "source_bindings": {
+        "stack_escape_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_good.c"
+          ],
+          "sha256": "7460bd088d2189f3029eb79f01a324c46cdd76d898b2eb335871d068868cd54f"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "stack_escape_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "stack_escape_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-stream_bad-baseline",
+      "source_bindings": {
+        "stream_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c"
+          ],
+          "sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "stream_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "stream_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-stream_good-baseline",
+      "source_bindings": {
+        "stream_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_good.c"
+          ],
+          "sha256": "6eb86607e78f987eccca0f99e14ad13cac9cbc4634b0e220f2c6cf120f96fb0a"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "stream_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "stream_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-string_bounds_bad-baseline",
+      "source_bindings": {
+        "string_bounds_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\string_bounds_bad.c"
+          ],
+          "sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "string_bounds_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "string_bounds_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-string_bounds_good-baseline",
+      "source_bindings": {
+        "string_bounds_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\string_bounds_good.c"
+          ],
+          "sha256": "ed583bfd68219c5814a518fddff332a5a9704a908421b80b8f60b0a9515a5b93"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "string_bounds_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "string_bounds_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-use_after_free_bad-baseline",
+      "source_bindings": {
+        "use_after_free_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c"
+          ],
+          "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "use_after_free_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "use_after_free_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v5-use_after_free_good-baseline",
+      "source_bindings": {
+        "use_after_free_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_good.c"
+          ],
+          "sha256": "04ad456ecddb394da9a3634648baf3916b6e7344aaaf7c309b6c977f63155251"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "use_after_free_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "use_after_free_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    }
+  ],
+  "historical_baseline": {
+    "meaning": "Independent v5 fixtures; not a replacement for historical 16/68",
+    "entries": 9
+  },
+  "defects": [
+    {
+      "defect_id": "V5-null",
+      "category": "memory safety",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-null",
+      "candidates": [
+        "E-d658e0714a71b715f670b566"
+      ],
+      "reviewed_matches": [
+        "E-d658e0714a71b715f670b566"
+      ],
+      "coverage": [
+        {
+          "source_id": "null_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-double_free",
+      "category": "memory safety",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-double_free",
+      "candidates": [
+        "E-026d85538499083315266b87"
+      ],
+      "reviewed_matches": [
+        "E-026d85538499083315266b87"
+      ],
+      "coverage": [
+        {
+          "source_id": "double_free_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-use_after_free",
+      "category": "memory safety",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-use_after_free",
+      "candidates": [
+        "E-cacd553852f1ae35893a5d64"
+      ],
+      "reviewed_matches": [
+        "E-cacd553852f1ae35893a5d64"
+      ],
+      "coverage": [
+        {
+          "source_id": "use_after_free_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-leak",
+      "category": "memory safety",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-leak",
+      "candidates": [
+        "E-a399bb8e478ae4d35ea367a8"
+      ],
+      "reviewed_matches": [
+        "E-a399bb8e478ae4d35ea367a8"
+      ],
+      "coverage": [
+        {
+          "source_id": "leak_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-stack_escape",
+      "category": "memory safety",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-stack_escape",
+      "candidates": [
+        "E-8cd4d6c5508a104b412271a6",
+        "E-57b88c49f86090136c705d34"
+      ],
+      "reviewed_matches": [
+        "E-8cd4d6c5508a104b412271a6"
+      ],
+      "coverage": [
+        {
+          "source_id": "stack_escape_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-allocation_size",
+      "category": "bounds",
+      "outcome": "missed",
+      "reason": "Declared applicable analysis completed without a reviewed match.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-allocation_size",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "allocation_size_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-fixed_bounds",
+      "category": "bounds",
+      "outcome": "missed",
+      "reason": "Declared applicable analysis completed without a reviewed match.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-fixed_bounds",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "fixed_bounds_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-string_bounds",
+      "category": "bounds",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-string_bounds",
+      "candidates": [
+        "E-8e25d108335fc6145c4da647"
+      ],
+      "reviewed_matches": [
+        "E-8e25d108335fc6145c4da647"
+      ],
+      "coverage": [
+        {
+          "source_id": "string_bounds_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V5-stream",
+      "category": "memory safety",
+      "outcome": "missed",
+      "reason": "Declared applicable analysis completed without a reviewed match.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-stream",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "stream_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    }
+  ],
+  "findings": [
+    {
+      "evidence_id": "E-026d85538499083315266b87",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-double_free"
+      ],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 67,
+          "severity": "warning",
+          "message": "Attempt to free released memory",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": "unix.Malloc"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-fc140fe0015fd31a7f769d62",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 23,
+          "severity": "note",
+          "message": "Memory is allocated",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-01fd99f35f71738744fb1aa6",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 46,
+          "severity": "note",
+          "message": "Assuming 'p' is non-null",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-cc016817b45ca9cbe6b40200",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 42,
+          "severity": "note",
+          "message": "Taking false branch",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-985ead5acf4e5b7d750cec68",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 58,
+          "severity": "note",
+          "message": "Memory is released",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-90a2416419316481417eee69",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-double_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "double_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\double_free_bad.c",
+          "line": 2,
+          "column": 67,
+          "severity": "note",
+          "message": "Attempt to free released memory",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a399bb8e478ae4d35ea367a8",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-leak"
+      ],
+      "evidence": {
+        "run_id": "v5-leak_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "leak_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+          "line": 2,
+          "column": 64,
+          "severity": "warning",
+          "message": "Potential leak of memory pointed to by 'p'",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+          "diagnostic_id": "unix.Malloc"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a8d4dc6655d86df89d6f3fea",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-leak_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "leak_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+          "line": 2,
+          "column": 23,
+          "severity": "note",
+          "message": "Memory is allocated",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4603e2f2e8dc829a46d7598f",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-leak_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "leak_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+          "line": 2,
+          "column": 46,
+          "severity": "note",
+          "message": "Assuming 'p' is non-null",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-8eeced8e59e164c3443e9a22",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-leak_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "leak_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+          "line": 2,
+          "column": 42,
+          "severity": "note",
+          "message": "Taking false branch",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-942d7b1a9645260fa66a5532",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-leak_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "leak_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\leak_bad.c",
+          "line": 2,
+          "column": 64,
+          "severity": "note",
+          "message": "Potential leak of memory pointed to by 'p'",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d658e0714a71b715f670b566",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-null"
+      ],
+      "evidence": {
+        "run_id": "v5-null_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "null_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_bad.c",
+          "line": 1,
+          "column": 32,
+          "severity": "warning",
+          "message": "Dereference of null pointer (loaded from variable 'p')",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=0; return *p; }",
+          "diagnostic_id": "core.NullDereference"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-013c6ecf325f2df0c748edcf",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-null_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "null_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_bad.c",
+          "line": 1,
+          "column": 15,
+          "severity": "note",
+          "message": "'p' initialized to a null pointer value",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=0; return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-7242c8488dc67e05029e544e",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-null_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "null_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\null_bad.c",
+          "line": 1,
+          "column": 32,
+          "severity": "note",
+          "message": "Dereference of null pointer (loaded from variable 'p')",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=0; return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-8cd4d6c5508a104b412271a6",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-stack_escape"
+      ],
+      "evidence": {
+        "run_id": "v5-stack_escape_bad-baseline",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "stack_escape_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_bad.c",
+          "line": 1,
+          "column": 42,
+          "severity": "warning",
+          "message": "address of stack memory associated with local variable 'values' returned",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int *f(void) { int values[2]={0}; return values; }",
+          "diagnostic_id": "-Wreturn-stack-address"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-57b88c49f86090136c705d34",
+      "disposition": "duplicate",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-stack_escape_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "stack_escape_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_bad.c",
+          "line": 1,
+          "column": 35,
+          "severity": "warning",
+          "message": "Address of stack memory associated with local variable 'values' returned to caller",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int *f(void) { int values[2]={0}; return values; }",
+          "diagnostic_id": "core.StackAddressEscape"
+        }
+      },
+      "adjudication": {
+        "evidence_id": "E-57b88c49f86090136c705d34",
+        "decision": "duplicate",
+        "duplicate_of": "E-8cd4d6c5508a104b412271a6",
+        "reviewer": "Codex-source-review",
+        "rationale": "Same reviewed fixture root; compiler/analyzer observations are not separate defects."
+      }
+    },
+    {
+      "evidence_id": "E-a2bb1dad8993ac6f3b04a7b7",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-stack_escape_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "stack_escape_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stack_escape_bad.c",
+          "line": 1,
+          "column": 35,
+          "severity": "note",
+          "message": "Address of stack memory associated with local variable 'values' returned to caller",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int *f(void) { int values[2]={0}; return values; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-8e25d108335fc6145c4da647",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-string_bounds"
+      ],
+      "evidence": {
+        "run_id": "v5-string_bounds_bad-baseline",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "string_bounds_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\string_bounds_bad.c",
+          "line": 2,
+          "column": 32,
+          "severity": "warning",
+          "message": "'strcpy' will always overflow; destination buffer has size 4, but the source string has length 7 (including NUL byte)",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "void f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); }",
+          "diagnostic_id": "-Wfortify-source"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-cacd553852f1ae35893a5d64",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V5-use_after_free"
+      ],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 81,
+          "severity": "warning",
+          "message": "Use of memory after it is freed",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": "unix.Malloc"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-27f4b057d9d257073d7c8989",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 22,
+          "severity": "note",
+          "message": "Memory is allocated",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-093bb83774f28849de1989cd",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 45,
+          "severity": "note",
+          "message": "Assuming 'p' is non-null",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-45417db0107542c59e775052",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 41,
+          "severity": "note",
+          "message": "Taking false branch",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-e61b905f4938a5d5ca1108d9",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 65,
+          "severity": "note",
+          "message": "Memory is released",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4e050e0942740b7f6d45164b",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-use_after_free_bad-baseline",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "use_after_free_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": 2,
+          "column": 81,
+          "severity": "note",
+          "message": "Use of memory after it is freed",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    }
+  ],
+  "summary": {
+    "atomic_issues": 9,
+    "outcomes": {
+      "detected": 6,
+      "missed": 3,
+      "blocked": 0,
+      "unsupported": 0,
+      "conditional": 0,
+      "uncertain": 0
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 5,
+        "missed": 1,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 1,
+        "missed": 2,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      }
+    },
+    "detected_root_cause_ids": [
+      "ROOT-double_free",
+      "ROOT-leak",
+      "ROOT-null",
+      "ROOT-stack_escape",
+      "ROOT-string_bounds",
+      "ROOT-use_after_free"
+    ],
+    "detected_root_cause_count": 6,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "reviewed_support": 6,
+      "context_note": 17,
+      "duplicate": 1
+    }
+  },
+  "review": {
+    "scope": {
+      "dataset": "6f98d4d26f66db4d1dd1deda933c797fdb8c7ed9dfb00d2bf7b79776879ea260",
+      "runs": "c65acb1acbbac45e448947b331e290f448ac201b36dfdfdfc0350cf6ab608ea9"
+    },
+    "review_kind": "agent-assisted source-reviewed fixture bindings; independent human review pending",
+    "matches": [
+      {
+        "defect_id": "V5-null",
+        "evidence_id": "E-d658e0714a71b715f670b566",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: int f(void) { int *p=0; return *p; } Corrected counterpart: int f(void) { int value=1; int *p=&value; return *p; } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      },
+      {
+        "defect_id": "V5-double_free",
+        "evidence_id": "E-026d85538499083315266b87",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      },
+      {
+        "defect_id": "V5-use_after_free",
+        "evidence_id": "E-cacd553852f1ae35893a5d64",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; } Corrected counterpart: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; int value=*p; free(p); return value; } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      },
+      {
+        "defect_id": "V5-leak",
+        "evidence_id": "E-a399bb8e478ae4d35ea367a8",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; free(p); } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      },
+      {
+        "defect_id": "V5-stack_escape",
+        "evidence_id": "E-8cd4d6c5508a104b412271a6",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: int *f(void) { int values[2]={0}; return values; } Corrected counterpart: int *f(int values[2]) { return values; } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      },
+      {
+        "defect_id": "V5-string_bounds",
+        "evidence_id": "E-8e25d108335fc6145c4da647",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); } Corrected counterpart: #include <string.h>\nvoid f(void) { char buffer[8]; strcpy(buffer,\"abcdef\"); } Checker ID, diagnostic meaning and source/sink anchor agree; potential operation defect, not a whole-program execution claim."
+      }
+    ],
+    "adjudications": [
+      {
+        "evidence_id": "E-57b88c49f86090136c705d34",
+        "decision": "duplicate",
+        "duplicate_of": "E-8cd4d6c5508a104b412271a6",
+        "reviewer": "Codex-source-review",
+        "rationale": "Same reviewed fixture root; compiler/analyzer observations are not separate defects."
+      }
+    ],
+    "contracts": {}
+  },
+  "metrics": {
+    "precision": null,
+    "recall": null,
+    "reason": "Partial non-exhaustive oracle and pending adjudications; do not interpret issue dispositions as precision/recall."
+  },
+  "bounded_fixture_metrics": {
+    "reviewed_true_root_findings": 6,
+    "known_root_defects": 9,
+    "confirmed_false_positive_groups": 0,
+    "unknown_primary_observations": 0,
+    "corrected_counterpart_warning_observations": 0,
+    "root_recall_in_authored_fixture_corpus": 0.6666666666666666,
+    "adjudicated_only_precision": 1.0,
+    "precision_is_incomplete": false,
+    "independent_human_review_pending": true,
+    "generalization": "Small authored paired fixtures; no population recall/precision claim."
+  }
+}

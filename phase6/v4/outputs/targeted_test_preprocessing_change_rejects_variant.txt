@@ -1,0 +1,6 @@
+test_preprocessing_change_rejects_variant (phase6.v4.test_isolation.LiveTests.test_preprocessing_change_rejects_variant) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.189s
+
+OK

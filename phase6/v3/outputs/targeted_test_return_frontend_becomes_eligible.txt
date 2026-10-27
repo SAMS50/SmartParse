@@ -1,0 +1,6 @@
+test_return_frontend_becomes_eligible (phase6.v3.test_recovery.LiveRecoveryTests.test_return_frontend_becomes_eligible) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.798s
+
+OK

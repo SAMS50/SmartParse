@@ -1,0 +1,18 @@
+test_boundary_spelling_mismatch_rejects (phase6.v4.test_isolation.PolicyTests.test_boundary_spelling_mismatch_rejects) ... ok
+test_dependency_closure (phase6.v4.test_isolation.PolicyTests.test_dependency_closure) ... ok
+test_exclusion_budget (phase6.v4.test_isolation.PolicyTests.test_exclusion_budget) ... ok
+test_global_initialization_rejects (phase6.v4.test_isolation.PolicyTests.test_global_initialization_rejects) ... ok
+test_hard_limits (phase6.v4.test_isolation.PolicyTests.test_hard_limits) ... ok
+test_locationless_blocker_rejects (phase6.v4.test_isolation.PolicyTests.test_locationless_blocker_rejects) ... ok
+test_macro_boundary_rejects (phase6.v4.test_isolation.PolicyTests.test_macro_boundary_rejects) ... ok
+test_malformed_preprocessor_output_rejects (phase6.v4.test_isolation.PolicyTests.test_malformed_preprocessor_output_rejects) ... ok
+test_mask_preserves_bytes_lines_crlf_unicode (phase6.v4.test_isolation.PolicyTests.test_mask_preserves_bytes_lines_crlf_unicode) ... ok
+test_physical_ast_boundaries (phase6.v4.test_isolation.PolicyTests.test_physical_ast_boundaries) ... ok
+test_preprocessing_guard (phase6.v4.test_isolation.PolicyTests.test_preprocessing_guard) ... ok
+test_shared_line_rejects (phase6.v4.test_isolation.PolicyTests.test_shared_line_rejects) ... ok
+test_signature_blocker_rejects (phase6.v4.test_isolation.PolicyTests.test_signature_blocker_rejects) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.005s
+
+OK

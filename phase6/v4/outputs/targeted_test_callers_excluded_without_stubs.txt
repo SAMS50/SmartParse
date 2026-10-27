@@ -1,0 +1,6 @@
+test_callers_excluded_without_stubs (phase6.v4.test_isolation.LiveTests.test_callers_excluded_without_stubs) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.808s
+
+OK

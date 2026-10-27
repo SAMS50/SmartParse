@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v3",
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\fixtures\\positive_return.c",
+    "--compiler",
+    "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+    "--json",
+    "--repair-for-analysis"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "timeout_seconds": 105,
+  "elapsed_seconds": 2.89,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\positive_return.json"
+}

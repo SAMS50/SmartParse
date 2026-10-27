@@ -1,0 +1,56 @@
+{
+  "schema": "smartparse.repair_for_analysis",
+  "schema_version": "1.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\fixtures\\positive_return.c",
+    "sha256": "7c48248509f5de829ba28b20edb4f285db203505e6104e0a006ed143a5589b88",
+    "original_unchanged": true
+  },
+  "baseline": null,
+  "recovery": {
+    "enabled": true,
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 1,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 90,
+      "call_seconds": 10
+    },
+    "candidates": [],
+    "accepted_variants": [],
+    "non_whitelisted_suggestions": [],
+    "stop_reason": "compiler invocation budget exhausted",
+    "eligibility_change": {
+      "baseline_frontend_accepted": false,
+      "final_frontend_accepted": false,
+      "frontend_newly_eligible": false,
+      "analyzer_newly_completed": false,
+      "function_path_coverage_certified": false,
+      "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+    },
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 1,
+      "elapsed_seconds": 0.11,
+      "calls": [
+        {
+          "number": 1,
+          "role": "compiler_version",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+          "stderr": "",
+          "elapsed_seconds": 0.11
+        }
+      ]
+    },
+    "budget_exhausted": true
+  },
+  "repair_conditioned_findings": []
+}

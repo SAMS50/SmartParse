@@ -1,0 +1,6 @@
+test_negative_unbraced_macro_and_header_abstain (phase6.v3.test_recovery.LiveRecoveryTests.test_negative_unbraced_macro_and_header_abstain) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 7.343s
+
+OK

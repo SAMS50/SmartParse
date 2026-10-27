@@ -1,0 +1,166 @@
+{
+  "schema": "smartparse.memory_analysis.acceptance",
+  "schema_version": "1.0",
+  "tests": {
+    "run": 385,
+    "passed": 385,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "elapsed_seconds": 220.453
+  },
+  "comparison": {
+    "baseline_root_count": 6,
+    "configured_root_count": 8,
+    "new_root_cause_ids": [
+      "ROOT-fixed_bounds",
+      "ROOT-stream"
+    ],
+    "already_detected_root_cause_ids": [
+      "ROOT-double_free",
+      "ROOT-leak",
+      "ROOT-null",
+      "ROOT-stack_escape",
+      "ROOT-string_bounds",
+      "ROOT-use_after_free"
+    ],
+    "lost_root_cause_ids": [],
+    "baseline_metrics": {
+      "reviewed_true_root_findings": 6,
+      "known_root_defects": 9,
+      "confirmed_false_positive_groups": 0,
+      "unknown_primary_observations": 0,
+      "corrected_counterpart_warning_observations": 0,
+      "root_recall_in_authored_fixture_corpus": 0.6666666666666666,
+      "adjudicated_only_precision": 1.0,
+      "precision_is_incomplete": false,
+      "independent_human_review_pending": true,
+      "generalization": "Small authored paired fixtures; no population recall/precision claim."
+    },
+    "configured_metrics": {
+      "reviewed_true_root_findings": 8,
+      "known_root_defects": 9,
+      "confirmed_false_positive_groups": 0,
+      "unknown_primary_observations": 0,
+      "corrected_counterpart_warning_observations": 0,
+      "root_recall_in_authored_fixture_corpus": 0.8888888888888888,
+      "adjudicated_only_precision": 1.0,
+      "precision_is_incomplete": false,
+      "independent_human_review_pending": true,
+      "generalization": "Small authored paired fixtures; no population recall/precision claim."
+    },
+    "baseline_categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 5,
+        "missed": 1,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 1,
+        "missed": 2,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      }
+    },
+    "configured_categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 6,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 2,
+        "missed": 1,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      }
+    }
+  },
+  "protected_files": 675,
+  "changed_protected_files": [],
+  "frozen_baseline_bound_files": 47,
+  "changed_frozen_baseline_files": [],
+  "historical_csvs": 17,
+  "benchmark_new_memory_findings": 0,
+  "benchmark_eligibility_improved": false,
+  "remaining_missed_fixture_root": "ROOT-allocation_size",
+  "review_status": "Agent source-reviewed fixture matches; independent human review pending.",
+  "no_original_source_writes_by_analysis": true,
+  "no_user_C_program_executed": true,
+  "committed": false,
+  "pushed": false
+}

@@ -1,0 +1,6 @@
+test_malformed_source_abstains (phase6.v4.test_isolation.LiveTests.test_malformed_source_abstains) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.349s
+
+OK

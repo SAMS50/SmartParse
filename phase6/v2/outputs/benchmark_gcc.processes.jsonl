@@ -1,0 +1,26 @@
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE --version"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wall -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wextra -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wparentheses -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fdiagnostics-show-option -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fdiagnostics-color=never -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fmax-errors=0 -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -fmax-errors=0 C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -dumpmachine"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E -dM -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E -v -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE --version"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wall -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wextra -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -Wparentheses -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fdiagnostics-show-option -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fdiagnostics-color=never -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.EXE -x c -fsyntax-only -fmax-errors=0 -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -fmax-errors=0 C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -dumpmachine"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E -dM -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E -v -"}
+{"executable": "None", "arguments": "C:\\MinGW\\bin\\gcc.exe -x c -E C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"}

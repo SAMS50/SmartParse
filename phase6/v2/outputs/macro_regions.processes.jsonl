@@ -1,0 +1,32 @@
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --version"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wextra -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wparentheses -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fdiagnostics-show-option -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fdiagnostics-color=never -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -ferror-limit=0 -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fno-diagnostics-fixit-info -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -dumpmachine"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E -dM -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E -v -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info -Xclang -ast-dump=json -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info -Xclang -ast-dump=json C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe --version"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wextra -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wparentheses -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fdiagnostics-show-option -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fdiagnostics-color=never -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -ferror-limit=0 -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -fno-diagnostics-fixit-info -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -dumpmachine"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E -dM -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E -v -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -E C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info -Xclang -ast-dump=json -"}
+{"executable": "None", "arguments": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe -x c -fsyntax-only -Wall -Wextra -Wparentheses -fdiagnostics-show-option -fdiagnostics-color=never -ferror-limit=0 -fno-diagnostics-fixit-info -Xclang -ast-dump=json C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v2\\fixtures\\macro_regions.c"}

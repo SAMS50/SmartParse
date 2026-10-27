@@ -1,0 +1,6 @@
+test_analyzer_findings_are_only_repair_conditioned (phase6.v3.test_recovery.LiveRecoveryTests.test_analyzer_findings_are_only_repair_conditioned) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.309s
+
+OK

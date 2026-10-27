@@ -1,0 +1,16 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "unittest",
+    "phase6.v3.test_recovery.PolicyTests",
+    "phase6.v3.test_recovery.BudgetTests",
+    "-v"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 20,
+  "elapsed_seconds": 1.75,
+  "cleanup": null,
+  "log": "phase6\\v3\\outputs\\hardened_small_tests.txt"
+}

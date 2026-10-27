@@ -1,0 +1,6 @@
+test_all_dependent_abstains (phase6.v4.test_isolation.LiveTests.test_all_dependent_abstains) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.812s
+
+OK

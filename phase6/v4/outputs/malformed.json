@@ -1,0 +1,965 @@
+{
+  "schema": "smartparse.unaffected_regions",
+  "schema_version": "1.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+    "sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+    "original_unchanged": true
+  },
+  "recovery_report": {
+    "schema": "smartparse.repair_for_analysis",
+    "schema_version": "1.0",
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+      "sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+      "original_unchanged": true
+    },
+    "baseline": {
+      "immutable": true,
+      "source_sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+      "analysis": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 3,
+          "errors": 2,
+          "warnings": 0,
+          "notes": 1,
+          "categories": {
+            "syntax": 2,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 1
+          }
+        },
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+            "line": 4,
+            "column": 1,
+            "severity": "error",
+            "message": "expected expression",
+            "backend": "clang",
+            "category": "syntax",
+            "source_snippet": "int independent(void)",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+            "line": 7,
+            "column": 2,
+            "severity": "error",
+            "message": "expected '}'",
+            "backend": "clang",
+            "category": "syntax",
+            "source_snippet": "}",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+            "line": 2,
+            "column": 1,
+            "severity": "note",
+            "message": "to match this '{'",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "{",
+            "diagnostic_id": null
+          }
+        ],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 1,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n"
+        },
+        "unrecognized_output": []
+      },
+      "eligibility": {
+        "schema": "smartparse.analysis_eligibility",
+        "schema_version": "1.0",
+        "manifest": {
+          "source": {
+            "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+            "sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+            "bytes": 68,
+            "physical_lines": 7,
+            "original_source_unchanged": true,
+            "pre_analysis_sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+            "snapshot_kind": "original",
+            "original_file_sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a"
+          },
+          "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+          "requested_standard": null,
+          "include_directories": [],
+          "macro_definitions": [],
+          "warning_options": {
+            "compiler": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info"
+            ],
+            "analyzer": []
+          },
+          "checker_options": "driver defaults; query recorded if static analysis requested",
+          "tool_contexts": {
+            "compiler": {
+              "compiler": {
+                "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "backend": "clang",
+                "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+                "flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info"
+                ]
+              },
+              "target": "x86_64-w64-windows-gnu",
+              "standard_macros": {
+                "__SIZEOF_POINTER__": "8",
+                "__STDC_VERSION__": "201710L",
+                "__STDC__": "1"
+              },
+              "system_include_paths": [
+                "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+                "C:/MinGW/mingw32/include",
+                "C:/MinGW/include"
+              ]
+            }
+          },
+          "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures",
+          "include_environment": {
+            "CPATH": null,
+            "C_INCLUDE_PATH": null,
+            "INCLUDE": null,
+            "SDKROOT": null
+          }
+        },
+        "stages": {
+          "compiler": {
+            "completion": "completed",
+            "returncode": 1,
+            "frontend_accepted": false
+          },
+          "analyzer": {
+            "completion": "not_attempted",
+            "returncode": null
+          },
+          "preprocessing_probe": {
+            "status": "see_recovery_budget_log"
+          }
+        },
+        "blockers": [
+          {
+            "stage": "compiler",
+            "category": "syntax",
+            "message": "expected expression",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+              "line": 4,
+              "column": 1
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "syntax",
+            "message": "expected '}'",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+              "line": 7,
+              "column": 2
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          }
+        ],
+        "region_inventory": {
+          "status": "partial",
+          "regions": [],
+          "exclusions": [
+            {
+              "name": "broken",
+              "reason": "body boundaries do not match source bytes"
+            }
+          ],
+          "basis": "v2 physical AST validation; recovery does not certify analyzer path coverage"
+        },
+        "regions": [
+          {
+            "id": "translation_unit",
+            "kind": "translation_unit",
+            "name": null,
+            "start_line": 1,
+            "end_line": 7,
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          }
+        ],
+        "mapping": {
+          "source_edits_applied": false,
+          "private_overlay_edits": false,
+          "function_locations": "physical bytes of this source snapshot; variant maps stored in recovery provenance"
+        },
+        "analysis": {
+          "schema_version": "1.0",
+          "analysis_mode": "extended_c",
+          "status": "completed",
+          "compiler": {
+            "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "backend": "clang",
+            "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+            "flags": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info"
+            ]
+          },
+          "summary": {
+            "total_diagnostics": 3,
+            "errors": 2,
+            "warnings": 0,
+            "notes": 1,
+            "categories": {
+              "syntax": 2,
+              "semantic/type": 0,
+              "compiler warning": 0,
+              "unknown": 1
+            }
+          },
+          "diagnostics": [
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+              "line": 4,
+              "column": 1,
+              "severity": "error",
+              "message": "expected expression",
+              "backend": "clang",
+              "category": "syntax",
+              "source_snippet": "int independent(void)",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+              "line": 7,
+              "column": 2,
+              "severity": "error",
+              "message": "expected '}'",
+              "backend": "clang",
+              "category": "syntax",
+              "source_snippet": "}",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+              "line": 2,
+              "column": 1,
+              "severity": "note",
+              "message": "to match this '{'",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "{",
+              "diagnostic_id": null
+            }
+          ],
+          "tool_issues": [],
+          "execution": {
+            "returncode": 1,
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+            ]
+          },
+          "raw_output": {
+            "stdout": "",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n"
+          },
+          "unrecognized_output": []
+        }
+      },
+      "analysis_sha256": "f003339936cdfbf6ad7f5dd9a9db915f26235391c5486db17830deef5c6e4f3d"
+    },
+    "recovery": {
+      "enabled": false,
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 64,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 90,
+        "call_seconds": 10
+      },
+      "candidates": [],
+      "accepted_variants": [],
+      "non_whitelisted_suggestions": [],
+      "stop_reason": "repair_not_requested",
+      "eligibility_change": {
+        "baseline_frontend_accepted": false,
+        "final_frontend_accepted": false,
+        "frontend_newly_eligible": false,
+        "analyzer_newly_completed": false,
+        "function_path_coverage_certified": false,
+        "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+      },
+      "temporary_workspace_removed": true,
+      "usage": {
+        "compiler_invocations": 15,
+        "elapsed_seconds": 3.468,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+            "stderr": "",
+            "elapsed_seconds": 0.203
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.187
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.172
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.188
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.187
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.188
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.203
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-ferror-limit=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.265
+          },
+          {
+            "number": 9,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fno-diagnostics-fixit-info",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.219
+          },
+          {
+            "number": 10,
+            "role": "target_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-dumpmachine"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "14ca52f473c03e43adcd02ecd2a6da4e554e7261eb736bfcbf935762772e3ba2",
+            "stderr": "",
+            "elapsed_seconds": 0.266
+          },
+          {
+            "number": 11,
+            "role": "standard_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-dM",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "31767a9fe8821454353b4c28b5a156ea1ed7aa73036ce6a7c710e2fb6cc8f78f",
+            "stderr": "",
+            "elapsed_seconds": 0.234
+          },
+          {
+            "number": 12,
+            "role": "include_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-v",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "4bf30b2f3e0bd46aad5129c162b8d6b0449442808e67c754bf7e0bb3505eecc1",
+            "stderr": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\r\n (in-process)\r\n \"C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\" -cc1 -triple x86_64-w64-windows-gnu -E -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name - -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -resource-dir C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17 -internal-isystem C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include -internal-isystem C:/MinGW/mingw32/include -internal-isystem C:/MinGW/mingw32/usr/include -internal-isystem C:/MinGW/include -fdebug-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o - -x c -\r\nclang -cc1 version 17.0.2 based upon LLVM 17.0.2 default target x86_64-w64-windows-gnu\r\nignoring nonexistent directory \"C:/MinGW/mingw32/usr/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include\r\n C:/MinGW/mingw32/include\r\n C:/MinGW/include\r\nEnd of search list.\r\n",
+            "elapsed_seconds": 0.281
+          },
+          {
+            "number": 13,
+            "role": "compiler_validation",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n",
+            "elapsed_seconds": 0.25
+          },
+          {
+            "number": 14,
+            "role": "ast_inventory",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-Xclang",
+              "-ast-dump=json",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "cd5a12c57afc91ae221bd516bf8489955a5d97cb22bede56f90951c86305f10d",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n",
+            "elapsed_seconds": 0.281
+          },
+          {
+            "number": 15,
+            "role": "preprocessing_guard",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-P",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "dd082ca68bdf76a44018ceff315e0ea6d81498c0f53b20b5359a4227b8a41c5a",
+            "stderr": "",
+            "elapsed_seconds": 0.328
+          }
+        ]
+      },
+      "budget_exhausted": false
+    },
+    "repair_conditioned_findings": []
+  },
+  "isolation": {
+    "enabled": true,
+    "experimental": true,
+    "limits": {
+      "exclusions": 8,
+      "variants": 1,
+      "invocations": 64,
+      "analyzer_invocations": 5,
+      "total_seconds": 120,
+      "call_seconds": 10
+    },
+    "status": "abstained",
+    "reason": "inconsistent physical body boundaries",
+    "inventory": [],
+    "excluded_functions": [],
+    "retained_functions": [],
+    "blockers": [],
+    "variant": null,
+    "eligibility_improved": false,
+    "function_path_coverage_certified": false,
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 21,
+      "analyzer_invocations": 3,
+      "elapsed_seconds": 4.64,
+      "isolation_calls": [
+        {
+          "number": 1,
+          "role": "isolation_analyzer_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.203
+        },
+        {
+          "number": 2,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n",
+          "elapsed_seconds": 0.188
+        },
+        {
+          "number": 3,
+          "role": "isolation_checker_context",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xclang",
+            "-analyzer-list-enabled-checkers",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "6515f897a5ca55e700707f119243fcbda12a6d6b3b884645ce6f7701665b322d",
+          "stderr": "",
+          "elapsed_seconds": 0.187
+        },
+        {
+          "number": 4,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-wuvydw57\\probe.json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-wuvydw57\\probe.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.219
+        },
+        {
+          "number": 5,
+          "role": "vfs_identity",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-E",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-wuvydw57\\probe.json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-wuvydw57\\probe.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "7a46e31cee1ea82e5135f3767c0d2640bfedff0eb185e7fa7082358beab3b5ca",
+          "stderr": "",
+          "elapsed_seconds": 0.187
+        },
+        {
+          "number": 6,
+          "role": "ast_inventory",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xclang",
+            "-ast-dump=json",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "85938d0ac798f3e182c4d3de4f557e2bdbaeb7bf2e51a3954e4cb90e591206a2",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n",
+          "elapsed_seconds": 0.172
+        }
+      ]
+    }
+  },
+  "baseline_static_analysis": {
+    "schema_version": "1.0",
+    "analysis_mode": "clang_static_analyzer",
+    "status": "partial",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 3,
+      "errors": 2,
+      "warnings": 0,
+      "notes": 1,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 1
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+        "line": 4,
+        "column": 1,
+        "severity": "error",
+        "message": "expected expression",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "int independent(void)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+        "line": 7,
+        "column": 2,
+        "severity": "error",
+        "message": "expected '}'",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "}",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c",
+        "line": 2,
+        "column": 1,
+        "severity": "note",
+        "message": "to match this '{'",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "{",
+        "diagnostic_id": null
+      }
+    ],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 1,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--analyze",
+        "-x",
+        "c",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-Xanalyzer",
+        "-analyzer-output=text",
+        "-o",
+        "nul",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:4:1: error: expected expression\r\nint independent(void)\r\n^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:7:2: error: expected '}'\r\n}\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\malformed.c:2:1: note: to match this '{'\r\n{\r\n^\r\n2 errors generated.\r\n"
+    },
+    "unrecognized_output": [],
+    "findings": [],
+    "findings_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "isolation_conditioned_findings": [],
+  "unique_additional_findings": [],
+  "suppressed_findings": [],
+  "analyzer_context": {
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "enabled_default_checkers": [
+      "apiModeling.Errno",
+      "core.CallAndMessageModeling",
+      "apiModeling.StdCLibraryFunctions",
+      "apiModeling.TrustNonnull",
+      "apiModeling.TrustReturnsNonnull",
+      "apiModeling.llvm.CastValue",
+      "apiModeling.llvm.ReturnValue",
+      "core.CallAndMessage",
+      "core.DivideZero",
+      "core.DynamicTypePropagation",
+      "core.NonNullParamChecker",
+      "core.NonnilStringConstants",
+      "core.NullDereference",
+      "core.StackAddrEscapeBase",
+      "core.StackAddressEscape",
+      "core.UndefinedBinaryOperatorResult",
+      "core.VLASize",
+      "core.builtin.BuiltinFunctions",
+      "core.builtin.NoReturnFunctions",
+      "core.uninitialized.ArraySubscript",
+      "core.uninitialized.Assign",
+      "core.uninitialized.Branch",
+      "core.uninitialized.CapturedBlockVariable",
+      "core.uninitialized.UndefReturn",
+      "deadcode.DeadStores",
+      "nullability.NullabilityBase",
+      "nullability.NullPassedToNonnull",
+      "nullability.NullReturnedFromNonnull",
+      "security.insecureAPI.SecuritySyntaxChecker",
+      "security.insecureAPI.UncheckedReturn",
+      "security.insecureAPI.getpw",
+      "security.insecureAPI.gets",
+      "security.insecureAPI.mkstemp",
+      "security.insecureAPI.mktemp",
+      "security.insecureAPI.vfork",
+      "unix.API",
+      "unix.cstring.CStringModeling",
+      "unix.DynamicMemoryModeling",
+      "unix.Malloc",
+      "unix.MallocSizeof",
+      "unix.MismatchedDeallocator",
+      "unix.Vfork",
+      "unix.cstring.BadSizeArg",
+      "unix.cstring.NullArg"
+    ],
+    "checker_query_returncode": 0,
+    "extra_checkers_enabled": false
+  }
+}

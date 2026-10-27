@@ -1,0 +1,6 @@
+test_unknown_extent_no_naming_based_claim (phase6.v5.test_detection.LiveTests.test_unknown_extent_no_naming_based_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.873s
+
+OK

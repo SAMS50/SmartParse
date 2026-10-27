@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "unittest",
+    "phase6.v5.test_detection.PolicyTests",
+    "phase6.v5.test_detection.LiveTests.test_repaired_evidence_stays_conditioned",
+    "phase6.v5.test_detection.LiveTests.test_json_cli_space_unicode_path",
+    "-v"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 75,
+  "elapsed_seconds": 9.937,
+  "cleanup": null,
+  "log": "phase6\\v5\\outputs\\targeted_final.txt"
+}

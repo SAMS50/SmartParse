@@ -1,0 +1,6 @@
+test_isolated_findings_cannot_export_unconditionally (phase6.v5.test_detection.LiveTests.test_isolated_findings_cannot_export_unconditionally) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 7.166s
+
+OK

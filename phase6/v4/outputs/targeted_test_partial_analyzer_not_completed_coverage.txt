@@ -1,0 +1,6 @@
+test_partial_analyzer_not_completed_coverage (phase6.v4.test_isolation.LiveTests.test_partial_analyzer_not_completed_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.460s
+
+OK
