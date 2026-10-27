@@ -1,0 +1,6 @@
+test_existing_condition_warning_not_new_root (phase6.v6.test_semantics.LiveTests.test_existing_condition_warning_not_new_root) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.198s
+
+OK

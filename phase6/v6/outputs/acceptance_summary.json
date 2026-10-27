@@ -1,0 +1,38 @@
+{
+  "schema": "smartparse.semantic_analysis.acceptance",
+  "schema_version": "1.0",
+  "tests": {
+    "run": 413,
+    "passed": 413,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "elapsed_seconds": 224.547
+  },
+  "protected_files": 799,
+  "changed_protected_files": [],
+  "frozen_bound_files": 81,
+  "changed_frozen_files": [],
+  "historical_csvs": 17,
+  "baseline_structural_roots": 3,
+  "configured_structural_roots": 4,
+  "new_structural_roots": [
+    "ROOT-condition_three"
+  ],
+  "conditional_review_units": 4,
+  "unexpected_semantic_control_findings": 0,
+  "confirmed_false_positive_groups": 0,
+  "unadjudicated_backend_primary_records": 11,
+  "reviewed_duplicate_evidence_records": 1,
+  "independent_human_review_pending": true,
+  "precision": null,
+  "recall": null,
+  "benchmark_new_semantic_findings": 0,
+  "benchmark_eligibility_improved": false,
+  "allocation_literal_width_still_missed": true,
+  "preexisting_implementation_files_modified": [],
+  "no_user_C_program_executed": true,
+  "committed": false,
+  "pushed": false,
+  "milestone_7_started": false
+}

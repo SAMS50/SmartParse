@@ -1,0 +1,6 @@
+test_scanf_evidence_and_safe_controls (phase6.v6.test_semantics.LiveTests.test_scanf_evidence_and_safe_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 20.170s
+
+OK

@@ -1,0 +1,249 @@
+[
+  {
+    "case": "repair_only",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "phase6.v6",
+        "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space k_3ugkr7\\input.c",
+        "--compiler",
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--semantic-analysis",
+        "--json",
+        "--punctuation-recovery"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "elapsed_seconds": 4.063,
+      "cleanup": null,
+      "log": "phase6\\v6\\outputs\\repair_only.json"
+    },
+    "source_text": "double f(int a,int b)\r\n{\r\n return a/b\r\n}\r\n",
+    "source_sha256": "7391cbc976f55c477cc1f526fca7ff5abd6df9ecda887d1ee7ea85cdb4d15993",
+    "source_unchanged": true,
+    "repair_conditioned": true,
+    "isolation_conditioned": false,
+    "findings": 1,
+    "usage": {
+      "compiler_invocations": 40,
+      "analyzer_invocations": 11,
+      "elapsed_seconds": 3.843,
+      "calls": [
+        {
+          "number": 1,
+          "role": "ast_inventory",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-semantic-oawt6ytw\\snapshot.json",
+            "-Xclang",
+            "-ast-dump=json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space k_3ugkr7\\input.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "be77ce1ed8aff5e159ce74e86a8c07209ea84b51464fdc45c37083bd1f5c08e1",
+          "stderr": "",
+          "elapsed_seconds": 0.11
+        },
+        {
+          "number": 2,
+          "role": "semantic_checker_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xclang",
+            "-analyzer-checker=alpha.deadcode.UnreachableCode",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.093
+        },
+        {
+          "number": 3,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xclang",
+            "-analyzer-checker=alpha.deadcode.UnreachableCode",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-semantic-oawt6ytw\\snapshot.json",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space k_3ugkr7\\input.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.125
+        }
+      ],
+      "limits": {
+        "invocations": 96,
+        "analyzer_invocations": 20,
+        "checkers": 4,
+        "total_seconds": 120,
+        "call_seconds": 10
+      },
+      "max_findings": 64,
+      "max_ast_nodes": 100000,
+      "max_conjunction_terms": 8
+    },
+    "temporary_input_removed": true
+  },
+  {
+    "case": "repair_and_isolation",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "phase6.v6",
+        "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space 9z75jm3q\\input.c",
+        "--compiler",
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--semantic-analysis",
+        "--json",
+        "--punctuation-recovery",
+        "--isolate-unaffected"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 45,
+      "elapsed_seconds": 6.531,
+      "cleanup": null,
+      "log": "phase6\\v6\\outputs\\repair_and_isolation.json"
+    },
+    "source_text": "int broken(void)\r\n{\r\n missing_identifier=1;\r\n return 0\r\n}\r\nint f(int x)\r\n{\r\n if (x>=5 && x<=5 && x==6) return 1;\r\n return 0;\r\n}\r\n",
+    "source_sha256": "6b4cf3b7e52366d71711bc68fb640cb0887240a751ceb2c648b375223367fcef",
+    "source_unchanged": true,
+    "repair_conditioned": true,
+    "isolation_conditioned": true,
+    "findings": 1,
+    "usage": {
+      "compiler_invocations": 51,
+      "analyzer_invocations": 14,
+      "elapsed_seconds": 6.281,
+      "calls": [
+        {
+          "number": 1,
+          "role": "ast_inventory",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-semantic-8mxj60sc\\snapshot.json",
+            "-Xclang",
+            "-ast-dump=json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space 9z75jm3q\\input.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "ffa4262c4cca0cbfa9725243f030fa0b91228660e3d7cb8363f25872490ed57e",
+          "stderr": "",
+          "elapsed_seconds": 0.235
+        },
+        {
+          "number": 2,
+          "role": "semantic_checker_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xclang",
+            "-analyzer-checker=alpha.deadcode.UnreachableCode",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.14
+        },
+        {
+          "number": 3,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xclang",
+            "-analyzer-checker=alpha.deadcode.UnreachableCode",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-semantic-8mxj60sc\\snapshot.json",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space 9z75jm3q\\input.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "C:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space 9z75jm3q\\input.c:8:35: warning: This statement is never executed [alpha.deadcode.UnreachableCode]\r\n if (x>=5 && x<=5 && x==6) return 1;\r\n                                  ^\r\nC:\\Users\\saami\\AppData\\Local\\Temp\\semantic provenance space 9z75jm3q\\input.c:8:35: note: This statement is never executed\r\n if (x>=5 && x<=5 && x==6) return 1;\r\n                                  ^\r\n1 warning generated.\r\n",
+          "elapsed_seconds": 0.094
+        }
+      ],
+      "limits": {
+        "invocations": 96,
+        "analyzer_invocations": 20,
+        "checkers": 4,
+        "total_seconds": 120,
+        "call_seconds": 10
+      },
+      "max_findings": 64,
+      "max_ast_nodes": 100000,
+      "max_conjunction_terms": 8
+    },
+    "temporary_input_removed": true
+  }
+]

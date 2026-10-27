@@ -1,0 +1,6 @@
+test_corrected_conditions_and_value_controls (phase6.v6.test_semantics.LiveTests.test_corrected_conditions_and_value_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 19.835s
+
+OK

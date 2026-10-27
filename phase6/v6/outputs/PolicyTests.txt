@@ -1,0 +1,19 @@
+test_different_declaration_ids_are_not_same_value (phase6.v6.test_semantics.PolicyTests.test_different_declaration_ids_are_not_same_value) ... ok
+test_empty_interval_and_boundary (phase6.v6.test_semantics.PolicyTests.test_empty_interval_and_boundary) ... ok
+test_explicit_division_cast_abstains (phase6.v6.test_semantics.PolicyTests.test_explicit_division_cast_abstains) ... ok
+test_fixed_input_bounds_include_nul (phase6.v6.test_semantics.PolicyTests.test_fixed_input_bounds_include_nul) ... ok
+test_invalid_cli_limits (phase6.v6.test_semantics.PolicyTests.test_invalid_cli_limits) ... ok
+test_malformed_tree_is_rejected (phase6.v6.test_semantics.PolicyTests.test_malformed_tree_is_rejected) ... ok
+test_precision_is_not_a_zero_or_exact_division_check (phase6.v6.test_semantics.PolicyTests.test_precision_is_not_a_zero_or_exact_division_check) ... ok
+test_side_effect_abstains (phase6.v6.test_semantics.PolicyTests.test_side_effect_abstains) ... ok
+test_suppressed_and_zero_width_abstain (phase6.v6.test_semantics.PolicyTests.test_suppressed_and_zero_width_abstain) ... ok
+test_term_budget (phase6.v6.test_semantics.PolicyTests.test_term_budget) ... ok
+test_three_terms (phase6.v6.test_semantics.PolicyTests.test_three_terms) ... ok
+test_unknown_capacity_and_callee_do_not_match (phase6.v6.test_semantics.PolicyTests.test_unknown_capacity_and_callee_do_not_match) ... ok
+test_unsigned_and_volatile_abstain (phase6.v6.test_semantics.PolicyTests.test_unsigned_and_volatile_abstain) ... ok
+test_unsigned_conversion_abstains (phase6.v6.test_semantics.PolicyTests.test_unsigned_conversion_abstains) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.008s
+
+OK

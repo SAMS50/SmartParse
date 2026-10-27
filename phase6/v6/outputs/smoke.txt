@@ -1,0 +1,6 @@
+contradiction_three_bad completed Bounded semantic AST scan completed; no full path/logic coverage claim. [('SP6.contradictory_int_conjunction', False)]
+contradiction_good completed Bounded semantic AST scan completed; no full path/logic coverage claim. []
+scanf_unbounded completed Bounded semantic AST scan completed; no full path/logic coverage claim. [('SP6.fixed_buffer_input', False)]
+scanf_good completed Bounded semantic AST scan completed; no full path/logic coverage claim. []
+precision_review completed Bounded semantic AST scan completed; no full path/logic coverage claim. [('SP6.integer_division_to_float', False)]
+precision_deliberate completed Bounded semantic AST scan completed; no full path/logic coverage claim. []

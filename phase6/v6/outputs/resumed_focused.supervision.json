@@ -1,0 +1,13 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-c",
+    "import json; from pathlib import Path; from phase6.v6.engine import run_semantics; from phase6.v5.engine import DetectionLimits; cap=json.loads(Path('phase6/v6/outputs/frozen_baseline/valid.json').read_text())['capabilities']; r=run_semantics('phase6/v6/fixtures/contradiction_three_bad.c',enabled=True,compiler=cap['compiler']['path'],capability=cap,limits=DetectionLimits(invocations=96,analyzer_invocations=20,total_seconds=20,call_seconds=5)); Path('phase6/v6/outputs/resumed_focused.json').write_text(json.dumps(r,indent=2)); print(r['status'],r['reason'],r['usage']['elapsed_seconds'],r['usage']['compiler_invocations']); assert r['status']=='completed'"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 35,
+  "elapsed_seconds": 2.704,
+  "cleanup": null,
+  "log": "phase6\\v6\\outputs\\resumed_focused.txt"
+}

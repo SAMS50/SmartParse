@@ -1,0 +1,197 @@
+[
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.PolicyTests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 0.359,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\PolicyTests.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_corrected_conditions_and_value_controls",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 20.203,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_corrected_conditions_and_value_controls.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_disabled_by_default",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 2.36,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_disabled_by_default.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_existing_condition_warning_not_new_root",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 3.5,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_existing_condition_warning_not_new_root.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_isolation_provenance_retained",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 6.204,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_isolation_provenance_retained.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_json_unicode_spaces_crlf",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 5.0,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_json_unicode_spaces_crlf.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_macro_conditions_and_precision_abstain",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 5.781,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_macro_conditions_and_precision_abstain.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_malformed_frontend_blocks_custom_scan",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 7.516,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_malformed_frontend_blocks_custom_scan.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_missing_checker_does_not_fabricate_backend_witness",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 4.813,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_missing_checker_does_not_fabricate_backend_witness.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_precision_context_is_suggestion",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 17.172,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_precision_context_is_suggestion.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_scanf_evidence_and_safe_controls",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 20.563,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_scanf_evidence_and_safe_controls.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_three_term_proof_and_backend_evidence",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 3.39,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_three_term_proof_and_backend_evidence.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v6.test_semantics.LiveTests.test_timeout_and_budget_stop",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 75,
+    "elapsed_seconds": 4.219,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\outputs\\test_timeout_and_budget_stop.txt"
+  }
+]
