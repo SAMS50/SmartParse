@@ -58,6 +58,15 @@ def main():
         location=invalid['studio']['editor_locations'][diagnostic['id']]
         expect(page.get_by_text(f"Ln {location['line']}, Col {location['column']}",exact=True)).to_be_visible()
         checks.append('manual-diagnostic-navigation')
+        page.locator('.problems-list button').first.click()
+        checks.append('problems-navigation')
+        before=page.locator('.monaco-host').bounding_box()['height']
+        page.get_by_role('button',name='Collapse analysis details').click()
+        assert page.locator('.inspector').bounding_box()['height']<=40
+        assert page.locator('.monaco-host').bounding_box()['height']>before+80
+        page.get_by_role('button',name='Problems',exact=True).click()
+        expect(page.get_by_role('button',name='Collapse analysis details')).to_be_visible()
+        checks.append('collapsible-analysis-details')
         fixed='int main(void) {\n return 0;\n}\n';write(fixed)
         expect(page.get_by_text('Source changed since this report.',exact=False)).to_be_visible()
         checks.append('stale-source-protection')
@@ -94,8 +103,42 @@ def main():
         with page.expect_download() as typed:page.keyboard.press('Control+s')
         assert Path(typed.value.path()).read_text(encoding='utf-8')=='int fast_value = 123;'
         checks.append('rapid-typing-exact-buffer')
+        page.locator('.monaco-host .view-lines').click();page.keyboard.press('End');page.keyboard.type(' ')
+        page.get_by_role('button',name='Close untitled-4.c').click()
+        expect(page.get_by_role('dialog')).to_be_visible()
+        page.get_by_role('button',name='Keep editing').click()
+        checks.append('unsaved-close-protection')
+        header=output/'opened.h';header.write_bytes(b'int prototype(void);\n')
+        page.locator('input[type=file]').set_input_files(str(header))
+        expect(page.get_by_role('tab',name='opened.h')).to_have_attribute('aria-selected','true')
+        expect(page.locator('.monaco-host .view-lines')).to_contain_text('prototype')
+        header_report=run('header-active-only')
+        assert submitted['header-active-only']['filename']=='opened.c'
+        assert submitted['header-active-only']['source'].replace('\r\n','\n')==header.read_text()
+        assert header_report['report']['summary']['errors']==0
+        checks.append('standalone-header-buffer')
+        page.locator('.examples-section > summary').click()
+        page.get_by_role('button',name='Valid C',exact=True).click()
+        gallery=run('gallery-valid')
+        assert gallery['report']['summary']['errors']==0
+        page.get_by_role('button',name='Analysis settings').click()
+        page.get_by_label('Clang Static Analyzer',exact=False).check()
+        page.get_by_role('button',name='Apply configuration').click()
+        comparison=run('comparison')
+        page.get_by_role('button',name='Comparison',exact=True).click()
+        assert page.locator('.run-table tbody tr').count()==len(comparison['report']['runs'])>=2
+        checks.append('real-analyzer-comparison')
+        page.get_by_role('button',name='Isolation-assisted',exact=True).click()
+        isolation=run('isolation')
+        assert any(p['conditioning']=='isolation-conditioned' for p in isolation['studio']['previews'])
+        checks.append('isolation-provenance-retained')
+        page.screenshot(path=str(output/'isolation.png'),full_page=True)
         page.set_viewport_size({'width':390,'height':844})
         assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
+        page.get_by_role('button',name='Toggle Explorer').click()
+        expect(page.locator('.explorer')).to_be_visible()
+        page.keyboard.press('Escape');expect(page.locator('.explorer')).not_to_be_visible()
+        checks.append('mobile-explorer-access')
         page.screenshot(path=str(output/'mobile.png'),full_page=True)
         checks.append('mobile-no-horizontal-overflow')
         browser.close()

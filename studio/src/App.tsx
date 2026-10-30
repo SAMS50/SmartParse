@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
-import {AlertCircle, ArrowDownToLine, ArrowRight, Braces, Check, CheckCircle2, ChevronDown, ChevronRight, CircleHelp, Code2, FileCode2, FlaskConical, GitCompareArrows, LoaderCircle, Play, RotateCcw, Search, Settings2, ShieldCheck, Square, Upload, WandSparkles, X, FilePlus2, Save, Pencil} from 'lucide-react'
+import {AlertCircle, ArrowDownToLine, ArrowRight, Braces, Check, CheckCircle2, ChevronDown, ChevronRight, CircleHelp, Code2, FileCode2, FlaskConical, GitCompareArrows, LoaderCircle, Play, RotateCcw, Search, Settings2, ShieldCheck, Square, Upload, WandSparkles, X, FilePlus2, Save, Pencil, FolderOpen} from 'lucide-react'
 import {CodeEditor, type EditorHandle} from './components/CodeEditor'
 import {Inspector, type InspectorTab} from './components/Inspector'
 import {FileDialog} from './components/FileDialog'
@@ -25,6 +25,7 @@ export default function App() {
   const [filter,setFilter] = useState('all'), [query,setQuery] = useState(''), [shown,setShown] = useState(100)
   const [tab,setTab] = useState<InspectorTab>('overview'), [cursor,setCursor] = useState({line: 1, column: 1})
   const [split,setSplit] = useState(58)
+  const [detailsCollapsed,setDetailsCollapsed]=useState(false),[explorerOpen,setExplorerOpen]=useState(false)
   const [detailsHeight,setDetailsHeight] = useState<number | null>(null)
   const main = useRef<HTMLElement>(null)
   const detailSize = detailsHeight ?? (tab === 'overview' ? 144 : tab === 'recovery' ? 320 : 240)
@@ -36,11 +37,11 @@ export default function App() {
   const stale = !!result && (code !== snapshot.source || filename !== snapshot.filename)
 
   function resetReport(){setError('');setNotice('')}
-  function selectFile(id:string){if(id!==active.id){documents.select(id);resetReport()}}
-  function newFile(){try{documents.newFile();resetReport()}catch(e){setError(String(e))}}
+  function selectFile(id:string){setExplorerOpen(false);if(id!==active.id){documents.select(id);resetReport()}}
+  function newFile(){try{setExplorerOpen(false);documents.newFile();resetReport()}catch(e){setError(String(e))}}
   function saveFile(){const text=editor.current?.getText?.()??code;downloadSource({...active,text});documents.update(active.id,{text,exportedText:text});setNotice(`Download requested: ${filename}. Original disk file not overwritten.`)}
   function choose(example:Example){
-    try{documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
+    try{setExplorerOpen(false);documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
     catch(e){setError(String(e))}
   }
   function closeFile(id:string){const file=documents.files.find(f=>f.id===id);if(file&&dirtyFile(file))setFileDialog({mode:'close',id});else{documents.close(id);resetReport()}}
@@ -65,7 +66,7 @@ export default function App() {
     const submitted = {source: submittedText, filename}, submittedId=active.id
     try {
       const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings}, request.signal)
-      if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation)setTab('recovery')}
+      if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation){setTab('recovery');setDetailsCollapsed(false)}}
     } catch (e) {
       if (controller.current === request && !request.signal.aborted) setError(e instanceof Error ? e.message : 'Analysis request failed')
     } finally {
@@ -76,6 +77,11 @@ export default function App() {
     const ids=new Set(documents.files.map(f=>f.id))
     setAnalyses(previous=>Object.keys(previous).some(id=>!ids.has(id))?Object.fromEntries(Object.entries(previous).filter(([id])=>ids.has(id))):previous)
   },[documents.files])
+  useEffect(()=>{
+    if(!explorerOpen)return
+    const close=(event:KeyboardEvent)=>{if(event.key==='Escape')setExplorerOpen(false)}
+    window.addEventListener('keydown',close);return()=>window.removeEventListener('keydown',close)
+  },[explorerOpen])
   const runRef=useRef(runAnalysis);runRef.current=runAnalysis
   useEffect(() => {
     const key = (event: KeyboardEvent) => {if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {event.preventDefault();void runRef.current()}}
@@ -91,7 +97,7 @@ export default function App() {
     if(!/\.[ch]$/i.test(file.name)||file.size>128*1024){setError('Choose a .c or .h file no larger than 128 KiB.');return}
     try{
       const text=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer())
-      documents.add(file.name,text,'import');resetReport()
+      documents.add(file.name,text,'import');setExplorerOpen(false);resetReport()
       setNotice('Imported UTF-8 text. File remains in memory until downloaded.')
     }catch(e){setError(`Could not open file: ${e instanceof Error?e.message:'invalid UTF-8'}`)}
   }
@@ -120,7 +126,7 @@ export default function App() {
   return <div className="studio-shell antialiased">
     <header className="topbar"><a className="brand" href="#workspace" aria-label="SmartParse Studio workspace"><span className="brand-mark"><Braces size={21}/></span><strong>SmartParse</strong><span className="studio-label">STUDIO</span></a>
       <div className="top-breadcrumb"><span>Workspace</span><ChevronRight size={13}/><span title={filename} style={{maxWidth: '25ch', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{filename}</span></div>
-      <div className="top-actions"><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${connected ? 'connected' : ''}`}><i/>{checking ? 'Checking tools' : connected ? `${tools.filter(t => t.status === 'available').length} tools available` : 'API offline'}</span>
+      <div className="top-actions"><button className="icon-button explorer-toggle" aria-label="Toggle Explorer" aria-expanded={explorerOpen} aria-controls="workspace-explorer" onClick={()=>setExplorerOpen(value=>!value)}><FolderOpen size={17}/></button><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${connected ? 'connected' : ''}`}><i/>{checking ? 'Checking tools' : connected ? `${tools.filter(t => t.status === 'available').length} tools available` : 'API offline'}</span>
         {!connected && <button className="text-button" onClick={() => void connect()}>Reconnect</button>}
         <button className="icon-button" aria-label="Analysis settings" onClick={() => setSettingsOpen(true)} disabled={busy}><Settings2 size={18}/></button>
         {busy ? <button className="stop-button" onClick={stopWaiting}><Square size={12}/>Stop waiting</button> : <button className="primary-button" aria-label="Analyze" onClick={() => void runAnalysis()} disabled={!connected || checking}><Play size={14} fill="currentColor"/>Analyze<span className="shortcut">Ctrl ↵</span></button>}
@@ -128,11 +134,16 @@ export default function App() {
     </header>
     <div className="workbench">
       <aside className="activity-rail" aria-label="Workspace navigation"><button className="rail-button selected" title="Code workspace" aria-label="Code workspace" onClick={() => setTab('overview')}><Code2 size={22}/></button><button className="rail-button" title="Recovery evidence" aria-label="Recovery evidence" onClick={() => setTab('recovery')}><WandSparkles size={20}/></button><button className="rail-button" title="Analyzer comparison" aria-label="Analyzer comparison" onClick={() => setTab('comparison')}><GitCompareArrows size={20}/></button><span className="rail-spacer"/><button className="rail-button" aria-label="About Studio" onClick={() => setHelp(true)}><CircleHelp size={20}/></button></aside>
-      <aside className="explorer"><div className="explorer-heading">Explorer</div><p className="workspace-kind">In-memory files</p><nav aria-label="Open files">{documents.files.map(file=><div className={`explorer-file ${active.id===file.id?'active':''}`} key={file.id}><button disabled={busy} onClick={()=>selectFile(file.id)} title={file.name}><FileCode2 size={14}/><span>{file.name}</span>{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="icon-button" aria-label={`Rename ${file.name}`} disabled={busy} onClick={()=>setFileDialog({mode:'rename',id:file.id})}><Pencil size={12}/></button><button className="icon-button" aria-label={`Remove ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={13}/></button></div>)}</nav><details className="examples-section"><summary>Examples ({examples.length})</summary><nav aria-label="C examples">{examples.map(example=><button key={example.id} className="example-button" disabled={busy} onClick={()=>choose(example)}><FileCode2 size={14}/><span>{example.title}</span></button>)}</nav></details></aside>
+      <aside id="workspace-explorer" className={`explorer ${explorerOpen?'drawer-open':''}`}><div className="explorer-heading">Explorer</div><p className="workspace-kind">In-memory files</p><nav aria-label="Open files">{documents.files.map(file=><div className={`explorer-file ${active.id===file.id?'active':''}`} key={file.id}><button disabled={busy} onClick={()=>selectFile(file.id)} title={file.name}><FileCode2 size={14}/><span>{file.name}</span>{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="icon-button" aria-label={`Rename ${file.name}`} disabled={busy} onClick={()=>setFileDialog({mode:'rename',id:file.id})}><Pencil size={12}/></button><button className="icon-button" aria-label={`Remove ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={13}/></button></div>)}</nav><details className="examples-section"><summary>Examples ({examples.length})</summary><nav aria-label="C examples">{examples.map(example=><button key={example.id} className="example-button" disabled={busy} onClick={()=>choose(example)}><FileCode2 size={14}/><span>{example.title}</span></button>)}</nav></details></aside>
       <main id="workspace" className="main-workspace" ref={main}>
         {(error || notice) && <div className={`message-banner ${error ? 'error' : ''}`} role={error ? 'alert' : 'status'}><AlertCircle size={16}/><span>{error || notice}</span><button className="icon-button" aria-label="Dismiss message" onClick={() => {setError('');setNotice('')}}><X size={15}/></button></div>}
         <div className="workspace-panes" ref={workspace}>
-          <section className="editor-pane" style={{width: `${split}%`}} aria-label="Source editor"><div className="pane-header file-tabs" role="tablist" aria-label="Editor files">{documents.files.map(file=><div className={`editor-tab ${file.id===active.id?'active':''}`} key={file.id}><button role="tab" aria-selected={file.id===active.id} disabled={busy} onClick={()=>selectFile(file.id)}><FileCode2 size={13}/>{file.name}{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="tab-close" aria-label={`Close ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={12}/></button></div>)}</div>
+          <section className="editor-pane" style={{width: `${split}%`}} aria-label="Source editor"><div className="pane-header file-tabs" role="tablist" aria-label="Editor files" onKeyDown={event=>{
+              if((event.target as HTMLElement).getAttribute('role')!=='tab'||busy)return
+              const at=documents.files.findIndex(file=>file.id===active.id)
+              const next=event.key==='ArrowRight'?(at+1)%documents.files.length:event.key==='ArrowLeft'?(at+documents.files.length-1)%documents.files.length:event.key==='Home'?0:event.key==='End'?documents.files.length-1:-1
+              if(next>=0){event.preventDefault();selectFile(documents.files[next].id);event.currentTarget.querySelectorAll<HTMLButtonElement>('[role=tab]')[next]?.focus()}
+            }}>{documents.files.map(file=><div className={`editor-tab ${file.id===active.id?'active':''}`} key={file.id}><button role="tab" tabIndex={file.id===active.id?0:-1} aria-selected={file.id===active.id} disabled={busy} onClick={()=>selectFile(file.id)}><FileCode2 size={13}/>{file.name}{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="tab-close" aria-label={`Close ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={12}/></button></div>)}</div>
             <div className="editor-config"><span>{settings.standard.toUpperCase()} | {settings.analyzers.join(' + ')} | Active file only{filename.toLowerCase().endsWith('.h')?' (header as C)':''}{settings.recovery?' | recovery':''}{settings.isolation?' | isolation':''}</span><button className="icon-button" aria-label="Reset code" title="Reset to opened contents" disabled={!dirty||busy} onClick={()=>documents.update(active.id,{text:loaded,revision:active.revision+1})}><RotateCcw size={13}/></button></div>
             <div className="monaco-host"><CodeEditor ref={editor} documentId={active.id} revision={active.revision} openDocumentIds={documents.files.map(f=>f.id)} value={code} onChange={setCode} diagnostics={stale || busy ? [] : diagnostics} locations={result?.studio.editor_locations || {}} onCursor={(line,column) => setCursor({line,column})}/></div>
             <div className="editor-footer"><span>{dirty ? 'Unsaved editor changes' : 'UTF-8'}</span><span>Ln {cursor.line}, Col {cursor.column}</span></div>
@@ -152,10 +163,10 @@ export default function App() {
             </div><footer className="findings-footer"><ShieldCheck size={13}/><span>Static analysis only · coverage is not exhaustive</span></footer>
           </section>
         </div>
-        <PanelDivider axis="horizontal" label="Resize analysis details" value={detailSize} min={120} max={420} step={20}
-          onChange={resizeDetails} onDrag={event => {const box=main.current?.getBoundingClientRect();if (box) resizeDetails(box.bottom-event.clientY-12)}}/>
-        <Inspector result={result} source={snapshot.source} tab={tab} onTab={setTab} height={detailSize}
-          onReset={() => {setSplit(58);setDetailsHeight(null)}}/>
+        {!detailsCollapsed&&<PanelDivider axis="horizontal" label="Resize analysis details" value={detailSize} min={120} max={420} step={20}
+          onChange={resizeDetails} onDrag={event => {const box=main.current?.getBoundingClientRect();if (box) resizeDetails(box.bottom-event.clientY-12)}}/>}
+        <Inspector result={result} source={snapshot.source} tab={tab} onTab={value=>{setTab(value);setDetailsCollapsed(false)}} height={detailSize} collapsed={detailsCollapsed} onCollapse={()=>setDetailsCollapsed(value=>!value)} stale={stale} onNavigate={id=>{const location=result?.studio.editor_locations[id];if(location&&!stale)editor.current?.navigate(location)}}
+          onReset={() => {setSplit(58);setDetailsHeight(null);setDetailsCollapsed(false)}}/>
       </main>
     </div>
     <footer className="statusbar"><span><i className={`status-dot ${connected ? 'online' : ''}`}/>{connected ? 'Local backend connected' : 'Local backend offline'}</span><span>UTF-8</span></footer>

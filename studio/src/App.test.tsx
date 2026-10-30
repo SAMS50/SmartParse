@@ -168,3 +168,50 @@ test('manual recovery preserves conditioned evidence without loading an example'
   expect(screen.getAllByText('repair-conditioned')).toHaveLength(2)
   expect(screen.getByText(/Accepted for a temporary analysis variant/)).toBeInTheDocument()
 })
+
+
+test('analysis details collapse and expand without replacing the source editor',async()=>{
+  await ready();const editor=screen.getByRole('textbox',{name:'C source editor'})
+  await userEvent.click(screen.getByRole('button',{name:'Collapse analysis details'}))
+  expect(screen.getByRole('button',{name:'Expand analysis details'})).toHaveAttribute('aria-expanded','false')
+  expect(screen.queryByRole('separator',{name:'Resize analysis details'})).not.toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button',{name:'Recovery'}))
+  expect(screen.getByRole('button',{name:'Collapse analysis details'})).toBeInTheDocument()
+  expect(screen.getByRole('textbox',{name:'C source editor'})).toBe(editor)
+})
+
+test('Problems navigates only when the current source mapping is valid',async()=>{
+  await ready();await chooseNull();await submit()
+  const list=screen.getByLabelText('Problems list');await userEvent.click(within(list).getByRole('button'))
+  expect(navigation.navigate).toHaveBeenCalledWith(expect.objectContaining({line:3,column:9}))
+  fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int changed;'}})
+  expect(within(list).getByRole('button')).toBeDisabled()
+})
+
+test('file tabs support arrow navigation without changing their contents',async()=>{
+  await ready();await userEvent.click(screen.getByRole('button',{name:'New File'}))
+  fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int second;'}})
+  await userEvent.click(screen.getByRole('tab',{name:'untitled-1.c'}))
+  fireEvent.keyDown(screen.getByRole('tab',{name:'untitled-1.c'}),{key:'ArrowRight'})
+  expect(screen.getByRole('tab',{name:'untitled-2.c'})).toHaveAttribute('aria-selected','true')
+  expect(screen.getByRole('textbox',{name:'C source editor'})).toHaveValue('int second;')
+})
+
+test('Explorer toggle opens and Escape dismisses mobile navigation',async()=>{
+  await ready();const toggle=screen.getByRole('button',{name:'Toggle Explorer'})
+  await userEvent.click(toggle);expect(toggle).toHaveAttribute('aria-expanded','true')
+  fireEvent.keyDown(window,{key:'Escape'});expect(toggle).toHaveAttribute('aria-expanded','false')
+})
+
+
+test('renaming an imported file requires saving the renamed copy before close',async()=>{
+  await ready();const file=new File(['int imported;'],'imported.c',{type:'text/plain'})
+  Object.defineProperty(file,'arrayBuffer',{value:async()=>new TextEncoder().encode('int imported;').buffer})
+  await userEvent.upload(document.querySelector('input[type=file]') as HTMLInputElement,file)
+  await screen.findByRole('tab',{name:'imported.c'})
+  await userEvent.click(screen.getByRole('button',{name:'Rename imported.c'}))
+  fireEvent.change(screen.getByRole('textbox',{name:'File name'}),{target:{value:'renamed.c'}})
+  await userEvent.click(screen.getByRole('button',{name:'Rename'}))
+  await userEvent.click(screen.getByRole('button',{name:'Close renamed.c'}))
+  expect(screen.getByRole('dialog')).toHaveTextContent('changes not included')
+})

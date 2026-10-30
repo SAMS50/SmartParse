@@ -19,7 +19,8 @@ export function useWorkspace() {
   function update(id:string,patch:Partial<SourceFile>) {setFiles(current=>current.map(f=>f.id===id?{...f,...patch}:f))}
   function rename(id:string,name:string) {
     const error=validateName(name,files,id);if(error)return error
-    update(id,{name});return null
+    if(files.find(file=>file.id===id)?.name!==name)update(id,{name,exportedText:null})
+    return null
   }
   function close(id:string) {
     const remaining=files.filter(f=>f.id!==id)

@@ -1,23 +1,24 @@
-import {AlertCircle, CheckCircle2, Clock3, FileJson, GitCompareArrows, RotateCcw, ShieldCheck, TerminalSquare, WandSparkles} from 'lucide-react'
+import {AlertCircle, CheckCircle2, Clock3, FileJson, GitCompareArrows, RotateCcw, ShieldCheck, TerminalSquare, WandSparkles, ChevronDown, ChevronUp} from 'lucide-react'
 import type {Candidate, Diagnostic, Run, StudioResult} from '../types/report'
 import {RecoveredDiff} from './CodeEditor'
 
 export type InspectorTab = 'overview' | 'runs' | 'recovery' | 'comparison' | 'raw'
-const tabs: [InspectorTab, string, typeof ShieldCheck][] = [['overview','Overview',ShieldCheck],['recovery','Recovery',WandSparkles],['runs','Execution',TerminalSquare],['comparison','Comparison',GitCompareArrows],['raw','Raw evidence',FileJson]]
+const tabs: [InspectorTab, string, typeof ShieldCheck][] = [['overview','Problems',ShieldCheck],['recovery','Recovery',WandSparkles],['runs','Execution',TerminalSquare],['comparison','Comparison',GitCompareArrows],['raw','Raw evidence',FileJson]]
 
-export function Inspector({result, source, tab, onTab, height, onReset}: {
+export function Inspector({result, source, tab, onTab, height, onReset, collapsed=false, onCollapse, onNavigate, stale=false}: {
   result: StudioResult | null; source: string; tab: InspectorTab; onTab: (t: InspectorTab) => void;
   height: number; onReset: () => void;
+  collapsed?: boolean; onCollapse?:()=>void; onNavigate?:(id:string)=>void; stale?:boolean;
 }) {
   const recoveryCount = result?.report.runs.reduce((n,r) => n + (r.recovery?.candidates.length || 0),0) || 0
-  return <section className={`inspector inspector-${tab}`} style={{height}} aria-label="Analysis details">
+  return <section className={`inspector inspector-${tab} ${collapsed?'inspector-collapsed':''}`} style={{height:collapsed?36:height}} aria-label="Analysis details">
     <header className="inspector-header"><nav className="inspector-tabs" aria-label="Inspector views">{tabs.map(([id,label,Icon]) => <button key={id} onClick={() => onTab(id)} className={id === tab ? 'active' : ''} aria-pressed={id === tab}><Icon size={14}/>{label}{id === 'recovery' && recoveryCount > 0 && <b className="tab-count">{recoveryCount}</b>}</button>)}</nav>
-      <button className="icon-button reset-layout" title="Restore default panel sizes" aria-label="Reset panel sizes" onClick={onReset}><RotateCcw size={14}/></button></header>
-    <div className="inspector-content">{!result ? <div className="inspector-empty"><TerminalSquare size={20}/><span>Execution evidence will appear here after analysis.</span><small>Source preserved · no C binaries run</small></div> : <Content result={result} source={source} tab={tab}/>}</div>
+      <button className="icon-button reset-layout" title="Restore default panel sizes" aria-label="Reset panel sizes" onClick={onReset}><RotateCcw size={14}/></button>{onCollapse&&<button className="icon-button" aria-label={collapsed?'Expand analysis details':'Collapse analysis details'} aria-expanded={!collapsed} onClick={onCollapse}>{collapsed?<ChevronUp size={15}/>:<ChevronDown size={15}/>}</button>}</header>
+    {!collapsed&&<div className="inspector-content">{!result ? <div className="inspector-empty"><TerminalSquare size={20}/><span>No execution records.</span></div> : <Content result={result} source={source} tab={tab} onNavigate={onNavigate} stale={stale}/>}</div>}
   </section>
 }
 
-function Content({result,source,tab}: {result: StudioResult; source: string; tab: InspectorTab}) {
+function Content({result,source,tab,onNavigate,stale}: {result: StudioResult; source: string; tab: InspectorTab; onNavigate?: (id:string)=>void; stale?:boolean}) {
   const report = result.report
   if (tab === 'raw') return <pre className="raw-evidence" aria-label="Raw JSON evidence">{JSON.stringify(report, null, 2)}</pre>
   if (tab === 'runs' || tab === 'comparison') return <>
@@ -36,6 +37,10 @@ function Content({result,source,tab}: {result: StudioResult; source: string; tab
       <span className="summary-fact"><ShieldCheck size={14}/>{result.studio.workspace_removed ? 'Workspace removed' : 'Cleanup unverified'}</span></div>
     <div className="summary-runs" aria-label="Analyzer execution summary">{report.runs.map(run => <span key={run.id}><strong>{run.id}</strong><span className={`status-badge ${run.status}`}>{run.status}</span></span>)}<small>{report.usage.compiler_invocations} compiler invocations</small></div>
     <p className="coverage-note"><AlertCircle size={13}/>Completion does not certify path coverage or bug freedom. Independent review pending.</p>
+    <div className="problems-list" aria-label="Problems list">{report.groups.map(group=>{
+      const d=group.diagnostic_ids.map(id=>report.diagnostics.find(record=>record.id===id)).find(record=>record&&!record.context_note)
+      return d?<button key={group.id} disabled={!onNavigate||stale||!result.studio.editor_locations[d.id]} onClick={()=>onNavigate?.(d.id)} title={d.conditioning}><span className={`problem-severity ${d.severity}`}>{d.severity}</span><span>Line {d.location.line??'?'}</span><strong>{d.message}</strong><small>{d.analyzer} | {d.conditioning}</small></button>:null
+    })}</div>
     {report.tool_issues.map((issue,i) => <p className="issue-line" key={i}>{issue.analyzer}: {issue.message}</p>)}
   </div>
 }

@@ -57,6 +57,24 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .confirm-dialog form input { background: #151719; border: 1px solid var(--border); padding: 8px 10px; border-radius: 4px; color: #E5E7EB; width: 100%; }
 .confirm-dialog form > div { display: flex; justify-content: flex-end; gap: 8px; }
 .conditioned-findings summary { color: #C5D9EF; }
+.inspector-collapsed { min-height: 36px; max-height: 36px; }
+.problems-list { display: grid; margin-top: 10px; }
+.problems-list button { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding: 7px 0; background: transparent; border-top: 1px solid var(--border); color: #E5E7EB; text-align: left; font-size: 11px; }
+.problems-list button:disabled { opacity: 1; }
+.problems-list button:enabled:hover strong { color: #9dbddd; }
+.problems-list strong { font-weight: 400; overflow-wrap: anywhere; min-width: 0; flex: 1 1 220px; }
+.problems-list small { color: #9CA3AF; margin-left: auto; }
+.problem-severity { min-width: 46px; }
+.problem-severity.error { color: #e17c88; }
+.problem-severity.warning { color: #d9ab58; }
+.explorer-toggle { display: none; }
+.diagnostics-pane, .inspector { background: #20242A; }
+.finding { background: #1B1E22; }
+.safety-note { background: #20242A; border-color: var(--border); color: #9CA3AF; }
+@media (max-width: 900px) {
+  .explorer-toggle { display: inline-flex; }
+  .explorer.drawer-open { display: flex; position: fixed; left: 0; top: 56px; bottom: 24px; z-index: 12; width: 270px; max-width: 85vw; border-right: 1px solid var(--border); }
+}
 @media (max-width: 650px) {
   .top-actions { gap: 2px; }
   .topbar .brand-mark, .topbar .studio-label { display: none; }
