@@ -1,0 +1,223 @@
+{
+  "configuration": "gcc14",
+  "source_sha256": "614b5f86b7e0faeb9b6b32c8db40530d745d19e69a7332874b069d3aed4c0d09",
+  "elapsed_seconds": 0.281,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "gcc14",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "kind": "gcc",
+      "version": "14.2.0",
+      "format": "gcc-json",
+      "diagnostic_format": "json"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+      "sha256": "614b5f86b7e0faeb9b6b32c8db40530d745d19e69a7332874b069d3aed4c0d09",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+        "-x",
+        "c",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-fmax-errors=20",
+        "-O0",
+        "-fanalyzer",
+        "-fdiagnostics-format=json",
+        "-c",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "-o",
+        "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external i1h5hmiv\\analysis.o"
+      ]
+    },
+    "status": "partial",
+    "reason": "Tool/frontend incomplete; inspect raw output and blockers.",
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "line": 2,
+        "column": 11,
+        "severity": "error",
+        "message": "expected ';' before '}' token",
+        "diagnostic_id": null,
+        "category": "unknown",
+        "related": [],
+        "context_note": false,
+        "column_kind": "byte",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " return 17",
+        "id": "X-8de5a60c9fb09c396a3b",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external i1h5hmiv\\analysis.o"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "partial",
+          "frontend_blockers": true,
+          "region_coverage": "unknown"
+        }
+      }
+    ],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "",
+      "stderr": "[{\"kind\": \"error\",\n  \"message\": \"expected ';' before '}' token\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                           \"line\": 2,\n                           \"display-column\": 11,\n                           \"byte-column\": 11,\n                           \"column\": 11}},\n                {\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                           \"line\": 3,\n                           \"display-column\": 1,\n                           \"byte-column\": 1,\n                           \"column\": 1}}],\n  \"fixits\": [{\"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                        \"line\": 2,\n                        \"display-column\": 11,\n                        \"byte-column\": 11,\n                        \"column\": 11},\n              \"next\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                       \"line\": 2,\n                       \"display-column\": 11,\n                       \"byte-column\": 11,\n                       \"column\": 11},\n              \"string\": \";\"}],\n  \"escape-source\": false}]\r\n",
+      "returncode": 1
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "no direct region exploration evidence",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [
+        "X-8de5a60c9fb09c396a3b"
+      ],
+      "analyzer_completion": "blocked_or_partial"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.281,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+          "stderr": "",
+          "elapsed_seconds": 0.032
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external i1h5hmiv\\capability\\capability.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external i1h5hmiv\\capability\\analysis.o"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external i1h5hmiv\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+          "elapsed_seconds": 0.14
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external i1h5hmiv\\analysis.o"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "[{\"kind\": \"error\",\n  \"message\": \"expected ';' before '}' token\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                           \"line\": 2,\n                           \"display-column\": 11,\n                           \"byte-column\": 11,\n                           \"column\": 11}},\n                {\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                           \"line\": 3,\n                           \"display-column\": 1,\n                           \"byte-column\": 1,\n                           \"column\": 1}}],\n  \"fixits\": [{\"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                        \"line\": 2,\n                        \"display-column\": 11,\n                        \"byte-column\": 11,\n                        \"column\": 11},\n              \"next\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C09_repair_null.c\",\n                       \"line\": 2,\n                       \"display-column\": 11,\n                       \"byte-column\": 11,\n                       \"column\": 11},\n              \"string\": \";\"}],\n  \"escape-source\": false}]\r\n",
+          "elapsed_seconds": 0.078
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 1,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

@@ -1,0 +1,418 @@
+{
+  "files": [
+    {
+      "path": "phase6/v9/__init__.py",
+      "purpose": "Release validation code/report",
+      "change": "added",
+      "bytes": 79,
+      "sha256": "9f5616a8822c8c99872e71e78dc3630b5d5d22605f89c59860a7af09572b6f4d"
+    },
+    {
+      "path": "phase6/v9/MILESTONE_9_REPORT.md",
+      "purpose": "Release validation code/report",
+      "change": "added",
+      "bytes": 13499,
+      "sha256": "9bd2fa38b96296db779cb5d78b566ab7f2f86f5be4badc88c4905bb8923135fe"
+    },
+    {
+      "path": "phase6/v9/outputs/baseline.log",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 57085,
+      "sha256": "95d3c82a865f20107c3bbf22204b7f7ecf248b35c79d3018378184de5cf3f55d"
+    },
+    {
+      "path": "phase6/v9/outputs/baseline.supervisor.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 480,
+      "sha256": "27a2137fa2f41c8a4dfaef70996aa49cf5b7ea7cc6cd53e4ea07f1730a059025"
+    },
+    {
+      "path": "phase6/v9/outputs/baseline.tests.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 121,
+      "sha256": "04956c44a9b0798a87e68b5a421650bc8a41ab71175392912957eebea295856d"
+    },
+    {
+      "path": "phase6/v9/outputs/extra_smoke_results.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 3597,
+      "sha256": "d76e2d1f6932da92e2368ed3618d3e2c1502ad34dd2c0ced48497c0ecf715145"
+    },
+    {
+      "path": "phase6/v9/outputs/parser_smoke.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 20254,
+      "sha256": "638c77bbc2fc828ca71c66fef486dee234ab57b99204fdc76cbcc59f610bab7a"
+    },
+    {
+      "path": "phase6/v9/outputs/preservation.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 149,
+      "sha256": "dc6f5909d3bc0b3f36a99c8b396b9407682739e9e900488c5747d5386f3512d6"
+    },
+    {
+      "path": "phase6/v9/outputs/protected_hashes.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 280135,
+      "sha256": "c665d4541c4f2c4c090d6d719b96711978c47ee17decaf7c915142386c01026a"
+    },
+    {
+      "path": "phase6/v9/outputs/README.before.md",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 15474,
+      "sha256": "9f8ea7e6019e6f0ac2aad40b3641eaeaf21303c9cabee7e1d5f03b89e508cdef"
+    },
+    {
+      "path": "phase6/v9/outputs/regression.log",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 62700,
+      "sha256": "7af79a1b0e95702539db05cf7aed81f2ef11c3b58fc7caaf0dbbc4cd48786fd8"
+    },
+    {
+      "path": "phase6/v9/outputs/regression.supervisor.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 483,
+      "sha256": "12660fe11a4f1de7cdebb3b46f59fbac5fa71a28b5e191727316f7b9e25757eb"
+    },
+    {
+      "path": "phase6/v9/outputs/regression.tests.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 121,
+      "sha256": "2698f67de39deef7ce49917cfd2d4fc9b6e5df7f1056a7d869571486549239d4"
+    },
+    {
+      "path": "phase6/v9/outputs/regression_final.log",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 62845,
+      "sha256": "585fbbc01eca60043927d65e496e3cf2bee395611f3a2fe146a2edbd3a721397"
+    },
+    {
+      "path": "phase6/v9/outputs/regression_final.supervisor.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 496,
+      "sha256": "4c1efa6905d94114a9941afed3daef65be831ca179a40e08cf0228493382ce18"
+    },
+    {
+      "path": "phase6/v9/outputs/regression_final.tests.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 121,
+      "sha256": "d28750765d287ca2d55039754d77e9475c7c521285571c0e28847a010167f935"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/benchmark.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 1787953,
+      "sha256": "96cf07bfce22308d51228f148cf75b347f0b34f65dddebffe9292c140931cd54"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/bounds.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 150521,
+      "sha256": "fc052f1a83f0053f8e9b5f9fd94098703b42173943af8414ba67340bda6e919f"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/combined.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 246247,
+      "sha256": "45618051cdcc830821d2177c6df9418b3a13841897873bd69e21752bd35a303c"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/cppcheck.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 23067,
+      "sha256": "392d09080524e2355a99998c859c29ac02c7f8d0b731d4f683a2a544b1e8f311"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/destination-report.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 142621,
+      "sha256": "a2a7c4132046baa28519e6781a394f8c4b98de890dd82141475cf5b947770c31"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/doctor.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 4406,
+      "sha256": "76ed1fc755251efe1965f14cfd8e64cda833d07f369bd1a7aa85350326bacb37"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/gcc14.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 31763,
+      "sha256": "9b2247b97ccd9b04b0f9cccbd7001272f758d29275f5a055c983d3d10691deb0"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/header.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 21110,
+      "sha256": "3f5b22bb6223ac2d2081e3c4f020f32c4d61b6d3c24c02d9a7f3cfacb6fd9364"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/help.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 2382,
+      "sha256": "61f05127beddb0deaf9db321f98aaf6f4b4bbb939dfad43aaddc17a79ea4b773"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/isolation.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 256501,
+      "sha256": "508ffa331d345adb9cf8729593b0a6f8d568e772c15b2aeb1ff2f7a890c7ffc5"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/leak.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 159010,
+      "sha256": "a1ea13026496f71b3f52a7701e2783f954ba7f58ca220fe2d4684cbdc9a4f90f"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/legacy_cgar.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 1118,
+      "sha256": "bba56e3e7b106d67004d242abf25fd2b741e84a1eed71e2163674cd353f9c533"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/legacy_compiler.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 1191,
+      "sha256": "f48e87c1cc6da1f906c2fa3f873c9c9bb91c9794aabd804ee39a1cf57f1033df"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/legacy_parser.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 110,
+      "sha256": "26b8a3f74434589051e49c4f8405662e8c50736a2fb76457bcf5ce888933122b"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/markdown.md",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 1518,
+      "sha256": "a1e008dece39e34834edf6f6da59850ce52ea351f160569f85d45f8b89ba5578"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/null.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 145669,
+      "sha256": "02fb3e2668c2a650744bb4462d56c76ee525b6215f0768de0ea5b7208bcef906"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/output_file.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/recovery.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 214883,
+      "sha256": "ffb65ce3438ded4c254b8573c888971c49f977c4b95a535d23501913dd31308a"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/restricted.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 5794,
+      "sha256": "1ff05fdc0c593289147b1bcb0775675cdff7dfa2e062beb510a42332930413de"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/static.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 29866,
+      "sha256": "cc027382c997b4480367c629c886f625bbb51e4bb35872022c0fd94882538c88"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/syntax.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 17715,
+      "sha256": "142844a3de15aaeae14c8fc3b8d35d0e53639b0d828b0f72e04ad29b495d6bf9"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/terminal.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 1088,
+      "sha256": "8b0ce04b444348cc9923db2d17bcc94a95a4437b16949b1133c70f9e9c337cd1"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/type.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 20781,
+      "sha256": "60e4810dd1ece1cc30d9f411cdd436bffa39e56effedb5fcd88b7ff310634fe2"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/unavailable.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 5575,
+      "sha256": "b779ef52f0cb0f9592a6efc91f62c277b4466b356c1f91d3c95e25272455837b"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/valid.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 17004,
+      "sha256": "33d183971ed135c4b905370cbf42bf1d1a742c21ba6ce3b3c299c841ffcc2a2b"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke/version.txt",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 18,
+      "sha256": "7924f768afe11119700f0003d42cf103481b29af6e17b01d251274b1732e0131"
+    },
+    {
+      "path": "phase6/v9/outputs/smoke_results.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 22587,
+      "sha256": "955f8d66ab5312214514b100b90caf2ad7d068c02279b2264979ee2129ab2e44"
+    },
+    {
+      "path": "phase6/v9/outputs/targeted.log",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 5864,
+      "sha256": "7013be15e241738c5045105a1ed249e20943a24c1cbe2f6345154556e6027c76"
+    },
+    {
+      "path": "phase6/v9/outputs/targeted.supervisor.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 390,
+      "sha256": "63c9df6c9d8eb19bd2a21ac0a6b4afed6c68338322a3ff0522d046bf778eefca"
+    },
+    {
+      "path": "phase6/v9/outputs/unsupported_standard.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 101696,
+      "sha256": "43d984e6275503670d60aecfec117d1e81d9adf7154e32fa61424a6619d83182"
+    },
+    {
+      "path": "phase6/v9/outputs/unsupported_standard_fixed.json",
+      "purpose": "New Milestone 9 reproducibility or observed validation evidence",
+      "change": "added",
+      "bytes": 103418,
+      "sha256": "95a8c65c43313bce14e2e158c69b38a4baddc3d9664d21f5b55bc72816739582"
+    },
+    {
+      "path": "phase6/v9/smoke.py",
+      "purpose": "Release validation code/report",
+      "change": "added",
+      "bytes": 4066,
+      "sha256": "e5d9c6dd2841be0ef9e550431fcbdfa290c9353cc3bc6e0881124946b2b6b4cf"
+    },
+    {
+      "path": "phase6/v9/validate.py",
+      "purpose": "Release validation code/report",
+      "change": "added",
+      "bytes": 2620,
+      "sha256": "e24f5792e32534fda0f2f40d1c7392720560bb6f9f553c15e13312b22ed36bae"
+    },
+    {
+      "path": "README.md",
+      "purpose": "Updated user-facing setup, CLI, demonstration and limitations",
+      "change": "modified",
+      "bytes": 24474,
+      "sha256": "744c8682f0007f78be08911c09753e9c7281161af012bcca0eedcd25c50a2271"
+    },
+    {
+      "path": "smartparse_cli/__init__.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 313,
+      "sha256": "e1d59b20695b0574f0187c248c5bbc1d0912da541afbf7a1bdb5ea6d83cdbf28"
+    },
+    {
+      "path": "smartparse_cli/__main__.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 4608,
+      "sha256": "8f197981afa54954f31457adbf6b0ca832229ab13fcf9d09c561ba9e88ebf82c"
+    },
+    {
+      "path": "smartparse_cli/diagnostics.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 5516,
+      "sha256": "3f9f560b0c4e9aec350ce1496665ab08253a388e632b6c63a0c22d96e9729882"
+    },
+    {
+      "path": "smartparse_cli/engine.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 14708,
+      "sha256": "6e373581ddb5278af4b88987df71b64bca65af99b4c6d802c6eae7f91ca65848"
+    },
+    {
+      "path": "smartparse_cli/README.md",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 6598,
+      "sha256": "2bcb941dac30ded5473107b17fe82a9b0a6ee1e6289bdd2eeaf84c1d8c491fed"
+    },
+    {
+      "path": "smartparse_cli/reporting.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 4830,
+      "sha256": "8abd23e5034532f4456668d4c461b9c7e9c14d9c5a6d23bbe02e306c80395048"
+    },
+    {
+      "path": "smartparse_cli/schema.json",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 2104,
+      "sha256": "13a88118d067ec5866fb39e70d644848ade610b9465e943394fa873101d93ac1"
+    },
+    {
+      "path": "smartparse_cli/tools.py",
+      "purpose": "Unified CLI implementation/API/schema documentation",
+      "change": "added",
+      "bytes": 3480,
+      "sha256": "6bdf89f7acd0b19eb5880cd333f61705fc7ab2a74cef964eb133ddab94003208"
+    },
+    {
+      "path": "test_smartparse_cli.py",
+      "purpose": "50 deterministic integration tests",
+      "change": "added",
+      "bytes": 14188,
+      "sha256": "41177db0723a5adcd9e4c0d01aea954dc280362ba36fc556154b35621364da14"
+    }
+  ],
+  "self_inventory_note": "This inventory and release_readiness.json are additional generated metadata files, excluded from recursive self-hashing."
+}

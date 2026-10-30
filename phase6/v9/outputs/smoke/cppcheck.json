@@ -1,0 +1,486 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+    "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+    "bytes": 67,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "cppcheck"
+  ],
+  "effective_analyzers": [
+    "cppcheck"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "cppcheck",
+      "status": "completed",
+      "reason": "Tool returned; warnings require source/root review.",
+      "raw": {
+        "schema": "smartparse.external_analysis",
+        "schema_version": "1.0",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "source": {
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+          "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+          "original_unchanged": true
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+          ]
+        },
+        "status": "completed",
+        "reason": "Tool returned; warnings require source/root review.",
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": 3,
+            "column": 17,
+            "severity": "error",
+            "message": "Null pointer dereference: probe",
+            "diagnostic_id": "nullPointer",
+            "category": "memory safety",
+            "related": [
+              {
+                "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+                "line": "2",
+                "column": "13",
+                "info": "Assignment 'probe=0', assigned value is 0"
+              }
+            ],
+            "inconclusive": false,
+            "context_note": false,
+            "column_kind": "tool-reported",
+            "short_message": "Null pointer dereference: probe",
+            "cwe": "476",
+            "source_bound": true,
+            "mapping_status": "reported_location_bound_to_input",
+            "source_snippet": " return bias + *probe;",
+            "id": "X-f4684e2c71d3c2edf8fb",
+            "tool": {
+              "id": "cppcheck",
+              "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+              "kind": "cppcheck",
+              "version": "2.16.0",
+              "format": "cppcheck-xml"
+            },
+            "configuration": {
+              "standard": "c11",
+              "include_dirs": [],
+              "defines": [],
+              "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+              "shell": false,
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+                "--xml",
+                "--xml-version=2",
+                "--enable=warning",
+                "--std=c11",
+                "--platform=win64",
+                "--max-configs=1",
+                "--error-exitcode=1",
+                "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\cache",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+              ]
+            },
+            "review_status": "tool_reported_unverified",
+            "confidence": "review_suggestion",
+            "provenance": {
+              "original_source": true,
+              "repair_conditioned": false,
+              "isolation_conditioned": false
+            },
+            "duplicates_existing": "unknown_pending_root_review",
+            "analysis_eligibility": {
+              "tool_completion": "completed",
+              "frontend_blockers": false,
+              "region_coverage": "unknown"
+            }
+          }
+        ],
+        "exact_duplicates": [],
+        "raw": {
+          "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c ...\r\n",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: probe\" verbose=\"Null pointer dereference: probe\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C01_null.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"3\" column=\"17\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"2\" column=\"13\" info=\"Assignment &apos;probe=0&apos;, assigned value is 0\"/>\r\n            <symbol>probe</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "returncode": 1
+        },
+        "eligibility": {
+          "process_started": true,
+          "analyzer_requested": true,
+          "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+          "region_coverage": "unknown; no per-function/path execution proof",
+          "function_path_coverage_certified": false,
+          "frontend_blockers": [],
+          "analyzer_completion": "completed"
+        },
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "observed_version": "Cppcheck 2.16.0\r\n",
+        "capability": {
+          "supported": true,
+          "returncode": 1,
+          "stdout": "Checking C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c ...\r\n",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external 7ea64u9i/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n"
+        },
+        "unrecognized_output": [],
+        "temporary_workspace_removed": true,
+        "usage": {
+          "compiler_invocations": 3,
+          "elapsed_seconds": 0.187,
+          "calls": [
+            {
+              "number": 1,
+              "role": "version",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+                "--version"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+              "stderr": "",
+              "elapsed_seconds": 0.031
+            },
+            {
+              "number": 2,
+              "role": "analyzer_capability",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+                "--xml",
+                "--xml-version=2",
+                "--enable=warning",
+                "--std=c11",
+                "--platform=win64",
+                "--max-configs=1",
+                "--error-exitcode=1",
+                "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\cache",
+                "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c"
+              ],
+              "status": "completed",
+              "returncode": 1,
+              "stdout_sha256": "12807ff07d00bf6a47a5d233a96e54825f4e68bb422fc551091a42d3c13d28e0",
+              "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external 7ea64u9i/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+              "elapsed_seconds": 0.078
+            },
+            {
+              "number": 3,
+              "role": "external_analysis",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+                "--xml",
+                "--xml-version=2",
+                "--enable=warning",
+                "--std=c11",
+                "--platform=win64",
+                "--max-configs=1",
+                "--error-exitcode=1",
+                "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\cache",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+              ],
+              "status": "completed",
+              "returncode": 1,
+              "stdout_sha256": "6091c1e3efd7b0430a18ed80974d6cc0c6f09481bcf661a692ac01b93cf82359",
+              "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: probe\" verbose=\"Null pointer dereference: probe\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C01_null.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"3\" column=\"17\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"2\" column=\"13\" info=\"Assignment &apos;probe=0&apos;, assigned value is 0\"/>\r\n            <symbol>probe</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+              "elapsed_seconds": 0.062
+            }
+          ],
+          "limits": {
+            "candidates": 4,
+            "rounds": 3,
+            "invocations": 4,
+            "retained_variants": 4,
+            "edits": 4,
+            "total_seconds": 120,
+            "call_seconds": 10
+          }
+        },
+        "unique_primary_groups": 1,
+        "enabled": true,
+        "confirmed_defect_roots": null,
+        "analysis_mode": "original_source_only",
+        "integration_decision": "1.0"
+      },
+      "elapsed_seconds": 0.203,
+      "usage": {
+        "compiler_invocations": 3,
+        "elapsed_seconds": 0.187,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+            "stderr": "",
+            "elapsed_seconds": 0.031
+          },
+          {
+            "number": 2,
+            "role": "analyzer_capability",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+              "--xml",
+              "--xml-version=2",
+              "--enable=warning",
+              "--std=c11",
+              "--platform=win64",
+              "--max-configs=1",
+              "--error-exitcode=1",
+              "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\cache",
+              "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "12807ff07d00bf6a47a5d233a96e54825f4e68bb422fc551091a42d3c13d28e0",
+            "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external 7ea64u9i/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+            "elapsed_seconds": 0.078
+          },
+          {
+            "number": 3,
+            "role": "external_analysis",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+              "--xml",
+              "--xml-version=2",
+              "--enable=warning",
+              "--std=c11",
+              "--platform=win64",
+              "--max-configs=1",
+              "--error-exitcode=1",
+              "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\cache",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "6091c1e3efd7b0430a18ed80974d6cc0c6f09481bcf661a692ac01b93cf82359",
+            "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: probe\" verbose=\"Null pointer dereference: probe\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C01_null.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"3\" column=\"17\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c\" line=\"2\" column=\"13\" info=\"Assignment &apos;probe=0&apos;, assigned value is 0\"/>\r\n            <symbol>probe</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+            "elapsed_seconds": 0.062
+          }
+        ],
+        "limits": {
+          "candidates": 4,
+          "rounds": 3,
+          "invocations": 4,
+          "retained_variants": 4,
+          "edits": 4,
+          "total_seconds": 120,
+          "call_seconds": 10
+        }
+      },
+      "eligibility": {
+        "process_started": true,
+        "analyzer_requested": true,
+        "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+        "region_coverage": "unknown; no per-function/path execution proof",
+        "function_path_coverage_certified": false,
+        "frontend_blockers": [],
+        "analyzer_completion": "completed"
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-7a0940d8dc8a6db1cbc9",
+      "raw_reference": {
+        "run_id": "cppcheck",
+        "path": "/diagnostics/0"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 17,
+        "severity": "error",
+        "message": "Null pointer dereference: probe",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": "2",
+            "column": "13",
+            "info": "Assignment 'probe=0', assigned value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Null pointer dereference: probe",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " return bias + *probe;",
+        "id": "X-f4684e2c71d3c2edf8fb",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 7ea64u9i\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 17
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 17
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "severity": "error",
+      "category": "memory safety",
+      "category_basis": "backend_category",
+      "message": "Null pointer dereference: probe",
+      "analyzer": "cppcheck",
+      "backend": "cppcheck",
+      "diagnostic_id": "nullPointer",
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-cf4a03a9ccf3d2830046",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " return bias + *probe;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": "2",
+            "column": "13",
+            "info": "Assignment 'probe=0', assigned value is 0"
+          }
+        ],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": "completed",
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-cf4a03a9ccf3d2830046",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-7a0940d8dc8a6db1cbc9"
+      ],
+      "analyzers": [
+        "cppcheck"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {
+      "memory safety": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 1,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 0.203,
+    "compiler_invocations": 3,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

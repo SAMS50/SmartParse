@@ -1,0 +1,89 @@
+{
+  "configuration": "panic",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "completed",
+  "diagnostics": [],
+  "repairs": [],
+  "author_location_matches": [],
+  "author_exact_repairs": [],
+  "additional_diagnostics": 0,
+  "reached_eof": true,
+  "error_cap_reached": false,
+  "replay_strictly_valid": true,
+  "intended_reference_valid": true,
+  "intended_token_stream_equal": true,
+  "statement_attempts": [
+    {
+      "start": 0,
+      "line": 1,
+      "column": 1,
+      "returned": true,
+      "end": 36
+    },
+    {
+      "start": 7,
+      "line": 2,
+      "column": 2,
+      "returned": true,
+      "end": 12
+    },
+    {
+      "start": 12,
+      "line": 3,
+      "column": 2,
+      "returned": true,
+      "end": 32
+    },
+    {
+      "start": 18,
+      "line": 3,
+      "column": 13,
+      "returned": true,
+      "end": 32
+    },
+    {
+      "start": 19,
+      "line": 3,
+      "column": 15,
+      "returned": true,
+      "end": 25
+    },
+    {
+      "start": 25,
+      "line": 3,
+      "column": 30,
+      "returned": true,
+      "end": 31
+    },
+    {
+      "start": 32,
+      "line": 4,
+      "column": 2,
+      "returned": true,
+      "end": 35
+    },
+    {
+      "start": 36,
+      "line": 6,
+      "column": 1,
+      "returned": true,
+      "end": 41
+    }
+  ],
+  "skipped_tokens": 0,
+  "validation_stats": {
+    "eligible": 0,
+    "probed": 0,
+    "skipped_confident": 0
+  },
+  "elapsed_seconds": 0.0
+}

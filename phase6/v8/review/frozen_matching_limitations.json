@@ -1,0 +1,63 @@
+{
+  "purpose": "Expose evaluation uncertainty without post-hoc inflation or changing frozen rules.",
+  "issues": [
+    {
+      "case": "C07_resource",
+      "proposed_root": "C07_resource-R1",
+      "configurations": [
+        "extended_baseline",
+        "recovery_assisted",
+        "isolation_assisted"
+      ],
+      "frozen_allowed_id": "unix.Stream",
+      "actual_id": "alpha.unix.Stream",
+      "reason": "Checker ID omitted from authored allowlist; source-bound leak evidence exists, but strict frozen matching leaves it unmatched.",
+      "status": "pending_human_review",
+      "independently_verified": false,
+      "rule_change_applied": false
+    },
+    {
+      "case": "C08_contradiction",
+      "proposed_root": "C08_contradiction-R1",
+      "configurations": [
+        "extended_baseline",
+        "recovery_assisted",
+        "isolation_assisted"
+      ],
+      "frozen_allowed_id": "smartparse.semantic.contradictory_int_conjunction",
+      "actual_id": "SP6.contradictory_int_conjunction",
+      "reason": "Authored ID differs from actual existing detector ID. Cppcheck is NOT uniquely capable here despite exclusive automated matching.",
+      "status": "pending_human_review",
+      "independently_verified": false,
+      "rule_change_applied": false
+    },
+    {
+      "case": "C09_repair_null",
+      "proposed_root": "C09_repair_null-R1",
+      "configurations": [
+        "compiler_clang",
+        "extended_baseline",
+        "recovery_assisted",
+        "isolation_assisted",
+        "gcc14"
+      ],
+      "frozen_anchor_line": 3,
+      "actual_diagnostic_line": 2,
+      "reason": "Missing return semicolon is reported on preceding statement rather than next-token anchor; exact frozen line rule undercounts frontend evidence.",
+      "status": "pending_human_review",
+      "independently_verified": false,
+      "rule_change_applied": false
+    },
+    {
+      "case": "C06_allocation",
+      "proposed_root": "C06_allocation-R1",
+      "configurations": [
+        "gcc14"
+      ],
+      "reason": "Multiple allocation/store/read diagnostics can concern the same underallocation root; unmatched records are NOT independent false positives.",
+      "status": "pending_human_review",
+      "independently_verified": false,
+      "rule_change_applied": false
+    }
+  ]
+}

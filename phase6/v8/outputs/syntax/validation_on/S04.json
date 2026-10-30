@@ -1,0 +1,66 @@
+{
+  "configuration": "validation_on",
+  "matching_protocol": "1.1",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "completed",
+  "diagnostics": [
+    {
+      "line": 1,
+      "column": 16,
+      "message": "Expected identifier before ')'."
+    },
+    {
+      "line": 3,
+      "column": 1,
+      "message": "Expected expression before '}'."
+    }
+  ],
+  "repairs": [],
+  "author_location_matches": [],
+  "author_exact_repairs": [],
+  "additional_diagnostics": 2,
+  "reached_eof": true,
+  "error_cap_reached": false,
+  "replay_strictly_valid": false,
+  "intended_reference_valid": false,
+  "intended_token_stream_equal": false,
+  "statement_attempts": [
+    {
+      "start": 0,
+      "line": 1,
+      "column": 1,
+      "returned": false,
+      "end": 4
+    },
+    {
+      "start": 8,
+      "line": 3,
+      "column": 1,
+      "returned": false,
+      "end": 8
+    },
+    {
+      "start": 9,
+      "line": 4,
+      "column": 1,
+      "returned": true,
+      "end": 14
+    }
+  ],
+  "skipped_tokens": null,
+  "validation_stats": {
+    "eligible": 0,
+    "probed": 0,
+    "skipped_confident": 0
+  },
+  "elapsed_seconds": 0.0
+}

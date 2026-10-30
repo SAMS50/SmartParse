@@ -1,0 +1,396 @@
+{
+  "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+  "historical_baseline_16_of_68_unchanged": true,
+  "prior_new_potential_roots": [
+    "ROOT-L0065",
+    "ROOT-L0078",
+    "ROOT-L0081",
+    "ROOT-L0263",
+    "ROOT-L0271",
+    "ROOT-L0287",
+    "ROOT-L0307",
+    "ROOT-L0308",
+    "ROOT-L0368"
+  ],
+  "comparisons": [
+    {
+      "prior_review": {
+        "evidence_id": "X-ba925b97af57a88af82c",
+        "reference_id": "SP6-L0129-01",
+        "root_id": "ROOT-L0129",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Returned buffer is a local array; lifetime ends on return."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-9d63299f9dda22571c93",
+        "reference_id": "SP6-L0236-01",
+        "root_id": "ROOT-L0236",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Returned address belongs to the local int."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-a523a914ebd3ece1b9b3",
+        "reference_id": "SP6-L0263-01",
+        "root_id": "ROOT-L0263",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "*pointer stores &value into caller-visible storage; value has automatic lifetime."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-18252fae64e0e749ecd4",
+        "reference_id": "SP6-L0074-01",
+        "root_id": "ROOT-L0074",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Literal copied into error.message exceeds its 32-byte extent."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-265aa5341aed83f7249f",
+        "reference_id": "SP6-L0405-01",
+        "root_id": "ROOT-L0405",
+        "decision": "conditional_support",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": true,
+        "reviewer": "Codex-source-review",
+        "rationale": "Source function 401–405 falls through on nonpositive values; consuming missing value remains a required unknown contract. Tool anchors return at 404, not old anchor 405."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-d8482d4bc7e5b73fb8bd",
+        "reference_id": "SP6-L0368-01",
+        "root_id": "ROOT-L0368",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Date.month is an ordinary int; <1 and >12 cannot both hold. No OR-intent inference."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-f3082c408701cd1631be",
+        "reference_id": "SP6-L0292-01",
+        "root_id": "ROOT-L0292",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "%d requires int*; value is passed as int, not its address."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-83d1a2cdc44e710bf346",
+        "reference_id": "SP6-L0421-01",
+        "root_id": "ROOT-L0421",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "%d expects int; total is long, even where widths coincide."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-590846a3d76bf4fcde4c",
+        "reference_id": "SP6-L0299-01",
+        "root_id": "ROOT-L0299",
+        "decision": "conditional_support",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Eight-byte name with unbounded %s; external input-length contract remains unknown."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-caa77d332ec39ea32582",
+        "reference_id": "SP6-L0252-01",
+        "root_id": "ROOT-L0252",
+        "decision": "conditional_support",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Both calls free the same pointer, but nonnull owned-allocation entry contract is unresolved."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-bd8625ec5ad5d7c178a8",
+        "reference_id": "SP6-L0271-01",
+        "root_id": "ROOT-L0271",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Successful malloc allocation loses its only local owner at function exit without free."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-c71cca42968380817455",
+        "reference_id": "SP6-L0287-01",
+        "root_id": "ROOT-L0287",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Successful fopen path writes and exits without fclose."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-8aae7cb46218cceea8ae",
+        "reference_id": "SP6-L0307-01",
+        "root_id": "ROOT-L0307",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Successful fopen branch returns 1 before closing the stream."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-92fab111e7b0a02a13ee",
+        "reference_id": "SP6-L0104-02",
+        "root_id": "ROOT-L0104",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": true,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Assignment student=NULL at 104 is false; execution falls through to member access at 108."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-a95427e5ce8ac07c8f0d",
+        "reference_id": "SP6-L0081-01",
+        "root_id": "ROOT-L0081",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Concrete reset_student(NULL) call at 81 reaches first member store at 134."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-71288a877aa1e6291d35",
+        "reference_id": "SP6-L0081-01",
+        "root_id": "ROOT-L0081",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": true,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": true,
+        "reviewer": "Codex-source-review",
+        "rationale": "Same null argument in reset_student; later field operations are duplicates, not independent reachable paths."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-008df58130670da7f6e5",
+        "reference_id": "SP6-L0081-01",
+        "root_id": "ROOT-L0081",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": true,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": true,
+        "reviewer": "Codex-source-review",
+        "rationale": "Same null argument/root as 134; no independent root credit."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-3f00cdbcd1301a990c0a",
+        "reference_id": "SP6-L0081-01",
+        "root_id": "ROOT-L0081",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": true,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": true,
+        "reviewer": "Codex-source-review",
+        "rationale": "Same null argument/root as 134; no independent root credit."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-069c7c0b3923d2893ad3",
+        "reference_id": "SP6-L0308-01",
+        "root_id": "ROOT-L0308",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Same null fclose operation; redundant-check wording is not a separate root."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-fd4f4d0a78b5df890df8",
+        "reference_id": "SP6-L0308-01",
+        "root_id": "ROOT-L0308",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": true,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "Only the failed-open/null path reaches fclose: nonnull branch returned."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-cc2c4ccc688314d857cc",
+        "reference_id": "SP6-L0065-01",
+        "root_id": "ROOT-L0065",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "average(scores,0) at 65 supplies zero count to integer division at 99."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-6a8117bd4790e86666d0",
+        "reference_id": "SP6-L0078-01",
+        "root_id": "ROOT-L0078",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": false,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "unsafe_divide(5,0) at 78 supplies the zero divisor at 142."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-13dbe18eaa4755cf3f38",
+        "decision": "unknown",
+        "reason": "No strict source-reviewed reference binding; uninitialized return after invalid sscanf call is not automatically a separate root."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    },
+    {
+      "prior_review": {
+        "evidence_id": "X-2f2894d4cfa65a559c74",
+        "reference_id": "SP6-L0081-01",
+        "root_id": "ROOT-L0081",
+        "decision": "agent_source_supported",
+        "same_root_duplicate": true,
+        "previously_warned_root": false,
+        "outside_old_diagnostic_anchors": false,
+        "reviewer": "Codex-source-review",
+        "rationale": "CTU call evidence confirms same null argument/sink; no second root."
+      },
+      "exact_diagnostic_reproduced": true,
+      "independently_verified": false,
+      "review_status": "pending_human_review"
+    }
+  ],
+  "caveat": "Exact reproduction is not an independent confirmation. No cascade or duplicate becomes a new root."
+}

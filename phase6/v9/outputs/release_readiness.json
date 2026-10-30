@@ -1,0 +1,42 @@
+{
+  "milestone": 9,
+  "version": "0.9.0",
+  "status": "complete_for_user_review",
+  "publication_approved": false,
+  "tests": {
+    "run": 502,
+    "passed": 502,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "elapsed_seconds": 214.797
+  },
+  "smoke_cases_passed": 20,
+  "additional_smoke_cases_passed": 5,
+  "unsupported_standard_exit": 3,
+  "preservation": {
+    "protected_files": 2145,
+    "changed": [],
+    "authorized_changes": [
+      "README.md"
+    ],
+    "historical_csvs": 17,
+    "preserved": true
+  },
+  "frozen_v8_inputs_verified": 46,
+  "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "independent_human_adjudication": "pending and unchanged",
+  "new_detection_algorithms": false,
+  "commits_created": false,
+  "pushed": false,
+  "released": false,
+  "inventory": "outputs/changed_files.json",
+  "limitations": [
+    "Windows live validation only",
+    "Pinned external analyzer versions",
+    "No exhaustive C/function/path coverage",
+    "Conservative grouping leaves cross-tool duplicates unresolved",
+    "Existing recovery/isolation abstention retained"
+  ]
+}

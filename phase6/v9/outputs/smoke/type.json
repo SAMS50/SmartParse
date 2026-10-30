@@ -1,0 +1,571 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+    "sha256": "8b797fbfac67bf18d217c1b510f8c4a42919162f762e8fba385865bc3d9aea51",
+    "bytes": 113,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "compiler"
+  ],
+  "effective_analyzers": [
+    "compiler"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "compiler",
+      "status": "completed",
+      "reason": null,
+      "raw": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 1,
+          "errors": 1,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 1,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+            "line": 2,
+            "column": 9,
+            "severity": "error",
+            "message": "use of undeclared identifier 'missing_m8_value'",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": " return missing_m8_value;",
+            "diagnostic_id": null
+          }
+        ],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 1,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c:2:9: error: use of undeclared identifier 'missing_m8_value'\r\n return missing_m8_value;\r\n        ^\r\n1 error generated.\r\n"
+        },
+        "unrecognized_output": [],
+        "usage": {
+          "compiler_invocations": 10,
+          "elapsed_seconds": 1.313,
+          "calls": [
+            {
+              "number": 1,
+              "role": "compiler_version",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "--version"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+              "stderr": "",
+              "elapsed_seconds": 0.109
+            },
+            {
+              "number": 2,
+              "role": "syntax_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.11
+            },
+            {
+              "number": 3,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.109
+            },
+            {
+              "number": 4,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wextra",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.125
+            },
+            {
+              "number": 5,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wparentheses",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.125
+            },
+            {
+              "number": 6,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-show-option",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.141
+            },
+            {
+              "number": 7,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-color=never",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.265
+            },
+            {
+              "number": 8,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-ferror-limit=0",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.11
+            },
+            {
+              "number": 9,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fno-diagnostics-fixit-info",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.109
+            },
+            {
+              "number": 10,
+              "role": "compiler_validation",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-Wextra",
+                "-Wparentheses",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-ferror-limit=0",
+                "-fno-diagnostics-fixit-info",
+                "-std=c11",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c"
+              ],
+              "status": "completed",
+              "returncode": 1,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c:2:9: error: use of undeclared identifier 'missing_m8_value'\r\n return missing_m8_value;\r\n        ^\r\n1 error generated.\r\n",
+              "elapsed_seconds": 0.094
+            }
+          ]
+        }
+      },
+      "elapsed_seconds": 1.313,
+      "usage": {
+        "compiler_invocations": 10,
+        "elapsed_seconds": 1.313,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.11
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.141
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.265
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-ferror-limit=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.11
+          },
+          {
+            "number": 9,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fno-diagnostics-fixit-info",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.109
+          },
+          {
+            "number": 10,
+            "role": "compiler_validation",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-std=c11",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c:2:9: error: use of undeclared identifier 'missing_m8_value'\r\n return missing_m8_value;\r\n        ^\r\n1 error generated.\r\n",
+            "elapsed_seconds": 0.094
+          }
+        ]
+      },
+      "eligibility": {
+        "frontend_accepted": false,
+        "operational_completion": "completed",
+        "function_path_coverage_certified": false
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-8017d889fc1635693120",
+      "raw_reference": {
+        "run_id": "compiler",
+        "path": "/diagnostics/0"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+        "line": 2,
+        "column": 9,
+        "severity": "error",
+        "message": "use of undeclared identifier 'missing_m8_value'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": " return missing_m8_value;",
+        "diagnostic_id": null
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+        "line": 2,
+        "column": 9
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+        "line": 2,
+        "column": 9
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "8b797fbfac67bf18d217c1b510f8c4a42919162f762e8fba385865bc3d9aea51",
+      "severity": "error",
+      "category": "semantic/type",
+      "category_basis": "backend_category",
+      "message": "use of undeclared identifier 'missing_m8_value'",
+      "analyzer": "Clang",
+      "backend": "clang",
+      "diagnostic_id": null,
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-7db8ba6eb04e5c86196c",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " return missing_m8_value;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": {
+        "pass_completion": "completed",
+        "run_completion": "completed",
+        "frontend_accepted": false,
+        "function_path_coverage_certified": false
+      },
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-7db8ba6eb04e5c86196c",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-8017d889fc1635693120"
+      ],
+      "analyzers": [
+        "Clang"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {
+      "semantic/type": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 1,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 1.313,
+    "compiler_invocations": 10,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

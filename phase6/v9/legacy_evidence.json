@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "meaning": "Exact copies of two original raw reports needed by the historical v1 regression; no edits or new adjudication",
+  "dataset_fingerprint": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+  "runs_fingerprint": "df460adcd4bfabd4c0b15f4af9f516541d10a34775fe08fa082ca6e60d1229e0",
+  "reports": {
+    "acceptance/output/sample.json": {
+      "file": "phase6/v9/fixtures/legacy_acceptance/gcc_sample.json",
+      "sha256": "2e4e7eaeef9a5cb0c282861df6f145d8a89f71dd4a8ac03dff796099e43ae42c",
+      "reported_source": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+    },
+    "acceptance/output/clang_validation/sample_static.json": {
+      "file": "phase6/v9/fixtures/legacy_acceptance/clang_sample_static.json",
+      "sha256": "fd14d002d14f7ca0e64c2dfcf40a0e6074826ee57ce1926665e134a6b22704ad",
+      "reported_source": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+    }
+  }
+}

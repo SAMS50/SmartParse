@@ -1,0 +1,557 @@
+{
+  "schema_version": "1.0",
+  "analysis_mode": "extended_c",
+  "status": "completed",
+  "compiler": {
+    "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+    "backend": "clang",
+    "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+    "flags": [
+      "-Wall",
+      "-Wextra",
+      "-Wparentheses",
+      "-fdiagnostics-show-option",
+      "-fdiagnostics-color=never",
+      "-ferror-limit=0",
+      "-fno-diagnostics-fixit-info"
+    ]
+  },
+  "summary": {
+    "total_diagnostics": 30,
+    "errors": 7,
+    "warnings": 12,
+    "notes": 11,
+    "categories": {
+      "syntax": 2,
+      "semantic/type": 5,
+      "compiler warning": 12,
+      "unknown": 11
+    }
+  },
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 30,
+      "column": 21,
+      "severity": "error",
+      "message": "expected ';' after top level declarator",
+      "backend": "clang",
+      "category": "syntax",
+      "source_snippet": "int global_count = 0",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 82,
+      "column": 13,
+      "severity": "error",
+      "message": "expected ';' after return statement",
+      "backend": "clang",
+      "category": "syntax",
+      "source_snippet": "    return 0",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 74,
+      "column": 5,
+      "severity": "warning",
+      "message": "'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte)",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+      "diagnostic_id": "-Wfortify-source"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 104,
+      "column": 17,
+      "severity": "warning",
+      "message": "using the result of an assignment as a condition without parentheses",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    if (student = NULL) {",
+      "diagnostic_id": "-Wparentheses"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 104,
+      "column": 17,
+      "severity": "note",
+      "message": "place parentheses around the assignment to silence this warning",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "    if (student = NULL) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 104,
+      "column": 17,
+      "severity": "note",
+      "message": "use '==' to turn this assignment into an equality comparison",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "    if (student = NULL) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 115,
+      "column": 28,
+      "severity": "warning",
+      "message": "using the result of an assignment as a condition without parentheses",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "        if (students[i].id = id) {",
+      "diagnostic_id": "-Wparentheses"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 115,
+      "column": 28,
+      "severity": "note",
+      "message": "place parentheses around the assignment to silence this warning",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (students[i].id = id) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 115,
+      "column": 28,
+      "severity": "note",
+      "message": "use '==' to turn this assignment into an equality comparison",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (students[i].id = id) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 129,
+      "column": 12,
+      "severity": "warning",
+      "message": "address of stack memory associated with local variable 'buffer' returned",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    return buffer;",
+      "diagnostic_id": "-Wreturn-stack-address"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 149,
+      "column": 32,
+      "severity": "warning",
+      "message": "using the result of an assignment as a condition without parentheses",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "        if (students[i].active = 1) {",
+      "diagnostic_id": "-Wparentheses"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 149,
+      "column": 32,
+      "severity": "note",
+      "message": "place parentheses around the assignment to silence this warning",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (students[i].active = 1) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 149,
+      "column": 32,
+      "severity": "note",
+      "message": "use '==' to turn this assignment into an equality comparison",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (students[i].active = 1) {",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 164,
+      "column": 38,
+      "severity": "warning",
+      "message": "if statement has empty body",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    if (percent < 0 || percent > 100); {",
+      "diagnostic_id": "-Wempty-body"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 164,
+      "column": 38,
+      "severity": "note",
+      "message": "put the semicolon on a separate line to silence this warning",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": null,
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 236,
+      "column": 13,
+      "severity": "warning",
+      "message": "address of stack memory associated with local variable 'local' returned",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    return &local;",
+      "diagnostic_id": "-Wreturn-stack-address"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 292,
+      "column": 24,
+      "severity": "warning",
+      "message": "format specifies type 'int *' but the argument has type 'int'",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    sscanf(text, \"%d\", value);",
+      "diagnostic_id": "-Wformat"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 351,
+      "column": 23,
+      "severity": "warning",
+      "message": "using the result of an assignment as a condition without parentheses",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "        if (values[i] = target)",
+      "diagnostic_id": "-Wparentheses"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 351,
+      "column": 23,
+      "severity": "note",
+      "message": "place parentheses around the assignment to silence this warning",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (values[i] = target)",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 351,
+      "column": 23,
+      "severity": "note",
+      "message": "use '==' to turn this assignment into an equality comparison",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "        if (values[i] = target)",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 393,
+      "column": 12,
+      "severity": "error",
+      "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+      "backend": "clang",
+      "category": "semantic/type",
+      "source_snippet": "    return \"hello\";",
+      "diagnostic_id": "-Wint-conversion"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 409,
+      "column": 25,
+      "severity": "error",
+      "message": "too few arguments to function call, expected 2, have 1",
+      "backend": "clang",
+      "category": "semantic/type",
+      "source_snippet": "    return add_numbers(1);",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 85,
+      "column": 5,
+      "severity": "note",
+      "message": "'add_numbers' declared here",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "int add_numbers(int a, int b)",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 414,
+      "column": 5,
+      "severity": "error",
+      "message": "use of undeclared identifier 'mystery_value'",
+      "backend": "clang",
+      "category": "semantic/type",
+      "source_snippet": "    mystery_value = 12;",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 415,
+      "column": 12,
+      "severity": "error",
+      "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+      "backend": "clang",
+      "category": "semantic/type",
+      "source_snippet": "    return mystery_value;",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 212,
+      "column": 5,
+      "severity": "note",
+      "message": "'last_value' declared here",
+      "backend": "clang",
+      "category": "unknown",
+      "source_snippet": "int last_value(int values[], int length)",
+      "diagnostic_id": null
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 415,
+      "column": 12,
+      "severity": "error",
+      "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+      "backend": "clang",
+      "category": "semantic/type",
+      "source_snippet": "    return mystery_value;",
+      "diagnostic_id": "-Wint-conversion"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 421,
+      "column": 20,
+      "severity": "warning",
+      "message": "format specifies type 'int' but the argument has type 'long'",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    printf(\"%d\\n\", value);",
+      "diagnostic_id": "-Wformat"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 494,
+      "column": 28,
+      "severity": "warning",
+      "message": "multi-character character constant",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    while (text[length] != '\\\\0')",
+      "diagnostic_id": "-Wmultichar"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "line": 494,
+      "column": 25,
+      "severity": "warning",
+      "message": "result of comparison of constant 23600 with expression of type 'const char' is always true",
+      "backend": "clang",
+      "category": "compiler warning",
+      "source_snippet": "    while (text[length] != '\\\\0')",
+      "diagnostic_id": "-Wtautological-constant-out-of-range-compare"
+    }
+  ],
+  "tool_issues": [],
+  "execution": {
+    "returncode": 1,
+    "command": [
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "-x",
+      "c",
+      "-fsyntax-only",
+      "-Wall",
+      "-Wextra",
+      "-Wparentheses",
+      "-fdiagnostics-show-option",
+      "-fdiagnostics-color=never",
+      "-ferror-limit=0",
+      "-fno-diagnostics-fixit-info",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+    ]
+  },
+  "raw_output": {
+    "stdout": "",
+    "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n"
+  },
+  "unrecognized_output": [],
+  "static_analysis": {
+    "schema_version": "1.0",
+    "analysis_mode": "clang_static_analyzer",
+    "status": "partial",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 9,
+      "errors": 7,
+      "warnings": 0,
+      "notes": 2,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 5,
+        "compiler warning": 0,
+        "unknown": 2
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 30,
+        "column": 21,
+        "severity": "error",
+        "message": "expected ';' after top level declarator",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "int global_count = 0",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 82,
+        "column": 13,
+        "severity": "error",
+        "message": "expected ';' after return statement",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "    return 0",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 393,
+        "column": 12,
+        "severity": "error",
+        "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return \"hello\";",
+        "diagnostic_id": "-Wint-conversion"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 409,
+        "column": 25,
+        "severity": "error",
+        "message": "too few arguments to function call, expected 2, have 1",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return add_numbers(1);",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 85,
+        "column": 5,
+        "severity": "note",
+        "message": "'add_numbers' declared here",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "int add_numbers(int a, int b)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 414,
+        "column": 5,
+        "severity": "error",
+        "message": "use of undeclared identifier 'mystery_value'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    mystery_value = 12;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 415,
+        "column": 12,
+        "severity": "error",
+        "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return mystery_value;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 212,
+        "column": 5,
+        "severity": "note",
+        "message": "'last_value' declared here",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "int last_value(int values[], int length)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 415,
+        "column": 12,
+        "severity": "error",
+        "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return mystery_value;",
+        "diagnostic_id": "-Wint-conversion"
+      }
+    ],
+    "tool_issues": [
+      "Clang Static Analyzer did not finish normally"
+    ],
+    "execution": {
+      "returncode": 1,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--analyze",
+        "-x",
+        "c",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-Xanalyzer",
+        "-analyzer-output=text",
+        "-o",
+        "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-analyzer-pzkmeq8b\\analysis.txt",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\n7 errors generated.\r\n"
+    },
+    "unrecognized_output": [],
+    "findings": [],
+    "findings_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    }
+  }
+}

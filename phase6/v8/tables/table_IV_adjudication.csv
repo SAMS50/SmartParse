@@ -1,0 +1,9 @@
+configuration,TP,FP,FN,precision,recall,F1,pending_supported_proposals,conditional_supported_proposals,unobserved_proposals,blocked_cases,unmatched_primary_records,duplicate_support_records,reason
+compiler_gcc6,,,,,,,3,0,10,1,0,0,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+compiler_clang,,,,,,,3,0,10,1,1,0,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+extended_baseline,,,,,,,7,0,6,3,3,1,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+recovery_assisted,,,,,,,7,1,5,2,3,1,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+isolation_assisted,,,,,,,7,1,5,2,3,1,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+gcc14,,,,,,,8,0,5,3,8,0,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+cppcheck,,,,,,,7,0,6,0,0,0,Unobserved proposals are not confirmed false negatives; unmatched warnings are not confirmed false positives
+combined_optional,,,,,,,13,0,0,,,,"Derived root union, not another execution; matching gaps and independent adjudication pending"

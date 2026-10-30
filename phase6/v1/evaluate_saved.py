@@ -16,15 +16,24 @@ ROOT = HERE.parents[1]
 
 def load_inputs():
     dataset = json.loads((HERE/'reference.json').read_text(encoding='utf-8'))
-    source = ROOT / dataset['sources']['sample-500-cleaned']['path']
+    source = ROOT.joinpath(*dataset['sources']['sample-500-cleaned']['path'].replace('\\','/').split('/'))
     if hashlib.sha256(source.read_bytes()).hexdigest() != dataset['sources']['sample-500-cleaned']['sha256']:
         raise ValueError('current source differs from frozen reference')
+    # A release can relocate this checkout without rewriting original raw
+    # evidence or requiring the original workstation's untracked outputs.
+    index_path=ROOT/'phase6/v9/legacy_evidence.json'
+    bundled=json.loads(index_path.read_text(encoding='utf-8'))['reports'] if index_path.is_file() else None
     runs = []
     for rid, path in [('gcc-6.3', 'acceptance/output/sample.json'),
                       ('clang-17', 'acceptance/output/clang_validation/sample_static.json')]:
-        artifact = ROOT/path
+        entry=bundled[path] if bundled is not None else None
+        artifact = ROOT/entry['file'] if entry else ROOT/path
+        if entry and (hashlib.sha256(artifact.read_bytes()).hexdigest()!=entry['sha256'] or
+                      entry['source_sha256']!=dataset['sources']['sample-500-cleaned']['sha256']):
+            raise ValueError('bundled historical evidence/source hash mismatch')
         report = json.loads(artifact.read_text(encoding='utf-8'))
-        if report['execution']['command'][-1] != str(source):
+        reported_source=report['execution']['command'][-1]
+        if reported_source != (entry['reported_source'] if entry else str(source)):
             raise ValueError('compiler report is not bound to expected cleaned source')
         coverage = [{'source_id':'sample-500-cleaned','analysis':'compiler','status':'completed',
                      'reason':'Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings.'},
@@ -34,7 +43,7 @@ def load_inputs():
                          'status':'blocked' if analyzer and analyzer['status']=='partial' else 'unsupported',
                          'reason':'Clang analyzer frontend errors prevented path analysis.' if analyzer else 'No GCC analyzer pass requested/supported in baseline.'})
         runs.append({'id':rid,'artifact_path':path,'artifact_sha256':hashlib.sha256(artifact.read_bytes()).hexdigest(),
-                     'source_bindings':{'sample-500-cleaned':{'reported_paths':[str(source)],'sha256':dataset['sources']['sample-500-cleaned']['sha256']}},
+            'source_bindings':{'sample-500-cleaned':{'reported_paths':[reported_source],'sha256':dataset['sources']['sample-500-cleaned']['sha256']}},
                      'coverage':coverage,'report':report})
     return dataset,runs
 

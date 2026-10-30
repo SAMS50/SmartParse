@@ -1,0 +1,219 @@
+{
+  "configuration": "compiler_gcc6",
+  "source_sha256": "7c3169c4d7ef1ed88870a06f1ee9c20f5d168f17cbcbbe544e16cfac7afde01a",
+  "elapsed_seconds": 0.593,
+  "result": {
+    "schema_version": "1.0",
+    "analysis_mode": "extended_c",
+    "status": "completed",
+    "compiler": {
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "backend": "gcc",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "diagnostics": [],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 0,
+      "command": [
+        "C:\\MinGW\\bin\\gcc.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0",
+        "-std=c11",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": ""
+    },
+    "unrecognized_output": [],
+    "usage": {
+      "compiler_invocations": 9,
+      "elapsed_seconds": 0.593,
+      "calls": [
+        {
+          "number": 1,
+          "role": "compiler_version",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+          "stderr": "",
+          "elapsed_seconds": 0.046
+        },
+        {
+          "number": 2,
+          "role": "syntax_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.063
+        },
+        {
+          "number": 3,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.047
+        },
+        {
+          "number": 4,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wextra",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 5,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wparentheses",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.062
+        },
+        {
+          "number": 6,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-show-option",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.063
+        },
+        {
+          "number": 7,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-color=never",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.062
+        },
+        {
+          "number": 8,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fmax-errors=0",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.079
+        },
+        {
+          "number": 9,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.093
+        }
+      ]
+    }
+  }
+}

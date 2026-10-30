@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SmartParse unified analysis 1.0",
+  "type": "object",
+  "required": ["schema", "schema_version", "version", "source", "requested_analyzers", "effective_analyzers", "status", "runs", "diagnostics", "groups", "tool_issues", "summary", "coverage", "usage"],
+  "properties": {
+    "schema": {"const": "smartparse.unified_analysis"},
+    "schema_version": {"const": "1.0"},
+    "status": {"enum": ["completed", "partial", "failed"]},
+    "source": {"type": "object", "required": ["path", "sha256", "bytes", "original_unchanged"]},
+    "runs": {"type": "array", "items": {"type": "object", "required": ["id", "status", "raw", "usage", "eligibility"]}},
+    "diagnostics": {"type": "array", "items": {"$ref": "#/$defs/diagnostic"}},
+    "groups": {"type": "array", "items": {"type": "object", "required": ["id", "root_id", "basis", "diagnostic_ids", "analyzers", "conditioning", "confirmed_defect"]}},
+    "tool_issues": {"type": "array"},
+    "summary": {"type": "object", "required": ["errors", "warnings", "notes", "categories", "conditioning", "confirmed_defect_roots"]},
+    "coverage": {"type": "object", "properties": {"function_path_coverage_certified": {"const": false}}}
+  },
+  "$defs": {
+    "diagnostic": {
+      "type": "object",
+      "required": ["id", "raw_reference", "raw_record", "location", "location_space", "reported_location", "source_sha256", "severity", "category", "message", "analyzer", "backend", "diagnostic_id", "suggestion", "root_id", "group_id", "provenance", "conditioning", "evidence", "completeness", "review_status", "confirmed_defect", "context_note"],
+      "properties": {
+        "location": {"type": "object", "required": ["file", "line", "column"]},
+        "severity": {"type": ["string", "null"]},
+        "diagnostic_id": {"type": ["string", "null"]},
+        "confirmed_defect": {"const": null},
+        "root_id": {"const": null},
+        "conditioning": {"enum": ["original-source", "repair-conditioned", "isolation-conditioned", "repair-and-isolation-conditioned"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "configuration": "cppcheck",
+  "source_sha256": "520e8a28451733ef58d371ebf08a5a5190d7e5b8e32f046e12acbd914a0846ae",
+  "elapsed_seconds": 0.36,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "kind": "cppcheck",
+      "version": "2.16.0",
+      "format": "cppcheck-xml"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c",
+      "sha256": "520e8a28451733ef58d371ebf08a5a5190d7e5b8e32f046e12acbd914a0846ae",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "--xml",
+        "--xml-version=2",
+        "--enable=warning",
+        "--std=c11",
+        "--platform=win64",
+        "--max-configs=1",
+        "--error-exitcode=1",
+        "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\cache",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c"
+      ]
+    },
+    "status": "completed",
+    "reason": "Tool returned; warnings require source/root review.",
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c",
+        "line": 2,
+        "column": 28,
+        "severity": "warning",
+        "message": "Logical conjunction always evaluates to false: value <= -3 && value == 2. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+        "diagnostic_id": "incorrectLogicOperator",
+        "category": "program logic",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Logical conjunction always evaluates to false: value <= -3 && value == 2.",
+        "cwe": "570",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " if(value>=-3 && value<=-3 && value==2) return 1;",
+        "id": "X-3bc0af12fef3c6bc5b3f",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      }
+    ],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: value &lt;= -3 &amp;&amp; value == 2.\" verbose=\"Logical conjunction always evaluates to false: value &lt;= -3 &amp;&amp; value == 2. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C08_contradiction.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c\" line=\"2\" column=\"28\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+      "returncode": 1
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [],
+      "analyzer_completion": "completed"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "Cppcheck 2.16.0\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 1,
+      "stdout": "Checking C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external 8fu3ty_t/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.36,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+          "stderr": "",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\cache",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "fec18c2637ffc06a90f4be5303656967f650e863758b007bdaefe0f4e00c2ff5",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external 8fu3ty_t/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.141
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external 8fu3ty_t\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "80b8f2d2a42748344047f3ff4da647bfbcb030cbedf06de356b68a383830f221",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: value &lt;= -3 &amp;&amp; value == 2.\" verbose=\"Logical conjunction always evaluates to false: value &lt;= -3 &amp;&amp; value == 2. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C08_contradiction.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C08_contradiction.c\" line=\"2\" column=\"28\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.125
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 1,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

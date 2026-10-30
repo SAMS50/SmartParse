@@ -1,0 +1,203 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\syntax\\S03.c",
+    "sha256": "f7c34a21227200e88cf9a3aa92b326cbb31c18c824975bf6a33199a94088ab67",
+    "bytes": 27,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "smartparse"
+  ],
+  "effective_analyzers": [
+    "smartparse"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "smartparse",
+      "status": "completed",
+      "reason": null,
+      "raw": {
+        "status": "completed",
+        "diagnostics": [
+          {
+            "line": 2,
+            "column": 1,
+            "message": "Missing ';' before 'int'."
+          }
+        ],
+        "repairs": [
+          {
+            "operation": "insert",
+            "token": ";",
+            "from": null,
+            "line": 2,
+            "column": 1,
+            "score": 60,
+            "score_factors": {
+              "single_token_edit": 10,
+              "statement_or_block_boundary": 25,
+              "statement_boundary_fit": 25
+            },
+            "scoring_mode": "contextual",
+            "reason": "expected delimiter at boundary",
+            "context": {
+              "expected": ";",
+              "previous": "4",
+              "current": "int",
+              "next": "ending",
+              "nesting": []
+            },
+            "grammar_validation": null
+          }
+        ],
+        "source_lines": [
+          "int pebble=4",
+          "int ending=7;"
+        ],
+        "reached_eof": true,
+        "grammar": "restricted C-like; no full-C/type/runtime analysis",
+        "usage": {
+          "compiler_invocations": 0
+        }
+      },
+      "elapsed_seconds": 0.0,
+      "usage": {
+        "compiler_invocations": 0
+      },
+      "eligibility": null
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-5dc1d1f07fc2e7b91ada",
+      "raw_reference": {
+        "run_id": "smartparse",
+        "path": "/diagnostics/0"
+      },
+      "raw_record": {
+        "line": 2,
+        "column": 1,
+        "message": "Missing ';' before 'int'."
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\syntax\\S03.c",
+        "line": 2,
+        "column": 1
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\syntax\\S03.c",
+        "line": 2,
+        "column": 1
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "f7c34a21227200e88cf9a3aa92b326cbb31c18c824975bf6a33199a94088ab67",
+      "severity": "error",
+      "category": "syntax",
+      "category_basis": "backend_category",
+      "message": "Missing ';' before 'int'.",
+      "analyzer": "SmartParse restricted grammar",
+      "backend": "smartparse",
+      "diagnostic_id": null,
+      "suggestion": [
+        {
+          "operation": "insert",
+          "token": ";",
+          "from": null,
+          "line": 2,
+          "column": 1,
+          "score": 60,
+          "score_factors": {
+            "single_token_edit": 10,
+            "statement_or_block_boundary": 25,
+            "statement_boundary_fit": 25
+          },
+          "scoring_mode": "contextual",
+          "reason": "expected delimiter at boundary",
+          "context": {
+            "expected": ";",
+            "previous": "4",
+            "current": "int",
+            "next": "ending",
+            "nesting": []
+          },
+          "grammar_validation": null
+        }
+      ],
+      "root_id": null,
+      "group_id": "G-cd7e300d8c389bd77e5c",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": "int ending=7;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": "completed",
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-cd7e300d8c389bd77e5c",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-5dc1d1f07fc2e7b91ada"
+      ],
+      "analyzers": [
+        "SmartParse restricted grammar"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {
+      "syntax": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 1,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 0.0,
+    "compiler_invocations": 0,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

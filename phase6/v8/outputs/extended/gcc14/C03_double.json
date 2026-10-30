@@ -1,0 +1,378 @@
+{
+  "configuration": "gcc14",
+  "source_sha256": "c790473e57abe3f64ef6e9ffe6bf93d8df16a51141ee0fd299c6c04f0441809f",
+  "elapsed_seconds": 0.407,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "gcc14",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "kind": "gcc",
+      "version": "14.2.0",
+      "format": "gcc-json",
+      "diagnostic_format": "json"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+      "sha256": "c790473e57abe3f64ef6e9ffe6bf93d8df16a51141ee0fd299c6c04f0441809f",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+        "-x",
+        "c",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-fmax-errors=20",
+        "-O0",
+        "-fanalyzer",
+        "-fdiagnostics-format=json",
+        "-c",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+        "-o",
+        "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\analysis.o"
+      ]
+    },
+    "status": "completed",
+    "reason": "Tool returned; warnings require source/root review.",
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+        "line": 6,
+        "column": 2,
+        "severity": "warning",
+        "message": "pointer 'saved' used after 'free'",
+        "diagnostic_id": "-Wuse-after-free",
+        "category": "unknown",
+        "related": [],
+        "context_note": false,
+        "column_kind": "byte",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " free(saved);",
+        "id": "X-0bf3fad0a5fb3fe15406",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\analysis.o"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+        "line": 5,
+        "column": 2,
+        "severity": "note",
+        "message": "call to 'free' here",
+        "diagnostic_id": null,
+        "category": "unknown",
+        "related": [],
+        "context_note": true,
+        "column_kind": "byte",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " free(block);",
+        "id": "X-4a97c890792fdcd1dfcf",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\analysis.o"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+        "line": 6,
+        "column": 2,
+        "severity": "warning",
+        "message": "double-'free' of 'saved'",
+        "diagnostic_id": "-Wanalyzer-double-free",
+        "category": "memory safety",
+        "related": [
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+              "line": 3,
+              "display-column": 14,
+              "byte-column": 14,
+              "column": 14
+            },
+            "description": "allocated here",
+            "function": "release_pair",
+            "depth": 1
+          },
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+              "line": 5,
+              "display-column": 2,
+              "byte-column": 2,
+              "column": 2
+            },
+            "description": "first 'free' here",
+            "function": "release_pair",
+            "depth": 1
+          },
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+              "line": 6,
+              "display-column": 2,
+              "byte-column": 2,
+              "column": 2
+            },
+            "description": "second 'free' here; first 'free' was at (2)",
+            "function": "release_pair",
+            "depth": 1
+          }
+        ],
+        "context_note": false,
+        "column_kind": "byte",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " free(saved);",
+        "id": "X-6f834443b66391add749",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\analysis.o"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      }
+    ],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "",
+      "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"pointer 'saved' used after 'free'\",\n  \"option\": \"-Wuse-after-free\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-use-after-free\",\n  \"children\": [{\"kind\": \"note\",\n                \"message\": \"call to 'free' here\",\n                \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                                         \"line\": 5,\n                                         \"display-column\": 2,\n                                         \"byte-column\": 2,\n                                         \"column\": 2},\n                               \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                                          \"line\": 5,\n                                          \"display-column\": 12,\n                                          \"byte-column\": 12,\n                                          \"column\": 12}}],\n                \"escape-source\": false}],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                           \"line\": 6,\n                           \"display-column\": 2,\n                           \"byte-column\": 2,\n                           \"column\": 2},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                            \"line\": 6,\n                            \"display-column\": 12,\n                            \"byte-column\": 12,\n                            \"column\": 12}}],\n  \"escape-source\": false},\n {\"kind\": \"warning\",\n  \"message\": \"double-'free' of 'saved'\",\n  \"option\": \"-Wanalyzer-double-free\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-double-free\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                           \"line\": 6,\n                           \"display-column\": 2,\n                           \"byte-column\": 2,\n                           \"column\": 2},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                            \"line\": 6,\n                            \"display-column\": 12,\n                            \"byte-column\": 12,\n                            \"column\": 12}}],\n  \"metadata\": {\"cwe\": 415},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 3,\n                         \"display-column\": 14,\n                         \"byte-column\": 14,\n                         \"column\": 14},\n            \"description\": \"allocated here\",\n            \"function\": \"release_pair\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 5,\n                         \"display-column\": 2,\n                         \"byte-column\": 2,\n                         \"column\": 2},\n            \"description\": \"first 'free' here\",\n            \"function\": \"release_pair\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 6,\n                         \"display-column\": 2,\n                         \"byte-column\": 2,\n                         \"column\": 2},\n            \"description\": \"second 'free' here; first 'free' was at (2)\",\n            \"function\": \"release_pair\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+      "returncode": 0
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [],
+      "analyzer_completion": "completed"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.375,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+          "stderr": "",
+          "elapsed_seconds": 0.063
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\capability\\capability.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\capability\\analysis.o"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external cygq0d0a\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+          "elapsed_seconds": 0.171
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C03_double.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cygq0d0a\\analysis.o"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"pointer 'saved' used after 'free'\",\n  \"option\": \"-Wuse-after-free\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Warning-Options.html#index-Wno-use-after-free\",\n  \"children\": [{\"kind\": \"note\",\n                \"message\": \"call to 'free' here\",\n                \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                                         \"line\": 5,\n                                         \"display-column\": 2,\n                                         \"byte-column\": 2,\n                                         \"column\": 2},\n                               \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                                          \"line\": 5,\n                                          \"display-column\": 12,\n                                          \"byte-column\": 12,\n                                          \"column\": 12}}],\n                \"escape-source\": false}],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                           \"line\": 6,\n                           \"display-column\": 2,\n                           \"byte-column\": 2,\n                           \"column\": 2},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                            \"line\": 6,\n                            \"display-column\": 12,\n                            \"byte-column\": 12,\n                            \"column\": 12}}],\n  \"escape-source\": false},\n {\"kind\": \"warning\",\n  \"message\": \"double-'free' of 'saved'\",\n  \"option\": \"-Wanalyzer-double-free\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-double-free\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                           \"line\": 6,\n                           \"display-column\": 2,\n                           \"byte-column\": 2,\n                           \"column\": 2},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                            \"line\": 6,\n                            \"display-column\": 12,\n                            \"byte-column\": 12,\n                            \"column\": 12}}],\n  \"metadata\": {\"cwe\": 415},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 3,\n                         \"display-column\": 14,\n                         \"byte-column\": 14,\n                         \"column\": 14},\n            \"description\": \"allocated here\",\n            \"function\": \"release_pair\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 5,\n                         \"display-column\": 2,\n                         \"byte-column\": 2,\n                         \"column\": 2},\n            \"description\": \"first 'free' here\",\n            \"function\": \"release_pair\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C03_double.c\",\n                         \"line\": 6,\n                         \"display-column\": 2,\n                         \"byte-column\": 2,\n                         \"column\": 2},\n            \"description\": \"second 'free' here; first 'free' was at (2)\",\n            \"function\": \"release_pair\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+          "elapsed_seconds": 0.141
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 2,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

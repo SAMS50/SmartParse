@@ -1,0 +1,533 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+    "sha256": "614b5f86b7e0faeb9b6b32c8db40530d745d19e69a7332874b069d3aed4c0d09",
+    "bytes": 83,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "compiler"
+  ],
+  "effective_analyzers": [
+    "compiler"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "compiler",
+      "status": "completed",
+      "reason": null,
+      "raw": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\MinGW\\bin\\gcc.exe",
+          "backend": "gcc",
+          "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 1,
+          "errors": 1,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 1,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+            "line": 3,
+            "column": 1,
+            "severity": "error",
+            "message": "expected ';' before '}' token",
+            "backend": "gcc",
+            "category": "syntax",
+            "source_snippet": "}",
+            "diagnostic_id": null
+          }
+        ],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 1,
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c: In function 'helper':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c:3:1: error: expected ';' before '}' token\r\n }\r\n ^\r\n"
+        },
+        "unrecognized_output": [],
+        "usage": {
+          "compiler_invocations": 9,
+          "elapsed_seconds": 0.953,
+          "calls": [
+            {
+              "number": 1,
+              "role": "compiler_version",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "--version"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+              "stderr": "",
+              "elapsed_seconds": 0.062
+            },
+            {
+              "number": 2,
+              "role": "syntax_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.156
+            },
+            {
+              "number": 3,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.078
+            },
+            {
+              "number": 4,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wextra",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.094
+            },
+            {
+              "number": 5,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wparentheses",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.11
+            },
+            {
+              "number": 6,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-show-option",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.078
+            },
+            {
+              "number": 7,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-color=never",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.093
+            },
+            {
+              "number": 8,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.EXE",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fmax-errors=0",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.11
+            },
+            {
+              "number": 9,
+              "role": "compiler_validation",
+              "command": [
+                "C:\\MinGW\\bin\\gcc.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-Wextra",
+                "-Wparentheses",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-fmax-errors=0",
+                "-std=c11",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c"
+              ],
+              "status": "completed",
+              "returncode": 1,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c: In function 'helper':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c:3:1: error: expected ';' before '}' token\r\n }\r\n ^\r\n",
+              "elapsed_seconds": 0.156
+            }
+          ]
+        }
+      },
+      "elapsed_seconds": 0.953,
+      "usage": {
+        "compiler_invocations": 9,
+        "elapsed_seconds": 0.953,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+            "stderr": "",
+            "elapsed_seconds": 0.062
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.156
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.078
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.094
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.11
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.078
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.093
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fmax-errors=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.11
+          },
+          {
+            "number": 9,
+            "role": "compiler_validation",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-fmax-errors=0",
+              "-std=c11",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c: In function 'helper':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c:3:1: error: expected ';' before '}' token\r\n }\r\n ^\r\n",
+            "elapsed_seconds": 0.156
+          }
+        ]
+      },
+      "eligibility": {
+        "frontend_accepted": false,
+        "operational_completion": "completed",
+        "function_path_coverage_certified": false
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-4eac5a824a488750e1f9",
+      "raw_reference": {
+        "run_id": "compiler",
+        "path": "/diagnostics/0"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "line": 3,
+        "column": 1,
+        "severity": "error",
+        "message": "expected ';' before '}' token",
+        "backend": "gcc",
+        "category": "syntax",
+        "source_snippet": "}",
+        "diagnostic_id": null
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "line": 3,
+        "column": 1
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "line": 3,
+        "column": 1
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "614b5f86b7e0faeb9b6b32c8db40530d745d19e69a7332874b069d3aed4c0d09",
+      "severity": "error",
+      "category": "syntax",
+      "category_basis": "backend_category",
+      "message": "expected ';' before '}' token",
+      "analyzer": "GCC",
+      "backend": "gcc",
+      "diagnostic_id": null,
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-cecbfd35f462d4ca85ce",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": "}",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": {
+        "pass_completion": "completed",
+        "run_completion": "completed",
+        "frontend_accepted": false,
+        "function_path_coverage_certified": false
+      },
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-cecbfd35f462d4ca85ce",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-4eac5a824a488750e1f9"
+      ],
+      "analyzers": [
+        "GCC"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 1,
+    "errors": 1,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {
+      "syntax": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 1,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 0.953,
+    "compiler_invocations": 9,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "gcc",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

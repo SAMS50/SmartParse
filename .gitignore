@@ -4,3 +4,15 @@ __pycache__/
 venv/
 .pytest_cache/
 .DS_Store
+
+# Local validation runs and redundant worker stdout (raw diagnostics stay in JSON).
+/phase6/v9/reproducibility/runs/
+/phase6/v9/reproducibility/original_workspace_hashes.json
+/phase6/v8/outputs/extended/**/*.log
+/phase6/v8/outputs/interim_summary.txt
+/phase6/v8/outputs/final_summary.txt
+/phase6/v9/outputs/README.before.md
+/phase6/v9/outputs/parser_smoke.json
+/acceptance/output/smartparse-analyzer-*/
+/tests_fixtures/extended_c/smartparse c */
+/smartparse-report*.json

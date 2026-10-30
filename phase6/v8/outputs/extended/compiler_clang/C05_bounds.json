@@ -1,0 +1,262 @@
+{
+  "configuration": "compiler_clang",
+  "source_sha256": "b5147d131f03944cd452db09491d3a17b3c16db61fcb742fb5c8a52c7f6d872d",
+  "elapsed_seconds": 1.109,
+  "result": {
+    "schema_version": "1.0",
+    "analysis_mode": "extended_c",
+    "status": "completed",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 2,
+      "errors": 0,
+      "warnings": 1,
+      "notes": 1,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 1,
+        "unknown": 1
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c",
+        "line": 3,
+        "column": 2,
+        "severity": "warning",
+        "message": "array index 5 is past the end of the array (that has type 'int[5]')",
+        "backend": "clang",
+        "category": "compiler warning",
+        "source_snippet": " row[5]=31;",
+        "diagnostic_id": "-Warray-bounds"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c",
+        "line": 2,
+        "column": 2,
+        "severity": "note",
+        "message": "array 'row' declared here",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": " int row[5]={0};",
+        "diagnostic_id": null
+      }
+    ],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 0,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-std=c11",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c:3:2: warning: array index 5 is past the end of the array (that has type 'int[5]') [-Warray-bounds]\r\n row[5]=31;\r\n ^   ~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c:2:2: note: array 'row' declared here\r\n int row[5]={0};\r\n ^\r\n1 warning generated.\r\n"
+    },
+    "unrecognized_output": [],
+    "usage": {
+      "compiler_invocations": 10,
+      "elapsed_seconds": 1.109,
+      "calls": [
+        {
+          "number": 1,
+          "role": "compiler_version",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+          "stderr": "",
+          "elapsed_seconds": 0.125
+        },
+        {
+          "number": 2,
+          "role": "syntax_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.109
+        },
+        {
+          "number": 3,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.11
+        },
+        {
+          "number": 4,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wextra",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.094
+        },
+        {
+          "number": 5,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wparentheses",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.093
+        },
+        {
+          "number": 6,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-show-option",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.094
+        },
+        {
+          "number": 7,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-color=never",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.125
+        },
+        {
+          "number": 8,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-ferror-limit=0",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.141
+        },
+        {
+          "number": 9,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fno-diagnostics-fixit-info",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.125
+        },
+        {
+          "number": 10,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c:3:2: warning: array index 5 is past the end of the array (that has type 'int[5]') [-Warray-bounds]\r\n row[5]=31;\r\n ^   ~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c:2:2: note: array 'row' declared here\r\n int row[5]={0};\r\n ^\r\n1 warning generated.\r\n",
+          "elapsed_seconds": 0.093
+        }
+      ]
+    }
+  }
+}

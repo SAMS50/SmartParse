@@ -1,0 +1,37 @@
+{
+  "milestone": 8,
+  "status": "complete_for_review; independent accuracy adjudication pending",
+  "tests": {
+    "run": 452,
+    "passed": 452,
+    "failures": 0,
+    "errors": 0,
+    "skipped": [],
+    "elapsed_seconds": 236.812
+  },
+  "protected_files": {
+    "protected_hash_records": 1771,
+    "protected_files": 1512,
+    "historical_csvs": 17,
+    "changed": [],
+    "missing": [],
+    "frozen_inputs_verified": 46,
+    "preserved": true
+  },
+  "evaluation": {
+    "author_created_cases": 32,
+    "independently_verified": false,
+    "configuration_runs": 147,
+    "tool_invocations": 2654,
+    "externally_timed_out": 0,
+    "confirmed_metrics": null,
+    "frozen_matcher_limitations": "review/frozen_matching_limitations.json"
+  },
+  "figures": 5,
+  "tables": 5,
+  "no_commit_or_push": true,
+  "no_new_detectors": true,
+  "no_user_binary_execution_observed": true,
+  "historical_results_replaced": false,
+  "artifact_inventory": "outputs/added_files.json"
+}
