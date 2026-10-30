@@ -32,3 +32,35 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .gallery-heading, .explorer-heading, .workspace-folder { font-size: 11px; letter-spacing: .3px; }
 .modal-backdrop { backdrop-filter: none; }
 .empty-state p { font-size: 12px; color: #9CA3AF; }
+.top-actions { gap: 8px; }
+.workspace-kind { padding: 0 14px 10px; font-size: 11px; color: #9CA3AF; }
+.explorer { overflow: auto; padding-top: 14px; }
+.explorer-heading { padding: 0 14px 12px; text-transform: none; }
+.explorer-file { display: flex; align-items: center; padding: 2px 6px; }
+.explorer-file.active { background: #293440; }
+.explorer-file > button:first-child { min-width: 0; flex: 1; display: flex; align-items: center; gap: 6px; background: transparent; color: #E5E7EB; padding: 7px 3px; font-size: 12px; text-align: left; }
+.explorer-file > button:first-child > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.explorer-file .icon-button { width: 23px; height: 25px; flex-shrink: 0; }
+.examples-section { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 10px; }
+.examples-section > summary { padding: 5px 14px; color: #9CA3AF; font-size: 12px; cursor: pointer; }
+.file-tabs { justify-content: flex-start; padding: 0; gap: 0; overflow-x: auto; }
+.editor-tab { display: flex; align-items: center; align-self: stretch; flex-shrink: 0; border-right: 1px solid var(--border); border-top: 2px solid transparent; }
+.editor-tab.active { background: #151719; border-top-color: var(--accent); }
+.editor-tab > button { background: transparent; color: #9CA3AF; }
+.editor-tab.active > button { color: #E5E7EB; }
+.editor-tab > [role=tab] { padding: 8px 10px; font-size: 12px; display: flex; align-items: center; gap: 7px; }
+.tab-close { width: 25px; display: grid; place-items: center; height: 25px; margin-right: 3px; border-radius: 3px; }
+.tab-close:hover { background: #343A40; }
+.editor-config { justify-content: space-between; }
+.editor-config > span { margin-left: 0; color: #9CA3AF; }
+.confirm-dialog form label { display: grid; gap: 8px; margin: 18px 0; color: #E5E7EB; }
+.confirm-dialog form input { background: #151719; border: 1px solid var(--border); padding: 8px 10px; border-radius: 4px; color: #E5E7EB; width: 100%; }
+.confirm-dialog form > div { display: flex; justify-content: flex-end; gap: 8px; }
+.conditioned-findings summary { color: #C5D9EF; }
+@media (max-width: 650px) {
+  .top-actions { gap: 2px; }
+  .topbar .brand-mark, .topbar .studio-label { display: none; }
+  .topbar { padding: 0 8px; gap: 4px; }
+  .topbar .primary-button { padding: 8px; }
+  .editor-tab > [role=tab] { font-size: 11px; padding: 8px; }
+}

@@ -11,6 +11,7 @@ loader.config({monaco})
 
 export interface EditorHandle {navigate: (location: EditorLocation) => void}
 interface Props {
+  documentId?: string; openDocumentIds?: string[];
   value: string; onChange: (value: string) => void; diagnostics: Diagnostic[];
   locations: Record<string, EditorLocation>; onCursor: (line: number, column: number) => void;
 }
@@ -24,6 +25,26 @@ const options: monaco.editor.IStandaloneEditorConstructionOptions = {
 
 export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(props, ref) {
   const editor = useRef<monaco.editor.IStandaloneCodeEditor | null>(null)
+  const owned = useRef(new Set<string>())
+  const mounted = useRef(false)
+  const uri = props.documentId ? `inmemory://smartparse/${props.documentId}` : undefined
+  useEffect(() => {
+    if (uri) owned.current.add(uri)
+    const open = new Set((props.openDocumentIds || []).map(id => `inmemory://smartparse/${id}`))
+    for (const path of owned.current) {
+      const model=monaco.editor.getModel(monaco.Uri.parse(path))
+      if (!open.has(path) && model !== editor.current?.getModel()) {model?.dispose();owned.current.delete(path)}
+    }
+  }, [uri, props.openDocumentIds])
+  useEffect(() => {mounted.current=true;return () => {
+    mounted.current=false
+    // Child editor detaches first; defer disposal past React cleanup ordering.
+    const paths=[...owned.current]
+    setTimeout(()=>{if(mounted.current)return;paths.forEach(path=>{
+      const model=monaco.editor.getModel(monaco.Uri.parse(path))
+      if (model && model!==editor.current?.getModel()) model.dispose()
+    })},0)
+  }}, [])
   function markers() {
     const model = editor.current?.getModel(); if (!model) return
     monaco.editor.setModelMarkers(model, 'smartparse', props.diagnostics.flatMap(d => {
@@ -41,7 +62,7 @@ export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(pr
     editor.current?.setPosition({lineNumber: at.line, column: at.column})
     editor.current?.revealLineInCenter(at.line); editor.current?.focus()
   }}))
-  return <Editor height="100%" language="c" theme="vs-dark" value={props.value} options={options}
+  return <Editor height="100%" language="c" theme="vs-dark" path={uri} keepCurrentModel={!!uri} saveViewState value={props.value} options={options}
     loading={<div className="editor-loading">Loading local code editor…</div>}
     beforeMount={m => m.editor.defineTheme('smartparse-dark', {base: 'vs-dark', inherit: true, rules: [], colors: {
       'editor.background': '#151719', 'editorLineNumber.foreground': '#717985', 'editorLineNumber.activeForeground': '#E5E7EB',

@@ -1,7 +1,10 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
-import {AlertCircle, ArrowDownToLine, ArrowRight, Braces, Check, CheckCircle2, ChevronDown, ChevronRight, CircleHelp, Code2, FileCode2, FlaskConical, GitCompareArrows, LoaderCircle, Play, RotateCcw, Search, Settings2, ShieldCheck, Square, Upload, WandSparkles, X} from 'lucide-react'
+import {AlertCircle, ArrowDownToLine, ArrowRight, Braces, Check, CheckCircle2, ChevronDown, ChevronRight, CircleHelp, Code2, FileCode2, FlaskConical, GitCompareArrows, LoaderCircle, Play, RotateCcw, Search, Settings2, ShieldCheck, Square, Upload, WandSparkles, X, FilePlus2, Save, Pencil} from 'lucide-react'
 import {CodeEditor, type EditorHandle} from './components/CodeEditor'
 import {Inspector, type InspectorTab} from './components/Inspector'
+import {FileDialog} from './components/FileDialog'
+import {useWorkspace} from './lib/useWorkspace'
+import {dirtyFile, downloadSource} from './lib/workspace'
 import {PanelDivider} from './components/PanelDivider'
 import {SettingsPanel} from './components/SettingsPanel'
 import * as api from './lib/api'
@@ -11,37 +14,42 @@ const DEFAULTS: Settings = {analyzers: ['compiler'], recovery: false, isolation:
 export default function App() {
   const [examples,setExamples] = useState<Example[]>([]), [tools,setTools] = useState<Tool[]>([])
   const [connected,setConnected] = useState(false), [checking,setChecking] = useState(true)
-  const [code,setCode] = useState('// Select an example or write C source here.\n'), [filename,setFilename] = useState('untitled.c')
-  const [loaded,setLoaded] = useState(code), [selected,setSelected] = useState('')
+  const documents=useWorkspace(), active=documents.active
+  const code=active.text, filename=active.name, loaded=active.openedText
+  const setCode=(text:string)=>documents.update(active.id,{text})
+  const [fileDialog,setFileDialog]=useState<{mode:'rename'|'close';id:string}|null>(null)
   const [settings,setSettings] = useState<Settings>(DEFAULTS), [settingsOpen,setSettingsOpen] = useState(false)
   const [result,setResult] = useState<StudioResult | null>(null), [snapshot,setSnapshot] = useState({source: '', filename: ''})
   const [busy,setBusy] = useState(false), [error,setError] = useState(''), [notice,setNotice] = useState('')
   const [filter,setFilter] = useState('all'), [query,setQuery] = useState(''), [shown,setShown] = useState(100)
   const [tab,setTab] = useState<InspectorTab>('overview'), [cursor,setCursor] = useState({line: 1, column: 1})
-  const [split,setSplit] = useState(58), [pendingExample,setPendingExample] = useState<Example | null>(null)
+  const [split,setSplit] = useState(58)
   const [detailsHeight,setDetailsHeight] = useState<number | null>(null)
   const main = useRef<HTMLElement>(null)
   const detailSize = detailsHeight ?? (tab === 'overview' ? 144 : tab === 'recovery' ? 320 : 240)
   const [help,setHelp] = useState(false)
-  const initialized = useRef(false), controller = useRef<AbortController | null>(null)
+  const controller = useRef<AbortController | null>(null)
   const editor = useRef<EditorHandle>(null), fileInput = useRef<HTMLInputElement>(null), workspace = useRef<HTMLDivElement>(null)
-  const dirty = code !== loaded
+  const dirty = dirtyFile(active)
   const closeSettings = useCallback(() => setSettingsOpen(false), [])
   const stale = !!result && (code !== snapshot.source || filename !== snapshot.filename)
 
-  function load(example: Example) {
-    initialized.current = true;setCode(example.source);setLoaded(example.source);setFilename(example.filename);setSelected(example.id)
-    setSettings(s => ({...s, analyzers: example.analyzers, recovery: example.recovery, isolation: example.isolation}))
-    setResult(null);setError('');setNotice('');setTab(example.recovery || example.isolation ? 'recovery' : 'overview')
+  function resetReport(){setResult(null);setError('');setNotice('')}
+  function selectFile(id:string){if(id!==active.id){documents.select(id);resetReport()}}
+  function newFile(){try{documents.newFile();resetReport()}catch(e){setError(String(e))}}
+  function saveFile(){downloadSource(active);documents.update(active.id,{exportedText:code});setNotice(`Download requested: ${filename}. Original disk file not overwritten.`)}
+  function choose(example:Example){
+    try{documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
+    catch(e){setError(String(e))}
   }
-  function choose(example: Example) {if (dirty) setPendingExample(example);else load(example)}
+  function closeFile(id:string){const file=documents.files.find(f=>f.id===id);if(file&&dirtyFile(file))setFileDialog({mode:'close',id});else{documents.close(id);resetReport()}}
   const connect = useCallback(async () => {
     setChecking(true)
     try {
       await api.health();setConnected(true)
       const [gallery, inventory] = await Promise.all([api.getExamples(), api.getTools()])
       setExamples(gallery.examples);setTools(inventory.tools)
-      if (!initialized.current && gallery.examples.length) load(gallery.examples[0])
+
     } catch (e) {setConnected(false);setError(`Backend unavailable. Start the local API, then reconnect. ${e instanceof Error ? e.message : ''}`)}
     finally {setChecking(false)}
   }, [])
@@ -54,7 +62,7 @@ export default function App() {
     setBusy(true);setResult(null);setError('');setNotice('');setShown(100)
     const submitted = {source: code, filename};setSnapshot(submitted)
     try {
-      const answer = await api.analyze({...submitted, ...settings}, request.signal)
+      const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings}, request.signal)
       if (controller.current === request) setResult(answer)
     } catch (e) {
       if (controller.current === request && !request.signal.aborted) setError(e instanceof Error ? e.message : 'Analysis request failed')
@@ -71,16 +79,19 @@ export default function App() {
     controller.current?.abort();controller.current = null;setBusy(false)
     setNotice('Stopped waiting. The server may finish its bounded run before accepting another analysis.')
   }
-  async function importFile(file?: File) {
-    if (!file) return
-    if (!/\.c$/i.test(file.name) || file.size > 128 * 1024) {setError('Choose a .c file no larger than 128 KiB.');return}
-    if (dirty && !window.confirm('Discard unsaved editor changes and import this file?')) return
-    try {
-      const text = new TextDecoder('utf-8', {fatal: true}).decode(await file.arrayBuffer())
-      initialized.current = true;setCode(text);setLoaded(text);setFilename(file.name);setSelected('');setResult(null);setError('')
-      setNotice('Imported UTF-8 text. The original file on disk is unchanged.')
-    } catch {setError('This file is not valid UTF-8. Convert a copy before importing.')}
+  async function importFile(file?:File) {
+    if(!file)return
+    if(!/\.[ch]$/i.test(file.name)||file.size>128*1024){setError('Choose a .c or .h file no larger than 128 KiB.');return}
+    try{
+      const text=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer())
+      documents.add(file.name,text,'import');resetReport()
+      setNotice('Imported UTF-8 text. File remains in memory until downloaded.')
+    }catch(e){setError(`Could not open file: ${e instanceof Error?e.message:'invalid UTF-8'}`)}
   }
+  useEffect(()=>{
+    const save=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveFile()}}
+    window.addEventListener('keydown',save);return()=>window.removeEventListener('keydown',save)
+  })
   const diagnostics = result?.report.diagnostics || []
   const groups = useMemo(() => {
     if (!result) return []
@@ -101,7 +112,7 @@ export default function App() {
   return <div className="studio-shell antialiased">
     <header className="topbar"><a className="brand" href="#workspace" aria-label="SmartParse Studio workspace"><span className="brand-mark"><Braces size={21}/></span><strong>SmartParse</strong><span className="studio-label">STUDIO</span></a>
       <div className="top-breadcrumb"><span>Workspace</span><ChevronRight size={13}/><span title={filename} style={{maxWidth: '25ch', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{filename}</span></div>
-      <div className="top-actions"><span className={`connection ${connected ? 'connected' : ''}`}><i/>{checking ? 'Checking tools' : connected ? `${tools.filter(t => t.status === 'available').length} tools available` : 'API offline'}</span>
+      <div className="top-actions"><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${connected ? 'connected' : ''}`}><i/>{checking ? 'Checking tools' : connected ? `${tools.filter(t => t.status === 'available').length} tools available` : 'API offline'}</span>
         {!connected && <button className="text-button" onClick={() => void connect()}>Reconnect</button>}
         <button className="icon-button" aria-label="Analysis settings" onClick={() => setSettingsOpen(true)} disabled={busy}><Settings2 size={18}/></button>
         {busy ? <button className="stop-button" onClick={stopWaiting}><Square size={12}/>Stop waiting</button> : <button className="primary-button" aria-label="Analyze" onClick={() => void runAnalysis()} disabled={!connected || checking}><Play size={14} fill="currentColor"/>Analyze<span className="shortcut">Ctrl ↵</span></button>}
@@ -109,18 +120,13 @@ export default function App() {
     </header>
     <div className="workbench">
       <aside className="activity-rail" aria-label="Workspace navigation"><button className="rail-button selected" title="Code workspace" aria-label="Code workspace" onClick={() => setTab('overview')}><Code2 size={22}/></button><button className="rail-button" title="Recovery evidence" aria-label="Recovery evidence" onClick={() => setTab('recovery')}><WandSparkles size={20}/></button><button className="rail-button" title="Analyzer comparison" aria-label="Analyzer comparison" onClick={() => setTab('comparison')}><GitCompareArrows size={20}/></button><span className="rail-spacer"/><button className="rail-button" aria-label="About Studio" onClick={() => setHelp(true)}><CircleHelp size={20}/></button></aside>
-      <aside className="explorer"><div className="explorer-heading"><span>EXPLORER</span><FlaskConical size={14}/></div><div className="workspace-folder"><ChevronDown size={13}/><span>SMARTPARSE WORKSPACE</span></div>
-        <button className="current-file" onClick={() => editor.current?.navigate({line: 1,column: 1,precision: 'line',reason: 'File start'})}><FileCode2 size={15}/><span>{filename}</span>{dirty && <i className="unsaved-dot"/>}</button>
-        <div className="gallery-heading">EXAMPLE GALLERY <span>{examples.length}</span></div>
-        <nav aria-label="C examples">{examples.map(example => <button key={example.id} className={`example-button ${selected === example.id ? 'active' : ''}`} disabled={busy} onClick={() => choose(example)}><FileCode2 size={14}/><span>{example.title}</span>{selected === example.id && <ChevronRight size={12}/>}</button>)}</nav>
-
-      </aside>
+      <aside className="explorer"><div className="explorer-heading">Explorer</div><p className="workspace-kind">In-memory files</p><nav aria-label="Open files">{documents.files.map(file=><div className={`explorer-file ${active.id===file.id?'active':''}`} key={file.id}><button disabled={busy} onClick={()=>selectFile(file.id)} title={file.name}><FileCode2 size={14}/><span>{file.name}</span>{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="icon-button" aria-label={`Rename ${file.name}`} disabled={busy} onClick={()=>setFileDialog({mode:'rename',id:file.id})}><Pencil size={12}/></button><button className="icon-button" aria-label={`Remove ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={13}/></button></div>)}</nav><details className="examples-section"><summary>Examples ({examples.length})</summary><nav aria-label="C examples">{examples.map(example=><button key={example.id} className="example-button" disabled={busy} onClick={()=>choose(example)}><FileCode2 size={14}/><span>{example.title}</span></button>)}</nav></details></aside>
       <main id="workspace" className="main-workspace" ref={main}>
         {(error || notice) && <div className={`message-banner ${error ? 'error' : ''}`} role={error ? 'alert' : 'status'}><AlertCircle size={16}/><span>{error || notice}</span><button className="icon-button" aria-label="Dismiss message" onClick={() => {setError('');setNotice('')}}><X size={15}/></button></div>}
         <div className="workspace-panes" ref={workspace}>
-          <section className="editor-pane" style={{width: `${split}%`}} aria-label="Source editor"><div className="pane-header"><div className="file-tab"><FileCode2 size={15}/><strong>{filename}</strong>{dirty && <i className="unsaved-dot"/>}</div><div className="editor-tools"><span className="language-chip">{settings.standard.toUpperCase()}</span><button className="icon-button" title="Import a local C file" aria-label="Import C file" disabled={busy} onClick={() => fileInput.current?.click()}><Upload size={14}/></button><button className="icon-button" title="Reset to loaded source" aria-label="Reset code" disabled={!dirty || busy} onClick={() => {setCode(loaded);setNotice('Editor reset to the loaded source.')}}><RotateCcw size={14}/></button></div></div>
-            <div className="editor-config"><select aria-label="Example selector" value={selected} disabled={busy} onChange={e => {const example = examples.find(x => x.id === e.target.value);if (example) choose(example)}}><option value="">Custom source</option>{examples.map(e => <option value={e.id} key={e.id}>{e.title}</option>)}</select><span>{settings.analyzers.join(' + ')}{settings.recovery ? ' · recovery' : ''}{settings.isolation ? ' · isolation' : ''}</span></div>
-            <div className="monaco-host"><CodeEditor ref={editor} value={code} onChange={value => {initialized.current = true;setCode(value)}} diagnostics={stale || busy ? [] : diagnostics} locations={result?.studio.editor_locations || {}} onCursor={(line,column) => setCursor({line,column})}/></div>
+          <section className="editor-pane" style={{width: `${split}%`}} aria-label="Source editor"><div className="pane-header file-tabs" role="tablist" aria-label="Editor files">{documents.files.map(file=><div className={`editor-tab ${file.id===active.id?'active':''}`} key={file.id}><button role="tab" aria-selected={file.id===active.id} disabled={busy} onClick={()=>selectFile(file.id)}><FileCode2 size={13}/>{file.name}{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="tab-close" aria-label={`Close ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={12}/></button></div>)}</div>
+            <div className="editor-config"><span>{settings.standard.toUpperCase()} ? {settings.analyzers.join(' + ')}{settings.recovery?' ? recovery':''}{settings.isolation?' ? isolation':''}</span><button className="icon-button" aria-label="Reset code" title="Reset to opened contents" disabled={!dirty||busy} onClick={()=>setCode(loaded)}><RotateCcw size={13}/></button></div>
+            <div className="monaco-host"><CodeEditor ref={editor} documentId={active.id} openDocumentIds={documents.files.map(f=>f.id)} value={code} onChange={setCode} diagnostics={stale || busy ? [] : diagnostics} locations={result?.studio.editor_locations || {}} onCursor={(line,column) => setCursor({line,column})}/></div>
             <div className="editor-footer"><span>{dirty ? 'Unsaved editor changes' : 'UTF-8'}</span><span>Ln {cursor.line}, Col {cursor.column}</span></div>
           </section>
           <PanelDivider axis="vertical" label="Resize editor and diagnostics" value={split} min={34} max={72} step={2}
@@ -145,9 +151,13 @@ export default function App() {
       </main>
     </div>
     <footer className="statusbar"><span><i className={`status-dot ${connected ? 'online' : ''}`}/>{connected ? 'Local backend connected' : 'Local backend offline'}</span><span>UTF-8</span></footer>
-    <input ref={fileInput} type="file" accept=".c,text/x-c" hidden onChange={e => {void importFile(e.target.files?.[0]);e.target.value = ''}}/>
+    <input ref={fileInput} type="file" accept=".c,.h,text/x-c,text/x-chdr" hidden onChange={e => {void importFile(e.target.files?.[0]);e.target.value = ''}}/>
     {settingsOpen && <SettingsPanel value={settings} tools={tools} onChange={setSettings} onClose={closeSettings}/>}
-    {pendingExample && <div className="modal-backdrop"><div className="confirm-dialog" role="alertdialog" aria-labelledby="discard-title"><h2 id="discard-title">Discard editor changes?</h2><p>Your original file is untouched. Loading another example replaces the current editor text.</p><div><button className="secondary-button" onClick={() => setPendingExample(null)}>Keep editing</button><button className="primary-button" onClick={() => {load(pendingExample);setPendingExample(null)}}>Load example</button></div></div></div>}
+    {fileDialog && <FileDialog mode={fileDialog.mode} name={documents.files.find(f=>f.id===fileDialog.id)?.name||''} onCancel={()=>setFileDialog(null)} onSubmit={value=>{
+      if(fileDialog.mode==='rename'){const error=documents.rename(fileDialog.id,value);if(error)return error}
+      else {documents.close(fileDialog.id);resetReport()}
+      setFileDialog(null);return null
+    }}/>}
     {help && <div className="modal-backdrop" onMouseDown={e => e.target === e.currentTarget && setHelp(false)}><div className="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="about-title"><header><h2 id="about-title">Built for evidence, not guesses.</h2><button className="icon-button" aria-label="Close about" onClick={() => setHelp(false)}><X size={17}/></button></header><p>SmartParse Studio uses the existing compiler and recovery engine. Compiler findings belong to GCC/Clang; research recovery and conditional findings retain their provenance.</p><p>Ctrl+Enter runs analysis. Edit freely; stale reports never highlight changed source. Independent human adjudication remains pending.</p><p>Local trusted use only. Compiler temporary files are not a security sandbox.</p></div></div>}
   </div>
 }
