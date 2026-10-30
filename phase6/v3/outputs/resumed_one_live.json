@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "unittest",
+    "phase6.v3.test_recovery.LiveRecoveryTests.test_return_frontend_becomes_eligible",
+    "-v"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 30,
+  "elapsed_seconds": 2.61,
+  "cleanup": null,
+  "log": "phase6\\v3\\outputs\\resumed_one_live.txt"
+}

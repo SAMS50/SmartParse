@@ -1,0 +1,105 @@
+{
+  "configuration": "context_default",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "completed",
+  "diagnostics": [
+    {
+      "line": 2,
+      "column": 10,
+      "message": "Expected ')' instead of ']'."
+    }
+  ],
+  "repairs": [
+    {
+      "operation": "substitute",
+      "token": ")",
+      "from": "]",
+      "line": 2,
+      "column": 10,
+      "score": 80,
+      "score_factors": {
+        "single_token_edit": 10,
+        "wrong_closing_delimiter": 25,
+        "matching_opener_in_context": 30,
+        "unexpected_closer": 15
+      },
+      "scoring_mode": "contextual",
+      "reason": "mismatched closing delimiter",
+      "context": {
+        "expected": ")",
+        "previous": "0",
+        "current": "]",
+        "next": "{",
+        "nesting": [
+          "("
+        ]
+      },
+      "grammar_validation": null
+    }
+  ],
+  "author_location_matches": [
+    "S06-R1"
+  ],
+  "author_exact_repairs": [
+    "S06-R1"
+  ],
+  "additional_diagnostics": 0,
+  "reached_eof": true,
+  "error_cap_reached": false,
+  "replay_strictly_valid": true,
+  "intended_reference_valid": true,
+  "intended_token_stream_equal": true,
+  "statement_attempts": [
+    {
+      "start": 0,
+      "line": 1,
+      "column": 1,
+      "returned": true,
+      "end": 5
+    },
+    {
+      "start": 5,
+      "line": 2,
+      "column": 1,
+      "returned": true,
+      "end": 19
+    },
+    {
+      "start": 11,
+      "line": 2,
+      "column": 12,
+      "returned": true,
+      "end": 19
+    },
+    {
+      "start": 12,
+      "line": 2,
+      "column": 14,
+      "returned": true,
+      "end": 18
+    },
+    {
+      "start": 19,
+      "line": 3,
+      "column": 1,
+      "returned": true,
+      "end": 24
+    }
+  ],
+  "skipped_tokens": null,
+  "validation_stats": {
+    "eligible": 0,
+    "probed": 0,
+    "skipped_confident": 0
+  },
+  "elapsed_seconds": 0.0
+}

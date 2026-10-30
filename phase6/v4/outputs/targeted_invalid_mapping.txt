@@ -1,0 +1,6 @@
+test_invalid_finding_mapping_clears_eligibility_and_findings (phase6.v4.test_isolation.LiveTests.test_invalid_finding_mapping_clears_eligibility_and_findings) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.510s
+
+OK

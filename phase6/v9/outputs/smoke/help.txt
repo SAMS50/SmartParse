@@ -1,0 +1,42 @@
+usage: python -m smartparse_cli analyze [-h] [--analyzers ANALYZERS]
+                                        [--compiler COMPILER] [--clang CLANG]
+                                        [--gcc14 GCC14] [--cppcheck CPPCHECK]
+                                        [--std STANDARD] [-I INCLUDE_DIRS]
+                                        [-D DEFINES] [--recovery]
+                                        [--isolation] [--timeout TIMEOUT]
+                                        [--total-timeout TOTAL_TIMEOUT]
+                                        [--max-invocations MAX_INVOCATIONS]
+                                        [--format {terminal,json,markdown}]
+                                        [-o OUTPUT]
+                                        source
+
+positional arguments:
+  source                .c path; quote Windows paths containing spaces
+
+options:
+  -h, --help            show this help message and exit
+  --analyzers ANALYZERS
+                        comma-separated: compiler, static, memory, semantic,
+                        gcc14, cppcheck, smartparse, panic (default: compiler)
+  --compiler COMPILER   auto, gcc, clang, or explicit compiler executable
+  --clang CLANG         Clang executable for static/memory/semantic passes
+  --gcc14 GCC14         explicit executable for the existing pinned GCC14
+                        analyzer profile
+  --cppcheck CPPCHECK   explicit executable for the existing pinned Cppcheck
+                        profile
+  --std STANDARD        C standard accepted by selected tool(s), default c11
+  -I INCLUDE_DIRS, --include-dir INCLUDE_DIRS
+  -D DEFINES, --define DEFINES
+  --recovery            opt in to bounded semicolon recovery; adds memory
+                        pipeline if needed
+  --isolation           opt in to experimental unaffected-function isolation;
+                        adds memory pipeline if needed
+  --timeout TIMEOUT     per tool call, 0 < seconds <= 30; default 10
+  --total-timeout TOTAL_TIMEOUT
+                        shared overall budget, 0 < seconds <= 240; default 120
+  --max-invocations MAX_INVOCATIONS
+                        shared tool-call budget, 1..512; default 256
+  --format {terminal,json,markdown}
+  -o OUTPUT, --output OUTPUT
+                        new report file (UTF-8); existing files are never
+                        overwritten

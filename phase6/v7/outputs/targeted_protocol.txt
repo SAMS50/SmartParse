@@ -1,0 +1,53 @@
+test_command_never_links_or_fixes (phase6.v7.test_external.ProtocolTests.test_command_never_links_or_fixes) ... ok
+test_cppcheck_related_not_duplicate_primary (phase6.v7.test_external.ProtocolTests.test_cppcheck_related_not_duplicate_primary) ... ok
+test_duplicates_and_unicode_source_binding (phase6.v7.test_external.ProtocolTests.test_duplicates_and_unicode_source_binding) ... ok
+test_gcc_json_primary_and_notes (phase6.v7.test_external.ProtocolTests.test_gcc_json_primary_and_notes) ... ok
+test_malformed_outputs_fail_closed (phase6.v7.test_external.ProtocolTests.test_malformed_outputs_fail_closed) ... ok
+test_missing_tool_clear_state (phase6.v7.test_external.ProtocolTests.test_missing_tool_clear_state) ... FAIL
+test_sarif_no_location_still_preserved (phase6.v7.test_external.ProtocolTests.test_sarif_no_location_still_preserved) ... ok
+test_sarif_windows_uri_and_codeflow (phase6.v7.test_external.ProtocolTests.test_sarif_windows_uri_and_codeflow) ... ok
+test_tidy_windows_multiline_check_identifier (phase6.v7.test_external.ProtocolTests.test_tidy_windows_multiline_check_identifier) ... ok
+test_timeout_no_more_calls_and_cleanup (phase6.v7.test_external.ProtocolTests.test_timeout_no_more_calls_and_cleanup) ... FAIL
+test_unknown_identifier_not_guessed (phase6.v7.test_external.ProtocolTests.test_unknown_identifier_not_guessed) ... ok
+test_version_change_not_silently_substituted (phase6.v7.test_external.ProtocolTests.test_version_change_not_silently_substituted) ... FAIL
+
+======================================================================
+FAIL: test_missing_tool_clear_state (phase6.v7.test_external.ProtocolTests.test_missing_tool_clear_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v7\test_external.py", line 50, in test_missing_tool_clear_state
+    self.assertEqual(r['status'],'unavailable');self.assertTrue(r['temporary_workspace_removed']);self.assertTrue(r['source']['original_unchanged'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'failed' != 'unavailable'
+- failed
++ unavailable
+
+
+======================================================================
+FAIL: test_timeout_no_more_calls_and_cleanup (phase6.v7.test_external.ProtocolTests.test_timeout_no_more_calls_and_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v7\test_external.py", line 55, in test_timeout_no_more_calls_and_cleanup
+    self.assertEqual(r['status'],'timed_out');self.assertEqual(r['usage']['compiler_invocations'],1);self.assertTrue(r['temporary_workspace_removed'])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'failed' != 'timed_out'
+- failed
++ timed_out
+
+
+======================================================================
+FAIL: test_version_change_not_silently_substituted (phase6.v7.test_external.ProtocolTests.test_version_change_not_silently_substituted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v7\test_external.py", line 60, in test_version_change_not_silently_substituted
+    self.assertEqual(r['status'],'unavailable');self.assertEqual(r['usage']['compiler_invocations'],1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'failed' != 'unavailable'
+- failed
++ unavailable
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.052s
+
+FAILED (failures=3)

@@ -1,0 +1,6 @@
+test_timeout_and_cleanup (phase6.v5.test_detection.LiveTests.test_timeout_and_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.902s
+
+OK

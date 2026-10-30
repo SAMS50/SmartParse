@@ -1,0 +1,108 @@
+{
+  "cases": [
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "--analyzers",
+        "compiler,semantic,cppcheck",
+        "--recovery",
+        "--isolation",
+        "--format",
+        "json"
+      ],
+      "exit_code": 3,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 17.172,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\benchmark.txt",
+      "name": "benchmark",
+      "expected_exit": 3,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "memory",
+        "--format",
+        "json",
+        "-o",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\destination-report.json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 5.375,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\output_file.txt",
+      "name": "output_file",
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "analyze_c.py",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C12_valid_full.c",
+        "--compiler",
+        "gcc",
+        "--json"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.922,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\legacy_compiler.txt",
+      "name": "legacy_compiler",
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "smartparse.py",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\syntax\\S03.c"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.156,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\legacy_parser.txt",
+      "name": "legacy_parser",
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "demo.py",
+        "--example",
+        "multiple",
+        "--mode",
+        "cgar"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.156,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\legacy_cgar.txt",
+      "name": "legacy_cgar",
+      "expected_exit": 0,
+      "passed": true
+    }
+  ],
+  "report_destination": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\destination-report.json",
+  "destination_json_valid": true
+}

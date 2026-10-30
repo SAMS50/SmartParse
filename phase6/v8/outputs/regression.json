@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v8.validate",
+    "--worker"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 600,
+  "elapsed_seconds": 237.016,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\outputs\\regression.log",
+  "historical_csvs_restored_after_legacy_writer": [
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\results\\verified_performance.csv"
+  ],
+  "child_path_prefix": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin"
+}

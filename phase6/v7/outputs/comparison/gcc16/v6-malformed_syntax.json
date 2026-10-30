@@ -1,0 +1,234 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc16",
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "16.1.0",
+    "format": "gcc-sarif",
+    "diagnostic_format": "sarif-stderr"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+    "sha256": "47f6f3b61714840c93296b1a0c773d4148e830c1b36b5b031dc940762024aff4",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\msys64\\ucrt64\\bin",
+    "shell": false,
+    "command": [
+      "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-fmax-errors=20",
+      "-O0",
+      "-fanalyzer",
+      "-fdiagnostics-format=sarif-stderr",
+      "-c",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+      "-o",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external c95io11m\\analysis.o"
+    ]
+  },
+  "status": "partial",
+  "reason": "Tool/frontend incomplete; inspect raw output and blockers.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+      "line": 1,
+      "column": 45,
+      "severity": "error",
+      "message": "expected ';' before 'return'",
+      "diagnostic_id": "error",
+      "category": "unknown",
+      "related": [],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {},
+      "source_bound": true,
+      "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1 return 0; }",
+      "id": "X-defe7f1413888b2c56f7",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external c95io11m\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+      "line": 1,
+      "column": 56,
+      "severity": "warning",
+      "message": "control reaches end of non-void function",
+      "diagnostic_id": "-Wreturn-type",
+      "category": "unknown",
+      "related": [],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {},
+      "source_bound": true,
+      "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1 return 0; }",
+      "id": "X-1b650c528a0453bb3720",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external c95io11m\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wreturn-type\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Wno-return-type\"}]}},\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external c95io11m\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccRa0jIu.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:33:11Z\",\n                            \"executionSuccessful\": false,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:33:11Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"},\n                          \"roles\": [\"analysisTarget\"]}],\n           \"results\": [{\"ruleId\": \"error\",\n                        \"level\": \"error\",\n                        \"message\": {\"text\": \"expected ';' before 'return'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 1,\n                                                                       \"startColumn\": 45,\n                                                                       \"endColumn\": 46},\n                                                            \"contextRegion\": {\"startLine\": 1,\n                                                                              \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}],\n                                       \"relationships\": [{\"target\": 0,\n                                                          \"kinds\": [\"relevant\"]}]}],\n                        \"fixes\": [{\"artifactChanges\": [{\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                             \"uriBaseId\": \"PWD\"},\n                                                        \"replacements\": [{\"deletedRegion\": {\"startLine\": 1,\n                                                                                            \"startColumn\": 45,\n                                                                                            \"endColumn\": 45},\n                                                                          \"insertedContent\": {\"text\": \";\"}}]}],\n                                   \"description\": {\"text\": \"Insert ';'\"}}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 1,\n                                                                              \"startColumn\": 46,\n                                                                              \"endColumn\": 52},\n                                                                   \"contextRegion\": {\"startLine\": 1,\n                                                                                     \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                              \"id\": 0}]},\n                       {\"ruleId\": \"-Wreturn-type\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"control reaches end of non-void function\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 1,\n                                                                       \"startColumn\": 56,\n                                                                       \"endColumn\": 57},\n                                                            \"contextRegion\": {\"startLine\": 1,\n                                                                              \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+    "returncode": 1
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "no direct region exploration evidence",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [
+      "X-defe7f1413888b2c56f7"
+    ],
+    "analyzer_completion": "blocked_or_partial"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0\r\nCopyright (C) 2026 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.203,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "91bf371446c8855e344dd12cfa61b386f9c421c64dfa0dbe4234b26742e549c0",
+        "stderr": "",
+        "elapsed_seconds": 0.094
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external c95io11m\\analysis.o"
+        ],
+        "status": "completed",
+        "returncode": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wreturn-type\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Wno-return-type\"}]}},\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external c95io11m\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccRa0jIu.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:33:11Z\",\n                            \"executionSuccessful\": false,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:33:11Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"},\n                          \"roles\": [\"analysisTarget\"]}],\n           \"results\": [{\"ruleId\": \"error\",\n                        \"level\": \"error\",\n                        \"message\": {\"text\": \"expected ';' before 'return'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 1,\n                                                                       \"startColumn\": 45,\n                                                                       \"endColumn\": 46},\n                                                            \"contextRegion\": {\"startLine\": 1,\n                                                                              \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}],\n                                       \"relationships\": [{\"target\": 0,\n                                                          \"kinds\": [\"relevant\"]}]}],\n                        \"fixes\": [{\"artifactChanges\": [{\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                             \"uriBaseId\": \"PWD\"},\n                                                        \"replacements\": [{\"deletedRegion\": {\"startLine\": 1,\n                                                                                            \"startColumn\": 45,\n                                                                                            \"endColumn\": 45},\n                                                                          \"insertedContent\": {\"text\": \";\"}}]}],\n                                   \"description\": {\"text\": \"Insert ';'\"}}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 1,\n                                                                              \"startColumn\": 46,\n                                                                              \"endColumn\": 52},\n                                                                   \"contextRegion\": {\"startLine\": 1,\n                                                                                     \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                              \"id\": 0}]},\n                       {\"ruleId\": \"-Wreturn-type\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"control reaches end of non-void function\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\malformed_syntax.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 1,\n                                                                       \"startColumn\": 56,\n                                                                       \"endColumn\": 57},\n                                                            \"contextRegion\": {\"startLine\": 1,\n                                                                              \"snippet\": {\"text\": \"int f(int x) { if (x < 5 && x > 10) return 1 return 0; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+        "elapsed_seconds": 0.093
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 2,
+  "normalization_revision": "identifier-category-table-2"
+}

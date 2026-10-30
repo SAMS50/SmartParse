@@ -1,0 +1,255 @@
+[
+  {
+    "path": "C:\\MinGW\\bin\\gcc.exe",
+    "exists": true,
+    "returncode": 0,
+    "stdout": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0\r\nCopyright (C) 2016 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+    "stderr": "",
+    "fanalyzer": {
+      "returncode": 1,
+      "stderr": "gcc.exe: error: unrecognized command line option '-fanalyzer'\r\n"
+    },
+    "usage": {
+      "compiler_invocations": 2,
+      "elapsed_seconds": 0.14,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+          "stderr": "",
+          "elapsed_seconds": 0.062
+        },
+        {
+          "number": 2,
+          "role": "fanalyzer_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fanalyzer",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "gcc.exe: error: unrecognized command line option '-fanalyzer'\r\n",
+          "elapsed_seconds": 0.078
+        }
+      ]
+    }
+  },
+  {
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "exists": true,
+    "returncode": 0,
+    "stdout": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0\r\nCopyright (C) 2026 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+    "stderr": "",
+    "fanalyzer": {
+      "returncode": 1,
+      "stderr": ""
+    },
+    "usage": {
+      "compiler_invocations": 2,
+      "elapsed_seconds": 0.828,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "91bf371446c8855e344dd12cfa61b386f9c421c64dfa0dbe4234b26742e549c0",
+          "stderr": "",
+          "elapsed_seconds": 0.594
+        },
+        {
+          "number": 2,
+          "role": "fanalyzer_capability",
+          "command": [
+            "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fanalyzer",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.234
+        }
+      ]
+    }
+  },
+  {
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+    "exists": true,
+    "returncode": 0,
+    "stdout": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+    "stderr": "",
+    "fanalyzer": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "usage": {
+      "compiler_invocations": 2,
+      "elapsed_seconds": 0.844,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+          "stderr": "",
+          "elapsed_seconds": 0.282
+        },
+        {
+          "number": 2,
+          "role": "fanalyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fanalyzer",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.562
+        }
+      ]
+    }
+  },
+  {
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+    "exists": true,
+    "returncode": 0,
+    "stdout": "Cppcheck 2.16.0\r\n",
+    "stderr": "",
+    "help": {
+      "returncode": 0,
+      "stdout": "Cppcheck - A tool for static C/C++ code analysis\r\n\r\nSyntax:\r\n    cppcheck [OPTIONS] [files or paths]\r\n\r\nIf a directory is given instead of a filename, *.cpp, *.cxx, *.cc, *.c++, *.c, *.ipp,\r\n*.ixx, *.tpp, and *.txx files are checked recursively from the given directory.\r\n\r\nOptions:\r\n    --addon=<addon>\r\n                         Execute addon. i.e. --addon=misra. If options must be\r\n                         provided a json configuration is needed.\r\n    --addon-python=<python interpreter>\r\n                         You can specify the python interpreter either in the\r\n                         addon json files or through this command line option.\r\n                         If not present, Cppcheck will try \"python3\" first and\r\n                         then \"python\".\r\n    --cppcheck-build-dir=<dir>\r\n                         Cppcheck work folder. Advantages:\r\n                          * whole program analysis\r\n                          * faster analysis; Cppcheck will reuse the results if\r\n                            the hash for a file is unchanged.\r\n                          * some useful debug information, i.e. commands used to\r\n                            execute clang/clang-tidy/addons.\r\n    --check-config       Check cppcheck configuration. The normal code\r\n                         analysis is disabled by this flag.\r\n    --check-level=<level>\r\n                         Configure how much checking you want:\r\n                          * normal: Cppcheck uses some compromises in the checking so\r\n                            the checking will finish in reasonable time.\r\n                          * exhaustive: deeper analysis that you choose when you can\r\n                            wait.\r\n                         The default choice is 'normal'.\r\n    --check-library      Show information messages when library files have\r\n                         incomplete info.\r\n    --checkers-report=<file>\r\n                         Write a report of all the active checkers to the given file.\r\n    --clang=<path>       Experimental: Use Clang parser instead of the builtin Cppcheck\r\n                         parser. Takes the executable as optional parameter and\r\n                         defaults to `clang`. Cppcheck will run the given Clang\r\n                         executable, import the Clang AST and convert it into\r\n                         Cppcheck data. After that the normal Cppcheck analysis is\r\n                         used. You must have the executable in PATH if no path is\r\n                         given.\r\n    --config-exclude=<dir>\r\n                         Path (prefix) to be excluded from configuration\r\n                         checking. Preprocessor configurations defined in\r\n                         headers (but not sources) matching the prefix will not\r\n                         be considered for evaluation.\r\n    --config-excludes-file=<file>\r\n                         A file that contains a list of config-excludes\r\n    --disable=<id>       Disable individual checks.\r\n                         Please refer to the documentation of --enable=<id>\r\n                         for further details.\r\n    --dump               Dump xml data for each translation unit. The dump\r\n                         files have the extension .dump and contain ast,\r\n                         tokenlist, symboldatabase, valueflow.\r\n    -D<ID>               Define preprocessor symbol. Unless --max-configs or\r\n                         --force is used, Cppcheck will only check the given\r\n                         configuration when -D is used.\r\n                         Example: '-DDEBUG=1 -D__cplusplus'.\r\n    -E                   Print preprocessor output on stdout and don't do any\r\n                         further processing.\r\n    --enable=<id>        Enable additional checks. The available ids are:\r\n                          * all\r\n                                  Enable all checks. It is recommended to only\r\n                                  use --enable=all when the whole program is\r\n                                  scanned, because this enables unusedFunction.\r\n                          * warning\r\n                                  Enable warning messages\r\n                          * style\r\n                                  Enable all coding style checks. All messages\r\n                                  with the severities 'style', 'warning',\r\n                                  'performance' and 'portability' are enabled.\r\n                          * performance\r\n                                  Enable performance messages\r\n                          * portability\r\n                                  Enable portability messages\r\n                          * information\r\n                                  Enable information messages\r\n                          * unusedFunction\r\n                                  Check for unused functions. It is recommended\r\n                                  to only enable this when the whole program is\r\n                                  scanned.\r\n                          * missingInclude\r\n                                  Warn if there are missing includes.\r\n                         Several ids can be given if you separate them with\r\n                         commas. See also --std\r\n    --error-exitcode=<n> If errors are found, integer [n] is returned instead of\r\n                         the default '0'. '1' is returned\r\n                         if arguments are not valid or if no input files are\r\n                         provided. Note that your operating system can modify\r\n                         this value, e.g. '256' can become '0'.\r\n    --errorlist          Print a list of all the error messages in XML format.\r\n    --exitcode-suppressions=<file>\r\n                         Used when certain messages should be displayed but\r\n                         should not cause a non-zero exitcode.\r\n    --file-filter=<str>  Analyze only those files matching the given filter str\r\n                         Can be used multiple times\r\n                         Example: --file-filter=*bar.cpp analyzes only files\r\n                                  that end with bar.cpp.\r\n    --file-list=<file>   Specify the files to check in a text file. Add one\r\n                         filename per line. When file is '-,' the file list will\r\n                         be read from standard input.\r\n    -f, --force          Force checking of all configurations in files. If used\r\n                         together with '--max-configs=', the last option is the\r\n                         one that is effective.\r\n    --fsigned-char       Treat char type as signed.\r\n    --funsigned-char     Treat char type as unsigned.\r\n    -h, --help           Print this help.\r\n    -I <dir>             Give path to search for include files. Give several -I\r\n                         parameters to give several paths. First given path is\r\n                         searched for contained header files first. If paths are\r\n                         relative to source files, this is not needed.\r\n    --includes-file=<file>\r\n                         Specify directory paths to search for included header\r\n                         files in a text file. Add one include path per line.\r\n                         First given path is searched for contained header\r\n                         files first. If paths are relative to source files,\r\n                         this is not needed.\r\n    --include=<file>\r\n                         Force inclusion of a file before the checked file.\r\n    -i <dir or file>     Give a source file or source file directory to exclude\r\n                         from the check. This applies only to source files so\r\n                         header files included by source files are not matched.\r\n                         Directory name is matched to all parts of the path.\r\n    --inconclusive       Allow that Cppcheck reports even though the analysis is\r\n                         inconclusive.\r\n                         There are false positives with this option. Each result\r\n                         must be carefully investigated before you know if it is\r\n                         good or bad.\r\n    --inline-suppr       Enable inline suppressions. Use them by placing one or\r\n                         more comments, like: '// cppcheck-suppress warningId'\r\n                         on the lines before the warning to suppress.\r\n    -j <jobs>            Start <jobs> threads to do the checking simultaneously.\r\n    -l <load>            Specifies that no new threads should be started if\r\n                         there are other threads running and the load average is\r\n                         at least <load>.\r\n    --language=<language>, -x <language>\r\n                         Forces cppcheck to check all files as the given\r\n                         language. Valid values are: c, c++\r\n    --library=<cfg>      Load file <cfg> that contains information about types\r\n                         and functions. With such information Cppcheck\r\n                         understands your code better and therefore you\r\n                         get better results. The std.cfg file that is\r\n                         distributed with Cppcheck is loaded automatically.\r\n                         For more information about library files, read the\r\n                         manual.\r\n    --max-configs=<limit>\r\n                         Maximum number of configurations to check in a file\r\n                         before skipping it. Default is '12'. If used together\r\n                         with '--force', the last option is the one that is\r\n                         effective.\r\n    --max-ctu-depth=N    Max depth in whole program analysis. The default value\r\n                         is 2. A larger value will mean more errors can be found\r\n                         but also means the analysis will be slower.\r\n    --output-file=<file> Write results to file, rather than standard error.\r\n    --output-format=<format>\r\n                        Specify the output format. The available formats are:\r\n                          * sarif\r\n                          * xml\r\n    --platform=<type>, --platform=<file>\r\n                         Specifies platform specific types and sizes. The\r\n                         available builtin platforms are:\r\n                          * unix32\r\n                                 32 bit unix variant\r\n                          * unix64\r\n                                 64 bit unix variant\r\n                          * win32A\r\n                                 32 bit Windows ASCII character encoding\r\n                          * win32W\r\n                                 32 bit Windows UNICODE character encoding\r\n                          * win64\r\n                                 64 bit Windows\r\n                          * avr8\r\n                                 8 bit AVR microcontrollers\r\n                          * elbrus-e1cp\r\n                                 Elbrus e1c+ architecture\r\n                          * pic8\r\n                                 8 bit PIC microcontrollers\r\n                                 Baseline and mid-range architectures\r\n                          * pic8-enhanced\r\n                                 8 bit PIC microcontrollers\r\n                                 Enhanced mid-range and high end (PIC18) architectures\r\n                          * pic16\r\n                                 16 bit PIC microcontrollers\r\n                          * mips32\r\n                                 32 bit MIPS microcontrollers\r\n                          * native\r\n                                 Type sizes of host system are assumed, but no\r\n                                 further assumptions.\r\n                          * unspecified\r\n                                 Unknown type sizes\r\n    --plist-output=<path>\r\n                         Generate Clang-plist output files in folder.\r\n    --project=<file>     Run Cppcheck on project. The <file> can be a Visual\r\n                         Studio Solution (*.sln), Visual Studio Project\r\n                         (*.vcxproj), compile database (compile_commands.json),\r\n                         or Borland C++ Builder 6 (*.bpr). The files to analyse,\r\n                         include paths, defines, platform and undefines in\r\n                         the specified file will be used.\r\n    --project-configuration=<config>\r\n                         If used together with a Visual Studio Solution (*.sln)\r\n                         or Visual Studio Project (*.vcxproj) you can limit\r\n                         the configuration cppcheck should check.\r\n                         For example: '--project-configuration=Release|Win32'\r\n    -q, --quiet          Do not show progress reports.\r\n                         Note that this option is not mutually exclusive with --verbose.\r\n    -rp=<paths>, --relative-paths=<paths>\r\n                         Use relative paths in output. When given, <paths> are\r\n                         used as base. You can separate multiple paths by ';'.\r\n                         Otherwise path where source files are searched is used.\r\n                         We use string comparison to create relative paths, so\r\n                         using e.g. ~ for home folder does not work. It is\r\n                         currently only possible to apply the base paths to\r\n                         files that are on a lower level in the directory tree.\r\n    --report-progress    Report progress messages while checking a file (single job only).\r\n    --rule=<rule>        Match regular expression.\r\n    --rule-file=<file>   Use given rule file. For more information, see:\r\n                         http://sourceforge.net/projects/cppcheck/files/Articles/\r\n    --showtime=<mode>    Show timing information.\r\n                         The available modes are:\r\n                          * none\r\n                                 Show nothing (default)\r\n                          * file\r\n                                 Show for each processed file\r\n                          * file-total\r\n                                 Show total time only for each processed file\r\n                          * summary\r\n                                 Show a summary at the end\r\n                          * top5_file\r\n                                 Show the top 5 for each processed file\r\n                          * top5_summary\r\n                                 Show the top 5 summary at the end\r\n                          * top5\r\n                                 Alias for top5_file (deprecated)\r\n    --std=<id>           Set standard.\r\n                         The available options are:\r\n                          * c89\r\n                                 C code is C89 compatible\r\n                          * c99\r\n                                 C code is C99 compatible\r\n                          * c11\r\n                                 C code is C11 compatible (default)\r\n                          * c++03\r\n                                 C++ code is C++03 compatible\r\n                          * c++11\r\n                                 C++ code is C++11 compatible\r\n                          * c++14\r\n                                 C++ code is C++14 compatible\r\n                          * c++17\r\n                                 C++ code is C++17 compatible\r\n                          * c++20\r\n                                 C++ code is C++20 compatible (default)\r\n    --suppress=<spec>    Suppress warnings that match <spec>. The format of\r\n                         <spec> is:\r\n                         [error id]:[filename]:[line]\r\n                         The [filename] and [line] are optional. If [error id]\r\n                         is a wildcard '*', all error ids match.\r\n    --suppressions-list=<file>\r\n                         Suppress warnings listed in the file. Each suppression\r\n                         is in the same format as <spec> above.\r\n    --suppress-xml=<file>\r\n                         Suppress warnings listed in a xml file. XML file should\r\n                         follow the manual.pdf format specified in section.\r\n                         `6.4 XML suppressions` .\r\n    --template='<text>'  Format the error messages. Available fields:\r\n                           {file}              file name\r\n                           {line}              line number\r\n                           {column}            column number\r\n                           {callstack}         show a callstack. Example:\r\n                                                 [file.c:1] -> [file.c:100]\r\n                           {inconclusive:text} if warning is inconclusive, text\r\n                                               is written\r\n                           {severity}          severity\r\n                           {message}           warning message\r\n                           {id}                warning id\r\n                           {cwe}               CWE id (Common Weakness Enumeration)\r\n                           {code}              show the real code\r\n                           \\t                 insert tab\r\n                           \\n                 insert newline\r\n                           \\r                 insert carriage return\r\n                         Example formats:\r\n                         '{file}:{line},{severity},{id},{message}' or\r\n                         '{file}({line}):({severity}) {message}' or\r\n                         '{callstack} {message}'\r\n                         Pre-defined templates: gcc (default), cppcheck1 (old default), vs, edit.\r\n    --template-location='<text>'\r\n                         Format error message location. If this is not provided\r\n                         then no extra location info is shown.\r\n                         Available fields:\r\n                           {file}      file name\r\n                           {line}      line number\r\n                           {column}    column number\r\n                           {info}      location info\r\n                           {code}      show the real code\r\n                           \\t         insert tab\r\n                           \\n         insert newline\r\n                           \\r         insert carriage return\r\n                         Example format (gcc-like):\r\n                         '{file}:{line}:{column}: note: {info}\\n{code}'\r\n    -U<ID>               Undefine preprocessor symbol. Use -U to explicitly\r\n                         hide certain #ifdef <ID> code paths from checking.\r\n                         Example: '-UDEBUG'\r\n    -v, --verbose        Output more detailed error information.\r\n                         Note that this option is not mutually exclusive with --quiet.\r\n    --version            Print out version number.\r\n    --xml                Write results in xml format to error stream (stderr).\r\n\r\nExample usage:\r\n  # Recursively check the current folder. Print the progress on the screen and\r\n  # write errors to a file:\r\n  cppcheck . 2> err.txt\r\n\r\n  # Recursively check ../myproject/ and don't print progress:\r\n  cppcheck --quiet ../myproject/\r\n\r\n  # Check test.cpp, enable all checks:\r\n  cppcheck --enable=all --inconclusive --library=posix test.cpp\r\n\r\n  # Check f.cpp and search include files from inc1/ and inc2/:\r\n  cppcheck -I inc1/ -I inc2/ f.cpp\r\n\r\nFor more information:\r\n    https://files.cppchecksolutions.com/manual.pdf\r\n\r\nMany thanks to the 3rd party libraries we use:\r\n * tinyxml2 -- loading project/library/ctu files.\r\n * picojson -- loading compile database.\r\n * pcre -- rules.\r\n * qt -- used in GUI\r\n\r\n",
+      "stderr": ""
+    },
+    "usage": {
+      "compiler_invocations": 2,
+      "elapsed_seconds": 2.016,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+          "stderr": "",
+          "elapsed_seconds": 1.875
+        },
+        {
+          "number": 2,
+          "role": "help",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--help"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "85a82d76c5c536faf742d856d848cc9d574c76e97c89adfe970ee0690ebfcf32",
+          "stderr": "",
+          "elapsed_seconds": 0.141
+        }
+      ]
+    }
+  },
+  {
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\clang-tidy.exe",
+    "exists": true,
+    "failure": "compiler call timed out; recovery stopped without further invocations",
+    "usage": {
+      "compiler_invocations": 1,
+      "elapsed_seconds": 9.797,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\clang-tidy.exe",
+            "--version"
+          ],
+          "status": "timed_out",
+          "returncode": null,
+          "stderr": "",
+          "elapsed_seconds": 9.797
+        }
+      ]
+    }
+  },
+  {
+    "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+    "exists": true,
+    "returncode": 0,
+    "stdout": "LLVM (http://llvm.org/):\n  LLVM version 17.0.2\n  Optimized build.\n",
+    "stderr": "",
+    "checks": {
+      "returncode": 0,
+      "stdout": "Enabled checks:\n    bugprone-argument-comment\n    bugprone-assert-side-effect\n    bugprone-assignment-in-if-condition\n    bugprone-bad-signal-to-kill-thread\n    bugprone-bool-pointer-implicit-conversion\n    bugprone-branch-clone\n    bugprone-copy-constructor-init\n    bugprone-dangling-handle\n    bugprone-dynamic-static-initializers\n    bugprone-easily-swappable-parameters\n    bugprone-exception-escape\n    bugprone-fold-init-type\n    bugprone-forward-declaration-namespace\n    bugprone-forwarding-reference-overload\n    bugprone-implicit-widening-of-multiplication-result\n    bugprone-inaccurate-erase\n    bugprone-incorrect-roundings\n    bugprone-infinite-loop\n    bugprone-integer-division\n    bugprone-lambda-function-name\n    bugprone-macro-parentheses\n    bugprone-macro-repeated-side-effects\n    bugprone-misplaced-operator-in-strlen-in-alloc\n    bugprone-misplaced-pointer-arithmetic-in-alloc\n    bugprone-misplaced-widening-cast\n    bugprone-move-forwarding-reference\n    bugprone-multiple-statement-macro\n    bugprone-narrowing-conversions\n    bugprone-no-escape\n    bugprone-not-null-terminated-result\n    bugprone-parent-virtual-call\n    bugprone-posix-return\n    bugprone-redundant-branch-condition\n    bugprone-reserved-identifier\n    bugprone-shared-ptr-array-mismatch\n    bugprone-signal-handler\n    bugprone-signed-char-misuse\n    bugprone-sizeof-container\n    bugprone-sizeof-expression\n    bugprone-spuriously-wake-up-functions\n    bugprone-standalone-empty\n    bugprone-string-constructor\n    bugprone-string-integer-assignment\n    bugprone-string-literal-with-embedded-nul\n    bugprone-stringview-nullptr\n    bugprone-suspicious-enum-usage\n    bugprone-suspicious-include\n    bugprone-suspicious-memory-comparison\n    bugprone-suspicious-memset-usage\n    bugprone-suspicious-missing-comma\n    bugprone-suspicious-realloc-usage\n    bugprone-suspicious-semicolon\n    bugprone-suspicious-string-compare\n    bugprone-swapped-arguments\n    bugprone-terminating-continue\n    bugprone-throw-keyword-missing\n    bugprone-too-small-loop-variable\n    bugprone-unchecked-optional-access\n    bugprone-undefined-memory-manipulation\n    bugprone-undelegated-constructor\n    bugprone-unhandled-exception-at-new\n    bugprone-unhandled-self-assignment\n    bugprone-unused-raii\n    bugprone-unused-return-value\n    bugprone-use-after-move\n    bugprone-virtual-near-miss\n    clang-analyzer-apiModeling.Errno\n    clang-analyzer-apiModeling.StdCLibraryFunctions\n    clang-analyzer-apiModeling.TrustNonnull\n    clang-analyzer-apiModeling.TrustReturnsNonnull\n    clang-analyzer-apiModeling.google.GTest\n    clang-analyzer-apiModeling.llvm.CastValue\n    clang-analyzer-apiModeling.llvm.ReturnValue\n    clang-analyzer-core.CallAndMessage\n    clang-analyzer-core.CallAndMessageModeling\n    clang-analyzer-core.DivideZero\n    clang-analyzer-core.DynamicTypePropagation\n    clang-analyzer-core.NonNullParamChecker\n    clang-analyzer-core.NonnilStringConstants\n    clang-analyzer-core.NullDereference\n    clang-analyzer-core.StackAddrEscapeBase\n    clang-analyzer-core.StackAddressEscape\n    clang-analyzer-core.UndefinedBinaryOperatorResult\n    clang-analyzer-core.VLASize\n    clang-analyzer-core.builtin.BuiltinFunctions\n    clang-analyzer-core.builtin.NoReturnFunctions\n    clang-analyzer-core.uninitialized.ArraySubscript\n    clang-analyzer-core.uninitialized.Assign\n    clang-analyzer-core.uninitialized.Branch\n    clang-analyzer-core.uninitialized.CapturedBlockVariable\n    clang-analyzer-core.uninitialized.NewArraySize\n    clang-analyzer-core.uninitialized.UndefReturn\n    clang-analyzer-cplusplus.InnerPointer\n    clang-analyzer-cplusplus.Move\n    clang-analyzer-cplusplus.NewDelete\n    clang-analyzer-cplusplus.NewDeleteLeaks\n    clang-analyzer-cplusplus.PlacementNew\n    clang-analyzer-cplusplus.PureVirtualCall\n    clang-analyzer-cplusplus.SelfAssignment\n    clang-analyzer-cplusplus.SmartPtrModeling\n    clang-analyzer-cplusplus.StringChecker\n    clang-analyzer-cplusplus.VirtualCallModeling\n    clang-analyzer-deadcode.DeadStores\n    clang-analyzer-fuchsia.HandleChecker\n    clang-analyzer-nullability.NullPassedToNonnull\n    clang-analyzer-nullability.NullReturnedFromNonnull\n    clang-analyzer-nullability.NullabilityBase\n    clang-analyzer-nullability.NullableDereferenced\n    clang-analyzer-nullability.NullablePassedToNonnull\n    clang-analyzer-nullability.NullableReturnedFromNonnull\n    clang-analyzer-optin.cplusplus.UninitializedObject\n    clang-analyzer-optin.cplusplus.VirtualCall\n    clang-analyzer-optin.mpi.MPI-Checker\n    clang-analyzer-optin.osx.OSObjectCStyleCast\n    clang-analyzer-optin.osx.cocoa.localizability.EmptyLocalizationContextChecker\n    clang-analyzer-optin.osx.cocoa.localizability.NonLocalizedStringChecker\n    clang-analyzer-optin.performance.GCDAntipattern\n    clang-analyzer-optin.performance.Padding\n    clang-analyzer-optin.portability.UnixAPI\n    clang-analyzer-osx.API\n    clang-analyzer-osx.MIG\n    clang-analyzer-osx.NSOrCFErrorDerefChecker\n    clang-analyzer-osx.NumberObjectConversion\n    clang-analyzer-osx.OSObjectRetainCount\n    clang-analyzer-osx.ObjCProperty\n    clang-analyzer-osx.SecKeychainAPI\n    clang-analyzer-osx.cocoa.AtSync\n    clang-analyzer-osx.cocoa.AutoreleaseWrite\n    clang-analyzer-osx.cocoa.ClassRelease\n    clang-analyzer-osx.cocoa.Dealloc\n    clang-analyzer-osx.cocoa.IncompatibleMethodTypes\n    clang-analyzer-osx.cocoa.Loops\n    clang-analyzer-osx.cocoa.MissingSuperCall\n    clang-analyzer-osx.cocoa.NSAutoreleasePool\n    clang-analyzer-osx.cocoa.NSError\n    clang-analyzer-osx.cocoa.NilArg\n    clang-analyzer-osx.cocoa.NonNilReturnValue\n    clang-analyzer-osx.cocoa.ObjCGenerics\n    clang-analyzer-osx.cocoa.RetainCount\n    clang-analyzer-osx.cocoa.RetainCountBase\n    clang-analyzer-osx.cocoa.RunLoopAutoreleaseLeak\n    clang-analyzer-osx.cocoa.SelfInit\n    clang-analyzer-osx.cocoa.SuperDealloc\n    clang-analyzer-osx.cocoa.UnusedIvars\n    clang-analyzer-osx.cocoa.VariadicMethodTypes\n    clang-analyzer-osx.coreFoundation.CFError\n    clang-analyzer-osx.coreFoundation.CFNumber\n    clang-analyzer-osx.coreFoundation.CFRetainRelease\n    clang-analyzer-osx.coreFoundation.containers.OutOfBounds\n    clang-analyzer-osx.coreFoundation.containers.PointerSizedValues\n    clang-analyzer-security.FloatLoopCounter\n    clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling\n    clang-analyzer-security.insecureAPI.SecuritySyntaxChecker\n    clang-analyzer-security.insecureAPI.UncheckedReturn\n    clang-analyzer-security.insecureAPI.bcmp\n    clang-analyzer-security.insecureAPI.bcopy\n    clang-analyzer-security.insecureAPI.bzero\n    clang-analyzer-security.insecureAPI.decodeValueOfObjCType\n    clang-analyzer-security.insecureAPI.getpw\n    clang-analyzer-security.insecureAPI.gets\n    clang-analyzer-security.insecureAPI.mkstemp\n    clang-analyzer-security.insecureAPI.mktemp\n    clang-analyzer-security.insecureAPI.rand\n    clang-analyzer-security.insecureAPI.strcpy\n    clang-analyzer-security.insecureAPI.vfork\n    clang-analyzer-unix.API\n    clang-analyzer-unix.DynamicMemoryModeling\n    clang-analyzer-unix.Malloc\n    clang-analyzer-unix.MallocSizeof\n    clang-analyzer-unix.MismatchedDeallocator\n    clang-analyzer-unix.Vfork\n    clang-analyzer-unix.cstring.BadSizeArg\n    clang-analyzer-unix.cstring.CStringModeling\n    clang-analyzer-unix.cstring.NullArg\n    clang-analyzer-valist.CopyToSelf\n    clang-analyzer-valist.Uninitialized\n    clang-analyzer-valist.Unterminated\n    clang-analyzer-valist.ValistBase\n    clang-analyzer-webkit.NoUncountedMemberChecker\n    clang-analyzer-webkit.RefCntblBaseVirtualDtor\n    clang-analyzer-webkit.UncountedLambdaCapturesChecker\n\n",
+      "stderr": ""
+    },
+    "usage": {
+      "compiler_invocations": 2,
+      "elapsed_seconds": 2.484,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "978608e5716d3bff6bc564c9cd109244151f1bb86da8becc20cbf7fda10e4e1b",
+          "stderr": "",
+          "elapsed_seconds": 2.359
+        },
+        {
+          "number": 2,
+          "role": "checks",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+            "--list-checks",
+            "--checks=-*,bugprone-*,clang-analyzer-*"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "857a313a1daa8faee273effea36b477035581717ef062575a9b8f6544d5fe5a4",
+          "stderr": "",
+          "elapsed_seconds": 0.125
+        }
+      ]
+    }
+  }
+]

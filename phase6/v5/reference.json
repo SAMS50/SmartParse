@@ -1,0 +1,561 @@
+{
+  "schema_version": "1.0",
+  "dataset_version": "1.0.0",
+  "historical_baseline": {
+    "meaning": "Independent v5 fixtures; not a replacement for historical 16/68",
+    "entries": 9
+  },
+  "reference_review": "Agent source review, provisional; independent human review pending.",
+  "sources": {
+    "null_bad": {
+      "path": "phase6\\v5\\fixtures\\null_bad.c",
+      "sha256": "b19e5b10472bfc43d31c255f5697e1fe75bbcd329d3cf8be4c1026079c61f10e"
+    },
+    "null_good": {
+      "path": "phase6\\v5\\fixtures\\null_good.c",
+      "sha256": "763d4b20f52e5241724497e5dc88bb6dc95219c8f7c3ac225d731452828a5e5b"
+    },
+    "double_free_bad": {
+      "path": "phase6\\v5\\fixtures\\double_free_bad.c",
+      "sha256": "5d0aa3b2f025f414a2617c0279aaa84dc0e36b6668c700708932a8341605bfe4"
+    },
+    "double_free_good": {
+      "path": "phase6\\v5\\fixtures\\double_free_good.c",
+      "sha256": "472af7a2abdb96cc60171d951fd7e3fb387333a6de0c9b516ffbbdd5e0de4689"
+    },
+    "use_after_free_bad": {
+      "path": "phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72"
+    },
+    "use_after_free_good": {
+      "path": "phase6\\v5\\fixtures\\use_after_free_good.c",
+      "sha256": "04ad456ecddb394da9a3634648baf3916b6e7344aaaf7c309b6c977f63155251"
+    },
+    "leak_bad": {
+      "path": "phase6\\v5\\fixtures\\leak_bad.c",
+      "sha256": "3b1f1cbf69373703ce066636d0966b866235092ea6b26796856e2ca4f052d38c"
+    },
+    "leak_good": {
+      "path": "phase6\\v5\\fixtures\\leak_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+    },
+    "stack_escape_bad": {
+      "path": "phase6\\v5\\fixtures\\stack_escape_bad.c",
+      "sha256": "1a2e3a82062a3e2e40ab552fc017ceee7ba378fc7117bab33e3193ffeb0a2756"
+    },
+    "stack_escape_good": {
+      "path": "phase6\\v5\\fixtures\\stack_escape_good.c",
+      "sha256": "7460bd088d2189f3029eb79f01a324c46cdd76d898b2eb335871d068868cd54f"
+    },
+    "allocation_size_bad": {
+      "path": "phase6\\v5\\fixtures\\allocation_size_bad.c",
+      "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1"
+    },
+    "allocation_size_good": {
+      "path": "phase6\\v5\\fixtures\\allocation_size_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+    },
+    "fixed_bounds_bad": {
+      "path": "phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3"
+    },
+    "fixed_bounds_good": {
+      "path": "phase6\\v5\\fixtures\\fixed_bounds_good.c",
+      "sha256": "a1d3302fcb71d84309916e35033b021137d170f676bd511ab6763c1600b19d49"
+    },
+    "string_bounds_bad": {
+      "path": "phase6\\v5\\fixtures\\string_bounds_bad.c",
+      "sha256": "c7ee9fdc6592beecbb6a1d54e07d5f8c581d1b8840b383986db49fce0b23371b"
+    },
+    "string_bounds_good": {
+      "path": "phase6\\v5\\fixtures\\string_bounds_good.c",
+      "sha256": "ed583bfd68219c5814a518fddff332a5a9704a908421b80b8f60b0a9515a5b93"
+    },
+    "stream_bad": {
+      "path": "phase6\\v5\\fixtures\\stream_bad.c",
+      "sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3"
+    },
+    "stream_good": {
+      "path": "phase6\\v5\\fixtures\\stream_good.c",
+      "sha256": "6eb86607e78f987eccca0f99e14ad13cac9cbc4634b0e220f2c6cf120f96fb0a"
+    }
+  },
+  "defects": [
+    {
+      "id": "V5-null",
+      "source_id": "null_bad",
+      "category": "memory safety",
+      "tags": [
+        "null"
+      ],
+      "description": "null",
+      "source_locations": [
+        1
+      ],
+      "sink_locations": [
+        1
+      ],
+      "diagnostic_anchors": [
+        1
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-null",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "core.NullDereference"
+            ],
+            "message_all": [
+              "null pointer"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: int f(void) { int *p=0; return *p; } Corrected counterpart: int f(void) { int value=1; int *p=&value; return *p; }"
+      },
+      "historical_entry": 1
+    },
+    {
+      "id": "V5-double_free",
+      "source_id": "double_free_bad",
+      "category": "memory safety",
+      "tags": [
+        "double_free"
+      ],
+      "description": "double free",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-double_free",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "unix.Malloc"
+            ],
+            "message_all": [
+              "free"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); free(p); } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; free(p); }"
+      },
+      "historical_entry": 2
+    },
+    {
+      "id": "V5-use_after_free",
+      "source_id": "use_after_free_bad",
+      "category": "memory safety",
+      "tags": [
+        "use_after_free"
+      ],
+      "description": "use after free",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-use_after_free",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "unix.Malloc"
+            ],
+            "message_all": [
+              "use.*freed"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; } Corrected counterpart: #include <stdlib.h>\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; int value=*p; free(p); return value; }"
+      },
+      "historical_entry": 3
+    },
+    {
+      "id": "V5-leak",
+      "source_id": "leak_bad",
+      "category": "memory safety",
+      "tags": [
+        "leak"
+      ],
+      "description": "leak",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-leak",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "unix.Malloc"
+            ],
+            "message_all": [
+              "leak"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; free(p); }"
+      },
+      "historical_entry": 4
+    },
+    {
+      "id": "V5-stack_escape",
+      "source_id": "stack_escape_bad",
+      "category": "memory safety",
+      "tags": [
+        "stack_escape"
+      ],
+      "description": "stack escape",
+      "source_locations": [
+        1
+      ],
+      "sink_locations": [
+        1
+      ],
+      "diagnostic_anchors": [
+        1
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-stack_escape",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "core.StackAddressEscape",
+              "-Wreturn-stack-address"
+            ],
+            "message_all": [
+              "stack|local"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: int *f(void) { int values[2]={0}; return values; } Corrected counterpart: int *f(int values[2]) { return values; }"
+      },
+      "historical_entry": 5
+    },
+    {
+      "id": "V5-allocation_size",
+      "source_id": "allocation_size_bad",
+      "category": "bounds",
+      "tags": [
+        "allocation_size"
+      ],
+      "description": "allocation size",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-allocation_size",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "unix.MallocSizeof",
+              "alpha.security.ArrayBoundV2"
+            ],
+            "message_all": [
+              "allocat|bound|overflow|size"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { int *p=malloc(1); if (!p) return; *p=1; free(p); } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { int *p=malloc(sizeof *p); if (!p) return; *p=1; free(p); }"
+      },
+      "historical_entry": 6
+    },
+    {
+      "id": "V5-fixed_bounds",
+      "source_id": "fixed_bounds_bad",
+      "category": "bounds",
+      "tags": [
+        "fixed_bounds"
+      ],
+      "description": "fixed bounds",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-fixed_bounds",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "alpha.security.ArrayBoundV2"
+            ],
+            "message_all": [
+              "bound|overflow"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); } Corrected counterpart: #include <stdlib.h>\nvoid f(void) { char *p=malloc(4); if (!p) return; int index=3; p[index]=1; free(p); }"
+      },
+      "historical_entry": 7
+    },
+    {
+      "id": "V5-string_bounds",
+      "source_id": "string_bounds_bad",
+      "category": "bounds",
+      "tags": [
+        "string_bounds"
+      ],
+      "description": "string bounds",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-string_bounds",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "alpha.unix.cstring.OutOfBounds",
+              "-Wfortify-source",
+              "alpha.security.ArrayBoundV2"
+            ],
+            "message_all": [
+              "overflow|size|bound"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <string.h>\nvoid f(void) { char buffer[4]; strcpy(buffer,\"abcdef\"); } Corrected counterpart: #include <string.h>\nvoid f(void) { char buffer[8]; strcpy(buffer,\"abcdef\"); }"
+      },
+      "historical_entry": 8
+    },
+    {
+      "id": "V5-stream",
+      "source_id": "stream_bad",
+      "category": "memory safety",
+      "tags": [
+        "stream",
+        "resource management"
+      ],
+      "description": "stream",
+      "source_locations": [
+        2
+      ],
+      "sink_locations": [
+        2
+      ],
+      "diagnostic_anchors": [
+        2
+      ],
+      "triggering_conditions": [
+        "Execute the displayed faulty operation; successful allocation/open path where applicable."
+      ],
+      "required_contracts": [],
+      "oracle_status": "established",
+      "required_analysis": "analyzer",
+      "root_cause_id": "ROOT-stream",
+      "relationships": [],
+      "admissible_evidence": {
+        "meaning": "Specific operation shown by this paired fixture, not programmer naming/intent.",
+        "rules": [
+          {
+            "backends": [
+              "clang",
+              "clang-static-analyzer"
+            ],
+            "severities": [
+              "warning"
+            ],
+            "identifiers": [
+              "alpha.unix.Stream"
+            ],
+            "message_all": [
+              "leak"
+            ]
+          }
+        ]
+      },
+      "review_provenance": {
+        "reviewer": "Codex-source-review",
+        "rationale": "Paired source inspection: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; } Corrected counterpart: #include <stdio.h>\nvoid f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; fclose(stream); }"
+      },
+      "historical_entry": 9
+    }
+  ],
+  "corrected_sources": [
+    "null_good",
+    "double_free_good",
+    "use_after_free_good",
+    "leak_good",
+    "stack_escape_good",
+    "allocation_size_good",
+    "fixed_bounds_good",
+    "string_bounds_good",
+    "stream_good"
+  ],
+  "inherited_historical_reference": "phase6/v1/reference.json (unchanged; separate 16/68 lineage)"
+}

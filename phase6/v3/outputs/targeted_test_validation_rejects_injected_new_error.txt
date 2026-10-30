@@ -1,0 +1,6 @@
+test_validation_rejects_injected_new_error (phase6.v3.test_recovery.LiveRecoveryTests.test_validation_rejects_injected_new_error) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.211s
+
+OK

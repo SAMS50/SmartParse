@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "-fsyntax-only",
+      "-Wall",
+      "-Wextra",
+      "-Wtautological-overlap-compare",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c"
+    ],
+    "stderr": "",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "gcc",
+      "-fsyntax-only",
+      "-Wall",
+      "-Wextra",
+      "-Wlogical-op",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c"
+    ],
+    "stderr": "",
+    "returncode": 0
+  },
+  {
+    "command": [
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "--analyze",
+      "-Xclang",
+      "-analyzer-checker=alpha.deadcode.UnreachableCode",
+      "-Xanalyzer",
+      "-analyzer-output=text",
+      "-o",
+      "nul",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c"
+    ],
+    "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c:1:55: warning: This statement is never executed [alpha.deadcode.UnreachableCode]\r\nint f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }\r\n                                                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c:1:55: note: This statement is never executed\r\nint f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }\r\n                                                      ^\r\n1 warning generated.\r\n",
+    "returncode": 0
+  }
+]

@@ -1,0 +1,2555 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "scope": {
+    "dataset": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+    "runs": "0356ce574a197421662f3b7d89838299c066c525780945a6d7852b700cd22da9"
+  },
+  "dataset_sources": {
+    "sample-500-cleaned": {
+      "path": "acceptance/cleaned/c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "line_mapping": "identity with original numbered source; no source edits in Phase 6"
+    }
+  },
+  "reference_review": "Single-reviewer provisional migration; independent oracle adjudication pending.",
+  "input_manifest": [
+    {
+      "id": "v5-sample-500-cleaned-memory",
+      "source_bindings": {
+        "sample-500-cleaned": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    }
+  ],
+  "historical_baseline": {
+    "entries": 68,
+    "clang_matched_entries": 16,
+    "reference_sha256": "9d22c0d448edeb138098e4a4e4e85093abd3f70851e7a8b168ffc8b520a1e1c7",
+    "reference_path": "acceptance/sample_reference.json",
+    "meaning": "Frozen Phase 5 comparison, not Phase 6 recall"
+  },
+  "defects": [
+    {
+      "defect_id": "SP6-L0030-01",
+      "category": "syntax",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0030",
+      "candidates": [
+        "E-a631d62138f5f34893eae4f0",
+        "E-e0050b2fe132e445e9a17530"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0055-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0055",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0055-02",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0055",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0065-01",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0065",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0071-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0071-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0074-01",
+      "category": "bounds",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0074",
+      "candidates": [
+        "E-c8ccccdfa8702b33f897cad8"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0078-01",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0078",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0081-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0081",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0082-01",
+      "category": "syntax",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0082",
+      "candidates": [
+        "E-7d5bd5209115da6eeb05ae04",
+        "E-11f03c4aeaf1e03a617f59c5"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0088-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0088",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0088": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0096-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0096",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0096": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0099-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0099",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0099": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0104-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0104",
+      "candidates": [
+        "E-6075d9c9cceca10411731095"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0104": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0104-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0104",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0114-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0114",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0114": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0115-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0115",
+      "candidates": [
+        "E-354fe5906ec434124d76b170"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0115": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0119-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0119",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0119": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0128-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0128",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0128": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0129-01",
+      "category": "memory safety",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [
+        "E-518513a576522da736ababba"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0149-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0149",
+      "candidates": [
+        "E-2522f51e576144f056fa13f1"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0149": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0164-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0164",
+      "candidates": [
+        "E-6ed089ab195857df58a7a22a"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0173-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0173",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0173": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0179-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0179",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0179": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0187-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0187",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0187": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0194-01",
+      "category": "undefined behavior",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0194",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0194": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0202-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0202",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0202": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0209-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0209",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0209": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0214-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0214",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0214": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0219-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0219",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0219": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0224-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0224",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0224": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0229-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0229",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0229": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0236-01",
+      "category": "memory safety",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0236",
+      "candidates": [
+        "E-d9e78ebf65d12b9cfa3940ec"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0245-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0245",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0252-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0252",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0252": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0257-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0257",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0257": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0263-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0263",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0271-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0271",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0278-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0278",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0278-02",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0278-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0286-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0286",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0287-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0287",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0292-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0292",
+      "candidates": [
+        "E-353676073094794bf40891a0"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0299-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0299",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0299": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0307-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0307",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0308-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0308",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0317-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0317",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0317": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0317-02",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0317-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0330-01",
+      "category": "program logic",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0330",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0330": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0340-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0340",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0340": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0342-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0342",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0342": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0351-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0351",
+      "candidates": [
+        "E-04bbca200e1e04951615cbb8"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0351": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0368-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Analysis coverage is unknown; absence of output is not a miss.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0368",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0377-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0377",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0377": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0382-01",
+      "category": "undefined behavior",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0382",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0382": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0387-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0387",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0387": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0393-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0393",
+      "candidates": [
+        "E-db4a67141c2b4c22c6a2b0eb",
+        "E-25fcb72ee8154b95f8461ecb"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0405-01",
+      "category": "semantic/type",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0405",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0405": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0409-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0409",
+      "candidates": [
+        "E-456aef7d2441afc69f7f6496",
+        "E-c246bf771244abf22232dd2d"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0414",
+      "candidates": [
+        "E-83228e504b815645c1db19f7",
+        "E-4fdcdff037036d88fa77c279",
+        "E-dbeef387529c0fdb805c9592",
+        "E-765ff45ea0672ee57fc47611"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0421-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0421",
+      "candidates": [
+        "E-3a91f9b8a5a8f5802ec78f9b"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0427-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0427",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0427": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0432-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0432",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0432-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0432-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0432-03",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0432-03",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0432-PRIOR": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0439-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0439",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0439": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0439-02",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0439-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0439-NULL": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0445-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0445",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0445": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0451-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0451",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0451": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0456-01",
+      "category": "undefined behavior",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0456",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0456": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0464-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0464",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0464": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0474-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0474",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0474": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0479-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0479",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "C-L0479": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0486-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0486",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0486": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0494",
+      "candidates": [
+        "E-745167799c2849538dc390e5",
+        "E-626ae51d01ce4bb0d356f5eb"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0496-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0496",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [],
+      "contracts": {
+        "C-L0496": "unknown"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "evidence_id": "E-a631d62138f5f34893eae4f0",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 30,
+          "column": 21,
+          "severity": "error",
+          "message": "expected ';' after top level declarator",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int global_count = 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-7d5bd5209115da6eeb05ae04",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 82,
+          "column": 13,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "    return 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c8ccccdfa8702b33f897cad8",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 74,
+          "column": 5,
+          "severity": "warning",
+          "message": "'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte)",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+          "diagnostic_id": "-Wfortify-source"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6075d9c9cceca10411731095",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-0d948776c25c6c1567eeb283",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-0aa4f3a995dd2577cbe755d4",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-354fe5906ec434124d76b170",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4d23cc09654a060eee0cedd5",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c9ef7107b72f060101f9073d",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-518513a576522da736ababba",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 129,
+          "column": 12,
+          "severity": "warning",
+          "message": "address of stack memory associated with local variable 'buffer' returned",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    return buffer;",
+          "diagnostic_id": "-Wreturn-stack-address"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-2522f51e576144f056fa13f1",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a110b4fa151431fe6a02b9ec",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a64f21f10f7709319ad312af",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6ed089ab195857df58a7a22a",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 38,
+          "severity": "warning",
+          "message": "if statement has empty body",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    if (percent < 0 || percent > 100); {",
+          "diagnostic_id": "-Wempty-body"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d9be1b9dc9b541d3971671e7",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 38,
+          "severity": "note",
+          "message": "put the semicolon on a separate line to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": null,
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d9e78ebf65d12b9cfa3940ec",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 236,
+          "column": 13,
+          "severity": "warning",
+          "message": "address of stack memory associated with local variable 'local' returned",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    return &local;",
+          "diagnostic_id": "-Wreturn-stack-address"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-353676073094794bf40891a0",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 292,
+          "column": 24,
+          "severity": "warning",
+          "message": "format specifies type 'int *' but the argument has type 'int'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    sscanf(text, \"%d\", value);",
+          "diagnostic_id": "-Wformat"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-04bbca200e1e04951615cbb8",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-1f5b41a60de897cd2735f77c",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-31ba18e865ddd4526a1e5acd",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-db4a67141c2b4c22c6a2b0eb",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 393,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return \"hello\";",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-456aef7d2441afc69f7f6496",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 409,
+          "column": 25,
+          "severity": "error",
+          "message": "too few arguments to function call, expected 2, have 1",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return add_numbers(1);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c5973a4b8d8bae98133e962a",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 85,
+          "column": 5,
+          "severity": "note",
+          "message": "'add_numbers' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int add_numbers(int a, int b)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-83228e504b815645c1db19f7",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    mystery_value = 12;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4fdcdff037036d88fa77c279",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-2759d93cdc1e4d848dc17afa",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 212,
+          "column": 5,
+          "severity": "note",
+          "message": "'last_value' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int last_value(int values[], int length)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-f62d5bca476aecb5ffb76a4f",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-3a91f9b8a5a8f5802ec78f9b",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 421,
+          "column": 20,
+          "severity": "warning",
+          "message": "format specifies type 'int' but the argument has type 'long'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    printf(\"%d\\n\", value);",
+          "diagnostic_id": "-Wformat"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-745167799c2849538dc390e5",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 28,
+          "severity": "warning",
+          "message": "multi-character character constant",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wmultichar"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-626ae51d01ce4bb0d356f5eb",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 25,
+          "severity": "warning",
+          "message": "result of comparison of constant 23600 with expression of type 'const char' is always true",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wtautological-constant-out-of-range-compare"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-e0050b2fe132e445e9a17530",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 30,
+          "column": 21,
+          "severity": "error",
+          "message": "expected ';' after top level declarator",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int global_count = 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-11f03c4aeaf1e03a617f59c5",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 82,
+          "column": 13,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "    return 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-25fcb72ee8154b95f8461ecb",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 393,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return \"hello\";",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c246bf771244abf22232dd2d",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 409,
+          "column": 25,
+          "severity": "error",
+          "message": "too few arguments to function call, expected 2, have 1",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return add_numbers(1);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-438a3fb2a5a3a6a6640da5f9",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 85,
+          "column": 5,
+          "severity": "note",
+          "message": "'add_numbers' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int add_numbers(int a, int b)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-dbeef387529c0fdb805c9592",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    mystery_value = 12;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-765ff45ea0672ee57fc47611",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-92fbf61040830c8c461d3187",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 212,
+          "column": 5,
+          "severity": "note",
+          "message": "'last_value' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int last_value(int values[], int length)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6f91af0d5457268e4a7269fa",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v5-sample-500-cleaned-memory",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    }
+  ],
+  "summary": {
+    "atomic_issues": 76,
+    "outcomes": {
+      "detected": 0,
+      "missed": 0,
+      "blocked": 20,
+      "unsupported": 0,
+      "conditional": 22,
+      "uncertain": 34
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 2
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 1,
+        "uncertain": 5
+      },
+      "memory safety": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 12,
+        "unsupported": 0,
+        "conditional": 5,
+        "uncertain": 2
+      },
+      "bounds": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 4,
+        "unsupported": 0,
+        "conditional": 13,
+        "uncertain": 1
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 4,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 1
+      },
+      "program logic": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 1,
+        "uncertain": 23
+      }
+    },
+    "detected_root_cause_ids": [],
+    "detected_root_cause_count": 0,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "unknown": 26,
+      "context_note": 13
+    }
+  },
+  "review": {
+    "scope": {
+      "dataset": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+      "runs": "0356ce574a197421662f3b7d89838299c066c525780945a6d7852b700cd22da9"
+    },
+    "matches": [],
+    "adjudications": [],
+    "contracts": {}
+  },
+  "metrics": {
+    "precision": null,
+    "recall": null,
+    "reason": "Partial non-exhaustive oracle and pending adjudications; do not interpret issue dispositions as precision/recall."
+  }
+}

@@ -1,0 +1,454 @@
+test_ambiguous_review_not_detection (phase6.v1.test_evaluation.EvidenceModelTests.test_ambiguous_review_not_detection) ... ok
+test_blocked_not_missed (phase6.v1.test_evaluation.EvidenceModelTests.test_blocked_not_missed) ... ok
+test_cascade_adjudication_never_confirms (phase6.v1.test_evaluation.EvidenceModelTests.test_cascade_adjudication_never_confirms) ... ok
+test_changed_source_hash_rejected (phase6.v1.test_evaluation.EvidenceModelTests.test_changed_source_hash_rejected) ... ok
+test_checker_identifier_can_restrict_evidence (phase6.v1.test_evaluation.EvidenceModelTests.test_checker_identifier_can_restrict_evidence) ... ok
+test_conditions_not_assumed_from_diagnostic (phase6.v1.test_evaluation.EvidenceModelTests.test_conditions_not_assumed_from_diagnostic) ... ok
+test_contract_satisfaction_requires_attributed_review (phase6.v1.test_evaluation.EvidenceModelTests.test_contract_satisfaction_requires_attributed_review) ... ok
+test_cross_backend_evidence_preserved_single_atom (phase6.v1.test_evaluation.EvidenceModelTests.test_cross_backend_evidence_preserved_single_atom) ... ok
+test_duplicate_false_positive_backends_share_one_adjudicated_group (phase6.v1.test_evaluation.EvidenceModelTests.test_duplicate_false_positive_backends_share_one_adjudicated_group) ... ok
+test_exact_duplicate_does_not_multiply_evidence (phase6.v1.test_evaluation.EvidenceModelTests.test_exact_duplicate_does_not_multiply_evidence) ... ok
+test_explicit_semantic_review_can_accept_new_wording (phase6.v1.test_evaluation.EvidenceModelTests.test_explicit_semantic_review_can_accept_new_wording) ... ok
+test_false_positive_requires_explicit_adjudication (phase6.v1.test_evaluation.EvidenceModelTests.test_false_positive_requires_explicit_adjudication) ... ok
+test_meaning_candidate_requires_review (phase6.v1.test_evaluation.EvidenceModelTests.test_meaning_candidate_requires_review) ... ok
+test_note_cannot_confirm_or_be_false_positive (phase6.v1.test_evaluation.EvidenceModelTests.test_note_cannot_confirm_or_be_false_positive) ... ok
+test_one_diagnostic_cannot_confirm_two_atoms (phase6.v1.test_evaluation.EvidenceModelTests.test_one_diagnostic_cannot_confirm_two_atoms) ... ok
+test_producer_warning_cannot_confirm_downstream_use (phase6.v1.test_evaluation.EvidenceModelTests.test_producer_warning_cannot_confirm_downstream_use) ... ok
+test_real_reference_lineage_and_json (phase6.v1.test_evaluation.EvidenceModelTests.test_real_reference_lineage_and_json) ... ok
+test_refuted_contract_not_counted_detected (phase6.v1.test_evaluation.EvidenceModelTests.test_refuted_contract_not_counted_detected) ... ok
+test_reviewed_semantic_match_detected (phase6.v1.test_evaluation.EvidenceModelTests.test_reviewed_semantic_match_detected) ... ok
+test_same_line_wrong_meaning_is_not_detection (phase6.v1.test_evaluation.EvidenceModelTests.test_same_line_wrong_meaning_is_not_detection) ... ok
+test_saved_assisted_review_remains_auditable (phase6.v1.test_evaluation.EvidenceModelTests.test_saved_assisted_review_remains_auditable) ... ok
+test_semantic_override_cannot_bypass_source_scope (phase6.v1.test_evaluation.EvidenceModelTests.test_semantic_override_cannot_bypass_source_scope) ... ok
+test_shared_root_is_not_two_independent_defects (phase6.v1.test_evaluation.EvidenceModelTests.test_shared_root_is_not_two_independent_defects) ... ok
+test_stale_review_rejected (phase6.v1.test_evaluation.EvidenceModelTests.test_stale_review_rejected) ... ok
+test_uncertain_reference_stays_uncertain (phase6.v1.test_evaluation.EvidenceModelTests.test_uncertain_reference_stays_uncertain) ... ok
+test_unmatched_is_unknown_not_false_positive (phase6.v1.test_evaluation.EvidenceModelTests.test_unmatched_is_unknown_not_false_positive) ... ok
+test_unsupported_distinct_from_unknown_coverage (phase6.v1.test_evaluation.EvidenceModelTests.test_unsupported_distinct_from_unknown_coverage) ... ok
+test_wrong_source_same_basename_not_matched (phase6.v1.test_evaluation.EvidenceModelTests.test_wrong_source_same_basename_not_matched) ... ok
+test_analyzer_unavailable_is_not_attempted (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_analyzer_unavailable_is_not_attempted) ... ok
+test_invalid_metadata_timeout_rejected_before_probe (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_invalid_metadata_timeout_rejected_before_probe) ... ok
+test_metadata_parsers_reject_unrecognized_output (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_metadata_parsers_reject_unrecognized_output) ... ok
+test_preprocessing_classification (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_preprocessing_classification) ... ok
+test_preprocessing_failure_does_not_relabel_known_type_error (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_preprocessing_failure_does_not_relabel_known_type_error) ... ok
+test_probe_os_error_is_recorded (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_probe_os_error_is_recorded) ... ok
+test_probe_timeout_retains_partial_output (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_probe_timeout_retains_partial_output) ... ok
+test_syntax_classification (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_syntax_classification) ... ok
+test_timeout_distinct_from_completed (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_timeout_distinct_from_completed) ... ok
+test_unknown_output_not_assumed_syntax (phase6.v2.test_eligibility.CompletionAndBlockerTests.test_unknown_output_not_assumed_syntax) ... ok
+test_live_cli_with_space_path_and_include_directory (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_cli_with_space_path_and_include_directory) ... ok
+test_live_configuration_switch_uses_same_unchanged_source (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_configuration_switch_uses_same_unchanged_source) ... ok
+test_live_macro_definition_not_given_guessed_region (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_macro_definition_not_given_guessed_region) ... ok
+test_live_preprocessing_failure_blocks_translation_unit (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_preprocessing_failure_blocks_translation_unit) ... ok
+test_live_semantic_failure_and_partial_analyzer (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_semantic_failure_and_partial_analyzer) ... ok
+test_live_syntax_failure_does_not_certify_unaffected_function (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_syntax_failure_does_not_certify_unaffected_function) ... ok
+test_live_valid_header_context_and_function_inventory (phase6.v2.test_eligibility.LiveEligibilityTests.test_live_valid_header_context_and_function_inventory) ... ok
+test_completed_analyzer_does_not_certify_per_function_exploration (phase6.v2.test_eligibility.ManifestTests.test_completed_analyzer_does_not_certify_per_function_exploration) ... ok
+test_gcc_falls_back_to_translation_unit (phase6.v2.test_eligibility.ManifestTests.test_gcc_falls_back_to_translation_unit) ... ok
+test_malformed_tool_output_keeps_unknown_coverage (phase6.v2.test_eligibility.ManifestTests.test_malformed_tool_output_keeps_unknown_coverage) ... ok
+test_no_function_analysis_inference_from_nearby_diagnostic (phase6.v2.test_eligibility.ManifestTests.test_no_function_analysis_inference_from_nearby_diagnostic) ... ok
+test_source_encoding_is_not_rewritten (phase6.v2.test_eligibility.ManifestTests.test_source_encoding_is_not_rewritten) ... ok
+test_unavailable_metadata_does_not_guess_target (phase6.v2.test_eligibility.ManifestTests.test_unavailable_metadata_does_not_guess_target) ... ok
+test_valid_compiler_function_coverage (phase6.v2.test_eligibility.ManifestTests.test_valid_compiler_function_coverage) ... ok
+test_existing_cli_has_no_eligibility_side_effect (phase6.v2.test_eligibility.OptInCliTests.test_existing_cli_has_no_eligibility_side_effect) ... ok
+test_new_json_envelope_keeps_original_analysis_nested (phase6.v2.test_eligibility.OptInCliTests.test_new_json_envelope_keeps_original_analysis_nested) ... ok
+test_filename_elision_after_macro_does_not_lose_ordinary_body (phase6.v2.test_eligibility.RegionTests.test_filename_elision_after_macro_does_not_lose_ordinary_body) ... ok
+test_headers_are_not_main_file_regions (phase6.v2.test_eligibility.RegionTests.test_headers_are_not_main_file_regions) ... ok
+test_invalid_recovery_ast_is_not_trusted (phase6.v2.test_eligibility.RegionTests.test_invalid_recovery_ast_is_not_trusted) ... ok
+test_macro_generated_definition_is_excluded (phase6.v2.test_eligibility.RegionTests.test_macro_generated_definition_is_excluded) ... ok
+test_malformed_ast_rejected (phase6.v2.test_eligibility.RegionTests.test_malformed_ast_rejected) ... ok
+test_offsets_must_match_source (phase6.v2.test_eligibility.RegionTests.test_offsets_must_match_source) ... ok
+test_physical_main_file_functions (phase6.v2.test_eligibility.RegionTests.test_physical_main_file_functions) ... ok
+test_presumed_line_does_not_override_physical_offset (phase6.v2.test_eligibility.RegionTests.test_presumed_line_does_not_override_physical_offset) ... ok
+test_windows_paths_case_and_spaces (phase6.v2.test_eligibility.RegionTests.test_windows_paths_case_and_spaces) ... ok
+test_all_calls_count_and_use_no_shell (phase6.v3.test_recovery.BudgetTests.test_all_calls_count_and_use_no_shell) ... ok
+test_call_timeout_clamped_to_remaining_total (phase6.v3.test_recovery.BudgetTests.test_call_timeout_clamped_to_remaining_total) ... ok
+test_call_timeout_latches_stop (phase6.v3.test_recovery.BudgetTests.test_call_timeout_latches_stop) ... ok
+test_file_capture_preserves_binary_output (phase6.v3.test_recovery.BudgetTests.test_file_capture_preserves_binary_output) ... ok
+test_policy_has_hard_ceilings (phase6.v3.test_recovery.BudgetTests.test_policy_has_hard_ceilings) ... ok
+test_real_timeout_does_not_wait_for_inherited_output_pipe (phase6.v3.test_recovery.BudgetTests.test_real_timeout_does_not_wait_for_inherited_output_pipe) ... ok
+test_total_deadline_stops_before_spawn (phase6.v3.test_recovery.BudgetTests.test_total_deadline_stops_before_spawn) ... ok
+test_analyzer_findings_are_only_repair_conditioned (phase6.v3.test_recovery.LiveRecoveryTests.test_analyzer_findings_are_only_repair_conditioned) ... ok
+test_candidate_and_round_budgets (phase6.v3.test_recovery.LiveRecoveryTests.test_candidate_and_round_budgets) ... ok
+test_crlf_and_unicode_preserved (phase6.v3.test_recovery.LiveRecoveryTests.test_crlf_and_unicode_preserved) ... ok
+test_declaration_frontend_becomes_eligible (phase6.v3.test_recovery.LiveRecoveryTests.test_declaration_frontend_becomes_eligible) ... ok
+test_disabled_by_default_captures_no_variant_or_fixit (phase6.v3.test_recovery.LiveRecoveryTests.test_disabled_by_default_captures_no_variant_or_fixit) ... ok
+test_expression_semantic_and_legal_code_not_rewritten (phase6.v3.test_recovery.LiveRecoveryTests.test_expression_semantic_and_legal_code_not_rewritten) ... ok
+test_negative_unbraced_macro_and_header_abstain (phase6.v3.test_recovery.LiveRecoveryTests.test_negative_unbraced_macro_and_header_abstain) ... ok
+test_retained_variant_budget (phase6.v3.test_recovery.LiveRecoveryTests.test_retained_variant_budget) ... ok
+test_return_frontend_becomes_eligible (phase6.v3.test_recovery.LiveRecoveryTests.test_return_frontend_becomes_eligible) ... ok
+test_two_rounds_and_edit_budget (phase6.v3.test_recovery.LiveRecoveryTests.test_two_rounds_and_edit_budget) ... ok
+test_validation_rejects_changed_preprocessing_tokens (phase6.v3.test_recovery.LiveRecoveryTests.test_validation_rejects_changed_preprocessing_tokens) ... ok
+test_validation_rejects_injected_new_error (phase6.v3.test_recovery.LiveRecoveryTests.test_validation_rejects_injected_new_error) ... ok
+test_windows_spaces_unicode_filename (phase6.v3.test_recovery.LiveRecoveryTests.test_windows_spaces_unicode_filename) ... ok
+test_crlf_unicode_mapping_is_byte_accurate (phase6.v3.test_recovery.PolicyTests.test_crlf_unicode_mapping_is_byte_accurate) ... ok
+test_duplicate_ast_boundary_is_ambiguous (phase6.v3.test_recovery.PolicyTests.test_duplicate_ast_boundary_is_ambiguous) ... ok
+test_header_fixit_is_not_main_file_repair (phase6.v3.test_recovery.PolicyTests.test_header_fixit_is_not_main_file_repair) ... ok
+test_insertion_requires_machine_range_and_ast (phase6.v3.test_recovery.PolicyTests.test_insertion_requires_machine_range_and_ast) ... ok
+test_invalid_machine_coordinates_rejected (phase6.v3.test_recovery.PolicyTests.test_invalid_machine_coordinates_rejected) ... ok
+test_machine_fixits_decode_windows_paths_and_octal_utf8 (phase6.v3.test_recovery.PolicyTests.test_machine_fixits_decode_windows_paths_and_octal_utf8) ... ok
+test_macro_range_is_not_trusted (phase6.v3.test_recovery.PolicyTests.test_macro_range_is_not_trusted) ... ok
+test_new_semantic_error_is_not_an_old_error_match (phase6.v3.test_recovery.PolicyTests.test_new_semantic_error_is_not_an_old_error_match) ... ok
+test_non_semicolon_and_nonzero_range_rejected (phase6.v3.test_recovery.PolicyTests.test_non_semicolon_and_nonzero_range_rejected) ... ok
+test_overlapping_edits_rejected (phase6.v3.test_recovery.PolicyTests.test_overlapping_edits_rejected) ... ok
+test_preprocessing_guard_requires_only_one_semicolon_token (phase6.v3.test_recovery.PolicyTests.test_preprocessing_guard_requires_only_one_semicolon_token) ... ok
+test_presumed_line_directive_abstains (phase6.v3.test_recovery.PolicyTests.test_presumed_line_directive_abstains) ... ok
+test_unbraced_return_is_not_whitelisted (phase6.v3.test_recovery.PolicyTests.test_unbraced_return_is_not_whitelisted) ... ok
+test_unknown_encoding_is_not_reencoded (phase6.v3.test_recovery.PolicyTests.test_unknown_encoding_is_not_reencoded) ... ok
+test_all_dependent_abstains (phase6.v4.test_isolation.LiveTests.test_all_dependent_abstains) ... ok
+test_budgets_stop_without_excess_calls (phase6.v4.test_isolation.LiveTests.test_budgets_stop_without_excess_calls) ... ok
+test_callers_excluded_without_stubs (phase6.v4.test_isolation.LiveTests.test_callers_excluded_without_stubs) ... ok
+test_disabled_by_default (phase6.v4.test_isolation.LiveTests.test_disabled_by_default) ... ok
+test_duplicate_and_excluded_findings_not_counted (phase6.v4.test_isolation.LiveTests.test_duplicate_and_excluded_findings_not_counted) ... ok
+test_global_state_and_initialization_abstain (phase6.v4.test_isolation.LiveTests.test_global_state_and_initialization_abstain) ... ok
+test_invalid_finding_mapping_clears_eligibility_and_findings (phase6.v4.test_isolation.LiveTests.test_invalid_finding_mapping_clears_eligibility_and_findings) ... ok
+test_macro_and_indirect_dependencies_abstain (phase6.v4.test_isolation.LiveTests.test_macro_and_indirect_dependencies_abstain) ... ok
+test_malformed_ast_rejects (phase6.v4.test_isolation.LiveTests.test_malformed_ast_rejects) ... ok
+test_malformed_source_abstains (phase6.v4.test_isolation.LiveTests.test_malformed_source_abstains) ... ok
+test_partial_analyzer_not_completed_coverage (phase6.v4.test_isolation.LiveTests.test_partial_analyzer_not_completed_coverage) ... ok
+test_preprocessing_change_rejects_variant (phase6.v4.test_isolation.LiveTests.test_preprocessing_change_rejects_variant) ... ok
+test_spaces_unicode_crlf_json_cli (phase6.v4.test_isolation.LiveTests.test_spaces_unicode_crlf_json_cli) ... ok
+test_timeout_stops_isolation (phase6.v4.test_isolation.LiveTests.test_timeout_stops_isolation) ... ok
+test_unrelated_error_allows_conditioned_finding (phase6.v4.test_isolation.LiveTests.test_unrelated_error_allows_conditioned_finding) ... ok
+test_valid_source_does_not_isolate (phase6.v4.test_isolation.LiveTests.test_valid_source_does_not_isolate) ... ok
+test_boundary_spelling_mismatch_rejects (phase6.v4.test_isolation.PolicyTests.test_boundary_spelling_mismatch_rejects) ... ok
+test_dependency_closure (phase6.v4.test_isolation.PolicyTests.test_dependency_closure) ... ok
+test_exclusion_budget (phase6.v4.test_isolation.PolicyTests.test_exclusion_budget) ... ok
+test_global_initialization_rejects (phase6.v4.test_isolation.PolicyTests.test_global_initialization_rejects) ... ok
+test_hard_limits (phase6.v4.test_isolation.PolicyTests.test_hard_limits) ... ok
+test_locationless_blocker_rejects (phase6.v4.test_isolation.PolicyTests.test_locationless_blocker_rejects) ... ok
+test_macro_boundary_rejects (phase6.v4.test_isolation.PolicyTests.test_macro_boundary_rejects) ... ok
+test_malformed_preprocessor_output_rejects (phase6.v4.test_isolation.PolicyTests.test_malformed_preprocessor_output_rejects) ... ok
+test_mask_preserves_bytes_lines_crlf_unicode (phase6.v4.test_isolation.PolicyTests.test_mask_preserves_bytes_lines_crlf_unicode) ... ok
+test_physical_ast_boundaries (phase6.v4.test_isolation.PolicyTests.test_physical_ast_boundaries) ... ok
+test_preprocessing_guard (phase6.v4.test_isolation.PolicyTests.test_preprocessing_guard) ... ok
+test_shared_line_rejects (phase6.v4.test_isolation.PolicyTests.test_shared_line_rejects) ... ok
+test_signature_blocker_rejects (phase6.v4.test_isolation.PolicyTests.test_signature_blocker_rejects) ... ok
+test_01_valid_program_all_modes (test_ablation.AblationTests.test_01_valid_program_all_modes) ... ok
+test_02_heuristic_has_no_probes (test_ablation.AblationTests.test_02_heuristic_has_no_probes) ... ok
+test_03_validated_mode_runs_probe (test_ablation.AblationTests.test_03_validated_mode_runs_probe) ... ok
+test_04_heuristic_detects_semicolon (test_ablation.AblationTests.test_04_heuristic_detects_semicolon) ... ok
+test_05_validated_detects_semicolon (test_ablation.AblationTests.test_05_validated_detects_semicolon) ... ok
+test_06_dataset_scoring (test_ablation.AblationTests.test_06_dataset_scoring) ... ok
+test_clean_preserves_line_numbers_endings_and_bytes (test_acceptance_checks.AcceptanceChecksTests.test_clean_preserves_line_numbers_endings_and_bytes) ... ok
+test_rejects_ambiguous_line_mapping (test_acceptance_checks.AcceptanceChecksTests.test_rejects_ambiguous_line_mapping) ... ok
+test_rejects_wrong_schema_types_and_counts (test_acceptance_checks.AcceptanceChecksTests.test_rejects_wrong_schema_types_and_counts) ... ok
+test_unprefixed_program_unchanged (test_acceptance_checks.AcceptanceChecksTests.test_unprefixed_program_unchanged) ... ok
+test_validates_regular_and_analyzer_reports (test_acceptance_checks.AcceptanceChecksTests.test_validates_regular_and_analyzer_reports) ... ok
+test_01_all_cases_are_ambiguous (test_ambiguous_benchmark.AmbiguousBenchmarkTests.test_01_all_cases_are_ambiguous) ... ok
+test_02_validated_mode_invokes_probes (test_ambiguous_benchmark.AmbiguousBenchmarkTests.test_02_validated_mode_invokes_probes) ... ok
+test_03_heuristic_mode_has_no_probes (test_ambiguous_benchmark.AmbiguousBenchmarkTests.test_03_heuristic_mode_has_no_probes) ... ok
+test_04_valid_program_strictly_parses (test_ambiguous_benchmark.AmbiguousBenchmarkTests.test_04_valid_program_strictly_parses) ... ok
+test_05_both_modes_produce_results (test_ambiguous_benchmark.AmbiguousBenchmarkTests.test_05_both_modes_produce_results) ... ok
+test_compiler_selection (test_analyze_c.CliTests.test_compiler_selection) ... ok
+test_compiler_timeout_reported_without_traceback (test_analyze_c.CliTests.test_compiler_timeout_reported_without_traceback) ... ok
+test_configuration_and_analyzer_timeout (test_analyze_c.CliTests.test_configuration_and_analyzer_timeout) ... ok
+test_exit_source_errors (test_analyze_c.CliTests.test_exit_source_errors) ... ok
+test_help (test_analyze_c.CliTests.test_help) ... ok
+test_incomplete_takes_precedence (test_analyze_c.CliTests.test_incomplete_takes_precedence) ... ok
+test_independent_analyzer_timeout_and_status (test_analyze_c.CliTests.test_independent_analyzer_timeout_and_status) ... ok
+test_invalid_arguments_exit_two (test_analyze_c.CliTests.test_invalid_arguments_exit_two) ... ok
+test_json_existing_schema (test_analyze_c.CliTests.test_json_existing_schema) ... ok
+test_static_findings_exit_one (test_analyze_c.CliTests.test_static_findings_exit_one) ... ok
+test_terminal_default_and_not_requested (test_analyze_c.CliTests.test_terminal_default_and_not_requested) ... ok
+test_tool_exception_is_reported_as_json (test_analyze_c.CliTests.test_tool_exception_is_reported_as_json) ... ok
+test_warnings_only_exit_zero (test_analyze_c.CliTests.test_warnings_only_exit_zero) ... ok
+test_analyzer_command_config (test_analyze_c.ConfigurationTests.test_analyzer_command_config) ... ok
+test_config_forwarded_to_both_passes (test_analyze_c.ConfigurationTests.test_config_forwarded_to_both_passes) ... ok
+test_invalid_configuration (test_analyze_c.ConfigurationTests.test_invalid_configuration) ... ok
+test_safe_args (test_analyze_c.ConfigurationTests.test_safe_args) ... ok
+test_unsupported_standard (test_analyze_c.ConfigurationTests.test_unsupported_standard) ... ok
+test_malformed_bytes_preserved (test_analyze_c.RealCliTests.test_malformed_bytes_preserved) ... ok
+test_missing_compiler (test_analyze_c.RealCliTests.test_missing_compiler) ... ok
+test_missing_file_tool_failure (test_analyze_c.RealCliTests.test_missing_file_tool_failure) ... ok
+test_missing_header_incomplete (test_analyze_c.RealCliTests.test_missing_header_incomplete) ... ok
+test_paths_spaces_standard_include_and_define (test_analyze_c.RealCliTests.test_paths_spaces_standard_include_and_define) ... ok
+test_unfamiliar_large_multiple_errors (test_analyze_c.RealCliTests.test_unfamiliar_large_multiple_errors) ... ok
+test_unfamiliar_large_valid (test_analyze_c.RealCliTests.test_unfamiliar_large_valid) ... ok
+test_unsupported_standard_is_clear_tool_failure (test_analyze_c.RealCliTests.test_unsupported_standard_is_clear_tool_failure) ... ok
+test_wrong_file_type (test_analyze_c.RealCliTests.test_wrong_file_type) ... ok
+test_01_valid_nested_program (test_baseline_fairness.BaselineFairnessTests.test_01_valid_nested_program) ... ok
+test_02_preserves_enclosing_block (test_baseline_fairness.BaselineFairnessTests.test_02_preserves_enclosing_block) ... ok
+test_03_no_infinite_loop_on_stray_brace (test_baseline_fairness.BaselineFairnessTests.test_03_no_infinite_loop_on_stray_brace) ... ok
+test_04_baseline_never_repairs_tokens (test_baseline_fairness.BaselineFairnessTests.test_04_baseline_never_repairs_tokens) ... ok
+test_05_block_depth_resets (test_baseline_fairness.BaselineFairnessTests.test_05_block_depth_resets) ... ok
+test_budget_limit (test_cgar.CGARTests.test_budget_limit) ... ok
+test_does_not_delete_identifiers (test_cgar.CGARTests.test_does_not_delete_identifiers) ... ok
+test_no_edit_valid (test_cgar.CGARTests.test_no_edit_valid) ... ok
+test_reject_invalid_budgets (test_cgar.CGARTests.test_reject_invalid_budgets) ... ok
+test_source_preserved (test_cgar.CGARTests.test_source_preserved) ... ok
+test_three_edit_case (test_cgar.CGARTests.test_three_edit_case) ... ok
+test_two_edit_case (test_cgar.CGARTests.test_two_edit_case) ... ok
+test_budget_exhaustion (test_cgar_verified.VerifiedCGARTests.test_budget_exhaustion) ... ok
+test_missing_semicolon (test_cgar_verified.VerifiedCGARTests.test_missing_semicolon) ... ok
+test_multiple_errors (test_cgar_verified.VerifiedCGARTests.test_multiple_errors) ... ok
+test_reject_bad_budgets (test_cgar_verified.VerifiedCGARTests.test_reject_bad_budgets) ... ok
+test_source_not_mutated (test_cgar_verified.VerifiedCGARTests.test_source_not_mutated) ... ok
+test_valid_input_no_changes (test_cgar_verified.VerifiedCGARTests.test_valid_input_no_changes) ... ok
+test_wrong_closer (test_cgar_verified.VerifiedCGARTests.test_wrong_closer) ... ok
+test_competing_candidates_prefers_delete (test_contextual_scoring.ContextualScoringTests.test_competing_candidates_prefers_delete) ... ok
+test_invalid_mode (test_contextual_scoring.ContextualScoringTests.test_invalid_mode) ... ok
+test_legacy_unchanged (test_contextual_scoring.ContextualScoringTests.test_legacy_unchanged) ... ok
+test_missing_semicolon_explained (test_contextual_scoring.ContextualScoringTests.test_missing_semicolon_explained) ... ok
+test_parser_emits_explanations (test_contextual_scoring.ContextualScoringTests.test_parser_emits_explanations) ... ok
+test_wrong_closer_uses_nesting (test_contextual_scoring.ContextualScoringTests.test_wrong_closer_uses_nesting) ... ok
+test_driver_error (test_extended_c.DiagnosticTests.test_driver_error) ... ok
+test_windows_and_optional_column (test_extended_c.DiagnosticTests.test_windows_and_optional_column) ... ok
+test_bad_timeout (test_extended_c.DiscoveryTests.test_bad_timeout) ... ok
+test_discovery_timeout (test_extended_c.DiscoveryTests.test_discovery_timeout) ... ok
+test_missing_compilers (test_extended_c.DiscoveryTests.test_missing_compilers) ... ok
+test_old_driver_optional_flags_are_probed (test_extended_c.DiscoveryTests.test_old_driver_optional_flags_are_probed) ... ok
+test_fatal_and_internal_failure (test_extended_c.ExecutionTests.test_fatal_and_internal_failure) ... ok
+test_missing_file_and_invalid_timeout (test_extended_c.ExecutionTests.test_missing_file_and_invalid_timeout) ... ok
+test_os_failure (test_extended_c.ExecutionTests.test_os_failure) ... ok
+test_safe_subprocess_boundary (test_extended_c.ExecutionTests.test_safe_subprocess_boundary) ... ok
+test_timeout_preserves_partial_findings (test_extended_c.ExecutionTests.test_timeout_preserves_partial_findings) ... ok
+test_timeout_without_findings (test_extended_c.ExecutionTests.test_timeout_without_findings) ... ok
+test_unknown_output_and_encoding (test_extended_c.ExecutionTests.test_unknown_output_and_encoding) ... ok
+test_independent_syntax_errors (test_extended_c.RealCompilerTests.test_independent_syntax_errors) ... ok
+test_large_unfamiliar_source_and_preservation (test_extended_c.RealCompilerTests.test_large_unfamiliar_source_and_preservation) ... ok
+test_missing_header_incomplete (test_extended_c.RealCompilerTests.test_missing_header_incomplete) ... ok
+test_semantic_errors_and_condition_warning (test_extended_c.RealCompilerTests.test_semantic_errors_and_condition_warning) ... ok
+test_standard_c_constructs_and_legal_ambiguity (test_extended_c.RealCompilerTests.test_standard_c_constructs_and_legal_ambiguity) ... ok
+test_clang_reporting (test_extended_c_reporting.BackendReportIntegrationTests.test_clang_reporting) ... ok
+test_gcc_reporting (test_extended_c_reporting.BackendReportIntegrationTests.test_gcc_reporting) ... ok
+test_conservative_rules (test_extended_c_reporting.CategoryTests.test_conservative_rules) ... ok
+test_clang_incompatible_result_type_is_semantic (test_extended_c_reporting.ParsingTests.test_clang_incompatible_result_type_is_semantic) ... ok
+test_clang_modern_source_and_identifier (test_extended_c_reporting.ParsingTests.test_clang_modern_source_and_identifier) ... ok
+test_include_context (test_extended_c_reporting.ParsingTests.test_include_context) ... ok
+test_live_clang_assignment_fix_hints_are_not_unknown_output (test_extended_c_reporting.ParsingTests.test_live_clang_assignment_fix_hints_are_not_unknown_output) ... ok
+test_malformed_huge_coordinate (test_extended_c_reporting.ParsingTests.test_malformed_huge_coordinate) ... ok
+test_no_location_and_bare_diagnostic (test_extended_c_reporting.ParsingTests.test_no_location_and_bare_diagnostic) ... ok
+test_old_gcc_snippet_and_notes (test_extended_c_reporting.ParsingTests.test_old_gcc_snippet_and_notes) ... ok
+test_option_not_invented_from_brackets (test_extended_c_reporting.ParsingTests.test_option_not_invented_from_brackets) ... ok
+test_repeated_real_headers_not_deduplicated (test_extended_c_reporting.ParsingTests.test_repeated_real_headers_not_deduplicated) ... ok
+test_source_text_is_not_an_extra_diagnostic (test_extended_c_reporting.ParsingTests.test_source_text_is_not_an_extra_diagnostic) ... ok
+test_unavailable_snippet_stays_null (test_extended_c_reporting.ParsingTests.test_unavailable_snippet_stays_null) ... ok
+test_unicode_and_color (test_extended_c_reporting.ParsingTests.test_unicode_and_color) ... ok
+test_unrecognized_and_malformed_records (test_extended_c_reporting.ParsingTests.test_unrecognized_and_malformed_records) ... ok
+test_failure_report_without_compiler (test_extended_c_reporting.ReportTests.test_failure_report_without_compiler) ... ok
+test_schema_and_json_roundtrip (test_extended_c_reporting.ReportTests.test_schema_and_json_roundtrip) ... ok
+test_terminal_controls_escaped (test_extended_c_reporting.ReportTests.test_terminal_controls_escaped) ... ok
+test_terminal_summary_and_issues (test_extended_c_reporting.ReportTests.test_terminal_summary_and_issues) ... ok
+test_unknown_mixed_output_marks_partial_and_preserves_raw (test_extended_c_reporting.ReportTests.test_unknown_mixed_output_marks_partial_and_preserves_raw) ... ok
+test_probe_timeout_cleanup (test_extended_c_static.AnalyzerDiscoveryTests.test_probe_timeout_cleanup) ... ok
+test_supported_invocation (test_extended_c_static.AnalyzerDiscoveryTests.test_supported_invocation) ... ok
+test_unavailable_does_not_launch (test_extended_c_static.AnalyzerDiscoveryTests.test_unavailable_does_not_launch) ... ok
+test_unsupported_invocation (test_extended_c_static.AnalyzerDiscoveryTests.test_unsupported_invocation) ... ok
+test_warning_only_rejection (test_extended_c_static.AnalyzerDiscoveryTests.test_warning_only_rejection) ... ok
+test_explicit_opt_in_does_not_replace_regular_result (test_extended_c_static.AnalyzerExecutionTests.test_explicit_opt_in_does_not_replace_regular_result) ... ok
+test_findings_completion_and_cleanup (test_extended_c_static.AnalyzerExecutionTests.test_findings_completion_and_cleanup) ... ok
+test_frontend_error_prevents_completion (test_extended_c_static.AnalyzerExecutionTests.test_frontend_error_prevents_completion) ... ok
+test_missing_input_and_invalid_timeout (test_extended_c_static.AnalyzerExecutionTests.test_missing_input_and_invalid_timeout) ... ok
+test_mixed_unknown_output_is_partial (test_extended_c_static.AnalyzerExecutionTests.test_mixed_unknown_output_is_partial) ... ok
+test_nonzero_without_findings (test_extended_c_static.AnalyzerExecutionTests.test_nonzero_without_findings) ... ok
+test_opt_in_required (test_extended_c_static.AnalyzerExecutionTests.test_opt_in_required) ... ok
+test_process_error_cleanup (test_extended_c_static.AnalyzerExecutionTests.test_process_error_cleanup) ... ok
+test_report_separation_and_json (test_extended_c_static.AnalyzerExecutionTests.test_report_separation_and_json) ... ok
+test_timeout_and_cleanup (test_extended_c_static.AnalyzerExecutionTests.test_timeout_and_cleanup) ... ok
+test_timeout_retains_partial_findings (test_extended_c_static.AnalyzerExecutionTests.test_timeout_retains_partial_findings) ... ok
+test_zero_findings_is_not_bug_free (test_extended_c_static.AnalyzerExecutionTests.test_zero_findings_is_not_bug_free) ... ok
+test_no_guessing_or_deduplication (test_extended_c_static.AnalyzerParsingTests.test_no_guessing_or_deduplication) ... ok
+test_ordinary_errors_warnings_and_notes_remain_separate (test_extended_c_static.AnalyzerParsingTests.test_ordinary_errors_warnings_and_notes_remain_separate) ... ok
+test_source_identifier_and_path_note (test_extended_c_static.AnalyzerParsingTests.test_source_identifier_and_path_note) ... ok
+test_unknown_output_retained (test_extended_c_static.AnalyzerParsingTests.test_unknown_output_retained) ... ok
+test_double_free (test_extended_c_static.LiveAnalyzerTests.test_double_free) ... ok
+test_memory_leak (test_extended_c_static.LiveAnalyzerTests.test_memory_leak) ... ok
+test_null_pointer (test_extended_c_static.LiveAnalyzerTests.test_null_pointer) ... ok
+test_use_after_free (test_extended_c_static.LiveAnalyzerTests.test_use_after_free) ... ok
+test_01_strict_parser_accepts_valid_code (test_grammar_validation.GrammarValidationTests.test_01_strict_parser_accepts_valid_code) ... ok
+test_02_strict_parser_rejects_missing_semicolon (test_grammar_validation.GrammarValidationTests.test_02_strict_parser_rejects_missing_semicolon) ... ok
+test_03_insertion_does_not_mutate_original (test_grammar_validation.GrammarValidationTests.test_03_insertion_does_not_mutate_original) ... ok
+test_04_probe_can_validate_insertion (test_grammar_validation.GrammarValidationTests.test_04_probe_can_validate_insertion) ... ok
+test_05_multiple_candidates_are_compared (test_grammar_validation.GrammarValidationTests.test_05_multiple_candidates_are_compared) ... ok
+test_06_recovery_keeps_source_unchanged (test_grammar_validation.GrammarValidationTests.test_06_recovery_keeps_source_unchanged) ... ok
+test_07_existing_error_recovery (test_grammar_validation.GrammarValidationTests.test_07_existing_error_recovery) ... ok
+test_08_validation_metadata_available (test_grammar_validation.GrammarValidationTests.test_08_validation_metadata_available) ... ok
+test_deterministic_generation (test_large_benchmark.LargeBenchmarkTests.test_deterministic_generation) ... ok
+test_missing_semicolons (test_large_benchmark.LargeBenchmarkTests.test_missing_semicolons) ... ok
+test_reject_bad_inputs (test_large_benchmark.LargeBenchmarkTests.test_reject_bad_inputs) ... ok
+test_valid_program (test_large_benchmark.LargeBenchmarkTests.test_valid_program) ... ok
+test_01_multiple_candidates_exist (test_local_validation.LocalValidationTests.test_01_multiple_candidates_exist) ... ok
+test_02_original_tokens_are_preserved (test_local_validation.LocalValidationTests.test_02_original_tokens_are_preserved) ... ok
+test_03_local_probe_ignores_earlier_error (test_local_validation.LocalValidationTests.test_03_local_probe_ignores_earlier_error) ... ok
+test_04_local_ranking_prefers_deletion (test_local_validation.LocalValidationTests.test_04_local_ranking_prefers_deletion) ... ok
+test_05_validation_runs_in_actual_parser (test_local_validation.LocalValidationTests.test_05_validation_runs_in_actual_parser) ... ok
+test_06_local_probe_reports_alternatives (test_local_validation.LocalValidationTests.test_06_local_probe_reports_alternatives) ... ok
+test_all_operations_labelled (test_mixed_benchmark.MixedBenchmarkTests.test_all_operations_labelled) ... ok
+test_deterministic (test_mixed_benchmark.MixedBenchmarkTests.test_deterministic) ... ok
+test_invalid_arguments (test_mixed_benchmark.MixedBenchmarkTests.test_invalid_arguments) ... ok
+test_recovery_metric_is_not_diagnostic_metric (test_mixed_benchmark.MixedBenchmarkTests.test_recovery_metric_is_not_diagnostic_metric) ... ok
+test_runs_both_modes (test_mixed_benchmark.MixedBenchmarkTests.test_runs_both_modes) ... ok
+test_valid_reference (test_mixed_benchmark.MixedBenchmarkTests.test_valid_reference) ... ok
+test_cases_include_multiple_errors_in_statement (test_phase2_benchmark.Phase2Tests.test_cases_include_multiple_errors_in_statement) ... ok
+test_selective_never_probes_more_than_all (test_phase2_benchmark.Phase2Tests.test_selective_never_probes_more_than_all) ... ok
+test_selective_skips_confident_competition (test_phase2_benchmark.Phase2Tests.test_selective_skips_confident_competition) ... ok
+test_validation_policy_invalid (test_phase2_benchmark.Phase2Tests.test_validation_policy_invalid) ... ok
+test_bad_repeats (test_phase3_benchmark.BoundedPairTests.test_bad_repeats) ... ok
+test_benchmark_improves_frozen_cases (test_phase3_benchmark.BoundedPairTests.test_benchmark_improves_frozen_cases) ... ok
+test_opt_in_preserves_previous_behavior (test_phase3_benchmark.BoundedPairTests.test_opt_in_preserves_previous_behavior) ... ok
+test_single_token_deletion_unchanged (test_phase3_benchmark.BoundedPairTests.test_single_token_deletion_unchanged) ... ok
+test_two_edits_at_same_expectation (test_phase3_benchmark.BoundedPairTests.test_two_edits_at_same_expectation) ... ok
+test_all_modes_report (test_phase4_benchmark.Phase4Tests.test_all_modes_report) ... ok
+test_holdout_deterministic (test_phase4_benchmark.Phase4Tests.test_holdout_deterministic) ... ok
+test_holdout_has_two_intended_repairs (test_phase4_benchmark.Phase4Tests.test_holdout_has_two_intended_repairs) ... ok
+test_scaling_has_memory_measurements (test_phase4_benchmark.Phase4Tests.test_scaling_has_memory_measurements) ... ok
+test_scaling_injected_pair_count (test_phase4_benchmark.Phase4Tests.test_scaling_injected_pair_count) ... ok
+test_evaluation_has_all_cases (test_phase5d_eval.Phase5DEvaluationTests.test_evaluation_has_all_cases) ... ok
+test_exact_is_not_grammar_valid (test_phase5d_eval.Phase5DEvaluationTests.test_exact_is_not_grammar_valid) ... ok
+test_invalid_repeats (test_phase5d_eval.Phase5DEvaluationTests.test_invalid_repeats) ... ok
+test_reference_programs_are_valid (test_phase5d_eval.Phase5DEvaluationTests.test_reference_programs_are_valid) ... ok
+test_budget_validation (test_phase5e.Phase5ETests.test_budget_validation) ... ok
+test_consecutive_semicolons_are_not_silently_removed (test_phase5e.Phase5ETests.test_consecutive_semicolons_are_not_silently_removed) ... ok
+test_declaration_operator_repair (test_phase5e.Phase5ETests.test_declaration_operator_repair) ... ok
+test_frozen_cases (test_phase5e.Phase5ETests.test_frozen_cases) ... ok
+test_missing_expression_abstains (test_phase5e.Phase5ETests.test_missing_expression_abstains) ... ok
+test_missing_identifier_abstains (test_phase5e.Phase5ETests.test_missing_identifier_abstains) ... ok
+test_valid_unchanged (test_phase5e.Phase5ETests.test_valid_unchanged) ... ok
+test_ambiguous_valid_code_unchanged (test_phase5f.Phase5FIntegrationTests.test_ambiguous_valid_code_unchanged) ... ok
+test_default_mode_unaffected (test_phase5f.Phase5FIntegrationTests.test_default_mode_unaffected) ... ok
+test_invalid_budget (test_phase5f.Phase5FIntegrationTests.test_invalid_budget) ... ok
+test_operator_repair (test_phase5f.Phase5FIntegrationTests.test_operator_repair) ... ok
+test_source_not_mutated (test_phase5f.Phase5FIntegrationTests.test_source_not_mutated) ... ok
+test_two_distant_errors (test_phase5f.Phase5FIntegrationTests.test_two_distant_errors) ... ok
+test_unsupported_falls_back (test_phase5f.Phase5FIntegrationTests.test_unsupported_falls_back) ... ok
+test_valid_code (test_phase5f.Phase5FIntegrationTests.test_valid_code) ... ok
+test_frozen_cases_all_modes (test_phase5g.Phase5GTests.test_frozen_cases_all_modes) ... ok
+test_invalid_repeats (test_phase5g.Phase5GTests.test_invalid_repeats) ... ok
+test_modes (test_phase5g.Phase5GTests.test_modes) ... ok
+test_unsupported_fallback (test_phase5g.Phase5GTests.test_unsupported_fallback) ... ok
+test_valid_semicolons_not_an_error (test_phase5g.Phase5GTests.test_valid_semicolons_not_an_error) ... ok
+test_verified_multiple_errors (test_phase5g.Phase5GTests.test_verified_multiple_errors) ... ok
+test_demo_default_unchanged (test_phase5h.FinalReleaseTests.test_demo_default_unchanged) ... ok
+test_demo_unsupported_fallback (test_phase5h.FinalReleaseTests.test_demo_unsupported_fallback) ... ok
+test_demo_valid_ambiguous (test_phase5h.FinalReleaseTests.test_demo_valid_ambiguous) ... ok
+test_demo_verified_multi_error (test_phase5h.FinalReleaseTests.test_demo_verified_multi_error) ... ok
+test_invalid_margin (test_repair_advisor.RepairAdvisorTests.test_invalid_margin) ... ok
+test_out_of_range (test_repair_advisor.RepairAdvisorTests.test_out_of_range) ... ok
+test_pair_marked_for_review (test_repair_advisor.RepairAdvisorTests.test_pair_marked_for_review) ... ok
+test_single_candidate_not_overconfident (test_repair_advisor.RepairAdvisorTests.test_single_candidate_not_overconfident) ... ok
+test_unsupported_abstains (test_repair_advisor.RepairAdvisorTests.test_unsupported_abstains) ... ok
+test_deterministic (test_robust_benchmark.RobustBenchmarkTests.test_deterministic) ... ok
+test_exact_label_positions (test_robust_benchmark.RobustBenchmarkTests.test_exact_label_positions) ... ok
+test_summary (test_robust_benchmark.RobustBenchmarkTests.test_summary) ... ok
+test_valid_references (test_robust_benchmark.RobustBenchmarkTests.test_valid_references) ... ok
+test_01_valid_declaration (test_smartparse.SmartParseTests.test_01_valid_declaration) ... ok
+test_02_valid_if_else (test_smartparse.SmartParseTests.test_02_valid_if_else) ... ok
+test_03_valid_while (test_smartparse.SmartParseTests.test_03_valid_while) ... ok
+test_04_valid_for (test_smartparse.SmartParseTests.test_04_valid_for) ... ok
+test_05_valid_function (test_smartparse.SmartParseTests.test_05_valid_function) ... ok
+test_06_valid_function_call (test_smartparse.SmartParseTests.test_06_valid_function_call) ... ok
+test_07_missing_parenthesis (test_smartparse.SmartParseTests.test_07_missing_parenthesis) ... ok
+test_08_missing_semicolon (test_smartparse.SmartParseTests.test_08_missing_semicolon) ... ok
+test_09_wrong_bracket (test_smartparse.SmartParseTests.test_09_wrong_bracket) ... ok
+test_10_multiple_errors (test_smartparse.SmartParseTests.test_10_multiple_errors) ... ok
+test_11_recovery_continues (test_smartparse.SmartParseTests.test_11_recovery_continues) ... ok
+test_12_source_preserved (test_smartparse.SmartParseTests.test_12_source_preserved) ... ok
+test_13_context_nesting (test_smartparse.SmartParseTests.test_13_context_nesting) ... ok
+test_14_candidate_insertion (test_smartparse.SmartParseTests.test_14_candidate_insertion) ... ok
+test_15_candidate_substitution (test_smartparse.SmartParseTests.test_15_candidate_substitution) ... ok
+test_16_candidate_deletion (test_smartparse.SmartParseTests.test_16_candidate_deletion) ... ok
+test_17_empty_statement (test_smartparse.SmartParseTests.test_17_empty_statement) ... ok
+test_18_nested_blocks (test_smartparse.SmartParseTests.test_18_nested_blocks) ... ok
+test_01_corrected_references_are_valid (test_stress_eval.StressEvaluationTests.test_01_corrected_references_are_valid) ... ok
+test_02_invalid_code_fails_strict_parser (test_stress_eval.StressEvaluationTests.test_02_invalid_code_fails_strict_parser) ... ok
+test_03_both_modes_return_results (test_stress_eval.StressEvaluationTests.test_03_both_modes_return_results) ... ok
+test_04_valid_program_has_no_diagnostics (test_stress_eval.StressEvaluationTests.test_04_valid_program_has_no_diagnostics) ... ok
+test_05_heuristic_mode_has_no_probes (test_stress_eval.StressEvaluationTests.test_05_heuristic_mode_has_no_probes) ... ok
+test_06_timing_returns_valid_measurements (test_stress_eval.StressEvaluationTests.test_06_timing_returns_valid_measurements) ... ok
+test_01_valid_statement_trace (test_verification_eval.VerificationTests.test_01_valid_statement_trace) ... ok
+test_02_recovery_is_traced (test_verification_eval.VerificationTests.test_02_recovery_is_traced) ... ok
+test_03_recovery_audit_returns_rows (test_verification_eval.VerificationTests.test_03_recovery_audit_returns_rows) ... ok
+test_04_baseline_audit_returns_rows (test_verification_eval.VerificationTests.test_04_baseline_audit_returns_rows) ... ok
+test_05_performance_audit_returns_rows (test_verification_eval.VerificationTests.test_05_performance_audit_returns_rows) ... ok
+
+----------------------------------------------------------------------
+Ran 363 tests in 215.937s
+
+OK
+========================================================================
+RECOVERY TRACE AUDIT
+========================================================================
+S01 heuristic  attempts=4 returned=4 failed=0 repaired_returns=3
+S01 validated  attempts=4 returned=4 failed=0 repaired_returns=3
+S02 heuristic  attempts=6 returned=6 failed=0 repaired_returns=2
+S02 validated  attempts=6 returned=6 failed=0 repaired_returns=2
+S03 heuristic  attempts=4 returned=4 failed=0 repaired_returns=1
+S03 validated  attempts=4 returned=4 failed=0 repaired_returns=1
+S04 heuristic  attempts=7 returned=7 failed=0 repaired_returns=4
+S04 validated  attempts=7 returned=7 failed=0 repaired_returns=4
+S05 heuristic  attempts=9 returned=9 failed=0 repaired_returns=0
+S05 validated  attempts=9 returned=9 failed=0 repaired_returns=0
+S06 heuristic  attempts=4 returned=4 failed=0 repaired_returns=2
+S06 validated  attempts=4 returned=4 failed=0 repaired_returns=2
+Saved: results\recovery_audit.csv
+
+NOTE: A returned statement may contain nested statements. Counts are not independent program statements.
+
+========================================================================
+PANIC-MODE DIAGNOSTIC AUDIT
+========================================================================
+
+T01 | Valid declarations | diagnostics=0
+
+T02 | Valid for loop | diagnostics=0
+
+T03 | Missing semicolon | diagnostics=1
+  2:1 Expected ; before 'int'.
+
+T04 | Missing parenthesis | diagnostics=2
+  1:12 Expected ) before '{'.
+  3:1 Expected expression before '}'.
+
+T05 | Wrong closing bracket | diagnostics=2
+  1:11 Expected ) before ']'.
+  3:1 Expected expression before '}'.
+
+T06 | Two missing semicolons | diagnostics=1
+  2:1 Expected ; before 'int'.
+
+T07 | Nested missing parenthesis | diagnostics=2
+  2:15 Expected ) before '{'.
+  5:1 Expected expression before '}'.
+
+T08 | Missing closing brace | diagnostics=1
+  4:1 Expected } before 'end of file'.
+
+T09 | Two independent errors | diagnostics=3
+  2:1 Expected ; before 'int'.
+  3:11 Expected ) before '{'.
+  5:1 Expected expression before '}'.
+
+T10 | Missing semicolon in block | diagnostics=1
+  3:5 Expected ; before 'int'.
+
+T11 | Wrong bracket in while | diagnostics=2
+  1:13 Expected ) before ']'.
+  3:1 Expected expression before '}'.
+
+T12 | Valid nested function | diagnostics=0
+Saved: results\baseline_audit.csv
+
+Inspect repeated diagnostics at closing braces. These may indicate cascading errors caused by synchronization.
+
+========================================================================
+ROTATED PERFORMANCE BENCHMARK
+========================================================================
+
+LABELLED
+  panic              median=2.2948 ms mean=3.1142 ms
+  heuristic          median=4.1521 ms mean=4.9365 ms
+  grammar_validated  median=4.1634 ms mean=4.1813 ms
+
+AMBIGUOUS
+  panic              median=0.7301 ms mean=0.8576 ms
+  heuristic          median=1.6780 ms mean=1.7923 ms
+  grammar_validated  median=2.7354 ms mean=2.6550 ms
+
+STRESS
+  panic              median=2.0244 ms mean=2.3023 ms
+  heuristic          median=2.4609 ms mean=2.2108 ms
+  grammar_validated  median=2.4667 ms mean=3.1976 ms
+Saved: results\verified_performance.csv
+
+Timing includes tokenization and parsing. Results are exploratory measurements on this machine, not universal benchmarks.

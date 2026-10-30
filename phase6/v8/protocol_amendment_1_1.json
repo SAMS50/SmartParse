@@ -1,0 +1,7 @@
+{
+  "reason": "Evaluation formatting bug: panic Expected ; before versus SmartParse quoted punctuation. Accept equivalent expected-token spelling at exact frozen anchor.",
+  "scope": "All 48 syntax runs repeated; original results retained under outputs/syntax_protocol_1_0; no source/reference/compiler rule changes.",
+  "introduced_after_first_syntax_outputs": true,
+  "evaluation_sha256": "f30eddd79992e6473ac7a2cca31c9a95f3c03b80ad7cc4d2df1504ae4d526b2f",
+  "frozen_policy_1_0_preserved": true
+}

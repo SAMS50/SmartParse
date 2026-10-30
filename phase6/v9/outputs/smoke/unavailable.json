@@ -1,0 +1,173 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+    "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+    "bytes": 67,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "cppcheck"
+  ],
+  "effective_analyzers": [
+    "cppcheck"
+  ],
+  "status": "failed",
+  "runs": [
+    {
+      "id": "cppcheck",
+      "status": "unavailable",
+      "reason": "[WinError 2] The system cannot find the file specified",
+      "raw": {
+        "schema": "smartparse.external_analysis",
+        "schema_version": "1.0",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\not-installed.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "source": {
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+          "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+          "original_unchanged": true
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke",
+          "shell": false
+        },
+        "status": "unavailable",
+        "reason": "[WinError 2] The system cannot find the file specified",
+        "diagnostics": [],
+        "exact_duplicates": [],
+        "raw": {},
+        "eligibility": {
+          "process_started": false,
+          "analyzer_requested": true,
+          "analyzer_phase_evidence": "unknown",
+          "region_coverage": "unknown; no per-function/path execution proof",
+          "function_path_coverage_certified": false
+        },
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "temporary_workspace_removed": true,
+        "usage": {
+          "compiler_invocations": 1,
+          "elapsed_seconds": 0.015,
+          "calls": [
+            {
+              "number": 1,
+              "role": "version",
+              "command": [
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\not-installed.exe",
+                "--version"
+              ],
+              "status": "failed",
+              "issue": "[WinError 2] The system cannot find the file specified",
+              "elapsed_seconds": 0.0
+            }
+          ],
+          "limits": {
+            "candidates": 4,
+            "rounds": 3,
+            "invocations": 4,
+            "retained_variants": 4,
+            "edits": 4,
+            "total_seconds": 120,
+            "call_seconds": 10
+          }
+        },
+        "unique_primary_groups": 0,
+        "enabled": true,
+        "confirmed_defect_roots": null,
+        "analysis_mode": "original_source_only",
+        "integration_decision": "1.0"
+      },
+      "elapsed_seconds": 0.015,
+      "usage": {
+        "compiler_invocations": 1,
+        "elapsed_seconds": 0.015,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\not-installed.exe",
+              "--version"
+            ],
+            "status": "failed",
+            "issue": "[WinError 2] The system cannot find the file specified",
+            "elapsed_seconds": 0.0
+          }
+        ],
+        "limits": {
+          "candidates": 4,
+          "rounds": 3,
+          "invocations": 4,
+          "retained_variants": 4,
+          "edits": 4,
+          "total_seconds": 120,
+          "call_seconds": 10
+        }
+      },
+      "eligibility": {
+        "process_started": false,
+        "analyzer_requested": true,
+        "analyzer_phase_evidence": "unknown",
+        "region_coverage": "unknown; no per-function/path execution proof",
+        "function_path_coverage_certified": false
+      }
+    }
+  ],
+  "diagnostics": [],
+  "groups": [],
+  "tool_issues": [
+    {
+      "analyzer": "cppcheck",
+      "status": "unavailable",
+      "message": "[WinError 2] The system cannot find the file specified"
+    }
+  ],
+  "summary": {
+    "raw_normalized_records": 0,
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {},
+    "conditioning": {},
+    "evidence_groups": 0,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 0.015,
+    "compiler_invocations": 1,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

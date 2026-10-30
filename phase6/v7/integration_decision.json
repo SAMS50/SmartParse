@@ -1,0 +1,34 @@
+{
+  "schema": "smartparse.external_integration_decision",
+  "schema_version": "1.0",
+  "selected": [
+    "gcc14",
+    "cppcheck"
+  ],
+  "source_review": "Agent reviewed; independent human adjudication pending.",
+  "basis": {
+    "gcc14": {
+      "new_roots": [
+        "M5:allocation_size",
+        "NEW:alloc_helper_bad",
+        "NEW:alloc_literal_bad",
+        "NEW:alloc_variable_bad",
+        "NEW:overlap_bad"
+      ],
+      "control_warning_count": 0
+    },
+    "cppcheck": {
+      "new_roots": [
+        "NEW:late_widen_bad",
+        "NEW:overlap_bad"
+      ],
+      "control_warning_count": 0
+    }
+  },
+  "not_selected": {
+    "gcc16": "Same incremental reviewed roots as GCC14; no need to add a second GCC adapter profile.",
+    "tidy17": "Late-widening increment is covered by Cppcheck; additional warning on intentional unsigned-modular control.",
+    "cbmc": "Not discovered; no measured eligibility or defect results; installation not authorized."
+  },
+  "summary_sha256": "61483fff8241ba67a2d4d463d3193eb035fc664100dfec482c72b3667315fda2"
+}

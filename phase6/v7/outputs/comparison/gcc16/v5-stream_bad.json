@@ -1,0 +1,415 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc16",
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "16.1.0",
+    "format": "gcc-sarif",
+    "diagnostic_format": "sarif-stderr"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+    "sha256": "b2ce746879cf4563f4653f7f20eebefe61d4d8b85fc49ca07b00d7f14f0edfe3",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\msys64\\ucrt64\\bin",
+    "shell": false,
+    "command": [
+      "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-fmax-errors=20",
+      "-O0",
+      "-fanalyzer",
+      "-fdiagnostics-format=sarif-stderr",
+      "-c",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+      "-o",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external k4ulyo54\\analysis.o"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+      "line": 2,
+      "column": 74,
+      "severity": "warning",
+      "message": "leak of FILE 'stream'",
+      "diagnostic_id": "-Wanalyzer-file-leak",
+      "category": "resource management",
+      "related": [
+        {
+          "threadFlows": [
+            {
+              "id": "main",
+              "locations": [
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(1)",
+                    "gcc/analyzer/checker_event/kind": "state_change"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 29,
+                        "endColumn": 51
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "opened here"
+                    }
+                  },
+                  "kinds": [
+                    "acquire",
+                    "resource"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 1
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(2)",
+                    "gcc/analyzer/checker_event/kind": "state_change"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 56,
+                        "endColumn": 57
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "assuming 'stream' is non-NULL"
+                    }
+                  },
+                  "nestingLevel": 1,
+                  "executionOrder": 2
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(3)",
+                    "gcc/analyzer/checker_event/kind": "start_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 4
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 56,
+                        "endColumn": 57
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "following 'false' branch (when 'stream' is non-NULL)..."
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 3
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(4)",
+                    "gcc/analyzer/checker_event/kind": "end_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 4
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 56,
+                        "endColumn": 57
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "...to here"
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 4
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(5)",
+                    "gcc/analyzer/checker_event/kind": "warning"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 74,
+                        "endColumn": 75
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "'stream' leaks here; was opened at [(1)](sarif:/runs/0/results/0/codeFlows/0/threadFlows/0/locations/0)"
+                    }
+                  },
+                  "kinds": [
+                    "danger"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 5
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {
+        "gcc/analyzer/saved_diagnostic/sm": "file",
+        "gcc/analyzer/saved_diagnostic/ploc": {
+          "enode": 10
+        },
+        "gcc/analyzer/saved_diagnostic/var": "stream_3",
+        "gcc/analyzer/saved_diagnostic/sval": "CONJURED(stream_3 = fopen (\"input.txt\", \"r\");, stream_3)",
+        "gcc/analyzer/saved_diagnostic/state": "nonnull",
+        "gcc/analyzer/saved_diagnostic/idx": 0,
+        "gcc/analyzer/saved_diagnostic/duplicates": [
+          {
+            "properties": {
+              "gcc/analyzer/saved_diagnostic/sm": "file",
+              "gcc/analyzer/saved_diagnostic/ploc": {
+                "enode": 10
+              },
+              "gcc/analyzer/saved_diagnostic/var": "stream_3",
+              "gcc/analyzer/saved_diagnostic/sval": "CONJURED(stream_3 = fopen (\"input.txt\", \"r\");, stream_3)",
+              "gcc/analyzer/saved_diagnostic/state": "nonnull",
+              "gcc/analyzer/saved_diagnostic/idx": 1,
+              "gcc/analyzer/pending_diagnostic/kind": "file_leak"
+            }
+          }
+        ],
+        "gcc/analyzer/pending_diagnostic/kind": "file_leak"
+      },
+      "source_bound": true,
+      "source_snippet": "void f(void) { FILE *stream=fopen(\"input.txt\",\"r\"); if (!stream) return; }",
+      "id": "X-c1d9063ee187eedcb17b",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external k4ulyo54\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wanalyzer-file-leak\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-file-leak\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"775\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/775.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external k4ulyo54\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccoeMPCK.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:32:54Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:32:54Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdio.h>\\nvoid f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Wanalyzer-file-leak\",\n                        \"taxa\": [{\"id\": \"775\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"file\",\n                                       \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                       \"gcc/analyzer/saved_diagnostic/var\": \"stream_3\",\n                                       \"gcc/analyzer/saved_diagnostic/sval\": \"CONJURED(stream_3 = fopen (\\\"input.txt\\\", \\\"r\\\");, stream_3)\",\n                                       \"gcc/analyzer/saved_diagnostic/state\": \"nonnull\",\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 0,\n                                       \"gcc/analyzer/saved_diagnostic/duplicates\": [{\"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"file\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                                                                                    \"gcc/analyzer/saved_diagnostic/var\": \"stream_3\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/sval\": \"CONJURED(stream_3 = fopen (\\\"input.txt\\\", \\\"r\\\");, stream_3)\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/state\": \"nonnull\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/idx\": 1,\n                                                                                                    \"gcc/analyzer/pending_diagnostic/kind\": \"file_leak\"}}],\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"file_leak\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"leak of FILE 'stream'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 74,\n                                                                       \"endColumn\": 75},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 29,\n                                                                                                                    \"endColumn\": 51},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"opened here\"}},\n                                                                       \"kinds\": [\"acquire\",\n                                                                                 \"resource\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assuming 'stream' is non-NULL\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'stream' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(5)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 74,\n                                                                                                                    \"endColumn\": 75},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"'stream' leaks here; was opened at [(1)](sarif:/runs/0/results/0/codeFlows/0/threadFlows/0/locations/0)\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 5}]}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+    "returncode": 0
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0\r\nCopyright (C) 2026 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.593,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "91bf371446c8855e344dd12cfa61b386f9c421c64dfa0dbe4234b26742e549c0",
+        "stderr": "",
+        "elapsed_seconds": 0.14
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\stream_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external k4ulyo54\\analysis.o"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wanalyzer-file-leak\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-file-leak\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"775\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/775.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external k4ulyo54\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccoeMPCK.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:32:54Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:32:54Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdio.h>\\nvoid f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Wanalyzer-file-leak\",\n                        \"taxa\": [{\"id\": \"775\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"file\",\n                                       \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                       \"gcc/analyzer/saved_diagnostic/var\": \"stream_3\",\n                                       \"gcc/analyzer/saved_diagnostic/sval\": \"CONJURED(stream_3 = fopen (\\\"input.txt\\\", \\\"r\\\");, stream_3)\",\n                                       \"gcc/analyzer/saved_diagnostic/state\": \"nonnull\",\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 0,\n                                       \"gcc/analyzer/saved_diagnostic/duplicates\": [{\"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"file\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                                                                                    \"gcc/analyzer/saved_diagnostic/var\": \"stream_3\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/sval\": \"CONJURED(stream_3 = fopen (\\\"input.txt\\\", \\\"r\\\");, stream_3)\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/state\": \"nonnull\",\n                                                                                                    \"gcc/analyzer/saved_diagnostic/idx\": 1,\n                                                                                                    \"gcc/analyzer/pending_diagnostic/kind\": \"file_leak\"}}],\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"file_leak\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"leak of FILE 'stream'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 74,\n                                                                       \"endColumn\": 75},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 29,\n                                                                                                                    \"endColumn\": 51},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"opened here\"}},\n                                                                       \"kinds\": [\"acquire\",\n                                                                                 \"resource\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assuming 'stream' is non-NULL\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'stream' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 56,\n                                                                                                                    \"endColumn\": 57},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(5)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\stream_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 74,\n                                                                                                                    \"endColumn\": 75},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { FILE *stream=fopen(\\\"input.txt\\\",\\\"r\\\"); if (!stream) return; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"'stream' leaks here; was opened at [(1)](sarif:/runs/0/results/0/codeFlows/0/threadFlows/0/locations/0)\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 5}]}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+        "elapsed_seconds": 0.453
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 1,
+  "normalization_revision": "identifier-category-table-2"
+}

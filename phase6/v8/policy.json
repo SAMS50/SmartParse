@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "matching": "Source hash + input-file binding + root anchor/evidence + category/identifier/meaning. Pending proposals only.",
+  "line_window": "Exact root line; leak/resource allow next line and related path locations. Syntax parser uses exact column.",
+  "duplicates": "One root per diagnostic; multiple diagnostics/backends for same root collapse. Notes never establish roots.",
+  "blocked": "Compiler syntax/type evidence can support a frontend root; blocked semantic passes cannot establish successful semantic detection.",
+  "conditioning": "Repair/isolation findings remain separate; combined original-only excludes conditioned matches.",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent human-adjudicated complete labels unavailable."
+  },
+  "criteria": "Descriptive author-proposal evidence only; unknown unmatched findings are not confirmed false positives.",
+  "uncertainty": "No accuracy confidence intervals or significance without validated labels; timings descriptive."
+}

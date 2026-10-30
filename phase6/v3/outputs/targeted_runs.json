@@ -1,0 +1,198 @@
+[
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.PolicyTests",
+      "phase6.v3.test_recovery.BudgetTests",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 20,
+    "elapsed_seconds": 1.438,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_pure.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_analyzer_findings_are_only_repair_conditioned",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 4.64,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_analyzer_findings_are_only_repair_conditioned.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_candidate_and_round_budgets",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 7.578,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_candidate_and_round_budgets.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_crlf_and_unicode_preserved",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 3.407,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_crlf_and_unicode_preserved.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_declaration_frontend_becomes_eligible",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 3.172,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_declaration_frontend_becomes_eligible.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_disabled_by_default_captures_no_variant_or_fixit",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 2.515,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_disabled_by_default_captures_no_variant_or_fixit.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_expression_semantic_and_legal_code_not_rewritten",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 6.672,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_expression_semantic_and_legal_code_not_rewritten.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_negative_unbraced_macro_and_header_abstain",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 7.656,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_negative_unbraced_macro_and_header_abstain.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_retained_variant_budget",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 4.203,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_retained_variant_budget.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_return_frontend_becomes_eligible",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 3.141,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_return_frontend_becomes_eligible.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_two_rounds_and_edit_budget",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 7.156,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_two_rounds_and_edit_budget.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_validation_rejects_injected_new_error",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 4.75,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_validation_rejects_injected_new_error.txt"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "unittest",
+      "phase6.v3.test_recovery.LiveRecoveryTests.test_windows_spaces_unicode_filename",
+      "-v"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 30,
+    "elapsed_seconds": 5.219,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\targeted_test_windows_spaces_unicode_filename.txt"
+  }
+]

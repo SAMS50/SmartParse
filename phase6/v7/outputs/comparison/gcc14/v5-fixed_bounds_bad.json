@@ -1,0 +1,279 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc14",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "14.2.0",
+    "format": "gcc-json",
+    "diagnostic_format": "json"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+    "sha256": "5a47ab19b0722df48f02d675326460cd1102e02a9da95e54573375e546b1dca3",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+    "shell": false,
+    "command": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-fmax-errors=20",
+      "-O0",
+      "-fanalyzer",
+      "-fdiagnostics-format=json",
+      "-c",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "-o",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cbyi42w2\\analysis.o"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "line": 2,
+      "column": 72,
+      "severity": "warning",
+      "message": "heap-based buffer overflow",
+      "diagnostic_id": "-Wanalyzer-out-of-bounds",
+      "category": "bounds",
+      "related": [
+        {
+          "location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+            "line": 2,
+            "display-column": 24,
+            "byte-column": 24,
+            "column": 24
+          },
+          "description": "capacity: 4 bytes",
+          "function": "f",
+          "depth": 1
+        },
+        {
+          "location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+            "line": 2,
+            "display-column": 38,
+            "byte-column": 38,
+            "column": 38
+          },
+          "description": "following 'false' branch (when 'p' is non-NULL)...",
+          "function": "f",
+          "depth": 1
+        },
+        {
+          "location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+            "line": 2,
+            "display-column": 55,
+            "byte-column": 55,
+            "column": 55
+          },
+          "description": "...to here",
+          "function": "f",
+          "depth": 1
+        },
+        {
+          "location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+            "line": 2,
+            "display-column": 72,
+            "byte-column": 72,
+            "column": 72
+          },
+          "description": "out-of-bounds write at byte 4 but region ends at byte 4",
+          "function": "f",
+          "depth": 1
+        }
+      ],
+      "context_note": false,
+      "column_kind": "byte",
+      "source_bound": true,
+      "source_snippet": "void f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "id": "X-8db3aaed34535770e20d",
+      "tool": {
+        "id": "gcc14",
+        "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "14.2.0",
+        "format": "gcc-json",
+        "diagnostic_format": "json"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+        "shell": false,
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=json",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cbyi42w2\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+      "line": 2,
+      "column": 72,
+      "severity": "note",
+      "message": "write of 1 byte to beyond the end of the region",
+      "diagnostic_id": null,
+      "category": "unknown",
+      "related": [],
+      "context_note": true,
+      "column_kind": "byte",
+      "source_bound": true,
+      "source_snippet": "void f(void) { char *p=malloc(4); if (!p) return; int index=4; p[index]=1; free(p); }",
+      "id": "X-388d0549b889c3f5c1f5",
+      "tool": {
+        "id": "gcc14",
+        "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "14.2.0",
+        "format": "gcc-json",
+        "diagnostic_format": "json"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+        "shell": false,
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=json",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cbyi42w2\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"heap-based buffer overflow\",\n  \"option\": \"-Wanalyzer-out-of-bounds\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-out-of-bounds\",\n  \"children\": [{\"kind\": \"note\",\n                \"message\": \"write of 1 byte to beyond the end of the region\",\n                \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                         \"line\": 2,\n                                         \"display-column\": 72,\n                                         \"byte-column\": 72,\n                                         \"column\": 72},\n                               \"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                         \"line\": 2,\n                                         \"display-column\": 64,\n                                         \"byte-column\": 64,\n                                         \"column\": 64},\n                               \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                          \"line\": 2,\n                                          \"display-column\": 73,\n                                          \"byte-column\": 73,\n                                          \"column\": 73}}],\n                \"escape-source\": false}],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                           \"line\": 2,\n                           \"display-column\": 72,\n                           \"byte-column\": 72,\n                           \"column\": 72},\n                 \"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                           \"line\": 2,\n                           \"display-column\": 64,\n                           \"byte-column\": 64,\n                           \"column\": 64},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                            \"line\": 2,\n                            \"display-column\": 73,\n                            \"byte-column\": 73,\n                            \"column\": 73}}],\n  \"metadata\": {\"cwe\": 122},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 24,\n                         \"byte-column\": 24,\n                         \"column\": 24},\n            \"description\": \"capacity: 4 bytes\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"following 'false' branch (when 'p' is non-NULL)...\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 55,\n                         \"byte-column\": 55,\n                         \"column\": 55},\n            \"description\": \"...to here\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 72,\n                         \"byte-column\": 72,\n                         \"column\": 72},\n            \"description\": \"out-of-bounds write at byte 4 but region ends at byte 4\",\n            \"function\": \"f\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+    "returncode": 0
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.156,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+        "stderr": "",
+        "elapsed_seconds": 0.031
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=json",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\fixed_bounds_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external cbyi42w2\\analysis.o"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"heap-based buffer overflow\",\n  \"option\": \"-Wanalyzer-out-of-bounds\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-out-of-bounds\",\n  \"children\": [{\"kind\": \"note\",\n                \"message\": \"write of 1 byte to beyond the end of the region\",\n                \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                         \"line\": 2,\n                                         \"display-column\": 72,\n                                         \"byte-column\": 72,\n                                         \"column\": 72},\n                               \"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                         \"line\": 2,\n                                         \"display-column\": 64,\n                                         \"byte-column\": 64,\n                                         \"column\": 64},\n                               \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                                          \"line\": 2,\n                                          \"display-column\": 73,\n                                          \"byte-column\": 73,\n                                          \"column\": 73}}],\n                \"escape-source\": false}],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                           \"line\": 2,\n                           \"display-column\": 72,\n                           \"byte-column\": 72,\n                           \"column\": 72},\n                 \"start\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                           \"line\": 2,\n                           \"display-column\": 64,\n                           \"byte-column\": 64,\n                           \"column\": 64},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                            \"line\": 2,\n                            \"display-column\": 73,\n                            \"byte-column\": 73,\n                            \"column\": 73}}],\n  \"metadata\": {\"cwe\": 122},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 24,\n                         \"byte-column\": 24,\n                         \"column\": 24},\n            \"description\": \"capacity: 4 bytes\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"following 'false' branch (when 'p' is non-NULL)...\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 55,\n                         \"byte-column\": 55,\n                         \"column\": 55},\n            \"description\": \"...to here\",\n            \"function\": \"f\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\fixed_bounds_bad.c\",\n                         \"line\": 2,\n                         \"display-column\": 72,\n                         \"byte-column\": 72,\n                         \"column\": 72},\n            \"description\": \"out-of-bounds write at byte 4 but region ends at byte 4\",\n            \"function\": \"f\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+        "elapsed_seconds": 0.125
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 1,
+  "normalization_revision": "identifier-category-table-2"
+}

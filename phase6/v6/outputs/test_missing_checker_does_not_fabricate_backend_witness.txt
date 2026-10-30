@@ -1,0 +1,6 @@
+test_missing_checker_does_not_fabricate_backend_witness (phase6.v6.test_semantics.LiveTests.test_missing_checker_does_not_fabricate_backend_witness) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.111s
+
+OK

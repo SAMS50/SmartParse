@@ -1,0 +1,165 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "cppcheck",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+    "kind": "cppcheck",
+    "version": "2.16.0",
+    "format": "cppcheck-xml"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c",
+    "sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+    "shell": false,
+    "command": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "--xml",
+      "--xml-version=2",
+      "--enable=warning",
+      "--std=c11",
+      "--platform=win64",
+      "--max-configs=1",
+      "--error-exitcode=1",
+      "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external dqyz6q1f\\cache",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c",
+      "line": 1,
+      "column": 26,
+      "severity": "warning",
+      "message": "Logical conjunction always evaluates to false: x < 5 && x > 10. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+      "diagnostic_id": "incorrectLogicOperator",
+      "category": "program logic",
+      "related": [],
+      "inconclusive": false,
+      "context_note": false,
+      "column_kind": "tool-reported",
+      "short_message": "Logical conjunction always evaluates to false: x < 5 && x > 10.",
+      "cwe": "570",
+      "source_bound": true,
+      "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1; return 0; }",
+      "id": "X-5db03c2b130d757739f3",
+      "tool": {
+        "id": "cppcheck",
+        "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "kind": "cppcheck",
+        "version": "2.16.0",
+        "format": "cppcheck-xml"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+        "shell": false,
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning",
+          "--std=c11",
+          "--platform=win64",
+          "--max-configs=1",
+          "--error-exitcode=1",
+          "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external dqyz6q1f\\cache",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c ...\r\n",
+    "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: x &lt; 5 &amp;&amp; x &gt; 10.\" verbose=\"Logical conjunction always evaluates to false: x &lt; 5 &amp;&amp; x &gt; 10. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v6/fixtures/contradiction_bad.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c\" line=\"1\" column=\"26\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+    "returncode": 1
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "Cppcheck 2.16.0\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.109,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+        "stderr": "",
+        "elapsed_seconds": 0.016
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning",
+          "--std=c11",
+          "--platform=win64",
+          "--max-configs=1",
+          "--error-exitcode=1",
+          "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external dqyz6q1f\\cache",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c"
+        ],
+        "status": "completed",
+        "returncode": 1,
+        "stdout_sha256": "0c3c4f80cbed6d972b7083eecfbbde635e1f68b94ecec870c5f692e8c0472f5d",
+        "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: x &lt; 5 &amp;&amp; x &gt; 10.\" verbose=\"Logical conjunction always evaluates to false: x &lt; 5 &amp;&amp; x &gt; 10. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v6/fixtures/contradiction_bad.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c\" line=\"1\" column=\"26\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+        "elapsed_seconds": 0.078
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 1,
+  "normalization_revision": "identifier-category-table-2"
+}

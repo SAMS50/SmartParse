@@ -1,0 +1,15 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "unittest",
+    "test_smartparse_cli",
+    "-v"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 60,
+  "elapsed_seconds": 1.594,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\targeted.log"
+}

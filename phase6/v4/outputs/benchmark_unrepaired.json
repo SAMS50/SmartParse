@@ -1,0 +1,3361 @@
+{
+  "schema": "smartparse.unaffected_regions",
+  "schema_version": "1.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+    "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+    "original_unchanged": true
+  },
+  "recovery_report": {
+    "schema": "smartparse.repair_for_analysis",
+    "schema_version": "1.0",
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "original_unchanged": true
+    },
+    "baseline": {
+      "immutable": true,
+      "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "analysis": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 30,
+          "errors": 7,
+          "warnings": 12,
+          "notes": 11,
+          "categories": {
+            "syntax": 2,
+            "semantic/type": 5,
+            "compiler warning": 12,
+            "unknown": 11
+          }
+        },
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 30,
+            "column": 21,
+            "severity": "error",
+            "message": "expected ';' after top level declarator",
+            "backend": "clang",
+            "category": "syntax",
+            "source_snippet": "int global_count = 0",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 82,
+            "column": 13,
+            "severity": "error",
+            "message": "expected ';' after return statement",
+            "backend": "clang",
+            "category": "syntax",
+            "source_snippet": "    return 0",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 74,
+            "column": 5,
+            "severity": "warning",
+            "message": "'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte)",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+            "diagnostic_id": "-Wfortify-source"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 104,
+            "column": 17,
+            "severity": "warning",
+            "message": "using the result of an assignment as a condition without parentheses",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    if (student = NULL) {",
+            "diagnostic_id": "-Wparentheses"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 104,
+            "column": 17,
+            "severity": "note",
+            "message": "place parentheses around the assignment to silence this warning",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "    if (student = NULL) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 104,
+            "column": 17,
+            "severity": "note",
+            "message": "use '==' to turn this assignment into an equality comparison",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "    if (student = NULL) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 115,
+            "column": 28,
+            "severity": "warning",
+            "message": "using the result of an assignment as a condition without parentheses",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "        if (students[i].id = id) {",
+            "diagnostic_id": "-Wparentheses"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 115,
+            "column": 28,
+            "severity": "note",
+            "message": "place parentheses around the assignment to silence this warning",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (students[i].id = id) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 115,
+            "column": 28,
+            "severity": "note",
+            "message": "use '==' to turn this assignment into an equality comparison",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (students[i].id = id) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 129,
+            "column": 12,
+            "severity": "warning",
+            "message": "address of stack memory associated with local variable 'buffer' returned",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    return buffer;",
+            "diagnostic_id": "-Wreturn-stack-address"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 149,
+            "column": 32,
+            "severity": "warning",
+            "message": "using the result of an assignment as a condition without parentheses",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "        if (students[i].active = 1) {",
+            "diagnostic_id": "-Wparentheses"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 149,
+            "column": 32,
+            "severity": "note",
+            "message": "place parentheses around the assignment to silence this warning",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (students[i].active = 1) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 149,
+            "column": 32,
+            "severity": "note",
+            "message": "use '==' to turn this assignment into an equality comparison",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (students[i].active = 1) {",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 164,
+            "column": 38,
+            "severity": "warning",
+            "message": "if statement has empty body",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    if (percent < 0 || percent > 100); {",
+            "diagnostic_id": "-Wempty-body"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 164,
+            "column": 38,
+            "severity": "note",
+            "message": "put the semicolon on a separate line to silence this warning",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": null,
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 236,
+            "column": 13,
+            "severity": "warning",
+            "message": "address of stack memory associated with local variable 'local' returned",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    return &local;",
+            "diagnostic_id": "-Wreturn-stack-address"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 292,
+            "column": 24,
+            "severity": "warning",
+            "message": "format specifies type 'int *' but the argument has type 'int'",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    sscanf(text, \"%d\", value);",
+            "diagnostic_id": "-Wformat"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 351,
+            "column": 23,
+            "severity": "warning",
+            "message": "using the result of an assignment as a condition without parentheses",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "        if (values[i] = target)",
+            "diagnostic_id": "-Wparentheses"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 351,
+            "column": 23,
+            "severity": "note",
+            "message": "place parentheses around the assignment to silence this warning",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (values[i] = target)",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 351,
+            "column": 23,
+            "severity": "note",
+            "message": "use '==' to turn this assignment into an equality comparison",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "        if (values[i] = target)",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 393,
+            "column": 12,
+            "severity": "error",
+            "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": "    return \"hello\";",
+            "diagnostic_id": "-Wint-conversion"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 409,
+            "column": 25,
+            "severity": "error",
+            "message": "too few arguments to function call, expected 2, have 1",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": "    return add_numbers(1);",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 85,
+            "column": 5,
+            "severity": "note",
+            "message": "'add_numbers' declared here",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "int add_numbers(int a, int b)",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 414,
+            "column": 5,
+            "severity": "error",
+            "message": "use of undeclared identifier 'mystery_value'",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": "    mystery_value = 12;",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 415,
+            "column": 12,
+            "severity": "error",
+            "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": "    return mystery_value;",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 212,
+            "column": 5,
+            "severity": "note",
+            "message": "'last_value' declared here",
+            "backend": "clang",
+            "category": "unknown",
+            "source_snippet": "int last_value(int values[], int length)",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 415,
+            "column": 12,
+            "severity": "error",
+            "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+            "backend": "clang",
+            "category": "semantic/type",
+            "source_snippet": "    return mystery_value;",
+            "diagnostic_id": "-Wint-conversion"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 421,
+            "column": 20,
+            "severity": "warning",
+            "message": "format specifies type 'int' but the argument has type 'long'",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    printf(\"%d\\n\", value);",
+            "diagnostic_id": "-Wformat"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 494,
+            "column": 28,
+            "severity": "warning",
+            "message": "multi-character character constant",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    while (text[length] != '\\\\0')",
+            "diagnostic_id": "-Wmultichar"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": 494,
+            "column": 25,
+            "severity": "warning",
+            "message": "result of comparison of constant 23600 with expression of type 'const char' is always true",
+            "backend": "clang",
+            "category": "compiler warning",
+            "source_snippet": "    while (text[length] != '\\\\0')",
+            "diagnostic_id": "-Wtautological-constant-out-of-range-compare"
+          }
+        ],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 1,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n"
+        },
+        "unrecognized_output": []
+      },
+      "eligibility": {
+        "schema": "smartparse.analysis_eligibility",
+        "schema_version": "1.0",
+        "manifest": {
+          "source": {
+            "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+            "bytes": 9372,
+            "physical_lines": 500,
+            "original_source_unchanged": true,
+            "pre_analysis_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+            "snapshot_kind": "original",
+            "original_file_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+          },
+          "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+          "requested_standard": null,
+          "include_directories": [],
+          "macro_definitions": [],
+          "warning_options": {
+            "compiler": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info"
+            ],
+            "analyzer": []
+          },
+          "checker_options": "driver defaults; query recorded if static analysis requested",
+          "tool_contexts": {
+            "compiler": {
+              "compiler": {
+                "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "backend": "clang",
+                "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+                "flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info"
+                ]
+              },
+              "target": "x86_64-w64-windows-gnu",
+              "standard_macros": {
+                "__SIZEOF_POINTER__": "8",
+                "__STDC_VERSION__": "201710L",
+                "__STDC__": "1"
+              },
+              "system_include_paths": [
+                "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+                "C:/MinGW/mingw32/include",
+                "C:/MinGW/include"
+              ]
+            }
+          },
+          "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned",
+          "include_environment": {
+            "CPATH": null,
+            "C_INCLUDE_PATH": null,
+            "INCLUDE": null,
+            "SDKROOT": null
+          }
+        },
+        "stages": {
+          "compiler": {
+            "completion": "completed",
+            "returncode": 1,
+            "frontend_accepted": false
+          },
+          "analyzer": {
+            "completion": "not_attempted",
+            "returncode": null
+          },
+          "preprocessing_probe": {
+            "status": "see_recovery_budget_log"
+          }
+        },
+        "blockers": [
+          {
+            "stage": "compiler",
+            "category": "syntax",
+            "message": "expected ';' after top level declarator",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 30,
+              "column": 21
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "syntax",
+            "message": "expected ';' after return statement",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 82,
+              "column": 13
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "semantic/type",
+            "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 393,
+              "column": 12
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "semantic/type",
+            "message": "too few arguments to function call, expected 2, have 1",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 409,
+              "column": 25
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "semantic/type",
+            "message": "use of undeclared identifier 'mystery_value'",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 414,
+              "column": 5
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "semantic/type",
+            "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 415,
+              "column": 12
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          },
+          {
+            "stage": "compiler",
+            "category": "semantic/type",
+            "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 415,
+              "column": 12
+            },
+            "basis": "compiler-reported error; not a new independent defect"
+          }
+        ],
+        "region_inventory": {
+          "status": "partial",
+          "regions": [
+            {
+              "id": "function:1111:main",
+              "kind": "function",
+              "name": "main",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 1111,
+              "end_byte_exclusive": 2227,
+              "start_line": 44,
+              "end_line": 83,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:2229:add_numbers",
+              "kind": "function",
+              "name": "add_numbers",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 2229,
+              "end_byte_exclusive": 2317,
+              "start_line": 85,
+              "end_line": 90,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:2319:average",
+              "kind": "function",
+              "name": "average",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 2319,
+              "end_byte_exclusive": 2481,
+              "start_line": 92,
+              "end_line": 100,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:2483:print_student",
+              "kind": "function",
+              "name": "print_student",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 2483,
+              "end_byte_exclusive": 2684,
+              "start_line": 102,
+              "end_line": 109,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:2686:find_student",
+              "kind": "function",
+              "name": "find_student",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 2686,
+              "end_byte_exclusive": 2878,
+              "start_line": 111,
+              "end_line": 120,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:2880:duplicate_text",
+              "kind": "function",
+              "name": "duplicate_text",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 2880,
+              "end_byte_exclusive": 3048,
+              "start_line": 122,
+              "end_line": 130,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3050:reset_student",
+              "kind": "function",
+              "name": "reset_student",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3050,
+              "end_byte_exclusive": 3191,
+              "start_line": 132,
+              "end_line": 138,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3193:unsafe_divide",
+              "kind": "function",
+              "name": "unsafe_divide",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3193,
+              "end_byte_exclusive": 3246,
+              "start_line": 140,
+              "end_line": 143,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3248:count_active",
+              "kind": "function",
+              "name": "count_active",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3248,
+              "end_byte_exclusive": 3451,
+              "start_line": 145,
+              "end_line": 154,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3453:print_error",
+              "kind": "function",
+              "name": "print_error",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3453,
+              "end_byte_exclusive": 3550,
+              "start_line": 156,
+              "end_line": 159,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3595:calculate_discount",
+              "kind": "function",
+              "name": "calculate_discount",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3595,
+              "end_byte_exclusive": 3758,
+              "start_line": 162,
+              "end_line": 168,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3760:maximum",
+              "kind": "function",
+              "name": "maximum",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3760,
+              "end_byte_exclusive": 3836,
+              "start_line": 170,
+              "end_line": 175,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3838:is_even",
+              "kind": "function",
+              "name": "is_even",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3838,
+              "end_byte_exclusive": 3886,
+              "start_line": 177,
+              "end_line": 180,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:3888:clamp_value",
+              "kind": "function",
+              "name": "clamp_value",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 3888,
+              "end_byte_exclusive": 4038,
+              "start_line": 182,
+              "end_line": 189,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4040:absolute_value",
+              "kind": "function",
+              "name": "absolute_value",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4040,
+              "end_byte_exclusive": 4142,
+              "start_line": 191,
+              "end_line": 196,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4180:sum_array",
+              "kind": "function",
+              "name": "sum_array",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4180,
+              "end_byte_exclusive": 4319,
+              "start_line": 199,
+              "end_line": 205,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4321:copy_name",
+              "kind": "function",
+              "name": "copy_name",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4321,
+              "end_byte_exclusive": 4433,
+              "start_line": 207,
+              "end_line": 210,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4435:last_value",
+              "kind": "function",
+              "name": "last_value",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4435,
+              "end_byte_exclusive": 4506,
+              "start_line": 212,
+              "end_line": 215,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4508:clear_buffer",
+              "kind": "function",
+              "name": "clear_buffer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4508,
+              "end_byte_exclusive": 4589,
+              "start_line": 217,
+              "end_line": 220,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4591:compare_names",
+              "kind": "function",
+              "name": "compare_names",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4591,
+              "end_byte_exclusive": 4675,
+              "start_line": 222,
+              "end_line": 225,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4677:append_suffix",
+              "kind": "function",
+              "name": "append_suffix",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4677,
+              "end_byte_exclusive": 4738,
+              "start_line": 227,
+              "end_line": 230,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4781:make_integer",
+              "kind": "function",
+              "name": "make_integer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4781,
+              "end_byte_exclusive": 4855,
+              "start_line": 233,
+              "end_line": 237,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:4857:make_buffer",
+              "kind": "function",
+              "name": "make_buffer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 4857,
+              "end_byte_exclusive": 5044,
+              "start_line": 239,
+              "end_line": 247,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5046:release_twice",
+              "kind": "function",
+              "name": "release_twice",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5046,
+              "end_byte_exclusive": 5120,
+              "start_line": 249,
+              "end_line": 253,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5122:read_pointer",
+              "kind": "function",
+              "name": "read_pointer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5122,
+              "end_byte_exclusive": 5177,
+              "start_line": 255,
+              "end_line": 258,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5179:overwrite_pointer",
+              "kind": "function",
+              "name": "overwrite_pointer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5179,
+              "end_byte_exclusive": 5263,
+              "start_line": 260,
+              "end_line": 264,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5265:leak_memory",
+              "kind": "function",
+              "name": "leak_memory",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5265,
+              "end_byte_exclusive": 5383,
+              "start_line": 266,
+              "end_line": 271,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5418:read_first_number",
+              "kind": "function",
+              "name": "read_first_number",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5418,
+              "end_byte_exclusive": 5579,
+              "start_line": 274,
+              "end_line": 281,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5581:write_report",
+              "kind": "function",
+              "name": "write_report",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5581,
+              "end_byte_exclusive": 5706,
+              "start_line": 283,
+              "end_line": 287,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5708:parse_number",
+              "kind": "function",
+              "name": "parse_number",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5708,
+              "end_byte_exclusive": 5810,
+              "start_line": 289,
+              "end_line": 294,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5812:read_user_name",
+              "kind": "function",
+              "name": "read_user_name",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5812,
+              "end_byte_exclusive": 5914,
+              "start_line": 296,
+              "end_line": 301,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:5916:file_exists",
+              "kind": "function",
+              "name": "file_exists",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 5916,
+              "end_byte_exclusive": 6060,
+              "start_line": 303,
+              "end_line": 310,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:6098:factorial",
+              "kind": "function",
+              "name": "factorial",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 6098,
+              "end_byte_exclusive": 6222,
+              "start_line": 313,
+              "end_line": 320,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:6224:binary_search",
+              "kind": "function",
+              "name": "binary_search",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 6224,
+              "end_byte_exclusive": 6555,
+              "start_line": 322,
+              "end_line": 335,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:6557:reverse_array",
+              "kind": "function",
+              "name": "reverse_array",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 6557,
+              "end_byte_exclusive": 6764,
+              "start_line": 337,
+              "end_line": 345,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:6766:count_matches",
+              "kind": "function",
+              "name": "count_matches",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 6766,
+              "end_byte_exclusive": 6959,
+              "start_line": 347,
+              "end_line": 355,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7128:is_valid_date",
+              "kind": "function",
+              "name": "is_valid_date",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7128,
+              "end_byte_exclusive": 7292,
+              "start_line": 366,
+              "end_line": 373,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7294:set_status",
+              "kind": "function",
+              "name": "set_status",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7294,
+              "end_byte_exclusive": 7361,
+              "start_line": 375,
+              "end_line": 378,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7363:student_average",
+              "kind": "function",
+              "name": "student_average",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7363,
+              "end_byte_exclusive": 7436,
+              "start_line": 380,
+              "end_line": 383,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7438:rename_student",
+              "kind": "function",
+              "name": "rename_student",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7438,
+              "end_byte_exclusive": 7530,
+              "start_line": 385,
+              "end_line": 388,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7576:return_text",
+              "kind": "function",
+              "name": "return_text",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7576,
+              "end_byte_exclusive": 7621,
+              "start_line": 391,
+              "end_line": 394,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7623:expects_integer",
+              "kind": "function",
+              "name": "expects_integer",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7623,
+              "end_byte_exclusive": 7685,
+              "start_line": 396,
+              "end_line": 399,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7687:missing_return",
+              "kind": "function",
+              "name": "missing_return",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7687,
+              "end_byte_exclusive": 7761,
+              "start_line": 401,
+              "end_line": 405,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7826:undeclared_demo",
+              "kind": "function",
+              "name": "undeclared_demo",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7826,
+              "end_byte_exclusive": 7905,
+              "start_line": 412,
+              "end_line": 416,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:7907:wrong_format",
+              "kind": "function",
+              "name": "wrong_format",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 7907,
+              "end_byte_exclusive": 7987,
+              "start_line": 418,
+              "end_line": 422,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8041:next_identifier",
+              "kind": "function",
+              "name": "next_identifier",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8041,
+              "end_byte_exclusive": 8097,
+              "start_line": 425,
+              "end_line": 428,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8099:set_global_label",
+              "kind": "function",
+              "name": "set_global_label",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8099,
+              "end_byte_exclusive": 8215,
+              "start_line": 430,
+              "end_line": 434,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8217:reset_global_label",
+              "kind": "function",
+              "name": "reset_global_label",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8217,
+              "end_byte_exclusive": 8302,
+              "start_line": 436,
+              "end_line": 440,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8304:toggle_debug",
+              "kind": "function",
+              "name": "toggle_debug",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8304,
+              "end_byte_exclusive": 8388,
+              "start_line": 442,
+              "end_line": 446,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8437:percentage",
+              "kind": "function",
+              "name": "percentage",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8437,
+              "end_byte_exclusive": 8509,
+              "start_line": 449,
+              "end_line": 452,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8511:safe_modulo",
+              "kind": "function",
+              "name": "safe_modulo",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8511,
+              "end_byte_exclusive": 8562,
+              "start_line": 454,
+              "end_line": 457,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8564:sign_of",
+              "kind": "function",
+              "name": "sign_of",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8564,
+              "end_byte_exclusive": 8683,
+              "start_line": 459,
+              "end_line": 466,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8732:initialize_scores",
+              "kind": "function",
+              "name": "initialize_scores",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8732,
+              "end_byte_exclusive": 8873,
+              "start_line": 469,
+              "end_line": 475,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:8875:get_score",
+              "kind": "function",
+              "name": "get_score",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 8875,
+              "end_byte_exclusive": 9002,
+              "start_line": 477,
+              "end_line": 482,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:9004:swap_values",
+              "kind": "function",
+              "name": "swap_values",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 9004,
+              "end_byte_exclusive": 9066,
+              "start_line": 484,
+              "end_line": 488,
+              "reliability": "validated_ast_range"
+            },
+            {
+              "id": "function:9115:string_length_manual",
+              "kind": "function",
+              "name": "string_length_manual",
+              "mapping": "physical-main-file-byte-offsets",
+              "start_byte": 9115,
+              "end_byte_exclusive": 9256,
+              "start_line": 491,
+              "end_line": 497,
+              "reliability": "validated_ast_range"
+            }
+          ],
+          "exclusions": [
+            {
+              "name": "wrong_argument_count",
+              "reason": "body contains recovery AST nodes"
+            }
+          ],
+          "basis": "v2 physical AST validation; recovery does not certify analyzer path coverage"
+        },
+        "regions": [
+          {
+            "id": "translation_unit",
+            "kind": "translation_unit",
+            "name": null,
+            "start_line": 1,
+            "end_line": 500,
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:1111:main",
+            "kind": "function",
+            "name": "main",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 1111,
+            "end_byte_exclusive": 2227,
+            "start_line": 44,
+            "end_line": 83,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:2229:add_numbers",
+            "kind": "function",
+            "name": "add_numbers",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 2229,
+            "end_byte_exclusive": 2317,
+            "start_line": 85,
+            "end_line": 90,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:2319:average",
+            "kind": "function",
+            "name": "average",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 2319,
+            "end_byte_exclusive": 2481,
+            "start_line": 92,
+            "end_line": 100,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:2483:print_student",
+            "kind": "function",
+            "name": "print_student",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 2483,
+            "end_byte_exclusive": 2684,
+            "start_line": 102,
+            "end_line": 109,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:2686:find_student",
+            "kind": "function",
+            "name": "find_student",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 2686,
+            "end_byte_exclusive": 2878,
+            "start_line": 111,
+            "end_line": 120,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:2880:duplicate_text",
+            "kind": "function",
+            "name": "duplicate_text",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 2880,
+            "end_byte_exclusive": 3048,
+            "start_line": 122,
+            "end_line": 130,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3050:reset_student",
+            "kind": "function",
+            "name": "reset_student",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3050,
+            "end_byte_exclusive": 3191,
+            "start_line": 132,
+            "end_line": 138,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3193:unsafe_divide",
+            "kind": "function",
+            "name": "unsafe_divide",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3193,
+            "end_byte_exclusive": 3246,
+            "start_line": 140,
+            "end_line": 143,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3248:count_active",
+            "kind": "function",
+            "name": "count_active",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3248,
+            "end_byte_exclusive": 3451,
+            "start_line": 145,
+            "end_line": 154,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3453:print_error",
+            "kind": "function",
+            "name": "print_error",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3453,
+            "end_byte_exclusive": 3550,
+            "start_line": 156,
+            "end_line": 159,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3595:calculate_discount",
+            "kind": "function",
+            "name": "calculate_discount",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3595,
+            "end_byte_exclusive": 3758,
+            "start_line": 162,
+            "end_line": 168,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3760:maximum",
+            "kind": "function",
+            "name": "maximum",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3760,
+            "end_byte_exclusive": 3836,
+            "start_line": 170,
+            "end_line": 175,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3838:is_even",
+            "kind": "function",
+            "name": "is_even",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3838,
+            "end_byte_exclusive": 3886,
+            "start_line": 177,
+            "end_line": 180,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:3888:clamp_value",
+            "kind": "function",
+            "name": "clamp_value",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 3888,
+            "end_byte_exclusive": 4038,
+            "start_line": 182,
+            "end_line": 189,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4040:absolute_value",
+            "kind": "function",
+            "name": "absolute_value",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4040,
+            "end_byte_exclusive": 4142,
+            "start_line": 191,
+            "end_line": 196,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4180:sum_array",
+            "kind": "function",
+            "name": "sum_array",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4180,
+            "end_byte_exclusive": 4319,
+            "start_line": 199,
+            "end_line": 205,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4321:copy_name",
+            "kind": "function",
+            "name": "copy_name",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4321,
+            "end_byte_exclusive": 4433,
+            "start_line": 207,
+            "end_line": 210,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4435:last_value",
+            "kind": "function",
+            "name": "last_value",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4435,
+            "end_byte_exclusive": 4506,
+            "start_line": 212,
+            "end_line": 215,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4508:clear_buffer",
+            "kind": "function",
+            "name": "clear_buffer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4508,
+            "end_byte_exclusive": 4589,
+            "start_line": 217,
+            "end_line": 220,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4591:compare_names",
+            "kind": "function",
+            "name": "compare_names",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4591,
+            "end_byte_exclusive": 4675,
+            "start_line": 222,
+            "end_line": 225,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4677:append_suffix",
+            "kind": "function",
+            "name": "append_suffix",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4677,
+            "end_byte_exclusive": 4738,
+            "start_line": 227,
+            "end_line": 230,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4781:make_integer",
+            "kind": "function",
+            "name": "make_integer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4781,
+            "end_byte_exclusive": 4855,
+            "start_line": 233,
+            "end_line": 237,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:4857:make_buffer",
+            "kind": "function",
+            "name": "make_buffer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 4857,
+            "end_byte_exclusive": 5044,
+            "start_line": 239,
+            "end_line": 247,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5046:release_twice",
+            "kind": "function",
+            "name": "release_twice",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5046,
+            "end_byte_exclusive": 5120,
+            "start_line": 249,
+            "end_line": 253,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5122:read_pointer",
+            "kind": "function",
+            "name": "read_pointer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5122,
+            "end_byte_exclusive": 5177,
+            "start_line": 255,
+            "end_line": 258,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5179:overwrite_pointer",
+            "kind": "function",
+            "name": "overwrite_pointer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5179,
+            "end_byte_exclusive": 5263,
+            "start_line": 260,
+            "end_line": 264,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5265:leak_memory",
+            "kind": "function",
+            "name": "leak_memory",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5265,
+            "end_byte_exclusive": 5383,
+            "start_line": 266,
+            "end_line": 271,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5418:read_first_number",
+            "kind": "function",
+            "name": "read_first_number",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5418,
+            "end_byte_exclusive": 5579,
+            "start_line": 274,
+            "end_line": 281,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5581:write_report",
+            "kind": "function",
+            "name": "write_report",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5581,
+            "end_byte_exclusive": 5706,
+            "start_line": 283,
+            "end_line": 287,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5708:parse_number",
+            "kind": "function",
+            "name": "parse_number",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5708,
+            "end_byte_exclusive": 5810,
+            "start_line": 289,
+            "end_line": 294,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5812:read_user_name",
+            "kind": "function",
+            "name": "read_user_name",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5812,
+            "end_byte_exclusive": 5914,
+            "start_line": 296,
+            "end_line": 301,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:5916:file_exists",
+            "kind": "function",
+            "name": "file_exists",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 5916,
+            "end_byte_exclusive": 6060,
+            "start_line": 303,
+            "end_line": 310,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:6098:factorial",
+            "kind": "function",
+            "name": "factorial",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 6098,
+            "end_byte_exclusive": 6222,
+            "start_line": 313,
+            "end_line": 320,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:6224:binary_search",
+            "kind": "function",
+            "name": "binary_search",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 6224,
+            "end_byte_exclusive": 6555,
+            "start_line": 322,
+            "end_line": 335,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:6557:reverse_array",
+            "kind": "function",
+            "name": "reverse_array",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 6557,
+            "end_byte_exclusive": 6764,
+            "start_line": 337,
+            "end_line": 345,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:6766:count_matches",
+            "kind": "function",
+            "name": "count_matches",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 6766,
+            "end_byte_exclusive": 6959,
+            "start_line": 347,
+            "end_line": 355,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7128:is_valid_date",
+            "kind": "function",
+            "name": "is_valid_date",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7128,
+            "end_byte_exclusive": 7292,
+            "start_line": 366,
+            "end_line": 373,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7294:set_status",
+            "kind": "function",
+            "name": "set_status",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7294,
+            "end_byte_exclusive": 7361,
+            "start_line": 375,
+            "end_line": 378,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7363:student_average",
+            "kind": "function",
+            "name": "student_average",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7363,
+            "end_byte_exclusive": 7436,
+            "start_line": 380,
+            "end_line": 383,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7438:rename_student",
+            "kind": "function",
+            "name": "rename_student",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7438,
+            "end_byte_exclusive": 7530,
+            "start_line": 385,
+            "end_line": 388,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7576:return_text",
+            "kind": "function",
+            "name": "return_text",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7576,
+            "end_byte_exclusive": 7621,
+            "start_line": 391,
+            "end_line": 394,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7623:expects_integer",
+            "kind": "function",
+            "name": "expects_integer",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7623,
+            "end_byte_exclusive": 7685,
+            "start_line": 396,
+            "end_line": 399,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7687:missing_return",
+            "kind": "function",
+            "name": "missing_return",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7687,
+            "end_byte_exclusive": 7761,
+            "start_line": 401,
+            "end_line": 405,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7826:undeclared_demo",
+            "kind": "function",
+            "name": "undeclared_demo",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7826,
+            "end_byte_exclusive": 7905,
+            "start_line": 412,
+            "end_line": 416,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:7907:wrong_format",
+            "kind": "function",
+            "name": "wrong_format",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 7907,
+            "end_byte_exclusive": 7987,
+            "start_line": 418,
+            "end_line": 422,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8041:next_identifier",
+            "kind": "function",
+            "name": "next_identifier",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8041,
+            "end_byte_exclusive": 8097,
+            "start_line": 425,
+            "end_line": 428,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8099:set_global_label",
+            "kind": "function",
+            "name": "set_global_label",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8099,
+            "end_byte_exclusive": 8215,
+            "start_line": 430,
+            "end_line": 434,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8217:reset_global_label",
+            "kind": "function",
+            "name": "reset_global_label",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8217,
+            "end_byte_exclusive": 8302,
+            "start_line": 436,
+            "end_line": 440,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8304:toggle_debug",
+            "kind": "function",
+            "name": "toggle_debug",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8304,
+            "end_byte_exclusive": 8388,
+            "start_line": 442,
+            "end_line": 446,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8437:percentage",
+            "kind": "function",
+            "name": "percentage",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8437,
+            "end_byte_exclusive": 8509,
+            "start_line": 449,
+            "end_line": 452,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8511:safe_modulo",
+            "kind": "function",
+            "name": "safe_modulo",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8511,
+            "end_byte_exclusive": 8562,
+            "start_line": 454,
+            "end_line": 457,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8564:sign_of",
+            "kind": "function",
+            "name": "sign_of",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8564,
+            "end_byte_exclusive": 8683,
+            "start_line": 459,
+            "end_line": 466,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8732:initialize_scores",
+            "kind": "function",
+            "name": "initialize_scores",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8732,
+            "end_byte_exclusive": 8873,
+            "start_line": 469,
+            "end_line": 475,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:8875:get_score",
+            "kind": "function",
+            "name": "get_score",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 8875,
+            "end_byte_exclusive": 9002,
+            "start_line": 477,
+            "end_line": 482,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:9004:swap_values",
+            "kind": "function",
+            "name": "swap_values",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 9004,
+            "end_byte_exclusive": 9066,
+            "start_line": 484,
+            "end_line": 488,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          },
+          {
+            "id": "function:9115:string_length_manual",
+            "kind": "function",
+            "name": "string_length_manual",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 9115,
+            "end_byte_exclusive": 9256,
+            "start_line": 491,
+            "end_line": 497,
+            "reliability": "validated_ast_range",
+            "compiler_coverage": {
+              "status": "blocked",
+              "reason": "Translation-unit frontend errors prevent a complete claim, including regions without nearby diagnostics."
+            },
+            "analyzer_coverage": {
+              "status": "not_attempted",
+              "reason": "Pass was not requested."
+            }
+          }
+        ],
+        "mapping": {
+          "source_edits_applied": false,
+          "private_overlay_edits": false,
+          "function_locations": "physical bytes of this source snapshot; variant maps stored in recovery provenance"
+        },
+        "analysis": {
+          "schema_version": "1.0",
+          "analysis_mode": "extended_c",
+          "status": "completed",
+          "compiler": {
+            "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "backend": "clang",
+            "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+            "flags": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info"
+            ]
+          },
+          "summary": {
+            "total_diagnostics": 30,
+            "errors": 7,
+            "warnings": 12,
+            "notes": 11,
+            "categories": {
+              "syntax": 2,
+              "semantic/type": 5,
+              "compiler warning": 12,
+              "unknown": 11
+            }
+          },
+          "diagnostics": [
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 30,
+              "column": 21,
+              "severity": "error",
+              "message": "expected ';' after top level declarator",
+              "backend": "clang",
+              "category": "syntax",
+              "source_snippet": "int global_count = 0",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 82,
+              "column": 13,
+              "severity": "error",
+              "message": "expected ';' after return statement",
+              "backend": "clang",
+              "category": "syntax",
+              "source_snippet": "    return 0",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 74,
+              "column": 5,
+              "severity": "warning",
+              "message": "'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte)",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+              "diagnostic_id": "-Wfortify-source"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 104,
+              "column": 17,
+              "severity": "warning",
+              "message": "using the result of an assignment as a condition without parentheses",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    if (student = NULL) {",
+              "diagnostic_id": "-Wparentheses"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 104,
+              "column": 17,
+              "severity": "note",
+              "message": "place parentheses around the assignment to silence this warning",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "    if (student = NULL) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 104,
+              "column": 17,
+              "severity": "note",
+              "message": "use '==' to turn this assignment into an equality comparison",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "    if (student = NULL) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 115,
+              "column": 28,
+              "severity": "warning",
+              "message": "using the result of an assignment as a condition without parentheses",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "        if (students[i].id = id) {",
+              "diagnostic_id": "-Wparentheses"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 115,
+              "column": 28,
+              "severity": "note",
+              "message": "place parentheses around the assignment to silence this warning",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (students[i].id = id) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 115,
+              "column": 28,
+              "severity": "note",
+              "message": "use '==' to turn this assignment into an equality comparison",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (students[i].id = id) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 129,
+              "column": 12,
+              "severity": "warning",
+              "message": "address of stack memory associated with local variable 'buffer' returned",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    return buffer;",
+              "diagnostic_id": "-Wreturn-stack-address"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 149,
+              "column": 32,
+              "severity": "warning",
+              "message": "using the result of an assignment as a condition without parentheses",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "        if (students[i].active = 1) {",
+              "diagnostic_id": "-Wparentheses"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 149,
+              "column": 32,
+              "severity": "note",
+              "message": "place parentheses around the assignment to silence this warning",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (students[i].active = 1) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 149,
+              "column": 32,
+              "severity": "note",
+              "message": "use '==' to turn this assignment into an equality comparison",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (students[i].active = 1) {",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 164,
+              "column": 38,
+              "severity": "warning",
+              "message": "if statement has empty body",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    if (percent < 0 || percent > 100); {",
+              "diagnostic_id": "-Wempty-body"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 164,
+              "column": 38,
+              "severity": "note",
+              "message": "put the semicolon on a separate line to silence this warning",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": null,
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 236,
+              "column": 13,
+              "severity": "warning",
+              "message": "address of stack memory associated with local variable 'local' returned",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    return &local;",
+              "diagnostic_id": "-Wreturn-stack-address"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 292,
+              "column": 24,
+              "severity": "warning",
+              "message": "format specifies type 'int *' but the argument has type 'int'",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    sscanf(text, \"%d\", value);",
+              "diagnostic_id": "-Wformat"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 351,
+              "column": 23,
+              "severity": "warning",
+              "message": "using the result of an assignment as a condition without parentheses",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "        if (values[i] = target)",
+              "diagnostic_id": "-Wparentheses"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 351,
+              "column": 23,
+              "severity": "note",
+              "message": "place parentheses around the assignment to silence this warning",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (values[i] = target)",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 351,
+              "column": 23,
+              "severity": "note",
+              "message": "use '==' to turn this assignment into an equality comparison",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "        if (values[i] = target)",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 393,
+              "column": 12,
+              "severity": "error",
+              "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+              "backend": "clang",
+              "category": "semantic/type",
+              "source_snippet": "    return \"hello\";",
+              "diagnostic_id": "-Wint-conversion"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 409,
+              "column": 25,
+              "severity": "error",
+              "message": "too few arguments to function call, expected 2, have 1",
+              "backend": "clang",
+              "category": "semantic/type",
+              "source_snippet": "    return add_numbers(1);",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 85,
+              "column": 5,
+              "severity": "note",
+              "message": "'add_numbers' declared here",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "int add_numbers(int a, int b)",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 414,
+              "column": 5,
+              "severity": "error",
+              "message": "use of undeclared identifier 'mystery_value'",
+              "backend": "clang",
+              "category": "semantic/type",
+              "source_snippet": "    mystery_value = 12;",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 415,
+              "column": 12,
+              "severity": "error",
+              "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+              "backend": "clang",
+              "category": "semantic/type",
+              "source_snippet": "    return mystery_value;",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 212,
+              "column": 5,
+              "severity": "note",
+              "message": "'last_value' declared here",
+              "backend": "clang",
+              "category": "unknown",
+              "source_snippet": "int last_value(int values[], int length)",
+              "diagnostic_id": null
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 415,
+              "column": 12,
+              "severity": "error",
+              "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+              "backend": "clang",
+              "category": "semantic/type",
+              "source_snippet": "    return mystery_value;",
+              "diagnostic_id": "-Wint-conversion"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 421,
+              "column": 20,
+              "severity": "warning",
+              "message": "format specifies type 'int' but the argument has type 'long'",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    printf(\"%d\\n\", value);",
+              "diagnostic_id": "-Wformat"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 494,
+              "column": 28,
+              "severity": "warning",
+              "message": "multi-character character constant",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    while (text[length] != '\\\\0')",
+              "diagnostic_id": "-Wmultichar"
+            },
+            {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+              "line": 494,
+              "column": 25,
+              "severity": "warning",
+              "message": "result of comparison of constant 23600 with expression of type 'const char' is always true",
+              "backend": "clang",
+              "category": "compiler warning",
+              "source_snippet": "    while (text[length] != '\\\\0')",
+              "diagnostic_id": "-Wtautological-constant-out-of-range-compare"
+            }
+          ],
+          "tool_issues": [],
+          "execution": {
+            "returncode": 1,
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+            ]
+          },
+          "raw_output": {
+            "stdout": "",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n"
+          },
+          "unrecognized_output": []
+        }
+      },
+      "analysis_sha256": "a25986b10a97876eca54945acd65ad3b7d481647143ce8aeec6e53a4ef345f36"
+    },
+    "recovery": {
+      "enabled": false,
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 64,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 90,
+        "call_seconds": 10
+      },
+      "candidates": [],
+      "accepted_variants": [],
+      "non_whitelisted_suggestions": [],
+      "stop_reason": "repair_not_requested",
+      "eligibility_change": {
+        "baseline_frontend_accepted": false,
+        "final_frontend_accepted": false,
+        "frontend_newly_eligible": false,
+        "analyzer_newly_completed": false,
+        "function_path_coverage_certified": false,
+        "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+      },
+      "temporary_workspace_removed": true,
+      "usage": {
+        "compiler_invocations": 15,
+        "elapsed_seconds": 3.203,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+            "stderr": "",
+            "elapsed_seconds": 0.25
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.234
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.156
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.235
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.219
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.171
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.157
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-ferror-limit=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.187
+          },
+          {
+            "number": 9,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fno-diagnostics-fixit-info",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.203
+          },
+          {
+            "number": 10,
+            "role": "target_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-dumpmachine"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "14ca52f473c03e43adcd02ecd2a6da4e554e7261eb736bfcbf935762772e3ba2",
+            "stderr": "",
+            "elapsed_seconds": 0.157
+          },
+          {
+            "number": 11,
+            "role": "standard_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-dM",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "31767a9fe8821454353b4c28b5a156ea1ed7aa73036ce6a7c710e2fb6cc8f78f",
+            "stderr": "",
+            "elapsed_seconds": 0.156
+          },
+          {
+            "number": 12,
+            "role": "include_context",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-v",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "4bf30b2f3e0bd46aad5129c162b8d6b0449442808e67c754bf7e0bb3505eecc1",
+            "stderr": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\r\n (in-process)\r\n \"C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\" -cc1 -triple x86_64-w64-windows-gnu -E -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name - -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -resource-dir C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17 -internal-isystem C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include -internal-isystem C:/MinGW/mingw32/include -internal-isystem C:/MinGW/mingw32/usr/include -internal-isystem C:/MinGW/include -fdebug-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o - -x c -\r\nclang -cc1 version 17.0.2 based upon LLVM 17.0.2 default target x86_64-w64-windows-gnu\r\nignoring nonexistent directory \"C:/MinGW/mingw32/usr/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include\r\n C:/MinGW/mingw32/include\r\n C:/MinGW/include\r\nEnd of search list.\r\n",
+            "elapsed_seconds": 0.172
+          },
+          {
+            "number": 13,
+            "role": "compiler_validation",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n",
+            "elapsed_seconds": 0.297
+          },
+          {
+            "number": 14,
+            "role": "ast_inventory",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-Xclang",
+              "-ast-dump=json",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+            ],
+            "status": "completed",
+            "returncode": 1,
+            "stdout_sha256": "e28332da4032cdbf60f38cdfb44e7042c64712fc6760915623833876938dc9dc",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n",
+            "elapsed_seconds": 0.281
+          },
+          {
+            "number": 15,
+            "role": "preprocessing_guard",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-E",
+              "-P",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "af3f57efdf90ea45e7e84acc5b5f692f3dc4c7a102875740ed4a379c1fc12b5f",
+            "stderr": "",
+            "elapsed_seconds": 0.234
+          }
+        ]
+      },
+      "budget_exhausted": false
+    },
+    "repair_conditioned_findings": []
+  },
+  "isolation": {
+    "enabled": true,
+    "experimental": true,
+    "limits": {
+      "exclusions": 8,
+      "variants": 1,
+      "invocations": 64,
+      "analyzer_invocations": 5,
+      "total_seconds": 120,
+      "call_seconds": 10
+    },
+    "status": "abstained",
+    "reason": "main-file preprocessing directives other than includes are not supported",
+    "inventory": [],
+    "excluded_functions": [],
+    "retained_functions": [],
+    "blockers": [],
+    "variant": null,
+    "eligibility_improved": false,
+    "function_path_coverage_certified": false,
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 21,
+      "analyzer_invocations": 3,
+      "elapsed_seconds": 4.562,
+      "isolation_calls": [
+        {
+          "number": 1,
+          "role": "isolation_analyzer_capability",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.203
+        },
+        {
+          "number": 2,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\n7 errors generated.\r\n",
+          "elapsed_seconds": 0.187
+        },
+        {
+          "number": 3,
+          "role": "isolation_checker_context",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-Xclang",
+            "-analyzer-list-enabled-checkers",
+            "-o",
+            "nul",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "6515f897a5ca55e700707f119243fcbda12a6d6b3b884645ce6f7701665b322d",
+          "stderr": "",
+          "elapsed_seconds": 0.172
+        },
+        {
+          "number": 4,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-fcbe7dwv\\probe.json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-fcbe7dwv\\probe.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.203
+        },
+        {
+          "number": 5,
+          "role": "vfs_identity",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-E",
+            "-ivfsoverlay",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-fcbe7dwv\\probe.json",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse-isolation-fcbe7dwv\\probe.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "82a7bfb2a668cdc17f88f11b65fa5e74a254ff8471e4c558832f09b04f6a85ce",
+          "stderr": "",
+          "elapsed_seconds": 0.219
+        },
+        {
+          "number": 6,
+          "role": "ast_inventory",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Xclang",
+            "-ast-dump=json",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "b0d7f0cfa394aa93ff9b4b809644562c34750dc6ec1bd66a0a3ae6a7697470ee",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:74:5: warning: 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]\r\n    strcpy(error.message, \"sample error message that is too long for buffer\");\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n    if (student = NULL) {\r\n        ~~~~~~~~^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: place parentheses around the assignment to silence this warning\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:17: note: use '==' to turn this assignment into an equality comparison\r\n    if (student = NULL) {\r\n                ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].id = id) {\r\n            ~~~~~~~~~~~~~~~^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:28: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].id = id) {\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]\r\n    return buffer;\r\n           ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (students[i].active = 1) {\r\n            ~~~~~~~~~~~~~~~~~~~^~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: place parentheses around the assignment to silence this warning\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:32: note: use '==' to turn this assignment into an equality comparison\r\n        if (students[i].active = 1) {\r\n                               ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: if statement has empty body [-Wempty-body]\r\n    if (percent < 0 || percent > 100); {\r\n                                     ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: note: put the semicolon on a separate line to silence this warning\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:13: warning: address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]\r\n    return &local;\r\n            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:24: warning: format specifies type 'int *' but the argument has type 'int' [-Wformat]\r\n    sscanf(text, \"%d\", value);\r\n                  ~~   ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]\r\n        if (values[i] = target)\r\n            ~~~~~~~~~~^~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: place parentheses around the assignment to silence this warning\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:23: note: use '==' to turn this assignment into an equality comparison\r\n        if (values[i] = target)\r\n                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:421:20: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]\r\n    printf(\"%d\\n\", value);\r\n            ~~     ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n    while (text[length] != '\\\\0')\r\n                           ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]\r\n    while (text[length] != '\\\\0')\r\n           ~~~~~~~~~~~~ ^  ~~~~~\r\n12 warnings and 7 errors generated.\r\n",
+          "elapsed_seconds": 0.25
+        }
+      ]
+    }
+  },
+  "baseline_static_analysis": {
+    "schema_version": "1.0",
+    "analysis_mode": "clang_static_analyzer",
+    "status": "partial",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 9,
+      "errors": 7,
+      "warnings": 0,
+      "notes": 2,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 5,
+        "compiler warning": 0,
+        "unknown": 2
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 30,
+        "column": 21,
+        "severity": "error",
+        "message": "expected ';' after top level declarator",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "int global_count = 0",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 82,
+        "column": 13,
+        "severity": "error",
+        "message": "expected ';' after return statement",
+        "backend": "clang",
+        "category": "syntax",
+        "source_snippet": "    return 0",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 393,
+        "column": 12,
+        "severity": "error",
+        "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return \"hello\";",
+        "diagnostic_id": "-Wint-conversion"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 409,
+        "column": 25,
+        "severity": "error",
+        "message": "too few arguments to function call, expected 2, have 1",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return add_numbers(1);",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 85,
+        "column": 5,
+        "severity": "note",
+        "message": "'add_numbers' declared here",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "int add_numbers(int a, int b)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 414,
+        "column": 5,
+        "severity": "error",
+        "message": "use of undeclared identifier 'mystery_value'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    mystery_value = 12;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 415,
+        "column": 12,
+        "severity": "error",
+        "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return mystery_value;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 212,
+        "column": 5,
+        "severity": "note",
+        "message": "'last_value' declared here",
+        "backend": "clang",
+        "category": "unknown",
+        "source_snippet": "int last_value(int values[], int length)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 415,
+        "column": 12,
+        "severity": "error",
+        "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+        "backend": "clang",
+        "category": "semantic/type",
+        "source_snippet": "    return mystery_value;",
+        "diagnostic_id": "-Wint-conversion"
+      }
+    ],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 1,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--analyze",
+        "-x",
+        "c",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-Xanalyzer",
+        "-analyzer-output=text",
+        "-o",
+        "nul",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:30:21: error: expected ';' after top level declarator\r\nint global_count = 0\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:82:13: error: expected ';' after return statement\r\n    return 0\r\n            ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: error: incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]\r\n    return \"hello\";\r\n           ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:25: error: too few arguments to function call, expected 2, have 1\r\n    return add_numbers(1);\r\n           ~~~~~~~~~~~  ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: 'add_numbers' declared here\r\nint add_numbers(int a, int b)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: use of undeclared identifier 'mystery_value'\r\n    mystery_value = 12;\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: use of undeclared identifier 'mystery_value'; did you mean 'last_value'?\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:212:5: note: 'last_value' declared here\r\nint last_value(int values[], int length)\r\n    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:415:12: error: incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]\r\n    return mystery_value;\r\n           ^~~~~~~~~~~~~\r\n7 errors generated.\r\n"
+    },
+    "unrecognized_output": [],
+    "findings": [],
+    "findings_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "isolation_conditioned_findings": [],
+  "unique_additional_findings": [],
+  "suppressed_findings": [],
+  "analyzer_context": {
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "enabled_default_checkers": [
+      "apiModeling.Errno",
+      "core.CallAndMessageModeling",
+      "apiModeling.StdCLibraryFunctions",
+      "apiModeling.TrustNonnull",
+      "apiModeling.TrustReturnsNonnull",
+      "apiModeling.llvm.CastValue",
+      "apiModeling.llvm.ReturnValue",
+      "core.CallAndMessage",
+      "core.DivideZero",
+      "core.DynamicTypePropagation",
+      "core.NonNullParamChecker",
+      "core.NonnilStringConstants",
+      "core.NullDereference",
+      "core.StackAddrEscapeBase",
+      "core.StackAddressEscape",
+      "core.UndefinedBinaryOperatorResult",
+      "core.VLASize",
+      "core.builtin.BuiltinFunctions",
+      "core.builtin.NoReturnFunctions",
+      "core.uninitialized.ArraySubscript",
+      "core.uninitialized.Assign",
+      "core.uninitialized.Branch",
+      "core.uninitialized.CapturedBlockVariable",
+      "core.uninitialized.UndefReturn",
+      "deadcode.DeadStores",
+      "nullability.NullabilityBase",
+      "nullability.NullPassedToNonnull",
+      "nullability.NullReturnedFromNonnull",
+      "security.insecureAPI.SecuritySyntaxChecker",
+      "security.insecureAPI.UncheckedReturn",
+      "security.insecureAPI.getpw",
+      "security.insecureAPI.gets",
+      "security.insecureAPI.mkstemp",
+      "security.insecureAPI.mktemp",
+      "security.insecureAPI.vfork",
+      "unix.API",
+      "unix.cstring.CStringModeling",
+      "unix.DynamicMemoryModeling",
+      "unix.Malloc",
+      "unix.MallocSizeof",
+      "unix.MismatchedDeallocator",
+      "unix.Vfork",
+      "unix.cstring.BadSizeArg",
+      "unix.cstring.NullArg"
+    ],
+    "checker_query_returncode": 0,
+    "extra_checkers_enabled": false
+  }
+}

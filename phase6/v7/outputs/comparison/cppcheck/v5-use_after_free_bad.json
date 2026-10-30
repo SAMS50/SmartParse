@@ -1,0 +1,171 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "cppcheck",
+    "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+    "kind": "cppcheck",
+    "version": "2.16.0",
+    "format": "cppcheck-xml"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+    "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+    "shell": false,
+    "command": [
+      "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "--xml",
+      "--xml-version=2",
+      "--enable=warning",
+      "--std=c11",
+      "--platform=win64",
+      "--max-configs=1",
+      "--error-exitcode=1",
+      "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external qskpqyum\\cache",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "line": 2,
+      "column": 74,
+      "severity": "error",
+      "message": "Returning/dereferencing 'p' after it is deallocated / released",
+      "diagnostic_id": "deallocret",
+      "category": "unknown",
+      "related": [
+        {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "line": "2",
+          "column": "65"
+        }
+      ],
+      "inconclusive": false,
+      "context_note": false,
+      "column_kind": "tool-reported",
+      "short_message": "Returning/dereferencing 'p' after it is deallocated / released",
+      "cwe": "672",
+      "source_bound": true,
+      "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "id": "X-e643f4fe855cdcb11065",
+      "tool": {
+        "id": "cppcheck",
+        "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "kind": "cppcheck",
+        "version": "2.16.0",
+        "format": "cppcheck-xml"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+        "shell": false,
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning",
+          "--std=c11",
+          "--platform=win64",
+          "--max-configs=1",
+          "--error-exitcode=1",
+          "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external qskpqyum\\cache",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c ...\r\n",
+    "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"deallocret\" severity=\"error\" msg=\"Returning/dereferencing &apos;p&apos; after it is deallocated / released\" verbose=\"Returning/dereferencing &apos;p&apos; after it is deallocated / released\" cwe=\"672\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v5/fixtures/use_after_free_bad.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c\" line=\"2\" column=\"74\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c\" line=\"2\" column=\"65\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+    "returncode": 1
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "Cppcheck 2.16.0\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.125,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+        "stderr": "",
+        "elapsed_seconds": 0.032
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--xml",
+          "--xml-version=2",
+          "--enable=warning",
+          "--std=c11",
+          "--platform=win64",
+          "--max-configs=1",
+          "--error-exitcode=1",
+          "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external qskpqyum\\cache",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c"
+        ],
+        "status": "completed",
+        "returncode": 1,
+        "stdout_sha256": "895ac826f9b6afe3fef87f505d248f91c8885353943f1ac2d380a2c665b88a4e",
+        "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"deallocret\" severity=\"error\" msg=\"Returning/dereferencing &apos;p&apos; after it is deallocated / released\" verbose=\"Returning/dereferencing &apos;p&apos; after it is deallocated / released\" cwe=\"672\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v5/fixtures/use_after_free_bad.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c\" line=\"2\" column=\"74\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c\" line=\"2\" column=\"65\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+        "elapsed_seconds": 0.093
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 1,
+  "normalization_revision": "identifier-category-table-2"
+}

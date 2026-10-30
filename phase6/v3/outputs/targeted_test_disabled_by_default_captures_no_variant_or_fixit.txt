@@ -1,0 +1,6 @@
+test_disabled_by_default_captures_no_variant_or_fixit (phase6.v3.test_recovery.LiveRecoveryTests.test_disabled_by_default_captures_no_variant_or_fixit) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.771s
+
+OK

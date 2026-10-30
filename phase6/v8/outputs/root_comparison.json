@@ -1,0 +1,96 @@
+{
+  "original_sets": {
+    "compiler_gcc6": [
+      "C09_repair_null-R1",
+      "C10_isolate_null-R1",
+      "C11_missing_header-R1"
+    ],
+    "compiler_clang": [
+      "C05_bounds-R1",
+      "C10_isolate_null-R1",
+      "C11_missing_header-R1"
+    ],
+    "extended_baseline": [
+      "C01_null-R1",
+      "C02_leak-R1",
+      "C03_double-R1",
+      "C04_uaf-R1",
+      "C05_bounds-R1",
+      "C10_isolate_null-R1",
+      "C11_missing_header-R1"
+    ],
+    "recovery_assisted": [
+      "C01_null-R1",
+      "C02_leak-R1",
+      "C03_double-R1",
+      "C04_uaf-R1",
+      "C05_bounds-R1",
+      "C10_isolate_null-R1",
+      "C11_missing_header-R1"
+    ],
+    "isolation_assisted": [
+      "C01_null-R1",
+      "C02_leak-R1",
+      "C03_double-R1",
+      "C04_uaf-R1",
+      "C05_bounds-R1",
+      "C10_isolate_null-R1",
+      "C11_missing_header-R1"
+    ],
+    "gcc14": [
+      "C01_null-R1",
+      "C02_leak-R1",
+      "C03_double-R1",
+      "C04_uaf-R1",
+      "C05_bounds-R1",
+      "C06_allocation-R1",
+      "C07_resource-R1",
+      "C11_missing_header-R1"
+    ],
+    "cppcheck": [
+      "C01_null-R1",
+      "C02_leak-R1",
+      "C05_bounds-R1",
+      "C07_resource-R1",
+      "C08_contradiction-R1",
+      "C09_repair_null-R2",
+      "C10_isolate_null-R2"
+    ]
+  },
+  "combined_optional_original_only": [
+    "C01_null-R1",
+    "C02_leak-R1",
+    "C03_double-R1",
+    "C04_uaf-R1",
+    "C05_bounds-R1",
+    "C06_allocation-R1",
+    "C07_resource-R1",
+    "C08_contradiction-R1",
+    "C09_repair_null-R1",
+    "C09_repair_null-R2",
+    "C10_isolate_null-R1",
+    "C10_isolate_null-R2",
+    "C11_missing_header-R1"
+  ],
+  "exclusive": {
+    "compiler_gcc6": [
+      "C09_repair_null-R1"
+    ],
+    "compiler_clang": [],
+    "extended_baseline": [],
+    "recovery_assisted": [],
+    "isolation_assisted": [],
+    "gcc14": [
+      "C06_allocation-R1"
+    ],
+    "cppcheck": [
+      "C08_contradiction-R1",
+      "C09_repair_null-R2",
+      "C10_isolate_null-R2"
+    ]
+  },
+  "all_configurations_intersection": [],
+  "unobserved_by_all": [],
+  "note": "Pending author proposals, not verified defects. Conditional cohorts remain separate.",
+  "exclusive_claim_scope": "Frozen matcher only, not unique detector capability; known allowlist and anchor omissions are documented in review/frozen_matching_limitations.json."
+}

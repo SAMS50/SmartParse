@@ -1,0 +1,331 @@
+{
+  "scope": {
+    "dataset": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+    "runs": "df460adcd4bfabd4c0b15f4af9f516541d10a34775fe08fa082ca6e60d1229e0"
+  },
+  "review_kind": "Agent-assisted explicit evidence review; independent human adjudication pending",
+  "matches": [
+    {
+      "defect_id": "SP6-L0030-01",
+      "evidence_id": "E-779c0624da620abe3ab17f32",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing declaration semicolon."
+    },
+    {
+      "defect_id": "SP6-L0030-01",
+      "evidence_id": "E-b1dc15077c1b16b9e91623ab",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing declaration semicolon."
+    },
+    {
+      "defect_id": "SP6-L0030-01",
+      "evidence_id": "E-da0727aaa154a21a49afd9c0",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing declaration semicolon."
+    },
+    {
+      "defect_id": "SP6-L0074-01",
+      "evidence_id": "E-a14594cba1c6d6ba2ebd2dc8",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Literal size exceeds the fixed destination capacity in the source."
+    },
+    {
+      "defect_id": "SP6-L0082-01",
+      "evidence_id": "E-52d35ba4fc7053b6e1ff01e6",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing return semicolon."
+    },
+    {
+      "defect_id": "SP6-L0082-01",
+      "evidence_id": "E-5c25186430414d3dcf729ecf",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing return semicolon."
+    },
+    {
+      "defect_id": "SP6-L0082-01",
+      "evidence_id": "E-dcf96bbe9f2cd10f22067958",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Compiler specifically reports the missing return semicolon."
+    },
+    {
+      "defect_id": "SP6-L0104-01",
+      "evidence_id": "E-d3cbc4306b98b0efeb470bef",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment syntax only; comparison intent stays uncertain, not a null-dereference match."
+    },
+    {
+      "defect_id": "SP6-L0104-01",
+      "evidence_id": "E-b82eaa8bbfce8fe1bdb01daf",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment syntax only; comparison intent stays uncertain, not a null-dereference match."
+    },
+    {
+      "defect_id": "SP6-L0115-01",
+      "evidence_id": "E-6d531810f5d5e177a4295316",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only; intended search contract is not assumed."
+    },
+    {
+      "defect_id": "SP6-L0115-01",
+      "evidence_id": "E-26586c853bc2cbcac3dd79e3",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only; intended search contract is not assumed."
+    },
+    {
+      "defect_id": "SP6-L0129-01",
+      "evidence_id": "E-38f22ad054cb207abddf9da8",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning concerns escaping local buffer at the producer, not the later use/free."
+    },
+    {
+      "defect_id": "SP6-L0129-01",
+      "evidence_id": "E-c1384c528dbad57f133965ac",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning concerns escaping local buffer at the producer, not the later use/free."
+    },
+    {
+      "defect_id": "SP6-L0149-01",
+      "evidence_id": "E-498c3c9c54a9e7209bbeb6e6",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only; intended active-state contract remains unresolved."
+    },
+    {
+      "defect_id": "SP6-L0149-01",
+      "evidence_id": "E-0ab35dd23193c7ef5637d95e",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only; intended active-state contract remains unresolved."
+    },
+    {
+      "defect_id": "SP6-L0164-01",
+      "evidence_id": "E-d542cc51eba60aa50ea38be3",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Source semicolon makes an empty body; multiple warnings describe this one construct."
+    },
+    {
+      "defect_id": "SP6-L0164-01",
+      "evidence_id": "E-caccc91e1c838828f1a6a983",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Source semicolon makes an empty body; multiple warnings describe this one construct."
+    },
+    {
+      "defect_id": "SP6-L0164-01",
+      "evidence_id": "E-fbd667775a476281ddd1d011",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Source semicolon makes an empty body; multiple warnings describe this one construct."
+    },
+    {
+      "defect_id": "SP6-L0236-01",
+      "evidence_id": "E-46d62814d5dcf3c26989b9e1",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning explicitly identifies return of the local address."
+    },
+    {
+      "defect_id": "SP6-L0236-01",
+      "evidence_id": "E-476f7ea259e32a5a32c05e63",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning explicitly identifies return of the local address."
+    },
+    {
+      "defect_id": "SP6-L0292-01",
+      "evidence_id": "E-7592c58283c095af10eba1e9",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Format diagnostic identifies int* versus int in this variadic call."
+    },
+    {
+      "defect_id": "SP6-L0292-01",
+      "evidence_id": "E-753881fe3097ca02aef7b3d7",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Format diagnostic identifies int* versus int in this variadic call."
+    },
+    {
+      "defect_id": "SP6-L0351-01",
+      "evidence_id": "E-a174e052a44ce1ef00a92bfd",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only, not proof of intended comparison."
+    },
+    {
+      "defect_id": "SP6-L0351-01",
+      "evidence_id": "E-06139018592138a88185b88d",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Warning supports assignment only, not proof of intended comparison."
+    },
+    {
+      "defect_id": "SP6-L0382-01",
+      "evidence_id": "E-25c1c8661d83e00985bb5875",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Records observed GCC floating-division warning without assuming integer UB or a specified floating contract."
+    },
+    {
+      "defect_id": "SP6-L0393-01",
+      "evidence_id": "E-6f63d5dda597e559b33f03b6",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Return conversion diagnostic explicitly concerns the pointer-to-int return."
+    },
+    {
+      "defect_id": "SP6-L0393-01",
+      "evidence_id": "E-ecd46449ae31a4a5821a92d3",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Return conversion diagnostic explicitly concerns the pointer-to-int return."
+    },
+    {
+      "defect_id": "SP6-L0393-01",
+      "evidence_id": "E-f71f747fdfc84d0d0b37174d",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Return conversion diagnostic explicitly concerns the pointer-to-int return."
+    },
+    {
+      "defect_id": "SP6-L0409-01",
+      "evidence_id": "E-fff152de4e49e34bd3c5d698",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Known prototype and call establish too few arguments."
+    },
+    {
+      "defect_id": "SP6-L0409-01",
+      "evidence_id": "E-3ffd37feb28eec6eec0ef2e4",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Known prototype and call establish too few arguments."
+    },
+    {
+      "defect_id": "SP6-L0409-01",
+      "evidence_id": "E-e15313285676da59da0d5bef",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Known prototype and call establish too few arguments."
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "evidence_id": "E-b6a85126aed83b5662532650",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Repeated undeclared-name messages concern the same missing declaration; conversion recovery is separate cascade evidence."
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "evidence_id": "E-6b251427d65446ce145e94c3",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Repeated undeclared-name messages concern the same missing declaration; conversion recovery is separate cascade evidence."
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "evidence_id": "E-cea9e5249112408b99c44bec",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Repeated undeclared-name messages concern the same missing declaration; conversion recovery is separate cascade evidence."
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "evidence_id": "E-eb471c93b35ad103971f27e3",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Repeated undeclared-name messages concern the same missing declaration; conversion recovery is separate cascade evidence."
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "evidence_id": "E-bf4c5a5809c96af63c5fdbb2",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Repeated undeclared-name messages concern the same missing declaration; conversion recovery is separate cascade evidence."
+    },
+    {
+      "defect_id": "SP6-L0421-01",
+      "evidence_id": "E-39e8a0f99a33a1213556b651",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Format diagnostic explicitly identifies int versus long."
+    },
+    {
+      "defect_id": "SP6-L0421-01",
+      "evidence_id": "E-b1e60a056bb0fe1122baafe8",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Format diagnostic explicitly identifies int versus long."
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "evidence_id": "E-397a60625b04ea004db2d5ba",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Two warning forms concern the same multicharacter/comparison root, not two independent defects."
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "evidence_id": "E-4de8ad88d8be155399fccf4e",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Two warning forms concern the same multicharacter/comparison root, not two independent defects."
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "evidence_id": "E-198ed0fdf6a038c02cc54d89",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Two warning forms concern the same multicharacter/comparison root, not two independent defects."
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "evidence_id": "E-e6da76a5f59c25a1500b1ea0",
+      "decision": "match",
+      "reviewer": "Codex agent-assisted source/evidence review (not independent human review)",
+      "rationale": "Two warning forms concern the same multicharacter/comparison root, not two independent defects."
+    }
+  ],
+  "adjudications": [
+    {
+      "evidence_id": "E-da56724dd0dd1b3a794a0faa",
+      "decision": "cascade",
+      "reviewer": "Codex agent-assisted evidence review (human review pending)",
+      "rationale": "Rejected global declaration after missing semicolon at 30 causes undeclared-global_label recovery; not an allocation/ownership finding."
+    },
+    {
+      "evidence_id": "E-a92a8d34a21d15bae841e916",
+      "decision": "cascade",
+      "reviewer": "Codex agent-assisted evidence review (human review pending)",
+      "rationale": "Rejected global declaration after missing semicolon at 30 causes undeclared-global_label recovery; not an allocation/ownership finding."
+    },
+    {
+      "evidence_id": "E-4d10d6df893b9268d689faef",
+      "decision": "cascade",
+      "reviewer": "Codex agent-assisted evidence review (human review pending)",
+      "rationale": "Spelling recovery to last_value after undeclared mystery_value creates secondary function-pointer return conversion; not an independent source defect."
+    },
+    {
+      "evidence_id": "E-1c89f32df65d4c369e769686",
+      "decision": "cascade",
+      "reviewer": "Codex agent-assisted evidence review (human review pending)",
+      "rationale": "Spelling recovery to last_value after undeclared mystery_value creates secondary function-pointer return conversion; not an independent source defect."
+    }
+  ],
+  "contracts": {},
+  "reference_limitations": "No application contracts marked satisfied; no unmatched diagnostic presumed false positive."
+}

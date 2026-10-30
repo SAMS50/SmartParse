@@ -1,0 +1,565 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+    "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+    "bytes": 67,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "gcc14"
+  ],
+  "effective_analyzers": [
+    "gcc14"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "gcc14",
+      "status": "completed",
+      "reason": "Tool returned; warnings require source/root review.",
+      "raw": {
+        "schema": "smartparse.external_analysis",
+        "schema_version": "1.0",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "source": {
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+          "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+          "original_unchanged": true
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\analysis.o"
+          ]
+        },
+        "status": "completed",
+        "reason": "Tool returned; warnings require source/root review.",
+        "diagnostics": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": 3,
+            "column": 16,
+            "severity": "warning",
+            "message": "dereference of NULL 'probe'",
+            "diagnostic_id": "-Wanalyzer-null-dereference",
+            "category": "memory safety",
+            "related": [
+              {
+                "location": {
+                  "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+                  "line": 2,
+                  "display-column": 7,
+                  "byte-column": 7,
+                  "column": 7
+                },
+                "description": "'probe' is NULL",
+                "function": "read_probe",
+                "depth": 1
+              },
+              {
+                "location": {
+                  "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+                  "line": 3,
+                  "display-column": 16,
+                  "byte-column": 16,
+                  "column": 16
+                },
+                "description": "dereference of NULL 'probe'",
+                "function": "read_probe",
+                "depth": 1
+              }
+            ],
+            "context_note": false,
+            "column_kind": "byte",
+            "source_bound": true,
+            "mapping_status": "reported_location_bound_to_input",
+            "source_snippet": " return bias + *probe;",
+            "id": "X-932f6a52d489e363d82c",
+            "tool": {
+              "id": "gcc14",
+              "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+              "kind": "gcc",
+              "version": "14.2.0",
+              "format": "gcc-json",
+              "diagnostic_format": "json"
+            },
+            "configuration": {
+              "standard": "c11",
+              "include_dirs": [],
+              "defines": [],
+              "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+              "shell": false,
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+                "-x",
+                "c",
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-fmax-errors=20",
+                "-O0",
+                "-fanalyzer",
+                "-fdiagnostics-format=json",
+                "-c",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+                "-o",
+                "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\analysis.o"
+              ]
+            },
+            "review_status": "tool_reported_unverified",
+            "confidence": "review_suggestion",
+            "provenance": {
+              "original_source": true,
+              "repair_conditioned": false,
+              "isolation_conditioned": false
+            },
+            "duplicates_existing": "unknown_pending_root_review",
+            "analysis_eligibility": {
+              "tool_completion": "completed",
+              "frontend_blockers": false,
+              "region_coverage": "unknown"
+            }
+          }
+        ],
+        "exact_duplicates": [],
+        "raw": {
+          "stdout": "",
+          "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'probe'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                           \"line\": 3,\n                           \"display-column\": 16,\n                           \"byte-column\": 16,\n                           \"column\": 16},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                            \"line\": 3,\n                            \"display-column\": 21,\n                            \"byte-column\": 21,\n                            \"column\": 21}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 2,\n                         \"display-column\": 7,\n                         \"byte-column\": 7,\n                         \"column\": 7},\n            \"description\": \"'probe' is NULL\",\n            \"function\": \"read_probe\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 3,\n                         \"display-column\": 16,\n                         \"byte-column\": 16,\n                         \"column\": 16},\n            \"description\": \"dereference of NULL 'probe'\",\n            \"function\": \"read_probe\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+          "returncode": 0
+        },
+        "eligibility": {
+          "process_started": true,
+          "analyzer_requested": true,
+          "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+          "region_coverage": "unknown; no per-function/path execution proof",
+          "function_path_coverage_certified": false,
+          "frontend_blockers": [],
+          "analyzer_completion": "completed"
+        },
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "observed_version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+        "capability": {
+          "supported": true,
+          "returncode": 0,
+          "stdout": "",
+          "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n"
+        },
+        "unrecognized_output": [],
+        "temporary_workspace_removed": true,
+        "usage": {
+          "compiler_invocations": 3,
+          "elapsed_seconds": 0.265,
+          "calls": [
+            {
+              "number": 1,
+              "role": "version",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+                "--version"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+              "stderr": "",
+              "elapsed_seconds": 0.031
+            },
+            {
+              "number": 2,
+              "role": "analyzer_capability",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+                "-x",
+                "c",
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-fmax-errors=20",
+                "-O0",
+                "-fanalyzer",
+                "-fdiagnostics-format=json",
+                "-c",
+                "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\capability\\capability.c",
+                "-o",
+                "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\capability\\analysis.o"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+              "elapsed_seconds": 0.141
+            },
+            {
+              "number": 3,
+              "role": "external_analysis",
+              "command": [
+                "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+                "-x",
+                "c",
+                "-std=c11",
+                "-Wall",
+                "-Wextra",
+                "-fmax-errors=20",
+                "-O0",
+                "-fanalyzer",
+                "-fdiagnostics-format=json",
+                "-c",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+                "-o",
+                "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\analysis.o"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'probe'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                           \"line\": 3,\n                           \"display-column\": 16,\n                           \"byte-column\": 16,\n                           \"column\": 16},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                            \"line\": 3,\n                            \"display-column\": 21,\n                            \"byte-column\": 21,\n                            \"column\": 21}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 2,\n                         \"display-column\": 7,\n                         \"byte-column\": 7,\n                         \"column\": 7},\n            \"description\": \"'probe' is NULL\",\n            \"function\": \"read_probe\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 3,\n                         \"display-column\": 16,\n                         \"byte-column\": 16,\n                         \"column\": 16},\n            \"description\": \"dereference of NULL 'probe'\",\n            \"function\": \"read_probe\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+              "elapsed_seconds": 0.093
+            }
+          ],
+          "limits": {
+            "candidates": 4,
+            "rounds": 3,
+            "invocations": 4,
+            "retained_variants": 4,
+            "edits": 4,
+            "total_seconds": 120,
+            "call_seconds": 10
+          }
+        },
+        "unique_primary_groups": 1,
+        "enabled": true,
+        "confirmed_defect_roots": null,
+        "analysis_mode": "original_source_only",
+        "integration_decision": "1.0"
+      },
+      "elapsed_seconds": 0.281,
+      "usage": {
+        "compiler_invocations": 3,
+        "elapsed_seconds": 0.265,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+            "stderr": "",
+            "elapsed_seconds": 0.031
+          },
+          {
+            "number": 2,
+            "role": "analyzer_capability",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-fmax-errors=20",
+              "-O0",
+              "-fanalyzer",
+              "-fdiagnostics-format=json",
+              "-c",
+              "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\capability\\capability.c",
+              "-o",
+              "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\capability\\analysis.o"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'p'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                           \"line\": 1,\n                           \"display-column\": 38,\n                           \"byte-column\": 38,\n                           \"column\": 38},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                            \"line\": 1,\n                            \"display-column\": 39,\n                            \"byte-column\": 39,\n                            \"column\": 39}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 27,\n                         \"byte-column\": 27,\n                         \"column\": 27},\n            \"description\": \"'p' is NULL\",\n            \"function\": \"capability\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nm0ulx5c\\\\capability\\\\capability.c\",\n                         \"line\": 1,\n                         \"display-column\": 38,\n                         \"byte-column\": 38,\n                         \"column\": 38},\n            \"description\": \"dereference of NULL 'p'\",\n            \"function\": \"capability\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+            "elapsed_seconds": 0.141
+          },
+          {
+            "number": 3,
+            "role": "external_analysis",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+              "-x",
+              "c",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-fmax-errors=20",
+              "-O0",
+              "-fanalyzer",
+              "-fdiagnostics-format=json",
+              "-c",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+              "-o",
+              "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\analysis.o"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "[{\"kind\": \"warning\",\n  \"message\": \"dereference of NULL 'probe'\",\n  \"option\": \"-Wanalyzer-null-dereference\",\n  \"option_url\": \"https://gcc.gnu.org/onlinedocs/gcc-14.2.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-null-dereference\",\n  \"children\": [],\n  \"column-origin\": 1,\n  \"locations\": [{\"caret\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                           \"line\": 3,\n                           \"display-column\": 16,\n                           \"byte-column\": 16,\n                           \"column\": 16},\n                 \"finish\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                            \"line\": 3,\n                            \"display-column\": 21,\n                            \"byte-column\": 21,\n                            \"column\": 21}}],\n  \"metadata\": {\"cwe\": 476},\n  \"path\": [{\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 2,\n                         \"display-column\": 7,\n                         \"byte-column\": 7,\n                         \"column\": 7},\n            \"description\": \"'probe' is NULL\",\n            \"function\": \"read_probe\",\n            \"depth\": 1},\n           {\"location\": {\"file\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v8\\\\fixtures\\\\c\\\\C01_null.c\",\n                         \"line\": 3,\n                         \"display-column\": 16,\n                         \"byte-column\": 16,\n                         \"column\": 16},\n            \"description\": \"dereference of NULL 'probe'\",\n            \"function\": \"read_probe\",\n            \"depth\": 1}],\n  \"escape-source\": false}]\r\n",
+            "elapsed_seconds": 0.093
+          }
+        ],
+        "limits": {
+          "candidates": 4,
+          "rounds": 3,
+          "invocations": 4,
+          "retained_variants": 4,
+          "edits": 4,
+          "total_seconds": 120,
+          "call_seconds": 10
+        }
+      },
+      "eligibility": {
+        "process_started": true,
+        "analyzer_requested": true,
+        "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+        "region_coverage": "unknown; no per-function/path execution proof",
+        "function_path_coverage_certified": false,
+        "frontend_blockers": [],
+        "analyzer_completion": "completed"
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-246e0d51562b3071da0c",
+      "raw_reference": {
+        "run_id": "gcc14",
+        "path": "/diagnostics/0"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16,
+        "severity": "warning",
+        "message": "dereference of NULL 'probe'",
+        "diagnostic_id": "-Wanalyzer-null-dereference",
+        "category": "memory safety",
+        "related": [
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+              "line": 2,
+              "display-column": 7,
+              "byte-column": 7,
+              "column": 7
+            },
+            "description": "'probe' is NULL",
+            "function": "read_probe",
+            "depth": 1
+          },
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+              "line": 3,
+              "display-column": 16,
+              "byte-column": 16,
+              "column": 16
+            },
+            "description": "dereference of NULL 'probe'",
+            "function": "read_probe",
+            "depth": 1
+          }
+        ],
+        "context_note": false,
+        "column_kind": "byte",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": " return bias + *probe;",
+        "id": "X-932f6a52d489e363d82c",
+        "tool": {
+          "id": "gcc14",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "kind": "gcc",
+          "version": "14.2.0",
+          "format": "gcc-json",
+          "diagnostic_format": "json"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-std=c11",
+            "-Wall",
+            "-Wextra",
+            "-fmax-errors=20",
+            "-O0",
+            "-fanalyzer",
+            "-fdiagnostics-format=json",
+            "-c",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "-o",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nm0ulx5c\\analysis.o"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "severity": "warning",
+      "category": "memory safety",
+      "category_basis": "backend_category",
+      "message": "dereference of NULL 'probe'",
+      "analyzer": "gcc14",
+      "backend": "gcc14",
+      "diagnostic_id": "-Wanalyzer-null-dereference",
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-8f1d37a07ffcde3f1aca",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " return bias + *probe;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+              "line": 2,
+              "display-column": 7,
+              "byte-column": 7,
+              "column": 7
+            },
+            "description": "'probe' is NULL",
+            "function": "read_probe",
+            "depth": 1
+          },
+          {
+            "location": {
+              "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+              "line": 3,
+              "display-column": 16,
+              "byte-column": 16,
+              "column": 16
+            },
+            "description": "dereference of NULL 'probe'",
+            "function": "read_probe",
+            "depth": 1
+          }
+        ],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": "completed",
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-8f1d37a07ffcde3f1aca",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-246e0d51562b3071da0c"
+      ],
+      "analyzers": [
+        "gcc14"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 1,
+    "errors": 0,
+    "warnings": 1,
+    "notes": 0,
+    "categories": {
+      "memory safety": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 1,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 0.281,
+    "compiler_invocations": 3,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

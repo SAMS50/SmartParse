@@ -1,0 +1,2218 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "scope": {
+    "dataset": "1833a2a901e1d8530925c04d6d964c1ee3a67f27216410cdee47e88b8cf9ad63",
+    "runs": "ba8994db710ae6ccd56ff99b25994b8e2deb91a1c27e1526fa1df2f1f9c128ba"
+  },
+  "dataset_sources": {
+    "allocation_good": {
+      "path": "phase6\\v6\\fixtures\\allocation_good.c",
+      "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+    },
+    "allocation_index": {
+      "path": "phase6\\v6\\fixtures\\allocation_index.c",
+      "sha256": "2245680aafd361df4ce467785d7d8520a8a0f2191b192127987892c51d4242b6"
+    },
+    "allocation_literal": {
+      "path": "phase6\\v6\\fixtures\\allocation_literal.c",
+      "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1"
+    },
+    "allocation_sizeof": {
+      "path": "phase6\\v6\\fixtures\\allocation_sizeof.c",
+      "sha256": "855c05f014aac2ed7c24eec7028776e757fca22ab22e843fabb839c05886e3ce"
+    },
+    "contradiction_bad": {
+      "path": "phase6\\v6\\fixtures\\contradiction_bad.c",
+      "sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88"
+    },
+    "contradiction_boundary_bad": {
+      "path": "phase6\\v6\\fixtures\\contradiction_boundary_bad.c",
+      "sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6"
+    },
+    "contradiction_boundary_good": {
+      "path": "phase6\\v6\\fixtures\\contradiction_boundary_good.c",
+      "sha256": "fe8135d75d4110dc795bcf6d533c4672f839866d0fe119349274bdc4c5bb6880"
+    },
+    "contradiction_good": {
+      "path": "phase6\\v6\\fixtures\\contradiction_good.c",
+      "sha256": "0f5a54893f327af94e180b6f0adbeacc148501b158f00634165ff0dff5e3a0f9"
+    },
+    "contradiction_three_bad": {
+      "path": "phase6\\v6\\fixtures\\contradiction_three_bad.c",
+      "sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e"
+    },
+    "contradiction_three_good": {
+      "path": "phase6\\v6\\fixtures\\contradiction_three_good.c",
+      "sha256": "320ef0b2bbfcd53e5f1116f2c4043f593ea7e9b1dbb044b05f7a3d2719dc1abe"
+    },
+    "conversion_control": {
+      "path": "phase6\\v6\\fixtures\\conversion_control.c",
+      "sha256": "c973a9e20e1fad8b436cf8a0ddec992b34a0d56754fff79080ccba33bd658b1a"
+    },
+    "different_variables": {
+      "path": "phase6\\v6\\fixtures\\different_variables.c",
+      "sha256": "a5d47450123bbf7f6fbb90e3de67b37e3fc081c3b2b4b74b86e00cfcd45e907a"
+    },
+    "macro_control": {
+      "path": "phase6\\v6\\fixtures\\macro_control.c",
+      "sha256": "ea82929c3eb45efc008e6d9c48637f1f7d446b1fc41b20f30a1b898e9388297d"
+    },
+    "malformed_semantic": {
+      "path": "phase6\\v6\\fixtures\\malformed_semantic.c",
+      "sha256": "b65d83579a7dccb68512f7b8183580569bea8d2144243f383997b6879625056f"
+    },
+    "malformed_syntax": {
+      "path": "phase6\\v6\\fixtures\\malformed_syntax.c",
+      "sha256": "47f6f3b61714840c93296b1a0c773d4148e830c1b36b5b031dc940762024aff4"
+    },
+    "overwrite_assignment_bad": {
+      "path": "phase6\\v6\\fixtures\\overwrite_assignment_bad.c",
+      "sha256": "3edf10fad406d21cda10955ee9dbcb7cc7f5c89d8d73ee01c868dbcdf32ee5b0"
+    },
+    "overwrite_assignment_good": {
+      "path": "phase6\\v6\\fixtures\\overwrite_assignment_good.c",
+      "sha256": "ff910e34185d93aee55e355be186b88b66cf7df0e9ce9665dbcac5e65bccd3bb"
+    },
+    "overwrite_bad": {
+      "path": "phase6\\v6\\fixtures\\overwrite_bad.c",
+      "sha256": "97933e8c77cf99d1d19587be3b46ef679d4a582e37b83e469986f3510d3eb468"
+    },
+    "overwrite_good": {
+      "path": "phase6\\v6\\fixtures\\overwrite_good.c",
+      "sha256": "8d6dd8ceaac79043399f9b45a0a634e8b216253de8d667c2197142960573f09d"
+    },
+    "precision_deliberate": {
+      "path": "phase6\\v6\\fixtures\\precision_deliberate.c",
+      "sha256": "96bb7de890fbe8e495361fdc7db92dadd02c911bd7b48c4e7e5e55768cf38098"
+    },
+    "precision_exact": {
+      "path": "phase6\\v6\\fixtures\\precision_exact.c",
+      "sha256": "be240537714f9d5055eb07553c1609224f32ef6f008ca7713e06eccd223c61f0"
+    },
+    "precision_good": {
+      "path": "phase6\\v6\\fixtures\\precision_good.c",
+      "sha256": "3f3e1b78c6292cc188dc49f65f2ff2fea4ecafa0e86cbf2ae128d64816db2e50"
+    },
+    "precision_integer_control": {
+      "path": "phase6\\v6\\fixtures\\precision_integer_control.c",
+      "sha256": "c249dcb0d59ec57d0cabd1cd524e408768f7c6a924f9d47749e1f6b620533feb"
+    },
+    "precision_literal_review": {
+      "path": "phase6\\v6\\fixtures\\precision_literal_review.c",
+      "sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a"
+    },
+    "precision_macro": {
+      "path": "phase6\\v6\\fixtures\\precision_macro.c",
+      "sha256": "ecc046820124939fdef1c83cbbc8b2b4144ae8fc1adc86651d5eff653451c6c7"
+    },
+    "precision_review": {
+      "path": "phase6\\v6\\fixtures\\precision_review.c",
+      "sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696"
+    },
+    "precision_zero": {
+      "path": "phase6\\v6\\fixtures\\precision_zero.c",
+      "sha256": "0604c8b0fc09b1871199c763a843a2559026ddb29e818a74f91068bdaa2237db"
+    },
+    "scanf_character_good": {
+      "path": "phase6\\v6\\fixtures\\scanf_character_good.c",
+      "sha256": "91210eaa644b53a754f550bb713dd7824795d3af8e02bc9dc1baef2feafebdb9"
+    },
+    "scanf_good": {
+      "path": "phase6\\v6\\fixtures\\scanf_good.c",
+      "sha256": "2f3d13ed766af67f0f9f5307a3b0bd41172a0f900aac703bce9cade154b7deb0"
+    },
+    "scanf_local_name": {
+      "path": "phase6\\v6\\fixtures\\scanf_local_name.c",
+      "sha256": "961cca838de274de894ed195106d96a0205880371e0cd407e652c59a43c909ef"
+    },
+    "scanf_suppressed": {
+      "path": "phase6\\v6\\fixtures\\scanf_suppressed.c",
+      "sha256": "388bbd2bf187d74dce23b65a237dcb527277d436c6726f0e22842b05438bc83e"
+    },
+    "scanf_unbounded": {
+      "path": "phase6\\v6\\fixtures\\scanf_unbounded.c",
+      "sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556"
+    },
+    "scanf_unknown": {
+      "path": "phase6\\v6\\fixtures\\scanf_unknown.c",
+      "sha256": "26b680e4b14fdd3612b857d8f571e5013e9bffee95190657c231de8be98e394a"
+    },
+    "scanf_width_bad": {
+      "path": "phase6\\v6\\fixtures\\scanf_width_bad.c",
+      "sha256": "cdc8cdc25078384f418a0e9bc152a91957accbaf34b3771b2038f3ca66aab1a7"
+    },
+    "side_effect_control": {
+      "path": "phase6\\v6\\fixtures\\side_effect_control.c",
+      "sha256": "195c772d919a5d82dfe01bcb10bb5e4ce0d9fd4b8cef9bf471d1c9ff29f61aaa"
+    },
+    "swap_unknown": {
+      "path": "phase6\\v6\\fixtures\\swap_unknown.c",
+      "sha256": "6b3429093b58a6770ef0e4850b3c45c8299177f2c215d05bf22a3e5032687044"
+    },
+    "unsigned_control": {
+      "path": "phase6\\v6\\fixtures\\unsigned_control.c",
+      "sha256": "3020132a6d148f3810abaf1c763509644dc22883a8ddd0b82d30125fb3e77535"
+    },
+    "valid": {
+      "path": "phase6\\v6\\fixtures\\valid.c",
+      "sha256": "1a0efe604440d96561e3075b2ec8bb90f8847d9709d24add37f9ea016221918c"
+    },
+    "volatile_control": {
+      "path": "phase6\\v6\\fixtures\\volatile_control.c",
+      "sha256": "eb27b13d02f54649905cfbcc931e905dd23e39176cf216ca77eb068e75621547"
+    }
+  },
+  "reference_review": "Agent source-reviewed facts/conditional review targets; independent human review pending.",
+  "input_manifest": [
+    {
+      "id": "v6-allocation_good",
+      "source_bindings": {
+        "allocation_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_good.c"
+          ],
+          "sha256": "c03f54095aa9b01f228173b991784805ea2be7cbb1a8ebddf2d594eb9d53ed4e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-allocation_index",
+      "source_bindings": {
+        "allocation_index": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c"
+          ],
+          "sha256": "2245680aafd361df4ce467785d7d8520a8a0f2191b192127987892c51d4242b6"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_index",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_index",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-allocation_literal",
+      "source_bindings": {
+        "allocation_literal": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_literal.c"
+          ],
+          "sha256": "fe2ce9deca921d46d6ccce9afecd3159029edf84448faee32f735c5068b543c1"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_literal",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_literal",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-allocation_sizeof",
+      "source_bindings": {
+        "allocation_sizeof": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_sizeof.c"
+          ],
+          "sha256": "855c05f014aac2ed7c24eec7028776e757fca22ab22e843fabb839c05886e3ce"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "allocation_sizeof",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "allocation_sizeof",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_bad",
+      "source_bindings": {
+        "contradiction_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c"
+          ],
+          "sha256": "99e61a80e25c966b4f6ed62f136af6e5cfc2cfa824e74f139b48c48f33b4df88"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_boundary_bad",
+      "source_bindings": {
+        "contradiction_boundary_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_boundary_bad.c"
+          ],
+          "sha256": "25c29bd9dfd18f30f986aeafe0eb9758b3c7afecd8fe394c866725c60a461fb6"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_boundary_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_boundary_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_boundary_good",
+      "source_bindings": {
+        "contradiction_boundary_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_boundary_good.c"
+          ],
+          "sha256": "fe8135d75d4110dc795bcf6d533c4672f839866d0fe119349274bdc4c5bb6880"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_boundary_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_boundary_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_good",
+      "source_bindings": {
+        "contradiction_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_good.c"
+          ],
+          "sha256": "0f5a54893f327af94e180b6f0adbeacc148501b158f00634165ff0dff5e3a0f9"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_three_bad",
+      "source_bindings": {
+        "contradiction_three_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c"
+          ],
+          "sha256": "cfee5507ca6f2911791d1991b6341021fb009117e24ffdce62411822bfe1506e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_three_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_three_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-contradiction_three_good",
+      "source_bindings": {
+        "contradiction_three_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_good.c"
+          ],
+          "sha256": "320ef0b2bbfcd53e5f1116f2c4043f593ea7e9b1dbb044b05f7a3d2719dc1abe"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "contradiction_three_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "contradiction_three_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-conversion_control",
+      "source_bindings": {
+        "conversion_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\conversion_control.c"
+          ],
+          "sha256": "c973a9e20e1fad8b436cf8a0ddec992b34a0d56754fff79080ccba33bd658b1a"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "conversion_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "conversion_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-different_variables",
+      "source_bindings": {
+        "different_variables": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\different_variables.c"
+          ],
+          "sha256": "a5d47450123bbf7f6fbb90e3de67b37e3fc081c3b2b4b74b86e00cfcd45e907a"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "different_variables",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "different_variables",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-macro_control",
+      "source_bindings": {
+        "macro_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\macro_control.c"
+          ],
+          "sha256": "ea82929c3eb45efc008e6d9c48637f1f7d446b1fc41b20f30a1b898e9388297d"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "macro_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "macro_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-malformed_semantic",
+      "source_bindings": {
+        "malformed_semantic": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_semantic.c"
+          ],
+          "sha256": "b65d83579a7dccb68512f7b8183580569bea8d2144243f383997b6879625056f"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "malformed_semantic",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "malformed_semantic",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-malformed_syntax",
+      "source_bindings": {
+        "malformed_syntax": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c"
+          ],
+          "sha256": "47f6f3b61714840c93296b1a0c773d4148e830c1b36b5b031dc940762024aff4"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "malformed_syntax",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "malformed_syntax",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-overwrite_assignment_bad",
+      "source_bindings": {
+        "overwrite_assignment_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_bad.c"
+          ],
+          "sha256": "3edf10fad406d21cda10955ee9dbcb7cc7f5c89d8d73ee01c868dbcdf32ee5b0"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "overwrite_assignment_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "overwrite_assignment_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-overwrite_assignment_good",
+      "source_bindings": {
+        "overwrite_assignment_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_good.c"
+          ],
+          "sha256": "ff910e34185d93aee55e355be186b88b66cf7df0e9ce9665dbcac5e65bccd3bb"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "overwrite_assignment_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "overwrite_assignment_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-overwrite_bad",
+      "source_bindings": {
+        "overwrite_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_bad.c"
+          ],
+          "sha256": "97933e8c77cf99d1d19587be3b46ef679d4a582e37b83e469986f3510d3eb468"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "overwrite_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "overwrite_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-overwrite_good",
+      "source_bindings": {
+        "overwrite_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_good.c"
+          ],
+          "sha256": "8d6dd8ceaac79043399f9b45a0a634e8b216253de8d667c2197142960573f09d"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "overwrite_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "overwrite_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_deliberate",
+      "source_bindings": {
+        "precision_deliberate": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_deliberate.c"
+          ],
+          "sha256": "96bb7de890fbe8e495361fdc7db92dadd02c911bd7b48c4e7e5e55768cf38098"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_deliberate",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_deliberate",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_exact",
+      "source_bindings": {
+        "precision_exact": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_exact.c"
+          ],
+          "sha256": "be240537714f9d5055eb07553c1609224f32ef6f008ca7713e06eccd223c61f0"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_exact",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_exact",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_good",
+      "source_bindings": {
+        "precision_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_good.c"
+          ],
+          "sha256": "3f3e1b78c6292cc188dc49f65f2ff2fea4ecafa0e86cbf2ae128d64816db2e50"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_integer_control",
+      "source_bindings": {
+        "precision_integer_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_integer_control.c"
+          ],
+          "sha256": "c249dcb0d59ec57d0cabd1cd524e408768f7c6a924f9d47749e1f6b620533feb"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_integer_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_integer_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_literal_review",
+      "source_bindings": {
+        "precision_literal_review": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_literal_review.c"
+          ],
+          "sha256": "942fd9232825390443647f54161db52d343b625e44a1fba9ae13650890508c5a"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_literal_review",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_literal_review",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_macro",
+      "source_bindings": {
+        "precision_macro": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_macro.c"
+          ],
+          "sha256": "ecc046820124939fdef1c83cbbc8b2b4144ae8fc1adc86651d5eff653451c6c7"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_macro",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_macro",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_review",
+      "source_bindings": {
+        "precision_review": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_review.c"
+          ],
+          "sha256": "6fe63a10fae5586ed3e93133444450a23cc192e034b3465dc816fd32f2628696"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_review",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_review",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-precision_zero",
+      "source_bindings": {
+        "precision_zero": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_zero.c"
+          ],
+          "sha256": "0604c8b0fc09b1871199c763a843a2559026ddb29e818a74f91068bdaa2237db"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "precision_zero",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "precision_zero",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_character_good",
+      "source_bindings": {
+        "scanf_character_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_character_good.c"
+          ],
+          "sha256": "91210eaa644b53a754f550bb713dd7824795d3af8e02bc9dc1baef2feafebdb9"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_character_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_character_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_good",
+      "source_bindings": {
+        "scanf_good": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_good.c"
+          ],
+          "sha256": "2f3d13ed766af67f0f9f5307a3b0bd41172a0f900aac703bce9cade154b7deb0"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_good",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_good",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_local_name",
+      "source_bindings": {
+        "scanf_local_name": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_local_name.c"
+          ],
+          "sha256": "961cca838de274de894ed195106d96a0205880371e0cd407e652c59a43c909ef"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_local_name",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_local_name",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_suppressed",
+      "source_bindings": {
+        "scanf_suppressed": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_suppressed.c"
+          ],
+          "sha256": "388bbd2bf187d74dce23b65a237dcb527277d436c6726f0e22842b05438bc83e"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_suppressed",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_suppressed",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_unbounded",
+      "source_bindings": {
+        "scanf_unbounded": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unbounded.c"
+          ],
+          "sha256": "0edc8aeaa4ed6ba4cd1fd14839e59c38cd9d8f144294dffeb122889a794d8556"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_unbounded",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_unbounded",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_unknown",
+      "source_bindings": {
+        "scanf_unknown": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unknown.c"
+          ],
+          "sha256": "26b680e4b14fdd3612b857d8f571e5013e9bffee95190657c231de8be98e394a"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_unknown",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_unknown",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-scanf_width_bad",
+      "source_bindings": {
+        "scanf_width_bad": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_width_bad.c"
+          ],
+          "sha256": "cdc8cdc25078384f418a0e9bc152a91957accbaf34b3771b2038f3ca66aab1a7"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "scanf_width_bad",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "scanf_width_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-side_effect_control",
+      "source_bindings": {
+        "side_effect_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\side_effect_control.c"
+          ],
+          "sha256": "195c772d919a5d82dfe01bcb10bb5e4ce0d9fd4b8cef9bf471d1c9ff29f61aaa"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "side_effect_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "side_effect_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-swap_unknown",
+      "source_bindings": {
+        "swap_unknown": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\swap_unknown.c"
+          ],
+          "sha256": "6b3429093b58a6770ef0e4850b3c45c8299177f2c215d05bf22a3e5032687044"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "swap_unknown",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "swap_unknown",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-unsigned_control",
+      "source_bindings": {
+        "unsigned_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\unsigned_control.c"
+          ],
+          "sha256": "3020132a6d148f3810abaf1c763509644dc22883a8ddd0b82d30125fb3e77535"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "unsigned_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "unsigned_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-valid",
+      "source_bindings": {
+        "valid": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\valid.c"
+          ],
+          "sha256": "1a0efe604440d96561e3075b2ec8bb90f8847d9709d24add37f9ea016221918c"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "valid",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "valid",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    },
+    {
+      "id": "v6-volatile_control",
+      "source_bindings": {
+        "volatile_control": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\volatile_control.c"
+          ],
+          "sha256": "eb27b13d02f54649905cfbcc931e905dd23e39176cf216ca77eb068e75621547"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "volatile_control",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        },
+        {
+          "source_id": "volatile_control",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ]
+    }
+  ],
+  "historical_baseline": {
+    "entries": 8,
+    "meaning": "New v6 local evidence units; historical 16/68 and v1 reference untouched."
+  },
+  "defects": [
+    {
+      "defect_id": "V6-condition_pair",
+      "category": "program logic",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-condition_pair",
+      "candidates": [
+        "E-cacaacb928f4d0f4d299236a"
+      ],
+      "reviewed_matches": [
+        "E-cacaacb928f4d0f4d299236a"
+      ],
+      "coverage": [
+        {
+          "source_id": "contradiction_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V6-condition_boundary",
+      "category": "program logic",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-condition_boundary",
+      "candidates": [
+        "E-ef0a5148e062d039c1c5dce3"
+      ],
+      "reviewed_matches": [
+        "E-ef0a5148e062d039c1c5dce3"
+      ],
+      "coverage": [
+        {
+          "source_id": "contradiction_boundary_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V6-condition_three",
+      "category": "program logic",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-condition_three",
+      "candidates": [
+        "E-70b3567488dff2eea8233804",
+        "E-da966dc6f853c5318377bda8"
+      ],
+      "reviewed_matches": [
+        "E-70b3567488dff2eea8233804"
+      ],
+      "coverage": [
+        {
+          "source_id": "contradiction_three_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V6-dead_store",
+      "category": "program logic",
+      "outcome": "detected",
+      "reason": "Admissible evidence explicitly matched by a named reviewer.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-dead_store",
+      "candidates": [
+        "E-8d70f20bb2e2190bdd6d9141"
+      ],
+      "reviewed_matches": [
+        "E-8d70f20bb2e2190bdd6d9141"
+      ],
+      "coverage": [
+        {
+          "source_id": "overwrite_assignment_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "V6-scanf_width",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-scanf_width",
+      "candidates": [
+        "E-c06dd0a0dad8c6b75c7f7251"
+      ],
+      "reviewed_matches": [
+        "E-c06dd0a0dad8c6b75c7f7251"
+      ],
+      "coverage": [
+        {
+          "source_id": "scanf_width_bad",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "CONTRACT-scanf_width": "unknown"
+      }
+    },
+    {
+      "defect_id": "V6-scanf_unbounded",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-scanf_unbounded",
+      "candidates": [
+        "E-10ffb41fc5ecd6776e0ab0ae"
+      ],
+      "reviewed_matches": [
+        "E-10ffb41fc5ecd6776e0ab0ae"
+      ],
+      "coverage": [
+        {
+          "source_id": "scanf_unbounded",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "CONTRACT-scanf_unbounded": "unknown"
+      }
+    },
+    {
+      "defect_id": "V6-precision_context",
+      "category": "program logic",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-precision_context",
+      "candidates": [
+        "E-242fc324c5cbc8372f4febbd"
+      ],
+      "reviewed_matches": [
+        "E-242fc324c5cbc8372f4febbd"
+      ],
+      "coverage": [
+        {
+          "source_id": "precision_review",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "CONTRACT-precision_context": "unknown"
+      }
+    },
+    {
+      "defect_id": "V6-precision_literal",
+      "category": "program logic",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-precision_literal",
+      "candidates": [
+        "E-addc2ce45f9ba7b4ca208bac"
+      ],
+      "reviewed_matches": [
+        "E-addc2ce45f9ba7b4ca208bac"
+      ],
+      "coverage": [
+        {
+          "source_id": "precision_literal_review",
+          "analysis": "analyzer",
+          "status": "completed",
+          "reason": "Invocation-level coverage only; no function completeness proof."
+        }
+      ],
+      "contracts": {
+        "CONTRACT-precision_literal": "unknown"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "evidence_id": "E-88240cabba8f9c6691f5d0ed",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_index",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_index",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "line": 2,
+          "column": 54,
+          "severity": "warning",
+          "message": "Out of bound memory access (access exceeds upper limit of memory block)",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+          "diagnostic_id": "alpha.security.ArrayBoundV2"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-dcea5432a96fe1918c95c9c0",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_index",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_index",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "line": 2,
+          "column": 38,
+          "severity": "note",
+          "message": "Assuming 'p' is non-null",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-dfbe43f5d05567939af1344c",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_index",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_index",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "line": 2,
+          "column": 34,
+          "severity": "note",
+          "message": "Taking false branch",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a9e71173f7e01d886071a30b",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_index",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_index",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "line": 2,
+          "column": 54,
+          "severity": "note",
+          "message": "Out of bound memory access (access exceeds upper limit of memory block)",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-1b3f4a35f06208d1b0335bd1",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_sizeof",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_sizeof",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_sizeof.c",
+          "line": 2,
+          "column": 23,
+          "severity": "warning",
+          "message": "Result of 'malloc' is converted to a pointer of type 'int', which is incompatible with sizeof operand type 'char'",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof(char)); if (!p) return; *p=1; free(p); }",
+          "diagnostic_id": "unix.MallocSizeof"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d8cb4ecd80bed852ed263172",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-allocation_sizeof",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "allocation_sizeof",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_sizeof.c",
+          "line": 2,
+          "column": 23,
+          "severity": "note",
+          "message": "Result of 'malloc' is converted to a pointer of type 'int', which is incompatible with sizeof operand type 'char'",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "void f(void) { int *p=malloc(sizeof(char)); if (!p) return; *p=1; free(p); }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-cacaacb928f4d0f4d299236a",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-condition_pair"
+      ],
+      "evidence": {
+        "run_id": "v6-contradiction_bad",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "contradiction_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_bad.c",
+          "line": 1,
+          "column": 26,
+          "severity": "warning",
+          "message": "overlapping comparisons always evaluate to false",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1; return 0; }",
+          "diagnostic_id": "-Wtautological-overlap-compare"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-ef0a5148e062d039c1c5dce3",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-condition_boundary"
+      ],
+      "evidence": {
+        "run_id": "v6-contradiction_boundary_bad",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "contradiction_boundary_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_boundary_bad.c",
+          "line": 1,
+          "column": 27,
+          "severity": "warning",
+          "message": "overlapping comparisons always evaluate to false",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int f(int x) { if (x <= 5 && x > 5) return 1; return 0; }",
+          "diagnostic_id": "-Wtautological-overlap-compare"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-70b3567488dff2eea8233804",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-condition_three"
+      ],
+      "evidence": {
+        "run_id": "v6-contradiction_three_bad",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "contradiction_three_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c",
+          "line": 1,
+          "column": 20,
+          "severity": "warning",
+          "message": "Signed-int constraints have an empty intersection; this condition cannot be true.",
+          "backend": "smartparse-semantic-ast",
+          "category": "program logic",
+          "source_snippet": "int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }",
+          "diagnostic_id": "SP6.contradictory_int_conjunction",
+          "coordinate_space": "mapped-original-bytes",
+          "variant_location": {
+            "line": 1,
+            "column": 20,
+            "byte_offset": 19
+          },
+          "original_location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c",
+            "line": 1,
+            "column": 20,
+            "byte_offset": 19
+          },
+          "physical_range": {
+            "coordinate_space": "snapshot-bytes",
+            "start_byte": 19,
+            "end_byte_exclusive": 45
+          },
+          "original_range": {
+            "coordinate_space": "original-bytes",
+            "start_byte": 19,
+            "end_byte_exclusive": 45
+          }
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-da966dc6f853c5318377bda8",
+      "disposition": "duplicate",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-contradiction_three_bad",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "contradiction_three_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\contradiction_three_bad.c",
+          "line": 1,
+          "column": 55,
+          "severity": "warning",
+          "message": "This statement is never executed",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; }",
+          "diagnostic_id": "alpha.deadcode.UnreachableCode"
+        }
+      },
+      "adjudication": {
+        "evidence_id": "E-da966dc6f853c5318377bda8",
+        "decision": "duplicate",
+        "duplicate_of": "E-70b3567488dff2eea8233804",
+        "reviewer": "Codex-source-review",
+        "rationale": "Same source-bound structural root/conditional target; not an independent defect."
+      }
+    },
+    {
+      "evidence_id": "E-48ec8db06cb975a131a57401",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-conversion_control",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "conversion_control",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\conversion_control.c",
+          "line": 1,
+          "column": 32,
+          "severity": "warning",
+          "message": "comparison of integers of different signs: 'int' and 'unsigned int'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int f(int x) { if (x < -1 && x > 1u) return 1; return 0; }",
+          "diagnostic_id": "-Wsign-compare"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-96eff641c947936f82547a9b",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-malformed_semantic",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "malformed_semantic",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_semantic.c",
+          "line": 1,
+          "column": 27,
+          "severity": "error",
+          "message": "use of undeclared identifier 'missing_identifier'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "int broken(void) { return missing_identifier; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-9f18867ce62146d0f5de5136",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-malformed_semantic",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "malformed_semantic",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_semantic.c",
+          "line": 1,
+          "column": 27,
+          "severity": "error",
+          "message": "use of undeclared identifier 'missing_identifier'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "int broken(void) { return missing_identifier; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-5d133648b61917b09de566b2",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-malformed_syntax",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "malformed_syntax",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+          "line": 1,
+          "column": 45,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1 return 0; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c59786c0bbc975077eba0167",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-malformed_syntax",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "malformed_syntax",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\malformed_syntax.c",
+          "line": 1,
+          "column": 45,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int f(int x) { if (x < 5 && x > 10) return 1 return 0; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-8d70f20bb2e2190bdd6d9141",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-dead_store"
+      ],
+      "evidence": {
+        "run_id": "v6-overwrite_assignment_bad",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "overwrite_assignment_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_bad.c",
+          "line": 1,
+          "column": 28,
+          "severity": "warning",
+          "message": "Value stored to 'result' is never read",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(int x) { int result; result=x; result=1; return result; }",
+          "diagnostic_id": "deadcode.DeadStores"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-8f66976e40cf4651428a8237",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-overwrite_assignment_bad",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "overwrite_assignment_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\overwrite_assignment_bad.c",
+          "line": 1,
+          "column": 28,
+          "severity": "note",
+          "message": "Value stored to 'result' is never read",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "int f(int x) { int result; result=x; result=1; return result; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-addc2ce45f9ba7b4ca208bac",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-precision_literal"
+      ],
+      "evidence": {
+        "run_id": "v6-precision_literal_review",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "precision_literal_review",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_literal_review.c",
+          "line": 1,
+          "column": 25,
+          "severity": "warning",
+          "message": "Integer division occurs before the implicit floating conversion; any fractional part is already discarded.",
+          "backend": "smartparse-semantic-ast",
+          "category": "program logic",
+          "source_snippet": "double f(void) { return 7 / 2; }",
+          "diagnostic_id": "SP6.integer_division_to_float",
+          "coordinate_space": "mapped-original-bytes",
+          "variant_location": {
+            "line": 1,
+            "column": 25,
+            "byte_offset": 24
+          },
+          "original_location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_literal_review.c",
+            "line": 1,
+            "column": 25,
+            "byte_offset": 24
+          },
+          "physical_range": {
+            "coordinate_space": "snapshot-bytes",
+            "start_byte": 24,
+            "end_byte_exclusive": 29
+          },
+          "original_range": {
+            "coordinate_space": "original-bytes",
+            "start_byte": 24,
+            "end_byte_exclusive": 29
+          }
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-242fc324c5cbc8372f4febbd",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-precision_context"
+      ],
+      "evidence": {
+        "run_id": "v6-precision_review",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "precision_review",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_review.c",
+          "line": 1,
+          "column": 41,
+          "severity": "warning",
+          "message": "Integer division occurs before the implicit floating conversion; any fractional part is already discarded.",
+          "backend": "smartparse-semantic-ast",
+          "category": "program logic",
+          "source_snippet": "double f(int total, int count) { return total / count; }",
+          "diagnostic_id": "SP6.integer_division_to_float",
+          "coordinate_space": "mapped-original-bytes",
+          "variant_location": {
+            "line": 1,
+            "column": 41,
+            "byte_offset": 40
+          },
+          "original_location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_review.c",
+            "line": 1,
+            "column": 41,
+            "byte_offset": 40
+          },
+          "physical_range": {
+            "coordinate_space": "snapshot-bytes",
+            "start_byte": 40,
+            "end_byte_exclusive": 53
+          },
+          "original_range": {
+            "coordinate_space": "original-bytes",
+            "start_byte": 40,
+            "end_byte_exclusive": 53
+          }
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-59b878645891e3fb5d8247aa",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-precision_zero",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "precision_zero",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_zero.c",
+          "line": 1,
+          "column": 36,
+          "severity": "warning",
+          "message": "division by zero is undefined",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "double f(int total) { return total / 0; }",
+          "diagnostic_id": "-Wdivision-by-zero"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-050307b91bd8ebf4f58dbf05",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-precision_zero",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "precision_zero",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_zero.c",
+          "line": 1,
+          "column": 36,
+          "severity": "warning",
+          "message": "Division by zero",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "double f(int total) { return total / 0; }",
+          "diagnostic_id": "core.DivideZero"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-add5156124974b24793144f4",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-precision_zero",
+        "pass": "analyzer",
+        "collection": "findings",
+        "source_id": "precision_zero",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\precision_zero.c",
+          "line": 1,
+          "column": 36,
+          "severity": "note",
+          "message": "Division by zero",
+          "backend": "clang-static-analyzer",
+          "category": "unknown",
+          "source_snippet": "double f(int total) { return total / 0; }",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-5436e1857f024aa41429fa30",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-scanf_local_name",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "scanf_local_name",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_local_name.c",
+          "line": 1,
+          "column": 23,
+          "severity": "warning",
+          "message": "unused parameter 'format'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int scanf(const char *format, ...) { return 0; }",
+          "diagnostic_id": "-Wunused-parameter"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-10ffb41fc5ecd6776e0ab0ae",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-scanf_unbounded"
+      ],
+      "evidence": {
+        "run_id": "v6-scanf_unbounded",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "scanf_unbounded",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unbounded.c",
+          "line": 2,
+          "column": 32,
+          "severity": "warning",
+          "message": "No conversion width bounds input to this known char array.",
+          "backend": "smartparse-semantic-ast",
+          "category": "bounds",
+          "source_snippet": "void f(void) { char buffer[4]; scanf(\"%s\", buffer); }",
+          "diagnostic_id": "SP6.fixed_buffer_input",
+          "coordinate_space": "mapped-original-bytes",
+          "variant_location": {
+            "line": 2,
+            "column": 32,
+            "byte_offset": 50
+          },
+          "original_location": {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_unbounded.c",
+            "line": 2,
+            "column": 32,
+            "byte_offset": 50
+          },
+          "physical_range": {
+            "coordinate_space": "snapshot-bytes",
+            "start_byte": 50,
+            "end_byte_exclusive": 69
+          },
+          "original_range": {
+            "coordinate_space": "original-bytes",
+            "start_byte": 50,
+            "end_byte_exclusive": 69
+          }
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c06dd0a0dad8c6b75c7f7251",
+      "disposition": "reviewed_support",
+      "matched_defects": [
+        "V6-scanf_width"
+      ],
+      "evidence": {
+        "run_id": "v6-scanf_width_bad",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "scanf_width_bad",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\scanf_width_bad.c",
+          "line": 2,
+          "column": 45,
+          "severity": "warning",
+          "message": "'scanf' may overflow; destination buffer in argument 2 has size 4, but the corresponding specifier may require size 5",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "void f(void) { char buffer[4]; scanf(\"%4s\", buffer); }",
+          "diagnostic_id": "-Wfortify-source"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-b9c3cc3800f8e1e7e8dede34",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "v6-unsigned_control",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "unsigned_control",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\unsigned_control.c",
+          "line": 1,
+          "column": 32,
+          "severity": "warning",
+          "message": "overlapping comparisons always evaluate to false",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "int f(unsigned x) { if (x < 5u && x > 10u) return 1; return 0; }",
+          "diagnostic_id": "-Wtautological-overlap-compare"
+        }
+      },
+      "adjudication": null
+    }
+  ],
+  "summary": {
+    "atomic_issues": 8,
+    "outcomes": {
+      "detected": 4,
+      "missed": 0,
+      "blocked": 0,
+      "unsupported": 0,
+      "conditional": 4,
+      "uncertain": 0
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 4,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      }
+    },
+    "detected_root_cause_ids": [
+      "ROOT-condition_boundary",
+      "ROOT-condition_pair",
+      "ROOT-condition_three",
+      "ROOT-dead_store"
+    ],
+    "detected_root_cause_count": 4,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "unknown": 11,
+      "context_note": 6,
+      "reviewed_support": 8,
+      "duplicate": 1
+    }
+  },
+  "review": {
+    "scope": {
+      "dataset": "1833a2a901e1d8530925c04d6d964c1ee3a67f27216410cdee47e88b8cf9ad63",
+      "runs": "ba8994db710ae6ccd56ff99b25994b8e2deb91a1c27e1526fa1df2f1f9c128ba"
+    },
+    "review_kind": "Agent-reviewed authored fixture bindings; independent human review pending.",
+    "matches": [
+      {
+        "defect_id": "V6-condition_pair",
+        "evidence_id": "E-cacaacb928f4d0f4d299236a",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: int f(int x) { if (x < 5 && x > 10) return 1; return 0; } Condition intersection or overwritten-store fact is structural, not an inference about intended behavior."
+      },
+      {
+        "defect_id": "V6-condition_boundary",
+        "evidence_id": "E-ef0a5148e062d039c1c5dce3",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: int f(int x) { if (x <= 5 && x > 5) return 1; return 0; } Condition intersection or overwritten-store fact is structural, not an inference about intended behavior."
+      },
+      {
+        "defect_id": "V6-condition_three",
+        "evidence_id": "E-70b3567488dff2eea8233804",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: int f(int x) { if (x >= 5 && x <= 5 && x == 6) return 1; return 0; } Condition intersection or overwritten-store fact is structural, not an inference about intended behavior."
+      },
+      {
+        "defect_id": "V6-dead_store",
+        "evidence_id": "E-8d70f20bb2e2190bdd6d9141",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: int f(int x) { int result; result=x; result=1; return result; } Condition intersection or overwritten-store fact is structural, not an inference about intended behavior."
+      },
+      {
+        "defect_id": "V6-scanf_width",
+        "evidence_id": "E-c06dd0a0dad8c6b75c7f7251",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: #include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%4s\", buffer); } Required intent/input contract remains unknown; evidence does not confirm a bug."
+      },
+      {
+        "defect_id": "V6-scanf_unbounded",
+        "evidence_id": "E-10ffb41fc5ecd6776e0ab0ae",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: #include <stdio.h>\nvoid f(void) { char buffer[4]; scanf(\"%s\", buffer); } Required intent/input contract remains unknown; evidence does not confirm a bug."
+      },
+      {
+        "defect_id": "V6-precision_context",
+        "evidence_id": "E-242fc324c5cbc8372f4febbd",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: double f(int total, int count) { return total / count; } Required intent/input contract remains unknown; evidence does not confirm a bug."
+      },
+      {
+        "defect_id": "V6-precision_literal",
+        "evidence_id": "E-addc2ce45f9ba7b4ca208bac",
+        "decision": "match",
+        "reviewer": "Codex-source-review",
+        "rationale": "Authored source inspection: double f(void) { return 7 / 2; } Required intent/input contract remains unknown; evidence does not confirm a bug."
+      }
+    ],
+    "adjudications": [
+      {
+        "evidence_id": "E-da966dc6f853c5318377bda8",
+        "decision": "duplicate",
+        "duplicate_of": "E-70b3567488dff2eea8233804",
+        "reviewer": "Codex-source-review",
+        "rationale": "Same source-bound structural root/conditional target; not an independent defect."
+      }
+    ],
+    "contracts": {}
+  },
+  "metrics": {
+    "precision": null,
+    "recall": null,
+    "reason": "Partial non-exhaustive oracle and pending adjudications; do not interpret issue dispositions as precision/recall."
+  }
+}

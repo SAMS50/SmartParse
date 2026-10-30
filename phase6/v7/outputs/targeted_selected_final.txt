@@ -1,0 +1,25 @@
+test_cli_invalid_args_and_missing_file (phase6.v7.test_external.AdapterTests.test_cli_invalid_args_and_missing_file) ... ok
+test_comparison_only_tools_rejected (phase6.v7.test_external.AdapterTests.test_comparison_only_tools_rejected) ... ok
+test_conditioned_inputs_are_not_flattened (phase6.v7.test_external.AdapterTests.test_conditioned_inputs_are_not_flattened) ... ok
+test_disabled_is_no_tool_execution (phase6.v7.test_external.AdapterTests.test_disabled_is_no_tool_execution) ... ok
+test_live_selected_adapters_unicode_crlf_preservation (phase6.v7.test_external.AdapterTests.test_live_selected_adapters_unicode_crlf_preservation) ... ok
+test_runtime_capability_budget_and_private_cleanup (phase6.v7.test_external.AdapterTests.test_runtime_capability_budget_and_private_cleanup) ... ok
+test_each_discovered_candidate_on_frozen_null (phase6.v7.test_external.LiveTests.test_each_discovered_candidate_on_frozen_null) ... ok
+test_command_never_links_or_fixes (phase6.v7.test_external.ProtocolTests.test_command_never_links_or_fixes) ... ok
+test_cppcheck_related_not_duplicate_primary (phase6.v7.test_external.ProtocolTests.test_cppcheck_related_not_duplicate_primary) ... ok
+test_duplicates_and_unicode_source_binding (phase6.v7.test_external.ProtocolTests.test_duplicates_and_unicode_source_binding) ... ok
+test_gcc_json_primary_and_notes (phase6.v7.test_external.ProtocolTests.test_gcc_json_primary_and_notes) ... ok
+test_line_directive_does_not_claim_physical_mapping (phase6.v7.test_external.ProtocolTests.test_line_directive_does_not_claim_physical_mapping) ... ok
+test_malformed_outputs_fail_closed (phase6.v7.test_external.ProtocolTests.test_malformed_outputs_fail_closed) ... ok
+test_missing_tool_clear_state (phase6.v7.test_external.ProtocolTests.test_missing_tool_clear_state) ... ok
+test_sarif_no_location_still_preserved (phase6.v7.test_external.ProtocolTests.test_sarif_no_location_still_preserved) ... ok
+test_sarif_windows_uri_and_codeflow (phase6.v7.test_external.ProtocolTests.test_sarif_windows_uri_and_codeflow) ... ok
+test_tidy_windows_multiline_check_identifier (phase6.v7.test_external.ProtocolTests.test_tidy_windows_multiline_check_identifier) ... ok
+test_timeout_no_more_calls_and_cleanup (phase6.v7.test_external.ProtocolTests.test_timeout_no_more_calls_and_cleanup) ... ok
+test_unknown_identifier_not_guessed (phase6.v7.test_external.ProtocolTests.test_unknown_identifier_not_guessed) ... ok
+test_version_change_not_silently_substituted (phase6.v7.test_external.ProtocolTests.test_version_change_not_silently_substituted) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 2.161s
+
+OK

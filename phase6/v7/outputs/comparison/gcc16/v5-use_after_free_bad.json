@@ -1,0 +1,495 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc16",
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "16.1.0",
+    "format": "gcc-sarif",
+    "diagnostic_format": "sarif-stderr"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+    "sha256": "b3e49e553e876cafbfdca58628050d9fa35d7dd3a788c86563b5afd9a766bb72",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\msys64\\ucrt64\\bin",
+    "shell": false,
+    "command": [
+      "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-fmax-errors=20",
+      "-O0",
+      "-fanalyzer",
+      "-fdiagnostics-format=sarif-stderr",
+      "-c",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "-o",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external xvvf9fxg\\analysis.o"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "line": 2,
+      "column": 81,
+      "severity": "warning",
+      "message": "pointer 'p' used after 'free'",
+      "diagnostic_id": "-Wuse-after-free",
+      "category": "unknown",
+      "related": [],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {},
+      "source_bound": true,
+      "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "id": "X-e43bddb6c5883d9ce84d",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external xvvf9fxg\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+      "line": 2,
+      "column": 81,
+      "severity": "warning",
+      "message": "use after 'free' of 'p'",
+      "diagnostic_id": "-Wanalyzer-use-after-free",
+      "category": "memory safety",
+      "related": [
+        {
+          "threadFlows": [
+            {
+              "id": "main",
+              "locations": [
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(1)",
+                    "gcc/analyzer/checker_event/kind": "state_change"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 22,
+                        "endColumn": 39
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "allocated here"
+                    }
+                  },
+                  "kinds": [
+                    "acquire",
+                    "memory"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 1
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(2)",
+                    "gcc/analyzer/checker_event/kind": "state_change"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 44,
+                        "endColumn": 45
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "assuming 'p' is non-NULL"
+                    }
+                  },
+                  "nestingLevel": 1,
+                  "executionOrder": 2
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(3)",
+                    "gcc/analyzer/checker_event/kind": "start_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 6
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 44,
+                        "endColumn": 45
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "following 'false' branch (when 'p' is non-NULL)..."
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 3
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(4)",
+                    "gcc/analyzer/checker_event/kind": "end_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 6
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 59,
+                        "endColumn": 63
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "...to here"
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 4
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(5)",
+                    "gcc/analyzer/checker_event/kind": "state_change"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 65,
+                        "endColumn": 72
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "freed here"
+                    }
+                  },
+                  "kinds": [
+                    "release",
+                    "memory"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 5
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(6)",
+                    "gcc/analyzer/checker_event/kind": "warning"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 81,
+                        "endColumn": 83
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "use after 'free' of 'p'; freed at [(5)](sarif:/runs/0/results/1/codeFlows/0/threadFlows/0/locations/4)"
+                    }
+                  },
+                  "kinds": [
+                    "danger"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 6
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {
+        "gcc/analyzer/saved_diagnostic/sm": "malloc",
+        "gcc/analyzer/saved_diagnostic/ploc": {
+          "enode": 10
+        },
+        "gcc/analyzer/saved_diagnostic/var": "p_5",
+        "gcc/analyzer/saved_diagnostic/sval": "&HEAP_ALLOCATED_REGION(14)",
+        "gcc/analyzer/saved_diagnostic/state": "freed",
+        "gcc/analyzer/saved_diagnostic/idx": 2,
+        "gcc/analyzer/pending_diagnostic/kind": "use_after_free"
+      },
+      "source_bound": true,
+      "source_snippet": "int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }",
+      "id": "X-2905f43042cf3cc49d89",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external xvvf9fxg\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wuse-after-free\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Wno-use-after-free\"},\n                                         {\"id\": \"-Wanalyzer-use-after-free\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-use-after-free\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"416\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/416.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external xvvf9fxg\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccSX4uBf.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:32:58Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:32:58Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdlib.h>\\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Wuse-after-free\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"pointer 'p' used after 'free'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 81,\n                                                                       \"endColumn\": 83},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 2,\n                                                                              \"startColumn\": 65,\n                                                                              \"endColumn\": 72},\n                                                                   \"contextRegion\": {\"startLine\": 2,\n                                                                                     \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                              \"message\": {\"text\": \"call to 'free' here\"},\n                                              \"properties\": {\"nestingLevel\": 0}}]},\n                       {\"ruleId\": \"-Wanalyzer-use-after-free\",\n                        \"taxa\": [{\"id\": \"416\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"malloc\",\n                                       \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                       \"gcc/analyzer/saved_diagnostic/var\": \"p_5\",\n                                       \"gcc/analyzer/saved_diagnostic/sval\": \"&HEAP_ALLOCATED_REGION(14)\",\n                                       \"gcc/analyzer/saved_diagnostic/state\": \"freed\",\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 2,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"use_after_free\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"use after 'free' of 'p'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 81,\n                                                                       \"endColumn\": 83},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 22,\n                                                                                                                    \"endColumn\": 39},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"allocated here\"}},\n                                                                       \"kinds\": [\"acquire\",\n                                                                                 \"memory\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 44,\n                                                                                                                    \"endColumn\": 45},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assuming 'p' is non-NULL\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 6}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 44,\n                                                                                                                    \"endColumn\": 45},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'p' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 6}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 59,\n                                                                                                                    \"endColumn\": 63},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(5)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 65,\n                                                                                                                    \"endColumn\": 72},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"freed here\"}},\n                                                                       \"kinds\": [\"release\",\n                                                                                 \"memory\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 5},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(6)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 81,\n                                                                                                                    \"endColumn\": 83},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"use after 'free' of 'p'; freed at [(5)](sarif:/runs/0/results/1/codeFlows/0/threadFlows/0/locations/4)\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 6}]}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+    "returncode": 0
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0\r\nCopyright (C) 2026 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.328,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "91bf371446c8855e344dd12cfa61b386f9c421c64dfa0dbe4234b26742e549c0",
+        "stderr": "",
+        "elapsed_seconds": 0.063
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\use_after_free_bad.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external xvvf9fxg\\analysis.o"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Wuse-after-free\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Wno-use-after-free\"},\n                                         {\"id\": \"-Wanalyzer-use-after-free\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-use-after-free\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"416\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/416.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external xvvf9fxg\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccSX4uBf.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:32:58Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:32:58Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdlib.h>\\nint f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Wuse-after-free\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"pointer 'p' used after 'free'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 81,\n                                                                       \"endColumn\": 83},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 2,\n                                                                              \"startColumn\": 65,\n                                                                              \"endColumn\": 72},\n                                                                   \"contextRegion\": {\"startLine\": 2,\n                                                                                     \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                              \"message\": {\"text\": \"call to 'free' here\"},\n                                              \"properties\": {\"nestingLevel\": 0}}]},\n                       {\"ruleId\": \"-Wanalyzer-use-after-free\",\n                        \"taxa\": [{\"id\": \"416\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/sm\": \"malloc\",\n                                       \"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 10},\n                                       \"gcc/analyzer/saved_diagnostic/var\": \"p_5\",\n                                       \"gcc/analyzer/saved_diagnostic/sval\": \"&HEAP_ALLOCATED_REGION(14)\",\n                                       \"gcc/analyzer/saved_diagnostic/state\": \"freed\",\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 2,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"use_after_free\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"use after 'free' of 'p'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 81,\n                                                                       \"endColumn\": 83},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 22,\n                                                                                                                    \"endColumn\": 39},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"allocated here\"}},\n                                                                       \"kinds\": [\"acquire\",\n                                                                                 \"memory\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 44,\n                                                                                                                    \"endColumn\": 45},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assuming 'p' is non-NULL\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 6}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 44,\n                                                                                                                    \"endColumn\": 45},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'p' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 6}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 59,\n                                                                                                                    \"endColumn\": 63},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(5)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"state_change\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 65,\n                                                                                                                    \"endColumn\": 72},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"freed here\"}},\n                                                                       \"kinds\": [\"release\",\n                                                                                 \"memory\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 5},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(6)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v5\\\\fixtures\\\\use_after_free_bad.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 81,\n                                                                                                                    \"endColumn\": 83},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"int f(void) { int *p=malloc(sizeof *p); if (!p) return 0; *p=1; free(p); return *p; }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"use after 'free' of 'p'; freed at [(5)](sarif:/runs/0/results/1/codeFlows/0/threadFlows/0/locations/4)\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 6}]}]}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+        "elapsed_seconds": 0.25
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 2,
+  "normalization_revision": "identifier-category-table-2"
+}

@@ -1,0 +1,25 @@
+# New frozen evidence: retain its actual mixed LF/CRLF bytes on every platform.
+# Do not run a repository-wide renormalization of historical files.
+phase6/v8/** -text
+phase6/v9/outputs/** -text
+phase6/v9/fixtures/legacy_acceptance/** -text
+
+# Older reference-bound sources are LF in their established Git blobs/references.
+acceptance/cleaned/c_error_detection_500_lines.c text eol=lf
+phase6/v5/fixtures/*.c text eol=lf
+phase6/v6/fixtures/*.c text eol=lf
+phase6/v7/fixtures/*.c text eol=lf
+# This older fixture deliberately exercises CRLF, even in an LF checkout.
+phase6/v3/fixtures/unicode_crlf.c text eol=crlf
+
+# New release code/metadata has a predictable checkout representation.
+smartparse_cli/** text eol=lf
+test_smartparse_cli.py text eol=lf
+test_release_reproducibility.py text eol=lf
+phase6/v9/*.py text eol=lf
+phase6/v9/release_manifest.json text eol=lf
+phase6/v9/legacy_evidence.json text eol=lf
+phase6/v9/REPRODUCIBILITY*.md text eol=lf
+README.md text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf

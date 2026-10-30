@@ -1,0 +1,635 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc16",
+    "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "16.1.0",
+    "format": "gcc-sarif",
+    "diagnostic_format": "sarif-stderr"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+    "sha256": "2245680aafd361df4ce467785d7d8520a8a0f2191b192127987892c51d4242b6",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\msys64\\ucrt64\\bin",
+    "shell": false,
+    "command": [
+      "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-fmax-errors=20",
+      "-O0",
+      "-fanalyzer",
+      "-fdiagnostics-format=sarif-stderr",
+      "-c",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+      "-o",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nho9ksxb\\analysis.o"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+      "line": 2,
+      "column": 23,
+      "severity": "warning",
+      "message": "allocation of insufficient size '1' for type 'int' with size '4'",
+      "diagnostic_id": "-Walloc-size",
+      "category": "bounds",
+      "related": [],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {},
+      "source_bound": true,
+      "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+      "id": "X-f08399128af77223fb85",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nho9ksxb\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+      "line": 2,
+      "column": 23,
+      "severity": "warning",
+      "message": "allocated buffer size is not a multiple of the pointee's size",
+      "diagnostic_id": "-Wanalyzer-allocation-size",
+      "category": "semantic/type",
+      "related": [
+        {
+          "threadFlows": [
+            {
+              "id": "main",
+              "locations": [
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(1)",
+                    "gcc/analyzer/checker_event/kind": "region_creation"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 23,
+                        "endColumn": 32
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "allocated 1 byte here"
+                    }
+                  },
+                  "nestingLevel": 1,
+                  "executionOrder": 1
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(2)",
+                    "gcc/analyzer/checker_event/kind": "warning"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 23,
+                        "endColumn": 32
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "assigned to 'int *' here; 'sizeof (int)' is '4'"
+                    }
+                  },
+                  "kinds": [
+                    "danger"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 2
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {
+        "gcc/analyzer/saved_diagnostic/ploc": {
+          "enode": 2
+        },
+        "gcc/analyzer/saved_diagnostic/idx": 0,
+        "gcc/analyzer/pending_diagnostic/kind": "dubious_allocation_size",
+        "gcc/analyzer/dubious_allocation_size/lhs": "p_5",
+        "gcc/analyzer/dubious_allocation_size/rhs": "HEAP_ALLOCATED_REGION(14)",
+        "gcc/analyzer/dubious_allocation_size/capacity_sval": "(size_t)1"
+      },
+      "source_bound": true,
+      "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+      "id": "X-3d4c9e29b9c6de507daf",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nho9ksxb\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    },
+    {
+      "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+      "line": 2,
+      "column": 50,
+      "severity": "warning",
+      "message": "heap-based buffer overflow",
+      "diagnostic_id": "-Wanalyzer-out-of-bounds",
+      "category": "bounds",
+      "related": [
+        {
+          "threadFlows": [
+            {
+              "id": "main",
+              "locations": [
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(1)",
+                    "gcc/analyzer/checker_event/kind": "region_creation"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 23,
+                        "endColumn": 32
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "capacity: 1 byte"
+                    }
+                  },
+                  "nestingLevel": 1,
+                  "executionOrder": 1
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(2)",
+                    "gcc/analyzer/checker_event/kind": "start_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 4
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 37,
+                        "endColumn": 38
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "following 'false' branch (when 'p' is non-NULL)..."
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 2
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(3)",
+                    "gcc/analyzer/checker_event/kind": "end_cfg_edge",
+                    "gcc/analyzer/superedge_event/superedge": {
+                      "src_id": 2,
+                      "dst_id": 4
+                    }
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 51,
+                        "endColumn": 52
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "...to here"
+                    }
+                  },
+                  "kinds": [
+                    "branch",
+                    "false"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 3
+                },
+                {
+                  "properties": {
+                    "gcc/analyzer/checker_event/emission_id": "(4)",
+                    "gcc/analyzer/checker_event/kind": "warning"
+                  },
+                  "location": {
+                    "physicalLocation": {
+                      "artifactLocation": {
+                        "uri": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+                        "uriBaseId": "PWD"
+                      },
+                      "region": {
+                        "startLine": 2,
+                        "startColumn": 50,
+                        "endColumn": 56
+                      },
+                      "contextRegion": {
+                        "startLine": 2,
+                        "snippet": {
+                          "text": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\n"
+                        }
+                      }
+                    },
+                    "logicalLocations": [
+                      {
+                        "index": 0,
+                        "fullyQualifiedName": "f"
+                      }
+                    ],
+                    "message": {
+                      "text": "out-of-bounds write from byte 4 till byte 7 but region ends at byte 1"
+                    }
+                  },
+                  "kinds": [
+                    "danger"
+                  ],
+                  "nestingLevel": 1,
+                  "executionOrder": 4
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "context_note": false,
+      "column_kind": "unicodeCodePoints",
+      "sarif_properties": {
+        "gcc/analyzer/saved_diagnostic/ploc": {
+          "enode": 7
+        },
+        "gcc/analyzer/saved_diagnostic/idx": 1,
+        "gcc/analyzer/pending_diagnostic/kind": "concrete_buffer_overflow",
+        "gcc/analyzer/out_of_bounds/dir": "write",
+        "gcc/analyzer/out_of_bounds/model": {
+          "store": {
+            "frame: 'f'@1": {
+              "p_5": {
+                "escaped": false,
+                "touched": false,
+                "map": {
+                  "bytes 0-7": "&HEAP_ALLOCATED_REGION(14)"
+                }
+              },
+              "_1": {
+                "escaped": false,
+                "touched": false,
+                "map": {
+                  "bytes 0-7": "(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)"
+                }
+              }
+            },
+            "called_unknown_fn": false
+          },
+          "constraints": {
+            "ecs": [
+              {
+                "svals": [
+                  "&HEAP_ALLOCATED_REGION(14)"
+                ]
+              },
+              {
+                "svals": [
+                  "(void *)0B"
+                ],
+                "constant": "'0B'"
+              },
+              {
+                "svals": [
+                  "(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)"
+                ]
+              }
+            ],
+            "constraints": [
+              {
+                "lhs": 0,
+                "op": "!=",
+                "rhs": 1
+              },
+              {
+                "lhs": 2,
+                "op": "!=",
+                "rhs": 1
+              }
+            ],
+            "bounded_ranges_constraints": []
+          },
+          "current_frame": "frame: 'f'@1",
+          "thrown_exception_stack": [],
+          "caught_exception_stack": [],
+          "dynamic_extents": {
+            "HEAP_ALLOCATED_REGION(14)": "(size_t)1"
+          }
+        },
+        "gcc/analyzer/out_of_bounds/region": "HEAP_ALLOCATED_REGION(14)+(sizetype)4",
+        "gcc/analyzer/out_of_bounds/diag_arg": null,
+        "gcc/analyzer/out_of_bounds/sval_hint": "(int)1",
+        "gcc/analyzer/out_of_bounds/region_creation_event_id": "(1)",
+        "gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bits": {
+          "start_bit_offset": "32",
+          "size_in_bits": "32"
+        },
+        "gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bytes": {
+          "start_byte_offset": "4",
+          "size_in_bytes": "4"
+        },
+        "gcc/analyzer/concrete_past_the_end/bit_bound": "8",
+        "gcc/analyzer/concrete_past_the_end/byte_bound": "1"
+      },
+      "source_bound": true,
+      "source_snippet": "void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }",
+      "id": "X-619bbad0426a1395bddd",
+      "tool": {
+        "id": "gcc16",
+        "path": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+        "kind": "gcc",
+        "version": "16.1.0",
+        "format": "gcc-sarif",
+        "diagnostic_format": "sarif-stderr"
+      },
+      "configuration": {
+        "standard": "c11",
+        "include_dirs": [],
+        "defines": [],
+        "path_prepend": "C:\\msys64\\ucrt64\\bin",
+        "shell": false,
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nho9ksxb\\analysis.o"
+        ]
+      },
+      "review_status": "tool_reported_unverified",
+      "confidence": "review_suggestion",
+      "provenance": {
+        "original_source": true,
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "duplicates_existing": "unknown_pending_root_review"
+    }
+  ],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Walloc-size\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Walloc-size\"},\n                                         {\"id\": \"-Wanalyzer-allocation-size\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-allocation-size\"},\n                                         {\"id\": \"-Wanalyzer-out-of-bounds\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-out-of-bounds\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"131\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/131.html\"},\n                                    {\"id\": \"122\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/122.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nho9ksxb\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccZzD9OQ.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:33:01Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:33:01Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdlib.h>\\nvoid f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Walloc-size\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"allocation of insufficient size '1' for type 'int' with size '4'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 23,\n                                                                       \"endColumn\": 29},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}]},\n                       {\"ruleId\": \"-Wanalyzer-allocation-size\",\n                        \"taxa\": [{\"id\": \"131\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 2},\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 0,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"dubious_allocation_size\",\n                                       \"gcc/analyzer/dubious_allocation_size/lhs\": \"p_5\",\n                                       \"gcc/analyzer/dubious_allocation_size/rhs\": \"HEAP_ALLOCATED_REGION(14)\",\n                                       \"gcc/analyzer/dubious_allocation_size/capacity_sval\": \"(size_t)1\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"allocated buffer size is not a multiple of the pointee's size\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 23,\n                                                                       \"endColumn\": 32},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"region_creation\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"allocated 1 byte here\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assigned to 'int *' here; 'sizeof (int)' is '4'\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2}]}]}]},\n                       {\"ruleId\": \"-Wanalyzer-out-of-bounds\",\n                        \"taxa\": [{\"id\": \"122\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 7},\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 1,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"concrete_buffer_overflow\",\n                                       \"gcc/analyzer/out_of_bounds/dir\": \"write\",\n                                       \"gcc/analyzer/out_of_bounds/model\": {\"store\": {\"frame: 'f'@1\": {\"p_5\": {\"escaped\": false,\n                                                                                                               \"touched\": false,\n                                                                                                               \"map\": {\"bytes 0-7\": \"&HEAP_ALLOCATED_REGION(14)\"}},\n                                                                                                       \"_1\": {\"escaped\": false,\n                                                                                                              \"touched\": false,\n                                                                                                              \"map\": {\"bytes 0-7\": \"(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)\"}}},\n                                                                                      \"called_unknown_fn\": false},\n                                                                            \"constraints\": {\"ecs\": [{\"svals\": [\"&HEAP_ALLOCATED_REGION(14)\"]},\n                                                                                                    {\"svals\": [\"(void *)0B\"],\n                                                                                                     \"constant\": \"'0B'\"},\n                                                                                                    {\"svals\": [\"(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)\"]}],\n                                                                                            \"constraints\": [{\"lhs\": 0,\n                                                                                                             \"op\": \"!=\",\n                                                                                                             \"rhs\": 1},\n                                                                                                            {\"lhs\": 2,\n                                                                                                             \"op\": \"!=\",\n                                                                                                             \"rhs\": 1}],\n                                                                                            \"bounded_ranges_constraints\": []},\n                                                                            \"current_frame\": \"frame: 'f'@1\",\n                                                                            \"thrown_exception_stack\": [],\n                                                                            \"caught_exception_stack\": [],\n                                                                            \"dynamic_extents\": {\"HEAP_ALLOCATED_REGION(14)\": \"(size_t)1\"}},\n                                       \"gcc/analyzer/out_of_bounds/region\": \"HEAP_ALLOCATED_REGION(14)+(sizetype)4\",\n                                       \"gcc/analyzer/out_of_bounds/diag_arg\": null,\n                                       \"gcc/analyzer/out_of_bounds/sval_hint\": \"(int)1\",\n                                       \"gcc/analyzer/out_of_bounds/region_creation_event_id\": \"(1)\",\n                                       \"gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bits\": {\"start_bit_offset\": \"32\",\n                                                                                                  \"size_in_bits\": \"32\"},\n                                       \"gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bytes\": {\"start_byte_offset\": \"4\",\n                                                                                                   \"size_in_bytes\": \"4\"},\n                                       \"gcc/analyzer/concrete_past_the_end/bit_bound\": \"8\",\n                                       \"gcc/analyzer/concrete_past_the_end/byte_bound\": \"1\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"heap-based buffer overflow\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 50,\n                                                                       \"endColumn\": 56},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"region_creation\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"capacity: 1 byte\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 37,\n                                                                                                                    \"endColumn\": 38},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'p' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 51,\n                                                                                                                    \"endColumn\": 52},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 50,\n                                                                                                                    \"endColumn\": 56},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"out-of-bounds write from byte 4 till byte 7 but region ends at byte 1\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4}]}]}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 2,\n                                                                              \"startColumn\": 50,\n                                                                              \"endColumn\": 56},\n                                                                   \"contextRegion\": {\"startLine\": 2,\n                                                                                     \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                              \"message\": {\"text\": \"write of 4 bytes to beyond the end of the region\"},\n                                              \"properties\": {\"nestingLevel\": 0}},\n                                             {\"message\": {\"text\": \"Diagram visualizing the predicted out-of-bounds access\",\n                                                          \"markdown\": \"                                                      +--------------------+\\n                                                      | write of '(int) 1' |\\n                                                      +--------------------+\\n                                                                |\\n                                                                |\\n                                                                v\\n    +-------------------------------+                 +--------------------+\\n    |buffer allocated on heap at (1)|                 | after valid range  |\\n    +-------------------------------+                 +--------------------+\\n    |~~~~~~~~~~~~~~~+~~~~~~~~~~~~~~~||~~~~~~~+~~~~~~~||~~~~~~~~~+~~~~~~~~~~|\\n                    |                        |                  |\\n           +--------+-------+            +---+---+    +---------+---------+\\n           |capacity: 1 byte|            |3 bytes|    |overflow of 4 bytes|\\n           +----------------+            +-------+    +-------------------+\\n\"}}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+    "returncode": 0
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (Rev5, Built by MSYS2 project) 16.1.0\r\nCopyright (C) 2026 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.359,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "91bf371446c8855e344dd12cfa61b386f9c421c64dfa0dbe4234b26742e549c0",
+        "stderr": "",
+        "elapsed_seconds": 0.078
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-fmax-errors=20",
+          "-O0",
+          "-fanalyzer",
+          "-fdiagnostics-format=sarif-stderr",
+          "-c",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v6\\fixtures\\allocation_index.c",
+          "-o",
+          "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external nho9ksxb\\analysis.o"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "{\"$schema\": \"https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json\",\n \"version\": \"2.1.0\",\n \"runs\": [{\"tool\": {\"driver\": {\"name\": \"GNU C11\",\n                               \"fullName\": \"GNU C11 (Rev5, Built by MSYS2 project) version 16.1.0 (x86_64-w64-mingw32)\",\n                               \"version\": \"16.1.0\",\n                               \"informationUri\": \"https://gcc.gnu.org/gcc-16/\",\n                               \"rules\": [{\"id\": \"-Walloc-size\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Warning-Options.html#index-Walloc-size\"},\n                                         {\"id\": \"-Wanalyzer-allocation-size\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-allocation-size\"},\n                                         {\"id\": \"-Wanalyzer-out-of-bounds\",\n                                          \"helpUri\": \"https://gcc.gnu.org/onlinedocs/gcc-16.1.0/gcc/Static-Analyzer-Options.html#index-Wanalyzer-out-of-bounds\"}]}},\n           \"taxonomies\": [{\"name\": \"CWE\",\n                           \"version\": \"4.7\",\n                           \"organization\": \"MITRE\",\n                           \"shortDescription\": {\"text\": \"The MITRE Common Weakness Enumeration\"},\n                           \"taxa\": [{\"id\": \"131\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/131.html\"},\n                                    {\"id\": \"122\",\n                                     \"helpUri\": \"https://cwe.mitre.org/data/definitions/122.html\"}]}],\n           \"invocations\": [{\"arguments\": [\"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/cc1.exe\",\n                                          \"-quiet\",\n                                          \"-iprefix\",\n                                          \"C:/msys64/ucrt64/bin/../lib/gcc/x86_64-w64-mingw32/16.1.0/\",\n                                          \"-D_REENTRANT\",\n                                          \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                          \"-quiet\",\n                                          \"-dumpdir\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\smartparse external nho9ksxb\\\\\",\n                                          \"-dumpbase\",\n                                          \"analysis.c\",\n                                          \"-dumpbase-ext\",\n                                          \".c\",\n                                          \"-mtune=generic\",\n                                          \"-march=nocona\",\n                                          \"-O0\",\n                                          \"-Wall\",\n                                          \"-Wextra\",\n                                          \"-std=c11\",\n                                          \"-fmax-errors=20\",\n                                          \"-fanalyzer\",\n                                          \"-fdiagnostics-format=sarif-stderr\",\n                                          \"-o\",\n                                          \"C:\\\\Users\\\\saami\\\\AppData\\\\Local\\\\Temp\\\\ccZzD9OQ.s\"],\n                            \"workingDirectory\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\",\n                                                 \"uriBaseId\": \"PWD\"},\n                            \"startTimeUtc\": \"2026-10-27T16:33:01Z\",\n                            \"executionSuccessful\": true,\n                            \"toolExecutionNotifications\": [],\n                            \"endTimeUtc\": \"2026-10-27T16:33:01Z\"}],\n           \"originalUriBaseIds\": {\"PWD\": {\"uri\": \"file://C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git/\"}},\n           \"artifacts\": [{\"location\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                       \"uriBaseId\": \"PWD\"},\n                          \"sourceLanguage\": \"c\",\n                          \"contents\": {\"text\": \"#include <stdlib.h>\\nvoid f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"},\n                          \"roles\": [\"analysisTarget\",\n                                    \"tracedFile\"]}],\n           \"results\": [{\"ruleId\": \"-Walloc-size\",\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"allocation of insufficient size '1' for type 'int' with size '4'\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 23,\n                                                                       \"endColumn\": 29},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}]},\n                       {\"ruleId\": \"-Wanalyzer-allocation-size\",\n                        \"taxa\": [{\"id\": \"131\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 2},\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 0,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"dubious_allocation_size\",\n                                       \"gcc/analyzer/dubious_allocation_size/lhs\": \"p_5\",\n                                       \"gcc/analyzer/dubious_allocation_size/rhs\": \"HEAP_ALLOCATED_REGION(14)\",\n                                       \"gcc/analyzer/dubious_allocation_size/capacity_sval\": \"(size_t)1\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"allocated buffer size is not a multiple of the pointee's size\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 23,\n                                                                       \"endColumn\": 32},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"region_creation\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"allocated 1 byte here\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"assigned to 'int *' here; 'sizeof (int)' is '4'\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2}]}]}]},\n                       {\"ruleId\": \"-Wanalyzer-out-of-bounds\",\n                        \"taxa\": [{\"id\": \"122\",\n                                  \"toolComponent\": {\"name\": \"cwe\"}}],\n                        \"properties\": {\"gcc/analyzer/saved_diagnostic/ploc\": {\"enode\": 7},\n                                       \"gcc/analyzer/saved_diagnostic/idx\": 1,\n                                       \"gcc/analyzer/pending_diagnostic/kind\": \"concrete_buffer_overflow\",\n                                       \"gcc/analyzer/out_of_bounds/dir\": \"write\",\n                                       \"gcc/analyzer/out_of_bounds/model\": {\"store\": {\"frame: 'f'@1\": {\"p_5\": {\"escaped\": false,\n                                                                                                               \"touched\": false,\n                                                                                                               \"map\": {\"bytes 0-7\": \"&HEAP_ALLOCATED_REGION(14)\"}},\n                                                                                                       \"_1\": {\"escaped\": false,\n                                                                                                              \"touched\": false,\n                                                                                                              \"map\": {\"bytes 0-7\": \"(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)\"}}},\n                                                                                      \"called_unknown_fn\": false},\n                                                                            \"constraints\": {\"ecs\": [{\"svals\": [\"&HEAP_ALLOCATED_REGION(14)\"]},\n                                                                                                    {\"svals\": [\"(void *)0B\"],\n                                                                                                     \"constant\": \"'0B'\"},\n                                                                                                    {\"svals\": [\"(&HEAP_ALLOCATED_REGION(14)+(sizetype)4)\"]}],\n                                                                                            \"constraints\": [{\"lhs\": 0,\n                                                                                                             \"op\": \"!=\",\n                                                                                                             \"rhs\": 1},\n                                                                                                            {\"lhs\": 2,\n                                                                                                             \"op\": \"!=\",\n                                                                                                             \"rhs\": 1}],\n                                                                                            \"bounded_ranges_constraints\": []},\n                                                                            \"current_frame\": \"frame: 'f'@1\",\n                                                                            \"thrown_exception_stack\": [],\n                                                                            \"caught_exception_stack\": [],\n                                                                            \"dynamic_extents\": {\"HEAP_ALLOCATED_REGION(14)\": \"(size_t)1\"}},\n                                       \"gcc/analyzer/out_of_bounds/region\": \"HEAP_ALLOCATED_REGION(14)+(sizetype)4\",\n                                       \"gcc/analyzer/out_of_bounds/diag_arg\": null,\n                                       \"gcc/analyzer/out_of_bounds/sval_hint\": \"(int)1\",\n                                       \"gcc/analyzer/out_of_bounds/region_creation_event_id\": \"(1)\",\n                                       \"gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bits\": {\"start_bit_offset\": \"32\",\n                                                                                                  \"size_in_bits\": \"32\"},\n                                       \"gcc/analyzer/concrete_out_of_bounds/out_of_bounds_bytes\": {\"start_byte_offset\": \"4\",\n                                                                                                   \"size_in_bytes\": \"4\"},\n                                       \"gcc/analyzer/concrete_past_the_end/bit_bound\": \"8\",\n                                       \"gcc/analyzer/concrete_past_the_end/byte_bound\": \"1\"},\n                        \"level\": \"warning\",\n                        \"message\": {\"text\": \"heap-based buffer overflow\"},\n                        \"locations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                 \"uriBaseId\": \"PWD\"},\n                                                            \"region\": {\"startLine\": 2,\n                                                                       \"startColumn\": 50,\n                                                                       \"endColumn\": 56},\n                                                            \"contextRegion\": {\"startLine\": 2,\n                                                                              \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                       \"logicalLocations\": [{\"index\": 0,\n                                                             \"fullyQualifiedName\": \"f\"}]}],\n                        \"codeFlows\": [{\"threadFlows\": [{\"id\": \"main\",\n                                                        \"locations\": [{\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(1)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"region_creation\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 23,\n                                                                                                                    \"endColumn\": 32},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"capacity: 1 byte\"}},\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 1},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(2)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"start_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 37,\n                                                                                                                    \"endColumn\": 38},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"following 'false' branch (when 'p' is non-NULL)...\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 2},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(3)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"end_cfg_edge\",\n                                                                                      \"gcc/analyzer/superedge_event/superedge\": {\"src_id\": 2,\n                                                                                                                                 \"dst_id\": 4}},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 51,\n                                                                                                                    \"endColumn\": 52},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"...to here\"}},\n                                                                       \"kinds\": [\"branch\",\n                                                                                 \"false\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 3},\n                                                                      {\"properties\": {\"gcc/analyzer/checker_event/emission_id\": \"(4)\",\n                                                                                      \"gcc/analyzer/checker_event/kind\": \"warning\"},\n                                                                       \"location\": {\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                                                              \"uriBaseId\": \"PWD\"},\n                                                                                                         \"region\": {\"startLine\": 2,\n                                                                                                                    \"startColumn\": 50,\n                                                                                                                    \"endColumn\": 56},\n                                                                                                         \"contextRegion\": {\"startLine\": 2,\n                                                                                                                           \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                                                                    \"logicalLocations\": [{\"index\": 0,\n                                                                                                          \"fullyQualifiedName\": \"f\"}],\n                                                                                    \"message\": {\"text\": \"out-of-bounds write from byte 4 till byte 7 but region ends at byte 1\"}},\n                                                                       \"kinds\": [\"danger\"],\n                                                                       \"nestingLevel\": 1,\n                                                                       \"executionOrder\": 4}]}]}],\n                        \"relatedLocations\": [{\"physicalLocation\": {\"artifactLocation\": {\"uri\": \"C:\\\\Users\\\\saami\\\\Downloads\\\\SmartParse_Final_Git\\\\phase6\\\\v6\\\\fixtures\\\\allocation_index.c\",\n                                                                                        \"uriBaseId\": \"PWD\"},\n                                                                   \"region\": {\"startLine\": 2,\n                                                                              \"startColumn\": 50,\n                                                                              \"endColumn\": 56},\n                                                                   \"contextRegion\": {\"startLine\": 2,\n                                                                                     \"snippet\": {\"text\": \"void f(void) { int *p=malloc(1); if (!p) return; p[1]=1; free(p); }\\n\"}}},\n                                              \"message\": {\"text\": \"write of 4 bytes to beyond the end of the region\"},\n                                              \"properties\": {\"nestingLevel\": 0}},\n                                             {\"message\": {\"text\": \"Diagram visualizing the predicted out-of-bounds access\",\n                                                          \"markdown\": \"                                                      +--------------------+\\n                                                      | write of '(int) 1' |\\n                                                      +--------------------+\\n                                                                |\\n                                                                |\\n                                                                v\\n    +-------------------------------+                 +--------------------+\\n    |buffer allocated on heap at (1)|                 | after valid range  |\\n    +-------------------------------+                 +--------------------+\\n    |~~~~~~~~~~~~~~~+~~~~~~~~~~~~~~~||~~~~~~~+~~~~~~~||~~~~~~~~~+~~~~~~~~~~|\\n                    |                        |                  |\\n           +--------+-------+            +---+---+    +---------+---------+\\n           |capacity: 1 byte|            |3 bytes|    |overflow of 4 bytes|\\n           +----------------+            +-------+    +-------------------+\\n\"}}]}],\n           \"logicalLocations\": [{\"name\": \"f\",\n                                 \"fullyQualifiedName\": \"f\",\n                                 \"decoratedName\": \"f\",\n                                 \"kind\": \"function\",\n                                 \"index\": 0}]}]}\r\n",
+        "elapsed_seconds": 0.266
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 3,
+  "normalization_revision": "identifier-category-table-2"
+}

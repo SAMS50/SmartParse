@@ -1,0 +1,6 @@
+test_invocation_budget (phase6.v5.test_detection.LiveTests.test_invocation_budget) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.128s
+
+OK

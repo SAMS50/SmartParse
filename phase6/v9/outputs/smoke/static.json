@@ -1,0 +1,793 @@
+{
+  "schema": "smartparse.unified_analysis",
+  "schema_version": "1.0",
+  "version": "0.9.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+    "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+    "bytes": 67,
+    "original_unchanged": true,
+    "empty": false
+  },
+  "requested_analyzers": [
+    "static"
+  ],
+  "effective_analyzers": [
+    "static"
+  ],
+  "status": "completed",
+  "runs": [
+    {
+      "id": "static",
+      "status": "completed",
+      "reason": null,
+      "raw": {
+        "schema_version": "1.0",
+        "analysis_mode": "clang_static_analyzer",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 0,
+          "errors": 0,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 0,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: warning: Dereference of null pointer (loaded from variable 'probe') [core.NullDereference]\r\n return bias + *probe;\r\n               ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:2:2: note: 'probe' initialized to a null pointer value\r\n int *probe=0;\r\n ^~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: note: Dereference of null pointer (loaded from variable 'probe')\r\n return bias + *probe;\r\n               ^~~~~~\r\n1 warning generated.\r\n"
+        },
+        "unrecognized_output": [],
+        "findings": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": 3,
+            "column": 16,
+            "severity": "warning",
+            "message": "Dereference of null pointer (loaded from variable 'probe')",
+            "backend": "clang-static-analyzer",
+            "category": "unknown",
+            "source_snippet": " return bias + *probe;",
+            "diagnostic_id": "core.NullDereference"
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": 2,
+            "column": 2,
+            "severity": "note",
+            "message": "'probe' initialized to a null pointer value",
+            "backend": "clang-static-analyzer",
+            "category": "unknown",
+            "source_snippet": " int *probe=0;",
+            "diagnostic_id": null
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+            "line": 3,
+            "column": 16,
+            "severity": "note",
+            "message": "Dereference of null pointer (loaded from variable 'probe')",
+            "backend": "clang-static-analyzer",
+            "category": "unknown",
+            "source_snippet": " return bias + *probe;",
+            "diagnostic_id": null
+          }
+        ],
+        "findings_summary": {
+          "total_diagnostics": 3,
+          "errors": 0,
+          "warnings": 1,
+          "notes": 2,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 3
+          }
+        },
+        "usage": {
+          "compiler_invocations": 11,
+          "elapsed_seconds": 1.734,
+          "calls": [
+            {
+              "number": 1,
+              "role": "compiler_version",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "--version"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+              "stderr": "",
+              "elapsed_seconds": 0.187
+            },
+            {
+              "number": 2,
+              "role": "syntax_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.125
+            },
+            {
+              "number": 3,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.172
+            },
+            {
+              "number": 4,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wextra",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.313
+            },
+            {
+              "number": 5,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wparentheses",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.125
+            },
+            {
+              "number": 6,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-show-option",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.14
+            },
+            {
+              "number": 7,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fdiagnostics-color=never",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.172
+            },
+            {
+              "number": 8,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-ferror-limit=0",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.203
+            },
+            {
+              "number": 9,
+              "role": "optional_flag_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-fno-diagnostics-fixit-info",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.094
+            },
+            {
+              "number": 10,
+              "role": "analyzer_capability",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "--analyze",
+                "-x",
+                "c",
+                "-o",
+                "nul",
+                "-"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "",
+              "elapsed_seconds": 0.094
+            },
+            {
+              "number": 11,
+              "role": "static_analysis",
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "--analyze",
+                "-x",
+                "c",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-ferror-limit=0",
+                "-fno-diagnostics-fixit-info",
+                "-std=c11",
+                "-Xanalyzer",
+                "-analyzer-output=text",
+                "-o",
+                "nul",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+              ],
+              "status": "completed",
+              "returncode": 0,
+              "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: warning: Dereference of null pointer (loaded from variable 'probe') [core.NullDereference]\r\n return bias + *probe;\r\n               ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:2:2: note: 'probe' initialized to a null pointer value\r\n int *probe=0;\r\n ^~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: note: Dereference of null pointer (loaded from variable 'probe')\r\n return bias + *probe;\r\n               ^~~~~~\r\n1 warning generated.\r\n",
+              "elapsed_seconds": 0.109
+            }
+          ]
+        }
+      },
+      "elapsed_seconds": 1.734,
+      "usage": {
+        "compiler_invocations": 11,
+        "elapsed_seconds": 1.734,
+        "calls": [
+          {
+            "number": 1,
+            "role": "compiler_version",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+            "stderr": "",
+            "elapsed_seconds": 0.187
+          },
+          {
+            "number": 2,
+            "role": "syntax_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 3,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wall",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.172
+          },
+          {
+            "number": 4,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wextra",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.313
+          },
+          {
+            "number": 5,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-Wparentheses",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.125
+          },
+          {
+            "number": 6,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-show-option",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.14
+          },
+          {
+            "number": 7,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fdiagnostics-color=never",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.172
+          },
+          {
+            "number": 8,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-ferror-limit=0",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.203
+          },
+          {
+            "number": 9,
+            "role": "optional_flag_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "-x",
+              "c",
+              "-fsyntax-only",
+              "-fno-diagnostics-fixit-info",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.094
+          },
+          {
+            "number": 10,
+            "role": "analyzer_capability",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--analyze",
+              "-x",
+              "c",
+              "-o",
+              "nul",
+              "-"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "",
+            "elapsed_seconds": 0.094
+          },
+          {
+            "number": 11,
+            "role": "static_analysis",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--analyze",
+              "-x",
+              "c",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-std=c11",
+              "-Xanalyzer",
+              "-analyzer-output=text",
+              "-o",
+              "nul",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: warning: Dereference of null pointer (loaded from variable 'probe') [core.NullDereference]\r\n return bias + *probe;\r\n               ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:2:2: note: 'probe' initialized to a null pointer value\r\n int *probe=0;\r\n ^~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c:3:16: note: Dereference of null pointer (loaded from variable 'probe')\r\n return bias + *probe;\r\n               ^~~~~~\r\n1 warning generated.\r\n",
+            "elapsed_seconds": 0.109
+          }
+        ]
+      },
+      "eligibility": {
+        "frontend_accepted": null,
+        "operational_completion": "completed",
+        "function_path_coverage_certified": false
+      }
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-414e65692f7340b30a6a",
+      "raw_reference": {
+        "run_id": "static",
+        "path": "/findings/0"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16,
+        "severity": "warning",
+        "message": "Dereference of null pointer (loaded from variable 'probe')",
+        "backend": "clang-static-analyzer",
+        "category": "unknown",
+        "source_snippet": " return bias + *probe;",
+        "diagnostic_id": "core.NullDereference"
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "severity": "warning",
+      "category": "memory safety",
+      "category_basis": "known_checker_identifier",
+      "message": "Dereference of null pointer (loaded from variable 'probe')",
+      "analyzer": "Clang Static Analyzer",
+      "backend": "clang-static-analyzer",
+      "diagnostic_id": "core.NullDereference",
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-b2f1bcaa157261bb7899",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " return bias + *probe;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": {
+        "pass_completion": "completed",
+        "run_completion": "completed",
+        "frontend_accepted": null,
+        "function_path_coverage_certified": false
+      },
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": false
+    },
+    {
+      "id": "D-734024c5171d663a1afd",
+      "raw_reference": {
+        "run_id": "static",
+        "path": "/findings/1"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 2,
+        "column": 2,
+        "severity": "note",
+        "message": "'probe' initialized to a null pointer value",
+        "backend": "clang-static-analyzer",
+        "category": "unknown",
+        "source_snippet": " int *probe=0;",
+        "diagnostic_id": null
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 2,
+        "column": 2
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 2,
+        "column": 2
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "severity": "note",
+      "category": "unknown",
+      "category_basis": "unknown",
+      "message": "'probe' initialized to a null pointer value",
+      "analyzer": "Clang Static Analyzer",
+      "backend": "clang-static-analyzer",
+      "diagnostic_id": null,
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-41a9bced626a1e3963b2",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " int *probe=0;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": {
+        "pass_completion": "completed",
+        "run_completion": "completed",
+        "frontend_accepted": null,
+        "function_path_coverage_certified": false
+      },
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": true
+    },
+    {
+      "id": "D-f61f277f929f2a502d67",
+      "raw_reference": {
+        "run_id": "static",
+        "path": "/findings/2"
+      },
+      "raw_record": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16,
+        "severity": "note",
+        "message": "Dereference of null pointer (loaded from variable 'probe')",
+        "backend": "clang-static-analyzer",
+        "category": "unknown",
+        "source_snippet": " return bias + *probe;",
+        "diagnostic_id": null
+      },
+      "location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "reported_location": {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "line": 3,
+        "column": 16
+      },
+      "location_space": "original-tool-reported",
+      "source_sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "severity": "note",
+      "category": "unknown",
+      "category_basis": "unknown",
+      "message": "Dereference of null pointer (loaded from variable 'probe')",
+      "analyzer": "Clang Static Analyzer",
+      "backend": "clang-static-analyzer",
+      "diagnostic_id": null,
+      "suggestion": null,
+      "root_id": null,
+      "group_id": "G-5383867750a2f0e76299",
+      "provenance": {
+        "repair_conditioned": false,
+        "isolation_conditioned": false
+      },
+      "conditioning": "original-source",
+      "evidence": {
+        "source_snippet": " return bias + *probe;",
+        "original_range": null,
+        "physical_range": null,
+        "related": [],
+        "source_mapping": "tool-reported; unverified column convention"
+      },
+      "completeness": {
+        "pass_completion": "completed",
+        "run_completion": "completed",
+        "frontend_accepted": null,
+        "function_path_coverage_certified": false
+      },
+      "review_status": "unreviewed",
+      "confirmed_defect": null,
+      "context_note": true
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-b2f1bcaa157261bb7899",
+      "root_id": null,
+      "basis": "exact same-backend diagnostic and source/provenance identity",
+      "diagnostic_ids": [
+        "D-414e65692f7340b30a6a"
+      ],
+      "analyzers": [
+        "Clang Static Analyzer"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    },
+    {
+      "id": "G-41a9bced626a1e3963b2",
+      "root_id": null,
+      "basis": "ungrouped context or insufficient location evidence",
+      "diagnostic_ids": [
+        "D-734024c5171d663a1afd"
+      ],
+      "analyzers": [
+        "Clang Static Analyzer"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    },
+    {
+      "id": "G-5383867750a2f0e76299",
+      "root_id": null,
+      "basis": "ungrouped context or insufficient location evidence",
+      "diagnostic_ids": [
+        "D-f61f277f929f2a502d67"
+      ],
+      "analyzers": [
+        "Clang Static Analyzer"
+      ],
+      "conditioning": "original-source",
+      "confirmed_defect": null
+    }
+  ],
+  "tool_issues": [],
+  "summary": {
+    "raw_normalized_records": 3,
+    "errors": 0,
+    "warnings": 1,
+    "notes": 2,
+    "categories": {
+      "memory safety": 1
+    },
+    "conditioning": {
+      "original-source": 1
+    },
+    "evidence_groups": 3,
+    "confirmed_defect_roots": null,
+    "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+  },
+  "coverage": {
+    "function_path_coverage_certified": false,
+    "reason": "Per-run eligibility is preserved; process completion is not exhaustive coverage."
+  },
+  "independent_human_adjudication": "pending; no accuracy metrics are inferred",
+  "usage": {
+    "elapsed_seconds": 1.734,
+    "compiler_invocations": 11,
+    "total_timeout": 120,
+    "call_timeout": 10,
+    "max_invocations": 256
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "compiler": "auto",
+    "clang": null,
+    "recovery": false,
+    "isolation": false
+  }
+}

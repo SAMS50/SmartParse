@@ -1,0 +1,55 @@
+test_bounds_evidence (test_smartparse_cli.EvidenceAndPipelineTests.test_bounds_evidence) ... ok
+test_category_from_existing_checker_identifier (test_smartparse_cli.EvidenceAndPipelineTests.test_category_from_existing_checker_identifier) ... ok
+test_conditioned_never_groups_with_baseline (test_smartparse_cli.EvidenceAndPipelineTests.test_conditioned_never_groups_with_baseline) ... ok
+test_cross_backend_same_line_does_not_group (test_smartparse_cli.EvidenceAndPipelineTests.test_cross_backend_same_line_does_not_group) ... ok
+test_isolation_conditioning (test_smartparse_cli.EvidenceAndPipelineTests.test_isolation_conditioning) ... ok
+test_joint_conditioning_explicit (test_smartparse_cli.EvidenceAndPipelineTests.test_joint_conditioning_explicit) ... ok
+test_memory_dependency_not_run_twice (test_smartparse_cli.EvidenceAndPipelineTests.test_memory_dependency_not_run_twice) ... ok
+test_memory_leak_evidence (test_smartparse_cli.EvidenceAndPipelineTests.test_memory_leak_evidence) ... ok
+test_null_pointer_evidence (test_smartparse_cli.EvidenceAndPipelineTests.test_null_pointer_evidence) ... ok
+test_original_smartparse_mode_needs_no_compiler (test_smartparse_cli.EvidenceAndPipelineTests.test_original_smartparse_mode_needs_no_compiler) ... ok
+test_raw_references_resolve_to_original_records (test_smartparse_cli.EvidenceAndPipelineTests.test_raw_references_resolve_to_original_records) ... ok
+test_repair_conditioning (test_smartparse_cli.EvidenceAndPipelineTests.test_repair_conditioning) ... ok
+test_terminal_control_characters_escaped (test_smartparse_cli.EvidenceAndPipelineTests.test_terminal_control_characters_escaped) ... ok
+test_unknown_checker_not_guessed_from_english (test_smartparse_cli.EvidenceAndPipelineTests.test_unknown_checker_not_guessed_from_english) ... ok
+test_unknown_location_does_not_group (test_smartparse_cli.EvidenceAndPipelineTests.test_unknown_location_does_not_group) ... ok
+test_unsafe_isolation_abstention_preserved (test_smartparse_cli.EvidenceAndPipelineTests.test_unsafe_isolation_abstention_preserved) ... ok
+test_unsupported_restricted_lexer_graceful (test_smartparse_cli.EvidenceAndPipelineTests.test_unsupported_restricted_lexer_graceful) ... ok
+test_compiler_family_is_not_silently_substituted (test_smartparse_cli.UnifiedTests.test_compiler_family_is_not_silently_substituted) ... ok
+test_doctor_missing_tools_is_inventory_not_finding (test_smartparse_cli.UnifiedTests.test_doctor_missing_tools_is_inventory_not_finding) ... ok
+test_empty_input_is_not_a_crash_or_safety_claim (test_smartparse_cli.UnifiedTests.test_empty_input_is_not_a_crash_or_safety_claim) ... ok
+test_exact_duplicates_group_but_raw_records_survive (test_smartparse_cli.UnifiedTests.test_exact_duplicates_group_but_raw_records_survive) ... ok
+test_existing_source_never_overwritten_by_output (test_smartparse_cli.UnifiedTests.test_existing_source_never_overwritten_by_output) ... ok
+test_failed_compiler (test_smartparse_cli.UnifiedTests.test_failed_compiler) ... ok
+test_help (test_smartparse_cli.UnifiedTests.test_help) ... ok
+test_invalid_analyzer (test_smartparse_cli.UnifiedTests.test_invalid_analyzer) ... ok
+test_invalid_cli_analyzer (test_smartparse_cli.UnifiedTests.test_invalid_cli_analyzer) ... ok
+test_invalid_cli_argument (test_smartparse_cli.UnifiedTests.test_invalid_cli_argument) ... ok
+test_invalid_extension (test_smartparse_cli.UnifiedTests.test_invalid_extension) ... ok
+test_invalid_timeout (test_smartparse_cli.UnifiedTests.test_invalid_timeout) ... ok
+test_json_format (test_smartparse_cli.UnifiedTests.test_json_format) ... ok
+test_legacy_parser_entry_unchanged (test_smartparse_cli.UnifiedTests.test_legacy_parser_entry_unchanged) ... ok
+test_malformed_output_preserved (test_smartparse_cli.UnifiedTests.test_malformed_output_preserved) ... ok
+test_markdown_format (test_smartparse_cli.UnifiedTests.test_markdown_format) ... ok
+test_missing_header_is_incomplete (test_smartparse_cli.UnifiedTests.test_missing_header_is_incomplete) ... ok
+test_missing_optional_analyzer (test_smartparse_cli.UnifiedTests.test_missing_optional_analyzer) ... ok
+test_missing_source (test_smartparse_cli.UnifiedTests.test_missing_source) ... ok
+test_multiple_independent_findings_remain_separate (test_smartparse_cli.UnifiedTests.test_multiple_independent_findings_remain_separate) ... ok
+test_original_raw_record_not_changed_by_snippet_enrichment (test_smartparse_cli.UnifiedTests.test_original_raw_record_not_changed_by_snippet_enrichment) ... ok
+test_output_destination (test_smartparse_cli.UnifiedTests.test_output_destination) ... ok
+test_output_write_failure (test_smartparse_cli.UnifiedTests.test_output_write_failure) ... ok
+test_report_required_schema_fields (test_smartparse_cli.UnifiedTests.test_report_required_schema_fields) ... ok
+test_source_preserved_with_unicode_path_and_crlf (test_smartparse_cli.UnifiedTests.test_source_preserved_with_unicode_path_and_crlf) ... ok
+test_source_snippet_available (test_smartparse_cli.UnifiedTests.test_source_snippet_available) ... ok
+test_syntax_error_exit_one (test_smartparse_cli.UnifiedTests.test_syntax_error_exit_one) ... ok
+test_terminal_format (test_smartparse_cli.UnifiedTests.test_terminal_format) ... ok
+test_timeout_is_not_success (test_smartparse_cli.UnifiedTests.test_timeout_is_not_success) ... ok
+test_unlocated_driver_error_is_not_a_source_defect (test_smartparse_cli.UnifiedTests.test_unlocated_driver_error_is_not_a_source_defect) ... ok
+test_valid_input_exit_zero (test_smartparse_cli.UnifiedTests.test_valid_input_exit_zero) ... ok
+test_version (test_smartparse_cli.UnifiedTests.test_version) ... ok
+test_warning_exit_one_is_documented (test_smartparse_cli.UnifiedTests.test_warning_exit_one_is_documented) ... ok
+
+----------------------------------------------------------------------
+Ran 50 tests in 1.047s
+
+OK

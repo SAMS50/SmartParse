@@ -1,0 +1,156 @@
+Extended C Analysis (external compiler): completed
+Compiler: Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)
+Backend: clang; executable: C:\android-sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:30:21: error (syntax, clang): expected ';' after top level declarator
+    int global_count = 0
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:82:13: error (syntax, clang): expected ';' after return statement
+        return 0
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:74:5: warning (compiler warning, clang): 'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte) [-Wfortify-source]
+        strcpy(error.message, "sample error message that is too long for buffer");
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:104:17: warning (compiler warning, clang): using the result of an assignment as a condition without parentheses [-Wparentheses]
+        if (student = NULL) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:104:17: note (unknown, clang): place parentheses around the assignment to silence this warning
+        if (student = NULL) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:104:17: note (unknown, clang): use '==' to turn this assignment into an equality comparison
+        if (student = NULL) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:115:28: warning (compiler warning, clang): using the result of an assignment as a condition without parentheses [-Wparentheses]
+            if (students[i].id = id) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:115:28: note (unknown, clang): place parentheses around the assignment to silence this warning
+            if (students[i].id = id) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:115:28: note (unknown, clang): use '==' to turn this assignment into an equality comparison
+            if (students[i].id = id) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:129:12: warning (compiler warning, clang): address of stack memory associated with local variable 'buffer' returned [-Wreturn-stack-address]
+        return buffer;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:149:32: warning (compiler warning, clang): using the result of an assignment as a condition without parentheses [-Wparentheses]
+            if (students[i].active = 1) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:149:32: note (unknown, clang): place parentheses around the assignment to silence this warning
+            if (students[i].active = 1) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:149:32: note (unknown, clang): use '==' to turn this assignment into an equality comparison
+            if (students[i].active = 1) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:164:38: warning (compiler warning, clang): if statement has empty body [-Wempty-body]
+        if (percent < 0 || percent > 100); {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:164:38: note (unknown, clang): put the semicolon on a separate line to silence this warning
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:236:13: warning (compiler warning, clang): address of stack memory associated with local variable 'local' returned [-Wreturn-stack-address]
+        return &local;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:292:24: warning (compiler warning, clang): format specifies type 'int *' but the argument has type 'int' [-Wformat]
+        sscanf(text, "%d", value);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:351:23: warning (compiler warning, clang): using the result of an assignment as a condition without parentheses [-Wparentheses]
+            if (values[i] = target)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:351:23: note (unknown, clang): place parentheses around the assignment to silence this warning
+            if (values[i] = target)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:351:23: note (unknown, clang): use '==' to turn this assignment into an equality comparison
+            if (values[i] = target)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:393:12: error (semantic/type, clang): incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]
+        return "hello";
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:409:25: error (semantic/type, clang): too few arguments to function call, expected 2, have 1
+        return add_numbers(1);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:85:5: note (unknown, clang): 'add_numbers' declared here
+    int add_numbers(int a, int b)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:414:5: error (semantic/type, clang): use of undeclared identifier 'mystery_value'
+        mystery_value = 12;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:415:12: error (semantic/type, clang): use of undeclared identifier 'mystery_value'; did you mean 'last_value'?
+        return mystery_value;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:212:5: note (unknown, clang): 'last_value' declared here
+    int last_value(int values[], int length)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:415:12: error (semantic/type, clang): incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]
+        return mystery_value;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:421:20: warning (compiler warning, clang): format specifies type 'int' but the argument has type 'long' [-Wformat]
+        printf("%d\n", value);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:494:28: warning (compiler warning, clang): multi-character character constant [-Wmultichar]
+        while (text[length] != '\\0')
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:494:25: warning (compiler warning, clang): result of comparison of constant 23600 with expression of type 'const char' is always true [-Wtautological-constant-out-of-range-compare]
+        while (text[length] != '\\0')
+Total: 7 errors, 12 warnings, 11 notes
+Categories: syntax=2, semantic/type=5, compiler warning=12, unknown=11
+Completion does not establish absence of runtime or logic bugs.
+
+Clang Static Analyzer: partial
+Compiler: Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)
+Backend: clang; executable: C:\android-sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:30:21: error (syntax, clang): expected ';' after top level declarator
+    int global_count = 0
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:82:13: error (syntax, clang): expected ';' after return statement
+        return 0
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:393:12: error (semantic/type, clang): incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int' [-Wint-conversion]
+        return "hello";
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:409:25: error (semantic/type, clang): too few arguments to function call, expected 2, have 1
+        return add_numbers(1);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:85:5: note (unknown, clang): 'add_numbers' declared here
+    int add_numbers(int a, int b)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:414:5: error (semantic/type, clang): use of undeclared identifier 'mystery_value'
+        mystery_value = 12;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:415:12: error (semantic/type, clang): use of undeclared identifier 'mystery_value'; did you mean 'last_value'?
+        return mystery_value;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:212:5: note (unknown, clang): 'last_value' declared here
+    int last_value(int values[], int length)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:415:12: error (semantic/type, clang): incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int' [-Wint-conversion]
+        return mystery_value;
+Total: 7 errors, 0 warnings, 2 notes
+Categories: syntax=2, semantic/type=5, compiler warning=0, unknown=2
+Potential static-analysis findings: 0; path notes: 0 (separate from compiler totals)
+Unavailable analysis or zero findings does not establish that the source is bug-free.
+Tool issue: Clang Static Analyzer did not finish normally
+Completion does not establish absence of runtime or logic bugs.
+
+Eligibility (configured source only):
+Compiler completion: completed; analyzer completion: partial
+Blockers: analyzer limitations, semantic/type, syntax
+Region inventory: partial
+translation_unit: compiler=blocked; analyzer=blocked
+main: compiler=blocked; analyzer=blocked
+add_numbers: compiler=blocked; analyzer=blocked
+average: compiler=blocked; analyzer=blocked
+print_student: compiler=blocked; analyzer=blocked
+find_student: compiler=blocked; analyzer=blocked
+duplicate_text: compiler=blocked; analyzer=blocked
+reset_student: compiler=blocked; analyzer=blocked
+unsafe_divide: compiler=blocked; analyzer=blocked
+count_active: compiler=blocked; analyzer=blocked
+print_error: compiler=blocked; analyzer=blocked
+calculate_discount: compiler=blocked; analyzer=blocked
+maximum: compiler=blocked; analyzer=blocked
+is_even: compiler=blocked; analyzer=blocked
+clamp_value: compiler=blocked; analyzer=blocked
+absolute_value: compiler=blocked; analyzer=blocked
+sum_array: compiler=blocked; analyzer=blocked
+copy_name: compiler=blocked; analyzer=blocked
+last_value: compiler=blocked; analyzer=blocked
+clear_buffer: compiler=blocked; analyzer=blocked
+compare_names: compiler=blocked; analyzer=blocked
+append_suffix: compiler=blocked; analyzer=blocked
+make_integer: compiler=blocked; analyzer=blocked
+make_buffer: compiler=blocked; analyzer=blocked
+release_twice: compiler=blocked; analyzer=blocked
+read_pointer: compiler=blocked; analyzer=blocked
+overwrite_pointer: compiler=blocked; analyzer=blocked
+leak_memory: compiler=blocked; analyzer=blocked
+read_first_number: compiler=blocked; analyzer=blocked
+write_report: compiler=blocked; analyzer=blocked
+parse_number: compiler=blocked; analyzer=blocked
+read_user_name: compiler=blocked; analyzer=blocked
+file_exists: compiler=blocked; analyzer=blocked
+factorial: compiler=blocked; analyzer=blocked
+binary_search: compiler=blocked; analyzer=blocked
+reverse_array: compiler=blocked; analyzer=blocked
+count_matches: compiler=blocked; analyzer=blocked
+is_valid_date: compiler=blocked; analyzer=blocked
+set_status: compiler=blocked; analyzer=blocked
+student_average: compiler=blocked; analyzer=blocked
+rename_student: compiler=blocked; analyzer=blocked
+return_text: compiler=blocked; analyzer=blocked
+expects_integer: compiler=blocked; analyzer=blocked
+missing_return: compiler=blocked; analyzer=blocked
+undeclared_demo: compiler=blocked; analyzer=blocked
+wrong_format: compiler=blocked; analyzer=blocked
+next_identifier: compiler=blocked; analyzer=blocked
+set_global_label: compiler=blocked; analyzer=blocked
+reset_global_label: compiler=blocked; analyzer=blocked
+toggle_debug: compiler=blocked; analyzer=blocked
+percentage: compiler=blocked; analyzer=blocked
+safe_modulo: compiler=blocked; analyzer=blocked
+sign_of: compiler=blocked; analyzer=blocked
+initialize_scores: compiler=blocked; analyzer=blocked
+get_score: compiler=blocked; analyzer=blocked
+swap_values: compiler=blocked; analyzer=blocked
+string_length_manual: compiler=blocked; analyzer=blocked
+Completed invocation is not proof of exhaustive function/path coverage.

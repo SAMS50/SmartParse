@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "phase6/v6/outputs/audit_freeze_worker.py"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 240,
+  "elapsed_seconds": 86.5,
+  "cleanup": null,
+  "log": "phase6\\v6\\outputs\\audit_freeze.txt"
+}

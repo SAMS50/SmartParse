@@ -1,0 +1,182 @@
+{
+  "baseline": {
+    "atomic_issues": 8,
+    "outcomes": {
+      "detected": 3,
+      "missed": 1,
+      "blocked": 0,
+      "unsupported": 0,
+      "conditional": 4,
+      "uncertain": 0
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 3,
+        "missed": 1,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      }
+    },
+    "detected_root_cause_ids": [
+      "ROOT-condition_boundary",
+      "ROOT-condition_pair",
+      "ROOT-dead_store"
+    ],
+    "detected_root_cause_count": 3,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "unknown": 11,
+      "context_note": 6,
+      "reviewed_support": 4
+    }
+  },
+  "configured": {
+    "atomic_issues": 8,
+    "outcomes": {
+      "detected": 4,
+      "missed": 0,
+      "blocked": 0,
+      "unsupported": 0,
+      "conditional": 4,
+      "uncertain": 0
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "memory safety": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "bounds": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 0
+      },
+      "program logic": {
+        "detected": 4,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 0
+      }
+    },
+    "detected_root_cause_ids": [
+      "ROOT-condition_boundary",
+      "ROOT-condition_pair",
+      "ROOT-condition_three",
+      "ROOT-dead_store"
+    ],
+    "detected_root_cause_count": 4,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "unknown": 11,
+      "context_note": 6,
+      "reviewed_support": 8,
+      "duplicate": 1
+    }
+  },
+  "new_structural_roots": [
+    "ROOT-condition_three"
+  ],
+  "lost_roots": [],
+  "review_targets": [
+    {
+      "source": "precision_literal_review",
+      "rule_id": "SP6.integer_division_to_float",
+      "already_reported": false
+    },
+    {
+      "source": "precision_review",
+      "rule_id": "SP6.integer_division_to_float",
+      "already_reported": false
+    },
+    {
+      "source": "scanf_unbounded",
+      "rule_id": "SP6.fixed_buffer_input",
+      "already_reported": false
+    },
+    {
+      "source": "scanf_width_bad",
+      "rule_id": "SP6.fixed_buffer_input",
+      "already_reported": true
+    }
+  ],
+  "unexpected_semantic_findings_on_controls": [],
+  "precision": null,
+  "recall": null,
+  "review_status": "Agent source review only; conditional targets not counted as detected bugs."
+}

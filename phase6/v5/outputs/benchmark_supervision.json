@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v5",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "--compiler",
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "--memory-analysis",
+      "--json",
+      "--profile",
+      "baseline"
+    ],
+    "exit_code": 3,
+    "timed_out": false,
+    "timeout_seconds": 135,
+    "elapsed_seconds": 5.39,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\benchmark_baseline.json"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v5",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "--compiler",
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "--memory-analysis",
+      "--json"
+    ],
+    "exit_code": 3,
+    "timed_out": false,
+    "timeout_seconds": 135,
+    "elapsed_seconds": 5.172,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\benchmark_configured.json"
+  },
+  {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v5",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "--compiler",
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "--memory-analysis",
+      "--json",
+      "--punctuation-recovery",
+      "--isolate-unaffected"
+    ],
+    "exit_code": 3,
+    "timed_out": false,
+    "timeout_seconds": 135,
+    "elapsed_seconds": 9.031,
+    "cleanup": null,
+    "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\benchmark_conditioned.json"
+  }
+]

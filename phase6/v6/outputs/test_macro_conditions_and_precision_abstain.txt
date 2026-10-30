@@ -1,0 +1,6 @@
+test_macro_conditions_and_precision_abstain (phase6.v6.test_semantics.LiveTests.test_macro_conditions_and_precision_abstain) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.458s
+
+OK

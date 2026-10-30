@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v5.run_validation",
+    "--worker",
+    "compare",
+    "--compiler",
+    "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 240,
+  "elapsed_seconds": 69.813,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\outputs\\compare.txt"
+}

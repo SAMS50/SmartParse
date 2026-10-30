@@ -1,0 +1,9 @@
+{
+  "protected_existing_files": 194,
+  "changed_existing_files": [],
+  "historical_csv_count": 17,
+  "legacy_csv_writes_restored": [
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\results\\verified_performance.csv"
+  ],
+  "scope": "All readable preexisting workspace files except git metadata/caches; external original sample included."
+}

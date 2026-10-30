@@ -1,0 +1,6 @@
+test_validation_rejects_changed_preprocessing_tokens (phase6.v3.test_recovery.LiveRecoveryTests.test_validation_rejects_changed_preprocessing_tokens) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.019s
+
+OK

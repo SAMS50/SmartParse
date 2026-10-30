@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "analysis_mode": "extended_c",
+  "status": "completed",
+  "compiler": {
+    "path": "C:\\MinGW\\bin\\gcc.exe",
+    "backend": "gcc",
+    "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+    "flags": [
+      "-Wall",
+      "-Wextra",
+      "-Wparentheses",
+      "-fdiagnostics-show-option",
+      "-fdiagnostics-color=never",
+      "-fmax-errors=0"
+    ]
+  },
+  "summary": {
+    "total_diagnostics": 0,
+    "errors": 0,
+    "warnings": 0,
+    "notes": 0,
+    "categories": {
+      "syntax": 0,
+      "semantic/type": 0,
+      "compiler warning": 0,
+      "unknown": 0
+    }
+  },
+  "diagnostics": [],
+  "tool_issues": [],
+  "execution": {
+    "returncode": 0,
+    "command": [
+      "C:\\MinGW\\bin\\gcc.exe",
+      "-x",
+      "c",
+      "-fsyntax-only",
+      "-Wall",
+      "-Wextra",
+      "-Wparentheses",
+      "-fdiagnostics-show-option",
+      "-fdiagnostics-color=never",
+      "-fmax-errors=0",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C12_valid_full.c"
+    ]
+  },
+  "raw_output": {
+    "stdout": "",
+    "stderr": ""
+  },
+  "unrecognized_output": []
+}

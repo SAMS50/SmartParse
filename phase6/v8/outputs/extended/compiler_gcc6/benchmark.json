@@ -1,0 +1,462 @@
+{
+  "configuration": "compiler_gcc6",
+  "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+  "elapsed_seconds": 0.875,
+  "result": {
+    "schema_version": "1.0",
+    "analysis_mode": "extended_c",
+    "status": "completed",
+    "compiler": {
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "backend": "gcc",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 22,
+      "errors": 6,
+      "warnings": 13,
+      "notes": 3,
+      "categories": {
+        "syntax": 2,
+        "semantic/type": 4,
+        "compiler warning": 13,
+        "unknown": 3
+      }
+    },
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 31,
+        "column": 1,
+        "severity": "error",
+        "message": "expected ',' or ';' before 'char'",
+        "backend": "gcc",
+        "category": "syntax",
+        "source_snippet": "char *global_label = NULL;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 83,
+        "column": 1,
+        "severity": "error",
+        "message": "expected ';' before '}' token",
+        "backend": "gcc",
+        "category": "syntax",
+        "source_snippet": "}",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 104,
+        "column": 5,
+        "severity": "warning",
+        "message": "suggest parentheses around assignment used as truth value",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    if (student = NULL) {",
+        "diagnostic_id": "-Wparentheses"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 115,
+        "column": 9,
+        "severity": "warning",
+        "message": "suggest parentheses around assignment used as truth value",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "        if (students[i].id = id) {",
+        "diagnostic_id": "-Wparentheses"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 129,
+        "column": 12,
+        "severity": "warning",
+        "message": "function returns address of local variable",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    return buffer;",
+        "diagnostic_id": "-Wreturn-local-addr"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 149,
+        "column": 9,
+        "severity": "warning",
+        "message": "suggest parentheses around assignment used as truth value",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "        if (students[i].active = 1) {",
+        "diagnostic_id": "-Wparentheses"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 164,
+        "column": 38,
+        "severity": "warning",
+        "message": "suggest braces around empty body in an 'if' statement",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    if (percent < 0 || percent > 100); {",
+        "diagnostic_id": "-Wempty-body"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 164,
+        "column": 5,
+        "severity": "warning",
+        "message": "this 'if' clause does not guard...",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    if (percent < 0 || percent > 100); {",
+        "diagnostic_id": "-Wmisleading-indentation"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 164,
+        "column": 40,
+        "severity": "note",
+        "message": "...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'",
+        "backend": "gcc",
+        "category": "unknown",
+        "source_snippet": "    if (percent < 0 || percent > 100); {",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 236,
+        "column": 12,
+        "severity": "warning",
+        "message": "function returns address of local variable",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    return &local;",
+        "diagnostic_id": "-Wreturn-local-addr"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 292,
+        "column": 20,
+        "severity": "warning",
+        "message": "format '%d' expects argument of type 'int *', but argument 3 has type 'int'",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    sscanf(text, \"%d\", value);",
+        "diagnostic_id": "-Wformat="
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 351,
+        "column": 9,
+        "severity": "warning",
+        "message": "suggest parentheses around assignment used as truth value",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "        if (values[i] = target)",
+        "diagnostic_id": "-Wparentheses"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 382,
+        "column": 26,
+        "severity": "warning",
+        "message": "division by zero",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    return student.score / 0;",
+        "diagnostic_id": "-Wdiv-by-zero"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 393,
+        "column": 12,
+        "severity": "warning",
+        "message": "return makes integer from pointer without a cast",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    return \"hello\";",
+        "diagnostic_id": "-Wint-conversion"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 409,
+        "column": 12,
+        "severity": "error",
+        "message": "too few arguments to function 'add_numbers'",
+        "backend": "gcc",
+        "category": "semantic/type",
+        "source_snippet": "    return add_numbers(1);",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 85,
+        "column": 5,
+        "severity": "note",
+        "message": "declared here",
+        "backend": "gcc",
+        "category": "unknown",
+        "source_snippet": "int add_numbers(int a, int b)",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 414,
+        "column": 5,
+        "severity": "error",
+        "message": "'mystery_value' undeclared (first use in this function)",
+        "backend": "gcc",
+        "category": "semantic/type",
+        "source_snippet": "    mystery_value = 12;",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 414,
+        "column": 5,
+        "severity": "note",
+        "message": "each undeclared identifier is reported only once for each function it appears in",
+        "backend": "gcc",
+        "category": "unknown",
+        "source_snippet": null,
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 432,
+        "column": 5,
+        "severity": "error",
+        "message": "'global_label' undeclared (first use in this function)",
+        "backend": "gcc",
+        "category": "semantic/type",
+        "source_snippet": "    global_label = malloc(strlen(text));",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 438,
+        "column": 10,
+        "severity": "error",
+        "message": "'global_label' undeclared (first use in this function)",
+        "backend": "gcc",
+        "category": "semantic/type",
+        "source_snippet": "    free(global_label);",
+        "diagnostic_id": null
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 494,
+        "column": 28,
+        "severity": "warning",
+        "message": "multi-character character constant",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    while (text[length] != '\\\\0')",
+        "diagnostic_id": "-Wmultichar"
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 494,
+        "column": 25,
+        "severity": "warning",
+        "message": "comparison is always true due to limited range of data type",
+        "backend": "gcc",
+        "category": "compiler warning",
+        "source_snippet": "    while (text[length] != '\\\\0')",
+        "diagnostic_id": "-Wtype-limits"
+      }
+    ],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 1,
+      "command": [
+        "C:\\MinGW\\bin\\gcc.exe",
+        "-x",
+        "c",
+        "-fsyntax-only",
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-fmax-errors=0",
+        "-std=c11",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:31:1: error: expected ',' or ';' before 'char'\r\n char *global_label = NULL;\r\n ^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'main':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:83:1: error: expected ';' before '}' token\r\n }\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'print_student':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n     if (student = NULL) {\r\n     ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'find_student':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (students[i].id = id) {\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'duplicate_text':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: function returns address of local variable [-Wreturn-local-addr]\r\n     return buffer;\r\n            ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'count_active':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (students[i].active = 1) {\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'calculate_discount':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]\r\n     if (percent < 0 || percent > 100); {\r\n                                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]\r\n     if (percent < 0 || percent > 100); {\r\n     ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:40: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'\r\n     if (percent < 0 || percent > 100); {\r\n                                        ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'make_integer':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:12: warning: function returns address of local variable [-Wreturn-local-addr]\r\n     return &local;\r\n            ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'parse_number':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:20: warning: format '%d' expects argument of type 'int *', but argument 3 has type 'int' [-Wformat=]\r\n     sscanf(text, \"%d\", value);\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'count_matches':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (values[i] = target)\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'student_average':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:382:26: warning: division by zero [-Wdiv-by-zero]\r\n     return student.score / 0;\r\n                          ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'return_text':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: warning: return makes integer from pointer without a cast [-Wint-conversion]\r\n     return \"hello\";\r\n            ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'wrong_argument_count':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:12: error: too few arguments to function 'add_numbers'\r\n     return add_numbers(1);\r\n            ^~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: declared here\r\n int add_numbers(int a, int b)\r\n     ^~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'undeclared_demo':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: 'mystery_value' undeclared (first use in this function)\r\n     mystery_value = 12;\r\n     ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: note: each undeclared identifier is reported only once for each function it appears in\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'set_global_label':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:432:5: error: 'global_label' undeclared (first use in this function)\r\n     global_label = malloc(strlen(text));\r\n     ^~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'reset_global_label':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:438:10: error: 'global_label' undeclared (first use in this function)\r\n     free(global_label);\r\n          ^~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'string_length_manual':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n     while (text[length] != '\\\\0')\r\n                            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: comparison is always true due to limited range of data type [-Wtype-limits]\r\n     while (text[length] != '\\\\0')\r\n                         ^~\r\n"
+    },
+    "unrecognized_output": [],
+    "usage": {
+      "compiler_invocations": 9,
+      "elapsed_seconds": 0.875,
+      "calls": [
+        {
+          "number": 1,
+          "role": "compiler_version",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+          "stderr": "",
+          "elapsed_seconds": 0.062
+        },
+        {
+          "number": 2,
+          "role": "syntax_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.079
+        },
+        {
+          "number": 3,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.093
+        },
+        {
+          "number": 4,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wextra",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 5,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wparentheses",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.094
+        },
+        {
+          "number": 6,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-show-option",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 7,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fdiagnostics-color=never",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.094
+        },
+        {
+          "number": 8,
+          "role": "optional_flag_capability",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-fmax-errors=0",
+            "-"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 9,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\MinGW\\bin\\gcc.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-fmax-errors=0",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:31:1: error: expected ',' or ';' before 'char'\r\n char *global_label = NULL;\r\n ^~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'main':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:83:1: error: expected ';' before '}' token\r\n }\r\n ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'print_student':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:104:5: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n     if (student = NULL) {\r\n     ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'find_student':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:115:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (students[i].id = id) {\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'duplicate_text':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:129:12: warning: function returns address of local variable [-Wreturn-local-addr]\r\n     return buffer;\r\n            ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'count_active':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:149:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (students[i].active = 1) {\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'calculate_discount':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:38: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]\r\n     if (percent < 0 || percent > 100); {\r\n                                      ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]\r\n     if (percent < 0 || percent > 100); {\r\n     ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:164:40: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'\r\n     if (percent < 0 || percent > 100); {\r\n                                        ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'make_integer':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:236:12: warning: function returns address of local variable [-Wreturn-local-addr]\r\n     return &local;\r\n            ^~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'parse_number':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:292:20: warning: format '%d' expects argument of type 'int *', but argument 3 has type 'int' [-Wformat=]\r\n     sscanf(text, \"%d\", value);\r\n                    ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'count_matches':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:351:9: warning: suggest parentheses around assignment used as truth value [-Wparentheses]\r\n         if (values[i] = target)\r\n         ^~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'student_average':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:382:26: warning: division by zero [-Wdiv-by-zero]\r\n     return student.score / 0;\r\n                          ^\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'return_text':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:393:12: warning: return makes integer from pointer without a cast [-Wint-conversion]\r\n     return \"hello\";\r\n            ^~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'wrong_argument_count':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:409:12: error: too few arguments to function 'add_numbers'\r\n     return add_numbers(1);\r\n            ^~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:85:5: note: declared here\r\n int add_numbers(int a, int b)\r\n     ^~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'undeclared_demo':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: error: 'mystery_value' undeclared (first use in this function)\r\n     mystery_value = 12;\r\n     ^~~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:414:5: note: each undeclared identifier is reported only once for each function it appears in\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'set_global_label':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:432:5: error: 'global_label' undeclared (first use in this function)\r\n     global_label = malloc(strlen(text));\r\n     ^~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'reset_global_label':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:438:10: error: 'global_label' undeclared (first use in this function)\r\n     free(global_label);\r\n          ^~~~~~~~~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c: In function 'string_length_manual':\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:28: warning: multi-character character constant [-Wmultichar]\r\n     while (text[length] != '\\\\0')\r\n                            ^~~~~\r\nC:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c:494:25: warning: comparison is always true due to limited range of data type [-Wtype-limits]\r\n     while (text[length] != '\\\\0')\r\n                         ^~\r\n",
+          "elapsed_seconds": 0.219
+        }
+      ]
+    }
+  }
+}

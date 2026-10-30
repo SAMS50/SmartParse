@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v3",
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+    "--compiler",
+    "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+    "--json",
+    "--static-analysis"
+  ],
+  "exit_code": 3,
+  "timed_out": false,
+  "timeout_seconds": 105,
+  "elapsed_seconds": 3.171,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v3\\outputs\\benchmark_disabled.json"
+}

@@ -1,0 +1,161 @@
+{
+  "configuration": "validation_off",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "completed",
+  "diagnostics": [
+    {
+      "line": 2,
+      "column": 11,
+      "message": "Missing ')' before '{'."
+    },
+    {
+      "line": 3,
+      "column": 10,
+      "message": "Missing ')' before '{'."
+    }
+  ],
+  "repairs": [
+    {
+      "operation": "insert",
+      "token": ")",
+      "from": null,
+      "line": 2,
+      "column": 11,
+      "score": 80,
+      "score_factors": {
+        "single_token_edit": 10,
+        "statement_or_block_boundary": 25,
+        "unclosed_matching_opener": 30,
+        "block_starts_after_condition": 15
+      },
+      "scoring_mode": "contextual",
+      "reason": "expected delimiter at boundary",
+      "context": {
+        "expected": ")",
+        "previous": "0",
+        "current": "{",
+        "next": "if",
+        "nesting": [
+          "("
+        ]
+      },
+      "grammar_validation": null
+    },
+    {
+      "operation": "insert",
+      "token": ")",
+      "from": null,
+      "line": 3,
+      "column": 10,
+      "score": 80,
+      "score_factors": {
+        "single_token_edit": 10,
+        "statement_or_block_boundary": 25,
+        "unclosed_matching_opener": 30,
+        "block_starts_after_condition": 15
+      },
+      "scoring_mode": "contextual",
+      "reason": "expected delimiter at boundary",
+      "context": {
+        "expected": ")",
+        "previous": "2",
+        "current": "{",
+        "next": "x",
+        "nesting": [
+          "(",
+          "{",
+          "("
+        ]
+      },
+      "grammar_validation": null
+    }
+  ],
+  "author_location_matches": [
+    "S11-R1",
+    "S11-R2"
+  ],
+  "author_exact_repairs": [
+    "S11-R1",
+    "S11-R2"
+  ],
+  "additional_diagnostics": 0,
+  "reached_eof": true,
+  "error_cap_reached": false,
+  "replay_strictly_valid": true,
+  "intended_reference_valid": true,
+  "intended_token_stream_equal": true,
+  "statement_attempts": [
+    {
+      "start": 0,
+      "line": 1,
+      "column": 1,
+      "returned": true,
+      "end": 5
+    },
+    {
+      "start": 5,
+      "line": 2,
+      "column": 1,
+      "returned": true,
+      "end": 31
+    },
+    {
+      "start": 10,
+      "line": 2,
+      "column": 11,
+      "returned": true,
+      "end": 31
+    },
+    {
+      "start": 11,
+      "line": 3,
+      "column": 2,
+      "returned": true,
+      "end": 24
+    },
+    {
+      "start": 16,
+      "line": 3,
+      "column": 10,
+      "returned": true,
+      "end": 24
+    },
+    {
+      "start": 17,
+      "line": 3,
+      "column": 12,
+      "returned": true,
+      "end": 23
+    },
+    {
+      "start": 24,
+      "line": 4,
+      "column": 2,
+      "returned": true,
+      "end": 30
+    },
+    {
+      "start": 31,
+      "line": 6,
+      "column": 1,
+      "returned": true,
+      "end": 36
+    }
+  ],
+  "skipped_tokens": null,
+  "validation_stats": {
+    "eligible": 0,
+    "probed": 0,
+    "skipped_confident": 0
+  },
+  "elapsed_seconds": 0.0
+}

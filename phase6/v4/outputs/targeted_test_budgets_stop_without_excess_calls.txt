@@ -1,0 +1,6 @@
+test_budgets_stop_without_excess_calls (phase6.v4.test_isolation.LiveTests.test_budgets_stop_without_excess_calls) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.143s
+
+OK

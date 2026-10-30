@@ -1,0 +1,128 @@
+{
+  "schema": "smartparse.external_comparison",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "tidy17",
+    "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+    "kind": "tidy",
+    "version": "17.0.2",
+    "format": "tidy-text",
+    "checks": [
+      "bugprone-integer-division",
+      "bugprone-misplaced-widening-cast",
+      "bugprone-sizeof-expression",
+      "clang-analyzer-core.NullDereference",
+      "clang-analyzer-core.StackAddressEscape",
+      "clang-analyzer-unix.Malloc",
+      "clang-analyzer-unix.MallocSizeof",
+      "clang-analyzer-unix.cstring.BadSizeArg"
+    ]
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\unknown_extent.c",
+    "sha256": "13e18bd9d27b46c081a31096d300d7bcb66128696003991094c93f4605d27f23",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin",
+    "shell": false,
+    "command": [
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+      "--config={}",
+      "--checks=-*,bugprone-integer-division,bugprone-misplaced-widening-cast,bugprone-sizeof-expression,clang-analyzer-core.NullDereference,clang-analyzer-core.StackAddressEscape,clang-analyzer-unix.Malloc,clang-analyzer-unix.MallocSizeof,clang-analyzer-unix.cstring.BadSizeArg",
+      "--warnings-as-errors=",
+      "--use-color=false",
+      "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\unknown_extent.c",
+      "--",
+      "-x",
+      "c",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-ferror-limit=20"
+    ]
+  },
+  "status": "completed",
+  "reason": "Tool returned; warnings require source/root review.",
+  "diagnostics": [],
+  "exact_duplicates": [],
+  "raw": {
+    "stdout": "",
+    "stderr": "",
+    "returncode": 0
+  },
+  "eligibility": {
+    "process_started": true,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "no direct region exploration evidence",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false,
+    "frontend_blockers": [],
+    "analyzer_completion": "completed"
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "LLVM (http://llvm.org/):\n  LLVM version 17.0.2\n  Optimized build.\n",
+  "unrecognized_output": [],
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 2,
+    "elapsed_seconds": 0.297,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "978608e5716d3bff6bc564c9cd109244151f1bb86da8becc20cbf7fda10e4e1b",
+        "stderr": "",
+        "elapsed_seconds": 0.047
+      },
+      {
+        "number": 2,
+        "role": "external_analysis",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang-tidy.exe",
+          "--config={}",
+          "--checks=-*,bugprone-integer-division,bugprone-misplaced-widening-cast,bugprone-sizeof-expression,clang-analyzer-core.NullDereference,clang-analyzer-core.StackAddressEscape,clang-analyzer-unix.Malloc,clang-analyzer-unix.MallocSizeof,clang-analyzer-unix.cstring.BadSizeArg",
+          "--warnings-as-errors=",
+          "--use-color=false",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v5\\fixtures\\unknown_extent.c",
+          "--",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-ferror-limit=20"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "elapsed_seconds": 0.218
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 3,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 20,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 0,
+  "normalization_revision": "identifier-category-table-2"
+}

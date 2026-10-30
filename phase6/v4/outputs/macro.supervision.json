@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v4",
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\macro.c",
+    "--compiler",
+    "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+    "--isolate-unaffected",
+    "--json"
+  ],
+  "exit_code": 3,
+  "timed_out": false,
+  "timeout_seconds": 135,
+  "elapsed_seconds": 5.187,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\outputs\\macro.json"
+}

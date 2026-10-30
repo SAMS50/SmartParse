@@ -1,0 +1,6 @@
+test_three_term_proof_and_backend_evidence (phase6.v6.test_semantics.LiveTests.test_three_term_proof_and_backend_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.964s
+
+OK

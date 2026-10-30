@@ -1,0 +1,12 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "phase6/v7/outputs/freeze_worker.py"
+  ],
+  "exit_code": 1,
+  "timed_out": true,
+  "timeout_seconds": 300,
+  "elapsed_seconds": 301.922,
+  "cleanup": "taskkill exit 255",
+  "log": "phase6\\v7\\outputs\\freeze.txt"
+}

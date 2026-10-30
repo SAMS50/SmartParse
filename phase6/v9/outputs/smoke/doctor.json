@@ -1,0 +1,102 @@
+{
+  "schema": "smartparse.doctor",
+  "schema_version": "1.0",
+  "tools": [
+    {
+      "name": "gcc",
+      "path": "C:\\MinGW\\bin\\gcc.EXE",
+      "status": "available",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "capabilities": "not probed; analysis validates required capabilities",
+      "returncode": 0,
+      "raw_version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0\r\nCopyright (C) 2016 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    {
+      "name": "clang",
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "status": "available",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "capabilities": "not probed; analysis validates required capabilities",
+      "returncode": 0,
+      "raw_version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin"
+    },
+    {
+      "name": "gcc14",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "status": "available",
+      "version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0",
+      "capabilities": "not probed; analysis validates required capabilities",
+      "returncode": 0,
+      "raw_version": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+    },
+    {
+      "name": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "status": "available",
+      "version": "Cppcheck 2.16.0",
+      "capabilities": "not probed; analysis validates required capabilities",
+      "returncode": 0,
+      "raw_version": "Cppcheck 2.16.0"
+    }
+  ],
+  "usage": {
+    "compiler_invocations": 4,
+    "elapsed_seconds": 0.296,
+    "calls": [
+      {
+        "number": 1,
+        "role": "doctor_version",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+        "stderr": "",
+        "elapsed_seconds": 0.062
+      },
+      {
+        "number": 2,
+        "role": "doctor_version",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+        "stderr": "",
+        "elapsed_seconds": 0.093
+      },
+      {
+        "number": 3,
+        "role": "doctor_version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+        "stderr": "",
+        "elapsed_seconds": 0.047
+      },
+      {
+        "number": 4,
+        "role": "doctor_version",
+        "command": [
+          "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+        "stderr": "",
+        "elapsed_seconds": 0.062
+      }
+    ]
+  },
+  "scope": "PATH, explicit/environment overrides, pinned v7 external paths, common Windows LLVM/MinGW and at most eight NDKs per SDK root",
+  "limitation": "Version availability is not checker capability, compatible headers, or complete analysis."
+}

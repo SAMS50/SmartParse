@@ -1,0 +1,14 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v7.run_validation",
+    "--worker"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 480,
+  "elapsed_seconds": 353.157,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\outputs\\full.txt"
+}

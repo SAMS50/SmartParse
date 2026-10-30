@@ -1,0 +1,6 @@
+test_windows_spaces_unicode_filename (phase6.v3.test_recovery.LiveRecoveryTests.test_windows_spaces_unicode_filename) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.156s
+
+OK

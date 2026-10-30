@@ -1,0 +1,201 @@
+[
+  {
+    "case": "benchmark_clang",
+    "exit_code": 3,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "partial",
+      "returncode": 1
+    },
+    "inventory_status": "partial",
+    "function_regions": 56,
+    "excluded_definitions": 1,
+    "blocker_categories": [
+      "analyzer limitations",
+      "semantic/type",
+      "syntax"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "benchmark_gcc",
+    "exit_code": 1,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "not_attempted",
+      "returncode": null
+    },
+    "inventory_status": "unsupported",
+    "function_regions": 0,
+    "excluded_definitions": 0,
+    "blocker_categories": [
+      "semantic/type",
+      "syntax"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "valid_context",
+    "exit_code": 0,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 0,
+      "frontend_accepted": true
+    },
+    "analyzer": {
+      "completion": "completed",
+      "returncode": 0
+    },
+    "inventory_status": "completed",
+    "function_regions": 2,
+    "excluded_definitions": 0,
+    "blocker_categories": [],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "preprocessing_failure",
+    "exit_code": 3,
+    "compiler": {
+      "completion": "partial",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "partial",
+      "returncode": 1
+    },
+    "inventory_status": "partial",
+    "function_regions": 1,
+    "excluded_definitions": 0,
+    "blocker_categories": [
+      "analyzer limitations",
+      "preprocessing/configuration"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "syntax_failure",
+    "exit_code": 3,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "partial",
+      "returncode": 1
+    },
+    "inventory_status": "partial",
+    "function_regions": 2,
+    "excluded_definitions": 0,
+    "blocker_categories": [
+      "analyzer limitations",
+      "syntax"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "semantic_failure",
+    "exit_code": 3,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "partial",
+      "returncode": 1
+    },
+    "inventory_status": "partial",
+    "function_regions": 2,
+    "excluded_definitions": 1,
+    "blocker_categories": [
+      "analyzer limitations",
+      "semantic/type"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "config_blocked",
+    "exit_code": 1,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 1,
+      "frontend_accepted": false
+    },
+    "analyzer": {
+      "completion": "not_attempted",
+      "returncode": null
+    },
+    "inventory_status": "partial",
+    "function_regions": 0,
+    "excluded_definitions": 1,
+    "blocker_categories": [
+      "preprocessing/configuration",
+      "semantic/type"
+    ],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "config_enabled",
+    "exit_code": 0,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 0,
+      "frontend_accepted": true
+    },
+    "analyzer": {
+      "completion": "not_attempted",
+      "returncode": null
+    },
+    "inventory_status": "completed",
+    "function_regions": 1,
+    "excluded_definitions": 0,
+    "blocker_categories": [],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  },
+  {
+    "case": "macro_regions",
+    "exit_code": 0,
+    "compiler": {
+      "completion": "completed",
+      "returncode": 0,
+      "frontend_accepted": true
+    },
+    "analyzer": {
+      "completion": "not_attempted",
+      "returncode": null
+    },
+    "inventory_status": "completed",
+    "function_regions": 1,
+    "excluded_definitions": 1,
+    "blocker_categories": [],
+    "schema_validated": true,
+    "source_unchanged": true,
+    "direct_process_audit_valid": true
+  }
+]

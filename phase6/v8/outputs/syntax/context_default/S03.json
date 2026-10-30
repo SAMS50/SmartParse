@@ -1,0 +1,82 @@
+{
+  "configuration": "context_default",
+  "matching_protocol": "1.1",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "completed",
+  "diagnostics": [
+    {
+      "line": 2,
+      "column": 1,
+      "message": "Missing ';' before 'int'."
+    }
+  ],
+  "repairs": [
+    {
+      "operation": "insert",
+      "token": ";",
+      "from": null,
+      "line": 2,
+      "column": 1,
+      "score": 60,
+      "score_factors": {
+        "single_token_edit": 10,
+        "statement_or_block_boundary": 25,
+        "statement_boundary_fit": 25
+      },
+      "scoring_mode": "contextual",
+      "reason": "expected delimiter at boundary",
+      "context": {
+        "expected": ";",
+        "previous": "4",
+        "current": "int",
+        "next": "ending",
+        "nesting": []
+      },
+      "grammar_validation": null
+    }
+  ],
+  "author_location_matches": [
+    "S03-R1"
+  ],
+  "author_exact_repairs": [
+    "S03-R1"
+  ],
+  "additional_diagnostics": 0,
+  "reached_eof": true,
+  "error_cap_reached": false,
+  "replay_strictly_valid": true,
+  "intended_reference_valid": true,
+  "intended_token_stream_equal": true,
+  "statement_attempts": [
+    {
+      "start": 0,
+      "line": 1,
+      "column": 1,
+      "returned": true,
+      "end": 4
+    },
+    {
+      "start": 4,
+      "line": 2,
+      "column": 1,
+      "returned": true,
+      "end": 9
+    }
+  ],
+  "skipped_tokens": null,
+  "validation_stats": {
+    "eligible": 0,
+    "probed": 0,
+    "skipped_confident": 0
+  },
+  "elapsed_seconds": 0.0
+}

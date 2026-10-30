@@ -1,0 +1,6 @@
+test_baseline_and_memory_have_same_default_null_checker (phase6.v5.test_detection.LiveTests.test_baseline_and_memory_have_same_default_null_checker) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 12.527s
+
+OK

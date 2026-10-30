@@ -1,0 +1,1783 @@
+{
+  "schema": "smartparse.semantic_analysis",
+  "schema_version": "1.0",
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+    "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+    "original_unchanged": true
+  },
+  "enabled": true,
+  "status": "completed",
+  "reason": "Bounded semantic AST scan completed; no full path/logic coverage claim.",
+  "upstream": {
+    "schema": "smartparse.memory_analysis",
+    "schema_version": "1.0",
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+      "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+      "original_unchanged": true
+    },
+    "enabled": true,
+    "profile": "memory",
+    "status": "completed",
+    "reason": "Analyzer invocation completed; no per-function/path completion claim.",
+    "upstream": {
+      "schema": "smartparse.unaffected_regions",
+      "schema_version": "1.0",
+      "source": {
+        "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+        "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+        "original_unchanged": true
+      },
+      "recovery_report": {
+        "schema": "smartparse.repair_for_analysis",
+        "schema_version": "1.0",
+        "source": {
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+          "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+          "original_unchanged": true
+        },
+        "baseline": {
+          "immutable": true,
+          "source_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+          "analysis": {
+            "schema_version": "1.0",
+            "analysis_mode": "extended_c",
+            "status": "completed",
+            "compiler": {
+              "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "backend": "clang",
+              "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+              "flags": [
+                "-Wall",
+                "-Wextra",
+                "-Wparentheses",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-ferror-limit=0",
+                "-fno-diagnostics-fixit-info"
+              ]
+            },
+            "summary": {
+              "total_diagnostics": 0,
+              "errors": 0,
+              "warnings": 0,
+              "notes": 0,
+              "categories": {
+                "syntax": 0,
+                "semantic/type": 0,
+                "compiler warning": 0,
+                "unknown": 0
+              }
+            },
+            "diagnostics": [],
+            "tool_issues": [],
+            "execution": {
+              "returncode": 0,
+              "command": [
+                "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "-x",
+                "c",
+                "-fsyntax-only",
+                "-Wall",
+                "-Wextra",
+                "-Wparentheses",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-ferror-limit=0",
+                "-fno-diagnostics-fixit-info",
+                "-std=c11",
+                "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+              ]
+            },
+            "raw_output": {
+              "stdout": "",
+              "stderr": ""
+            },
+            "unrecognized_output": []
+          },
+          "eligibility": {
+            "schema": "smartparse.analysis_eligibility",
+            "schema_version": "1.0",
+            "manifest": {
+              "source": {
+                "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+                "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+                "bytes": 162,
+                "physical_lines": 2,
+                "original_source_unchanged": true,
+                "pre_analysis_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+                "snapshot_kind": "original",
+                "original_file_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910"
+              },
+              "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+              "requested_standard": "c11",
+              "include_directories": [],
+              "macro_definitions": [],
+              "warning_options": {
+                "compiler": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info"
+                ],
+                "analyzer": []
+              },
+              "checker_options": "driver defaults; query recorded if static analysis requested",
+              "tool_contexts": {
+                "compiler": {
+                  "compiler": {
+                    "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                    "backend": "clang",
+                    "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+                    "flags": [
+                      "-Wall",
+                      "-Wextra",
+                      "-Wparentheses",
+                      "-fdiagnostics-show-option",
+                      "-fdiagnostics-color=never",
+                      "-ferror-limit=0",
+                      "-fno-diagnostics-fixit-info"
+                    ]
+                  },
+                  "target": "x86_64-w64-windows-gnu",
+                  "standard_macros": {
+                    "__SIZEOF_POINTER__": "8",
+                    "__STDC_VERSION__": "201112L",
+                    "__STDC__": "1",
+                    "__STRICT_ANSI__": "1"
+                  },
+                  "system_include_paths": [
+                    "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+                    "C:/MinGW/mingw32/include",
+                    "C:/MinGW/include"
+                  ]
+                }
+              },
+              "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures",
+              "include_environment": {
+                "CPATH": null,
+                "C_INCLUDE_PATH": null,
+                "INCLUDE": null,
+                "SDKROOT": null
+              }
+            },
+            "stages": {
+              "compiler": {
+                "completion": "completed",
+                "returncode": 0,
+                "frontend_accepted": true
+              },
+              "analyzer": {
+                "completion": "not_attempted",
+                "returncode": null
+              },
+              "preprocessing_probe": {
+                "status": "see_recovery_budget_log"
+              }
+            },
+            "blockers": [],
+            "region_inventory": {
+              "status": "completed",
+              "regions": [
+                {
+                  "id": "function:71:probe",
+                  "kind": "function",
+                  "name": "probe",
+                  "mapping": "physical-main-file-byte-offsets",
+                  "start_byte": 71,
+                  "end_byte_exclusive": 161,
+                  "start_line": 2,
+                  "end_line": 2,
+                  "reliability": "validated_ast_range"
+                }
+              ],
+              "exclusions": [],
+              "basis": "v2 physical AST validation; recovery does not certify analyzer path coverage"
+            },
+            "regions": [
+              {
+                "id": "translation_unit",
+                "kind": "translation_unit",
+                "name": null,
+                "start_line": 1,
+                "end_line": 2,
+                "compiler_coverage": {
+                  "status": "completed",
+                  "reason": "Configured frontend accepted this translation unit; not a static-analysis or all-configurations claim."
+                },
+                "analyzer_coverage": {
+                  "status": "not_attempted",
+                  "reason": "Pass was not requested."
+                }
+              },
+              {
+                "id": "function:71:probe",
+                "kind": "function",
+                "name": "probe",
+                "mapping": "physical-main-file-byte-offsets",
+                "start_byte": 71,
+                "end_byte_exclusive": 161,
+                "start_line": 2,
+                "end_line": 2,
+                "reliability": "validated_ast_range",
+                "compiler_coverage": {
+                  "status": "completed",
+                  "reason": "Configured frontend accepted this translation unit and the validated AST contains this body."
+                },
+                "analyzer_coverage": {
+                  "status": "not_attempted",
+                  "reason": "Pass was not requested."
+                }
+              }
+            ],
+            "mapping": {
+              "source_edits_applied": false,
+              "private_overlay_edits": false,
+              "function_locations": "physical bytes of this source snapshot; variant maps stored in recovery provenance"
+            },
+            "analysis": {
+              "schema_version": "1.0",
+              "analysis_mode": "extended_c",
+              "status": "completed",
+              "compiler": {
+                "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                "backend": "clang",
+                "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+                "flags": [
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info"
+                ]
+              },
+              "summary": {
+                "total_diagnostics": 0,
+                "errors": 0,
+                "warnings": 0,
+                "notes": 0,
+                "categories": {
+                  "syntax": 0,
+                  "semantic/type": 0,
+                  "compiler warning": 0,
+                  "unknown": 0
+                }
+              },
+              "diagnostics": [],
+              "tool_issues": [],
+              "execution": {
+                "returncode": 0,
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info",
+                  "-std=c11",
+                  "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+                ]
+              },
+              "raw_output": {
+                "stdout": "",
+                "stderr": ""
+              },
+              "unrecognized_output": []
+            }
+          },
+          "analysis_sha256": "a772db02f64458ef2c4c698df0fbfc1f62fc83cc36625d360ff01d5df21715fa"
+        },
+        "recovery": {
+          "enabled": false,
+          "limits": {
+            "candidates": 4,
+            "rounds": 3,
+            "invocations": 64,
+            "retained_variants": 4,
+            "edits": 4,
+            "total_seconds": 30,
+            "call_seconds": 5
+          },
+          "candidates": [],
+          "accepted_variants": [],
+          "non_whitelisted_suggestions": [],
+          "stop_reason": "repair_not_requested",
+          "eligibility_change": {
+            "baseline_frontend_accepted": true,
+            "final_frontend_accepted": true,
+            "frontend_newly_eligible": false,
+            "analyzer_newly_completed": false,
+            "function_path_coverage_certified": false,
+            "note": "Fewer compiler errors alone do not establish improved analysis eligibility."
+          },
+          "temporary_workspace_removed": true,
+          "usage": {
+            "compiler_invocations": 15,
+            "elapsed_seconds": 2.578,
+            "calls": [
+              {
+                "number": 1,
+                "role": "compiler_version",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "--version"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+                "stderr": "",
+                "elapsed_seconds": 0.172
+              },
+              {
+                "number": 2,
+                "role": "syntax_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.203
+              },
+              {
+                "number": 3,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wall",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.203
+              },
+              {
+                "number": 4,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wextra",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.172
+              },
+              {
+                "number": 5,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wparentheses",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.141
+              },
+              {
+                "number": 6,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-fdiagnostics-show-option",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.203
+              },
+              {
+                "number": 7,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-fdiagnostics-color=never",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.141
+              },
+              {
+                "number": 8,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-ferror-limit=0",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.171
+              },
+              {
+                "number": 9,
+                "role": "optional_flag_capability",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-fno-diagnostics-fixit-info",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.157
+              },
+              {
+                "number": 10,
+                "role": "target_context",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-dumpmachine"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "14ca52f473c03e43adcd02ecd2a6da4e554e7261eb736bfcbf935762772e3ba2",
+                "stderr": "",
+                "elapsed_seconds": 0.156
+              },
+              {
+                "number": 11,
+                "role": "standard_context",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-E",
+                  "-dM",
+                  "-std=c11",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "dc42ec613bee54408084aad7fa3a3628c696369641fd32918a070ef76597b0ee",
+                "stderr": "",
+                "elapsed_seconds": 0.109
+              },
+              {
+                "number": 12,
+                "role": "include_context",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-E",
+                  "-v",
+                  "-std=c11",
+                  "-"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "f58bc0ab6b65184368c2967edff386cbb3221e130a8dd0e3fb082ed55bdaf307",
+                "stderr": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\r\nTarget: x86_64-w64-windows-gnu\r\nThread model: posix\r\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\r\n (in-process)\r\n \"C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe\" -cc1 -triple x86_64-w64-windows-gnu -E -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name - -mrelocation-model pic -pic-level 2 -mframe-pointer=none -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -mms-bitfields -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -resource-dir C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17 -internal-isystem C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include -internal-isystem C:/MinGW/mingw32/include -internal-isystem C:/MinGW/mingw32/usr/include -internal-isystem C:/MinGW/include -std=c11 -fdebug-compilation-dir=C:/Users/saami/Downloads/SmartParse_Final_Git -ferror-limit 19 -fno-use-cxa-atexit -fgnuc-version=4.2.1 -exception-model=seh -faddrsig -o - -x c -\r\nclang -cc1 version 17.0.2 based upon LLVM 17.0.2 default target x86_64-w64-windows-gnu\r\nignoring nonexistent directory \"C:/MinGW/mingw32/usr/include\"\r\n#include \"...\" search starts here:\r\n#include <...> search starts here:\r\n C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include\r\n C:/MinGW/mingw32/include\r\n C:/MinGW/include\r\nEnd of search list.\r\n",
+                "elapsed_seconds": 0.157
+              },
+              {
+                "number": 13,
+                "role": "compiler_validation",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info",
+                  "-std=c11",
+                  "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+                "stderr": "",
+                "elapsed_seconds": 0.218
+              },
+              {
+                "number": 14,
+                "role": "ast_inventory",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-fsyntax-only",
+                  "-Wall",
+                  "-Wextra",
+                  "-Wparentheses",
+                  "-fdiagnostics-show-option",
+                  "-fdiagnostics-color=never",
+                  "-ferror-limit=0",
+                  "-fno-diagnostics-fixit-info",
+                  "-std=c11",
+                  "-Xclang",
+                  "-ast-dump=json",
+                  "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "7e742abc169325d61159cf9f3d8890841aff1b8c26a1af4b467dadc4f391e226",
+                "stderr": "",
+                "elapsed_seconds": 0.219
+              },
+              {
+                "number": 15,
+                "role": "preprocessing_guard",
+                "command": [
+                  "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+                  "-x",
+                  "c",
+                  "-E",
+                  "-P",
+                  "-std=c11",
+                  "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+                ],
+                "status": "completed",
+                "returncode": 0,
+                "stdout_sha256": "f599c25f266b1cbbe8e327f2b021938270faef57c31d4df052448969e750ffe6",
+                "stderr": "",
+                "elapsed_seconds": 0.156
+              }
+            ]
+          },
+          "budget_exhausted": false
+        },
+        "repair_conditioned_findings": []
+      },
+      "isolation": {
+        "enabled": false,
+        "experimental": true,
+        "limits": {
+          "exclusions": 8,
+          "variants": 1,
+          "invocations": 64,
+          "analyzer_invocations": 5,
+          "total_seconds": 30,
+          "call_seconds": 5
+        },
+        "status": "not_attempted",
+        "reason": "isolation_not_requested",
+        "inventory": [],
+        "excluded_functions": [],
+        "retained_functions": [],
+        "blockers": [],
+        "variant": null,
+        "eligibility_improved": false,
+        "function_path_coverage_certified": false,
+        "temporary_workspace_removed": true,
+        "usage": {
+          "compiler_invocations": 15,
+          "analyzer_invocations": 0,
+          "elapsed_seconds": 2.578,
+          "isolation_calls": []
+        }
+      },
+      "baseline_static_analysis": null,
+      "isolation_conditioned_findings": [],
+      "unique_additional_findings": [],
+      "suppressed_findings": []
+    },
+    "capabilities": {
+      "schema": "smartparse.memory_capabilities",
+      "schema_version": "1.0",
+      "compiler": {
+        "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "backend": "clang",
+        "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+        "flags": [
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info"
+        ]
+      },
+      "config": [
+        "-std=c11"
+      ],
+      "binding": "449c77063212ce751c80149ef36cd710c4b6000cc4b5421d920de067df2cf2b0",
+      "raw": {
+        "available": {
+          "returncode": 0,
+          "stdout": "OVERVIEW: Clang Static Analyzer Checkers List\n\nUSAGE: -analyzer-checker <CHECKER or PACKAGE,...>\n\nCHECKERS:\n  core.CallAndMessage           Check for logical errors for function calls and Objective-C message expressions (e.g., uninitialized arguments, null function pointers)\n  core.DivideZero               Check for division by zero\n  core.NonNullParamChecker      Check for null pointers passed as arguments to a function whose arguments are references or marked with the 'nonnull' attribute\n  core.NullDereference          Check for dereferences of null pointers\n  core.StackAddressEscape       Check that addresses to stack memory do not escape the function\n  core.UndefinedBinaryOperatorResult\n                                Check for undefined results of binary operators\n  core.VLASize                  Check for declarations of VLA of undefined or zero size\n  core.uninitialized.ArraySubscript\n                                Check for uninitialized values used as array subscripts\n  core.uninitialized.Assign     Check for assigning uninitialized values\n  core.uninitialized.Branch     Check for uninitialized values used as branch conditions\n  core.uninitialized.CapturedBlockVariable\n                                Check for blocks that capture uninitialized values\n  core.uninitialized.NewArraySize\n                                Check if the size of the array in a new[] expression is undefined\n  core.uninitialized.UndefReturn Check for uninitialized values being returned to the caller\n  cplusplus.InnerPointer        Check for inner pointers of C++ containers used after re/deallocation\n  cplusplus.Move                Find use-after-move bugs in C++\n  cplusplus.NewDelete           Check for double-free and use-after-free problems. Traces memory managed by new/delete.\n  cplusplus.NewDeleteLeaks      Check for memory leaks. Traces memory managed by new/delete.\n  cplusplus.PlacementNew        Check if default placement new is provided with pointers to sufficient storage capacity\n  cplusplus.PureVirtualCall     Check pure virtual function calls during construction/destruction\n  cplusplus.StringChecker       Checks C++ std::string bugs\n  deadcode.DeadStores           Check for values stored to variables that are never read afterwards\n  fuchsia.HandleChecker         A Checker that detect leaks related to Fuchsia handles\n  nullability.NullPassedToNonnull\n                                Warns when a null pointer is passed to a pointer which has a _Nonnull type.\n  nullability.NullReturnedFromNonnull\n                                Warns when a null pointer is returned from a function that has _Nonnull return type.\n  nullability.NullableDereferenced\n                                Warns when a nullable pointer is dereferenced.\n  nullability.NullablePassedToNonnull\n                                Warns when a nullable pointer is passed to a pointer which has a _Nonnull type.\n  nullability.NullableReturnedFromNonnull\n                                Warns when a nullable pointer is returned from a function that has _Nonnull return type.\n  optin.cplusplus.UninitializedObject\n                                Reports uninitialized fields after object construction\n  optin.cplusplus.VirtualCall   Check virtual function calls during construction/destruction\n  optin.mpi.MPI-Checker         Checks MPI code\n  optin.osx.OSObjectCStyleCast  Checker for C-style casts of OSObjects\n  optin.osx.cocoa.localizability.EmptyLocalizationContextChecker\n                                Check that NSLocalizedString macros include a comment for context\n  optin.osx.cocoa.localizability.NonLocalizedStringChecker\n                                Warns about uses of non-localized NSStrings passed to UI methods expecting localized NSStrings\n  optin.performance.GCDAntipattern\n                                Check for performance anti-patterns when using Grand Central Dispatch\n  optin.performance.Padding     Check for excessively padded structs.\n  optin.portability.UnixAPI     Finds implementation-defined behavior in UNIX/Posix functions\n  osx.API                       Check for proper uses of various Apple APIs\n  osx.MIG                       Find violations of the Mach Interface Generator calling convention\n  osx.NumberObjectConversion    Check for erroneous conversions of objects representing numbers into numbers\n  osx.OSObjectRetainCount       Check for leaks and improper reference count management for OSObject\n  osx.ObjCProperty              Check for proper uses of Objective-C properties\n  osx.SecKeychainAPI            Check for proper uses of Secure Keychain APIs\n  osx.cocoa.AtSync              Check for nil pointers used as mutexes for @synchronized\n  osx.cocoa.AutoreleaseWrite    Warn about potentially crashing writes to autoreleasing objects from different autoreleasing pools in Objective-C\n  osx.cocoa.ClassRelease        Check for sending 'retain', 'release', or 'autorelease' directly to a Class\n  osx.cocoa.Dealloc             Warn about Objective-C classes that lack a correct implementation of -dealloc\n  osx.cocoa.IncompatibleMethodTypes\n                                Warn about Objective-C method signatures with type incompatibilities\n  osx.cocoa.Loops               Improved modeling of loops using Cocoa collection types\n  osx.cocoa.MissingSuperCall    Warn about Objective-C methods that lack a necessary call to super\n  osx.cocoa.NSAutoreleasePool   Warn for suboptimal uses of NSAutoreleasePool in Objective-C GC mode\n  osx.cocoa.NSError             Check usage of NSError** parameters\n  osx.cocoa.NilArg              Check for prohibited nil arguments to ObjC method calls\n  osx.cocoa.NonNilReturnValue   Model the APIs that are guaranteed to return a non-nil value\n  osx.cocoa.ObjCGenerics        Check for type errors when using Objective-C generics\n  osx.cocoa.RetainCount         Check for leaks and improper reference count management\n  osx.cocoa.RunLoopAutoreleaseLeak\n                                Check for leaked memory in autorelease pools that will never be drained\n  osx.cocoa.SelfInit            Check that 'self' is properly initialized inside an initializer method\n  osx.cocoa.SuperDealloc        Warn about improper use of '[super dealloc]' in Objective-C\n  osx.cocoa.UnusedIvars         Warn about private ivars that are never used\n  osx.cocoa.VariadicMethodTypes Check for passing non-Objective-C types to variadic collection initialization methods that expect only Objective-C types\n  osx.coreFoundation.CFError    Check usage of CFErrorRef* parameters\n  osx.coreFoundation.CFNumber   Check for proper uses of CFNumber APIs\n  osx.coreFoundation.CFRetainRelease\n                                Check for null arguments to CFRetain/CFRelease/CFMakeCollectable\n  osx.coreFoundation.containers.OutOfBounds\n                                Checks for index out-of-bounds when using 'CFArray' API\n  osx.coreFoundation.containers.PointerSizedValues\n                                Warns if 'CFArray', 'CFDictionary', 'CFSet' are created with non-pointer-size values\n  security.FloatLoopCounter     Warn on using a floating point value as a loop counter (CERT: FLP30-C, FLP30-CPP)\n  security.insecureAPI.DeprecatedOrUnsafeBufferHandling\n                                Warn on uses of unsecure or deprecated buffer manipulating functions\n  security.insecureAPI.UncheckedReturn\n                                Warn on uses of functions whose return values must be always checked\n  security.insecureAPI.bcmp     Warn on uses of the 'bcmp' function\n  security.insecureAPI.bcopy    Warn on uses of the 'bcopy' function\n  security.insecureAPI.bzero    Warn on uses of the 'bzero' function\n  security.insecureAPI.decodeValueOfObjCType\n                                Warn on uses of the '-decodeValueOfObjCType:at:' method\n  security.insecureAPI.getpw    Warn on uses of the 'getpw' function\n  security.insecureAPI.gets     Warn on uses of the 'gets' function\n  security.insecureAPI.mkstemp  Warn when 'mkstemp' is passed fewer than 6 X's in the format string\n  security.insecureAPI.mktemp   Warn on uses of the 'mktemp' function\n  security.insecureAPI.rand     Warn on uses of the 'rand', 'random', and related functions\n  security.insecureAPI.strcpy   Warn on uses of the 'strcpy' and 'strcat' functions\n  security.insecureAPI.vfork    Warn on uses of the 'vfork' function\n  unix.API                      Check calls to various UNIX/Posix functions\n  unix.Malloc                   Check for memory leaks, double free, and use-after-free problems. Traces memory managed by malloc()/free().\n  unix.MallocSizeof             Check for dubious malloc arguments involving sizeof\n  unix.MismatchedDeallocator    Check for mismatched deallocators.\n  unix.Vfork                    Check for proper usage of vfork\n  unix.cstring.BadSizeArg       Check the size argument passed into C string functions for common erroneous patterns\n  unix.cstring.NullArg          Check for null pointers being passed as arguments to C string functions\n  valist.CopyToSelf             Check for va_lists which are copied onto itself.\n  valist.Uninitialized          Check for usages of uninitialized (or already released) va_lists.\n  valist.Unterminated           Check for va_lists which are not released by a va_end call.\n  webkit.NoUncountedMemberChecker\n                                Check for no uncounted member variables.\n  webkit.RefCntblBaseVirtualDtor Check for any ref-countable base class having virtual destructor.\n  webkit.UncountedLambdaCapturesChecker\n                                Check uncounted lambda captures.\n",
+          "stderr": ""
+        },
+        "alpha_available": {
+          "returncode": 0,
+          "stdout": "OVERVIEW: Clang Static Analyzer Checkers List\n\nUSAGE: -analyzer-checker <CHECKER or PACKAGE,...>\n\nCHECKERS:\n  alpha.clone.CloneChecker      (Enable only for development!) Reports similar pieces of code.\n  alpha.core.BoolAssignment     (Enable only for development!) Warn about assigning non-{0,1} values to Boolean variables\n  alpha.core.C11Lock            (Enable only for development!) Simple lock -> unlock checker\n  alpha.core.CastSize           (Enable only for development!) Check when casting a malloc'ed type T, whether the size is a multiple of the size of T\n  alpha.core.CastToStruct       (Enable only for development!) Check for cast from non-struct pointer to struct pointer\n  alpha.core.Conversion         (Enable only for development!) Loss of sign/precision in implicit conversions\n  alpha.core.DynamicTypeChecker (Enable only for development!) Check for cases where the dynamic and the static type of an object are unrelated.\n  alpha.core.FixedAddr          (Enable only for development!) Check for assignment of a fixed address to a pointer\n  alpha.core.IdenticalExpr      (Enable only for development!) Warn about unintended use of identical expressions in operators\n  alpha.core.PointerArithm      (Enable only for development!) Check for pointer arithmetic on locations other than array elements\n  alpha.core.PointerSub         (Enable only for development!) Check for pointer subtractions on two pointers pointing to different memory chunks\n  alpha.core.SizeofPtr          (Enable only for development!) Warn about unintended use of sizeof() on pointer expressions\n  alpha.core.StackAddressAsyncEscape\n                                (Enable only for development!) Check that addresses to stack memory do not escape the function\n  alpha.core.TestAfterDivZero   (Enable only for development!) Check for division by variable that is later compared against 0. Either the comparison is useless or there is division by zero.\n  alpha.cplusplus.DeleteWithNonVirtualDtor\n                                (Enable only for development!) Reports destructions of polymorphic objects with a non-virtual destructor in their base class\n  alpha.cplusplus.EnumCastOutOfRange\n                                (Enable only for development!) Check integer to enumeration casts for out of range values\n  alpha.cplusplus.InvalidatedIterator\n                                (Enable only for development!) Check for use of invalidated iterators\n  alpha.cplusplus.IteratorRange (Enable only for development!) Check for iterators used outside their valid ranges\n  alpha.cplusplus.MismatchedIterator\n                                (Enable only for development!) Check for use of iterators of different containers where iterators of the same container are expected\n  alpha.cplusplus.STLAlgorithmModeling\n                                (Enable only for development!) Models the algorithm library of the C++ STL.\n  alpha.cplusplus.SmartPtr      (Enable only for development!) Find the dereference of null SmrtPtr\n  alpha.deadcode.UnreachableCode (Enable only for development!) Check unreachable code\n  alpha.fuchsia.Lock            (Enable only for development!) Check for the correct usage of locking APIs.\n  alpha.llvm.Conventions        (Enable only for development!) Check code for LLVM codebase conventions\n  alpha.nondeterminism.PointerIteration\n                                (Enable only for development!) Checks for non-determinism caused by iteration of unordered containers of pointers\n  alpha.nondeterminism.PointerSorting\n                                (Enable only for development!) Check for non-determinism caused by sorting of pointers\n  alpha.osx.cocoa.DirectIvarAssignment\n                                (Enable only for development!) Check for direct assignments to instance variables\n  alpha.osx.cocoa.InstanceVariableInvalidation\n                                (Enable only for development!) Check that the invalidatable instance variables are invalidated in the methods annotated with objc_instance_variable_invalidator\n  alpha.osx.cocoa.MissingInvalidationMethod\n                                (Enable only for development!) Check that the invalidation methods are present in classes that contain invalidatable instance variables\n  alpha.osx.cocoa.localizability.PluralMisuseChecker\n                                (Enable only for development!) Warns against using one vs. many plural pattern in code when generating localized strings.\n  alpha.security.ArrayBound     (Enable only for development!) Warn about buffer overflows (older checker)\n  alpha.security.ArrayBoundV2   (Enable only for development!) Warn about buffer overflows (newer checker)\n  alpha.security.MallocOverflow (Enable only for development!) Check for overflows in the arguments to malloc()\n  alpha.security.MmapWriteExec  (Enable only for development!) Warn on mmap() calls that are both writable and executable\n  alpha.security.ReturnPtrRange (Enable only for development!) Check for an out-of-bound pointer being returned to callers\n  alpha.security.cert.env.InvalidPtr\n                                (Enable only for development!) Finds usages of possibly invalidated pointers\n  alpha.security.cert.pos.34c   (Enable only for development!) Finds calls to the 'putenv' function which pass a pointer to an automatic variable as the argument.\n  alpha.security.taint.TaintPropagation\n                                (Enable only for development!) Generate taint information used by other checkers\n  alpha.unix.BlockInCriticalSection\n                                (Enable only for development!) Check for calls to blocking functions inside a critical section\n  alpha.unix.Chroot             (Enable only for development!) Check improper use of chroot\n  alpha.unix.Errno              (Enable only for development!) Check for improper use of 'errno'\n  alpha.unix.PthreadLock        (Enable only for development!) Simple lock -> unlock checker\n  alpha.unix.SimpleStream       (Enable only for development!) Check for misuses of stream APIs\n  alpha.unix.StdCLibraryFunctionArgs\n                                (Enable only for development!) Check constraints of arguments of C standard library functions, such as whether the parameter of isalpha is in the range [0, 255] or is EOF.\n  alpha.unix.Stream             (Enable only for development!) Check stream handling functions\n  alpha.unix.cstring.BufferOverlap\n                                (Enable only for development!) Checks for overlap in two buffer arguments\n  alpha.unix.cstring.NotNullTerminated\n                                (Enable only for development!) Check for arguments which are not null-terminating strings\n  alpha.unix.cstring.OutOfBounds (Enable only for development!) Check for out-of-bounds access in string functions\n  alpha.unix.cstring.UninitializedRead\n                                (Enable only for development!) Checks if the string manipulation function would read uninitialized bytes\n  alpha.webkit.UncountedCallArgsChecker\n                                (Enable only for development!) Check uncounted call arguments.\n  alpha.webkit.UncountedLocalVarsChecker\n                                (Enable only for development!) Check uncounted local variables.\n",
+          "stderr": ""
+        },
+        "default_enabled": {
+          "returncode": 0,
+          "stdout": "OVERVIEW: Clang Static Analyzer Enabled Checkers List\n\napiModeling.Errno\ncore.CallAndMessageModeling\napiModeling.StdCLibraryFunctions\napiModeling.TrustNonnull\napiModeling.TrustReturnsNonnull\napiModeling.llvm.CastValue\napiModeling.llvm.ReturnValue\ncore.CallAndMessage\ncore.DivideZero\ncore.DynamicTypePropagation\ncore.NonNullParamChecker\ncore.NonnilStringConstants\ncore.NullDereference\ncore.StackAddrEscapeBase\ncore.StackAddressEscape\ncore.UndefinedBinaryOperatorResult\ncore.VLASize\ncore.builtin.BuiltinFunctions\ncore.builtin.NoReturnFunctions\ncore.uninitialized.ArraySubscript\ncore.uninitialized.Assign\ncore.uninitialized.Branch\ncore.uninitialized.CapturedBlockVariable\ncore.uninitialized.UndefReturn\ndeadcode.DeadStores\nnullability.NullabilityBase\nnullability.NullPassedToNonnull\nnullability.NullReturnedFromNonnull\nsecurity.insecureAPI.SecuritySyntaxChecker\nsecurity.insecureAPI.UncheckedReturn\nsecurity.insecureAPI.getpw\nsecurity.insecureAPI.gets\nsecurity.insecureAPI.mkstemp\nsecurity.insecureAPI.mktemp\nsecurity.insecureAPI.vfork\nunix.API\nunix.cstring.CStringModeling\nunix.DynamicMemoryModeling\nunix.Malloc\nunix.MallocSizeof\nunix.MismatchedDeallocator\nunix.Vfork\nunix.cstring.BadSizeArg\nunix.cstring.NullArg\n",
+          "stderr": ""
+        }
+      },
+      "available": [
+        "alpha.clone.CloneChecker",
+        "alpha.core.BoolAssignment",
+        "alpha.core.C11Lock",
+        "alpha.core.CastSize",
+        "alpha.core.CastToStruct",
+        "alpha.core.Conversion",
+        "alpha.core.DynamicTypeChecker",
+        "alpha.core.FixedAddr",
+        "alpha.core.IdenticalExpr",
+        "alpha.core.PointerArithm",
+        "alpha.core.PointerSub",
+        "alpha.core.SizeofPtr",
+        "alpha.core.StackAddressAsyncEscape",
+        "alpha.core.TestAfterDivZero",
+        "alpha.cplusplus.DeleteWithNonVirtualDtor",
+        "alpha.cplusplus.EnumCastOutOfRange",
+        "alpha.cplusplus.InvalidatedIterator",
+        "alpha.cplusplus.IteratorRange",
+        "alpha.cplusplus.MismatchedIterator",
+        "alpha.cplusplus.STLAlgorithmModeling",
+        "alpha.cplusplus.SmartPtr",
+        "alpha.deadcode.UnreachableCode",
+        "alpha.fuchsia.Lock",
+        "alpha.llvm.Conventions",
+        "alpha.nondeterminism.PointerIteration",
+        "alpha.nondeterminism.PointerSorting",
+        "alpha.osx.cocoa.DirectIvarAssignment",
+        "alpha.osx.cocoa.InstanceVariableInvalidation",
+        "alpha.osx.cocoa.MissingInvalidationMethod",
+        "alpha.osx.cocoa.localizability.PluralMisuseChecker",
+        "alpha.security.ArrayBound",
+        "alpha.security.ArrayBoundV2",
+        "alpha.security.MallocOverflow",
+        "alpha.security.MmapWriteExec",
+        "alpha.security.ReturnPtrRange",
+        "alpha.security.cert.env.InvalidPtr",
+        "alpha.security.cert.pos.34c",
+        "alpha.security.taint.TaintPropagation",
+        "alpha.unix.BlockInCriticalSection",
+        "alpha.unix.Chroot",
+        "alpha.unix.Errno",
+        "alpha.unix.PthreadLock",
+        "alpha.unix.SimpleStream",
+        "alpha.unix.StdCLibraryFunctionArgs",
+        "alpha.unix.Stream",
+        "alpha.unix.cstring.BufferOverlap",
+        "alpha.unix.cstring.NotNullTerminated",
+        "alpha.unix.cstring.OutOfBounds",
+        "alpha.unix.cstring.UninitializedRead",
+        "alpha.webkit.UncountedCallArgsChecker",
+        "alpha.webkit.UncountedLocalVarsChecker",
+        "core.CallAndMessage",
+        "core.DivideZero",
+        "core.NonNullParamChecker",
+        "core.NullDereference",
+        "core.StackAddressEscape",
+        "core.UndefinedBinaryOperatorResult",
+        "core.VLASize",
+        "core.uninitialized.ArraySubscript",
+        "core.uninitialized.Assign",
+        "core.uninitialized.Branch",
+        "core.uninitialized.CapturedBlockVariable",
+        "core.uninitialized.NewArraySize",
+        "core.uninitialized.UndefReturn",
+        "cplusplus.InnerPointer",
+        "cplusplus.Move",
+        "cplusplus.NewDelete",
+        "cplusplus.NewDeleteLeaks",
+        "cplusplus.PlacementNew",
+        "cplusplus.PureVirtualCall",
+        "cplusplus.StringChecker",
+        "deadcode.DeadStores",
+        "fuchsia.HandleChecker",
+        "nullability.NullPassedToNonnull",
+        "nullability.NullReturnedFromNonnull",
+        "nullability.NullableDereferenced",
+        "nullability.NullablePassedToNonnull",
+        "nullability.NullableReturnedFromNonnull",
+        "optin.cplusplus.UninitializedObject",
+        "optin.cplusplus.VirtualCall",
+        "optin.osx.OSObjectCStyleCast",
+        "optin.osx.cocoa.localizability.EmptyLocalizationContextChecker",
+        "optin.osx.cocoa.localizability.NonLocalizedStringChecker",
+        "optin.performance.GCDAntipattern",
+        "optin.performance.Padding",
+        "optin.portability.UnixAPI",
+        "osx.API",
+        "osx.MIG",
+        "osx.NumberObjectConversion",
+        "osx.OSObjectRetainCount",
+        "osx.ObjCProperty",
+        "osx.SecKeychainAPI",
+        "osx.cocoa.AtSync",
+        "osx.cocoa.AutoreleaseWrite",
+        "osx.cocoa.ClassRelease",
+        "osx.cocoa.Dealloc",
+        "osx.cocoa.IncompatibleMethodTypes",
+        "osx.cocoa.Loops",
+        "osx.cocoa.MissingSuperCall",
+        "osx.cocoa.NSAutoreleasePool",
+        "osx.cocoa.NSError",
+        "osx.cocoa.NilArg",
+        "osx.cocoa.NonNilReturnValue",
+        "osx.cocoa.ObjCGenerics",
+        "osx.cocoa.RetainCount",
+        "osx.cocoa.RunLoopAutoreleaseLeak",
+        "osx.cocoa.SelfInit",
+        "osx.cocoa.SuperDealloc",
+        "osx.cocoa.UnusedIvars",
+        "osx.cocoa.VariadicMethodTypes",
+        "osx.coreFoundation.CFError",
+        "osx.coreFoundation.CFNumber",
+        "osx.coreFoundation.CFRetainRelease",
+        "osx.coreFoundation.containers.OutOfBounds",
+        "osx.coreFoundation.containers.PointerSizedValues",
+        "security.FloatLoopCounter",
+        "security.insecureAPI.DeprecatedOrUnsafeBufferHandling",
+        "security.insecureAPI.UncheckedReturn",
+        "security.insecureAPI.bcmp",
+        "security.insecureAPI.bcopy",
+        "security.insecureAPI.bzero",
+        "security.insecureAPI.decodeValueOfObjCType",
+        "security.insecureAPI.getpw",
+        "security.insecureAPI.gets",
+        "security.insecureAPI.mkstemp",
+        "security.insecureAPI.mktemp",
+        "security.insecureAPI.rand",
+        "security.insecureAPI.strcpy",
+        "security.insecureAPI.vfork",
+        "unix.API",
+        "unix.Malloc",
+        "unix.MallocSizeof",
+        "unix.MismatchedDeallocator",
+        "unix.Vfork",
+        "unix.cstring.BadSizeArg",
+        "unix.cstring.NullArg",
+        "valist.CopyToSelf",
+        "valist.Uninitialized",
+        "valist.Unterminated",
+        "webkit.NoUncountedMemberChecker",
+        "webkit.RefCntblBaseVirtualDtor",
+        "webkit.UncountedLambdaCapturesChecker"
+      ],
+      "default_enabled": [
+        "apiModeling.Errno",
+        "apiModeling.StdCLibraryFunctions",
+        "apiModeling.TrustNonnull",
+        "apiModeling.TrustReturnsNonnull",
+        "apiModeling.llvm.CastValue",
+        "apiModeling.llvm.ReturnValue",
+        "core.CallAndMessage",
+        "core.CallAndMessageModeling",
+        "core.DivideZero",
+        "core.DynamicTypePropagation",
+        "core.NonNullParamChecker",
+        "core.NonnilStringConstants",
+        "core.NullDereference",
+        "core.StackAddrEscapeBase",
+        "core.StackAddressEscape",
+        "core.UndefinedBinaryOperatorResult",
+        "core.VLASize",
+        "core.builtin.BuiltinFunctions",
+        "core.builtin.NoReturnFunctions",
+        "core.uninitialized.ArraySubscript",
+        "core.uninitialized.Assign",
+        "core.uninitialized.Branch",
+        "core.uninitialized.CapturedBlockVariable",
+        "core.uninitialized.UndefReturn",
+        "deadcode.DeadStores",
+        "nullability.NullPassedToNonnull",
+        "nullability.NullReturnedFromNonnull",
+        "nullability.NullabilityBase",
+        "security.insecureAPI.SecuritySyntaxChecker",
+        "security.insecureAPI.UncheckedReturn",
+        "security.insecureAPI.getpw",
+        "security.insecureAPI.gets",
+        "security.insecureAPI.mkstemp",
+        "security.insecureAPI.mktemp",
+        "security.insecureAPI.vfork",
+        "unix.API",
+        "unix.DynamicMemoryModeling",
+        "unix.Malloc",
+        "unix.MallocSizeof",
+        "unix.MismatchedDeallocator",
+        "unix.Vfork",
+        "unix.cstring.BadSizeArg",
+        "unix.cstring.CStringModeling",
+        "unix.cstring.NullArg"
+      ],
+      "checker_probes": [
+        {
+          "checker": "alpha.security.ArrayBoundV2",
+          "supported": true,
+          "experimental": true,
+          "already_default": false,
+          "reason": "advertised and clean invocation probe"
+        },
+        {
+          "checker": "alpha.unix.cstring.OutOfBounds",
+          "supported": true,
+          "experimental": true,
+          "already_default": false,
+          "reason": "advertised and clean invocation probe"
+        },
+        {
+          "checker": "alpha.unix.Stream",
+          "supported": true,
+          "experimental": true,
+          "already_default": false,
+          "reason": "advertised and clean invocation probe"
+        },
+        {
+          "checker": "alpha.security.MallocOverflow",
+          "supported": true,
+          "experimental": true,
+          "already_default": false,
+          "reason": "advertised and clean invocation probe"
+        }
+      ],
+      "warning_probes": [
+        {
+          "flag": "-Warray-bounds",
+          "supported": true,
+          "stderr": "",
+          "returncode": 0
+        },
+        {
+          "flag": "-Wsizeof-pointer-memaccess",
+          "supported": true,
+          "stderr": "",
+          "returncode": 0
+        },
+        {
+          "flag": "-Wreturn-stack-address",
+          "supported": true,
+          "stderr": "",
+          "returncode": 0
+        },
+        {
+          "flag": "-Walloc-size",
+          "supported": false,
+          "stderr": "warning: unknown warning option '-Walloc-size'; did you mean '-Walloca'? [-Wunknown-warning-option]\r\n1 warning generated.\r\n",
+          "returncode": 0
+        }
+      ]
+    },
+    "baseline_analyzer": {
+      "schema_version": "1.0",
+      "analysis_mode": "clang_static_analyzer",
+      "status": "completed",
+      "compiler": {
+        "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "backend": "clang",
+        "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+        "flags": [
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info"
+        ]
+      },
+      "summary": {
+        "total_diagnostics": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 0,
+          "semantic/type": 0,
+          "compiler warning": 0,
+          "unknown": 0
+        }
+      },
+      "diagnostics": [],
+      "tool_issues": [],
+      "execution": {
+        "returncode": 0,
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "--analyze",
+          "-x",
+          "c",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-std=c11",
+          "-Xanalyzer",
+          "-analyzer-output=text",
+          "-o",
+          "nul",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+        ]
+      },
+      "raw_output": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "unrecognized_output": [],
+      "findings": [],
+      "findings_summary": {
+        "total_diagnostics": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 0,
+          "semantic/type": 0,
+          "compiler warning": 0,
+          "unknown": 0
+        }
+      }
+    },
+    "analysis": {
+      "schema_version": "1.0",
+      "analysis_mode": "extended_c",
+      "status": "completed",
+      "compiler": {
+        "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "backend": "clang",
+        "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+        "flags": [
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-Warray-bounds",
+          "-Wsizeof-pointer-memaccess",
+          "-Wreturn-stack-address"
+        ]
+      },
+      "summary": {
+        "total_diagnostics": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 0,
+          "semantic/type": 0,
+          "compiler warning": 0,
+          "unknown": 0
+        }
+      },
+      "diagnostics": [],
+      "tool_issues": [],
+      "execution": {
+        "returncode": 0,
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "-x",
+          "c",
+          "-fsyntax-only",
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-Warray-bounds",
+          "-Wsizeof-pointer-memaccess",
+          "-Wreturn-stack-address",
+          "-std=c11",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+        ]
+      },
+      "raw_output": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "unrecognized_output": [],
+      "static_analysis": {
+        "schema_version": "1.0",
+        "analysis_mode": "clang_static_analyzer",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 0,
+          "errors": 0,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 0,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "-Xclang",
+            "-analyzer-checker=alpha.security.ArrayBoundV2",
+            "-Xclang",
+            "-analyzer-checker=alpha.unix.cstring.OutOfBounds",
+            "-Xclang",
+            "-analyzer-checker=alpha.unix.Stream",
+            "-Xclang",
+            "-analyzer-checker=alpha.security.MallocOverflow",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": ""
+        },
+        "unrecognized_output": [],
+        "findings": [],
+        "findings_summary": {
+          "total_diagnostics": 0,
+          "errors": 0,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        }
+      }
+    },
+    "eligibility": {
+      "schema": "smartparse.analysis_eligibility",
+      "schema_version": "1.0",
+      "manifest": {
+        "source": {
+          "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c",
+          "sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+          "bytes": 162,
+          "physical_lines": 2,
+          "original_source_unchanged": true,
+          "pre_analysis_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+          "snapshot_kind": "original",
+          "original_file_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910"
+        },
+        "working_directory": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git",
+        "requested_standard": "c11",
+        "include_directories": [],
+        "macro_definitions": [],
+        "warning_options": {
+          "compiler": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info"
+          ],
+          "analyzer": []
+        },
+        "checker_options": "driver defaults; query recorded if static analysis requested",
+        "tool_contexts": {
+          "compiler": {
+            "compiler": {
+              "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "backend": "clang",
+              "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+              "flags": [
+                "-Wall",
+                "-Wextra",
+                "-Wparentheses",
+                "-fdiagnostics-show-option",
+                "-fdiagnostics-color=never",
+                "-ferror-limit=0",
+                "-fno-diagnostics-fixit-info"
+              ]
+            },
+            "target": "x86_64-w64-windows-gnu",
+            "standard_macros": {
+              "__SIZEOF_POINTER__": "8",
+              "__STDC_VERSION__": "201112L",
+              "__STDC__": "1",
+              "__STRICT_ANSI__": "1"
+            },
+            "system_include_paths": [
+              "C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/lib/clang/17/include",
+              "C:/MinGW/mingw32/include",
+              "C:/MinGW/include"
+            ]
+          }
+        },
+        "quote_include_root": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures",
+        "include_environment": {
+          "CPATH": null,
+          "C_INCLUDE_PATH": null,
+          "INCLUDE": null,
+          "SDKROOT": null
+        },
+        "memory_profile": {
+          "profile": "memory",
+          "checker_options": [
+            "alpha.security.ArrayBoundV2",
+            "alpha.unix.cstring.OutOfBounds",
+            "alpha.unix.Stream",
+            "alpha.security.MallocOverflow"
+          ],
+          "warning_options": [
+            "-Warray-bounds",
+            "-Wsizeof-pointer-memaccess",
+            "-Wreturn-stack-address"
+          ],
+          "capability_binding": "449c77063212ce751c80149ef36cd710c4b6000cc4b5421d920de067df2cf2b0"
+        }
+      },
+      "stages": {
+        "compiler": {
+          "completion": "completed",
+          "returncode": 0,
+          "frontend_accepted": true
+        },
+        "analyzer": {
+          "completion": "completed",
+          "returncode": 0
+        },
+        "preprocessing_probe": {
+          "status": "see_recovery_budget_log"
+        }
+      },
+      "blockers": [],
+      "region_inventory": {
+        "status": "completed",
+        "regions": [
+          {
+            "id": "function:71:probe",
+            "kind": "function",
+            "name": "probe",
+            "mapping": "physical-main-file-byte-offsets",
+            "start_byte": 71,
+            "end_byte_exclusive": 161,
+            "start_line": 2,
+            "end_line": 2,
+            "reliability": "validated_ast_range"
+          }
+        ],
+        "exclusions": [],
+        "basis": "v2 physical AST validation; recovery does not certify analyzer path coverage"
+      },
+      "regions": [
+        {
+          "id": "translation_unit",
+          "kind": "translation_unit",
+          "name": null,
+          "start_line": 1,
+          "end_line": 2,
+          "compiler_coverage": {
+            "status": "completed",
+            "reason": "Configured frontend accepted this translation unit; not a static-analysis or all-configurations claim."
+          },
+          "analyzer_coverage": {
+            "status": "unknown",
+            "reason": "Analyzer invocation completed but text output supplies no per-function exploration certificate."
+          }
+        },
+        {
+          "id": "function:71:probe",
+          "kind": "function",
+          "name": "probe",
+          "mapping": "physical-main-file-byte-offsets",
+          "start_byte": 71,
+          "end_byte_exclusive": 161,
+          "start_line": 2,
+          "end_line": 2,
+          "reliability": "validated_ast_range",
+          "compiler_coverage": {
+            "status": "completed",
+            "reason": "Configured frontend accepted this translation unit and the validated AST contains this body."
+          },
+          "analyzer_coverage": {
+            "status": "unknown",
+            "reason": "Analyzer invocation completed but text output supplies no per-function exploration certificate."
+          }
+        }
+      ],
+      "mapping": {
+        "source_edits_applied": false,
+        "private_overlay_edits": false,
+        "function_locations": "physical bytes of this source snapshot; variant maps stored in recovery provenance",
+        "conditioning": {
+          "repair_conditioned": false,
+          "isolation_conditioned": false,
+          "original_source_modified": false,
+          "recovery_variant_id": null,
+          "isolation_variant_id": null,
+          "snapshot_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+          "excluded_spans": [],
+          "source_map": "identity"
+        }
+      },
+      "analysis": {
+        "schema_version": "1.0",
+        "analysis_mode": "extended_c",
+        "status": "completed",
+        "compiler": {
+          "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "backend": "clang",
+          "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+          "flags": [
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Warray-bounds",
+            "-Wsizeof-pointer-memaccess",
+            "-Wreturn-stack-address"
+          ]
+        },
+        "summary": {
+          "total_diagnostics": 0,
+          "errors": 0,
+          "warnings": 0,
+          "notes": 0,
+          "categories": {
+            "syntax": 0,
+            "semantic/type": 0,
+            "compiler warning": 0,
+            "unknown": 0
+          }
+        },
+        "diagnostics": [],
+        "tool_issues": [],
+        "execution": {
+          "returncode": 0,
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Warray-bounds",
+            "-Wsizeof-pointer-memaccess",
+            "-Wreturn-stack-address",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ]
+        },
+        "raw_output": {
+          "stdout": "",
+          "stderr": ""
+        },
+        "unrecognized_output": [],
+        "static_analysis": {
+          "schema_version": "1.0",
+          "analysis_mode": "clang_static_analyzer",
+          "status": "completed",
+          "compiler": {
+            "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "backend": "clang",
+            "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+            "flags": [
+              "-Wall",
+              "-Wextra",
+              "-Wparentheses",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info"
+            ]
+          },
+          "summary": {
+            "total_diagnostics": 0,
+            "errors": 0,
+            "warnings": 0,
+            "notes": 0,
+            "categories": {
+              "syntax": 0,
+              "semantic/type": 0,
+              "compiler warning": 0,
+              "unknown": 0
+            }
+          },
+          "diagnostics": [],
+          "tool_issues": [],
+          "execution": {
+            "returncode": 0,
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--analyze",
+              "-x",
+              "c",
+              "-fdiagnostics-show-option",
+              "-fdiagnostics-color=never",
+              "-ferror-limit=0",
+              "-fno-diagnostics-fixit-info",
+              "-std=c11",
+              "-Xclang",
+              "-analyzer-checker=alpha.security.ArrayBoundV2",
+              "-Xclang",
+              "-analyzer-checker=alpha.unix.cstring.OutOfBounds",
+              "-Xclang",
+              "-analyzer-checker=alpha.unix.Stream",
+              "-Xclang",
+              "-analyzer-checker=alpha.security.MallocOverflow",
+              "-Xanalyzer",
+              "-analyzer-output=text",
+              "-o",
+              "nul",
+              "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+            ]
+          },
+          "raw_output": {
+            "stdout": "",
+            "stderr": ""
+          },
+          "unrecognized_output": [],
+          "findings": [],
+          "findings_summary": {
+            "total_diagnostics": 0,
+            "errors": 0,
+            "warnings": 0,
+            "notes": 0,
+            "categories": {
+              "syntax": 0,
+              "semantic/type": 0,
+              "compiler warning": 0,
+              "unknown": 0
+            }
+          }
+        }
+      }
+    },
+    "observations": [],
+    "review_suggestions": [],
+    "unrecognized_or_unmapped_findings": [],
+    "provenance": {
+      "repair_conditioned": false,
+      "isolation_conditioned": false,
+      "original_source_modified": false,
+      "recovery_variant_id": null,
+      "isolation_variant_id": null,
+      "snapshot_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+      "excluded_spans": [],
+      "source_map": "identity"
+    },
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 19,
+      "analyzer_invocations": 2,
+      "elapsed_seconds": 3.36,
+      "calls": [
+        {
+          "number": 1,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.157
+        },
+        {
+          "number": 2,
+          "role": "compiler_validation",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-Warray-bounds",
+            "-Wsizeof-pointer-memaccess",
+            "-Wreturn-stack-address",
+            "-std=c11",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.203
+        },
+        {
+          "number": 3,
+          "role": "static_analysis",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "--analyze",
+            "-x",
+            "c",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "-Xclang",
+            "-analyzer-checker=alpha.security.ArrayBoundV2",
+            "-Xclang",
+            "-analyzer-checker=alpha.unix.cstring.OutOfBounds",
+            "-Xclang",
+            "-analyzer-checker=alpha.unix.Stream",
+            "-Xclang",
+            "-analyzer-checker=alpha.security.MallocOverflow",
+            "-Xanalyzer",
+            "-analyzer-output=text",
+            "-o",
+            "nul",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": "",
+          "elapsed_seconds": 0.25
+        },
+        {
+          "number": 4,
+          "role": "ast_inventory",
+          "command": [
+            "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+            "-x",
+            "c",
+            "-fsyntax-only",
+            "-Wall",
+            "-Wextra",
+            "-Wparentheses",
+            "-fdiagnostics-show-option",
+            "-fdiagnostics-color=never",
+            "-ferror-limit=0",
+            "-fno-diagnostics-fixit-info",
+            "-std=c11",
+            "-Xclang",
+            "-ast-dump=json",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "59a39f7f2c7c763d00c0d82bb144d5b152ba5167c77a35567c2930479d38b728",
+          "stderr": "",
+          "elapsed_seconds": 0.156
+        }
+      ],
+      "limits": {
+        "invocations": 96,
+        "analyzer_invocations": 20,
+        "checkers": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      },
+      "analyzer_slots_used": 2,
+      "completed_subprocesses": 19
+    }
+  },
+  "provenance": {
+    "repair_conditioned": false,
+    "isolation_conditioned": false,
+    "original_source_modified": false,
+    "recovery_variant_id": null,
+    "isolation_variant_id": null,
+    "snapshot_sha256": "ee97db483758c6e7d29b5af66e0bad47372f896681e7fc179bd3f9cf2415f910",
+    "excluded_spans": [],
+    "source_map": "identity"
+  },
+  "findings": [],
+  "inventory": {
+    "regions": [
+      {
+        "id": "function:71:probe",
+        "kind": "function",
+        "name": "probe",
+        "mapping": "physical-main-file-byte-offsets",
+        "start_byte": 71,
+        "end_byte_exclusive": 161,
+        "start_line": 2,
+        "end_line": 2,
+        "reliability": "validated_ast_range"
+      }
+    ],
+    "unreliable_regions": [],
+    "candidate_abstentions": [],
+    "ast_nodes": 30,
+    "unsupported_policy": "Only direct signed-int comparisons/division and single builtin scanf %s to local char[N]."
+  },
+  "additional_backend": {
+    "schema_version": "1.0",
+    "analysis_mode": "clang_static_analyzer",
+    "status": "completed",
+    "compiler": {
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "backend": "clang",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-Wall",
+        "-Wextra",
+        "-Wparentheses",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info"
+      ]
+    },
+    "summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    },
+    "diagnostics": [],
+    "tool_issues": [],
+    "execution": {
+      "returncode": 0,
+      "command": [
+        "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+        "--analyze",
+        "-x",
+        "c",
+        "-fdiagnostics-show-option",
+        "-fdiagnostics-color=never",
+        "-ferror-limit=0",
+        "-fno-diagnostics-fixit-info",
+        "-std=c11",
+        "-Xclang",
+        "-analyzer-checker=alpha.deadcode.UnreachableCode",
+        "-Xanalyzer",
+        "-analyzer-output=text",
+        "-o",
+        "nul",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+      ]
+    },
+    "raw_output": {
+      "stdout": "",
+      "stderr": ""
+    },
+    "unrecognized_output": [],
+    "findings": [],
+    "findings_summary": {
+      "total_diagnostics": 0,
+      "errors": 0,
+      "warnings": 0,
+      "notes": 0,
+      "categories": {
+        "syntax": 0,
+        "semantic/type": 0,
+        "compiler warning": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "checker_capability": {
+    "checker": "alpha.deadcode.UnreachableCode",
+    "advertised": true,
+    "supported": true,
+    "experimental": true,
+    "stderr": ""
+  },
+  "function_path_coverage_certified": false,
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 22,
+    "analyzer_invocations": 4,
+    "elapsed_seconds": 3.922,
+    "calls": [
+      {
+        "number": 1,
+        "role": "ast_inventory",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "-x",
+          "c",
+          "-fsyntax-only",
+          "-Wall",
+          "-Wextra",
+          "-Wparentheses",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-std=c11",
+          "-Xclang",
+          "-ast-dump=json",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "40ba05c8c511a7d648e43813fbf2d196c6ceaefcada99514311e45cea413912a",
+        "stderr": "",
+        "elapsed_seconds": 0.171
+      },
+      {
+        "number": 2,
+        "role": "semantic_checker_capability",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "--analyze",
+          "-x",
+          "c",
+          "-std=c11",
+          "-Xclang",
+          "-analyzer-checker=alpha.deadcode.UnreachableCode",
+          "-Xanalyzer",
+          "-analyzer-output=text",
+          "-o",
+          "nul",
+          "-"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "elapsed_seconds": 0.204
+      },
+      {
+        "number": 3,
+        "role": "static_analysis",
+        "command": [
+          "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+          "--analyze",
+          "-x",
+          "c",
+          "-fdiagnostics-show-option",
+          "-fdiagnostics-color=never",
+          "-ferror-limit=0",
+          "-fno-diagnostics-fixit-info",
+          "-std=c11",
+          "-Xclang",
+          "-analyzer-checker=alpha.deadcode.UnreachableCode",
+          "-Xanalyzer",
+          "-analyzer-output=text",
+          "-o",
+          "nul",
+          "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\unsigned_modular_control.c"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": "",
+        "elapsed_seconds": 0.187
+      }
+    ],
+    "limits": {
+      "invocations": 96,
+      "analyzer_invocations": 20,
+      "checkers": 4,
+      "total_seconds": 30,
+      "call_seconds": 5
+    },
+    "max_findings": 64,
+    "max_ast_nodes": 100000,
+    "max_conjunction_terms": 8
+  }
+}

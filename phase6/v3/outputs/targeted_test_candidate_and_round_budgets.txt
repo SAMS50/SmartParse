@@ -1,0 +1,6 @@
+test_candidate_and_round_budgets (phase6.v3.test_recovery.LiveRecoveryTests.test_candidate_and_round_budgets) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 7.002s
+
+OK

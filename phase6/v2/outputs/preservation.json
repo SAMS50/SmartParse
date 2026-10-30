@@ -1,0 +1,9 @@
+{
+  "protected_preexisting_files": 211,
+  "changed_preexisting_files": [],
+  "historical_csv_count": 17,
+  "legacy_test_writes_restored": [
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\results\\verified_performance.csv"
+  ],
+  "changed_new_holdout_sources": []
+}

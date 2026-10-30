@@ -1,0 +1,375 @@
+[
+  {
+    "case": "benchmark_unrepaired",
+    "exit_code": 3,
+    "elapsed_seconds": 5.094,
+    "status": "abstained",
+    "reason": "main-file preprocessing directives other than includes are not supported",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 21,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "benchmark_after_v3",
+    "exit_code": 3,
+    "elapsed_seconds": 8.422,
+    "status": "abstained",
+    "reason": "main-file preprocessing directives other than includes are not supported",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 32,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "all_dependent",
+    "exit_code": 3,
+    "elapsed_seconds": 6.094,
+    "status": "abstained",
+    "reason": "no independent function remains",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 22,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "dependent",
+    "exit_code": 1,
+    "elapsed_seconds": 7.375,
+    "status": "completed",
+    "reason": "frontend accepted; analyzer completed",
+    "eligibility_improved": true,
+    "excluded_functions": [
+      {
+        "id": "function:0:broken",
+        "name": "broken",
+        "start_byte": 0,
+        "end_byte_exclusive": 51,
+        "body_start_byte": 17,
+        "start_line": 1,
+        "end_line": 4,
+        "references": [],
+        "unsafe": [],
+        "reliability": "physical_ast_boundary",
+        "recovery_body": true,
+        "exclusion_reasons": [
+          "frontend blocker: use of undeclared identifier 'missing_identifier'",
+          "recovery/invalid AST body"
+        ],
+        "dependency_assumptions": [
+          "entire definition omitted; no replacement semantics",
+          "all retained direct references to excluded names are prohibited"
+        ],
+        "coordinate_space": "original",
+        "original_source_range": {
+          "start_byte": 0,
+          "end_byte_exclusive": 51,
+          "start_line": 1,
+          "end_line": 4
+        },
+        "analyzer_coverage": {
+          "status": "not_attempted",
+          "reason": "Definition excluded from private variant."
+        }
+      },
+      {
+        "id": "function:52:caller",
+        "name": "caller",
+        "start_byte": 52,
+        "end_byte_exclusive": 93,
+        "body_start_byte": 69,
+        "start_line": 5,
+        "end_line": 8,
+        "references": [
+          "broken"
+        ],
+        "unsafe": [],
+        "reliability": "physical_ast_boundary",
+        "recovery_body": false,
+        "exclusion_reasons": [
+          "depends on excluded function(s): broken"
+        ],
+        "dependency_assumptions": [
+          "entire definition omitted; no replacement semantics",
+          "all retained direct references to excluded names are prohibited"
+        ],
+        "coordinate_space": "original",
+        "original_source_range": {
+          "start_byte": 52,
+          "end_byte_exclusive": 93,
+          "start_line": 5,
+          "end_line": 8
+        },
+        "analyzer_coverage": {
+          "status": "not_attempted",
+          "reason": "Definition excluded from private variant."
+        }
+      }
+    ],
+    "retained_functions": [
+      {
+        "id": "function:94:independent",
+        "name": "independent",
+        "start_byte": 94,
+        "end_byte_exclusive": 162,
+        "body_start_byte": 116,
+        "start_line": 9,
+        "end_line": 13,
+        "references": [],
+        "unsafe": [],
+        "reliability": "physical_ast_boundary",
+        "recovery_body": false,
+        "dependency_assumptions": [
+          "main-file declarations and included headers retained unchanged",
+          "external function contracts unchanged; no whole-program/path-completeness claim"
+        ],
+        "coordinate_space": "original",
+        "original_source_range": {
+          "start_byte": 94,
+          "end_byte_exclusive": 162,
+          "start_line": 9,
+          "end_line": 13
+        },
+        "analyzer_coverage": {
+          "status": "unknown",
+          "reason": "Invocation completion does not prove per-function/path execution."
+        }
+      }
+    ],
+    "unique_additional_findings": 1,
+    "finding_evidence": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\dependent.c",
+        "line": 12,
+        "column": 12,
+        "severity": "warning",
+        "message": "Dereference of null pointer (loaded from variable 'pointer')",
+        "backend": "clang-static-analyzer",
+        "category": "unknown",
+        "source_snippet": "    return *pointer;",
+        "diagnostic_id": "core.NullDereference",
+        "coordinate_space": "mapped-original-bytes",
+        "variant_location": {
+          "line": 12,
+          "column": 12,
+          "byte_offset": 151
+        },
+        "original_location": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\dependent.c",
+          "line": 12,
+          "column": 12,
+          "byte_offset": 151
+        }
+      }
+    ],
+    "compiler_invocations": 27,
+    "analyzer_invocations": 4
+  },
+  {
+    "case": "global_blocker",
+    "exit_code": 3,
+    "elapsed_seconds": 5.313,
+    "status": "abstained",
+    "reason": "main-file global state/initialization prevents isolation",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 21,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "global_initialization",
+    "exit_code": 3,
+    "elapsed_seconds": 4.672,
+    "status": "abstained",
+    "reason": "main-file global state/initialization prevents isolation",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 21,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "header_macro",
+    "exit_code": 3,
+    "elapsed_seconds": 4.531,
+    "status": "abstained",
+    "reason": "independent: macro-expanded function content",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 22,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "independent",
+    "exit_code": 1,
+    "elapsed_seconds": 7.078,
+    "status": "completed",
+    "reason": "frontend accepted; analyzer completed",
+    "eligibility_improved": true,
+    "excluded_functions": [
+      {
+        "id": "function:0:broken",
+        "name": "broken",
+        "start_byte": 0,
+        "end_byte_exclusive": 51,
+        "body_start_byte": 17,
+        "start_line": 1,
+        "end_line": 4,
+        "references": [],
+        "unsafe": [],
+        "reliability": "physical_ast_boundary",
+        "recovery_body": true,
+        "exclusion_reasons": [
+          "frontend blocker: use of undeclared identifier 'missing_identifier'",
+          "recovery/invalid AST body"
+        ],
+        "dependency_assumptions": [
+          "entire definition omitted; no replacement semantics",
+          "all retained direct references to excluded names are prohibited"
+        ],
+        "coordinate_space": "original",
+        "original_source_range": {
+          "start_byte": 0,
+          "end_byte_exclusive": 51,
+          "start_line": 1,
+          "end_line": 4
+        },
+        "analyzer_coverage": {
+          "status": "not_attempted",
+          "reason": "Definition excluded from private variant."
+        }
+      }
+    ],
+    "retained_functions": [
+      {
+        "id": "function:52:independent",
+        "name": "independent",
+        "start_byte": 52,
+        "end_byte_exclusive": 120,
+        "body_start_byte": 74,
+        "start_line": 5,
+        "end_line": 9,
+        "references": [],
+        "unsafe": [],
+        "reliability": "physical_ast_boundary",
+        "recovery_body": false,
+        "dependency_assumptions": [
+          "main-file declarations and included headers retained unchanged",
+          "external function contracts unchanged; no whole-program/path-completeness claim"
+        ],
+        "coordinate_space": "original",
+        "original_source_range": {
+          "start_byte": 52,
+          "end_byte_exclusive": 120,
+          "start_line": 5,
+          "end_line": 9
+        },
+        "analyzer_coverage": {
+          "status": "unknown",
+          "reason": "Invocation completion does not prove per-function/path execution."
+        }
+      }
+    ],
+    "unique_additional_findings": 1,
+    "finding_evidence": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\independent.c",
+        "line": 8,
+        "column": 12,
+        "severity": "warning",
+        "message": "Dereference of null pointer (loaded from variable 'pointer')",
+        "backend": "clang-static-analyzer",
+        "category": "unknown",
+        "source_snippet": "    return *pointer;",
+        "diagnostic_id": "core.NullDereference",
+        "coordinate_space": "mapped-original-bytes",
+        "variant_location": {
+          "line": 8,
+          "column": 12,
+          "byte_offset": 109
+        },
+        "original_location": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v4\\fixtures\\independent.c",
+          "line": 8,
+          "column": 12,
+          "byte_offset": 109
+        }
+      }
+    ],
+    "compiler_invocations": 27,
+    "analyzer_invocations": 4
+  },
+  {
+    "case": "indirect",
+    "exit_code": 3,
+    "elapsed_seconds": 5.516,
+    "status": "abstained",
+    "reason": "independent: indirect call dependency is unsupported",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 22,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "macro",
+    "exit_code": 3,
+    "elapsed_seconds": 5.187,
+    "status": "abstained",
+    "reason": "main-file preprocessing directives other than includes are not supported",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 21,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "malformed",
+    "exit_code": 3,
+    "elapsed_seconds": 5.093,
+    "status": "abstained",
+    "reason": "inconsistent physical body boundaries",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 21,
+    "analyzer_invocations": 3
+  },
+  {
+    "case": "valid",
+    "exit_code": 0,
+    "elapsed_seconds": 4.421,
+    "status": "abstained",
+    "reason": "frontend already accepted; isolation unnecessary",
+    "eligibility_improved": false,
+    "excluded_functions": [],
+    "retained_functions": [],
+    "unique_additional_findings": 0,
+    "finding_evidence": [],
+    "compiler_invocations": 18,
+    "analyzer_invocations": 3
+  }
+]

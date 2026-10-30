@@ -1,0 +1,6 @@
+test_expression_semantic_and_legal_code_not_rewritten (phase6.v3.test_recovery.LiveRecoveryTests.test_expression_semantic_and_legal_code_not_rewritten) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 6.278s
+
+OK

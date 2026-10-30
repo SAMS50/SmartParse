@@ -1,0 +1,3727 @@
+{
+  "schema_version": "1.0",
+  "evaluator_version": "1.0.0",
+  "dataset_version": "1.0.0",
+  "scope": {
+    "dataset": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+    "runs": "df460adcd4bfabd4c0b15f4af9f516541d10a34775fe08fa082ca6e60d1229e0"
+  },
+  "dataset_sources": {
+    "sample-500-cleaned": {
+      "path": "acceptance/cleaned/c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "line_mapping": "identity with original numbered source; no source edits in Phase 6"
+    }
+  },
+  "reference_review": "Single-reviewer provisional migration; independent oracle adjudication pending.",
+  "input_manifest": [
+    {
+      "id": "gcc-6.3",
+      "artifact_path": "acceptance/output/sample.json",
+      "artifact_sha256": "2e4e7eaeef9a5cb0c282861df6f145d8a89f71dd4a8ac03dff796099e43ae42c",
+      "source_bindings": {
+        "sample-500-cleaned": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        }
+      ]
+    },
+    {
+      "id": "clang-17",
+      "artifact_path": "acceptance/output/clang_validation/sample_static.json",
+      "artifact_sha256": "fd14d002d14f7ca0e64c2dfcf40a0e6074826ee57ce1926665e134a6b22704ad",
+      "source_bindings": {
+        "sample-500-cleaned": {
+          "reported_paths": [
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08"
+        }
+      },
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ]
+    }
+  ],
+  "historical_baseline": {
+    "entries": 68,
+    "clang_matched_entries": 16,
+    "reference_sha256": "9d22c0d448edeb138098e4a4e4e85093abd3f70851e7a8b168ffc8b520a1e1c7",
+    "reference_path": "acceptance/sample_reference.json",
+    "meaning": "Frozen Phase 5 comparison, not Phase 6 recall"
+  },
+  "defects": [
+    {
+      "defect_id": "SP6-L0030-01",
+      "category": "syntax",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0030",
+      "candidates": [
+        "E-779c0624da620abe3ab17f32",
+        "E-b1dc15077c1b16b9e91623ab",
+        "E-da0727aaa154a21a49afd9c0"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0055-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0055",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0055-02",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0055",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0065-01",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0065",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0071-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0071-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0074-01",
+      "category": "bounds",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0074",
+      "candidates": [
+        "E-a14594cba1c6d6ba2ebd2dc8"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0078-01",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0078",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0081-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0081",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0082-01",
+      "category": "syntax",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0082",
+      "candidates": [
+        "E-52d35ba4fc7053b6e1ff01e6",
+        "E-5c25186430414d3dcf729ecf",
+        "E-dcf96bbe9f2cd10f22067958"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0088-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0088",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0088": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0096-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0096",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0096": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0099-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0099",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0099": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0104-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0104",
+      "candidates": [
+        "E-d3cbc4306b98b0efeb470bef",
+        "E-b82eaa8bbfce8fe1bdb01daf"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {
+        "C-L0104": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0104-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0104",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0114-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0114",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0114": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0115-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0115",
+      "candidates": [
+        "E-6d531810f5d5e177a4295316",
+        "E-26586c853bc2cbcac3dd79e3"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {
+        "C-L0115": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0119-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0119",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0119": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0128-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0128",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0128": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0129-01",
+      "category": "memory safety",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0129",
+      "candidates": [
+        "E-38f22ad054cb207abddf9da8",
+        "E-c1384c528dbad57f133965ac"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0149-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0149",
+      "candidates": [
+        "E-498c3c9c54a9e7209bbeb6e6",
+        "E-0ab35dd23193c7ef5637d95e"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {
+        "C-L0149": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0164-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0164",
+      "candidates": [
+        "E-d542cc51eba60aa50ea38be3",
+        "E-caccc91e1c838828f1a6a983",
+        "E-fbd667775a476281ddd1d011"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0173-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0173",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0173": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0179-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0179",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0179": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0187-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0187",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0187": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0194-01",
+      "category": "undefined behavior",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0194",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0194": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0202-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0202",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0202": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0209-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0209",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0209": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0214-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0214",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0214": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0219-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0219",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0219": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0224-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0224",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0224": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0229-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0229",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0229": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0236-01",
+      "category": "memory safety",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0236",
+      "candidates": [
+        "E-46d62814d5dcf3c26989b9e1",
+        "E-476f7ea259e32a5a32c05e63"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0245-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0245",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0252-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0252",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0252": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0257-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0257",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0257": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0263-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0263",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0271-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0271",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0278-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0278",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0278-02",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0278-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0286-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0286",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0287-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0287",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0292-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0292",
+      "candidates": [
+        "E-7592c58283c095af10eba1e9",
+        "E-753881fe3097ca02aef7b3d7"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0299-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0299",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0299": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0307-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0307",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0308-01",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0308",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0317-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0317",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0317": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0317-02",
+      "category": "undefined behavior",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0317-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0330-01",
+      "category": "program logic",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0330",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0330": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0340-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0340",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0340": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0342-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0342",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0342": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0351-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0351",
+      "candidates": [
+        "E-a174e052a44ce1ef00a92bfd",
+        "E-06139018592138a88185b88d"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {
+        "C-L0351": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0368-01",
+      "category": "program logic",
+      "outcome": "unsupported",
+      "reason": "No supported applicable check was enabled.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0368",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0377-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0377",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0377": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0382-01",
+      "category": "undefined behavior",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0382",
+      "candidates": [
+        "E-25c1c8661d83e00985bb5875"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0382": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0387-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0387",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0387": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0393-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0393",
+      "candidates": [
+        "E-6f63d5dda597e559b33f03b6",
+        "E-ecd46449ae31a4a5821a92d3",
+        "E-f71f747fdfc84d0d0b37174d"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0405-01",
+      "category": "semantic/type",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0405",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {
+        "C-L0405": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0409-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0409",
+      "candidates": [
+        "E-fff152de4e49e34bd3c5d698",
+        "E-3ffd37feb28eec6eec0ef2e4",
+        "E-e15313285676da59da0d5bef"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0414-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0414",
+      "candidates": [
+        "E-b6a85126aed83b5662532650",
+        "E-6b251427d65446ce145e94c3",
+        "E-cea9e5249112408b99c44bec",
+        "E-eb471c93b35ad103971f27e3",
+        "E-bf4c5a5809c96af63c5fdbb2"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0421-01",
+      "category": "semantic/type",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0421",
+      "candidates": [
+        "E-39e8a0f99a33a1213556b651",
+        "E-b1e60a056bb0fe1122baafe8"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0427-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0427",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0427": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0432-01",
+      "category": "bounds",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0432",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0432-02",
+      "category": "memory safety",
+      "outcome": "blocked",
+      "reason": "Applicable analysis could not complete; see coverage evidence.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0432-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0432-03",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0432-03",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0432-PRIOR": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0439-01",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0439",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0439": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0439-02",
+      "category": "memory safety",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0439-02",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0439-NULL": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0445-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0445",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0445": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0451-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0451",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0451": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0456-01",
+      "category": "undefined behavior",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0456",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0456": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0464-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0464",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0464": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0474-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0474",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0474": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0479-01",
+      "category": "bounds",
+      "outcome": "conditional",
+      "reason": "Required contract is unknown or refuted; no unconditional detection claim.",
+      "oracle_status": "conditional",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0479",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "unsupported",
+          "reason": "No GCC analyzer pass requested/supported in baseline."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "analyzer",
+          "status": "blocked",
+          "reason": "Clang analyzer frontend errors prevented path analysis."
+        }
+      ],
+      "contracts": {
+        "C-L0479": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0486-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0486",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0486": "unknown"
+      }
+    },
+    {
+      "defect_id": "SP6-L0494-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Meaning-compatible evidence awaits review or was reviewed as ambiguous.",
+      "oracle_status": "established",
+      "applicability": "established",
+      "root_cause_id": "ROOT-L0494",
+      "candidates": [
+        "E-397a60625b04ea004db2d5ba",
+        "E-4de8ad88d8be155399fccf4e",
+        "E-198ed0fdf6a038c02cc54d89",
+        "E-e6da76a5f59c25a1500b1ea0"
+      ],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "compiler",
+          "status": "completed",
+          "reason": "Measured syntax/type invocation completed; not a guarantee of exhaustive compiler warnings."
+        }
+      ],
+      "contracts": {}
+    },
+    {
+      "defect_id": "SP6-L0496-01",
+      "category": "program logic",
+      "outcome": "uncertain",
+      "reason": "Reference intent/precondition remains unresolved; a warning does not resolve it.",
+      "oracle_status": "uncertain",
+      "applicability": "unresolved_contract",
+      "root_cause_id": "ROOT-L0496",
+      "candidates": [],
+      "reviewed_matches": [],
+      "coverage": [
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        },
+        {
+          "source_id": "sample-500-cleaned",
+          "analysis": "logic",
+          "status": "unsupported",
+          "reason": "No general contract/logic checker enabled."
+        }
+      ],
+      "contracts": {
+        "C-L0496": "unknown"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "evidence_id": "E-779c0624da620abe3ab17f32",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 31,
+          "column": 1,
+          "severity": "error",
+          "message": "expected ',' or ';' before 'char'",
+          "backend": "gcc",
+          "category": "syntax",
+          "source_snippet": "char *global_label = NULL;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-52d35ba4fc7053b6e1ff01e6",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 83,
+          "column": 1,
+          "severity": "error",
+          "message": "expected ';' before '}' token",
+          "backend": "gcc",
+          "category": "syntax",
+          "source_snippet": "}",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d3cbc4306b98b0efeb470bef",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 5,
+          "severity": "warning",
+          "message": "suggest parentheses around assignment used as truth value",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6d531810f5d5e177a4295316",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 9,
+          "severity": "warning",
+          "message": "suggest parentheses around assignment used as truth value",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-38f22ad054cb207abddf9da8",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 129,
+          "column": 12,
+          "severity": "warning",
+          "message": "function returns address of local variable",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    return buffer;",
+          "diagnostic_id": "-Wreturn-local-addr"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-498c3c9c54a9e7209bbeb6e6",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 9,
+          "severity": "warning",
+          "message": "suggest parentheses around assignment used as truth value",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d542cc51eba60aa50ea38be3",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 38,
+          "severity": "warning",
+          "message": "suggest braces around empty body in an 'if' statement",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    if (percent < 0 || percent > 100); {",
+          "diagnostic_id": "-Wempty-body"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-caccc91e1c838828f1a6a983",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 5,
+          "severity": "warning",
+          "message": "this 'if' clause does not guard...",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    if (percent < 0 || percent > 100); {",
+          "diagnostic_id": "-Wmisleading-indentation"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-43bea945904f0b99e392e783",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 40,
+          "severity": "note",
+          "message": "...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'",
+          "backend": "gcc",
+          "category": "unknown",
+          "source_snippet": "    if (percent < 0 || percent > 100); {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-46d62814d5dcf3c26989b9e1",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 236,
+          "column": 12,
+          "severity": "warning",
+          "message": "function returns address of local variable",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    return &local;",
+          "diagnostic_id": "-Wreturn-local-addr"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-7592c58283c095af10eba1e9",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 292,
+          "column": 20,
+          "severity": "warning",
+          "message": "format '%d' expects argument of type 'int *', but argument 3 has type 'int'",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    sscanf(text, \"%d\", value);",
+          "diagnostic_id": "-Wformat="
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a174e052a44ce1ef00a92bfd",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 9,
+          "severity": "warning",
+          "message": "suggest parentheses around assignment used as truth value",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-25c1c8661d83e00985bb5875",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 382,
+          "column": 26,
+          "severity": "warning",
+          "message": "division by zero",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    return student.score / 0;",
+          "diagnostic_id": "-Wdiv-by-zero"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6f63d5dda597e559b33f03b6",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 393,
+          "column": 12,
+          "severity": "warning",
+          "message": "return makes integer from pointer without a cast",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    return \"hello\";",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-fff152de4e49e34bd3c5d698",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 409,
+          "column": 12,
+          "severity": "error",
+          "message": "too few arguments to function 'add_numbers'",
+          "backend": "gcc",
+          "category": "semantic/type",
+          "source_snippet": "    return add_numbers(1);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-d4497456f127e3525bc3ddf6",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 85,
+          "column": 5,
+          "severity": "note",
+          "message": "declared here",
+          "backend": "gcc",
+          "category": "unknown",
+          "source_snippet": "int add_numbers(int a, int b)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-b6a85126aed83b5662532650",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "error",
+          "message": "'mystery_value' undeclared (first use in this function)",
+          "backend": "gcc",
+          "category": "semantic/type",
+          "source_snippet": "    mystery_value = 12;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-66229fc3d2055b1182ff6922",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "note",
+          "message": "each undeclared identifier is reported only once for each function it appears in",
+          "backend": "gcc",
+          "category": "unknown",
+          "source_snippet": null,
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-39e8a0f99a33a1213556b651",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 421,
+          "column": 14,
+          "severity": "warning",
+          "message": "format '%d' expects argument of type 'int', but argument 2 has type 'long int'",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    printf(\"%d\\n\", value);",
+          "diagnostic_id": "-Wformat="
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-da56724dd0dd1b3a794a0faa",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 432,
+          "column": 5,
+          "severity": "error",
+          "message": "'global_label' undeclared (first use in this function)",
+          "backend": "gcc",
+          "category": "semantic/type",
+          "source_snippet": "    global_label = malloc(strlen(text));",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a92a8d34a21d15bae841e916",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 438,
+          "column": 10,
+          "severity": "error",
+          "message": "'global_label' undeclared (first use in this function)",
+          "backend": "gcc",
+          "category": "semantic/type",
+          "source_snippet": "    free(global_label);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-397a60625b04ea004db2d5ba",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 28,
+          "severity": "warning",
+          "message": "multi-character character constant",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wmultichar"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4de8ad88d8be155399fccf4e",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "gcc-6.3",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 25,
+          "severity": "warning",
+          "message": "comparison is always true due to limited range of data type",
+          "backend": "gcc",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wtype-limits"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-b1dc15077c1b16b9e91623ab",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 30,
+          "column": 21,
+          "severity": "error",
+          "message": "expected ';' after top level declarator",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int global_count = 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-5c25186430414d3dcf729ecf",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 82,
+          "column": 13,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "    return 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-a14594cba1c6d6ba2ebd2dc8",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 74,
+          "column": 5,
+          "severity": "warning",
+          "message": "'strcpy' will always overflow; destination buffer has size 32, but the source string has length 49 (including NUL byte)",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+          "diagnostic_id": "-Wfortify-source"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-b82eaa8bbfce8fe1bdb01daf",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-0bfe6e953e73e20bdc4c3f1f",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-e20b91d4820c844d43fd4393",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 104,
+          "column": 17,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "    if (student = NULL) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-26586c853bc2cbcac3dd79e3",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-47c95b4cfd5dc51d253e9030",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-801e2a808d2b4b07cda08f39",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 115,
+          "column": 28,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].id = id) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c1384c528dbad57f133965ac",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 129,
+          "column": 12,
+          "severity": "warning",
+          "message": "address of stack memory associated with local variable 'buffer' returned",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    return buffer;",
+          "diagnostic_id": "-Wreturn-stack-address"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-0ab35dd23193c7ef5637d95e",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-66dcb6a6b302b3172bd5512d",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-c19f3389deeb7367aa43b694",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 149,
+          "column": 32,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (students[i].active = 1) {",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-fbd667775a476281ddd1d011",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 38,
+          "severity": "warning",
+          "message": "if statement has empty body",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    if (percent < 0 || percent > 100); {",
+          "diagnostic_id": "-Wempty-body"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-fd22e25f40548abd06358a29",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 164,
+          "column": 38,
+          "severity": "note",
+          "message": "put the semicolon on a separate line to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": null,
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-476f7ea259e32a5a32c05e63",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 236,
+          "column": 13,
+          "severity": "warning",
+          "message": "address of stack memory associated with local variable 'local' returned",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    return &local;",
+          "diagnostic_id": "-Wreturn-stack-address"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-753881fe3097ca02aef7b3d7",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 292,
+          "column": 24,
+          "severity": "warning",
+          "message": "format specifies type 'int *' but the argument has type 'int'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    sscanf(text, \"%d\", value);",
+          "diagnostic_id": "-Wformat"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-06139018592138a88185b88d",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "warning",
+          "message": "using the result of an assignment as a condition without parentheses",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": "-Wparentheses"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-94b8e86c6e73cdea056061c0",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "note",
+          "message": "place parentheses around the assignment to silence this warning",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-197308a00e90d0d19881b7cc",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 351,
+          "column": 23,
+          "severity": "note",
+          "message": "use '==' to turn this assignment into an equality comparison",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "        if (values[i] = target)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-ecd46449ae31a4a5821a92d3",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 393,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return \"hello\";",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-3ffd37feb28eec6eec0ef2e4",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 409,
+          "column": 25,
+          "severity": "error",
+          "message": "too few arguments to function call, expected 2, have 1",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return add_numbers(1);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-52d38966495aed95561a3208",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 85,
+          "column": 5,
+          "severity": "note",
+          "message": "'add_numbers' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int add_numbers(int a, int b)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-6b251427d65446ce145e94c3",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    mystery_value = 12;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-cea9e5249112408b99c44bec",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-bd4585c23f4eda276085045b",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 212,
+          "column": 5,
+          "severity": "note",
+          "message": "'last_value' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int last_value(int values[], int length)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-4d10d6df893b9268d689faef",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-b1e60a056bb0fe1122baafe8",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 421,
+          "column": 20,
+          "severity": "warning",
+          "message": "format specifies type 'int' but the argument has type 'long'",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    printf(\"%d\\n\", value);",
+          "diagnostic_id": "-Wformat"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-198ed0fdf6a038c02cc54d89",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 28,
+          "severity": "warning",
+          "message": "multi-character character constant",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wmultichar"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-e6da76a5f59c25a1500b1ea0",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "compiler",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 494,
+          "column": 25,
+          "severity": "warning",
+          "message": "result of comparison of constant 23600 with expression of type 'const char' is always true",
+          "backend": "clang",
+          "category": "compiler warning",
+          "source_snippet": "    while (text[length] != '\\\\0')",
+          "diagnostic_id": "-Wtautological-constant-out-of-range-compare"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-da0727aaa154a21a49afd9c0",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 30,
+          "column": 21,
+          "severity": "error",
+          "message": "expected ';' after top level declarator",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "int global_count = 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-dcf96bbe9f2cd10f22067958",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 82,
+          "column": 13,
+          "severity": "error",
+          "message": "expected ';' after return statement",
+          "backend": "clang",
+          "category": "syntax",
+          "source_snippet": "    return 0",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-f71f747fdfc84d0d0b37174d",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 393,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'char[6]' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return \"hello\";",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-e15313285676da59da0d5bef",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 409,
+          "column": 25,
+          "severity": "error",
+          "message": "too few arguments to function call, expected 2, have 1",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return add_numbers(1);",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-dbcfb47f2e33839f135153ba",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 85,
+          "column": 5,
+          "severity": "note",
+          "message": "'add_numbers' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int add_numbers(int a, int b)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-eb471c93b35ad103971f27e3",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 414,
+          "column": 5,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    mystery_value = 12;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-bf4c5a5809c96af63c5fdbb2",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "use of undeclared identifier 'mystery_value'; did you mean 'last_value'?",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-97b86ef446096a658376fe0a",
+      "disposition": "context_note",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 212,
+          "column": 5,
+          "severity": "note",
+          "message": "'last_value' declared here",
+          "backend": "clang",
+          "category": "unknown",
+          "source_snippet": "int last_value(int values[], int length)",
+          "diagnostic_id": null
+        }
+      },
+      "adjudication": null
+    },
+    {
+      "evidence_id": "E-1c89f32df65d4c369e769686",
+      "disposition": "unknown",
+      "matched_defects": [],
+      "evidence": {
+        "run_id": "clang-17",
+        "pass": "analyzer",
+        "collection": "diagnostics",
+        "source_id": "sample-500-cleaned",
+        "diagnostic": {
+          "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+          "line": 415,
+          "column": 12,
+          "severity": "error",
+          "message": "incompatible pointer to integer conversion returning 'int (int *, int)' from a function with result type 'int'",
+          "backend": "clang",
+          "category": "semantic/type",
+          "source_snippet": "    return mystery_value;",
+          "diagnostic_id": "-Wint-conversion"
+        }
+      },
+      "adjudication": null
+    }
+  ],
+  "summary": {
+    "atomic_issues": 76,
+    "outcomes": {
+      "detected": 0,
+      "missed": 0,
+      "blocked": 20,
+      "unsupported": 1,
+      "conditional": 22,
+      "uncertain": 33
+    },
+    "categories": {
+      "syntax": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 0,
+        "uncertain": 2
+      },
+      "semantic/type": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 0,
+        "conditional": 1,
+        "uncertain": 5
+      },
+      "memory safety": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 12,
+        "unsupported": 0,
+        "conditional": 5,
+        "uncertain": 2
+      },
+      "bounds": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 4,
+        "unsupported": 0,
+        "conditional": 13,
+        "uncertain": 1
+      },
+      "undefined behavior": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 4,
+        "unsupported": 0,
+        "conditional": 2,
+        "uncertain": 1
+      },
+      "program logic": {
+        "detected": 0,
+        "missed": 0,
+        "blocked": 0,
+        "unsupported": 1,
+        "conditional": 1,
+        "uncertain": 22
+      }
+    },
+    "detected_root_cause_ids": [],
+    "detected_root_cause_count": 0,
+    "exact_duplicates_not_counted": 0,
+    "confirmed_false_positive_group_count": 0,
+    "finding_dispositions": {
+      "unknown": 46,
+      "context_note": 16
+    }
+  },
+  "review": {
+    "scope": {
+      "dataset": "5360d22aeff7e8a27676107656e5a12c3d88b6d03f5353553a68da1d1b88f052",
+      "runs": "df460adcd4bfabd4c0b15f4af9f516541d10a34775fe08fa082ca6e60d1229e0"
+    },
+    "review_kind": "unreviewed",
+    "matches": [],
+    "adjudications": [],
+    "contracts": {}
+  },
+  "metrics": {
+    "precision": null,
+    "recall": null,
+    "reason": "Partial non-exhaustive oracle and pending adjudications; do not interpret issue dispositions as precision/recall."
+  }
+}

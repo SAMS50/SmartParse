@@ -1,0 +1,147 @@
+{
+  "configuration": "cppcheck",
+  "source_sha256": "804d60f59fa0045db409843be35d1b48e6c74fff3f99257cb2602c0137add205",
+  "elapsed_seconds": 0.219,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "kind": "cppcheck",
+      "version": "2.16.0",
+      "format": "cppcheck-xml"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C11_missing_header.c",
+      "sha256": "804d60f59fa0045db409843be35d1b48e6c74fff3f99257cb2602c0137add205",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "--xml",
+        "--xml-version=2",
+        "--enable=warning",
+        "--std=c11",
+        "--platform=win64",
+        "--max-configs=1",
+        "--error-exitcode=1",
+        "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\cache",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C11_missing_header.c"
+      ]
+    },
+    "status": "completed",
+    "reason": "Tool returned; warnings require source/root review.",
+    "diagnostics": [],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C11_missing_header.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n    </errors>\r\n</results>\r\n",
+      "returncode": 0
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "no direct region exploration evidence",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [],
+      "analyzer_completion": "completed"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "Cppcheck 2.16.0\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 1,
+      "stdout": "Checking C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external h3k_60py/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.219,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+          "stderr": "",
+          "elapsed_seconds": 0.047
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\cache",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "a7287ac5f719454116a04c789c967eb2db5b99e72d1b259120b29a8bb18ac42f",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external h3k_60py/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external h3k_60py\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C11_missing_header.c"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "56db663a9bb3f59c46e38dcaf561ee2641520cf6acf2facb2463521377bc0ec2",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.094
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 0,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

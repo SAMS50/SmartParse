@@ -1,0 +1,855 @@
+{
+  "schema": "smartparse.evaluation_manifest",
+  "schema_version": "1.0",
+  "origin": "author-created; not independent",
+  "independently_validated_labels": false,
+  "random_seed": null,
+  "cases": [
+    {
+      "id": "S01",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S01.c",
+      "sha256": "80b993228549e47acc03ff6fd5c910513516beb2a158e050a2af9e34c9197a08",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S01.intended.txt",
+      "intended_sha256": "80b993228549e47acc03ff6fd5c910513516beb2a158e050a2af9e34c9197a08"
+    },
+    {
+      "id": "S02",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S02.c",
+      "sha256": "974699772cb6ba68895f4fc3238348221c3f63b7fc4d1f02bb6ce780f3f3be6f",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S02.intended.txt",
+      "intended_sha256": "974699772cb6ba68895f4fc3238348221c3f63b7fc4d1f02bb6ce780f3f3be6f"
+    },
+    {
+      "id": "S03",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S03.c",
+      "sha256": "f7c34a21227200e88cf9a3aa92b326cbb31c18c824975bf6a33199a94088ab67",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S03-R1",
+          "line": 2,
+          "column": 1,
+          "source_evidence": "int ending",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ";",
+          "actual": null,
+          "anchor_offset": 13,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S03.intended.txt",
+      "intended_sha256": "a7aa3c20b151ab56341a00550c51370cfa00b86df6cef900f725375d5bdfa784"
+    },
+    {
+      "id": "S04",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S04.c",
+      "sha256": "6501f47638b8d73fd738f4f1b285e8ef1b80cbc416dbc785fa4def49fa0bfda0",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S04-R1",
+          "line": 3,
+          "column": 1,
+          "source_evidence": "}",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ";",
+          "actual": null,
+          "anchor_offset": 30,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S04.intended.txt",
+      "intended_sha256": "021e41e548ca0431820b6970e5971400c49c7003be5ae902531ebc64b9676d01"
+    },
+    {
+      "id": "S05",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S05.c",
+      "sha256": "1693eb674d95f138701f53bd08cd641273827c30c01d1bdff420e4d3a5c4af62",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S05-R1",
+          "line": 2,
+          "column": 8,
+          "source_evidence": "{",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ")",
+          "actual": null,
+          "anchor_offset": 16,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S05.intended.txt",
+      "intended_sha256": "529089691bd188114cc0661158ffc9ded58a07df5bfd743fc3f6e42f977e49e9"
+    },
+    {
+      "id": "S06",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S06.c",
+      "sha256": "909c5ec9a819e5eef0d0626f99d678d16ef138cb85c88051379b7d69cd6d740d",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S06-R1",
+          "line": 2,
+          "column": 10,
+          "source_evidence": "]",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "substitute",
+          "token": ")",
+          "actual": "]",
+          "anchor_offset": 18,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S06.intended.txt",
+      "intended_sha256": "e720e491cbcd678f5e34384101383d3176b376f68d72f0ca577bce9617033303"
+    },
+    {
+      "id": "S07",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S07.c",
+      "sha256": "e904666a1d7efa74436f996a58d04e4239e757ed3475bb14f075f2c4c629a71b",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S07-R1",
+          "line": 3,
+          "column": 1,
+          "source_evidence": "\n",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": "}",
+          "actual": null,
+          "anchor_offset": 31,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S07.intended.txt",
+      "intended_sha256": "c3c196ffface041670f6a6b01ddd3984686b639960d43b0ad0cb42aed192d78d"
+    },
+    {
+      "id": "S08",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S08.c",
+      "sha256": "86d35cc6f3b25275f137cf81a0e382f1bf0a7d2ed934bcbd34ff77e3f2400b0a",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S08-R1",
+          "line": 2,
+          "column": 7,
+          "source_evidence": ";)",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "delete",
+          "token": ")",
+          "actual": ";",
+          "anchor_offset": 15,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S08.intended.txt",
+      "intended_sha256": "1e6e3a9b11a95bbf4b99f00e97c8bac03bf8563cfc5e92e71f5e30843d27d913"
+    },
+    {
+      "id": "S09",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S09.c",
+      "sha256": "ecf160925dd397951c7440f292828c87d56bddb563da990a3bb92ddf59c89146",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S09-R1",
+          "line": 1,
+          "column": 11,
+          "source_evidence": ",",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "substitute",
+          "token": ";",
+          "actual": ",",
+          "anchor_offset": 10,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S09.intended.txt",
+      "intended_sha256": "8d09c6120a348676170e2ece02b188aaa9117ab6024ab91bffd8f9305f48c063"
+    },
+    {
+      "id": "S10",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S10.c",
+      "sha256": "6700319d631ed2a13fa148a0a1b340b6aec7f412850a1706bb05faa0ca034d15",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S10-R1",
+          "line": 2,
+          "column": 1,
+          "source_evidence": "int b",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ";",
+          "actual": null,
+          "anchor_offset": 8,
+          "allowed_ids": [],
+          "message_any": []
+        },
+        {
+          "id": "S10-R2",
+          "line": 3,
+          "column": 1,
+          "source_evidence": "int tail",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ";",
+          "actual": null,
+          "anchor_offset": 16,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S10.intended.txt",
+      "intended_sha256": "4be608d5761030c96cda92cecaa28d62ea0c6adc51a3a4d1d5440c1c84ae2125"
+    },
+    {
+      "id": "S11",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S11.c",
+      "sha256": "380c0d251bf14cc5c00efeed8c9e1819790871e3f4e783944ba0403aec73f588",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S11-R1",
+          "line": 2,
+          "column": 11,
+          "source_evidence": "{\n",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ")",
+          "actual": null,
+          "anchor_offset": 19,
+          "allowed_ids": [],
+          "message_any": []
+        },
+        {
+          "id": "S11-R2",
+          "line": 3,
+          "column": 10,
+          "source_evidence": "{ x=",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "insert",
+          "token": ")",
+          "actual": null,
+          "anchor_offset": 30,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ],
+      "intended_path": "phase6\\v8\\fixtures\\syntax\\S11.intended.txt",
+      "intended_sha256": "0e87fd1e0a2f0f73d2d64de966aefa69377a4e6d8a49d168004421edf9efce27"
+    },
+    {
+      "id": "S12",
+      "cohort": "syntax",
+      "path": "phase6\\v8\\fixtures\\syntax\\S12.c",
+      "sha256": "bbb65142ec45aa1c7221f0255e51b9a5e91a39485df9f910a00e3a89fcf2f8e2",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "S12-R1",
+          "line": 2,
+          "column": 8,
+          "source_evidence": "@",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "operation": "unsupported",
+          "token": null,
+          "actual": "@",
+          "anchor_offset": 21,
+          "allowed_ids": [],
+          "message_any": []
+        }
+      ]
+    },
+    {
+      "id": "C01_null",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C01_null.c",
+      "sha256": "67276e2f3b290a1ecb1a8516b743c04ddc2eb961e29700c8aedfc525c5ffdb80",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C01_null-R1",
+          "line": 3,
+          "column": 2,
+          "source_evidence": "return bias + *probe;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "core.NullDereference",
+            "-Wanalyzer-null-dereference",
+            "nullPointer"
+          ],
+          "message_any": [
+            "null",
+            "dereference"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C01_null_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C01_null_corrected.c",
+      "sha256": "e6ab1e7b35bec8b44b56ac2ee846be0842bc91a96bff418c9d12096c36fb4fff",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C02_leak",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C02_leak.c",
+      "sha256": "7c3169c4d7ef1ed88870a06f1ee9c20f5d168f17cbcbbe544e16cfac7afde01a",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C02_leak-R1",
+          "line": 5,
+          "column": 2,
+          "source_evidence": "cells[0]=13;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "unix.Malloc",
+            "-Wanalyzer-malloc-leak",
+            "memleak"
+          ],
+          "message_any": [
+            "leak"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 1
+        }
+      ]
+    },
+    {
+      "id": "C02_leak_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C02_leak_corrected.c",
+      "sha256": "819628b54a79704ba2dd90a99efb00e336c030d6643d56fc184dbb7479ef6f03",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C03_double",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C03_double.c",
+      "sha256": "c790473e57abe3f64ef6e9ffe6bf93d8df16a51141ee0fd299c6c04f0441809f",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C03_double-R1",
+          "line": 6,
+          "column": 2,
+          "source_evidence": "free(saved);",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "unix.Malloc",
+            "-Wanalyzer-double-free",
+            "doubleFree"
+          ],
+          "message_any": [
+            "free"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C03_double_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C03_double_corrected.c",
+      "sha256": "d5105bc1dd06539dd9570b41a8e225bd1c69adb76f3afb814ef2791931d7944f",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C04_uaf",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C04_uaf.c",
+      "sha256": "81236ee4badd27ba1f0001dc1c44287d4cbc17aa2b45b5fdd58b6cc738cf04c1",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C04_uaf-R1",
+          "line": 9,
+          "column": 2,
+          "source_evidence": "return alias->code;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "unix.Malloc",
+            "-Wanalyzer-use-after-free",
+            "deallocuse"
+          ],
+          "message_any": [
+            "free"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C04_uaf_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C04_uaf_corrected.c",
+      "sha256": "3a80e24800d8924aa473bea24174ec59ffacb9ca1868bde5e41bf6b184693787",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C05_bounds",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C05_bounds.c",
+      "sha256": "b5147d131f03944cd452db09491d3a17b3c16db61fcb742fb5c8a52c7f6d872d",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C05_bounds-R1",
+          "line": 3,
+          "column": 2,
+          "source_evidence": "row[5]=31;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "bounds",
+          "allowed_ids": [
+            "alpha.security.ArrayBoundV2",
+            "-Warray-bounds",
+            "-Wanalyzer-out-of-bounds",
+            "arrayIndexOutOfBounds"
+          ],
+          "message_any": [
+            "bound",
+            "overflow",
+            "index"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C05_bounds_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C05_bounds_corrected.c",
+      "sha256": "083b28cc540855f8f5dbaa9f54313c766dbb04d604db38ccf88548eaaafe38dc",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C06_allocation",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C06_allocation.c",
+      "sha256": "78cf168e7d1b56069baf4bb50bb6229fb9c4fe0e71732a4bda185e012eb7891e",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C06_allocation-R1",
+          "line": 6,
+          "column": 2,
+          "source_evidence": "*cell=101;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "bounds",
+          "allowed_ids": [
+            "unix.Malloc",
+            "alpha.security.ArrayBoundV2",
+            "-Wanalyzer-out-of-bounds",
+            "-Wanalyzer-allocation-size",
+            "-Wstringop-overflow",
+            "allocSize",
+            "bufferAccessOutOfBounds"
+          ],
+          "message_any": [
+            "size",
+            "bound",
+            "overflow"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C06_allocation_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C06_allocation_corrected.c",
+      "sha256": "84f3bf4d26cf9b02f2756c7427710dfbd4d56e055e6fa5ea6e2a10f0e31183f7",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C07_resource",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C07_resource.c",
+      "sha256": "97d9f4c18499caf05515b914575c7bdf00f63d90f73cfd66ba0c9bfdad9ac979",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C07_resource-R1",
+          "line": 5,
+          "column": 2,
+          "source_evidence": "fputs(\"record\",stream);",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "resource",
+          "allowed_ids": [
+            "unix.Stream",
+            "-Wanalyzer-file-leak",
+            "-Wanalyzer-malloc-leak",
+            "resourceLeak"
+          ],
+          "message_any": [
+            "leak",
+            "close"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 1
+        }
+      ]
+    },
+    {
+      "id": "C07_resource_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C07_resource_corrected.c",
+      "sha256": "4ff9437f6d7121417d0b7247d3a7689d9c445bec4cd569df120805513a554314",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C08_contradiction",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C08_contradiction.c",
+      "sha256": "520e8a28451733ef58d371ebf08a5a5190d7e5b8e32f046e12acbd914a0846ae",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C08_contradiction-R1",
+          "line": 2,
+          "column": 2,
+          "source_evidence": "if(value>=-3 && value<=-3 && value==2)",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "program_logic",
+          "allowed_ids": [
+            "smartparse.semantic.contradictory_int_conjunction",
+            "alpha.deadcode.UnreachableCode",
+            "-Wlogical-op",
+            "-Wtautological-overlap-compare",
+            "incorrectLogicOperator",
+            "knownConditionTrueFalse"
+          ],
+          "message_any": [
+            "condition",
+            "false",
+            "intersection",
+            "overlap"
+          ],
+          "required_contract": "As written; standard library calls modeled, successful allocation/open path where guarded.",
+          "admissible_line_window": 0
+        }
+      ]
+    },
+    {
+      "id": "C08_contradiction_corrected",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C08_contradiction_corrected.c",
+      "sha256": "bd63055fdaedb2f83edb491cf7cf41cb719aa6b647dbbff5cf26a35030fbee90",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    },
+    {
+      "id": "C09_repair_null",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+      "sha256": "614b5f86b7e0faeb9b6b32c8db40530d745d19e69a7332874b069d3aed4c0d09",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C09_repair_null-R1",
+          "line": 3,
+          "column": 1,
+          "source_evidence": "}",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "syntax",
+          "allowed_ids": [],
+          "message_any": [
+            "expected",
+            ";"
+          ]
+        },
+        {
+          "id": "C09_repair_null-R2",
+          "line": 6,
+          "column": 2,
+          "source_evidence": "return *p;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "core.NullDereference",
+            "-Wanalyzer-null-dereference",
+            "nullPointer"
+          ],
+          "message_any": [
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C10_isolate_null",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+      "sha256": "8b797fbfac67bf18d217c1b510f8c4a42919162f762e8fba385865bc3d9aea51",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C10_isolate_null-R1",
+          "line": 2,
+          "column": 2,
+          "source_evidence": "return missing_m8_value;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "semantic/type",
+          "allowed_ids": [],
+          "message_any": [
+            "undeclared",
+            "not declared"
+          ]
+        },
+        {
+          "id": "C10_isolate_null-R2",
+          "line": 6,
+          "column": 2,
+          "source_evidence": "return *p;",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "memory_safety",
+          "allowed_ids": [
+            "core.NullDereference",
+            "-Wanalyzer-null-dereference",
+            "nullPointer"
+          ],
+          "message_any": [
+            "null"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C11_missing_header",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C11_missing_header.c",
+      "sha256": "804d60f59fa0045db409843be35d1b48e6c74fff3f99257cb2602c0137add205",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": [
+        {
+          "id": "C11_missing_header-R1",
+          "line": 1,
+          "column": 1,
+          "source_evidence": "#include",
+          "independently_verified": false,
+          "reviewer": null,
+          "review_status": "pending_human_review",
+          "category": "configuration",
+          "allowed_ids": [],
+          "message_any": [
+            "file not found",
+            "No such file"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C12_valid_full",
+      "cohort": "c",
+      "path": "phase6\\v8\\fixtures\\c\\C12_valid_full.c",
+      "sha256": "a9e66e93a433dd521204c158b42e2a68a1426063c355a3cd6d0f0f716c654985",
+      "provenance": "new author-created evaluation case; not independent",
+      "independently_verified": false,
+      "reviewer": null,
+      "review_status": "pending_human_review",
+      "roots": []
+    }
+  ]
+}

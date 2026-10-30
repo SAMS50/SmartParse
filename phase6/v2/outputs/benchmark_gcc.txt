@@ -1,0 +1,58 @@
+Extended C Analysis (external compiler): completed
+Compiler: gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0
+Backend: gcc; executable: C:\MinGW\bin\gcc.exe
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:31:1: error (syntax, gcc): expected ',' or ';' before 'char'
+    char *global_label = NULL;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:83:1: error (syntax, gcc): expected ';' before '}' token
+    }
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:104:5: warning (compiler warning, gcc): suggest parentheses around assignment used as truth value [-Wparentheses]
+        if (student = NULL) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:115:9: warning (compiler warning, gcc): suggest parentheses around assignment used as truth value [-Wparentheses]
+            if (students[i].id = id) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:129:12: warning (compiler warning, gcc): function returns address of local variable [-Wreturn-local-addr]
+        return buffer;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:149:9: warning (compiler warning, gcc): suggest parentheses around assignment used as truth value [-Wparentheses]
+            if (students[i].active = 1) {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:164:38: warning (compiler warning, gcc): suggest braces around empty body in an 'if' statement [-Wempty-body]
+        if (percent < 0 || percent > 100); {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:164:5: warning (compiler warning, gcc): this 'if' clause does not guard... [-Wmisleading-indentation]
+        if (percent < 0 || percent > 100); {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:164:40: note (unknown, gcc): ...this statement, but the latter is misleadingly indented as if it is guarded by the 'if'
+        if (percent < 0 || percent > 100); {
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:236:12: warning (compiler warning, gcc): function returns address of local variable [-Wreturn-local-addr]
+        return &local;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:292:20: warning (compiler warning, gcc): format '%d' expects argument of type 'int *', but argument 3 has type 'int' [-Wformat=]
+        sscanf(text, "%d", value);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:351:9: warning (compiler warning, gcc): suggest parentheses around assignment used as truth value [-Wparentheses]
+            if (values[i] = target)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:382:26: warning (compiler warning, gcc): division by zero [-Wdiv-by-zero]
+        return student.score / 0;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:393:12: warning (compiler warning, gcc): return makes integer from pointer without a cast [-Wint-conversion]
+        return "hello";
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:409:12: error (semantic/type, gcc): too few arguments to function 'add_numbers'
+        return add_numbers(1);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:85:5: note (unknown, gcc): declared here
+    int add_numbers(int a, int b)
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:414:5: error (semantic/type, gcc): 'mystery_value' undeclared (first use in this function)
+        mystery_value = 12;
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:414:5: note (unknown, gcc): each undeclared identifier is reported only once for each function it appears in
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:421:14: warning (compiler warning, gcc): format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+        printf("%d\n", value);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:432:5: error (semantic/type, gcc): 'global_label' undeclared (first use in this function)
+        global_label = malloc(strlen(text));
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:438:10: error (semantic/type, gcc): 'global_label' undeclared (first use in this function)
+        free(global_label);
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:494:28: warning (compiler warning, gcc): multi-character character constant [-Wmultichar]
+        while (text[length] != '\\0')
+C:\Users\saami\Downloads\SmartParse_Final_Git\acceptance\cleaned\c_error_detection_500_lines.c:494:25: warning (compiler warning, gcc): comparison is always true due to limited range of data type [-Wtype-limits]
+        while (text[length] != '\\0')
+Total: 6 errors, 14 warnings, 3 notes
+Categories: syntax=2, semantic/type=4, compiler warning=14, unknown=3
+Completion does not establish absence of runtime or logic bugs.
+
+Eligibility (configured source only):
+Compiler completion: completed; analyzer completion: not_attempted
+Blockers: semantic/type, syntax
+Region inventory: unsupported
+translation_unit: compiler=blocked; analyzer=not_attempted
+Completed invocation is not proof of exhaustive function/path coverage.

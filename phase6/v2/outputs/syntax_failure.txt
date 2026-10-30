@@ -1,0 +1,29 @@
+Extended C Analysis (external compiler): completed
+Compiler: Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)
+Backend: clang; executable: C:\android-sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe
+C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v2\fixtures\syntax_failure.c:1:31: error (syntax, clang): expected expression
+    int broken(void) { return 1 + ; }
+Total: 1 errors, 0 warnings, 0 notes
+Categories: syntax=1, semantic/type=0, compiler warning=0, unknown=0
+Completion does not establish absence of runtime or logic bugs.
+
+Clang Static Analyzer: partial
+Compiler: Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)
+Backend: clang; executable: C:\android-sdk\ndk\26.3.11579264\toolchains\llvm\prebuilt\windows-x86_64\bin\clang.exe
+C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v2\fixtures\syntax_failure.c:1:31: error (syntax, clang): expected expression
+    int broken(void) { return 1 + ; }
+Total: 1 errors, 0 warnings, 0 notes
+Categories: syntax=1, semantic/type=0, compiler warning=0, unknown=0
+Potential static-analysis findings: 0; path notes: 0 (separate from compiler totals)
+Unavailable analysis or zero findings does not establish that the source is bug-free.
+Tool issue: Clang Static Analyzer did not finish normally
+Completion does not establish absence of runtime or logic bugs.
+
+Eligibility (configured source only):
+Compiler completion: completed; analyzer completion: partial
+Blockers: analyzer limitations, syntax
+Region inventory: partial
+translation_unit: compiler=blocked; analyzer=blocked
+broken: compiler=blocked; analyzer=blocked
+otherwise_valid: compiler=blocked; analyzer=blocked
+Completed invocation is not proof of exhaustive function/path coverage.

@@ -1,0 +1,76 @@
+{
+  "schema": "smartparse.external_analysis",
+  "schema_version": "1.0",
+  "tool": {
+    "id": "gcc14",
+    "path": "C:\\MinGW\\bin\\gcc.exe",
+    "kind": "gcc",
+    "version": "14.2.0",
+    "format": "gcc-json",
+    "diagnostic_format": "json"
+  },
+  "source": {
+    "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v7\\fixtures\\alloc_literal_good.c",
+    "sha256": "1cd071095125c9165039656c67b8417266301bbb228df671b46844e9d185f376",
+    "original_unchanged": true
+  },
+  "configuration": {
+    "standard": "c11",
+    "include_dirs": [],
+    "defines": [],
+    "path_prepend": "C:\\MinGW\\bin",
+    "shell": false
+  },
+  "status": "unavailable",
+  "reason": "tool unavailable or version changed; no silent substitution",
+  "diagnostics": [],
+  "exact_duplicates": [],
+  "raw": {},
+  "eligibility": {
+    "process_started": false,
+    "analyzer_requested": true,
+    "analyzer_phase_evidence": "unknown",
+    "region_coverage": "unknown; no per-function/path execution proof",
+    "function_path_coverage_certified": false
+  },
+  "provenance": {
+    "original_source": true,
+    "repair_conditioned": false,
+    "isolation_conditioned": false
+  },
+  "observed_version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0\r\nCopyright (C) 2016 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+  "temporary_workspace_removed": true,
+  "usage": {
+    "compiler_invocations": 1,
+    "elapsed_seconds": 0.063,
+    "calls": [
+      {
+        "number": 1,
+        "role": "version",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.exe",
+          "--version"
+        ],
+        "status": "completed",
+        "returncode": 0,
+        "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+        "stderr": "",
+        "elapsed_seconds": 0.063
+      }
+    ],
+    "limits": {
+      "candidates": 4,
+      "rounds": 3,
+      "invocations": 4,
+      "retained_variants": 4,
+      "edits": 4,
+      "total_seconds": 30,
+      "call_seconds": 10
+    }
+  },
+  "unique_primary_groups": 0,
+  "enabled": true,
+  "confirmed_defect_roots": null,
+  "analysis_mode": "original_source_only",
+  "integration_decision": "1.0"
+}

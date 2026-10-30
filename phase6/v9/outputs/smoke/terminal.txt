@@ -1,0 +1,14 @@
+SmartParse 0.9.0 — completed
+Source: C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v8\fixtures\c\C01_null.c
+Original source unchanged: True
+memory: completed; Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)
+  Analyzer invocation completed; no per-function/path completion claim.
+  Recovery: repair_not_requested
+  Isolation: not_attempted; isolation_not_requested
+C:\Users\saami\Downloads\SmartParse_Final_Git\phase6\v8\fixtures\c\C01_null.c:3:16: warning (memory safety; Clang Static Analyzer; original-source): Dereference of null pointer (loaded from variable 'probe') [core.NullDereference]
+   return bias + *probe;
+Diagnostic records: 0 errors, 1 warnings, 2 notes
+Categories: memory safety=1
+Conditioning: original-source=1
+Analyzer availability is checked only for requested passes; use doctor for installation/version inventory.
+Counts are evidence, not confirmed defects. Function/path coverage is uncertified; zero findings does not prove safety.

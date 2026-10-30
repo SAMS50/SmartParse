@@ -1,0 +1,6 @@
+test_timeout_and_budget_stop (phase6.v6.test_semantics.LiveTests.test_timeout_and_budget_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.800s
+
+OK

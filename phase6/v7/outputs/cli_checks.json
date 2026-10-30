@@ -1,0 +1,94 @@
+[
+  {
+    "case": "adapter_allocation",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "phase6.v7",
+        "phase6/v5/fixtures/allocation_size_bad.c",
+        "--external-analysis",
+        "--tool",
+        "gcc14",
+        "--json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 40,
+      "elapsed_seconds": 0.937,
+      "cleanup": null,
+      "log": "phase6\\v7\\outputs\\adapter_allocation.json"
+    },
+    "status": "completed",
+    "primary_groups": 3
+  },
+  {
+    "case": "adapter_benchmark",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "phase6.v7",
+        "acceptance/cleaned/c_error_detection_500_lines.c",
+        "--external-analysis",
+        "--tool",
+        "cppcheck",
+        "--json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 40,
+      "elapsed_seconds": 0.828,
+      "cleanup": null,
+      "log": "phase6\\v7\\outputs\\adapter_benchmark.json"
+    },
+    "status": "completed",
+    "primary_groups": 24
+  },
+  {
+    "case": "legacy_gcc6",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "analyze_c.py",
+        "phase6/v7/fixtures/alloc_literal_good.c",
+        "--compiler",
+        "gcc",
+        "--json"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 40,
+      "elapsed_seconds": 0.922,
+      "cleanup": null,
+      "log": "phase6\\v7\\outputs\\legacy_gcc6.json"
+    },
+    "status": "completed",
+    "primary_groups": null
+  },
+  {
+    "case": "reject_gcc6_substitution",
+    "result": {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "phase6.v7",
+        "phase6/v7/fixtures/alloc_literal_good.c",
+        "--external-analysis",
+        "--tool",
+        "gcc14",
+        "--executable",
+        "C:\\MinGW\\bin\\gcc.exe",
+        "--json"
+      ],
+      "exit_code": 3,
+      "timed_out": false,
+      "timeout_seconds": 40,
+      "elapsed_seconds": 0.406,
+      "cleanup": null,
+      "log": "phase6\\v7\\outputs\\reject_gcc6_substitution.json"
+    },
+    "status": "unavailable",
+    "primary_groups": 0
+  }
+]

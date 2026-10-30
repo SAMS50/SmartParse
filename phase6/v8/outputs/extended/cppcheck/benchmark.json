@@ -1,0 +1,1635 @@
+{
+  "configuration": "cppcheck",
+  "source_sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+  "elapsed_seconds": 0.328,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "kind": "cppcheck",
+      "version": "2.16.0",
+      "format": "cppcheck-xml"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+      "sha256": "c2b82ea25aa4e43da881e3894a923793ba4104eb2ad1446c9d91c889e0965c08",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "--xml",
+        "--xml-version=2",
+        "--enable=warning",
+        "--std=c11",
+        "--platform=win64",
+        "--max-configs=1",
+        "--error-exitcode=1",
+        "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+      ]
+    },
+    "status": "completed",
+    "reason": "Tool returned; warnings require source/root review.",
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 129,
+        "column": 12,
+        "severity": "error",
+        "message": "Returning pointer to local variable 'buffer' that will be invalid when returning.",
+        "diagnostic_id": "returnDanglingLifetime",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "124",
+            "column": "10",
+            "info": "Variable created here."
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "129",
+            "column": "12",
+            "info": "Array decayed to pointer here."
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Returning pointer to local variable 'buffer' that will be invalid when returning.",
+        "cwe": "562",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    return buffer;",
+        "id": "X-ba925b97af57a88af82c",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 236,
+        "column": 12,
+        "severity": "error",
+        "message": "Returning pointer to local variable 'local' that will be invalid when returning.",
+        "diagnostic_id": "returnDanglingLifetime",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "235",
+            "column": "9",
+            "info": "Variable created here."
+          },
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "236",
+            "column": "12",
+            "info": "Address of variable taken here."
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Returning pointer to local variable 'local' that will be invalid when returning.",
+        "cwe": "562",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    return &local;",
+        "id": "X-9d63299f9dda22571c93",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 263,
+        "column": 5,
+        "severity": "error",
+        "message": "Dangerous assignment - the function parameter is assigned the address of a local auto-variable. Local auto-variables are reserved from the stack which is freed when the function ends. So the pointer to a local variable is invalid after the function ends.",
+        "diagnostic_id": "autoVariables",
+        "category": "memory safety",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Address of local auto-variable assigned to a function parameter.",
+        "cwe": "562",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    *pointer = &value;",
+        "id": "X-a523a914ebd3ece1b9b3",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 74,
+        "column": 17,
+        "severity": "error",
+        "message": "Buffer is accessed out of bounds: error.message",
+        "diagnostic_id": "bufferAccessOutOfBounds",
+        "category": "bounds",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Buffer is accessed out of bounds: error.message",
+        "cwe": "788",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    strcpy(error.message, \"sample error message that is too long for buffer\");",
+        "id": "X-18252fae64e0e749ecd4",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 404,
+        "column": null,
+        "severity": "error",
+        "message": "Found an exit path from function with non-void return type that has missing return statement",
+        "diagnostic_id": "missingReturn",
+        "category": "unknown",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Found an exit path from function with non-void return type that has missing return statement",
+        "cwe": "758",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "        return value;",
+        "id": "X-265aa5341aed83f7249f",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 368,
+        "column": 24,
+        "severity": "warning",
+        "message": "Logical conjunction always evaluates to false: date.month < 1 && date.month > 12. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?",
+        "diagnostic_id": "incorrectLogicOperator",
+        "category": "program logic",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Logical conjunction always evaluates to false: date.month < 1 && date.month > 12.",
+        "cwe": "570",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    if (date.month < 1 && date.month > 12)",
+        "id": "X-d8482d4bc7e5b73fb8bd",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 292,
+        "column": 5,
+        "severity": "warning",
+        "message": "%d in format string (no. 1) requires 'int *' but the argument type is 'signed int'.",
+        "diagnostic_id": "invalidScanfArgType_int",
+        "category": "semantic/type",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "%d in format string (no. 1) requires 'int *' but the argument type is 'signed int'.",
+        "cwe": "686",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    sscanf(text, \"%d\", value);",
+        "id": "X-f3082c408701cd1631be",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 421,
+        "column": 5,
+        "severity": "warning",
+        "message": "%d in format string (no. 1) requires 'int' but the argument type is 'signed long'.",
+        "diagnostic_id": "invalidPrintfArgType_sint",
+        "category": "semantic/type",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "%d in format string (no. 1) requires 'int' but the argument type is 'signed long'.",
+        "cwe": "686",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    printf(\"%d\\n\", value);",
+        "id": "X-83d1a2cdc44e710bf346",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 299,
+        "column": 5,
+        "severity": "warning",
+        "message": "scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\\012\\012Sample program that can crash:\\012\\012#include <stdio.h>\\012int main()\\012{\\012    char c[5];\\012    scanf(\"%s\", c);\\012    return 0;\\012}\\012\\012Typing in 5 or more characters may make the program crash. The correct usage here is 'scanf(\"%4s\", c);', as the maximum field width does not include the terminating null byte.\\012Source: http://linux.die.net/man/3/scanf\\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c",
+        "diagnostic_id": "invalidscanf",
+        "category": "bounds",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "scanf() without field width limits can crash with huge input data.",
+        "cwe": "119",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    scanf(\"%s\", name);",
+        "id": "X-590846a3d76bf4fcde4c",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 252,
+        "column": 5,
+        "severity": "error",
+        "message": "Memory pointed to by 'pointer' is freed twice.",
+        "diagnostic_id": "doubleFree",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "251",
+            "column": "5"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Memory pointed to by 'pointer' is freed twice.",
+        "cwe": "415",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    free(pointer);",
+        "id": "X-caa77d332ec39ea32582",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 271,
+        "column": 1,
+        "severity": "error",
+        "message": "Memory leak: values",
+        "diagnostic_id": "memleak",
+        "category": "memory safety",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Memory leak: values",
+        "cwe": "401",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "}",
+        "id": "X-bd8625ec5ad5d7c178a8",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 287,
+        "column": 1,
+        "severity": "error",
+        "message": "Resource leak: file",
+        "diagnostic_id": "resourceLeak",
+        "category": "resource management",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Resource leak: file",
+        "cwe": "775",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "}",
+        "id": "X-c71cca42968380817455",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 307,
+        "column": 9,
+        "severity": "error",
+        "message": "Resource leak: file",
+        "diagnostic_id": "resourceLeak",
+        "category": "resource management",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Resource leak: file",
+        "cwe": "775",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "        return 1;",
+        "id": "X-8aae7cb46218cceea8ae",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 108,
+        "column": 28,
+        "severity": "warning",
+        "message": "Either the condition 'student=NULL' is redundant or there is possible null pointer dereference: student.",
+        "diagnostic_id": "nullPointerRedundantCheck",
+        "category": "unknown",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "104",
+            "column": "17",
+            "info": "Assuming that condition 'student=NULL' is not redundant"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Either the condition 'student=NULL' is redundant or there is possible null pointer dereference: student.",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    printf(\"%d %s %.2f\\n\", student->id, student->name, student->score);",
+        "id": "X-92fab111e7b0a02a13ee",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 134,
+        "column": 5,
+        "severity": "warning",
+        "message": "Possible null pointer dereference: student",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "81",
+            "column": "19",
+            "info": "Calling function 'reset_student', 1st argument 'NULL' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Possible null pointer dereference: student",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    student->id = 0;",
+        "id": "X-a95427e5ce8ac07c8f0d",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 135,
+        "column": 5,
+        "severity": "warning",
+        "message": "Possible null pointer dereference: student",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "81",
+            "column": "19",
+            "info": "Calling function 'reset_student', 1st argument 'NULL' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Possible null pointer dereference: student",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    student->name[0] = '\\0';",
+        "id": "X-71288a877aa1e6291d35",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 136,
+        "column": 5,
+        "severity": "warning",
+        "message": "Possible null pointer dereference: student",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "81",
+            "column": "19",
+            "info": "Calling function 'reset_student', 1st argument 'NULL' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Possible null pointer dereference: student",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    student->score = 0.0;",
+        "id": "X-008df58130670da7f6e5",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 137,
+        "column": 5,
+        "severity": "warning",
+        "message": "Possible null pointer dereference: student",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "81",
+            "column": "19",
+            "info": "Calling function 'reset_student', 1st argument 'NULL' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Possible null pointer dereference: student",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    student->active = 0;",
+        "id": "X-3f00cdbcd1301a990c0a",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 308,
+        "column": 12,
+        "severity": "warning",
+        "message": "Either the condition 'file!=NULL' is redundant or there is possible null pointer dereference: file.",
+        "diagnostic_id": "nullPointerRedundantCheck",
+        "category": "unknown",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "306",
+            "column": "14",
+            "info": "Assuming that condition 'file!=NULL' is not redundant"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Either the condition 'file!=NULL' is redundant or there is possible null pointer dereference: file.",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    fclose(file);",
+        "id": "X-069c7c0b3923d2893ad3",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 308,
+        "column": 12,
+        "severity": "error",
+        "message": "Null pointer dereference",
+        "diagnostic_id": "nullPointer",
+        "category": "memory safety",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Null pointer dereference",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    fclose(file);",
+        "id": "X-fd4f4d0a78b5df890df8",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 99,
+        "column": 16,
+        "severity": "error",
+        "message": "Division by zero.",
+        "diagnostic_id": "zerodiv",
+        "category": "undefined behavior",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "65",
+            "column": "27",
+            "info": "Calling function 'average', 2nd argument '0' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Division by zero.",
+        "cwe": "369",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    return sum / count;",
+        "id": "X-cc2c4ccc688314d857cc",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 142,
+        "column": 14,
+        "severity": "error",
+        "message": "Division by zero.",
+        "diagnostic_id": "zerodiv",
+        "category": "undefined behavior",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "78",
+            "column": "54",
+            "info": "Calling function 'unsafe_divide', 2nd argument '0' value is 0"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Division by zero.",
+        "cwe": "369",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    return a / b;",
+        "id": "X-6a8117bd4790e86666d0",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 293,
+        "column": 12,
+        "severity": "error",
+        "message": "Uninitialized variable: value",
+        "diagnostic_id": "uninitvar",
+        "category": "undefined behavior",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Uninitialized variable: value",
+        "cwe": "457",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    return value;",
+        "id": "X-13dbe18eaa4755cf3f38",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      },
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+        "line": 134,
+        "column": 5,
+        "severity": "error",
+        "message": "Null pointer dereference: student",
+        "diagnostic_id": "ctunullpointer",
+        "category": "memory safety",
+        "related": [
+          {
+            "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c",
+            "line": "81",
+            "column": "18",
+            "info": "Calling function reset_student, 1st argument is null"
+          }
+        ],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Null pointer dereference: student",
+        "cwe": "476",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "    student->id = 0;",
+        "id": "X-2f2894d4cfa65a559c74",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      }
+    ],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"returnDanglingLifetime\" severity=\"error\" msg=\"Returning pointer to local variable &apos;buffer&apos; that will be invalid when returning.\" verbose=\"Returning pointer to local variable &apos;buffer&apos; that will be invalid when returning.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"129\" column=\"12\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"124\" column=\"10\" info=\"Variable created here.\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"129\" column=\"12\" info=\"Array decayed to pointer here.\"/>\r\n        </error>\r\n        <error id=\"returnDanglingLifetime\" severity=\"error\" msg=\"Returning pointer to local variable &apos;local&apos; that will be invalid when returning.\" verbose=\"Returning pointer to local variable &apos;local&apos; that will be invalid when returning.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"236\" column=\"12\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"235\" column=\"9\" info=\"Variable created here.\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"236\" column=\"12\" info=\"Address of variable taken here.\"/>\r\n        </error>\r\n        <error id=\"autoVariables\" severity=\"error\" msg=\"Address of local auto-variable assigned to a function parameter.\" verbose=\"Dangerous assignment - the function parameter is assigned the address of a local auto-variable. Local auto-variables are reserved from the stack which is freed when the function ends. So the pointer to a local variable is invalid after the function ends.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"263\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"bufferAccessOutOfBounds\" severity=\"error\" msg=\"Buffer is accessed out of bounds: error.message\" verbose=\"Buffer is accessed out of bounds: error.message\" cwe=\"788\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"74\" column=\"17\" info=\"Buffer overrun\"/>\r\n        </error>\r\n        <error id=\"missingReturn\" severity=\"error\" msg=\"Found an exit path from function with non-void return type that has missing return statement\" verbose=\"Found an exit path from function with non-void return type that has missing return statement\" cwe=\"758\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"404\" column=\"0\"/>\r\n        </error>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: date.month &lt; 1 &amp;&amp; date.month &gt; 12.\" verbose=\"Logical conjunction always evaluates to false: date.month &lt; 1 &amp;&amp; date.month &gt; 12. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"368\" column=\"24\"/>\r\n        </error>\r\n        <error id=\"invalidScanfArgType_int\" severity=\"warning\" msg=\"%d in format string (no. 1) requires &apos;int *&apos; but the argument type is &apos;signed int&apos;.\" verbose=\"%d in format string (no. 1) requires &apos;int *&apos; but the argument type is &apos;signed int&apos;.\" cwe=\"686\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"292\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"invalidPrintfArgType_sint\" severity=\"warning\" msg=\"%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;signed long&apos;.\" verbose=\"%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;signed long&apos;.\" cwe=\"686\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"421\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"invalidscanf\" severity=\"warning\" msg=\"scanf() without field width limits can crash with huge input data.\" verbose=\"scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\\012\\012Sample program that can crash:\\012\\012#include &lt;stdio.h&gt;\\012int main()\\012{\\012    char c[5];\\012    scanf(&quot;%s&quot;, c);\\012    return 0;\\012}\\012\\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\\012Source: http://linux.die.net/man/3/scanf\\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c\" cwe=\"119\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"299\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"doubleFree\" severity=\"error\" msg=\"Memory pointed to by &apos;pointer&apos; is freed twice.\" verbose=\"Memory pointed to by &apos;pointer&apos; is freed twice.\" cwe=\"415\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"252\" column=\"5\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"251\" column=\"5\"/>\r\n            <symbol>pointer</symbol>\r\n        </error>\r\n        <error id=\"memleak\" severity=\"error\" msg=\"Memory leak: values\" verbose=\"Memory leak: values\" cwe=\"401\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"271\" column=\"1\"/>\r\n            <symbol>values</symbol>\r\n        </error>\r\n        <error id=\"resourceLeak\" severity=\"error\" msg=\"Resource leak: file\" verbose=\"Resource leak: file\" cwe=\"775\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"287\" column=\"1\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"resourceLeak\" severity=\"error\" msg=\"Resource leak: file\" verbose=\"Resource leak: file\" cwe=\"775\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"307\" column=\"9\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"nullPointerRedundantCheck\" severity=\"warning\" msg=\"Either the condition &apos;student=NULL&apos; is redundant or there is possible null pointer dereference: student.\" verbose=\"Either the condition &apos;student=NULL&apos; is redundant or there is possible null pointer dereference: student.\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"108\" column=\"28\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"104\" column=\"17\" info=\"Assuming that condition &apos;student=NULL&apos; is not redundant\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"134\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"135\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"136\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"137\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointerRedundantCheck\" severity=\"warning\" msg=\"Either the condition &apos;file!=NULL&apos; is redundant or there is possible null pointer dereference: file.\" verbose=\"Either the condition &apos;file!=NULL&apos; is redundant or there is possible null pointer dereference: file.\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"308\" column=\"12\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"306\" column=\"14\" info=\"Assuming that condition &apos;file!=NULL&apos; is not redundant\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference\" verbose=\"Null pointer dereference\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"308\" column=\"12\" info=\"Null pointer dereference\"/>\r\n        </error>\r\n        <error id=\"zerodiv\" severity=\"error\" msg=\"Division by zero.\" verbose=\"Division by zero.\" cwe=\"369\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"99\" column=\"16\" info=\"Division by zero\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"65\" column=\"27\" info=\"Calling function &apos;average&apos;, 2nd argument &apos;0&apos; value is 0\"/>\r\n        </error>\r\n        <error id=\"zerodiv\" severity=\"error\" msg=\"Division by zero.\" verbose=\"Division by zero.\" cwe=\"369\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"142\" column=\"14\" info=\"Division by zero\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"78\" column=\"54\" info=\"Calling function &apos;unsafe_divide&apos;, 2nd argument &apos;0&apos; value is 0\"/>\r\n        </error>\r\n        <error id=\"uninitvar\" severity=\"error\" msg=\"Uninitialized variable: value\" verbose=\"Uninitialized variable: value\" cwe=\"457\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"293\" column=\"12\"/>\r\n            <symbol>value</symbol>\r\n        </error>\r\n        <error id=\"ctunullpointer\" severity=\"error\" msg=\"Null pointer dereference: student\" verbose=\"Null pointer dereference: student\" cwe=\"476\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"134\" column=\"5\" info=\"Dereferencing argument student that is null\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"18\" info=\"Calling function reset_student, 1st argument is null\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+      "returncode": 1
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [],
+      "analyzer_completion": "completed"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "Cppcheck 2.16.0\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 1,
+      "stdout": "Checking C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external t7t3prmf/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.328,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+          "stderr": "",
+          "elapsed_seconds": 0.094
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\cache",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "9fb223849e242b8071ff0f62ed7fc3734303e62ec53f64d1fadcf0f16834254e",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external t7t3prmf/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.109
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external t7t3prmf\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "31c2b95bab84dd9964659eeee3370af6be7587e8fc99588b60af37566b76463b",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"returnDanglingLifetime\" severity=\"error\" msg=\"Returning pointer to local variable &apos;buffer&apos; that will be invalid when returning.\" verbose=\"Returning pointer to local variable &apos;buffer&apos; that will be invalid when returning.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"129\" column=\"12\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"124\" column=\"10\" info=\"Variable created here.\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"129\" column=\"12\" info=\"Array decayed to pointer here.\"/>\r\n        </error>\r\n        <error id=\"returnDanglingLifetime\" severity=\"error\" msg=\"Returning pointer to local variable &apos;local&apos; that will be invalid when returning.\" verbose=\"Returning pointer to local variable &apos;local&apos; that will be invalid when returning.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"236\" column=\"12\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"235\" column=\"9\" info=\"Variable created here.\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"236\" column=\"12\" info=\"Address of variable taken here.\"/>\r\n        </error>\r\n        <error id=\"autoVariables\" severity=\"error\" msg=\"Address of local auto-variable assigned to a function parameter.\" verbose=\"Dangerous assignment - the function parameter is assigned the address of a local auto-variable. Local auto-variables are reserved from the stack which is freed when the function ends. So the pointer to a local variable is invalid after the function ends.\" cwe=\"562\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"263\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"bufferAccessOutOfBounds\" severity=\"error\" msg=\"Buffer is accessed out of bounds: error.message\" verbose=\"Buffer is accessed out of bounds: error.message\" cwe=\"788\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"74\" column=\"17\" info=\"Buffer overrun\"/>\r\n        </error>\r\n        <error id=\"missingReturn\" severity=\"error\" msg=\"Found an exit path from function with non-void return type that has missing return statement\" verbose=\"Found an exit path from function with non-void return type that has missing return statement\" cwe=\"758\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"404\" column=\"0\"/>\r\n        </error>\r\n        <error id=\"incorrectLogicOperator\" severity=\"warning\" msg=\"Logical conjunction always evaluates to false: date.month &lt; 1 &amp;&amp; date.month &gt; 12.\" verbose=\"Logical conjunction always evaluates to false: date.month &lt; 1 &amp;&amp; date.month &gt; 12. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?\" cwe=\"570\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"368\" column=\"24\"/>\r\n        </error>\r\n        <error id=\"invalidScanfArgType_int\" severity=\"warning\" msg=\"%d in format string (no. 1) requires &apos;int *&apos; but the argument type is &apos;signed int&apos;.\" verbose=\"%d in format string (no. 1) requires &apos;int *&apos; but the argument type is &apos;signed int&apos;.\" cwe=\"686\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"292\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"invalidPrintfArgType_sint\" severity=\"warning\" msg=\"%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;signed long&apos;.\" verbose=\"%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;signed long&apos;.\" cwe=\"686\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"421\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"invalidscanf\" severity=\"warning\" msg=\"scanf() without field width limits can crash with huge input data.\" verbose=\"scanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\\012\\012Sample program that can crash:\\012\\012#include &lt;stdio.h&gt;\\012int main()\\012{\\012    char c[5];\\012    scanf(&quot;%s&quot;, c);\\012    return 0;\\012}\\012\\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\\012Source: http://linux.die.net/man/3/scanf\\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c\" cwe=\"119\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"299\" column=\"5\"/>\r\n        </error>\r\n        <error id=\"doubleFree\" severity=\"error\" msg=\"Memory pointed to by &apos;pointer&apos; is freed twice.\" verbose=\"Memory pointed to by &apos;pointer&apos; is freed twice.\" cwe=\"415\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"252\" column=\"5\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"251\" column=\"5\"/>\r\n            <symbol>pointer</symbol>\r\n        </error>\r\n        <error id=\"memleak\" severity=\"error\" msg=\"Memory leak: values\" verbose=\"Memory leak: values\" cwe=\"401\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"271\" column=\"1\"/>\r\n            <symbol>values</symbol>\r\n        </error>\r\n        <error id=\"resourceLeak\" severity=\"error\" msg=\"Resource leak: file\" verbose=\"Resource leak: file\" cwe=\"775\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"287\" column=\"1\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"resourceLeak\" severity=\"error\" msg=\"Resource leak: file\" verbose=\"Resource leak: file\" cwe=\"775\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"307\" column=\"9\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"nullPointerRedundantCheck\" severity=\"warning\" msg=\"Either the condition &apos;student=NULL&apos; is redundant or there is possible null pointer dereference: student.\" verbose=\"Either the condition &apos;student=NULL&apos; is redundant or there is possible null pointer dereference: student.\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"108\" column=\"28\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"104\" column=\"17\" info=\"Assuming that condition &apos;student=NULL&apos; is not redundant\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"134\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"135\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"136\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"warning\" msg=\"Possible null pointer dereference: student\" verbose=\"Possible null pointer dereference: student\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"137\" column=\"5\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"19\" info=\"Calling function &apos;reset_student&apos;, 1st argument &apos;NULL&apos; value is 0\"/>\r\n            <symbol>student</symbol>\r\n        </error>\r\n        <error id=\"nullPointerRedundantCheck\" severity=\"warning\" msg=\"Either the condition &apos;file!=NULL&apos; is redundant or there is possible null pointer dereference: file.\" verbose=\"Either the condition &apos;file!=NULL&apos; is redundant or there is possible null pointer dereference: file.\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"308\" column=\"12\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"306\" column=\"14\" info=\"Assuming that condition &apos;file!=NULL&apos; is not redundant\"/>\r\n            <symbol>file</symbol>\r\n        </error>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference\" verbose=\"Null pointer dereference\" cwe=\"476\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"308\" column=\"12\" info=\"Null pointer dereference\"/>\r\n        </error>\r\n        <error id=\"zerodiv\" severity=\"error\" msg=\"Division by zero.\" verbose=\"Division by zero.\" cwe=\"369\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"99\" column=\"16\" info=\"Division by zero\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"65\" column=\"27\" info=\"Calling function &apos;average&apos;, 2nd argument &apos;0&apos; value is 0\"/>\r\n        </error>\r\n        <error id=\"zerodiv\" severity=\"error\" msg=\"Division by zero.\" verbose=\"Division by zero.\" cwe=\"369\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"142\" column=\"14\" info=\"Division by zero\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"78\" column=\"54\" info=\"Calling function &apos;unsafe_divide&apos;, 2nd argument &apos;0&apos; value is 0\"/>\r\n        </error>\r\n        <error id=\"uninitvar\" severity=\"error\" msg=\"Uninitialized variable: value\" verbose=\"Uninitialized variable: value\" cwe=\"457\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/acceptance/cleaned/c_error_detection_500_lines.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"293\" column=\"12\"/>\r\n            <symbol>value</symbol>\r\n        </error>\r\n        <error id=\"ctunullpointer\" severity=\"error\" msg=\"Null pointer dereference: student\" verbose=\"Null pointer dereference: student\" cwe=\"476\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"134\" column=\"5\" info=\"Dereferencing argument student that is null\"/>\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\acceptance\\cleaned\\c_error_detection_500_lines.c\" line=\"81\" column=\"18\" info=\"Calling function reset_student, 1st argument is null\"/>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.094
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 24,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

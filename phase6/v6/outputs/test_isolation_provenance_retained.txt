@@ -1,0 +1,6 @@
+test_isolation_provenance_retained (phase6.v6.test_semantics.LiveTests.test_isolation_provenance_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 5.548s
+
+OK

@@ -1,0 +1,17 @@
+test_analyzer_budget_checked_before_invocation (phase6.v5.test_detection.PolicyTests.test_analyzer_budget_checked_before_invocation) ... ok
+test_cache_binding_cannot_cross_configuration (phase6.v5.test_detection.PolicyTests.test_cache_binding_cannot_cross_configuration) ... ok
+test_cli_invalid_arguments (phase6.v5.test_detection.PolicyTests.test_cli_invalid_arguments) ... ok
+test_cli_missing_file_json (phase6.v5.test_detection.PolicyTests.test_cli_missing_file_json) ... ok
+test_compiler_analyzer_duplicates_are_one_reviewed_root (phase6.v5.test_detection.PolicyTests.test_compiler_analyzer_duplicates_are_one_reviewed_root) ... ok
+test_conditioned_export_refused (phase6.v5.test_detection.PolicyTests.test_conditioned_export_refused) ... ok
+test_corrected_counterpart_warning_remains_unknown_not_false_positive (phase6.v5.test_detection.PolicyTests.test_corrected_counterpart_warning_remains_unknown_not_false_positive) ... ok
+test_limits (phase6.v5.test_detection.PolicyTests.test_limits) ... ok
+test_no_empty_export (phase6.v5.test_detection.PolicyTests.test_no_empty_export) ... ok
+test_parse_actual_help_formats (phase6.v5.test_detection.PolicyTests.test_parse_actual_help_formats) ... ok
+test_repaired_evidence_stays_conditioned (phase6.v5.test_detection.LiveTests.test_repaired_evidence_stays_conditioned) ... ok
+test_json_cli_space_unicode_path (phase6.v5.test_detection.LiveTests.test_json_cli_space_unicode_path) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 9.419s
+
+OK

@@ -1,0 +1,18 @@
+{
+  "configuration": "validation_off",
+  "metrics": {
+    "TP": null,
+    "FP": null,
+    "FN": null,
+    "precision": null,
+    "recall": null,
+    "F1": null,
+    "reason": "Independent complete human-adjudicated labels unavailable"
+  },
+  "confirmed_defect_roots": null,
+  "status": "unsupported_lexer",
+  "reason": "Unexpected character '@' at 2:8",
+  "diagnostics": [],
+  "repairs": [],
+  "elapsed_seconds": 0.0
+}

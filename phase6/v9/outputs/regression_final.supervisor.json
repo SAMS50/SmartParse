@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v9.validate",
+    "--worker",
+    "regression_final"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 600,
+  "elapsed_seconds": 215.062,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\regression_final.log",
+  "legacy_csv_writes_restored": [
+    "results\\verified_performance.csv"
+  ]
+}

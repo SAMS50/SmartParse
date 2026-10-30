@@ -1,0 +1,10 @@
+SOURCE: int x = 1 if (x > 0] { x = 2; }
+MODE: cgar
+CGAR STATUS: verified_candidate
+DIAGNOSTICS: 2
+   {'line': 1, 'column': 11, 'message': "CGAR suggested insert: '' -> ';'; grammar-verified, intent unconfirmed."}
+   {'line': 1, 'column': 20, 'message': "CGAR suggested substitute: ']' -> ')'; grammar-verified, intent unconfirmed."}
+SUGGESTED REPAIRS: 2
+   {'operation': 'insert', 'token': ';', 'from': None, 'line': 1, 'column': 11, 'score': None, 'score_factors': {'strict_grammar_verified': 1}, 'scoring_mode': 'contextual', 'reason': 'Whole-program grammar-verified candidate; author intent not proven', 'context': None, 'grammar_validation': 'whole_program_pass', 'verified_cgar': True}
+   {'operation': 'substitute', 'token': ')', 'from': ']', 'line': 1, 'column': 20, 'score': None, 'score_factors': {'strict_grammar_verified': 1}, 'scoring_mode': 'contextual', 'reason': 'Whole-program grammar-verified candidate; author intent not proven', 'context': None, 'grammar_validation': 'whole_program_pass', 'verified_cgar': True}
+NOTE: repairs are suggestions; grammar validity does not establish intent.

@@ -1,0 +1,6 @@
+test_malformed_frontend_blocks_custom_scan (phase6.v6.test_semantics.LiveTests.test_malformed_frontend_blocks_custom_scan) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 7.103s
+
+OK

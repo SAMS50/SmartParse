@@ -1,0 +1,6 @@
+test_valid_source_does_not_isolate (phase6.v4.test_isolation.LiveTests.test_valid_source_does_not_isolate) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.967s
+
+OK

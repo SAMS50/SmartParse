@@ -1,0 +1,6 @@
+test_corrected_bounds_has_no_strong_claims (phase6.v5.test_detection.LiveTests.test_corrected_bounds_has_no_strong_claims) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 4.545s
+
+OK

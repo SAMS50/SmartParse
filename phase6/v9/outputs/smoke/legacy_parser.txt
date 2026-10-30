@@ -1,0 +1,6 @@
+2:1: Missing ';' before 'int'.
+
+Tokens: 9; Diagnostics: 1
+
+Recovery operations:
+  insert: ; (score: 60)

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-m",
+    "phase6.v8.runner",
+    "--worker",
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak_corrected.c",
+    "recovery_assisted",
+    "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\outputs\\extended\\recovery_assisted\\C02_leak_corrected.json"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "timeout_seconds": 45,
+  "elapsed_seconds": 2.938,
+  "cleanup": null,
+  "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\outputs\\extended\\recovery_assisted\\C02_leak_corrected.log"
+}

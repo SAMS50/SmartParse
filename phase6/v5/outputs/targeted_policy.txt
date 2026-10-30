@@ -1,0 +1,11 @@
+test_analyzer_budget_checked_before_invocation (phase6.v5.test_detection.PolicyTests.test_analyzer_budget_checked_before_invocation) ... ok
+test_cache_binding_cannot_cross_configuration (phase6.v5.test_detection.PolicyTests.test_cache_binding_cannot_cross_configuration) ... ok
+test_conditioned_export_refused (phase6.v5.test_detection.PolicyTests.test_conditioned_export_refused) ... ok
+test_limits (phase6.v5.test_detection.PolicyTests.test_limits) ... ok
+test_no_empty_export (phase6.v5.test_detection.PolicyTests.test_no_empty_export) ... ok
+test_parse_actual_help_formats (phase6.v5.test_detection.PolicyTests.test_parse_actual_help_formats) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.003s
+
+OK

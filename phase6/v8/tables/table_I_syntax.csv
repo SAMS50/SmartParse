@@ -1,0 +1,5 @@
+configuration,cases,completed,unsupported_lexer,proposed_roots,author_location_matches,author_exact_repairs,intended_stream_equal,strict_replay_valid,reached_eof,additional_diagnostics,invalid_intended_references,elapsed_seconds,TP,FP,FN,precision,recall,F1,review_status
+panic,12,11,1,12,6,0,2,2,11,9,2,0.0,,,,,,,pending; author proposals only; context_default aliases validation_on
+context_default,12,11,1,12,8,8,8,8,11,4,2,0.0,,,,,,,pending; author proposals only; context_default aliases validation_on
+validation_off,12,11,1,12,8,8,8,8,11,4,2,0.0,,,,,,,pending; author proposals only; context_default aliases validation_on
+validation_on,12,11,1,12,8,8,8,8,11,4,2,0.0,,,,,,,pending; author proposals only; context_default aliases validation_on

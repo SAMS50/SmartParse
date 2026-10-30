@@ -1,0 +1,32 @@
+{
+  "source_text": "int broken(void)\r\n{\r\n    missing_identifier = 1;\r\n    return 0\r\n}\r\nint independent(void)\r\n{\r\n    int *pointer = 0;\r\n    return *pointer;\r\n}\r\n",
+  "source_sha256": "a6d66d85eaa2db43ecee05413df88f4de1faff6d17b480db50ba14fbd8cdac83",
+  "source_preserved": true,
+  "temporary_input_removed": true,
+  "result": {
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "-m",
+      "phase6.v4",
+      "C:\\Users\\saami\\AppData\\Local\\Temp\\isolation composition space _hgyd1wi\\input.c",
+      "--compiler",
+      "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "--punctuation-recovery",
+      "--isolate-unaffected",
+      "--json"
+    ],
+    "exit_code": 1,
+    "timed_out": false,
+    "timeout_seconds": 35,
+    "elapsed_seconds": 8.453,
+    "cleanup": null,
+    "log": "phase6\\v4\\outputs\\composition.json"
+  },
+  "unique_additional_findings": 1,
+  "original_finding_location": {
+    "file": "C:\\Users\\saami\\AppData\\Local\\Temp\\isolation composition space _hgyd1wi\\input.c",
+    "line": 9,
+    "column": 12,
+    "byte_offset": 127
+  }
+}

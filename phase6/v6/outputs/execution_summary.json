@@ -1,0 +1,572 @@
+{
+  "frozen": {
+    "cases": 39,
+    "statuses": {
+      "completed": 37,
+      "partial": 2
+    },
+    "compiler_invocations": 752,
+    "analyzer_invocations": 85,
+    "elapsed_seconds_sum": 94.217,
+    "per_case": [
+      {
+        "case": "allocation_good",
+        "status": "completed",
+        "calls": 30,
+        "analyzer_calls": 9,
+        "seconds": 3.156
+      },
+      {
+        "case": "allocation_index",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.312
+      },
+      {
+        "case": "allocation_literal",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.484
+      },
+      {
+        "case": "allocation_sizeof",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.219
+      },
+      {
+        "case": "contradiction_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.922
+      },
+      {
+        "case": "contradiction_boundary_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.125
+      },
+      {
+        "case": "contradiction_boundary_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.5
+      },
+      {
+        "case": "contradiction_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.61
+      },
+      {
+        "case": "conversion_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.75
+      },
+      {
+        "case": "different_variables",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.625
+      },
+      {
+        "case": "macro_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.313
+      },
+      {
+        "case": "malformed_semantic",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.953
+      },
+      {
+        "case": "malformed_syntax",
+        "status": "partial",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.734
+      },
+      {
+        "case": "overwrite_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.297
+      },
+      {
+        "case": "overwrite_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.859
+      },
+      {
+        "case": "precision_deliberate",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.938
+      },
+      {
+        "case": "precision_exact",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.328
+      },
+      {
+        "case": "precision_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.282
+      },
+      {
+        "case": "precision_integer_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.063
+      },
+      {
+        "case": "precision_macro",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.609
+      },
+      {
+        "case": "precision_review",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.406
+      },
+      {
+        "case": "precision_zero",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.844
+      },
+      {
+        "case": "scanf_character_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.985
+      },
+      {
+        "case": "scanf_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.937
+      },
+      {
+        "case": "scanf_local_name",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.828
+      },
+      {
+        "case": "scanf_suppressed",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.0
+      },
+      {
+        "case": "scanf_unbounded",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.921
+      },
+      {
+        "case": "scanf_unknown",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.0
+      },
+      {
+        "case": "scanf_width_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.734
+      },
+      {
+        "case": "side_effect_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.656
+      },
+      {
+        "case": "swap_unknown",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.906
+      },
+      {
+        "case": "unsigned_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.937
+      },
+      {
+        "case": "valid",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.86
+      },
+      {
+        "case": "volatile_control",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.891
+      },
+      {
+        "case": "contradiction_three_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.828
+      },
+      {
+        "case": "contradiction_three_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.937
+      },
+      {
+        "case": "overwrite_assignment_bad",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.203
+      },
+      {
+        "case": "overwrite_assignment_good",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 2.453
+      },
+      {
+        "case": "precision_literal_review",
+        "status": "completed",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 3.812
+      }
+    ]
+  },
+  "configured": {
+    "cases": 39,
+    "statuses": {
+      "blocked": 2,
+      "completed": 37
+    },
+    "compiler_invocations": 852,
+    "analyzer_invocations": 152,
+    "elapsed_seconds_sum": 88.628,
+    "per_case": [
+      {
+        "case": "allocation_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 3.625
+      },
+      {
+        "case": "allocation_index",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 4.547
+      },
+      {
+        "case": "allocation_literal",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 3.563
+      },
+      {
+        "case": "allocation_sizeof",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 3.703
+      },
+      {
+        "case": "contradiction_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 3.094
+      },
+      {
+        "case": "contradiction_boundary_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.438
+      },
+      {
+        "case": "contradiction_boundary_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.172
+      },
+      {
+        "case": "contradiction_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.484
+      },
+      {
+        "case": "contradiction_three_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.015
+      },
+      {
+        "case": "contradiction_three_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.89
+      },
+      {
+        "case": "conversion_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.891
+      },
+      {
+        "case": "different_variables",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.797
+      },
+      {
+        "case": "macro_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.719
+      },
+      {
+        "case": "malformed_semantic",
+        "status": "blocked",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.438
+      },
+      {
+        "case": "malformed_syntax",
+        "status": "blocked",
+        "calls": 19,
+        "analyzer_calls": 2,
+        "seconds": 1.594
+      },
+      {
+        "case": "overwrite_assignment_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.89
+      },
+      {
+        "case": "overwrite_assignment_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.735
+      },
+      {
+        "case": "overwrite_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.828
+      },
+      {
+        "case": "overwrite_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.047
+      },
+      {
+        "case": "precision_deliberate",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.031
+      },
+      {
+        "case": "precision_exact",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.938
+      },
+      {
+        "case": "precision_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.438
+      },
+      {
+        "case": "precision_integer_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.875
+      },
+      {
+        "case": "precision_literal_review",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.704
+      },
+      {
+        "case": "precision_macro",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.297
+      },
+      {
+        "case": "precision_review",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.984
+      },
+      {
+        "case": "precision_zero",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.906
+      },
+      {
+        "case": "scanf_character_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.5
+      },
+      {
+        "case": "scanf_good",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.875
+      },
+      {
+        "case": "scanf_local_name",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.734
+      },
+      {
+        "case": "scanf_suppressed",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.0
+      },
+      {
+        "case": "scanf_unbounded",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.797
+      },
+      {
+        "case": "scanf_unknown",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.766
+      },
+      {
+        "case": "scanf_width_bad",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.828
+      },
+      {
+        "case": "side_effect_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.734
+      },
+      {
+        "case": "swap_unknown",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.891
+      },
+      {
+        "case": "unsigned_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 1.953
+      },
+      {
+        "case": "valid",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 3.094
+      },
+      {
+        "case": "volatile_control",
+        "status": "completed",
+        "calls": 22,
+        "analyzer_calls": 4,
+        "seconds": 2.813
+      }
+    ]
+  }
+}

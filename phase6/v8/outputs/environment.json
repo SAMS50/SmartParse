@@ -1,0 +1,119 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.5 (tags/v3.12.5:ff3bc82, Aug  6 2024, 20:45:27) [MSC v.1940 64 bit (AMD64)]",
+  "branch": "feature/phase6-recovery",
+  "commit": "9f8d005",
+  "m7_committed": true,
+  "tools": [
+    {
+      "id": "gcc6",
+      "path": "C:\\MinGW\\bin\\gcc.exe",
+      "returncode": 0,
+      "stdout": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0\r\nCopyright (C) 2016 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+      "stderr": "",
+      "binary_sha256": "a20b2286ddee05f01aa5d8f0933826c4cc3dfd04f28aae7d04901565cb5783cb",
+      "usage": {
+        "compiler_invocations": 1,
+        "elapsed_seconds": 0.094,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "76b973d0bed478bb8e291d6cf277690f15fc034601ed73032cdec4b584995a46",
+            "stderr": "",
+            "elapsed_seconds": 0.078
+          }
+        ]
+      }
+    },
+    {
+      "id": "clang17",
+      "path": "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "returncode": 0,
+      "stdout": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)\nTarget: x86_64-w64-windows-gnu\nThread model: posix\nInstalledDir: C:/android-sdk/ndk/26.3.11579264/toolchains/llvm/prebuilt/windows-x86_64/bin\n",
+      "stderr": "",
+      "binary_sha256": "f94e30b77820128e536e96e38473e981c92df5e5fa6b0df461d168b475e89038",
+      "usage": {
+        "compiler_invocations": 1,
+        "elapsed_seconds": 0.422,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\android-sdk\\ndk\\26.3.11579264\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "6dbdbb50832c1889566cd5a3449f89df6abf34ccc97c2f6229fc761271a1b660",
+            "stderr": "",
+            "elapsed_seconds": 0.172
+          }
+        ]
+      }
+    },
+    {
+      "id": "gcc14",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+      "returncode": 0,
+      "stdout": "gcc.exe (MinGW-W64 x86_64-ucrt-posix-seh, built by Brecht Sanders, r3) 14.2.0\r\nCopyright (C) 2024 Free Software Foundation, Inc.\r\nThis is free software; see the source for copying conditions.  There is NO\r\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n\r\n",
+      "stderr": "",
+      "binary_sha256": "dead55fc32f7b58f5bea3bfe10f88bd2f51eb3d8e2bf5224785547fcccbe20db",
+      "usage": {
+        "compiler_invocations": 1,
+        "elapsed_seconds": 0.062,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "7968ddb60d612f288c48cdcc4e91fd18c4ec8be6fd01c8d0db9f4a08d8068fdc",
+            "stderr": "",
+            "elapsed_seconds": 0.062
+          }
+        ]
+      }
+    },
+    {
+      "id": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "returncode": 0,
+      "stdout": "Cppcheck 2.16.0\r\n",
+      "stderr": "",
+      "binary_sha256": "94e52fd552d1f223e5ee6c74b5545c097c6ec41d0a587d0e5c9bd603355d9a5e",
+      "usage": {
+        "compiler_invocations": 1,
+        "elapsed_seconds": 1.031,
+        "calls": [
+          {
+            "number": 1,
+            "role": "version",
+            "command": [
+              "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+              "--version"
+            ],
+            "status": "completed",
+            "returncode": 0,
+            "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+            "stderr": "",
+            "elapsed_seconds": 1.016
+          }
+        ]
+      }
+    }
+  ],
+  "random_seed": null,
+  "dataset_origin": "author-created, not independently authored or human-adjudicated"
+}

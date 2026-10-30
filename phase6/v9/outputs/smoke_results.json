@@ -1,0 +1,699 @@
+{
+  "cases": [
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "doctor",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.578,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\doctor.json",
+      "name": "doctor",
+      "expected_exit": 0,
+      "passed": true,
+      "schema": "smartparse.doctor",
+      "status": null,
+      "summary": null
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "--help"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.265,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\help.txt",
+      "name": "help",
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "--version"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.266,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\version.txt",
+      "name": "version",
+      "expected_exit": 0,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C12_valid_full.c",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 1.64,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\valid.json",
+      "name": "valid",
+      "expected_exit": 0,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {},
+        "conditioning": {},
+        "evidence_groups": 0,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "--compiler",
+        "gcc",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 1.25,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\syntax.json",
+      "name": "syntax",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 1.593,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\type.json",
+      "name": "type",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "semantic/type": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "memory",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 4.141,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\null.json",
+      "name": "null",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 3,
+        "errors": 0,
+        "warnings": 1,
+        "notes": 2,
+        "categories": {
+          "memory safety": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 3,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c",
+        "--analyzers",
+        "memory",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 3.829,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\leak.json",
+      "name": "leak",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 5,
+        "errors": 0,
+        "warnings": 1,
+        "notes": 4,
+        "categories": {
+          "memory safety": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 5,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C05_bounds.c",
+        "--analyzers",
+        "memory",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 3.609,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\bounds.json",
+      "name": "bounds",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 4,
+        "errors": 0,
+        "warnings": 2,
+        "notes": 2,
+        "categories": {
+          "bounds": 1,
+          "compiler warning": 1
+        },
+        "conditioning": {
+          "original-source": 2
+        },
+        "evidence_groups": 4,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C09_repair_null.c",
+        "--recovery",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 5.86,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\recovery.json",
+      "name": "recovery",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 5,
+        "errors": 2,
+        "warnings": 1,
+        "notes": 2,
+        "categories": {
+          "memory safety": 1,
+          "syntax": 2
+        },
+        "conditioning": {
+          "original-source": 2,
+          "repair-conditioned": 1
+        },
+        "evidence_groups": 4,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C10_isolate_null.c",
+        "--isolation",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 6.375,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\isolation.json",
+      "name": "isolation",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 5,
+        "errors": 2,
+        "warnings": 1,
+        "notes": 2,
+        "categories": {
+          "memory safety": 1,
+          "semantic/type": 2
+        },
+        "conditioning": {
+          "isolation-conditioned": 1,
+          "original-source": 2
+        },
+        "evidence_groups": 4,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "static",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 1.985,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\static.json",
+      "name": "static",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 3,
+        "errors": 0,
+        "warnings": 1,
+        "notes": 2,
+        "categories": {
+          "memory safety": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 3,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "gcc14",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.516,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\gcc14.json",
+      "name": "gcc14",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 0,
+        "warnings": 1,
+        "notes": 0,
+        "categories": {
+          "memory safety": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "cppcheck",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.484,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\cppcheck.json",
+      "name": "cppcheck",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "memory safety": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C11_missing_header.c",
+        "--format",
+        "json"
+      ],
+      "exit_code": 3,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 1.468,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\header.json",
+      "name": "header",
+      "expected_exit": 3,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "failed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "unknown": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "cppcheck",
+        "--cppcheck",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\not-installed.exe",
+        "--format",
+        "json"
+      ],
+      "exit_code": 3,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.375,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\unavailable.json",
+      "name": "unavailable",
+      "expected_exit": 3,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "failed",
+      "summary": {
+        "raw_normalized_records": 0,
+        "errors": 0,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {},
+        "conditioning": {},
+        "evidence_groups": 0,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\syntax\\S03.c",
+        "--analyzers",
+        "smartparse",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 0.391,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\restricted.json",
+      "name": "restricted",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 1,
+        "errors": 1,
+        "warnings": 0,
+        "notes": 0,
+        "categories": {
+          "syntax": 1
+        },
+        "conditioning": {
+          "original-source": 1
+        },
+        "evidence_groups": 1,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "memory"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 3.828,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\terminal.txt",
+      "name": "terminal",
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "memory",
+        "--format",
+        "markdown"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 3.938,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\markdown.md",
+      "name": "markdown",
+      "expected_exit": 1,
+      "passed": true
+    },
+    {
+      "command": [
+        "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "smartparse_cli",
+        "analyze",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C01_null.c",
+        "--analyzers",
+        "compiler,static,memory,semantic,gcc14,cppcheck",
+        "--format",
+        "json"
+      ],
+      "exit_code": 1,
+      "timed_out": false,
+      "timeout_seconds": 50,
+      "elapsed_seconds": 6.921,
+      "cleanup": null,
+      "log": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v9\\outputs\\smoke\\combined.json",
+      "name": "combined",
+      "expected_exit": 1,
+      "passed": true,
+      "schema": "smartparse.unified_analysis",
+      "status": "completed",
+      "summary": {
+        "raw_normalized_records": 8,
+        "errors": 1,
+        "warnings": 3,
+        "notes": 4,
+        "categories": {
+          "memory safety": 4
+        },
+        "conditioning": {
+          "original-source": 4
+        },
+        "evidence_groups": 8,
+        "confirmed_defect_roots": null,
+        "limitation": "Counts are diagnostics/evidence groups, not independently confirmed defects. No complete coverage or safety claim."
+      },
+      "source_preserved": true
+    }
+  ],
+  "passed": 20,
+  "total": 20,
+  "sources_preserved": true,
+  "c_programs_executed": false,
+  "scope": "Only Python CLI and installed compiler/analyzer tools; no C executable invocation."
+}

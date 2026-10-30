@@ -1,0 +1,6 @@
+test_malformed_ast_abstains_without_claim (phase6.v5.test_detection.LiveTests.test_malformed_ast_abstains_without_claim) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 3.973s
+
+OK

@@ -1,0 +1,206 @@
+{
+  "configuration": "cppcheck",
+  "source_sha256": "7c3169c4d7ef1ed88870a06f1ee9c20f5d168f17cbcbbe544e16cfac7afde01a",
+  "elapsed_seconds": 0.219,
+  "result": {
+    "schema": "smartparse.external_analysis",
+    "schema_version": "1.0",
+    "tool": {
+      "id": "cppcheck",
+      "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+      "kind": "cppcheck",
+      "version": "2.16.0",
+      "format": "cppcheck-xml"
+    },
+    "source": {
+      "path": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c",
+      "sha256": "7c3169c4d7ef1ed88870a06f1ee9c20f5d168f17cbcbbe544e16cfac7afde01a",
+      "original_unchanged": true
+    },
+    "configuration": {
+      "standard": "c11",
+      "include_dirs": [],
+      "defines": [],
+      "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+      "shell": false,
+      "command": [
+        "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+        "--xml",
+        "--xml-version=2",
+        "--enable=warning",
+        "--std=c11",
+        "--platform=win64",
+        "--max-configs=1",
+        "--error-exitcode=1",
+        "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\cache",
+        "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c"
+      ]
+    },
+    "status": "completed",
+    "reason": "Tool returned; warnings require source/root review.",
+    "diagnostics": [
+      {
+        "file": "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c",
+        "line": 6,
+        "column": 1,
+        "severity": "error",
+        "message": "Memory leak: cells",
+        "diagnostic_id": "memleak",
+        "category": "memory safety",
+        "related": [],
+        "inconclusive": false,
+        "context_note": false,
+        "column_kind": "tool-reported",
+        "short_message": "Memory leak: cells",
+        "cwe": "401",
+        "source_bound": true,
+        "mapping_status": "reported_location_bound_to_input",
+        "source_snippet": "}",
+        "id": "X-a8450a8f5000bacb6c0e",
+        "tool": {
+          "id": "cppcheck",
+          "path": "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+          "kind": "cppcheck",
+          "version": "2.16.0",
+          "format": "cppcheck-xml"
+        },
+        "configuration": {
+          "standard": "c11",
+          "include_dirs": [],
+          "defines": [],
+          "path_prepend": "C:\\Program Files\\CodeBlocks\\MinGW\\bin",
+          "shell": false,
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c"
+          ]
+        },
+        "review_status": "tool_reported_unverified",
+        "confidence": "review_suggestion",
+        "provenance": {
+          "original_source": true,
+          "repair_conditioned": false,
+          "isolation_conditioned": false
+        },
+        "duplicates_existing": "unknown_pending_root_review",
+        "analysis_eligibility": {
+          "tool_completion": "completed",
+          "frontend_blockers": false,
+          "region_coverage": "unknown"
+        }
+      }
+    ],
+    "exact_duplicates": [],
+    "raw": {
+      "stdout": "Checking C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"memleak\" severity=\"error\" msg=\"Memory leak: cells\" verbose=\"Memory leak: cells\" cwe=\"401\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C02_leak.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c\" line=\"6\" column=\"1\"/>\r\n            <symbol>cells</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+      "returncode": 1
+    },
+    "eligibility": {
+      "process_started": true,
+      "analyzer_requested": true,
+      "analyzer_phase_evidence": "diagnostic emitted, no exhaustive coverage inference",
+      "region_coverage": "unknown; no per-function/path execution proof",
+      "function_path_coverage_certified": false,
+      "frontend_blockers": [],
+      "analyzer_completion": "completed"
+    },
+    "provenance": {
+      "original_source": true,
+      "repair_conditioned": false,
+      "isolation_conditioned": false
+    },
+    "observed_version": "Cppcheck 2.16.0\r\n",
+    "capability": {
+      "supported": true,
+      "returncode": 1,
+      "stdout": "Checking C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c ...\r\n",
+      "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external jzrbvkpc/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n"
+    },
+    "unrecognized_output": [],
+    "temporary_workspace_removed": true,
+    "usage": {
+      "compiler_invocations": 3,
+      "elapsed_seconds": 0.219,
+      "calls": [
+        {
+          "number": 1,
+          "role": "version",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--version"
+          ],
+          "status": "completed",
+          "returncode": 0,
+          "stdout_sha256": "2ba7ef6cec5d99ef08e7e74e8646831240ad2b7c79c165d31d24cf354c0eab35",
+          "stderr": "",
+          "elapsed_seconds": 0.032
+        },
+        {
+          "number": 2,
+          "role": "analyzer_capability",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\cache",
+            "C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "072625fbac005d6c727d2c96795f5dc0f1614087f65fd7ce4bdb3cf687eb38f5",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"nullPointer\" severity=\"error\" msg=\"Null pointer dereference: p\" verbose=\"Null pointer dereference: p\" cwe=\"476\" file0=\"C:/Users/saami/AppData/Local/Temp/smartparse external jzrbvkpc/capability/capability.c\">\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c\" line=\"1\" column=\"39\" info=\"Null pointer dereference\"/>\r\n            <location file=\"C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\capability\\capability.c\" line=\"1\" column=\"29\" info=\"Assignment &apos;p=0&apos;, assigned value is 0\"/>\r\n            <symbol>p</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.078
+        },
+        {
+          "number": 3,
+          "role": "external_analysis",
+          "command": [
+            "C:\\Program Files\\CodeBlocks\\MinGW\\bin\\cppcheck.exe",
+            "--xml",
+            "--xml-version=2",
+            "--enable=warning",
+            "--std=c11",
+            "--platform=win64",
+            "--max-configs=1",
+            "--error-exitcode=1",
+            "--cppcheck-build-dir=C:\\Users\\saami\\AppData\\Local\\Temp\\smartparse external jzrbvkpc\\cache",
+            "C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c"
+          ],
+          "status": "completed",
+          "returncode": 1,
+          "stdout_sha256": "379a4c0048d0d9077987a1312785fd043f74ba2d2299f05ef94203d3fcea3fc9",
+          "stderr": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<results version=\"2\">\r\n    <cppcheck version=\"2.16.0\"/>\r\n    <errors>\r\n        <error id=\"memleak\" severity=\"error\" msg=\"Memory leak: cells\" verbose=\"Memory leak: cells\" cwe=\"401\" file0=\"C:/Users/saami/Downloads/SmartParse_Final_Git/phase6/v8/fixtures/c/C02_leak.c\">\r\n            <location file=\"C:\\Users\\saami\\Downloads\\SmartParse_Final_Git\\phase6\\v8\\fixtures\\c\\C02_leak.c\" line=\"6\" column=\"1\"/>\r\n            <symbol>cells</symbol>\r\n        </error>\r\n    </errors>\r\n</results>\r\n",
+          "elapsed_seconds": 0.094
+        }
+      ],
+      "limits": {
+        "candidates": 4,
+        "rounds": 3,
+        "invocations": 4,
+        "retained_variants": 4,
+        "edits": 4,
+        "total_seconds": 30,
+        "call_seconds": 5
+      }
+    },
+    "unique_primary_groups": 1,
+    "enabled": true,
+    "confirmed_defect_roots": null,
+    "analysis_mode": "original_source_only",
+    "integration_decision": "1.0"
+  }
+}

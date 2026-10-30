@@ -1,0 +1,184 @@
+[
+  {
+    "case": "holdout-alloc_helper_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_helper_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.828,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_helper_bad.txt"
+  },
+  {
+    "case": "holdout-alloc_helper_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_helper_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.172,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_helper_good.txt"
+  },
+  {
+    "case": "holdout-alloc_literal_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_literal_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 3.75,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_literal_bad.txt"
+  },
+  {
+    "case": "holdout-alloc_literal_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_literal_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.453,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_literal_good.txt"
+  },
+  {
+    "case": "holdout-alloc_unknown",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_unknown"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.141,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_unknown.txt"
+  },
+  {
+    "case": "holdout-alloc_variable_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_variable_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.906,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_variable_bad.txt"
+  },
+  {
+    "case": "holdout-alloc_variable_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-alloc_variable_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.0,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-alloc_variable_good.txt"
+  },
+  {
+    "case": "holdout-late_widen_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-late_widen_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.203,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-late_widen_bad.txt"
+  },
+  {
+    "case": "holdout-late_widen_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-late_widen_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.219,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-late_widen_good.txt"
+  },
+  {
+    "case": "holdout-overlap_bad",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-overlap_bad"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.75,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-overlap_bad.txt"
+  },
+  {
+    "case": "holdout-overlap_good",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-overlap_good"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.782,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-overlap_good.txt"
+  },
+  {
+    "case": "holdout-unsigned_modular_control",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "holdout-unsigned_modular_control"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 4.453,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_holdout-unsigned_modular_control.txt"
+  },
+  {
+    "case": "benchmark",
+    "command": [
+      "C:\\Users\\saami\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "phase6/v7/outputs/freeze_worker.py",
+      "benchmark"
+    ],
+    "exit_code": 0,
+    "timed_out": false,
+    "timeout_seconds": 45,
+    "elapsed_seconds": 5.687,
+    "cleanup": null,
+    "log": "phase6\\v7\\outputs\\freeze_benchmark.txt"
+  }
+]
