@@ -9,7 +9,7 @@ import type {Diagnostic, EditorLocation, Preview} from '../types/report'
 self.MonacoEnvironment = {getWorker: () => new EditorWorker()}
 loader.config({monaco})
 
-export interface EditorHandle {navigate: (location: EditorLocation) => void; getText?: () => string}
+export interface EditorHandle {navigate: (location: EditorLocation) => void; getText?: () => string; layout?:()=>void}
 interface Props {
   documentId?: string; openDocumentIds?: string[];
   revision?: number;
@@ -67,7 +67,7 @@ export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(pr
     const model=editor.current?.getModel()
     if(model && model.getValue()!==props.value) model.setValue(props.value)
   }, [props.revision])
-  useImperativeHandle(ref, () => ({getText:()=>{
+  useImperativeHandle(ref, () => ({layout:()=>editor.current?.layout(),getText:()=>{
     const model=editor.current?.getModel(),expected=latest.current.documentId?`inmemory://smartparse/${latest.current.documentId}`:null
     return model && (!expected||model.uri.toString()===expected) ? model.getValue() : latest.current.value
   },navigate(at) {

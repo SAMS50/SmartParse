@@ -3,6 +3,7 @@ import {AlertCircle, ArrowDownToLine, ArrowRight, Braces, Check, CheckCircle2, C
 import {CodeEditor, type EditorHandle} from './components/CodeEditor'
 import {Inspector, type InspectorTab} from './components/Inspector'
 import {FileDialog} from './components/FileDialog'
+import {useExplorer} from './lib/useExplorer'
 import {useWorkspace} from './lib/useWorkspace'
 import {serviceReady} from './lib/serviceReady'
 import {dirtyFile, downloadSource} from './lib/workspace'
@@ -26,7 +27,8 @@ export default function App() {
   const [filter,setFilter] = useState('all'), [query,setQuery] = useState(''), [shown,setShown] = useState(100)
   const [tab,setTab] = useState<InspectorTab>('overview'), [cursor,setCursor] = useState({line: 1, column: 1})
   const [split,setSplit] = useState(58)
-  const [detailsCollapsed,setDetailsCollapsed]=useState(false),[explorerOpen,setExplorerOpen]=useState(false)
+  const [detailsCollapsed,setDetailsCollapsed]=useState(false)
+  const explorer=useExplorer(), sidebar=useRef<HTMLElement>(null)
   const [detailsHeight,setDetailsHeight] = useState<number | null>(null)
   const main = useRef<HTMLElement>(null)
   const detailSize = detailsHeight ?? (tab === 'overview' ? 144 : tab === 'recovery' ? 320 : 240)
@@ -40,11 +42,11 @@ export default function App() {
   const stale = !!result && (code !== snapshot.source || filename !== snapshot.filename)
 
   function resetReport(){setError('');setNotice('')}
-  function selectFile(id:string){setExplorerOpen(false);if(id!==active.id){documents.select(id);resetReport()}}
-  function newFile(){try{setExplorerOpen(false);documents.newFile();resetReport()}catch(e){setError(String(e))}}
+  function selectFile(id:string){explorer.dismissMobile();if(id!==active.id){documents.select(id);resetReport()}}
+  function newFile(){try{explorer.dismissMobile();documents.newFile();resetReport()}catch(e){setError(String(e))}}
   function saveFile(){const text=editor.current?.getText?.()??code;downloadSource({...active,text});documents.update(active.id,{text,exportedText:text});setNotice(`Download requested: ${filename}. Original disk file not overwritten.`)}
   function choose(example:Example){
-    try{setExplorerOpen(false);documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
+    try{explorer.dismissMobile();documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
     catch(e){setError(String(e))}
   }
   function closeFile(id:string){const file=documents.files.find(f=>f.id===id);if(file&&dirtyFile(file))setFileDialog({mode:'close',id});else{documents.close(id);resetReport()}}
@@ -93,10 +95,16 @@ export default function App() {
     setAnalyses(previous=>Object.keys(previous).some(id=>!ids.has(id))?Object.fromEntries(Object.entries(previous).filter(([id])=>ids.has(id))):previous)
   },[documents.files])
   useEffect(()=>{
-    if(!explorerOpen)return
-    const close=(event:KeyboardEvent)=>{if(event.key==='Escape')setExplorerOpen(false)}
-    window.addEventListener('keydown',close);return()=>window.removeEventListener('keydown',close)
-  },[explorerOpen])
+    const key=(event:KeyboardEvent)=>{
+      if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='b'){event.preventDefault();explorer.toggle()}
+      if(event.key==='Escape')explorer.dismissMobile()
+    }
+    window.addEventListener('keydown',key,true);return()=>window.removeEventListener('keydown',key,true)
+  },[explorer.toggle,explorer.dismissMobile])
+  useEffect(()=>{
+    const frame=requestAnimationFrame(()=>editor.current?.layout?.())
+    return()=>cancelAnimationFrame(frame)
+  },[explorer.visible,explorer.width])
   const runRef=useRef(runAnalysis);runRef.current=runAnalysis
   useEffect(() => {
     const key = (event: KeyboardEvent) => {if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {event.preventDefault();void runRef.current()}}
@@ -112,7 +120,7 @@ export default function App() {
     if(!/\.[ch]$/i.test(file.name)||file.size>128*1024){setError('Choose a .c or .h file no larger than 128 KiB.');return}
     try{
       const text=new TextDecoder('utf-8',{fatal:true}).decode(await file.arrayBuffer())
-      documents.add(file.name,text,'import');setExplorerOpen(false);resetReport()
+      documents.add(file.name,text,'import');explorer.dismissMobile();resetReport()
       setNotice('Imported UTF-8 text. File remains in memory until downloaded.')
     }catch(e){setError(`Could not open file: ${e instanceof Error?e.message:'invalid UTF-8'}`)}
   }
@@ -141,15 +149,16 @@ export default function App() {
   return <div className="studio-shell antialiased">
     <header className="topbar"><a className="brand" href="#workspace" aria-label="SmartParse Studio workspace"><span className="brand-mark"><Braces size={21}/></span><strong>SmartParse</strong><span className="studio-label">STUDIO</span></a>
       <div className="top-breadcrumb"><span>Workspace</span><ChevronRight size={13}/><span title={filename} style={{maxWidth: '25ch', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{filename}</span></div>
-      <div className="top-actions"><button className="icon-button explorer-toggle" aria-label="Toggle Explorer" aria-expanded={explorerOpen} aria-controls="workspace-explorer" onClick={()=>setExplorerOpen(value=>!value)}><FolderOpen size={17}/></button><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${ready?'connected':''}`} aria-label="Analysis service status" aria-live="polite" title="API health and selected tool availability; analysis validates capabilities"><i aria-hidden="true"/>{ready?'Ready':'Unavailable'}</span>
-        {!ready&&!checking && <button className="text-button" onClick={() => void connect()}>Reconnect</button>}
+      <div className="top-actions"><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${ready?'connected':''}`} aria-label="Analysis service status" aria-live="polite" title="API health and selected tool availability; analysis validates capabilities"><i aria-hidden="true"/>{ready?'Ready':'Unavailable'}</span>
+        {!ready&&!checking && <button className="text-button" aria-label="Reconnect" title="Reconnect" onClick={() => void connect()}><RotateCcw size={14}/><span className="reconnect-label">Reconnect</span></button>}
         <button className="icon-button" aria-label="Analysis settings" onClick={() => setSettingsOpen(true)} disabled={busy}><Settings2 size={18}/></button>
         {busy ? <button className="stop-button" onClick={stopWaiting}><Square size={12}/>Stop waiting</button> : <button className="primary-button" aria-label="Analyze" onClick={() => void runAnalysis()} disabled={!connected || checking}><Play size={14} fill="currentColor"/>Analyze<span className="shortcut">Ctrl ↵</span></button>}
       </div>
     </header>
     <div className="workbench">
-      <aside className="activity-rail" aria-label="Workspace navigation"><button className="rail-button selected" title="Code workspace" aria-label="Code workspace" onClick={() => setTab('overview')}><Code2 size={22}/></button><button className="rail-button" title="Recovery evidence" aria-label="Recovery evidence" onClick={() => setTab('recovery')}><WandSparkles size={20}/></button><button className="rail-button" title="Analyzer comparison" aria-label="Analyzer comparison" onClick={() => setTab('comparison')}><GitCompareArrows size={20}/></button><span className="rail-spacer"/><button className="rail-button" aria-label="About Studio" onClick={() => setHelp(true)}><CircleHelp size={20}/></button></aside>
-      <aside id="workspace-explorer" className={`explorer ${explorerOpen?'drawer-open':''}`}><div className="explorer-heading">Explorer</div><p className="workspace-kind">In-memory files</p><nav aria-label="Open files">{documents.files.map(file=><div className={`explorer-file ${active.id===file.id?'active':''}`} key={file.id}><button disabled={busy} onClick={()=>selectFile(file.id)} title={file.name}><FileCode2 size={14}/><span>{file.name}</span>{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="icon-button" aria-label={`Rename ${file.name}`} disabled={busy} onClick={()=>setFileDialog({mode:'rename',id:file.id})}><Pencil size={12}/></button><button className="icon-button" aria-label={`Remove ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={13}/></button></div>)}</nav><details className="examples-section"><summary>Examples ({examples.length})</summary><nav aria-label="C examples">{examples.map(example=><button key={example.id} className="example-button" disabled={busy} onClick={()=>choose(example)}><FileCode2 size={14}/><span>{example.title}</span></button>)}</nav></details></aside>
+      <aside className="activity-rail" aria-label="Workspace navigation"><button className={`rail-button ${explorer.visible?'selected':''}`} aria-label="Toggle Explorer" title="Explorer (Ctrl+B)" aria-expanded={explorer.visible} aria-controls="workspace-explorer" onClick={explorer.toggle}><FolderOpen size={21}/></button><button className="rail-button selected" title="Code workspace" aria-label="Code workspace" onClick={() => setTab('overview')}><Code2 size={22}/></button><button className="rail-button" title="Recovery evidence" aria-label="Recovery evidence" onClick={() => setTab('recovery')}><WandSparkles size={20}/></button><button className="rail-button" title="Analyzer comparison" aria-label="Analyzer comparison" onClick={() => setTab('comparison')}><GitCompareArrows size={20}/></button><span className="rail-spacer"/><button className="rail-button" aria-label="About Studio" onClick={() => setHelp(true)}><CircleHelp size={20}/></button></aside>
+      <aside id="workspace-explorer" ref={sidebar} hidden={!explorer.visible} style={{width:explorer.width}} className={`explorer ${explorer.visible?'drawer-open':''}`}><div className="explorer-heading">Explorer</div><p className="workspace-kind">In-memory files</p><nav aria-label="Open files">{documents.files.map(file=><div className={`explorer-file ${active.id===file.id?'active':''}`} key={file.id}><button disabled={busy} onClick={()=>selectFile(file.id)} title={file.name}><FileCode2 size={14}/><span>{file.name}</span>{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="icon-button" aria-label={`Rename ${file.name}`} disabled={busy} onClick={()=>setFileDialog({mode:'rename',id:file.id})}><Pencil size={12}/></button><button className="icon-button" aria-label={`Remove ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={13}/></button></div>)}</nav><details className="examples-section"><summary>Examples ({examples.length})</summary><nav aria-label="C examples">{examples.map(example=><button key={example.id} className="example-button" disabled={busy} onClick={()=>choose(example)}><FileCode2 size={14}/><span>{example.title}</span></button>)}</nav></details></aside>
+      {explorer.visible&&<div className="explorer-resize" style={{'--explorer-width':`${explorer.width}px`} as React.CSSProperties}><PanelDivider axis="vertical" label="Resize Explorer" value={explorer.width} min={180} max={explorer.maxWidth} step={10} onChange={explorer.resize} onDrag={event=>explorer.resize(event.clientX-(sidebar.current?.getBoundingClientRect().left||0))}/></div>}
       <main id="workspace" className="main-workspace" ref={main}>
         {(error || notice) && <div className={`message-banner ${error ? 'error' : ''}`} role={error ? 'alert' : 'status'}><AlertCircle size={16}/><span>{error || notice}</span><button className="icon-button" aria-label="Dismiss message" onClick={() => {setError('');setNotice('')}}><X size={15}/></button></div>}
         <div className="workspace-panes" ref={workspace}>

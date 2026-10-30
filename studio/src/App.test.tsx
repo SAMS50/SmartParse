@@ -2,6 +2,7 @@ import {act, fireEvent, render, screen, waitFor, within} from '@testing-library/
 import userEvent from '@testing-library/user-event'
 import {beforeEach, expect, test, vi} from 'vitest'
 import App from './App'
+import {EXPLORER_SESSION_KEY} from './lib/useExplorer'
 import * as api from './lib/api'
 import {examples, result} from './test-data'
 
@@ -16,6 +17,7 @@ vi.mock('./components/CodeEditor', async () => {
 })
 
 beforeEach(() => {
+  sessionStorage.removeItem(EXPLORER_SESSION_KEY)
   vi.clearAllMocks()
   vi.mocked(api.health).mockResolvedValue({status:'ok'})
   vi.mocked(api.getExamples).mockResolvedValue({examples})
@@ -196,10 +198,12 @@ test('file tabs support arrow navigation without changing their contents',async(
   expect(screen.getByRole('textbox',{name:'C source editor'})).toHaveValue('int second;')
 })
 
-test('Explorer toggle opens and Escape dismisses mobile navigation',async()=>{
+test('Explorer collapses and expands from the activity bar',async()=>{
   await ready();const toggle=screen.getByRole('button',{name:'Toggle Explorer'})
+  expect(toggle).toHaveAttribute('aria-expanded','true')
+  await userEvent.click(toggle);expect(toggle).toHaveAttribute('aria-expanded','false')
+  expect(screen.queryByRole('separator',{name:'Resize Explorer'})).not.toBeInTheDocument()
   await userEvent.click(toggle);expect(toggle).toHaveAttribute('aria-expanded','true')
-  fireEvent.keyDown(window,{key:'Escape'});expect(toggle).toHaveAttribute('aria-expanded','false')
 })
 
 
@@ -269,4 +273,29 @@ test('analysis limitations live in Help instead of a persistent footer',async()=
   await userEvent.click(screen.getByRole('button',{name:'About Studio'}))
   expect(screen.getByRole('heading',{name:'Analysis limitations'})).toBeInTheDocument()
   expect(screen.getByText('SmartParse checks your code without running it. Some errors may not be detected.')).toBeInTheDocument()
+})
+
+
+test('Ctrl+B retains results, markers, cursor and source contents',async()=>{
+  await ready();await chooseNull();await submit()
+  await userEvent.click(screen.getByRole('button',{name:'Dereference of null pointer'}))
+  const editor=screen.getByRole('textbox',{name:'C source editor'}),value=(editor as HTMLTextAreaElement).value
+  fireEvent.keyDown(window,{key:'b',ctrlKey:true})
+  expect(screen.getByRole('button',{name:'Toggle Explorer'})).toHaveAttribute('aria-expanded','false')
+  expect(screen.queryByRole('navigation',{name:'Open files'})).not.toBeInTheDocument()
+  expect(screen.getByRole('textbox',{name:'C source editor'})).toBe(editor)
+  expect(editor).toHaveValue(value);expect(screen.getByTestId('marker-count')).toHaveTextContent('1')
+  expect(screen.getByText('Ln 3, Col 9')).toBeInTheDocument()
+  expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeEnabled()
+  fireEvent.keyDown(window,{key:'b',ctrlKey:true})
+  expect(screen.getByRole('navigation',{name:'Open files'})).toBeInTheDocument()
+})
+
+test('Explorer resize width survives collapsing and expanding',async()=>{
+  await ready();const divider=screen.getByRole('separator',{name:'Resize Explorer'})
+  fireEvent.keyDown(divider,{key:'ArrowRight'})
+  expect(divider).toHaveAttribute('aria-valuenow','234')
+  await userEvent.click(screen.getByRole('button',{name:'Toggle Explorer'}))
+  await userEvent.click(screen.getByRole('button',{name:'Toggle Explorer'}))
+  expect(screen.getByRole('separator',{name:'Resize Explorer'})).toHaveAttribute('aria-valuenow','234')
 })

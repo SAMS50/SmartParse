@@ -60,6 +60,47 @@ Studio is a local React workbench for the existing SmartParse unified engine. It
 does not add detection rules or change CGAR, compiler recovery, or isolation.
 Independent human adjudication of research findings remains pending.
 
+## Minimal analysis states and Explorer
+
+The analysis loading panel contains only a subtle spinner and **Analyzing your
+source**. Existing cancellation, analyzer deadlines, errors and raw reports are
+unchanged. No simulated progress percentage is shown.
+
+The top status is **Ready** when the API health check succeeds and the selected
+analyzers' required tools are reported available by existing discovery. Otherwise
+it is **Unavailable**. Health is rechecked every 15 seconds with a three-second
+request bound. Tool names, exact versions and availability remain in Analyzer
+Settings. Ready indicates service/tool availability, not validated checker
+capabilities, complete coverage, or an error-free program.
+
+Genuinely partial reports show the compact **Partial analysis — Some checks could
+not complete.** link, which opens Execution. Failed/unavailable/timed-out reports
+retain a separate failure link and exact underlying statuses. Execution includes
+failure reasons and expandable raw execution evidence. The persistent coverage
+footer has moved to Help/About under **Analysis limitations**:
+
+> SmartParse checks your code without running it. Some errors may not be detected.
+
+Use the Explorer icon in the left activity bar or **Ctrl+B** (Cmd+B on macOS) to
+collapse/expand Explorer. Collapsing removes both its width and resize divider;
+the narrow activity bar stays visible. Files, active buffers, example expansion,
+cursor/scroll state, markers and reports are retained. Drag the Explorer divider,
+or focus it and use Left/Right, to resize it (180–360 pixels, viewport permitting).
+Previous width and visibility are kept in session storage; no source code is
+stored there. Desktop visibility and the mobile drawer use separate preferences.
+On narrow screens, Escape or choosing a file dismisses the drawer.
+
+Optional real-browser regression, with existing local servers running:
+
+```powershell
+python -m smartparse_studio.ui_refinement_smoke --chrome "C:\Program Files\Google\Chrome\Application\chrome.exe"
+```
+
+This checks actual analysis/loading and layout retention. Its offline check
+intercepts a health request; it never stops the user's server. Partial/failure
+display tests use explicit frontend fixtures and are not claimed as new live
+static-analysis findings. Screenshots/logs remain in `.studio-artifacts/`.
+
 ## Install (Windows PowerShell)
 
 Use Python 3.12 and Node.js 22.12+ (Node 24 was tested). Install GCC or Clang with

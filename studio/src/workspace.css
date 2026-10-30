@@ -43,6 +43,29 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 .execution-evidence { margin-top: 10px; font-size: 11px; color: #B7C2D1; }
 .execution-evidence summary { cursor: pointer; }
 .execution-evidence pre { font-size: 11px; }
+.workbench { position: relative; }
+.explorer[hidden] { display: none !important; }
+.explorer { flex-shrink: 0; }
+.explorer-resize { width: 5px; flex-shrink: 0; display: flex; }
+.explorer-resize .panel-divider { flex: 1; width: 5px; }
+.connection { display: flex; }
+@media (max-width: 900px) {
+  .explorer-resize { position: absolute; left: calc(43px + var(--explorer-width)); top: 0; bottom: 0; z-index: 13; }
+  .explorer.drawer-open { position: absolute; left: 43px; top: 0; bottom: 0; }
+  .activity-rail { display: flex; }
+  .connection { display: flex; }
+  .reconnect-label { display: none; }
+}
+@media (max-width: 650px) {
+  .activity-rail { width: 42px; display: flex; padding-top: 12px; }
+  .activity-rail .rail-button { width: 34px; }
+  .explorer.drawer-open { left: 42px; }
+  .explorer-resize { left: calc(42px + var(--explorer-width)); }
+  .explorer-resize .panel-divider { display: block; }
+  .topbar { height: auto; min-height: 56px; flex-wrap: wrap; padding-top: 5px; padding-bottom: 5px; }
+  .top-actions { gap: 1px; flex-wrap: wrap; justify-content: flex-end; }
+  .topbar .primary-button { font-size: 11px; gap: 5px; padding: 7px 6px; }
+}
 .top-actions { gap: 8px; }
 .workspace-kind { padding: 0 14px 10px; font-size: 11px; color: #9CA3AF; }
 .explorer { overflow: auto; padding-top: 14px; }
