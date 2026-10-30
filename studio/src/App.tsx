@@ -19,7 +19,8 @@ export default function App() {
   const setCode=(text:string)=>documents.update(active.id,{text})
   const [fileDialog,setFileDialog]=useState<{mode:'rename'|'close';id:string}|null>(null)
   const [settings,setSettings] = useState<Settings>(DEFAULTS), [settingsOpen,setSettingsOpen] = useState(false)
-  const [result,setResult] = useState<StudioResult | null>(null), [snapshot,setSnapshot] = useState({source: '', filename: ''})
+  const [analyses,setAnalyses] = useState<Record<string,{result:StudioResult;snapshot:{source:string;filename:string}}>>({})
+  const retained=analyses[active.id], result=retained?.result||null, snapshot=retained?.snapshot||{source:'',filename:''}
   const [busy,setBusy] = useState(false), [error,setError] = useState(''), [notice,setNotice] = useState('')
   const [filter,setFilter] = useState('all'), [query,setQuery] = useState(''), [shown,setShown] = useState(100)
   const [tab,setTab] = useState<InspectorTab>('overview'), [cursor,setCursor] = useState({line: 1, column: 1})
@@ -34,10 +35,10 @@ export default function App() {
   const closeSettings = useCallback(() => setSettingsOpen(false), [])
   const stale = !!result && (code !== snapshot.source || filename !== snapshot.filename)
 
-  function resetReport(){setResult(null);setError('');setNotice('')}
+  function resetReport(){setError('');setNotice('')}
   function selectFile(id:string){if(id!==active.id){documents.select(id);resetReport()}}
   function newFile(){try{documents.newFile();resetReport()}catch(e){setError(String(e))}}
-  function saveFile(){downloadSource(active);documents.update(active.id,{exportedText:code});setNotice(`Download requested: ${filename}. Original disk file not overwritten.`)}
+  function saveFile(){const text=editor.current?.getText?.()??code;downloadSource({...active,text});documents.update(active.id,{text,exportedText:text});setNotice(`Download requested: ${filename}. Original disk file not overwritten.`)}
   function choose(example:Example){
     try{documents.add(example.filename,example.source,'example');resetReport();setSettings(s=>({...s,analyzers:example.analyzers,recovery:example.recovery,isolation:example.isolation}));setTab(example.recovery||example.isolation?'recovery':'overview')}
     catch(e){setError(String(e))}
@@ -57,23 +58,29 @@ export default function App() {
 
   const runAnalysis = useCallback(async () => {
     if (controller.current || !connected) return
-    if (new TextEncoder().encode(code).length > 128 * 1024) {setError('Source exceeds the 128 KiB limit.');return}
+    const submittedText=editor.current?.getText?.()??code
+    if (new TextEncoder().encode(submittedText).length > 128 * 1024) {setError('Source exceeds the 128 KiB limit.');return}
     const request = new AbortController();controller.current = request
-    setBusy(true);setResult(null);setError('');setNotice('');setShown(100)
-    const submitted = {source: code, filename};setSnapshot(submitted)
+    setBusy(true);setAnalyses(previous=>{const copy={...previous};delete copy[active.id];return copy});setError('');setNotice('');setShown(100)
+    const submitted = {source: submittedText, filename}, submittedId=active.id
     try {
       const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings}, request.signal)
-      if (controller.current === request) setResult(answer)
+      if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation)setTab('recovery')}
     } catch (e) {
       if (controller.current === request && !request.signal.aborted) setError(e instanceof Error ? e.message : 'Analysis request failed')
     } finally {
       if (controller.current === request) {controller.current = null;setBusy(false)}
     }
-  }, [code,filename,settings,connected])
+  }, [active.id,code,filename,settings,connected])
+  useEffect(()=>{
+    const ids=new Set(documents.files.map(f=>f.id))
+    setAnalyses(previous=>Object.keys(previous).some(id=>!ids.has(id))?Object.fromEntries(Object.entries(previous).filter(([id])=>ids.has(id))):previous)
+  },[documents.files])
+  const runRef=useRef(runAnalysis);runRef.current=runAnalysis
   useEffect(() => {
-    const key = (event: KeyboardEvent) => {if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {event.preventDefault();void runAnalysis()}}
+    const key = (event: KeyboardEvent) => {if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {event.preventDefault();void runRef.current()}}
     window.addEventListener('keydown',key);return () => window.removeEventListener('keydown',key)
-  }, [runAnalysis])
+  }, [])
 
   function stopWaiting() {
     controller.current?.abort();controller.current = null;setBusy(false)
@@ -88,10 +95,11 @@ export default function App() {
       setNotice('Imported UTF-8 text. File remains in memory until downloaded.')
     }catch(e){setError(`Could not open file: ${e instanceof Error?e.message:'invalid UTF-8'}`)}
   }
+  const saveRef=useRef(saveFile);saveRef.current=saveFile
   useEffect(()=>{
-    const save=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveFile()}}
+    const save=(event:KeyboardEvent)=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='s'){event.preventDefault();saveRef.current()}}
     window.addEventListener('keydown',save);return()=>window.removeEventListener('keydown',save)
-  })
+  },[])
   const diagnostics = result?.report.diagnostics || []
   const groups = useMemo(() => {
     if (!result) return []
@@ -125,8 +133,8 @@ export default function App() {
         {(error || notice) && <div className={`message-banner ${error ? 'error' : ''}`} role={error ? 'alert' : 'status'}><AlertCircle size={16}/><span>{error || notice}</span><button className="icon-button" aria-label="Dismiss message" onClick={() => {setError('');setNotice('')}}><X size={15}/></button></div>}
         <div className="workspace-panes" ref={workspace}>
           <section className="editor-pane" style={{width: `${split}%`}} aria-label="Source editor"><div className="pane-header file-tabs" role="tablist" aria-label="Editor files">{documents.files.map(file=><div className={`editor-tab ${file.id===active.id?'active':''}`} key={file.id}><button role="tab" aria-selected={file.id===active.id} disabled={busy} onClick={()=>selectFile(file.id)}><FileCode2 size={13}/>{file.name}{dirtyFile(file)&&<i className="unsaved-dot"/>}</button><button className="tab-close" aria-label={`Close ${file.name}`} disabled={busy} onClick={()=>closeFile(file.id)}><X size={12}/></button></div>)}</div>
-            <div className="editor-config"><span>{settings.standard.toUpperCase()} ? {settings.analyzers.join(' + ')}{settings.recovery?' ? recovery':''}{settings.isolation?' ? isolation':''}</span><button className="icon-button" aria-label="Reset code" title="Reset to opened contents" disabled={!dirty||busy} onClick={()=>setCode(loaded)}><RotateCcw size={13}/></button></div>
-            <div className="monaco-host"><CodeEditor ref={editor} documentId={active.id} openDocumentIds={documents.files.map(f=>f.id)} value={code} onChange={setCode} diagnostics={stale || busy ? [] : diagnostics} locations={result?.studio.editor_locations || {}} onCursor={(line,column) => setCursor({line,column})}/></div>
+            <div className="editor-config"><span>{settings.standard.toUpperCase()} | {settings.analyzers.join(' + ')} | Active file only{filename.toLowerCase().endsWith('.h')?' (header as C)':''}{settings.recovery?' | recovery':''}{settings.isolation?' | isolation':''}</span><button className="icon-button" aria-label="Reset code" title="Reset to opened contents" disabled={!dirty||busy} onClick={()=>documents.update(active.id,{text:loaded,revision:active.revision+1})}><RotateCcw size={13}/></button></div>
+            <div className="monaco-host"><CodeEditor ref={editor} documentId={active.id} revision={active.revision} openDocumentIds={documents.files.map(f=>f.id)} value={code} onChange={setCode} diagnostics={stale || busy ? [] : diagnostics} locations={result?.studio.editor_locations || {}} onCursor={(line,column) => setCursor({line,column})}/></div>
             <div className="editor-footer"><span>{dirty ? 'Unsaved editor changes' : 'UTF-8'}</span><span>Ln {cursor.line}, Col {cursor.column}</span></div>
           </section>
           <PanelDivider axis="vertical" label="Resize editor and diagnostics" value={split} min={34} max={72} step={2}

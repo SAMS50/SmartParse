@@ -1,6 +1,6 @@
 export interface SourceFile {
   id: string; name: string; text: string; openedText: string;
-  exportedText: string | null; origin: 'new' | 'import' | 'example';
+  exportedText: string | null; origin: 'new' | 'import' | 'example'; revision: number;
 }
 export const dirtyFile = (file: SourceFile) => file.exportedText === null ? file.text.length > 0 : file.text !== file.exportedText
 export function validateName(name: string, files: SourceFile[], id?: string): string | null {
@@ -18,7 +18,7 @@ export function uniqueName(name: string, files: SourceFile[]) {
   return candidate
 }
 export function sourceFile(name: string, text='', origin: SourceFile['origin']='new'): SourceFile {
-  return {id:crypto.randomUUID(),name,text,openedText:text,exportedText:origin==='import'?text:null,origin}
+  return {id:crypto.randomUUID(),name,text,openedText:text,exportedText:origin==='import'?text:null,origin,revision:0}
 }
 export function downloadSource(file: SourceFile) {
   const url=URL.createObjectURL(new Blob([file.text],{type:'text/plain;charset=utf-8'}))

@@ -132,3 +132,39 @@ test('Save and Ctrl+S request a source download',async()=>{
   fireEvent.keyDown(window,{key:'s',ctrlKey:true});expect(click).toHaveBeenCalledTimes(2)
   click.mockRestore()
 })
+
+
+test('manual code submits the active buffer and reanalysis replaces stale results',async()=>{
+  await ready();const input=screen.getByRole('textbox',{name:'C source editor'})
+  fireEvent.change(input,{target:{value:'int main(void) { return 0 }'}});await submit()
+  expect(api.analyze).toHaveBeenLastCalledWith(expect.objectContaining({filename:'untitled-1.c',source:'int main(void) { return 0 }'}),expect.any(AbortSignal))
+  fireEvent.change(input,{target:{value:'int main(void) { return 0; }'}})
+  expect(screen.getByText(/Source changed since this report/)).toBeInTheDocument()
+  const clean=result();clean.report.diagnostics=[];clean.report.groups=[];clean.report.summary={...clean.report.summary,errors:0,warnings:0}
+  vi.mocked(api.analyze).mockResolvedValue(clean)
+  await userEvent.click(screen.getByRole('button',{name:'Analyze'}))
+  expect(await screen.findByText('No primary diagnostics reported.')).toBeInTheDocument()
+  expect(screen.queryByText(/Source changed since this report/)).not.toBeInTheDocument()
+})
+
+test('reports stay associated with their file and renames mark them stale',async()=>{
+  await ready();await chooseNull();await submit()
+  await userEvent.click(screen.getByRole('button',{name:'New File'}))
+  expect(screen.queryByText('Dereference of null pointer')).not.toBeInTheDocument()
+  await userEvent.click(screen.getByRole('tab',{name:'null.c'}))
+  expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button',{name:'Rename null.c'}))
+  await userEvent.clear(screen.getByRole('textbox',{name:'File name'}));await userEvent.type(screen.getByRole('textbox',{name:'File name'}),'renamed.c')
+  await userEvent.click(screen.getByRole('button',{name:'Rename'}))
+  expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeDisabled()
+})
+
+test('manual recovery preserves conditioned evidence without loading an example',async()=>{
+  vi.mocked(api.analyze).mockResolvedValue(result('repair-conditioned'))
+  await ready();fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int helper(void) { return 23 }'}})
+  await userEvent.click(screen.getByRole('button',{name:'Analysis settings'}))
+  await userEvent.click(screen.getByLabelText(/Punctuation recovery/));await userEvent.click(screen.getByRole('button',{name:'Apply configuration'}))
+  await submit();expect(api.analyze).toHaveBeenLastCalledWith(expect.objectContaining({filename:'untitled-1.c',recovery:true}),expect.any(AbortSignal))
+  expect(screen.getAllByText('repair-conditioned')).toHaveLength(2)
+  expect(screen.getByText(/Accepted for a temporary analysis variant/)).toBeInTheDocument()
+})

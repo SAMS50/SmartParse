@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   server: {host: '127.0.0.1', port: 5173, strictPort: true, allowedHosts: ['localhost', '127.0.0.1']},
   preview: {host: '127.0.0.1', port: 5173, strictPort: true},
-  test: {environment: 'jsdom', setupFiles: ['./src/test-setup.ts'], globals: true, css: false},
+  test: {environment: 'jsdom', setupFiles: ['./src/test-setup.ts'], globals: true, css: false,
+    pool: 'vmThreads', maxWorkers: 1, fileParallelism: false, testTimeout: 15000},
 })

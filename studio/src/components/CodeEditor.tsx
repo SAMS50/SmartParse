@@ -1,4 +1,4 @@
-import {forwardRef, useImperativeHandle, useRef, useEffect} from 'react'
+import {forwardRef, useImperativeHandle, useRef, useEffect, useCallback} from 'react'
 import Editor, {loader} from '@monaco-editor/react'
 import * as monaco from 'monaco-editor/editor/editor.api.js'
 import 'monaco-editor/languages/definitions/cpp/register.js'
@@ -9,9 +9,10 @@ import type {Diagnostic, EditorLocation, Preview} from '../types/report'
 self.MonacoEnvironment = {getWorker: () => new EditorWorker()}
 loader.config({monaco})
 
-export interface EditorHandle {navigate: (location: EditorLocation) => void}
+export interface EditorHandle {navigate: (location: EditorLocation) => void; getText?: () => string}
 interface Props {
   documentId?: string; openDocumentIds?: string[];
+  revision?: number;
   value: string; onChange: (value: string) => void; diagnostics: Diagnostic[];
   locations: Record<string, EditorLocation>; onCursor: (line: number, column: number) => void;
 }
@@ -25,6 +26,8 @@ const options: monaco.editor.IStandaloneEditorConstructionOptions = {
 
 export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(props, ref) {
   const editor = useRef<monaco.editor.IStandaloneCodeEditor | null>(null)
+  const latest = useRef(props);latest.current=props
+  const change = useCallback((value:string|undefined)=>latest.current.onChange(value||''),[])
   const owned = useRef(new Set<string>())
   const mounted = useRef(false)
   const uri = props.documentId ? `inmemory://smartparse/${props.documentId}` : undefined
@@ -58,18 +61,27 @@ export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(pr
     }))
   }
   useEffect(markers, [props.diagnostics, props.locations, props.value])
-  useImperativeHandle(ref, () => ({navigate(at) {
+  useEffect(() => {
+    // Live typing belongs to the Monaco model, not delayed React value echoes.
+    // Only an explicit external revision (Reset) may replace model contents.
+    const model=editor.current?.getModel()
+    if(model && model.getValue()!==props.value) model.setValue(props.value)
+  }, [props.revision])
+  useImperativeHandle(ref, () => ({getText:()=>{
+    const model=editor.current?.getModel(),expected=latest.current.documentId?`inmemory://smartparse/${latest.current.documentId}`:null
+    return model && (!expected||model.uri.toString()===expected) ? model.getValue() : latest.current.value
+  },navigate(at) {
     editor.current?.setPosition({lineNumber: at.line, column: at.column})
     editor.current?.revealLineInCenter(at.line); editor.current?.focus()
   }}))
-  return <Editor height="100%" language="c" theme="vs-dark" path={uri} keepCurrentModel={!!uri} saveViewState value={props.value} options={options}
+  return <Editor height="100%" language="c" theme="vs-dark" path={uri} keepCurrentModel={!!uri} saveViewState defaultValue={props.value} options={options}
     loading={<div className="editor-loading">Loading local code editor…</div>}
     beforeMount={m => m.editor.defineTheme('smartparse-dark', {base: 'vs-dark', inherit: true, rules: [], colors: {
       'editor.background': '#151719', 'editorLineNumber.foreground': '#717985', 'editorLineNumber.activeForeground': '#E5E7EB',
       'editor.lineHighlightBackground': '#20242A', 'editor.selectionBackground': '#304253', 'editorCursor.foreground': '#6E8FB3'}})}
     onMount={(instance) => {editor.current = instance; monaco.editor.setTheme('smartparse-dark');
       instance.onDidChangeCursorPosition(e => props.onCursor(e.position.lineNumber, e.position.column)); markers()}}
-    onChange={value => props.onChange(value || '')}/>
+    onChange={change}/>
 })
 
 export function RecoveredDiff({original, preview}: {original: string; preview: Preview}) {

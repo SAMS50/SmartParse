@@ -37,7 +37,7 @@ export function SettingsPanel({value, tools, onChange, onClose}: {value: Setting
   return <div className="modal-backdrop" onMouseDown={e => e.target === e.currentTarget && onClose()}>
     <div className="settings-panel" ref={panel} role="dialog" aria-modal="true" aria-labelledby="settings-title">
       <header><div><span className="eyebrow">ANALYSIS CONFIGURATION</span><h2 id="settings-title">Choose your toolchain</h2></div><button className="icon-button" aria-label="Close settings" onClick={onClose}><X size={18}/></button></header>
-      <p className="muted">Select the passes to run. Availability is a version check; capabilities are verified during analysis.</p>
+      <p className="muted">Only the active file is submitted. Other tabs are not a build context. Header buffers are analyzed as standalone C. Tool availability is a version check; analysis validates capabilities.</p>
       <div className="analyzer-choices">{choices.map(([id, title, description, dependency]) => {
         const available = !dependency || tools.some(t => (t.name === dependency || id === 'compiler' && t.name === 'clang') && t.status === 'available')
         return <label className={`analyzer-choice ${value.analyzers.includes(id) ? 'selected' : ''}`} key={id}>
