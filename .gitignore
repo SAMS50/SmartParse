@@ -16,3 +16,16 @@ venv/
 /acceptance/output/smartparse-analyzer-*/
 /tests_fixtures/extended_c/smartparse c */
 /smartparse-report*.json
+
+# SmartParse Studio local dependencies, build and validation evidence.
+/.studio-venv/
+/.studio-artifacts/
+/studio/node_modules/
+/studio/dist/
+/studio/coverage/
+/studio/*.tsbuildinfo
+
+# Local historical Studio validation records; not release source.
+/smartparse_studio/MILESTONE_10_REPORT.md
+/smartparse_studio/MILESTONE_10_1_REPORT.md
+/smartparse_studio/validation_results.json

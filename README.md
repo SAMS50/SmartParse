@@ -1,5 +1,17 @@
 # SmartParse — unified C analysis (0.9.0)
 
+## SmartParse Studio (Milestone 10)
+
+A local React/Monaco workbench now exposes the existing analysis engine through
+FastAPI: edit C, choose analyzers, inspect attributed diagnostics and conditional
+recovery/isolation evidence, and export the complete report. Original analysis
+algorithms and historical evaluation evidence are unchanged. Independent human
+adjudication remains pending.
+
+See [Studio setup, PowerShell commands, security limits and demonstration](smartparse_studio/README.md).
+The CLI below remains available independently; Studio requires its own Python
+virtual environment and frontend dependencies. Run both servers on loopback only.
+
 SmartParse combines its original restricted C-like syntax-recovery research with an optional compiler-backed C analysis pipeline. The unified interface analyzes one C translation unit, reports available diagnostics, and preserves original source files. It never runs the analyzed C program.
 
 ```powershell

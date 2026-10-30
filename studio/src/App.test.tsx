@@ -1,0 +1,79 @@
+import {act, fireEvent, render, screen, waitFor, within} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import {beforeEach, expect, test, vi} from 'vitest'
+import App from './App'
+import * as api from './lib/api'
+import {examples, result} from './test-data'
+
+const navigation = vi.hoisted(() => ({navigate:vi.fn()}))
+vi.mock('./lib/api', () => ({health:vi.fn(),getExamples:vi.fn(),getTools:vi.fn(),analyze:vi.fn(),downloadReport:vi.fn()}))
+vi.mock('./components/CodeEditor', async () => {
+  const React = await import('react')
+  return {CodeEditor:React.forwardRef(function FakeEditor(props: {value:string;onChange:(v:string)=>void;onCursor:(line:number,column:number)=>void;diagnostics:unknown[]},ref) {
+    React.useImperativeHandle(ref,()=>({navigate:(at:{line:number;column:number})=>{navigation.navigate(at);props.onCursor(at.line,at.column)}}))
+    return <><textarea aria-label="C source editor" value={props.value} onChange={e=>props.onChange(e.target.value)}/><span data-testid="marker-count">{props.diagnostics.length}</span></>
+  }),RecoveredDiff:()=> <div>Hash-verified accepted preview</div>}
+})
+
+beforeEach(() => {
+  vi.clearAllMocks()
+  vi.mocked(api.health).mockResolvedValue({status:'ok'})
+  vi.mocked(api.getExamples).mockResolvedValue({examples})
+  vi.mocked(api.getTools).mockResolvedValue({tools:[{name:'clang',status:'available',path:'mock-clang',version:'test version'}]})
+  vi.mocked(api.analyze).mockResolvedValue(result())
+})
+async function ready() {render(<App/>);await waitFor(()=>expect(screen.getByRole('textbox',{name:'C source editor'})).toHaveValue(examples[0].source))}
+async function chooseNull() {await userEvent.click(screen.getByRole('button',{name:'Null pointer'}))}
+async function submit() {await userEvent.click(screen.getByRole('button',{name:/^Analyze(?:\s|$)/}));await screen.findByRole('button',{name:'Dereference of null pointer'})}
+
+test('loads real-gallery API data without running analysis',async()=>{await ready();expect(api.analyze).not.toHaveBeenCalled();expect(screen.getByText('No analysis results.')).toBeInTheDocument()})
+test('editing is unsaved and does not trigger analyzers',async()=>{await ready();fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int changed;'}});expect(screen.getByText(/Unsaved editor changes/)).toBeInTheDocument();expect(api.analyze).not.toHaveBeenCalled()})
+test('example selection changes source and analyzer defaults',async()=>{await ready();await chooseNull();expect(screen.getByRole('textbox',{name:'C source editor'})).toHaveValue(examples[1].source);await submit();expect(api.analyze).toHaveBeenCalledWith(expect.objectContaining({source:examples[1].source,analyzers:['memory']}),expect.any(AbortSignal))})
+test('settings select analyzers and explicit optional recovery',async()=>{await ready();await userEvent.click(screen.getByRole('button',{name:'Analysis settings'}));const dialog=screen.getByRole('dialog');await userEvent.click(within(dialog).getByLabelText(/Clang Static Analyzer/));await userEvent.click(within(dialog).getByLabelText(/Punctuation recovery/));await userEvent.click(within(dialog).getByRole('button',{name:'Apply configuration'}));await submit();expect(api.analyze).toHaveBeenCalledWith(expect.objectContaining({analyzers:['compiler','static'],recovery:true}),expect.any(AbortSignal))})
+test('renders diagnostics with attribution and evidence',async()=>{await ready();await chooseNull();await submit();expect(screen.getByText('Clang Static Analyzer')).toBeInTheDocument();expect(screen.getByText('original-source')).toBeInTheDocument();expect(screen.getByText('return *p;')).toBeInTheDocument()})
+test('clicking a diagnostic navigates the editor',async()=>{await ready();await chooseNull();await submit();await userEvent.click(screen.getByRole('button',{name:'Dereference of null pointer'}));expect(navigation.navigate).toHaveBeenCalledWith(expect.objectContaining({line:3,column:9}));expect(screen.getByText('Ln 3, Col 9')).toBeInTheDocument()})
+test('changed source disables stale navigation and highlights',async()=>{await ready();await chooseNull();await submit();fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int newer;'}});expect(screen.getByText(/Source changed since this report/)).toBeInTheDocument();expect(screen.getByTestId('marker-count')).toHaveTextContent('0');expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeDisabled()})
+test('conditional finding and accepted candidate are not made unconditional',async()=>{vi.mocked(api.analyze).mockResolvedValue(result('repair-conditioned'));await ready();await userEvent.click(screen.getByRole('button',{name:'Recovery-assisted'}));await submit();expect(screen.getAllByText('repair-conditioned')).toHaveLength(2);expect(screen.getByText(/Machine fix-it and physical AST boundary/)).toBeInTheDocument();expect(screen.queryByText(/Reported score/)).not.toBeInTheDocument()})
+test('backend errors are actionable without simulated results',async()=>{vi.mocked(api.analyze).mockRejectedValue(new Error('Clang unavailable'));await ready();await userEvent.click(screen.getByRole('button',{name:/^Analyze(?:\s|$)/}));expect(await screen.findByRole('alert')).toHaveTextContent('Clang unavailable');expect(screen.queryByText('Dereference of null pointer')).not.toBeInTheDocument()})
+test('JSON and Markdown export use the actual retained result',async()=>{await ready();await chooseNull();await submit();await userEvent.click(screen.getByRole('button',{name:'Export JSON report'}));expect(api.downloadReport).toHaveBeenCalledWith(expect.objectContaining({schema:'smartparse.studio_response'}),'json');await userEvent.click(screen.getByRole('button',{name:'Export Markdown report'}));expect(api.downloadReport).toHaveBeenLastCalledWith(expect.anything(),'markdown')})
+test('comparison reports actual execution with coverage qualifications',async()=>{await ready();await chooseNull();await submit();await userEvent.click(screen.getByRole('button',{name:'Comparison'}));expect(screen.getByText(/Cross-backend root equivalence/)).toBeInTheDocument();expect(screen.getByText(/Agreement is not proof/)).toBeInTheDocument()})
+test('reset restores loaded source',async()=>{await ready();fireEvent.change(screen.getByRole('textbox',{name:'C source editor'}),{target:{value:'int edit;'}});await userEvent.click(screen.getByRole('button',{name:'Reset code'}));expect(screen.getByRole('textbox',{name:'C source editor'})).toHaveValue(examples[0].source)})
+test('stop waiting aborts only the browser request and ignores a late response',async()=>{
+  let resolve!:(value:ReturnType<typeof result>)=>void
+  vi.mocked(api.analyze).mockImplementation(()=>new Promise(r=>{resolve=r}))
+  await ready();await userEvent.click(screen.getByRole('button',{name:/^Analyze(?:\s|$)/}));await screen.findByText('Analyzing your source')
+  await userEvent.click(screen.getByRole('button',{name:'Stop waiting'}));expect(screen.getByRole('status')).toHaveTextContent('server may finish its bounded run')
+  await act(async()=>resolve(result()));expect(screen.queryByText('Dereference of null pointer')).not.toBeInTheDocument()
+})
+
+
+test('keyboard panel resizing preserves cursor, markers and editor instance',async()=>{
+  await ready();await chooseNull();await submit()
+  await userEvent.click(screen.getByRole('button',{name:'Dereference of null pointer'}))
+  const editor=screen.getByRole('textbox',{name:'C source editor'})
+  const divider=screen.getByRole('separator',{name:'Resize editor and diagnostics'})
+  fireEvent.keyDown(divider,{key:'ArrowRight'});expect(divider).toHaveAttribute('aria-valuenow','60')
+  expect(screen.getByRole('textbox',{name:'C source editor'})).toBe(editor)
+  expect(screen.getByTestId('marker-count')).toHaveTextContent('1')
+  expect(screen.getByText('Ln 3, Col 9')).toBeInTheDocument()
+  const details=screen.getByRole('separator',{name:'Resize analysis details'})
+  fireEvent.keyDown(details,{key:'ArrowUp'});expect(details).toHaveAttribute('aria-valuenow','164')
+  await userEvent.click(screen.getByRole('button',{name:'Reset panel sizes'}))
+  expect(divider).toHaveAttribute('aria-valuenow','58');expect(details).toHaveAttribute('aria-valuenow','144')
+})
+
+test('partial findings remain visible with an explicit coverage notice',async()=>{
+  const report=result();report.report.status='partial';vi.mocked(api.analyze).mockResolvedValue(report)
+  await ready();await chooseNull();await submit()
+  expect(screen.getByText('Analysis partial.')).toBeInTheDocument()
+  expect(screen.getByText(/Some passes may be blocked/)).toBeInTheDocument()
+  expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeEnabled()
+})
+
+test('filtering still controls diagnostic groups',async()=>{
+  await ready();await chooseNull();await submit()
+  await userEvent.type(screen.getByRole('textbox',{name:'Filter diagnostics'}),'not-present')
+  expect(screen.getByText('No findings match this filter.')).toBeInTheDocument()
+  await userEvent.clear(screen.getByRole('textbox',{name:'Filter diagnostics'}))
+  expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeInTheDocument()
+})

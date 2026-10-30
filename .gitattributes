@@ -23,3 +23,11 @@ phase6/v9/REPRODUCIBILITY*.md text eol=lf
 README.md text eol=lf
 .gitattributes text eol=lf
 .gitignore text eol=lf
+
+# Studio source checkout representation; frozen evidence rules above stay intact.
+studio/** text eol=lf
+smartparse_studio/api/** text eol=lf
+smartparse_studio/*.py text eol=lf
+smartparse_studio/requirements*.txt text eol=lf
+smartparse_studio/README.md text eol=lf
+test_smartparse_studio.py text eol=lf
