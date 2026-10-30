@@ -25,7 +25,10 @@ def main():
         page.goto('http://127.0.0.1:5173', wait_until='domcontentloaded')
         analyze = page.get_by_role('button', name='Analyze', exact=True)
         expect(analyze).to_be_enabled(timeout=60000)
+        # Workspace starts blank; fixtures are editable copies loaded explicitly.
+        page.locator('.examples-section > summary').click()
         expect(page.get_by_role('button', name='Valid C', exact=True)).to_be_visible()
+        page.get_by_role('button', name='Valid C', exact=True).click()
         if args.polish:
             for width,height in [(1366,768),(1280,800),(1920,1080)]:
                 page.set_viewport_size({'width':width,'height':height})

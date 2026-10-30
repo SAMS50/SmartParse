@@ -1,10 +1,12 @@
 # SmartParse — unified C analysis (0.9.0)
 
-## SmartParse Studio (Milestone 10)
+## SmartParse Studio workspace (Milestone 10.2)
 
-A local React/Monaco workbench now exposes the existing analysis engine through
-FastAPI: edit C, choose analyzers, inspect attributed diagnostics and conditional
-recovery/isolation evidence, and export the complete report. Original analysis
+A local React/Monaco workspace exposes the existing analysis engine through
+FastAPI. Create blank C files, open C/header buffers, switch editable tabs, rename
+and download source, then analyze the active file. Diagnostics, recovery/isolation
+evidence and JSON/Markdown exports use actual engine reports. Open tabs are not
+compiled together; the workspace is held in browser memory. Original analysis
 algorithms and historical evaluation evidence are unchanged. Independent human
 adjudication remains pending.
 

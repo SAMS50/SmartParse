@@ -1,5 +1,61 @@
 # SmartParse Studio
 
+## Real code workspace (Milestone 10.2)
+
+Studio starts with an empty `untitled-1.c` buffer. Use New File, write or paste C,
+choose analyzers, and Analyze; examples are optional. New/Open/Save are available
+in the top toolbar. On a narrow screen, Toggle Explorer opens the file list and
+Examples. Escape dismisses it.
+
+- Open imports one UTF-8 `.c` or `.h` file into a new tab. It does not upload user
+  source to the backend until Analyze is clicked (or Ctrl+Enter).
+- Tabs have stable identities and separate Monaco models/undo/view state. Switch
+  with a click or Left/Right/Home/End on a focused tab. Explorer supports rename
+  and remove. Renaming does not overwrite or rename the original disk file.
+- Save and Ctrl+S **request a browser download** of the active buffer. They do not
+  overwrite an imported file. The indicator tracks changes since import or the
+  last requested download; it cannot certify the browser completed a disk write.
+  Closing a changed/renamed file asks before discarding its in-memory copy.
+- Files are held in browser memory, not a real folder. Refresh/closing the page
+  loses the workspace; download source first. A before-unload warning protects
+  modified buffers where the browser supports it. The workspace supports up to
+  20 tabs; source/import requests remain limited to 128 KiB UTF-8 per file.
+- Only the active buffer is submitted. Other open `.c`/`.h` buffers are **not**
+  linked, compiled together or supplied as include files. Header buffers use a
+  standalone `.c` analysis copy; the raw report retains that actual temporary
+  compiler filename. This is not a project/build-system interface.
+- Reports belong to file IDs and submitted source snapshots. Switching files
+  restores their retained reports. Editing or renaming marks findings stale and
+  disables navigation/markers until reanalysis. Save/Analyze read the current
+  Monaco model so rapid edits cannot submit an older React state value.
+- Problems has a compact summary and source-navigation list. Details collapse
+  to a tab strip; choosing a tab expands them. Recovery/isolation remain explicit
+  opt-ins and work with manually entered source. Conditional evidence, accepted
+  temporary previews and raw exports retain the existing backend provenance.
+- Examples are in a collapsible section. Every selection opens an editable copy,
+  with a unique name if needed; frozen fixtures are never modified.
+
+The palette is neutral charcoal with a muted blue active accent. Red/amber/green
+indicate actual diagnostic or operational states; syntax highlighting retains its
+language colors. No accuracy metric or simulated diagnostic is shown.
+
+For the real browser demonstration (already running API and Vite required):
+
+```powershell
+python -m smartparse_studio.workspace_smoke --chrome "C:\Program Files\Google\Chrome\Application\chrome.exe" --output .studio-artifacts/m10-2/browser
+```
+
+It exercises New File → paste invalid C → actual compiler diagnostic/navigation
+→ correction → reanalysis → source download, plus rapid typing, manual recovery,
+headers, tabs, unsaved protection, comparison, isolation and mobile navigation.
+It verifies submitted hashes and downloaded bytes using the editor's actual line
+endings. Its paste event uses test-owned data without replacing the OS clipboard.
+
+Frontend tests use one isolated VM worker to avoid repeated expensive jsdom
+startup on constrained Windows hosts. Assertions remain intact, with a 15-second
+per-test bound; automated validation commands also use overall supervisors.
+Run browser and full regression checks sequentially on low-memory machines.
+
 Studio is a local React workbench for the existing SmartParse unified engine. It
 does not add detection rules or change CGAR, compiler recovery, or isolation.
 Independent human adjudication of research findings remains pending.
