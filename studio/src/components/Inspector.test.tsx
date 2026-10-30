@@ -14,7 +14,7 @@ test('overview exposes real execution, counts, duration, preservation and limits
   expect(screen.getByText('1.25 s')).toBeInTheDocument()
   expect(screen.getByText('Source preserved')).toBeInTheDocument()
   expect(screen.getByLabelText('Analyzer execution summary')).toHaveTextContent('memorycompleted')
-  expect(screen.getByText(/Completion does not certify/)).toBeInTheDocument()
+  expect(screen.queryByText(/Completion does not certify/)).not.toBeInTheDocument()
 })
 test('no recovery evidence never produces a source preview',()=>{
   show(result())

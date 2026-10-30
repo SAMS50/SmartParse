@@ -65,8 +65,7 @@ test('keyboard panel resizing preserves cursor, markers and editor instance',asy
 test('partial findings remain visible with an explicit coverage notice',async()=>{
   const report=result();report.report.status='partial';vi.mocked(api.analyze).mockResolvedValue(report)
   await ready();await chooseNull();await submit()
-  expect(screen.getByText('Analysis partial.')).toBeInTheDocument()
-  expect(screen.getByText(/Some passes may be blocked/)).toBeInTheDocument()
+  expect(screen.getByRole('button',{name:/Partial analysis/})).toHaveTextContent('Some checks could not complete.')
   expect(screen.getByRole('button',{name:'Dereference of null pointer'})).toBeEnabled()
 })
 
@@ -214,4 +213,60 @@ test('renaming an imported file requires saving the renamed copy before close',a
   await userEvent.click(screen.getByRole('button',{name:'Rename'}))
   await userEvent.click(screen.getByRole('button',{name:'Close renamed.c'}))
   expect(screen.getByRole('dialog')).toHaveTextContent('changes not included')
+})
+
+
+test('loading contains only spinner and requested text',async()=>{
+  vi.mocked(api.analyze).mockImplementation(()=>new Promise(()=>{}))
+  await ready();await userEvent.click(screen.getByRole('button',{name:'Analyze'}))
+  const loading=screen.getByRole('status')
+  expect(loading).toHaveTextContent(/^Analyzing your source$/)
+  expect(loading.querySelectorAll('svg')).toHaveLength(1)
+  expect(screen.queryByText(/worker has a bounded deadline/)).not.toBeInTheDocument()
+})
+
+test('Ready follows live health and does not expose tool count',async()=>{
+  let probe:()=>Promise<void>=async()=>{}
+  const realInterval=window.setInterval.bind(window)
+  const interval=vi.spyOn(window,'setInterval').mockImplementation((handler,delay)=>{if(delay===15000){probe=handler as ()=>Promise<void>;return 123}return realInterval(handler,delay)})
+  try {
+    await ready();expect(screen.getByLabelText('Analysis service status')).toHaveTextContent('Ready')
+    expect(screen.queryByText(/tools available/)).not.toBeInTheDocument()
+    vi.mocked(api.health).mockRejectedValue(new Error('offline'))
+    await act(async()=>{await probe()})
+    expect(screen.getByLabelText('Analysis service status')).toHaveTextContent('Unavailable')
+  } finally {interval.mockRestore()}
+})
+
+test('missing required tool never reports Ready and discovery is retained in settings',async()=>{
+  vi.mocked(api.getTools).mockResolvedValue({tools:[{name:'clang',status:'unavailable',path:null,version:null,reason:'not installed'}]})
+  await ready();expect(screen.getByLabelText('Analysis service status')).toHaveTextContent('Unavailable')
+  await userEvent.click(screen.getByRole('button',{name:'Analysis settings'}))
+  await userEvent.click(screen.getByText('Installed tool versions'))
+  expect(screen.getByText('not installed')).toBeInTheDocument()
+})
+
+test('partial status opens exact execution failures',async()=>{
+  const report=result();report.report.status='partial';report.report.runs[0].status='timed_out';report.report.runs[0].reason='Exact analyzer timeout reason'
+  report.report.tool_issues=[{analyzer:'memory',status:'timed_out',message:'Checker budget exhausted'}]
+  vi.mocked(api.analyze).mockResolvedValue(report)
+  await ready();await chooseNull();await submit()
+  await userEvent.click(screen.getByRole('button',{name:/Partial analysis/}))
+  expect(screen.getByText('Exact analyzer timeout reason')).toBeInTheDocument()
+  expect(screen.getByText(/Checker budget exhausted/)).toBeInTheDocument()
+  expect(screen.getByRole('button',{name:'Execution'})).toHaveAttribute('aria-pressed','true')
+})
+
+test('failed analysis is not mislabeled partial',async()=>{
+  const report=result();report.report.status='failed';vi.mocked(api.analyze).mockResolvedValue(report)
+  await ready();await chooseNull();await submit()
+  expect(screen.queryByRole('button',{name:/Partial analysis/})).not.toBeInTheDocument()
+  expect(screen.getByRole('button',{name:/Analysis failed/})).toBeInTheDocument()
+})
+
+test('analysis limitations live in Help instead of a persistent footer',async()=>{
+  await ready();expect(screen.queryByText(/Static analysis only/)).not.toBeInTheDocument()
+  await userEvent.click(screen.getByRole('button',{name:'About Studio'}))
+  expect(screen.getByRole('heading',{name:'Analysis limitations'})).toBeInTheDocument()
+  expect(screen.getByText('SmartParse checks your code without running it. Some errors may not be detected.')).toBeInTheDocument()
 })

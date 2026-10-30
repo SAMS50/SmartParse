@@ -13,7 +13,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   return body as T
 }
 
-export const health = () => request<{status: string}>('/api/health')
+export const health = () => request<{status: string}>('/api/health', {signal: AbortSignal.timeout(3000)})
 export const getTools = () => request<{tools: Tool[]}>('/api/tools')
 export const getExamples = () => request<{examples: Example[]}>('/api/examples')
 export async function analyze(input: AnalysisInput, signal: AbortSignal) {

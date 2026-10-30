@@ -27,6 +27,7 @@ function Content({result,source,tab,onNavigate,stale}: {result: StudioResult; so
         const records = report.diagnostics.filter(d => d.raw_reference.run_id === run.id && !d.context_note)
         return <tr key={run.id}><td><strong>{run.id}</strong><small>{run.reason || 'See raw report for tool configuration'}</small></td><td><span className={`status-badge ${run.status}`}>{run.status}</span></td><td>{records.filter(d => d.conditioning === 'original-source').length}</td><td>{records.filter(d => d.conditioning !== 'original-source').length}</td><td>{run.elapsed_seconds.toFixed(2)} s</td></tr>
       })}</tbody></table>
+    {tab==='runs'&&<><section aria-label="Tool failures">{report.tool_issues.map((issue,i)=><p className="issue-line" key={i}>{issue.analyzer}: {issue.status} | {issue.message}</p>)}</section>{report.runs.map(run=><details key={run.id} className="execution-evidence"><summary>Raw execution evidence: {run.id}</summary><pre>{JSON.stringify({status:run.status,reason:run.reason,usage:run.usage,eligibility:run.eligibility,raw:run.raw},null,2)}</pre></details>)}</>}
     {tab === 'comparison' && <div className="comparison-notes"><p>Requested: {report.requested_analyzers.join(', ')} · Effective: {report.effective_analyzers.join(', ')}</p><p>{report.groups.filter(g => g.analyzers.length > 1).length} evidence-supported multi-analyzer groups. Cross-backend root equivalence is not automatically adjudicated.</p><p>Counts are diagnostic records, not independent defects. Agreement is not proof; function/path coverage remains uncertified.</p></div>}
   </>
   if (tab === 'recovery') return <Recovery result={result} source={source}/>
@@ -36,7 +37,7 @@ function Content({result,source,tab,onNavigate,stale}: {result: StudioResult; so
       <span className="summary-fact"><CheckCircle2 size={14}/>{report.source.original_unchanged ? 'Source preserved' : 'Preservation unverified'}</span>
       <span className="summary-fact"><ShieldCheck size={14}/>{result.studio.workspace_removed ? 'Workspace removed' : 'Cleanup unverified'}</span></div>
     <div className="summary-runs" aria-label="Analyzer execution summary">{report.runs.map(run => <span key={run.id}><strong>{run.id}</strong><span className={`status-badge ${run.status}`}>{run.status}</span></span>)}<small>{report.usage.compiler_invocations} compiler invocations</small></div>
-    <p className="coverage-note"><AlertCircle size={13}/>Completion does not certify path coverage or bug freedom. Independent review pending.</p>
+
     <div className="problems-list" aria-label="Problems list">{report.groups.map(group=>{
       const d=group.diagnostic_ids.map(id=>report.diagnostics.find(record=>record.id===id)).find(record=>record&&!record.context_note)
       return d?<button key={group.id} disabled={!onNavigate||stale||!result.studio.editor_locations[d.id]} onClick={()=>onNavigate?.(d.id)} title={d.conditioning}><span className={`problem-severity ${d.severity}`}>{d.severity}</span><span>Line {d.location.line??'?'}</span><strong>{d.message}</strong><small>{d.analyzer} | {d.conditioning}</small></button>:null

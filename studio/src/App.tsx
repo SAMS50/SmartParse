@@ -4,6 +4,7 @@ import {CodeEditor, type EditorHandle} from './components/CodeEditor'
 import {Inspector, type InspectorTab} from './components/Inspector'
 import {FileDialog} from './components/FileDialog'
 import {useWorkspace} from './lib/useWorkspace'
+import {serviceReady} from './lib/serviceReady'
 import {dirtyFile, downloadSource} from './lib/workspace'
 import {PanelDivider} from './components/PanelDivider'
 import {SettingsPanel} from './components/SettingsPanel'
@@ -34,6 +35,8 @@ export default function App() {
   const editor = useRef<EditorHandle>(null), fileInput = useRef<HTMLInputElement>(null), workspace = useRef<HTMLDivElement>(null)
   const dirty = dirtyFile(active)
   const closeSettings = useCallback(() => setSettingsOpen(false), [])
+  const ready=serviceReady(connected,checking,settings.analyzers,tools)
+  const openExecution=()=>{setTab('runs');setDetailsCollapsed(false)}
   const stale = !!result && (code !== snapshot.source || filename !== snapshot.filename)
 
   function resetReport(){setError('');setNotice('')}
@@ -48,7 +51,7 @@ export default function App() {
   const connect = useCallback(async () => {
     setChecking(true)
     try {
-      await api.health();setConnected(true)
+      const health=await api.health();if(health.status!=='ok')throw new Error('Analysis service is unavailable');setConnected(true)
       const [gallery, inventory] = await Promise.all([api.getExamples(), api.getTools()])
       setExamples(gallery.examples);setTools(inventory.tools)
 
@@ -56,6 +59,18 @@ export default function App() {
     finally {setChecking(false)}
   }, [])
   useEffect(() => {void connect();return () => controller.current?.abort()}, [connect])
+
+  useEffect(()=>{
+    let mounted=true,pending=false
+    const timer=window.setInterval(async()=>{
+      if(pending)return
+      pending=true
+      try{const health=await api.health();if(mounted)setConnected(health.status==='ok')}
+      catch{if(mounted)setConnected(false)}
+      finally{pending=false}
+    },15000)
+    return()=>{mounted=false;window.clearInterval(timer)}
+  },[])
 
   const runAnalysis = useCallback(async () => {
     if (controller.current || !connected) return
@@ -68,7 +83,7 @@ export default function App() {
       const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings}, request.signal)
       if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation){setTab('recovery');setDetailsCollapsed(false)}}
     } catch (e) {
-      if (controller.current === request && !request.signal.aborted) setError(e instanceof Error ? e.message : 'Analysis request failed')
+      if (controller.current === request && !request.signal.aborted) {setError(e instanceof Error ? e.message : 'Analysis request failed');void api.health().then(h=>setConnected(h.status==='ok')).catch(()=>setConnected(false))}
     } finally {
       if (controller.current === request) {controller.current = null;setBusy(false)}
     }
@@ -126,8 +141,8 @@ export default function App() {
   return <div className="studio-shell antialiased">
     <header className="topbar"><a className="brand" href="#workspace" aria-label="SmartParse Studio workspace"><span className="brand-mark"><Braces size={21}/></span><strong>SmartParse</strong><span className="studio-label">STUDIO</span></a>
       <div className="top-breadcrumb"><span>Workspace</span><ChevronRight size={13}/><span title={filename} style={{maxWidth: '25ch', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>{filename}</span></div>
-      <div className="top-actions"><button className="icon-button explorer-toggle" aria-label="Toggle Explorer" aria-expanded={explorerOpen} aria-controls="workspace-explorer" onClick={()=>setExplorerOpen(value=>!value)}><FolderOpen size={17}/></button><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${connected ? 'connected' : ''}`}><i/>{checking ? 'Checking tools' : connected ? `${tools.filter(t => t.status === 'available').length} tools available` : 'API offline'}</span>
-        {!connected && <button className="text-button" onClick={() => void connect()}>Reconnect</button>}
+      <div className="top-actions"><button className="icon-button explorer-toggle" aria-label="Toggle Explorer" aria-expanded={explorerOpen} aria-controls="workspace-explorer" onClick={()=>setExplorerOpen(value=>!value)}><FolderOpen size={17}/></button><button className="icon-button" aria-label="New File" title="New File" disabled={busy} onClick={newFile}><FilePlus2 size={17}/></button><button className="icon-button" aria-label="Open File" title="Open .c or .h file" disabled={busy} onClick={()=>fileInput.current?.click()}><Upload size={17}/></button><button className="icon-button" aria-label="Save" title="Download active file (Ctrl+S)" onClick={saveFile}><Save size={17}/></button><span className={`connection ${ready?'connected':''}`} aria-label="Analysis service status" aria-live="polite" title="API health and selected tool availability; analysis validates capabilities"><i aria-hidden="true"/>{ready?'Ready':'Unavailable'}</span>
+        {!ready&&!checking && <button className="text-button" onClick={() => void connect()}>Reconnect</button>}
         <button className="icon-button" aria-label="Analysis settings" onClick={() => setSettingsOpen(true)} disabled={busy}><Settings2 size={18}/></button>
         {busy ? <button className="stop-button" onClick={stopWaiting}><Square size={12}/>Stop waiting</button> : <button className="primary-button" aria-label="Analyze" onClick={() => void runAnalysis()} disabled={!connected || checking}><Play size={14} fill="currentColor"/>Analyze<span className="shortcut">Ctrl ↵</span></button>}
       </div>
@@ -152,15 +167,16 @@ export default function App() {
             onChange={setSplit} onDrag={event => {const box=workspace.current?.getBoundingClientRect();if (box) setSplit(Math.max(34,Math.min(72,(event.clientX-box.left)/box.width*100)))}}/>
           <section className="diagnostics-pane" aria-label="Diagnostics"><header className="pane-header"><span className="pane-title"><AlertCircle size={16}/>Diagnostics <b>{result ? primary : '—'}</b></span><div className="export-controls"><button className="icon-button" aria-label="Export JSON report" title="Download complete JSON report" disabled={!result} onClick={() => result && api.downloadReport(result,'json')}><ArrowDownToLine size={16}/></button><button className="text-button" aria-label="Export Markdown report" disabled={!result} onClick={() => result && api.downloadReport(result,'markdown')}>MD</button></div></header>
             <div className="diagnostic-toolbar"><div className="severity-tabs"><button className={filter === 'all' ? 'active' : ''} onClick={() => setFilter('all')}>All</button><button className={filter === 'error' ? 'active error-count' : 'error-count'} onClick={() => setFilter('error')}><span/>Errors {result?.report.summary.errors ?? '—'}</button><button className={filter === 'warning' ? 'active warning-count' : 'warning-count'} onClick={() => setFilter('warning')}><span/>Warnings {result?.report.summary.warnings ?? '—'}</button></div><label className="search-box"><Search size={14}/><input aria-label="Filter diagnostics" placeholder="Filter findings…" value={query} onChange={e => setQuery(e.target.value)}/></label></div>
-            {result && result.report.status !== 'completed' && <div className="partial-banner" role="status"><AlertCircle size={15}/><span><strong>Analysis {result.report.status}.</strong> Some passes may be blocked or unavailable. Inspect Execution for details; displayed findings do not imply full coverage.</span></div>}
+            {result?.report.status==='partial'&&<button className="analysis-state partial-state" onClick={openExecution}><AlertCircle size={14}/><span>Partial analysis — Some checks could not complete.</span></button>}
+            {result&& !['partial','completed'].includes(result.report.status)&&<button className="analysis-state failed-state" onClick={openExecution}><AlertCircle size={14}/><span>Analysis {result.report.status} — Review Execution.</span></button>}
             {stale && <div className="stale-banner" role="status">Source changed since this report. Highlights are hidden until you analyze again.</div>}
             <div className="findings-list" aria-live="polite">
-              {busy ? <div className="empty-state"><LoaderCircle className="spin" size={28}/><h2>Analyzing your source</h2><p>Running the requested passes. Results will appear when the backend responds.</p><small>No simulated progress. The worker has a bounded deadline.</small></div> : !result ? <div className="empty-state"><p>No analysis results.</p><button className="text-button" onClick={() => setSettingsOpen(true)}>Analyzer settings</button></div> : groups.length ? <>
+              {busy ? <div className="analysis-loading" role="status"><LoaderCircle className="spin" size={20} aria-hidden="true"/><p>Analyzing your source</p></div> : !result ? <div className="empty-state"><p>No analysis results.</p><button className="text-button" onClick={() => setSettingsOpen(true)}>Analyzer settings</button></div> : groups.length ? <>
                 <div className="findings-caption"><span>{groups.length} evidence groups · {result.report.summary.notes} context notes</span><span className={`status-badge ${result.report.status}`}>{result.report.status}</span></div>
                 {groups.slice(0,shown).map(({group,diagnostic}) => <Finding key={group.id} diagnostic={diagnostic} records={group.diagnostic_ids.length} canNavigate={!stale && !!result.studio.editor_locations[diagnostic.id]} onNavigate={() => editor.current?.navigate(result.studio.editor_locations[diagnostic.id])}/>)}
                 {shown < groups.length && <button className="secondary-button full" onClick={() => setShown(s => s+100)}>Show next findings ({groups.length-shown} remaining)</button>}
               </> : <div className="empty-state"><CheckCircle2 size={30}/><h2>{query || filter !== 'all' ? 'No findings match this filter.' : result.report.status === 'completed' ? 'No primary diagnostics reported.' : 'Analysis is incomplete.'}</h2><p>{result.report.status === 'completed' ? 'Completion and zero findings do not prove the program is safe or defect-free.' : 'Review execution status and tool issues below. No complete coverage is claimed.'}</p></div>}
-            </div><footer className="findings-footer"><ShieldCheck size={13}/><span>Static analysis only · coverage is not exhaustive</span></footer>
+            </div>
           </section>
         </div>
         {!detailsCollapsed&&<PanelDivider axis="horizontal" label="Resize analysis details" value={detailSize} min={120} max={420} step={20}
@@ -177,7 +193,7 @@ export default function App() {
       else {documents.close(fileDialog.id);resetReport()}
       setFileDialog(null);return null
     }}/>}
-    {help && <div className="modal-backdrop" onMouseDown={e => e.target === e.currentTarget && setHelp(false)}><div className="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="about-title"><header><h2 id="about-title">Built for evidence, not guesses.</h2><button className="icon-button" aria-label="Close about" onClick={() => setHelp(false)}><X size={17}/></button></header><p>SmartParse Studio uses the existing compiler and recovery engine. Compiler findings belong to GCC/Clang; research recovery and conditional findings retain their provenance.</p><p>Ctrl+Enter runs analysis. Edit freely; stale reports never highlight changed source. Independent human adjudication remains pending.</p><p>Local trusted use only. Compiler temporary files are not a security sandbox.</p></div></div>}
+    {help && <div className="modal-backdrop" onMouseDown={e => e.target === e.currentTarget && setHelp(false)}><div className="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="about-title"><header><h2 id="about-title">SmartParse Studio</h2><button className="icon-button" aria-label="Close about" onClick={() => setHelp(false)}><X size={17}/></button></header><p>SmartParse Studio uses the existing compiler and recovery engine. Compiler findings belong to GCC/Clang; research recovery and conditional findings retain their provenance.</p><p>Ctrl+Enter runs analysis. Edit freely; stale reports never highlight changed source. Independent human adjudication remains pending.</p><h3>Analysis limitations</h3><p>SmartParse checks your code without running it. Some errors may not be detected.</p><p>Local trusted use only. Compiler temporary files are not a security sandbox.</p></div></div>}
   </div>
 }
 
