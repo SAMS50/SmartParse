@@ -64,7 +64,7 @@ def perform(request:AnalysisRequest):
             config.write_text(json.dumps(options),encoding='utf-8')
             env=os.environ.copy();env['PYTHONDONTWRITEBYTECODE']='1'
             env['PYTHONPATH']=str(ROOT)+os.pathsep+env.get('PYTHONPATH','')
-            process=bounded_run([sys.executable,'-m','smartparse_studio.api.worker',str(config)],capture_output=True,shell=False,env=env,timeout=55)
+            process=bounded_run([sys.executable,'-m','smartparse_studio.api.worker',str(config)],capture_output=True,shell=False,env=env,timeout=75)
             try:report=json.loads(process.stdout)
             except (ValueError,UnicodeError) as error:raise HTTPException(502,'Analyzer worker returned unreadable output') from error
             if not isinstance(report,dict):raise HTTPException(502,'Analyzer worker returned an invalid report envelope')
@@ -78,7 +78,7 @@ def perform(request:AnalysisRequest):
                 raise HTTPException(502,'Submitted-source preservation could not be verified')
             presentation=dict(request_id=str(uuid.uuid4()),filename=request.filename,submitted_sha256=source_hash,
                 editor_locations=editor_locations(report,request.source),previews=recovered_previews(report,request.source),
-                workspace_removed=False,limits=dict(source_bytes=128*1024,worker_seconds=55,engine_seconds=45,invocations=96),
+                workspace_removed=False,limits=dict(source_bytes=128*1024,worker_seconds=75,engine_seconds=45,invocations=96,intent_seconds=15),
                 limitations=['Local trusted use only; compilers can read filesystem headers. Temporary files are not a security sandbox.',
                               'Stopping browser waiting does not terminate a running worker; its server deadline remains enforced.'])
             markdown=render(report,'markdown')

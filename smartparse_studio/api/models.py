@@ -6,6 +6,22 @@ MAX_SOURCE_BYTES=128*1024
 Analyzer=Literal['compiler','static','memory','semantic','gcc14','cppcheck','smartparse','panic']
 
 
+class EditEvent(BaseModel):
+    model_config=ConfigDict(extra='forbid',strict=True)
+    version:int=Field(ge=1)
+    offset:int=Field(ge=0,le=MAX_SOURCE_BYTES)
+    deleted:str=Field(max_length=32768)
+    inserted:str=Field(max_length=32768)
+
+
+class EditHistory(BaseModel):
+    model_config=ConfigDict(extra='forbid',strict=True)
+    base_source:str=Field(max_length=32768)
+    base_version:int=Field(ge=0)
+    source_version:int=Field(ge=0)
+    events:list[EditEvent]=Field(max_length=8)
+
+
 class AnalysisRequest(BaseModel):
     model_config=ConfigDict(extra='forbid',strict=True)
     source:str=Field(max_length=MAX_SOURCE_BYTES)
@@ -14,6 +30,9 @@ class AnalysisRequest(BaseModel):
     recovery:bool=False
     isolation:bool=False
     standard:Literal['c89','c99','c11','c17','gnu11']='c11'
+    intent_recovery:bool=False
+    edit_history:EditHistory|None=None
+    intent_mode:Literal['existing','history','semantic','full']='full'
 
     @field_validator('source')
     @classmethod
