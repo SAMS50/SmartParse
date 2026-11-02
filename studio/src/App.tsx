@@ -10,6 +10,7 @@ import {dirtyFile, downloadSource} from './lib/workspace'
 import {PanelDivider} from './components/PanelDivider'
 import {SettingsPanel} from './components/SettingsPanel'
 import * as api from './lib/api'
+import {recordEdit, type EditHistory} from './lib/editHistory'
 import type {Diagnostic, Example, Settings, StudioResult, Tool} from './types/report'
 
 const DEFAULTS: Settings = {analyzers: ['compiler'], recovery: false, isolation: false, standard: 'c11'}
@@ -18,7 +19,8 @@ export default function App() {
   const [connected,setConnected] = useState(false), [checking,setChecking] = useState(true)
   const documents=useWorkspace(), active=documents.active
   const code=active.text, filename=active.name, loaded=active.openedText
-  const setCode=(text:string)=>documents.update(active.id,{text})
+  const histories=useRef<Record<string,EditHistory>>({})
+  const setCode=(text:string)=>{histories.current[active.id]=recordEdit(histories.current[active.id],documents.active.text,text);documents.update(active.id,{text})}
   const [fileDialog,setFileDialog]=useState<{mode:'rename'|'close';id:string}|null>(null)
   const [settings,setSettings] = useState<Settings>(DEFAULTS), [settingsOpen,setSettingsOpen] = useState(false)
   const [analyses,setAnalyses] = useState<Record<string,{result:StudioResult;snapshot:{source:string;filename:string}}>>({})
@@ -82,7 +84,8 @@ export default function App() {
     setBusy(true);setAnalyses(previous=>{const copy={...previous};delete copy[active.id];return copy});setError('');setNotice('');setShown(100)
     const submitted = {source: submittedText, filename}, submittedId=active.id
     try {
-      const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings}, request.signal)
+      const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings,
+        ...(settings.intent_recovery?{edit_history:histories.current[active.id]}:{})}, request.signal)
       if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation){setTab('recovery');setDetailsCollapsed(false)}}
     } catch (e) {
       if (controller.current === request && !request.signal.aborted) {setError(e instanceof Error ? e.message : 'Analysis request failed');void api.health().then(h=>setConnected(h.status==='ok')).catch(()=>setConnected(false))}

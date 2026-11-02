@@ -8,6 +8,20 @@ vi.mock('./CodeEditor',()=>({RecoveredDiff:()=> <div>Verified diff component</di
 function show(report:StudioResult,tab:InspectorTab='recovery') {
   render(<Inspector result={report} source="int x;" tab={tab} onTab={vi.fn()} height={320} onReset={vi.fn()}/> )
 }
+
+test('intent abstention, alternatives and supported impact remain explicit',()=>{
+  const report=result()
+  report.report.intent_recovery={decision:'ambiguous repair',reason:'Programmer confirmation is recommended.',recommendation:null,history_status:'Missing history',original_sha256:'source',candidates:[{
+    id:'repair1',source:'int x;',status:'ambiguous repair',score:10,explanation:'Missing supported reference',
+    changes:[{offset:5,end_offset:5,deleted:'',inserted:';',line:1,column:6}],
+    validation:{status:'VALID',reason:''},history:{explanation:'No verified recent editing evidence'},
+    semantic:{statement_ownership:{status:'UNKNOWN',explanation:'No supported valid reference'}}}]}
+  show(report)
+  expect(screen.getByLabelText('Intent-aware recovery evidence')).toHaveTextContent('ambiguous repair')
+  expect(screen.getByText('Syntax validation: VALID')).toBeInTheDocument()
+  expect(screen.getByText(/statement_ownership: UNKNOWN/)).toBeInTheDocument()
+  expect(screen.getByRole('button',{name:'Compare correction repair1'})).toBeInTheDocument()
+})
 test('overview exposes real execution, counts, duration, preservation and limits',()=>{
   show(result(),'overview')
   expect(screen.getByText('0 errors · 1 warning')).toBeInTheDocument()

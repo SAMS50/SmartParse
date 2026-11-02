@@ -21,6 +21,7 @@ export interface Run {
 }
 export interface Group {id: string; diagnostic_ids: string[]; analyzers: string[]; conditioning: string; basis: string}
 export interface Report {
+  intent_recovery?: IntentRecovery;
   schema: 'smartparse.unified_analysis'; schema_version: '1.0'; status: AnalysisStatus;
   source: {path: string; sha256: string; original_unchanged: boolean};
   requested_analyzers: string[]; effective_analyzers: string[]; diagnostics: Diagnostic[]; groups: Group[]; runs: Run[];
@@ -38,5 +39,12 @@ export interface StudioResult {
 }
 export interface Example {id: string; title: string; filename: string; description: string; source: string; source_sha256: string; analyzers: string[]; recovery: boolean; isolation: boolean}
 export interface Tool {name: string; path: string | null; status: string; version: string | null; reason?: string}
-export interface Settings {analyzers: string[]; recovery: boolean; isolation: boolean; standard: string}
-export interface AnalysisInput extends Settings {source: string; filename: string}
+export interface Settings {analyzers: string[]; recovery: boolean; isolation: boolean; standard: string; intent_recovery?:boolean}
+export interface AnalysisInput extends Settings {source: string; filename: string;edit_history?:import('../lib/editHistory').EditHistory}
+export interface IntentCandidate {
+  id:string;source:string;status:string;score:number;explanation:string;
+  changes:{offset:number;end_offset:number;deleted:string;inserted:string;line:number;column:number}[];
+  validation:{status:string;reason:string};history:{explanation:string};
+  semantic:Record<string,{status:string;explanation:string}>;
+}
+export interface IntentRecovery {decision:string;reason:string;recommendation:string|null;history_status:string;original_sha256:string;candidates:IntentCandidate[]}

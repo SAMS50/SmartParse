@@ -84,7 +84,7 @@ export const CodeEditor = forwardRef<EditorHandle, Props>(function CodeEditor(pr
     onChange={change}/>
 })
 
-export function RecoveredDiff({original, preview}: {original: string; preview: Preview}) {
+export function RecoveredDiff({original, preview, proposed=false}: {original: string; preview: Preview; proposed?:boolean}) {
   const host = useRef<HTMLDivElement>(null)
   useEffect(() => {
     let dispose = () => {}
@@ -107,6 +107,6 @@ export function RecoveredDiff({original, preview}: {original: string; preview: P
       cancelAnimationFrame(frame); dispose()
     }
   }, [original, preview.source])
-  return <div className="diff-wrap"><header><strong>Verified source comparison</strong><span className="provenance-label">{preview.conditioning}</span></header><div className="diff-labels"><span>Original · unchanged</span><span>Accepted temporary variant · read-only</span></div><div ref={host} style={{height: 210}} aria-label="Accepted source variant diff"/>
-    <details className="preview-provenance"><summary>Verified variant provenance · {preview.variant_id}</summary><p>{preview.basis}</p><code>SHA-256 {preview.sha256}</code></details></div>
+  return <div className="diff-wrap"><header><strong>{proposed?'Proposed code comparison':'Verified source comparison'}</strong><span className="provenance-label">{preview.conditioning}</span></header><div className="diff-labels"><span>Original · unchanged</span><span>{proposed?'Proposed correction · read-only':'Accepted temporary variant · read-only'}</span></div><div ref={host} style={{height: 210}} aria-label={proposed?'Proposed correction diff':'Accepted source variant diff'}/>
+    <details className="preview-provenance"><summary>{proposed?'Proposal evidence':'Verified variant provenance'} · {preview.variant_id}</summary><p>{preview.basis}</p>{!proposed&&<code>SHA-256 {preview.sha256}</code>}</details></div>
 }

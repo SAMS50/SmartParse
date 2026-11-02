@@ -1,6 +1,7 @@
 import {AlertCircle, CheckCircle2, Clock3, FileJson, GitCompareArrows, RotateCcw, ShieldCheck, TerminalSquare, WandSparkles, ChevronDown, ChevronUp} from 'lucide-react'
 import type {Candidate, Diagnostic, Run, StudioResult} from '../types/report'
 import {RecoveredDiff} from './CodeEditor'
+import {useState} from 'react'
 
 export type InspectorTab = 'overview' | 'runs' | 'recovery' | 'comparison' | 'raw'
 const tabs: [InspectorTab, string, typeof ShieldCheck][] = [['overview','Problems',ShieldCheck],['recovery','Recovery',WandSparkles],['runs','Execution',TerminalSquare],['comparison','Comparison',GitCompareArrows],['raw','Raw evidence',FileJson]]
@@ -60,6 +61,7 @@ function Recovery({result,source}: {result: StudioResult; source: string}) {
   const originals = report.diagnostics.filter(d => !d.context_note && d.conditioning === 'original-source' && d.category === 'syntax')
   const conditioned = report.diagnostics.filter(d => !d.context_note && d.conditioning !== 'original-source')
   return <div className="recovery-content">
+    {report.intent_recovery&&<IntentEvidence evidence={report.intent_recovery} source={source}/>}
     <div className="recovery-heading"><span><WandSparkles size={15}/><strong>Recovery evidence</strong></span><small>Temporary analysis copies only · editor and files unchanged</small></div>
     <div className="recovery-layout"><div className="recovery-story">
       {originals.length > 0 && <section className="recovery-block"><h3>Original syntax diagnostics</h3>{originals.map(d => <p className="original-error" key={d.id}><span>Line {d.location.line ?? '?'} · {d.analyzer}</span>{d.message}</p>)}</section>}
@@ -68,6 +70,23 @@ function Recovery({result,source}: {result: StudioResult; source: string}) {
       {conditioned.length > 0 && <details className="conditioned-findings" open><summary>{conditioned.length} conditional downstream record{conditioned.length === 1 ? '' : 's'}</summary>{conditioned.map(d => <p key={d.id}><span className="provenance-label">{d.conditioning}</span><span>Line {d.location.line ?? '?'} · {d.analyzer}</span><strong>{d.message}</strong></p>)}<small>These findings depend on the recorded variant assumptions; they are not unconditional baseline findings.</small></details>}
     </div><div className="preview-stack">{result.studio.previews.length > 0 ? result.studio.previews.map(p => <RecoveredDiff key={p.run_id + p.variant_id} original={source} preview={p}/>) : <div className="no-preview"><ShieldCheck size={21}/><strong>No verified source comparison</strong><p>No hash-verified accepted source variant is available. Suggestions are not applied to the editor.</p></div>}</div></div>
   </div>
+}
+
+function IntentEvidence({evidence,source}:{evidence:NonNullable<StudioResult['report']['intent_recovery']>;source:string}) {
+  const [selected,setSelected]=useState<string|null>(null)
+  const candidate=evidence.candidates.find(c=>c.id===(selected||evidence.recommendation))
+  return <section className="recovery-block" aria-label="Intent-aware recovery evidence">
+    <h3>Intent-aware recovery: {evidence.decision}</h3><p>{evidence.reason}</p><p>{evidence.history_status}</p>
+    <p>Compilation does not prove correctness. Behavioral equivalence is not guaranteed. Original editor content remains unchanged.</p>
+    {evidence.candidates.map(c=><article className="repair-candidate" key={c.id}>
+      <h4>{c.id===evidence.recommendation?'Suggested correction':'Alternative correction'} · {c.status}</h4>
+      {c.changes.map((e,i)=><p key={i}>Line {e.line}:{e.column}: replace <code>{JSON.stringify(e.deleted)}</code> with <code>{JSON.stringify(e.inserted)}</code></p>)}
+      <p>Syntax validation: {c.validation.status}</p><p>{c.history.explanation}</p><p>{c.explanation}</p>
+      <details><summary>Potential structural or behavioral impact</summary>{Object.entries(c.semantic).map(([key,value])=><p key={key}>{key}: {value.status} — {value.explanation}</p>)}</details>
+      <button onClick={()=>setSelected(c.id)}>Compare correction {c.id}</button>
+    </article>)}
+    {candidate&&<RecoveredDiff original={source} proposed preview={{run_id:'intent',variant_id:candidate.id,source:candidate.source,sha256:'',conditioning:'intent proposal',basis:candidate.explanation}}/>}
+  </section>
 }
 
 function RecoveryRun({run,diagnostics}: {run: Run; diagnostics: Diagnostic[]}) {

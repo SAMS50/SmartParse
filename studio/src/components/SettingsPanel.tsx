@@ -50,6 +50,7 @@ export function SettingsPanel({value, tools, onChange, onClose}: {value: Setting
       <label className="switch-row"><span><strong>Punctuation recovery</strong><small>Compiler-validated temporary semicolon repairs</small></span><input type="checkbox" checked={value.recovery} onChange={e => onChange({...value, recovery: e.target.checked})}/></label>
       <label className="switch-row"><span><strong>Unaffected-region isolation</strong><small>Experimental · conservative function exclusion</small></span><input type="checkbox" checked={value.isolation} onChange={e => onChange({...value, isolation: e.target.checked})}/></label>
       <div className="safety-note"><ShieldCheck size={18}/><span>Original source is never modified. Conditional findings retain their assumptions. Limits: 128 KiB source, 45 s engine / 55 s worker.</span></div>
+      <label className="switch-row"><span><strong>Intent-aware recovery</strong><small>Recent edits, supported structural evidence and explicit abstention; read-only proposals</small></span><input type="checkbox" checked={!!value.intent_recovery} onChange={e=>onChange({...value,intent_recovery:e.target.checked})}/></label>
       <button className="primary-button full" onClick={onClose}>Apply configuration</button>
     </div>
   </div>
