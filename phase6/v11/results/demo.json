@@ -1,0 +1,2576 @@
+{
+  "initial_source": "int f(int x){if(x){x++;}return x;}",
+  "editor_source": "int f(int x){if(x){x++;return x;}",
+  "history": {
+    "base_source": "int f(int x){if(x){x++;}return x;}",
+    "base_version": 0,
+    "source_version": 1,
+    "events": [
+      {
+        "version": 1,
+        "offset": 23,
+        "deleted": "}",
+        "inserted": ""
+      }
+    ]
+  },
+  "runs": {
+    "existing": {
+      "mode": "existing",
+      "decision": "recommended repair",
+      "reason": "Existing heuristic maximum (research baseline)",
+      "recommendation": "2a0996bed8c1145b",
+      "candidates": [
+        {
+          "source": "int f(int x){if(x){x++;return x;}}",
+          "heuristic": 85,
+          "origin": "existing local candidate",
+          "id": "2a0996bed8c1145b",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 33,
+              "end_offset": 33,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 34
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 85,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 85,
+          "explanation": "Score components: {'heuristic': 85, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "recommended repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){}x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "118c66df23d8f313",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 19,
+              "end_offset": 19,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 20
+            }
+          ],
+          "history": {
+            "score": -5.5,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 4,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.900. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){x++;}return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "61dc7fb9fcad407f",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 23,
+              "end_offset": 23,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 24
+            }
+          ],
+          "history": {
+            "score": 55.0,
+            "restored_snapshot": true,
+            "distance_delta": 1,
+            "separation": 0,
+            "explanation": "Exact recent snapshot restoration=True; changed-character distance delta=1; proximity=1.000. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x);x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "82e821fff6170ea1",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x)x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "becd5174b08e2427",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": "",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x);if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "d710273d5dc46e57",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:14: error: expected identifier or '('\r\nint f(int x);if(x){x++;return x;}\r\n             ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 12,
+              "end_offset": 13,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 13
+            }
+          ],
+          "history": {
+            "score": -6.375,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 11,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.725. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        },
+        {
+          "source": "int f(int x){}if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "e5cfed0abc44cf07",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:15: error: expected identifier or '('\r\nint f(int x){}if(x){x++;return x;}\r\n              ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 13,
+              "end_offset": 13,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 14
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        }
+      ],
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "history_status": "Verified replay of submitted source",
+      "config": {
+        "history_window": 8,
+        "history_weight": 1,
+        "changed_penalty": 18,
+        "unknown_penalty": 4,
+        "ambiguity_margin": 12,
+        "max_candidates": 24,
+        "max_trials": 240
+      },
+      "original_sha256": "ba5135a3d1b2c686a17e8e19ef4e3e53928d85d757382e03dc3f5926d3eb2dc3",
+      "original_unchanged": true,
+      "compiler_invocations": 8,
+      "elapsed_seconds": 0.7872295999986818
+    },
+    "history": {
+      "mode": "history",
+      "decision": "no safe recommendation",
+      "reason": "Insufficient supported intent evidence",
+      "recommendation": null,
+      "candidates": [
+        {
+          "source": "int f(int x){if(x){x++;return x;}}",
+          "heuristic": 85,
+          "origin": "existing local candidate",
+          "id": "2a0996bed8c1145b",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 33,
+              "end_offset": 33,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 34
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 85,
+            "history": -6.25,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 78.75,
+          "explanation": "Score components: {'heuristic': 85, 'history': -6.25, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){x++;}return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "61dc7fb9fcad407f",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 23,
+              "end_offset": 23,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 24
+            }
+          ],
+          "history": {
+            "score": 55.0,
+            "restored_snapshot": true,
+            "distance_delta": 1,
+            "separation": 0,
+            "explanation": "Exact recent snapshot restoration=True; changed-character distance delta=1; proximity=1.000. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 55.0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 65.0,
+          "explanation": "Score components: {'heuristic': 10, 'history': 55.0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){}x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "118c66df23d8f313",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 19,
+              "end_offset": 19,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 20
+            }
+          ],
+          "history": {
+            "score": -5.5,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 4,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.900. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.5,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 4.5,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.5, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x);x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "82e821fff6170ea1",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.625,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 4.375,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.625, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x)x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "becd5174b08e2427",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": "",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.625,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 4.375,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.625, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){}if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "e5cfed0abc44cf07",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:15: error: expected identifier or '('\r\nint f(int x){}if(x){x++;return x;}\r\n              ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 13,
+              "end_offset": 13,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 14
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -6.25,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 3.75,
+          "explanation": "Score components: {'heuristic': 10, 'history': -6.25, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        },
+        {
+          "source": "int f(int x);if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "d710273d5dc46e57",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:14: error: expected identifier or '('\r\nint f(int x);if(x){x++;return x;}\r\n             ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 12,
+              "end_offset": 13,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 13
+            }
+          ],
+          "history": {
+            "score": -6.375,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 11,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.725. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -6.375,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 3.625,
+          "explanation": "Score components: {'heuristic': 10, 'history': -6.375, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        }
+      ],
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "history_status": "Verified replay of submitted source",
+      "config": {
+        "history_window": 8,
+        "history_weight": 1,
+        "changed_penalty": 18,
+        "unknown_penalty": 4,
+        "ambiguity_margin": 12,
+        "max_candidates": 24,
+        "max_trials": 240
+      },
+      "original_sha256": "ba5135a3d1b2c686a17e8e19ef4e3e53928d85d757382e03dc3f5926d3eb2dc3",
+      "original_unchanged": true,
+      "compiler_invocations": 8,
+      "elapsed_seconds": 0.8799165000018547
+    },
+    "semantic": {
+      "mode": "semantic",
+      "decision": "ambiguous repair",
+      "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+      "recommendation": null,
+      "candidates": [
+        {
+          "source": "int f(int x){if(x){x++;return x;}}",
+          "heuristic": 85,
+          "origin": "existing local candidate",
+          "id": "2a0996bed8c1145b",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 33,
+              "end_offset": 33,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 34
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 85,
+            "history": 0,
+            "structural_risk": -72,
+            "missing_evidence": 0
+          },
+          "score": 13,
+          "explanation": "Score components: {'heuristic': 85, 'history': 0, 'structural_risk': -72, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "ambiguous repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){x++;}return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "61dc7fb9fcad407f",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 23,
+              "end_offset": 23,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 24
+            }
+          ],
+          "history": {
+            "score": 55.0,
+            "restored_snapshot": true,
+            "distance_delta": 1,
+            "separation": 0,
+            "explanation": "Exact recent snapshot restoration=True; changed-character distance delta=1; proximity=1.000. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 10,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "ambiguous repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x)x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "becd5174b08e2427",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": "",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": -72,
+            "missing_evidence": 0
+          },
+          "score": -62,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': -72, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){}x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "118c66df23d8f313",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 19,
+              "end_offset": 19,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 20
+            }
+          ],
+          "history": {
+            "score": -5.5,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 4,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.900. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": -90,
+            "missing_evidence": 0
+          },
+          "score": -80,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': -90, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x);x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "82e821fff6170ea1",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": -90,
+            "missing_evidence": 0
+          },
+          "score": -80,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': -90, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x);if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "d710273d5dc46e57",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:14: error: expected identifier or '('\r\nint f(int x);if(x){x++;return x;}\r\n             ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 12,
+              "end_offset": 13,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 13
+            }
+          ],
+          "history": {
+            "score": -6.375,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 11,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.725. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": -28
+          },
+          "score": -18,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': -28}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        },
+        {
+          "source": "int f(int x){}if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "e5cfed0abc44cf07",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:15: error: expected identifier or '('\r\nint f(int x){}if(x){x++;return x;}\r\n              ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 13,
+              "end_offset": 13,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 14
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 0,
+            "structural_risk": 0,
+            "missing_evidence": -28
+          },
+          "score": -18,
+          "explanation": "Score components: {'heuristic': 10, 'history': 0, 'structural_risk': 0, 'missing_evidence': -28}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        }
+      ],
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "history_status": "Verified replay of submitted source",
+      "config": {
+        "history_window": 8,
+        "history_weight": 1,
+        "changed_penalty": 18,
+        "unknown_penalty": 4,
+        "ambiguity_margin": 12,
+        "max_candidates": 24,
+        "max_trials": 240
+      },
+      "original_sha256": "ba5135a3d1b2c686a17e8e19ef4e3e53928d85d757382e03dc3f5926d3eb2dc3",
+      "original_unchanged": true,
+      "compiler_invocations": 8,
+      "elapsed_seconds": 0.7990709000005154
+    },
+    "full": {
+      "mode": "full",
+      "decision": "recommended repair",
+      "reason": "Supported structure preserved with a sufficient ranking margin",
+      "recommendation": "61dc7fb9fcad407f",
+      "candidates": [
+        {
+          "source": "int f(int x){if(x){x++;}return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "61dc7fb9fcad407f",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 23,
+              "end_offset": 23,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 24
+            }
+          ],
+          "history": {
+            "score": 55.0,
+            "restored_snapshot": true,
+            "distance_delta": 1,
+            "separation": 0,
+            "explanation": "Exact recent snapshot restoration=True; changed-character distance delta=1; proximity=1.000. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": 55.0,
+            "structural_risk": 0,
+            "missing_evidence": 0
+          },
+          "score": 65.0,
+          "explanation": "Score components: {'heuristic': 10, 'history': 55.0, 'structural_risk': 0, 'missing_evidence': 0}; changed checks=0; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "recommended repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){x++;return x;}}",
+          "heuristic": 85,
+          "origin": "existing local candidate",
+          "id": "2a0996bed8c1145b",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 33,
+              "end_offset": 33,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 34
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 85,
+            "history": -6.25,
+            "structural_risk": -72,
+            "missing_evidence": 0
+          },
+          "score": 6.75,
+          "explanation": "Score components: {'heuristic': 85, 'history': -6.25, 'structural_risk': -72, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x)x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "becd5174b08e2427",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": "",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.625,
+            "structural_risk": -72,
+            "missing_evidence": 0
+          },
+          "score": -67.625,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.625, 'structural_risk': -72, 'missing_evidence': 0}; changed checks=4; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x){}x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "118c66df23d8f313",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 19,
+              "end_offset": 19,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 20
+            }
+          ],
+          "history": {
+            "score": -5.5,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 4,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.900. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.5,
+            "structural_risk": -90,
+            "missing_evidence": 0
+          },
+          "score": -85.5,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.5, 'structural_risk': -90, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){if(x);x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "82e821fff6170ea1",
+          "validation": {
+            "status": "VALID",
+            "reason": ""
+          },
+          "changes": [
+            {
+              "offset": 18,
+              "end_offset": 19,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 19
+            }
+          ],
+          "history": {
+            "score": -5.625,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 5,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.875. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared supported physical AST projections against valid history snapshot"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -5.625,
+            "structural_risk": -90,
+            "missing_evidence": 0
+          },
+          "score": -85.625,
+          "explanation": "Score components: {'heuristic': 10, 'history': -5.625, 'structural_risk': -90, 'missing_evidence': 0}; changed checks=5; unknown checks=0. Syntax acceptance does not prove correctness.",
+          "status": "alternative repair",
+          "candidate_comparison": {
+            "statement_ownership": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "block_boundaries": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_scope": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "variable_binding": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "expression_grouping": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "function_boundaries": {
+              "status": "PRESERVED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            },
+            "control_flow": {
+              "status": "CHANGED",
+              "explanation": "Compared against the highest ranked valid candidate; this does not establish programmer intent"
+            }
+          }
+        },
+        {
+          "source": "int f(int x){}if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "e5cfed0abc44cf07",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:15: error: expected identifier or '('\r\nint f(int x){}if(x){x++;return x;}\r\n              ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 13,
+              "end_offset": 13,
+              "deleted": "",
+              "inserted": "}",
+              "line": 1,
+              "column": 14
+            }
+          ],
+          "history": {
+            "score": -6.25,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 10,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.750. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -6.25,
+            "structural_risk": 0,
+            "missing_evidence": -28
+          },
+          "score": -24.25,
+          "explanation": "Score components: {'heuristic': 10, 'history': -6.25, 'structural_risk': 0, 'missing_evidence': -28}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        },
+        {
+          "source": "int f(int x);if(x){x++;return x;}",
+          "heuristic": 10,
+          "origin": "bounded punctuation alternative",
+          "id": "d710273d5dc46e57",
+          "validation": {
+            "status": "INVALID",
+            "reason": "<stdin>:1:14: error: expected identifier or '('\r\nint f(int x);if(x){x++;return x;}\r\n             ^\r\n1 error generated.\r\n"
+          },
+          "changes": [
+            {
+              "offset": 12,
+              "end_offset": 13,
+              "deleted": "{",
+              "inserted": ";",
+              "line": 1,
+              "column": 13
+            }
+          ],
+          "history": {
+            "score": -6.375,
+            "restored_snapshot": false,
+            "distance_delta": -1,
+            "separation": 11,
+            "explanation": "Exact recent snapshot restoration=False; changed-character distance delta=-1; proximity=0.725. Recency alone is not intent proof."
+          },
+          "semantic": {
+            "statement_ownership": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "block_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_scope": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "variable_binding": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "expression_grouping": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "function_boundaries": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            },
+            "control_flow": {
+              "status": "UNKNOWN",
+              "explanation": "No supported valid reference/candidate AST"
+            }
+          },
+          "components": {
+            "heuristic": 10,
+            "history": -6.375,
+            "structural_risk": 0,
+            "missing_evidence": -28
+          },
+          "score": -24.375,
+          "explanation": "Score components: {'heuristic': 10, 'history': -6.375, 'structural_risk': 0, 'missing_evidence': -28}; changed checks=0; unknown checks=7. Syntax acceptance does not prove correctness.",
+          "status": "unsupported repair"
+        }
+      ],
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "history_status": "Verified replay of submitted source",
+      "config": {
+        "history_window": 8,
+        "history_weight": 1,
+        "changed_penalty": 18,
+        "unknown_penalty": 4,
+        "ambiguity_margin": 12,
+        "max_candidates": 24,
+        "max_trials": 240
+      },
+      "original_sha256": "ba5135a3d1b2c686a17e8e19ef4e3e53928d85d757382e03dc3f5926d3eb2dc3",
+      "original_unchanged": true,
+      "compiler_invocations": 8,
+      "elapsed_seconds": 0.714724199999182
+    }
+  },
+  "editor_unchanged": true
+}

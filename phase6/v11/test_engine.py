@@ -1,16 +1,7 @@
 import unittest
 from .engine import recover, generate, rank, Config, MODES
 from .semantics import Validator, projection
-
-
-def history(before,after):
-    from .engine import edits
-    changes=edits(before,after)
-    # One aggregate replacement supports any reconstructed edit.
-    a=min(c['offset'] for c in changes);b=max(c['end_offset'] for c in changes)
-    tail=len(before)-b
-    return dict(base_source=before,base_version=0,source_version=1,
-                events=[dict(version=1,offset=a,deleted=before[a:b],inserted=after[a:len(after)-tail if tail else len(after)])])
+from .history import reconstruct as history
 
 
 class EngineTests(unittest.TestCase):
@@ -45,6 +36,18 @@ class EngineTests(unittest.TestCase):
             r=rank(source,candidates,[],None,mode)
             if mode!='existing':self.assertIsNone(r['recommendation'])
         self.assertEqual(rank(source,candidates,[],None)['decision'],'ambiguous repair')
+
+    def test_misleading_history_is_evidence_not_correctness(self):
+        intended='int f(int x){if(x){x++;}return x;}'
+        stale='int f(int x){if(x){x++;return x;}}'
+        bad=intended.replace('}return','return')
+        r=recover(bad,history(stale,bad))
+        self.assertTrue(all('does not prove correctness' in c['explanation'] for c in r['candidates']))
+        self.assertIn(r['decision'],('recommended repair','ambiguous repair','no safe recommendation','unsupported repair'))
+
+    def test_budget_and_valid_original(self):
+        self.assertEqual(recover('x'*16385)['decision'],'unsupported repair')
+        self.assertEqual(recover('int f(){return 0;}')['candidates'],[])
 
 
 if __name__=='__main__':unittest.main()

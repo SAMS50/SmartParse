@@ -33,7 +33,9 @@ class Validator:
                 '-Wno-everything','-fdiagnostics-parseable-fixits','-Xclang','-ast-dump=json','-'],input=source.encode('utf-8'),
                 capture_output=True,shell=False,timeout=max(.01,min(2,self.deadline-time.monotonic())))
             tree=json.loads(p.stdout) if p.returncode==0 else None
-            result=dict(status='VALID' if tree else 'INVALID',reason=p.stderr.decode('utf-8',errors='replace')[:2000],tree=tree)
+            diagnostic=p.stderr.decode('utf-8',errors='replace')[:2000]
+            status='VALID' if tree else 'INVALID' if p.returncode==1 and 'fatal error:' not in diagnostic else 'UNVERIFIED'
+            result=dict(status=status,reason=diagnostic,tree=tree)
         except (OSError,ValueError,subprocess.TimeoutExpired):
             result=dict(status='UNVERIFIED',reason='Clang invocation or AST unavailable',tree=None)
         self.cache[source]=result
@@ -58,7 +60,7 @@ def projection(source, validation):
         if not kind:return
         if kind not in ALLOWED:supported=False
         typ=n.get('type',{}).get('qualType','')
-        if '*' in typ or '[' in typ or re.search(r'\b(?:struct|union|volatile|_Atomic)\b',typ):supported=False
+        if ('*' in typ and n.get('castKind')!='FunctionToPointerDecay') or '[' in typ or re.search(r'\b(?:struct|union|volatile|_Atomic)\b',typ):supported=False
         children=[c for c in n.get('inner',[]) if c.get('kind')]
         if kind=='FunctionDecl':
             function=n.get('name');out['function_boundaries'].append((function,typ))
@@ -73,7 +75,7 @@ def projection(source, validation):
             decls[n.get('id')]=(function,path,n.get('name'))
             out['variable_scope'].append((function,n.get('name'),typ,blocks))
         if kind=='DeclRefExpr':refs.append((function,path,n.get('referencedDecl',{})))
-        if kind in ('BinaryOperator','UnaryOperator','ParenExpr'):
+        if kind in ('BinaryOperator','UnaryOperator','ParenExpr','IntegerLiteral','FloatingLiteral','CallExpr'):
             out['expression_grouping'].append((function,path,shape(n)))
         for i,c in enumerate(children):walk(c,path+(i,),blocks,owners,function)
     for i,n in enumerate(functions):walk(n,(i,),(),(),None)

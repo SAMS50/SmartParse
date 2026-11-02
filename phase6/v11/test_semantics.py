@@ -26,5 +26,11 @@ class SemanticTests(unittest.TestCase):
             self.assertIsNone(self.p(s))
         self.assertEqual(compare(a,None)['control_flow']['status'],'UNKNOWN')
 
+    def test_literals_and_functions(self):
+        a=self.p('int f(){return 1;}')
+        b=self.p('int f(){return 2;}')
+        self.assertEqual(compare(a,b)['expression_grouping']['status'],'CHANGED')
+        self.assertEqual(compare(a,self.p('int g(){return 1;}'))['function_boundaries']['status'],'CHANGED')
+
 
 if __name__=='__main__':unittest.main()

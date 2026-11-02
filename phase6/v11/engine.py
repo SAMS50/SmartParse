@@ -117,6 +117,13 @@ def rank(source, candidates, snapshots, reference, mode='full', config=Config(),
         ranked.append(c)
     ranked.sort(key=lambda c:(c['validation']['status']!='VALID',-c['score'],c['id']))
     eligible=[c for c in ranked if c['validation']['status']=='VALID']
+    if eligible:
+        anchor=next(raw.get('_projection') for raw in candidates if raw['id']==eligible[0]['id'])
+        for c in eligible:
+            current=next(raw.get('_projection') for raw in candidates if raw['id']==c['id'])
+            c['candidate_comparison']=compare(anchor,current)
+            for check in c['candidate_comparison'].values():
+                check['explanation']='Compared against the highest ranked valid candidate; this does not establish programmer intent'
     reason='No candidate satisfies syntax validation';recommendation=None;decision='no safe recommendation'
     if eligible:
         best=eligible[0];reason='Insufficient supported intent evidence'
@@ -139,13 +146,20 @@ def rank(source, candidates, snapshots, reference, mode='full', config=Config(),
 
 
 def recover(source, history=None, mode='full', standard='c11', config=Config()):
+    if len(source)>16384:
+        return dict(mode=mode,decision='unsupported repair',reason='Intent analysis is limited to 16384 code points',
+                    recommendation=None,candidates=[],history_status='Not analyzed: size bound',
+                    original_sha256=hashlib.sha256(source.encode()).hexdigest(),original_unchanged=True,
+                    compiler_invocations=0,elapsed_seconds=0,generation={'truncated':True})
     start=time.perf_counter();validator=Validator(standard,max_calls=config.max_candidates+config.history_window+2)
     candidates,generation=generate(source,validator,config)
     snapshots,mapping_reason=replay(source,history,HistoryConfig(window=config.history_window))
     reference=None
     for snapshot in reversed(snapshots[:-1]):
-        reference=projection(snapshot,validator.inspect(snapshot))
-        if reference is not None:break
+        validation=validator.inspect(snapshot)
+        if validation['status']=='VALID':
+            reference=projection(snapshot,validation)
+            break
     result=rank(source,candidates,snapshots,reference,mode,config,mapping=history is None or bool(snapshots))
     result.update(generation=generation,history_status=mapping_reason,config=asdict(config),
                   original_sha256=hashlib.sha256(source.encode()).hexdigest(),original_unchanged=True,

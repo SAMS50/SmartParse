@@ -1,0 +1,2583 @@
+{
+  "schema": "smartparse.v11.benchmark",
+  "config": {
+    "history_window": 8,
+    "history_weight": 1,
+    "changed_penalty": 18,
+    "unknown_penalty": 4,
+    "ambiguity_margin": 12,
+    "max_candidates": 24,
+    "max_trials": 240
+  },
+  "samples": 20,
+  "provenance": "20 reconstructed/synthetic cases; 0 recorded human histories; 2 repository-fixture cases; no independent adjudication",
+  "ranking_only": {
+    "existing": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 5,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 14,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 3,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 5,
+        "denominator": 17
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 11,
+        "denominator": 15
+      },
+      "mean_rank_ms": 2.8341749995888676
+    },
+    "history": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 4,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 15,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 2.11215499912214
+    },
+    "semantic": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 2,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 17,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 2.0069050009624334
+    },
+    "full": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 7,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "mean_rank_ms": 1.7851499997050269
+    }
+  },
+  "full_system": {
+    "existing": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 5,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 14,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 3,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 5,
+        "denominator": 17
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 11,
+        "denominator": 15
+      },
+      "mean_rank_ms": 783.8424350000423
+    },
+    "history": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 4,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 15,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 804.2176800008747
+    },
+    "semantic": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 2,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 17,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 878.2195550003962
+    },
+    "full": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 7,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "mean_rank_ms": 823.236599998927
+    }
+  },
+  "mean_generation_ms": 787.5146799993672,
+  "old_parser_exact": {
+    "numerator": 2,
+    "denominator": 20
+  },
+  "cases": [
+    {
+      "id": "ownership-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){if(x){x++;}return x;}",
+      "source": "int f(int x){if(x){x++;return x;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 681.7570999992313,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 1.5251000004354864,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.7553000032203272,
+          "decision": "no safe recommendation",
+          "reason": "Insufficient supported intent evidence",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 1.0378000006312504,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x)x++;return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}return x;}",
+          "rank_ms": 2.2255000003497116,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x)x++;return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 67.3425999993924
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:34: error: expected '}'\r\nint f(int x){if(x){x++;return x;}\r\n                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 91.80329999799142
+        }
+      }
+    },
+    {
+      "id": "ownership-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){if(x){x++;}return x;}",
+      "source": "int f(int x){if(x){x++;return x;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 776.3325999985682,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 0.21039999410277233,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.15590000111842528,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.19009999959962443,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.18879999697674066,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 49.208700002054684
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:34: error: expected '}'\r\nint f(int x){if(x){x++;return x;}\r\n                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 83.91210000263527
+        }
+      }
+    },
+    {
+      "id": "else-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){if(x){x++;}else{x--;}return x;}",
+      "source": "int f(int x){if(x){x++;else{x--;}return x;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 395.65749999746913,
+      "modes": {
+        "existing": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}else{x--;}return x;}",
+          "rank_ms": 1.421599998138845,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "history": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}else{x--;}return x;}",
+          "rank_ms": 1.5998000017134473,
+          "decision": "recommended repair",
+          "reason": "Verified snapshot restoration; semantic analysis excluded in this ablation",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}else{x--;}return x;}",
+          "rank_ms": 1.528800006781239,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}else{x--;}return x;}",
+          "rank_ms": 1.771700000972487,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;else{x--;}return x;}",
+        "validation": "INVALID",
+        "repair_count": 0
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 53.101500001503155
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:24: error: expected expression\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n                       ^\r\n<stdin>:1:44: error: expected '}'\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n                                           ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n            ^\r\n2 errors generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 108.79540000314591
+        }
+      }
+    },
+    {
+      "id": "else-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){if(x){x++;}else{x--;}return x;}",
+      "source": "int f(int x){if(x){x++;else{x--;}return x;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1214.2252000048757,
+      "modes": {
+        "existing": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;}else{x--;}return x;}",
+          "rank_ms": 0.13929999840911478,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.06779999966965988,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.4737999988719821,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.13029999536229298,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;}else{x--;}return x;}",
+            "int f(int x){if(x)x++;else{x--;}return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;else{x--;}return x;}",
+        "validation": "INVALID",
+        "repair_count": 0
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 67.41399999737041
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:24: error: expected expression\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n                       ^\r\n<stdin>:1:44: error: expected '}'\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n                                           ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;else{x--;}return x;}\r\n            ^\r\n2 errors generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 84.07330000045476
+        }
+      }
+    },
+    {
+      "id": "while-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){while(x){x--;}return x;}",
+      "source": "int f(int x){while(x){x--;return x;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 904.8122000021976,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){while(x){x--;return x;}}",
+          "rank_ms": 2.4301000012201257,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 6.901600005221553,
+          "decision": "no safe recommendation",
+          "reason": "Insufficient supported intent evidence",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 2.2915999943506904,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x)x--;return x;}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x);x--;return x;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){while(x){x--;}return x;}",
+          "rank_ms": 3.3793000038713217,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x)x--;return x;}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x);x--;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){while(x){x--;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 62.76669999351725
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:37: error: expected '}'\r\nint f(int x){while(x){x--;return x;}\r\n                                    ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){while(x){x--;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 125.60389999998733
+        }
+      }
+    },
+    {
+      "id": "while-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){while(x){x--;}return x;}",
+      "source": "int f(int x){while(x){x--;return x;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1316.5827999982866,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){while(x){x--;return x;}}",
+          "rank_ms": 0.26760000037029386,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.4676999960793182,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.250899996899534,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.2534000013838522,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){while(x){x--;return x;}}",
+            "int f(int x){while(x){}x--;return x;}",
+            "int f(int x){while(x){x--;}return x;}",
+            "int f(int x){while(x);x--;return x;}",
+            "int f(int x){while(x)x--;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){while(x){x--;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 113.89890000282321
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:37: error: expected '}'\r\nint f(int x){while(x){x--;return x;}\r\n                                    ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){while(x){x--;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 245.25800000265008
+        }
+      }
+    },
+    {
+      "id": "for-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+      "source": "int f(int x){for(int i=0;i<x;i++){x--;return x;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1666.0832999987178,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+          "rank_ms": 13.257200000225566,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 5.507899993972387,
+          "decision": "no safe recommendation",
+          "reason": "Insufficient supported intent evidence",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 15.740700000606012,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+          "rank_ms": 6.77680000080727,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 83.58360000420362
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:49: error: expected '}'\r\nint f(int x){for(int i=0;i<x;i++){x--;return x;}\r\n                                                ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){for(int i=0;i<x;i++){x--;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 155.08349999436177
+        }
+      }
+    },
+    {
+      "id": "for-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+      "source": "int f(int x){for(int i=0;i<x;i++){x--;return x;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1087.4731000003521,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+          "rank_ms": 0.28670000028796494,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.24809999740682542,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.20500000391621143,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.20339999900897965,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+            "int f(int x){for(int i=0;i<x;i++){}x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++);x--;return x;}",
+            "int f(int x){for(int i=0;i<x;i++){x--;}return x;}",
+            "int f(int x){for(int i=0;i<x;i++)x--;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){for(int i=0;i<x;i++){x--;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 55.886699999973644
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:49: error: expected '}'\r\nint f(int x){for(int i=0;i<x;i++){x--;return x;}\r\n                                                ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){for(int i=0;i<x;i++){x--;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 76.09819999925094
+        }
+      }
+    },
+    {
+      "id": "shadow-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+      "source": "int f(int x){int y=0;if(x){int y=1;y++;return y;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1029.836300003808,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+          "rank_ms": 4.513500003668014,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 4.70599999971455,
+          "decision": "no safe recommendation",
+          "reason": "Insufficient supported intent evidence",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 3.9506000030087307,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+          "rank_ms": 4.348900001787115,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 46.90660000051139
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:50: error: expected '}'\r\nint f(int x){int y=0;if(x){int y=1;y++;return y;}\r\n                                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){int y=0;if(x){int y=1;y++;return y;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 89.547900002799
+        }
+      }
+    },
+    {
+      "id": "shadow-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){int y=0;if(x){int y=1;y++;}return y;}",
+      "source": "int f(int x){int y=0;if(x){int y=1;y++;return y;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1201.355400000466,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+          "rank_ms": 0.2582000015536323,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 2.082900005916599,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.20539999968605116,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.19380000594537705,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+            "int f(int x){int y=0;if(x){int y=1;}y++;return y;}",
+            "int f(int x){int y=0;if(x){int y=1;y++;}return y;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){int y=0;if(x){int y=1;y++;return y;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 274.57879999565193
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:50: error: expected '}'\r\nint f(int x){int y=0;if(x){int y=1;y++;return y;}\r\n                                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){int y=0;if(x){int y=1;y++;return y;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 288.7764999977662
+        }
+      }
+    },
+    {
+      "id": "expression-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int a,int b,int c){return (a+b)*c;}",
+      "source": "int f(int a,int b,int c){return (a+b*c;}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 201,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 1331.6178999957629,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int a,int b,int c){return (a+b*c);}",
+          "rank_ms": 6.428000000596512,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}",
+            "int f(int a,int b,int c){return (a+b)*c;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 8.355699996172916,
+          "decision": "ambiguous repair",
+          "reason": "Multiple plausible repairs were found. Programmer confirmation is recommended.",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b)*c;}",
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 2.0798000041395426,
+          "decision": "no safe recommendation",
+          "reason": "Insufficient supported intent evidence",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a+b)*c;}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int a,int b,int c){return (a+b)*c;}",
+          "rank_ms": 2.0167000038782135,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b)*c;}",
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int a,int b,int c){return (a+b*c);}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 41.462099994532764
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:39: error: expected ')'\r\nint f(int a,int b,int c){return (a+b*c;}\r\n                                      ^\r\n<stdin>:1:33: note: to match this '('\r\nint f(int a,int b,int c){return (a+b*c;}\r\n                                ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 83.88600000034785
+        }
+      }
+    },
+    {
+      "id": "expression-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int a,int b,int c){return (a+b)*c;}",
+      "source": "int f(int a,int b,int c){return (a+b*c;}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 201,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 625.2602000022307,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int a,int b,int c){return (a+b*c);}",
+          "rank_ms": 0.20399999630171806,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}",
+            "int f(int a,int b,int c){return (a+b)*c;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.4117999997106381,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}",
+            "int f(int a,int b,int c){return (a+b)*c;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.18049999926006421,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}",
+            "int f(int a,int b,int c){return (a+b)*c;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 2.667599997948855,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int a,int b,int c){return (a+b*c);}",
+            "int f(int a,int b,int c){return (a)+b*c;}",
+            "int f(int a,int b,int c){return a+b*c;}",
+            "int f(int a,int b,int c){return ;a+b*c;}",
+            "int f(int a,int b,int c){return (a+b)*c;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int a,int b,int c){return (a+b*c);}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 44.33239999343641
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:39: error: expected ')'\r\nint f(int a,int b,int c){return (a+b*c;}\r\n                                      ^\r\n<stdin>:1:33: note: to match this '('\r\nint f(int a,int b,int c){return (a+b*c;}\r\n                                ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 90.63099999912083
+        }
+      }
+    },
+    {
+      "id": "pointer-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int *p){return *p;}",
+      "source": "int f(int *p){return *p;",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 113,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 133.36429999617394,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.03529999958118424,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "history": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.005399997462518513,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "semantic": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.005999994755256921,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "full": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.005900001269765198,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int *p){return *p;",
+        "validation": "INVALID",
+        "repair_count": 0
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 57.028399998671375
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:25: error: expected '}'\r\nint f(int *p){return *p;\r\n                        ^\r\n<stdin>:1:14: note: to match this '{'\r\nint f(int *p){return *p;\r\n             ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 80.84570000210078
+        }
+      }
+    },
+    {
+      "id": "pointer-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int *p){return *p;}",
+      "source": "int f(int *p){return *p;",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 113,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 170.99249999591848,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.005000001692678779,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "history": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.0029000002541579306,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "semantic": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.006000002031214535,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        },
+        "full": {
+          "exact": false,
+          "top3": false,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": false,
+          "recommended": null,
+          "rank_ms": 0.005399997462518513,
+          "decision": "no safe recommendation",
+          "reason": "No candidate satisfies syntax validation",
+          "ordered_sources": []
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int *p){return *p;",
+        "validation": "INVALID",
+        "repair_count": 0
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 41.769099996599834
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:25: error: expected '}'\r\nint f(int *p){return *p;\r\n                        ^\r\n<stdin>:1:14: note: to match this '{'\r\nint f(int *p){return *p;\r\n             ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 80.87849999719765
+        }
+      }
+    },
+    {
+      "id": "multiple-verified",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){int y=1;return x+y;}",
+      "source": "int f(int x){int y=1return x+y}",
+      "history_condition": "verified",
+      "generation": {
+        "trials": 137,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 395.82830000290414,
+      "modes": {
+        "existing": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=1;return x+y;}",
+          "rank_ms": 15.677300005336292,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "history": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=1;return x+y;}",
+          "rank_ms": 1.0991000017384067,
+          "decision": "recommended repair",
+          "reason": "Verified snapshot restoration; semantic analysis excluded in this ablation",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "semantic": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=1;return x+y;}",
+          "rank_ms": 1.4792000001762062,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "full": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=1;return x+y;}",
+          "rank_ms": 1.0926999966613948,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": true,
+        "source": "int f(int x){int y=1;return x+y;}",
+        "validation": "VALID",
+        "repair_count": 2
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 53.01359999430133
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:21: error: invalid suffix 'return' on integer constant\r\nint f(int x){int y=1return x+y}\r\n                    ^\r\n<stdin>:1:31: error: expected ';' at end of declaration\r\nint f(int x){int y=1return x+y}\r\n                              ^\r\n                              ;\r\nfix-it:\"<stdin>\":{1:31-1:31}:\";\"\r\n2 errors generated.\r\n",
+          "repair_accuracy_applicable": true,
+          "exact": false,
+          "fixit_count": 1,
+          "elapsed_ms": 127.01979999837931
+        }
+      }
+    },
+    {
+      "id": "multiple-missing",
+      "provenance": "synthetic mutation of authored C microprogram",
+      "ground_truth": "int f(int x){int y=1;return x+y;}",
+      "source": "int f(int x){int y=1return x+y}",
+      "history_condition": "missing",
+      "generation": {
+        "trials": 137,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 473.841099999845,
+      "modes": {
+        "existing": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": false,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){int y=1;return x+y;}",
+          "rank_ms": 0.13939999917056412,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.12399999832268804,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.08860000525601208,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.08549999620299786,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int f(int x){int y=1;return x+y;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": true,
+        "source": "int f(int x){int y=1;return x+y;}",
+        "validation": "VALID",
+        "repair_count": 2
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 64.38570000318578
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:21: error: invalid suffix 'return' on integer constant\r\nint f(int x){int y=1return x+y}\r\n                    ^\r\n<stdin>:1:31: error: expected ';' at end of declaration\r\nint f(int x){int y=1return x+y}\r\n                              ^\r\n                              ;\r\nfix-it:\"<stdin>\":{1:31-1:31}:\";\"\r\n2 errors generated.\r\n",
+          "repair_accuracy_applicable": true,
+          "exact": false,
+          "fixit_count": 1,
+          "elapsed_ms": 81.4505999951507
+        }
+      }
+    },
+    {
+      "id": "misleading-valid-snapshot",
+      "provenance": "synthetic misleading history",
+      "ground_truth": "int f(int x){if(x){x++;}return x;}",
+      "source": "int f(int x){if(x){x++;return x;}",
+      "history_condition": "snapshot",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 992.5271999964025,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 2.523099996324163,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 2.1408999964478426,
+          "decision": "recommended repair",
+          "reason": "Verified snapshot restoration; semantic analysis excluded in this ablation",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 3.5329000020283274,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": true,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int f(int x){if(x){x++;return x;}}",
+          "rank_ms": 2.288399999088142,
+          "decision": "recommended repair",
+          "reason": "Supported structure preserved with a sufficient ranking margin",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 53.73070000496227
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:34: error: expected '}'\r\nint f(int x){if(x){x++;return x;}\r\n                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 130.23089999478543
+        }
+      }
+    },
+    {
+      "id": "broken-version",
+      "provenance": "synthetic inconsistent history",
+      "ground_truth": "int f(int x){if(x){x++;}return x;}",
+      "source": "int f(int x){if(x){x++;return x;}",
+      "history_condition": "version",
+      "generation": {
+        "trials": 190,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 737.2284999946714,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.243499998759944,
+          "decision": "no safe recommendation",
+          "reason": "Source mappings are unreliable",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "history": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.19039999460801482,
+          "decision": "no safe recommendation",
+          "reason": "Source mappings are unreliable",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.23650000366615131,
+          "decision": "no safe recommendation",
+          "reason": "Source mappings are unreliable",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 0.1990000018849969,
+          "decision": "no safe recommendation",
+          "reason": "Source mappings are unreliable",
+          "ordered_sources": [
+            "int f(int x){if(x){x++;return x;}}",
+            "int f(int x){if(x){}x++;return x;}",
+            "int f(int x){if(x){x++;}return x;}",
+            "int f(int x){if(x);x++;return x;}",
+            "int f(int x){if(x)x++;return x;}"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int f(int x){if(x){x++;return x;}}",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 56.35289999918314
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:1:34: error: expected '}'\r\nint f(int x){if(x){x++;return x;}\r\n                                 ^\r\n<stdin>:1:13: note: to match this '{'\r\nint f(int x){if(x){x++;return x;}\r\n            ^\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 99.3293999999878
+        }
+      }
+    },
+    {
+      "id": "repository-S01.c",
+      "provenance": "phase6\\v8\\fixtures\\syntax\\S01.c; synthetic semicolon deletion",
+      "ground_truth": "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+      "source": "int orbit(int n) {\n int total=0\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+      "history_condition": "S01.c",
+      "generation": {
+        "trials": 241,
+        "truncated": true,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 381.35419999889564,
+      "modes": {
+        "existing": {
+          "exact": false,
+          "top3": true,
+          "wrong": true,
+          "compilable_incorrect": true,
+          "structural_change": null,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+          "rank_ms": 3.394599996681791,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+            "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n"
+          ]
+        },
+        "history": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+          "rank_ms": 3.195899997081142,
+          "decision": "recommended repair",
+          "reason": "Verified snapshot restoration; semantic analysis excluded in this ablation",
+          "ordered_sources": [
+            "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+            "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 3.1380000000353903,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+            "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 3.933899999537971,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "int orbit(int n) {\n int total=0;\n while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+            "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "source": "int orbit(int n) {\n int total=0\n ;while(n>0) { total=total+n; n=n-1; }\n return total;\n}\nint sentinel=9;\n",
+        "validation": "VALID",
+        "repair_count": 1
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 55.05010000342736
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:2:13: error: expected ';' at end of declaration\r\n int total=0\r\n            ^\r\n            ;\r\nfix-it:\"<stdin>\":{2:13-2:13}:\";\"\r\n1 error generated.\r\n",
+          "repair_accuracy_applicable": true,
+          "exact": true,
+          "fixit_count": 1,
+          "elapsed_ms": 110.38080000435002
+        }
+      }
+    },
+    {
+      "id": "repository-full-c",
+      "provenance": "phase6\\v8\\fixtures\\c\\C12_valid_full.c; synthetic semicolon deletion",
+      "ground_truth": "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n",
+      "source": "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS] const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n",
+      "history_condition": "c",
+      "generation": {
+        "trials": 0,
+        "truncated": false,
+        "original_status": "INVALID"
+      },
+      "generation_ms": 234.16390000056708,
+      "modes": {
+        "existing": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n",
+          "rank_ms": 3.7235999989206903,
+          "decision": "recommended repair",
+          "reason": "Existing heuristic maximum (research baseline)",
+          "ordered_sources": [
+            "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n"
+          ]
+        },
+        "history": {
+          "exact": true,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": false,
+          "coverage": true,
+          "recommended": "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n",
+          "rank_ms": 4.223999996611383,
+          "decision": "recommended repair",
+          "reason": "Verified snapshot restoration; semantic analysis excluded in this ablation",
+          "ordered_sources": [
+            "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n"
+          ]
+        },
+        "semantic": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 3.515900003549177,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n"
+          ]
+        },
+        "full": {
+          "exact": false,
+          "top3": true,
+          "wrong": false,
+          "compilable_incorrect": false,
+          "structural_change": null,
+          "abstained": true,
+          "coverage": true,
+          "recommended": null,
+          "rank_ms": 3.935999993700534,
+          "decision": "unsupported repair",
+          "reason": "The behavioral impact could not be determined.",
+          "ordered_sources": [
+            "#include <stddef.h>\n#define ROWS 3\ntypedef struct { int slots[ROWS]; const char *name; } Record;\nint total_record(void) {\n Record r={{2,4,6},\"new evaluation\"};\n int total=0;\n for(size_t i=0;i<ROWS;i++) total+=r.slots[i];\n return total;\n}\n"
+          ]
+        }
+      },
+      "old_parser": {
+        "exact": false,
+        "validation": "UNSUPPORTED"
+      },
+      "compilers": {
+        "gcc": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "gcc.exe: error: unrecognized command line option '-fdiagnostics-parseable-fixits'; did you mean '-fdiagnostics-show-caret'?\r\n",
+          "repair_accuracy_applicable": false,
+          "exact": false,
+          "fixit_count": 0,
+          "elapsed_ms": 177.00719999993453
+        },
+        "clang": {
+          "status": "completed",
+          "rejected": true,
+          "diagnostics": "<stdin>:3:33: error: expected ';' at end of declaration list\r\ntypedef struct { int slots[ROWS] const char *name; } Record;\r\n                                ^\r\n                                ;\r\nfix-it:\"<stdin>\":{3:33-3:33}:\";\"\r\n<stdin>:5:20: warning: excess elements in struct initializer [-Wexcess-initializers]\r\n Record r={{2,4,6},\"new evaluation\"};\r\n                   ^~~~~~~~~~~~~~~~\r\n1 warning and 1 error generated.\r\n",
+          "repair_accuracy_applicable": true,
+          "exact": true,
+          "fixit_count": 1,
+          "elapsed_ms": 193.51730000198586
+        }
+      }
+    }
+  ]
+}

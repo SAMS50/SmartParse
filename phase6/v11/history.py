@@ -38,6 +38,17 @@ def distance(a, b):
                SequenceMatcher(None, a, b, autojunk=False).get_opcodes() if tag != 'equal')
 
 
+def reconstruct(before,after):
+    """Build one aggregate event for a declared synthetic/reconstructed example."""
+    start=0
+    while start<min(len(before),len(after)) and before[start]==after[start]:start+=1
+    tail=0
+    while tail<min(len(before),len(after))-start and before[-tail-1]==after[-tail-1]:tail+=1
+    return dict(base_source=before,base_version=0,source_version=1,events=[dict(version=1,offset=start,
+        deleted=before[start:len(before)-tail if tail else len(before)],
+        inserted=after[start:len(after)-tail if tail else len(after)])])
+
+
 def score(source, repaired, snapshots, config=HistoryConfig()):
     if len(snapshots) < 2:
         return {'score': 0, 'restored_snapshot': False, 'explanation': 'No verified recent editing evidence'}
