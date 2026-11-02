@@ -23,6 +23,7 @@ def fetch(url,path,limit,expected=None):
         with urllib.request.urlopen(request,timeout=30) as response:data=response.read(limit+1)
         if len(data)>limit:raise ValueError('Download exceeds acquisition bound')
         path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+    if len(data)>limit:raise ValueError('Cached/downloaded asset exceeds acquisition bound')
     digest=hashlib.sha256(data).hexdigest()
     if expected and digest!=expected:raise ValueError('Acquisition hash mismatch: '+path.name)
     return dict(sha256=digest,bytes=len(data),url=url)

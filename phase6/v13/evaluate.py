@@ -101,6 +101,7 @@ def run(prepared,manifest_path,split):
          token_when_applicable=rate(sum(r['compilers'][n]['token_match'] for r in primary),sum(r['compilers'][n]['applicable'] for r in primary)),
          compile_when_applicable=rate(sum(r['compilers'][n]['validation'] is not None and r['compilers'][n]['validation']['accepted'] is True for r in primary),sum(r['compilers'][n]['applicable'] and r['compilers'][n]['validation']['accepted'] is not None for r in primary)),
          original_runtime_ms=distribution([r['compilers'][n]['original']['elapsed_ms'] for r in primary])) for n in tools}
+    paired_rows=[{**r,'systems':{**r['systems'],**{n:{'exact':r['compilers'][n]['exact']} for n in tools}}} for r in primary]
     subgroups={}
     def subgroup(key,fn):
         groups=defaultdict(list)
@@ -121,6 +122,7 @@ def run(prepared,manifest_path,split):
     result=dict(schema='smartparse.v13.real_world',split=split,selected=len(rows),category_counts=dict(Counter(r['category'] for r in rows)),primary_A=len(primary),
                 frozen_engine_hash=before,compiler_identities={n:t.identity for n,t in tools.items()},systems=systems,compiler_comparison=comparisons,
                 paired_comparisons={m:paired_bootstrap(primary,'existing',m) for m in ('history','semantic','full')},
+                paired_compiler_comparisons={n:paired_bootstrap(paired_rows,n,'full') for n in tools},
                 history_beyond_semantic=paired_bootstrap(primary,'semantic','full'),runtime_ms=distribution([r['engine_elapsed_ms'] for r in primary]),
                 compiler_invocations=distribution([r['engine_compiler_invocations'] for r in primary]),subgroups=subgroups,
                 selective_diagnostic_curves=curves,behavioral_equivalence='not assessed',cases=rows)

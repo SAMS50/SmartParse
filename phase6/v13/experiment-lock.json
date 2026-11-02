@@ -1,0 +1,47 @@
+{
+  "base": "d48270d",
+  "engine_hash": "70619faa7804ad53cec98992c7ebdb80a50fb0e0017eec3623e09ef1da6f5d56",
+  "sample_manifest_sha256": "4fc114ae24086aa8e68f4c2601676b3e2369b12daff3e25ce7d94ef2f4a73698",
+  "harness_hashes": {
+    "acquire.py": "3f8341e7ccbb4aa225281c443d4038005c0528ed5a28d47796de7a358d64290e",
+    "ingest.py": "a390e17c2645a8b91911d133a51015e4969bc5ad2efdb8220c029a8de415e9ca",
+    "compiler.py": "4383cbf8b2105bda0396fc4722efc866ee1a5b8b17965c4c15ccdf8d5a9054ba",
+    "history.py": "64d2d11ebc831fff642c87d5ae9752e91cb2bd011c703bc133fc38046e40b2ac",
+    "engine.py": "79fbf69974647b8a8a800f239f48d6b1cec04f11e232b5f5e7c6d0c7775e8758",
+    "evaluate.py": "913fac8deb3cd7606df6966dab0b108b1b5a0c24e18011793fce2da043e37320",
+    "metrics.py": "121b8d015992cd505af4d9230e927ae79be2f7b7b173f99ac815425f9f20d767"
+  },
+  "policy": "No recovery tuning; final split evaluated once after protocol/harness freeze",
+  "developer_cases": 20,
+  "final_cases": 80,
+  "history_condition": "none",
+  "compiler_identities": {
+    "gcc": {
+      "name": "gcc",
+      "status": "available",
+      "version": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0",
+      "flags": [
+        "-x",
+        "c",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fdiagnostics-color=never"
+      ],
+      "fixit_format": "unsupported"
+    },
+    "clang": {
+      "name": "clang",
+      "status": "available",
+      "version": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+      "flags": [
+        "-x",
+        "c",
+        "-std=c11",
+        "-fsyntax-only",
+        "-fdiagnostics-color=never",
+        "-fdiagnostics-parseable-fixits"
+      ],
+      "fixit_format": "compiler parseable physical edits"
+    }
+  }
+}
