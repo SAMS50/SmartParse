@@ -1,0 +1,37 @@
+{
+  "source": {
+    "name": "TEGCER",
+    "repository": "https://github.com/umairzahmed/tegcer",
+    "revision": "0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5",
+    "archive_url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/data/input/dataset.zip",
+    "license_url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/LICENSE",
+    "readme_url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/README.md",
+    "license": "GPL-3.0 repository license; external student sources are not redistributed",
+    "provenance": "Maintainer-documented same-student compilation error/correction pairs",
+    "recorded_edit_events": false,
+    "chronological_endpoints": true
+  },
+  "assets": {
+    "dataset.zip": {
+      "sha256": "5bfc7485b7c7dc79d5fe55e530ba62fa2d4bc448f02df0ded0ea7e4d1bce3868",
+      "bytes": 9651167,
+      "url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/data/input/dataset.zip"
+    },
+    "LICENSE": {
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149,
+      "url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/LICENSE"
+    },
+    "README.md": {
+      "sha256": "75c64b8b3445b58aaa844c31a25f6be31184c78a02d7bc3e32665cb8c9d2eb0f",
+      "bytes": 7558,
+      "url": "https://raw.githubusercontent.com/umairzahmed/tegcer/0fa71a05a5a4c9bb7c9670e38b05cb2d647dcfd5/README.md"
+    }
+  },
+  "archive_inventory": [
+    {
+      "name": "dataset.csv",
+      "bytes": 88942404
+    }
+  ]
+}

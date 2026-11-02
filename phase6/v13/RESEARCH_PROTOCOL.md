@@ -131,3 +131,14 @@ Commit only necessary manifests, safe per-case hashes/metrics and aggregate
 research outputs. Preserve v11/v12 source/results and older frozen artifacts;
 hash-check them and existing acceptance outputs around regressions. Run unit,
 backend and frontend regressions/build. Do not push/merge without user approval.
+
+## Pre-outcome implementation clarification
+
+Compiler baseline source is copied to a private temporary `input.c`, not passed
+as a downloaded filename. Its exact physical path is mapped to `<stdin>` solely
+for fix-it coordinate extraction; original commands and raw diagnostics are
+retained locally. This permits bounded execution through the existing runner
+without changing any historical module. Public command records replace local
+executable/input paths with explicit placeholders. Standard-only includes remain
+enforced. The original stdin recovery engine is unchanged. This clarification
+was made before running either development or final corpus experiments.
