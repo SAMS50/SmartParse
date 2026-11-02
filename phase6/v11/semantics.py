@@ -30,7 +30,7 @@ class Validator:
         self.calls+=1
         try:
             p=bounded_run([self.compiler,'-x','c',f'-std={self.standard}','-fsyntax-only',
-                '-Wno-everything','-Xclang','-ast-dump=json','-'],input=source.encode('utf-8'),
+                '-Wno-everything','-fdiagnostics-parseable-fixits','-Xclang','-ast-dump=json','-'],input=source.encode('utf-8'),
                 capture_output=True,shell=False,timeout=max(.01,min(2,self.deadline-time.monotonic())))
             tree=json.loads(p.stdout) if p.returncode==0 else None
             result=dict(status='VALID' if tree else 'INVALID',reason=p.stderr.decode('utf-8',errors='replace')[:2000],tree=tree)
