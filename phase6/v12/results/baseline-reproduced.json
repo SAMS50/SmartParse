@@ -1,0 +1,311 @@
+{
+  "schema": "smartparse.v11.benchmark",
+  "config": {
+    "history_window": 8,
+    "history_weight": 1,
+    "changed_penalty": 18,
+    "unknown_penalty": 4,
+    "ambiguity_margin": 12,
+    "max_candidates": 24,
+    "max_trials": 240
+  },
+  "samples": 20,
+  "provenance": "20 reconstructed/synthetic cases; 0 recorded human histories; 2 repository-fixture cases; no independent adjudication",
+  "ranking_only": {
+    "existing": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 5,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 14,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 3,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 5,
+        "denominator": 17
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 11,
+        "denominator": 15
+      },
+      "mean_rank_ms": 0.8293950006191153
+    },
+    "history": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 4,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 15,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 0.7654799996089423
+    },
+    "semantic": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 2,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 17,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 0.7783449993439717
+    },
+    "full": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 7,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "mean_rank_ms": 0.6470149997767294
+    }
+  },
+  "full_system": {
+    "existing": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 5,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 14,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 3,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 5,
+        "denominator": 17
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 11,
+        "denominator": 15
+      },
+      "mean_rank_ms": 617.2336599996925
+    },
+    "history": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 4,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 15,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 643.7081949999993
+    },
+    "semantic": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 2,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 17,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 3
+      },
+      "mean_rank_ms": 612.6897650006867
+    },
+    "full": {
+      "samples": 20,
+      "exact_intended_accuracy": {
+        "numerator": 7,
+        "denominator": 20
+      },
+      "top3_accuracy": {
+        "numerator": 16,
+        "denominator": 20
+      },
+      "wrong_repair_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "compilable_incorrect_rate": {
+        "numerator": 1,
+        "denominator": 20
+      },
+      "abstention_rate": {
+        "numerator": 12,
+        "denominator": 20
+      },
+      "accuracy_when_recommended": {
+        "numerator": 7,
+        "denominator": 8
+      },
+      "candidate_coverage": {
+        "numerator": 18,
+        "denominator": 20
+      },
+      "structural_change_rate": {
+        "numerator": 1,
+        "denominator": 8
+      },
+      "mean_rank_ms": 599.0548199995828
+    }
+  },
+  "mean_generation_ms": 611.1098499997752,
+  "old_parser_exact": {
+    "numerator": 2,
+    "denominator": 20
+  }
+}

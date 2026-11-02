@@ -1,0 +1,36 @@
+# Milestone 11 failure analysis
+
+Reproduced from frozen v11 code at d261ec3. Complete candidate sources, validation, history features, semantic checks, scores and explanations are in `results/failure-details.json`. No v11 artifact is edited. Categories below are evaluator assessments, not human adjudication.
+
+| Case / category | Intended edit | Pool / valid / intended generated | Top margin | Outcome | Classification | Recoverable evidence |
+|---|---|---|---:|---|---|---|
+| ownership-verified | `1:24 '' → '}'` | 7 / 5 / True | 58.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| ownership-missing | `1:24 '' → '}'` | 7 / 5 / True | 75 | unsupported repair: The behavioral impact could not be determined. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| else-verified | `1:24 '' → '}'` | 3 / 2 / True | 132.625 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| else-missing | `1:24 '' → '}'` | 3 / 2 / True | 0 | ambiguous repair: Multiple plausible repairs were found. Programmer confirmation is recommended. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| while-verified | `1:27 '' → '}'` | 7 / 5 / True | 58.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| while-missing | `1:27 '' → '}'` | 7 / 5 / True | 75 | unsupported repair: The behavioral impact could not be determined. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| for-verified | `1:39 '' → '}'` | 7 / 5 / True | 58.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| for-missing | `1:39 '' → '}'` | 7 / 5 / True | 75 | unsupported repair: The behavioral impact could not be determined. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| shadow-verified | `1:40 '' → '}'` | 9 / 3 / True | 58.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| shadow-missing | `1:40 '' → '}'` | 9 / 3 / True | 75 | unsupported repair: The behavioral impact could not be determined. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| expression-verified | `1:37 '' → ')'` | 5 / 5 / True | 41.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| expression-missing | `1:37 '' → ')'` | 5 / 5 / True | 55 | unsupported repair: The behavioral impact could not be determined. | Correct abstention due to genuine ambiguity | No reliable choice among different valid structures |
+| pointer-verified | `1:25 '' → '}'` | 0 / 0 / False | None | no safe recommendation: No candidate satisfies syntax validation | Candidate-generation failure | Possibly: inspect missing boundary candidates |
+| pointer-missing | `1:25 '' → '}'` | 0 / 0 / False | None | no safe recommendation: No candidate satisfies syntax validation | Candidate-generation failure | Possibly: inspect missing boundary candidates |
+| multiple-verified | `1:21 '' → ';'; 1:31 '' → ';'` | 3 / 1 / True | None | recommended repair: Supported structure preserved with a sufficient ranking margin | Correct recommendation | Yes |
+| multiple-missing | `1:21 '' → ';'; 1:31 '' → ';'` | 3 / 1 / True | None | unsupported repair: The behavioral impact could not be determined. | Overly conservative abstention | Potentially: unique supported candidate, without an intent guarantee |
+| misleading-valid-snapshot | `1:24 '' → '}'` | 7 / 5 / True | 208.25 | recommended repair: Supported structure preserved with a sufficient ranking margin | Incorrect history interpretation | No: two intentions fit the observable invalid program; historical validity is not intent |
+| broken-version | `1:24 '' → '}'` | 7 / 5 / True | 75 | no safe recommendation: Source mappings are unreliable | Unsupported syntax or unavailable evidence | No: invalid source-version chain |
+| repository-S01.c | `2:13 '' → ';'` | 2 / 2 / True | 35.25 | unsupported repair: The behavioral impact could not be determined. | Unsupported syntax or unavailable evidence | Structural coverage gap; no claim of semantic safety |
+| repository-full-c | `3:33 '' → ';'` | 1 / 1 / True | None | unsupported repair: The behavioral impact could not be determined. | Unsupported syntax or unavailable evidence | Structural coverage gap; no claim of semantic safety |
+
+## Root causes and implementation decisions
+
+* The misleading snapshot replays exactly. Its offsets and versions are valid. It deletes an EOF brace from a program whose return is inside an if block. Restoring it is structurally equal to history but differs from evaluator intent. Lowering history weight alone cannot identify that intention; structural evidence is not independent of the reference. Add a boundary-history ambiguity guard when supported alternatives disagree. Do not assert the history is corrupt.
+* Missing histories are mostly justified abstentions: multiple valid block/expression structures remain. A unique supported punctuation repair or unanimous supported candidate structure can provide narrower reference-free evidence; report this basis explicitly, without asserting preservation against an absent AST.
+* Pointer syntax misses the intended EOF brace because the custom grammar rejects pointers and Clang supplies no applicable fix-it. Add lexer-aware unmatched delimiter candidates, without importing history into generation. Keep unsupported pointer semantics UNKNOWN.
+* Repository S01 has a supported function plus a scalar global. The blanket global rejection prevents otherwise justified structural comparison. Support scalar global declarations and their bindings while retaining UNKNOWN for records, preprocessing and other unsupported constructs.
+* Multiple compiler fix-its were applied independently in v11. A bounded, nonoverlapping composite can cover multi-error cases without enumerating arbitrary token combinations.
+* AST ownership currently omits expression statements (BinaryOperator/UnaryOperator roots). Add explicit ownership records for those statements. Function-boundary projection stores signatures only; include per-function body inventory. These are identified coverage gaps, not a claim that the historical failure was caused by them.
+* No historical case demonstrates that increasing candidate counts or fitting arbitrary weights is justified. Retain the 24-program cap and margin 12 as a candidate setting; evaluate margins on development families only. Keep the original 20 separate from held-out evaluation.
