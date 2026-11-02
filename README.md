@@ -2,6 +2,21 @@
 
 ## SmartParse Studio workspace (Milestone 10.2)
 
+Milestone 12 is now the default for optional intent-aware recovery. It distinguishes
+history replay reliability from intent evidence, abstains on ambiguous EOF-brace
+histories, and supports bounded structural-consensus punctuation recovery when
+history is absent. Studio retains read-only proposals and normal editor undo.
+On the separate 52-case synthetic/reconstructed held-out set, v12 made 28 correct,
+zero wrong recommendations and 24 abstentions, versus v11’s 16 correct, four wrong
+and 32 abstentions. This is not a general real-world accuracy guarantee. See the
+[Milestone 12 report and commands](MILESTONE_12_REPORT.md) and
+[held-out evaluation and limitations](phase6/v12/EVALUATION_REPORT.md).
+
+```powershell
+.\.studio-venv\Scripts\python.exe -m phase6.v12 example.c --mode full
+.\.studio-venv\Scripts\python.exe -m phase6.v12.validate
+```
+
 Milestone 11 adds optional **Intent-aware recovery** in Analysis settings and the
 existing Recovery tab. It verifies session edit history, validates candidate
 programs with Clang, explains supported ownership/scope/binding/grouping changes,

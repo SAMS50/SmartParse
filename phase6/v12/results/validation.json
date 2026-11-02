@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-03",
+  "full_unittest": {
+    "tests": 539,
+    "skipped": 28,
+    "status": "passed"
+  },
+  "milestone11_tests": 11,
+  "milestone12_tests": 13,
+  "frontend": {
+    "files": 8,
+    "tests": 69,
+    "status": "passed"
+  },
+  "production_build": "passed; existing large-Monaco-bundle warning",
+  "browser": "passed: actual edit capture, intended repair, read-only diff, reanalysis, undo, ambiguous EOF-history abstention, evidence reliability, zero page errors",
+  "compiler_versions": {
+    "clang": "Android (11349228, based on r487747e) clang version 17.0.2 (https://android.googlesource.com/toolchain/llvm-project d9f89f4d16663d5012e5c09495f3b30ece3d2362)",
+    "gcc": "gcc.exe (MinGW.org GCC-6.3.0-1) 6.3.0"
+  },
+  "preservation": {
+    "checked_files": 1969,
+    "changed": [],
+    "original_acceptance_files_preserved": true,
+    "legacy_performance_bytes_restored": true,
+    "test_exit_code": 0
+  },
+  "algorithm_fingerprint": "9322e5d40a504760b990033eae5f41dfbfe30f536912bcde3897f51dda750036",
+  "branch": "feature/milestone-12-repair-optimization",
+  "push_status": "not attempted; user approval required"
+}
