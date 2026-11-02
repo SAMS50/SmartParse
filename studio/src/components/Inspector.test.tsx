@@ -16,7 +16,10 @@ test('intent abstention, alternatives and supported impact remain explicit',()=>
     changes:[{offset:5,end_offset:5,deleted:'',inserted:';',line:1,column:6}],
     validation:{status:'VALID',reason:''},history:{explanation:'No verified recent editing evidence'},
     semantic:{statement_ownership:{status:'UNKNOWN',explanation:'No supported valid reference'}}}]}
+  report.report.intent_recovery.reliability={status:'verified replay',intent_support:'ambiguous: end-of-source block deletion',reason:'Verified replay',mapping_verified:true}
+  report.report.intent_recovery.evidence_basis='valid historical structural comparison'
   show(report)
+  expect(screen.getByText(/Evidence reliability: ambiguous: end-of-source block deletion/)).toBeInTheDocument()
   expect(screen.getByLabelText('Intent-aware recovery evidence')).toHaveTextContent('ambiguous repair')
   expect(screen.getByText('Syntax validation: VALID')).toBeInTheDocument()
   expect(screen.getByText(/statement_ownership: UNKNOWN/)).toBeInTheDocument()

@@ -77,6 +77,7 @@ function IntentEvidence({evidence,source}:{evidence:NonNullable<StudioResult['re
   const candidate=evidence.candidates.find(c=>c.id===(selected||evidence.recommendation))
   return <section className="recovery-block" aria-label="Intent-aware recovery evidence">
     <h3>Intent-aware recovery: {evidence.decision}</h3><p>{evidence.reason}</p><p>{evidence.history_status}</p>
+    {evidence.reliability&&<p>Evidence reliability: {evidence.reliability.intent_support}. {evidence.evidence_basis}</p>}
     <p>Compilation does not prove correctness. Behavioral equivalence is not guaranteed. Original editor content remains unchanged.</p>
     {evidence.candidates.map(c=><article className="repair-candidate" key={c.id}>
       <h4>{c.id===evidence.recommendation?'Suggested correction':'Alternative correction'} · {c.status}</h4>

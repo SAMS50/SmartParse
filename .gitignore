@@ -29,3 +29,9 @@ venv/
 /smartparse_studio/MILESTONE_10_REPORT.md
 /smartparse_studio/MILESTONE_10_1_REPORT.md
 /smartparse_studio/validation_results.json
+
+# Reproducible acceptance-run records. Keep tracked Markdown reports and all
+# existing files; these patterns only prevent accidental addition of run output.
+/acceptance/output/**/*.json
+/acceptance/output/**/*.jsonl
+/acceptance/output/**/*.txt

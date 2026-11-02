@@ -47,4 +47,5 @@ export interface IntentCandidate {
   validation:{status:string;reason:string};history:{explanation:string};
   semantic:Record<string,{status:string;explanation:string}>;
 }
-export interface IntentRecovery {decision:string;reason:string;recommendation:string|null;history_status:string;original_sha256:string;candidates:IntentCandidate[]}
+export interface IntentRecovery {decision:string;reason:string;recommendation:string|null;history_status:string;original_sha256:string;candidates:IntentCandidate[];
+  algorithm?:string;evidence_basis?:string;reliability?:{status:string;intent_support:string;reason:string;mapping_verified:boolean}}
