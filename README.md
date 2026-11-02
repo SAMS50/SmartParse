@@ -2,6 +2,20 @@
 
 ## SmartParse Studio workspace (Milestone 10.2)
 
+Milestone 11 adds optional **Intent-aware recovery** in Analysis settings and the
+existing Recovery tab. It verifies session edit history, validates candidate
+programs with Clang, explains supported ownership/scope/binding/grouping changes,
+and abstains when evidence is incomplete or ambiguous. Proposals and comparisons
+are read-only; compilation does not guarantee correctness. The initial 20-case
+synthetic benchmark improves exact recommendations from 5/20 (same-pool heuristic)
+to 7/20, with 12 abstentions and one misleading-history error. See
+[Milestone 11 report, limitations and commands](MILESTONE_11_REPORT.md).
+
+```powershell
+.\.studio-venv\Scripts\python.exe -m phase6.v11.demo
+.\.studio-venv\Scripts\python.exe -m phase6.v11.benchmark --full-system --output .studio-artifacts/m11/benchmark.json
+```
+
 A local React/Monaco workspace exposes the existing analysis engine through
 FastAPI. Create blank C files, open C/header buffers, switch editable tabs, rename
 and download source, then analyze the active file. Diagnostics, recovery/isolation

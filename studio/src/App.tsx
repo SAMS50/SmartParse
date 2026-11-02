@@ -10,7 +10,7 @@ import {dirtyFile, downloadSource} from './lib/workspace'
 import {PanelDivider} from './components/PanelDivider'
 import {SettingsPanel} from './components/SettingsPanel'
 import * as api from './lib/api'
-import {recordEdit, type EditHistory} from './lib/editHistory'
+import {recordEdit, replay, type EditHistory} from './lib/editHistory'
 import type {Diagnostic, Example, Settings, StudioResult, Tool} from './types/report'
 
 const DEFAULTS: Settings = {analyzers: ['compiler'], recovery: false, isolation: false, standard: 'c11'}
@@ -20,7 +20,12 @@ export default function App() {
   const documents=useWorkspace(), active=documents.active
   const code=active.text, filename=active.name, loaded=active.openedText
   const histories=useRef<Record<string,EditHistory>>({})
-  const setCode=(text:string)=>{histories.current[active.id]=recordEdit(histories.current[active.id],documents.active.text,text);documents.update(active.id,{text})}
+  const historyRevisions=useRef<Record<string,number|undefined>>({})
+  const setCode=(text:string)=>{
+    const previous=historyRevisions.current[active.id]===active.revision?histories.current[active.id]:undefined
+    histories.current[active.id]=recordEdit(previous,previous?replay(previous):documents.active.text,text)
+    historyRevisions.current[active.id]=active.revision;documents.update(active.id,{text})
+  }
   const [fileDialog,setFileDialog]=useState<{mode:'rename'|'close';id:string}|null>(null)
   const [settings,setSettings] = useState<Settings>(DEFAULTS), [settingsOpen,setSettingsOpen] = useState(false)
   const [analyses,setAnalyses] = useState<Record<string,{result:StudioResult;snapshot:{source:string;filename:string}}>>({})
@@ -86,7 +91,7 @@ export default function App() {
     try {
       const answer = await api.analyze({...submitted,filename:filename.replace(/\.h$/i,'.c'), ...settings,
         ...(settings.intent_recovery?{edit_history:histories.current[active.id]}:{})}, request.signal)
-      if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation){setTab('recovery');setDetailsCollapsed(false)}}
+      if (controller.current === request) {setAnalyses(previous=>({...previous,[submittedId]:{result:answer,snapshot:submitted}}));if(settings.recovery||settings.isolation||settings.intent_recovery){setTab('recovery');setDetailsCollapsed(false)}}
     } catch (e) {
       if (controller.current === request && !request.signal.aborted) {setError(e instanceof Error ? e.message : 'Analysis request failed');void api.health().then(h=>setConnected(h.status==='ok')).catch(()=>setConnected(false))}
     } finally {
@@ -95,6 +100,7 @@ export default function App() {
   }, [active.id,code,filename,settings,connected])
   useEffect(()=>{
     const ids=new Set(documents.files.map(f=>f.id))
+    for(const id of Object.keys(histories.current))if(!ids.has(id)){delete histories.current[id];delete historyRevisions.current[id]}
     setAnalyses(previous=>Object.keys(previous).some(id=>!ids.has(id))?Object.fromEntries(Object.entries(previous).filter(([id])=>ids.has(id))):previous)
   },[documents.files])
   useEffect(()=>{

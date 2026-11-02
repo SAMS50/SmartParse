@@ -96,9 +96,13 @@ export function RecoveredDiff({original, preview, proposed=false}: {original: st
       const modifiedModel = monaco.editor.createModel(preview.source, 'c')
       const diff = monaco.editor.createDiffEditor(host.current, {theme: 'smartparse-dark',
         readOnly: true, originalEditable: false, minimap: {enabled: false}, automaticLayout: true, renderSideBySide: true})
-      diff.setModel({original: originalModel, modified: modifiedModel})
+      const viewModel=diff.createViewModel({original: originalModel, modified: modifiedModel})
+      diff.setModel(viewModel)
       dispose = () => {
-        diff.setModel(null); diff.dispose(); originalModel.dispose(); modifiedModel.dispose()
+        // Own the view model explicitly so worker cancellation happens before
+        // source models disappear, rather than relying on deferred ref releases.
+        diff.setModel(null); viewModel.dispose(); diff.dispose()
+        originalModel.dispose();modifiedModel.dispose()
       }
     })
     return () => {
