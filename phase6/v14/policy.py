@@ -23,6 +23,8 @@ def decide(source,pool,snapshots,reliability,policy=Policy(),use_semantic=True,u
     history_available=bool(use_history and len(snapshots)>1 and reliability['mapping_verified'] and not reliability['broad_edit'])
     for raw in pool:
         c={k:v for k,v in raw.items() if not k.startswith('_')}
+        if not use_history and c['semantic_risk']['status']=='NO_DETECTED_STRUCTURAL_CHANGE' and snapshots:
+            c['semantic_risk']={**c['semantic_risk'],'status':'UNKNOWN','reason':'Positive historical-reference comparison withheld in the no-history ablation'}
         h=history_score(source,c['source'],snapshots if history_available else [])
         sem=c['semantic_risk'];supported=use_semantic and sem['status']=='NO_DETECTED_STRUCTURAL_CHANGE'
         components=dict(heuristic=c['heuristic'],history=h['score'] if history_available else 0,
@@ -54,7 +56,7 @@ def decide(source,pool,snapshots,reliability,policy=Policy(),use_semantic=True,u
         failed_alternatives=any(c['validation']['status']=='UNVERIFIED' for c in ranked)
         close=len(valid)>1 and len(distinct)>1 and best['score']-valid[1]['score']<=policy.margin
         boundary_ambiguity=strong_history and reliability['boundary_deletion'] and len({c['token_program_sha256'] for c in all_valid})>1
-        if not reliability['mapping_verified']:reason='Edit-history versions do not match the submitted source; confirmation is required.'
+        if not reliability['mapping_verified']:reason='Editing-history evidence is not usable: '+reliability['reason']+'. Confirmation is required.'
         elif hard_risk:reason=sem['reason']+' Automatic fallback is blocked.'
         elif sem.get('mapping_reliable') is False:reason='Macro source mapping is uncertain; confirmation is required.'
         elif failed_alternatives:reason='Some alternatives remain unverified; confirmation is required.'
@@ -69,7 +71,9 @@ def decide(source,pool,snapshots,reliability,policy=Policy(),use_semantic=True,u
         if recommendation:outcome='recommended repair'
         else:outcome='suggested alternatives'
     for c in ranked:
-        if c['id']==recommendation:c['status']='recommended repair'
+        if c['validation']['status']=='UNVERIFIED':c['status']='unverified suggestion'
+        elif c['validation']['status']!='VALID':c['status']='rejected repair'
+        elif c['id']==recommendation:c['status']='recommended repair'
         elif blocked(c):c['status']='blocked repair'
     return dict(algorithm='milestone-14',decision=outcome,outcome=outcome,decision_mode=mode,reason=reason,
         recommendation=recommendation,available_evidence=available,missing_evidence=missing,

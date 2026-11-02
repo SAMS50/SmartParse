@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from copy import deepcopy
 from phase6.v11.history import reconstruct
 from phase6.v12.history import assess
@@ -81,6 +82,14 @@ class ProviderTests(unittest.TestCase):
         v=Validator();checked=v.inspect(repaired)
         c=dict(source=repaired,changes=normalized_edits(source,repaired),validation={'status':checked['status']},_tree=checked['tree'])
         self.assertEqual(analyze(source,c)['status'],'VERIFIED_STRUCTURAL_CHANGE')
+
+    def test_unsafe_prior_snapshot_is_not_compiled(self):
+        source='int x';h=reconstruct('#include "/private/secret.h"\nint x;',source)
+        with patch('phase6.v14.engine.reference_for') as reference:
+            result=recover(source,h)
+            reference.assert_not_called()
+        self.assertIsNone(result['recommendation'])
+        self.assertIn('historical snapshot',result['reason'])
 
     def test_valid_history_and_unknown_behavior(self):
         good='int f(int x){if(x){x++;}return x;}'

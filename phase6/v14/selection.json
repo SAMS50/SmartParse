@@ -1,0 +1,6 @@
+{
+  "max_edit_hunks": 1,
+  "algorithm_fingerprint": "710e71f24e1ac18177004f86717d06c2aec74d845d29241315cc8791770b1565",
+  "development_primary": 20,
+  "rule": "minimize development exact mismatches, maximize exact recommendations, then smaller hunk cap"
+}
