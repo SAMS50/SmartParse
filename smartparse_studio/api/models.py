@@ -33,7 +33,8 @@ class AnalysisRequest(BaseModel):
     intent_recovery:bool=False
     edit_history:EditHistory|None=None
     intent_mode:Literal['existing','history','semantic','full']='full'
-    intent_version:Literal['v11','v12']='v12'
+    intent_version:Literal['v11','v12','v14']='v12'
+    intent_provider:Literal['custom','compiler','combined']='combined'
 
     @field_validator('source')
     @classmethod

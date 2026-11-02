@@ -11,6 +11,12 @@ test('preserves server timeout messages',async()=>{
   vi.stubGlobal('fetch',vi.fn().mockResolvedValue(new Response(JSON.stringify({detail:'Analysis worker timed out'}),{status:504})))
   await expect(analyze({source:'',filename:'a.c',analyzers:['compiler'],standard:'c11',recovery:false,isolation:false},new AbortController().signal)).rejects.toThrow('timed out')
 })
+
+test('Studio requests adaptive recovery explicitly while preserving historical API defaults',async()=>{
+  const fetcher=vi.fn().mockResolvedValue(new Response(JSON.stringify(result()),{status:200}));vi.stubGlobal('fetch',fetcher)
+  await analyze({source:'int x',filename:'input.c',analyzers:['compiler'],standard:'c11',recovery:false,isolation:false,intent_recovery:true},new AbortController().signal)
+  expect(JSON.parse(fetcher.mock.calls[0][1].body)).toMatchObject({source:'int x',intent_version:'v14'})
+})
 test('download keeps conditional provenance and all raw JSON evidence',async()=>{
   let captured:Blob | undefined
   vi.stubGlobal('URL',{createObjectURL:vi.fn((blob:Blob)=>{captured=blob;return 'blob:test'}),revokeObjectURL:vi.fn()})

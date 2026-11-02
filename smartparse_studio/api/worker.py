@@ -12,10 +12,13 @@ def main():
     if config.get('intent_recovery'):
         if config.get('intent_version','v12')=='v11':
             from phase6.v11.engine import recover
+        elif config.get('intent_version')=='v14':
+            from phase6.v14.engine import recover
         else:
             from phase6.v12.engine import recover
+        options={'provider':config.get('intent_provider','combined')} if config.get('intent_version')=='v14' else {}
         report['intent_recovery']=recover(Path(config['path']).read_bytes().decode('utf-8'),
-            config.get('edit_history'),config.get('intent_mode','full'),config['standard'])
+            config.get('edit_history'),config.get('intent_mode','full'),config['standard'],**options)
     text=json.dumps(report,ensure_ascii=True,allow_nan=False)
     if len(text)>16*1024*1024:
         print(json.dumps({'worker_error':'Analysis report exceeds the 16 MiB Studio response limit; use the CLI.'}));return 1

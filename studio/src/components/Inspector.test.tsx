@@ -33,6 +33,23 @@ test('overview exposes real execution, counts, duration, preservation and limits
   expect(screen.getByLabelText('Analyzer execution summary')).toHaveTextContent('memorycompleted')
   expect(screen.queryByText(/Completion does not certify/)).not.toBeInTheDocument()
 })
+
+test('adaptive evidence and Clang attribution distinguish unverified suggestions',()=>{
+  const report=result()
+  report.report.intent_recovery={decision:'suggested alternatives',decision_mode:'INSUFFICIENT_EVIDENCE',recommendation:null,
+    reason:'Some alternatives remain unverified.',history_status:'Missing history',original_sha256:'hash',
+    available_evidence:['compiler-validated syntax'],missing_evidence:['reliable edit history'],candidates:[{
+      id:'unverified',source:'int x;',status:'unverified suggestion',score:0,explanation:'Not eligible for recommendation',
+      changes:[],validation:{status:'UNVERIFIED',reason:'Compiler unavailable'},history:{explanation:'No history'},
+      semantic:{},origins:['clang_fixit'],semantic_risk:{status:'CHECK_FAILED',reason:'Structural analysis did not complete'}}]}
+  report.report.intent_recovery.candidates.push({...report.report.intent_recovery.candidates[0],id:'invalid',status:'rejected repair',validation:{status:'INVALID',reason:'Compiler rejected this source'}})
+  show(report)
+  expect(screen.getByText(/Available evidence: compiler-validated syntax/)).toBeInTheDocument()
+  expect(screen.getAllByText(/Proposal from: Clang compiler/)).toHaveLength(2)
+  expect(screen.getByText(/Unverified suggestion · unverified suggestion/)).toBeInTheDocument()
+  expect(screen.getByText(/Rejected correction · rejected repair/)).toBeInTheDocument()
+  expect(screen.queryByText('Suggested correction')).not.toBeInTheDocument()
+})
 test('no recovery evidence never produces a source preview',()=>{
   show(result())
   expect(screen.getByText(/No recovery pass was requested/)).toBeInTheDocument()

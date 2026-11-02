@@ -18,7 +18,7 @@ export const getTools = () => request<{tools: Tool[]}>('/api/tools')
 export const getExamples = () => request<{examples: Example[]}>('/api/examples')
 export async function analyze(input: AnalysisInput, signal: AbortSignal) {
   const result = await request<StudioResult>('/api/analyze', {method: 'POST', signal,
-    headers: {'Content-Type': 'application/json', 'X-SmartParse-Studio': '1'}, body: JSON.stringify(input)})
+    headers: {'Content-Type': 'application/json', 'X-SmartParse-Studio': '1'}, body: JSON.stringify({...input,...(input.intent_recovery?{intent_version:input.intent_version||'v14'}:{})})})
   if (result.schema !== 'smartparse.studio_response' || result.report.schema !== 'smartparse.unified_analysis') throw new Error('Unsupported backend report schema.')
   return result
 }

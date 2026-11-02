@@ -40,12 +40,14 @@ export interface StudioResult {
 export interface Example {id: string; title: string; filename: string; description: string; source: string; source_sha256: string; analyzers: string[]; recovery: boolean; isolation: boolean}
 export interface Tool {name: string; path: string | null; status: string; version: string | null; reason?: string}
 export interface Settings {analyzers: string[]; recovery: boolean; isolation: boolean; standard: string; intent_recovery?:boolean}
-export interface AnalysisInput extends Settings {source: string; filename: string;edit_history?:import('../lib/editHistory').EditHistory}
+export interface AnalysisInput extends Settings {source: string; filename: string;edit_history?:import('../lib/editHistory').EditHistory;intent_version?:'v11'|'v12'|'v14'}
 export interface IntentCandidate {
   id:string;source:string;status:string;score:number;explanation:string;
   changes:{offset:number;end_offset:number;deleted:string;inserted:string;line:number;column:number}[];
   validation:{status:string;reason:string};history:{explanation:string};
   semantic:Record<string,{status:string;explanation:string}>;
+  origin?:string;origins?:string[];semantic_risk?:{status:string;reason:string};
 }
 export interface IntentRecovery {decision:string;reason:string;recommendation:string|null;history_status:string;original_sha256:string;candidates:IntentCandidate[];
-  algorithm?:string;evidence_basis?:string;reliability?:{status:string;intent_support:string;reason:string;mapping_verified:boolean}}
+  algorithm?:string;evidence_basis?:string;decision_mode?:string;outcome?:string;available_evidence?:string[];missing_evidence?:string[];
+  reliability?:{status:string;intent_support:string;reason:string;mapping_verified:boolean}}

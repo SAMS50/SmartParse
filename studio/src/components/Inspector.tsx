@@ -78,12 +78,14 @@ function IntentEvidence({evidence,source}:{evidence:NonNullable<StudioResult['re
   return <section className="recovery-block" aria-label="Intent-aware recovery evidence">
     <h3>Intent-aware recovery: {evidence.decision}</h3><p>{evidence.reason}</p><p>{evidence.history_status}</p>
     {evidence.reliability&&<p>Evidence reliability: {evidence.reliability.intent_support}. {evidence.evidence_basis}</p>}
+    {evidence.decision_mode&&<p>Available evidence: {evidence.available_evidence?.join(', ')||'No validated evidence'}. Unavailable: {evidence.missing_evidence?.join(', ')||'None reported'}.</p>}
     <p>Compilation does not prove correctness. Behavioral equivalence is not guaranteed. Original editor content remains unchanged.</p>
     {evidence.candidates.map(c=><article className="repair-candidate" key={c.id}>
-      <h4>{c.id===evidence.recommendation?'Suggested correction':'Alternative correction'} · {c.status}</h4>
+      <h4>{c.id===evidence.recommendation?'Suggested correction':c.validation.status==='INVALID'?'Rejected correction':c.validation.status!=='VALID'?'Unverified suggestion':c.status==='blocked repair'?'Blocked correction':'Alternative correction'} · {c.status}</h4>
+      {c.origins&&<p>Proposal from: {c.origins.map(o=>o==='clang_fixit'?'Clang compiler':o==='smartparse_custom'?'SmartParse custom recovery':o).join(' + ')}.</p>}
       {c.changes.map((e,i)=><p key={i}>Line {e.line}:{e.column}: replace <code>{JSON.stringify(e.deleted)}</code> with <code>{JSON.stringify(e.inserted)}</code></p>)}
       <p>Syntax validation: {c.validation.status}</p><p>{c.history.explanation}</p><p>{c.explanation}</p>
-      <details><summary>Potential structural or behavioral impact</summary>{Object.entries(c.semantic).map(([key,value])=><p key={key}>{key}: {value.status} — {value.explanation}</p>)}</details>
+      <details><summary>Potential structural or behavioral impact</summary>{c.semantic_risk&&<p>{c.semantic_risk.reason}</p>}{Object.entries(c.semantic).map(([key,value])=><p key={key}>{key}: {value.status} — {value.explanation}</p>)}</details>
       <button onClick={()=>setSelected(c.id)}>Compare correction {c.id}</button>
     </article>)}
     {candidate&&<RecoveredDiff original={source} proposed preview={{run_id:'intent',variant_id:candidate.id,source:candidate.source,sha256:'',conditioning:'intent proposal',basis:candidate.explanation}}/>}
