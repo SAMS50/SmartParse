@@ -58,6 +58,12 @@ class IngestionTests(unittest.TestCase):
 
 
 class LeakageTests(unittest.TestCase):
+    def test_experiment_remains_frozen(self):
+        from .engine import frozen_engine_hash
+        root=Path(__file__).parent;lock=json.loads((root/'experiment-lock.json').read_text(encoding='utf-8'))
+        self.assertEqual(frozen_engine_hash(),lock['engine_hash'])
+        for name,digest in lock['harness_hashes'].items():self.assertEqual(sha((root/name).read_text(encoding='utf-8')),digest)
+
     def test_no_reference_field_or_dict_crosses_engine_boundary(self):
         with self.assertRaises(TypeError):RecoveryInput(source='int x',reference='int x;')
         with self.assertRaises(TypeError):evaluate_input({'source':'int x','reference':'int x;'})

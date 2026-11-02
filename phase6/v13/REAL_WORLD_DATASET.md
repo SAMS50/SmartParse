@@ -18,6 +18,8 @@ README are not imported as repair-accuracy baselines.
 Use/credit: Ahmed, Sindhgatta, Srivastava and Karkare, *Targeted Example Generation
 for Compilation Errors*, ASE 2019; Das, Ahmed, Karkare and Gulwani, *Prutor: A
 system for tutoring CS1 and collecting student programs for analysis* (2016).
+References: [TEGCER paper](https://arxiv.org/abs/1909.00769) and
+[Prutor paper](https://arxiv.org/abs/1608.03828).
 The upstream README requests citation of both works. No external student source,
 archive or license text is redistributed in this feature branch. Code retrieval
 is reproducible via `acquire.py` and the hash-locked manifest.
@@ -92,3 +94,19 @@ not production C, all CS1 assignments, or a statistically random sample of all
 human syntax errors. Code screening and current compiler compatibility further
 limit generality. Known corrected endpoints establish intended textual edits,
 not functional correctness or behavioral equivalence.
+
+## Realized verification (after frozen experiments)
+
+| Split | Selected human pairs | A: verified correction | B: unverified correction | C: synthetic | D: excluded after sampling | Actual prior histories |
+|---|---:|---:|---:|---:|---:|---:|
+| Development | 20 | 20 | 0 | 0 | 0 | 0 |
+| Final | 80 | 79 | 1 | 0 | 0 | 0 |
+| Total selected | 100 | 99 | 1 | 0 | 0 | 0 |
+
+Reference compatibility: 94 targets compile on both installed compilers; five
+compile on GCC only; one is rejected by both. Known published correction endpoints
+therefore number 100; **locally verified corrections number 99**. The final primary
+denominator is 79, not 80 or 100. Category B case
+`c23cde4be2a55ede8b3da081` is retained in the case ledger and raw local evidence,
+without replacement or an accuracy label. No reference diagnostics or future
+target snapshots entered the recovery boundary.
