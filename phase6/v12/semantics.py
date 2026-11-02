@@ -4,7 +4,29 @@ Extend v11 with scalar globals and expression-statement ownership. Pointers,
 preprocessing, records and unknown AST kinds remain unsupported.
 """
 import re
-from phase6.v11.semantics import Validator, CHECKS, ALLOWED, compare
+from phase6.v11.semantics import Validator as CompilerValidator, CHECKS, ALLOWED, compare
+
+
+class Validator(CompilerValidator):
+    def inspect(self,source):
+        result=super().inspect(source)
+        # Older Clang versions may diagnose this C99+ constraint as a warning and
+        # still return zero. A recovery candidate must not depend on that extension.
+        if self.standard!='c89' and result['status']=='VALID' and re.search(r'implicit declaration of function|call to undeclared function',result['reason']):
+            return dict(status='INVALID',reason='C99+ undeclared-function constraint: '+result['reason'],tree=None)
+        if self.standard!='c89' and result['status']=='VALID':
+            declarations=set();references=[];pending=[result['tree']]
+            while pending:
+                node=pending.pop();pending.extend(node.get('inner',[]))
+                if node.get('kind')=='FunctionDecl':declarations.add(node.get('id'))
+                ref=node.get('referencedDecl',{})
+                if ref.get('kind')=='FunctionDecl':references.append(ref)
+            missing=[r for r in references if r.get('id') not in declarations]
+            if missing:
+                builtin=any(r.get('name','').startswith('__builtin_') for r in missing)
+                return dict(status='UNVERIFIED' if builtin else 'INVALID',
+                            reason='No function declaration in complete AST for: '+', '.join(sorted({r.get('name','?') for r in missing})),tree=None)
+        return result
 
 
 def projection(source, validation):
@@ -13,6 +35,7 @@ def projection(source, validation):
     nodes=[n for n in validation['tree'].get('inner',[]) if n.get('loc',{}).get('offset') is not None and not n.get('isImplicit')]
     if not nodes or any(n.get('kind') not in ('FunctionDecl','VarDecl') for n in nodes):return None
     out={k:[] for k in CHECKS};decls={};refs=[];supported=True
+    declared_functions={n.get('id') for n in nodes if n.get('kind')=='FunctionDecl'}
     def shape(n):
         return (n.get('kind'),n.get('opcode'),n.get('name'),n.get('value'),
                 n.get('type',{}).get('qualType'),tuple(shape(c) for c in n.get('inner',[]) if c.get('kind')))
@@ -47,6 +70,6 @@ def projection(source, validation):
     for i,n in enumerate(nodes):walk(n,(i,),(),(),None)
     for function,path,ref in refs:
         target=decls.get(ref.get('id'))
-        if target is None and ref.get('kind')!='FunctionDecl':supported=False
+        if target is None and (ref.get('kind')!='FunctionDecl' or ref.get('id') not in declared_functions):supported=False
         out['variable_binding'].append((function,path,target or ('function',ref.get('name'))))
     return out if supported else None

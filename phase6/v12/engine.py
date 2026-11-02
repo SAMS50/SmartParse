@@ -40,6 +40,7 @@ def rank(source,candidates,snapshots,reference,reliability,mode='full',config=Co
     if mode=='existing':return result
     reason=None
     if not reliability['mapping_verified']:reason='Source mappings are unreliable'
+    elif any(c['validation']['status']=='UNVERIFIED' for c in result['candidates']):reason='Candidate validation is incomplete; alternatives remain unverified'
     elif reliability['broad_edit']:reason='Broad recent replacement provides insufficient intent evidence'
     elif reliability['boundary_deletion'] and conflicting:
         reason='End-of-source brace restoration conflicts with other valid statement-ownership structures; programmer confirmation is recommended.'

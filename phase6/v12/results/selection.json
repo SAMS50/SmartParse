@@ -1,0 +1,6 @@
+{
+  "margin": 12,
+  "algorithm_fingerprint": "9322e5d40a504760b990033eae5f41dfbfe30f536912bcde3897f51dda750036",
+  "development_samples": 32,
+  "rule": "minimize development wrong count, maximize correct count, prefer original margin 12 on ties"
+}

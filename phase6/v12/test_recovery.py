@@ -48,6 +48,16 @@ class RecoveryTests(unittest.TestCase):
         self.assertTrue(any(c['source']=='int f(int *p){return *p;}' for c in r['candidates']))
         self.assertIsNone(r['recommendation'])
 
+    def test_merged_keyword_and_implicit_function(self):
+        good='int lower(int a,int b){int m=a;if(b<m){m=b;}return m;}'
+        bad=good.replace('a;if','aif')
+        r=recover(bad)
+        self.assertTrue(any(c['source']==good for c in r['candidates']))
+        self.assertIsNotNone(r['recommendation'],r['reason'])
+        self.assertEqual(next(c['source'] for c in r['candidates'] if c['id']==r['recommendation']),good)
+        v=Validator();implicit='int f(int x){return undeclared(x);}'
+        self.assertIsNone(projection(implicit,v.inspect(implicit)))
+
     def test_globals_binding_ownership_and_function_inventory(self):
         v=Validator()
         def p(s):return projection(s,v.inspect(s))

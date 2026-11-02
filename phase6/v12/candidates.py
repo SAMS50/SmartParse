@@ -20,6 +20,13 @@ def supplemental(source, diagnostic):
             if stack and stack[-1]=={')':'(',']':'[','}':'{'}[t]:stack.pop()
         elif t in ('return','else'):boundaries.append(m.start())
     found=[]
+    # A deleted semicolon may merge an identifier with a control keyword.
+    # Try just the first such lexical boundary; no vocabulary/name oracle.
+    for m in LEX.finditer(source):
+        token=m.group()
+        match=re.fullmatch(r'([A-Za-z_]\w*?)(if|while|for)',token)
+        if match and source[m.end():].lstrip().startswith('('):
+            at=m.start()+len(match[1]);found.append((source[:at]+';'+source[at:],'merged control-keyword boundary',35));break
     if 0<len(stack)<=3:
         closers=''.join({'(':')','{':'}','[':']'}[t] for t in reversed(stack))
         found.append((source+closers,'unmatched delimiter completion',20))
