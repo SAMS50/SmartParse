@@ -5,7 +5,7 @@
     "A": 20
   },
   "primary_A": 20,
-  "algorithm_fingerprint": "710e71f24e1ac18177004f86717d06c2aec74d845d29241315cc8791770b1565",
+  "algorithm_fingerprint": "4fe8a3fbb4dce8398cf9240273a3695423b098e36dfe013593dda4d0d03446f7",
   "frozen_v13_engine_hash": "70619faa7804ad53cec98992c7ebdb80a50fb0e0017eec3623e09ef1da6f5d56",
   "policy": {
     "max_edit_hunks": 1,
@@ -1318,15 +1318,15 @@
   "runtime_ms": {
     "v13": {
       "n": 20,
-      "mean": 173.66016499981924,
-      "median": 139.76349999938975,
-      "p95": 329.7986999968998
+      "mean": 330.27916499922867,
+      "median": 251.4205999978003,
+      "p95": 719.260599995323
     },
     "adaptive": {
       "n": 20,
-      "mean": 618.7264200005302,
-      "median": 561.8433499985258,
-      "p95": 882.8586000017822
+      "mean": 1212.501460000567,
+      "median": 1032.7989000033995,
+      "p95": 1755.533400006243
     }
   },
   "paired": {
@@ -1705,8 +1705,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 139.7517000004882,
-        "adaptive": 865.9298999991734
+        "v13": 270.9252999993623,
+        "adaptive": 1511.9731000013417
       },
       "compiler_invocations": 7,
       "generation": {
@@ -2054,8 +2054,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 103.18179999740096,
-        "adaptive": 445.98080000287155
+        "v13": 235.85150000144495,
+        "adaptive": 1025.81050000299
       },
       "compiler_invocations": 5,
       "generation": {
@@ -2399,8 +2399,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 171.94800000288524,
-        "adaptive": 729.4576999993296
+        "v13": 263.86490000004414,
+        "adaptive": 1091.8230999959633
       },
       "compiler_invocations": 5,
       "generation": {
@@ -2762,8 +2762,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 214.41540000523673,
-        "adaptive": 593.5106000033556
+        "v13": 481.39980000269134,
+        "adaptive": 1254.6191000001272
       },
       "compiler_invocations": 6,
       "generation": {
@@ -3111,8 +3111,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 195.55739999486832,
-        "adaptive": 529.2619000028935
+        "v13": 252.979899996717,
+        "adaptive": 983.0038000000059
       },
       "compiler_invocations": 5,
       "generation": {
@@ -3474,8 +3474,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 287.22620000189636,
-        "adaptive": 755.9669000038411
+        "v13": 512.3319999984233,
+        "adaptive": 1309.171000000788
       },
       "compiler_invocations": 6,
       "generation": {
@@ -3823,8 +3823,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 137.27380000636913,
-        "adaptive": 463.40909999707947
+        "v13": 244.29390000295825,
+        "adaptive": 1015.4492000001483
       },
       "compiler_invocations": 5,
       "generation": {
@@ -4168,8 +4168,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 118.22319999919273,
-        "adaptive": 589.4585999994888
+        "v13": 270.8866999964812,
+        "adaptive": 1037.8300000011222
       },
       "compiler_invocations": 5,
       "generation": {
@@ -4513,8 +4513,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 109.42090000025928,
-        "adaptive": 535.4905999993207
+        "v13": 264.23829999839654,
+        "adaptive": 1261.0654000018258
       },
       "compiler_invocations": 5,
       "generation": {
@@ -4858,8 +4858,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 125.83129999984521,
-        "adaptive": 511.73910000215983
+        "v13": 235.0363000005018,
+        "adaptive": 1013.2559999983641
       },
       "compiler_invocations": 5,
       "generation": {
@@ -5203,8 +5203,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 100.86439999577124,
-        "adaptive": 475.91230000398355
+        "v13": 249.70509999548085,
+        "adaptive": 986.0880999985966
       },
       "compiler_invocations": 5,
       "generation": {
@@ -5582,8 +5582,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 329.7986999968998,
-        "adaptive": 823.4970999983489
+        "v13": 719.260599995323,
+        "adaptive": 1755.533400006243
       },
       "compiler_invocations": 8,
       "generation": {
@@ -5946,8 +5946,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 100.86569999839412,
-        "adaptive": 577.8396000023349
+        "v13": 252.9512999972212,
+        "adaptive": 1262.4756999939564
       },
       "compiler_invocations": 6,
       "generation": {
@@ -6295,8 +6295,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 137.05509999999776,
-        "adaptive": 629.3503999986569
+        "v13": 246.30830000387505,
+        "adaptive": 1027.7678000056767
       },
       "compiler_invocations": 5,
       "generation": {
@@ -6658,8 +6658,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 453.5085000024992,
-        "adaptive": 882.8586000017822
+        "v13": 876.4971999989939,
+        "adaptive": 1937.7289999974892
       },
       "compiler_invocations": 6,
       "generation": {
@@ -7007,8 +7007,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 139.7752999982913,
-        "adaptive": 488.3482999939588
+        "v13": 243.12990000180434,
+        "adaptive": 1020.0482000000193
       },
       "compiler_invocations": 5,
       "generation": {
@@ -7352,8 +7352,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 153.4964999955264,
-        "adaptive": 545.8470999947167
+        "v13": 246.5102999994997,
+        "adaptive": 1009.5180999996956
       },
       "compiler_invocations": 5,
       "generation": {
@@ -7697,8 +7697,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 173.05750000377884,
-        "adaptive": 497.067700001935
+        "v13": 244.04019999929005,
+        "adaptive": 1023.7697000047774
       },
       "compiler_invocations": 5,
       "generation": {
@@ -8070,8 +8070,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 144.1281000006711,
-        "adaptive": 888.1256000022404
+        "v13": 245.4818999976851,
+        "adaptive": 1706.5598000044702
       },
       "compiler_invocations": 8,
       "generation": {
@@ -8420,8 +8420,8 @@
         }
       },
       "elapsed_ms": {
-        "v13": 137.82379999611294,
-        "adaptive": 545.476500003133
+        "v13": 249.8898999983794,
+        "adaptive": 1016.5381999977399
       },
       "compiler_invocations": 5,
       "generation": {

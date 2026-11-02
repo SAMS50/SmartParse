@@ -91,6 +91,13 @@ class ProviderTests(unittest.TestCase):
         self.assertIsNone(result['recommendation'])
         self.assertIn('historical snapshot',result['reason'])
 
+    def test_utf8_offsets_cannot_hide_an_empty_body_hazard(self):
+        source='/* é */ int f(int x){if(x)\n}'
+        repaired=source.replace('if(x)','if(x);')
+        v=Validator();checked=v.inspect(repaired)
+        c=dict(source=repaired,changes=normalized_edits(source,repaired),validation={'status':checked['status']},_tree=checked['tree'])
+        self.assertEqual(analyze(source,c)['status'],'VERIFIED_STRUCTURAL_CHANGE')
+
     def test_valid_history_and_unknown_behavior(self):
         good='int f(int x){if(x){x++;}return x;}'
         bad=good.replace('}return','return');r=recover(bad,reconstruct(good,bad))

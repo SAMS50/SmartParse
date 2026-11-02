@@ -53,3 +53,14 @@ Use seeded paired family bootstrap and Wilson intervals, acknowledging small N,
 correlation and zero-event limits. Compare adaptive with simple fallback fairly;
 if equal, explicitly decline superiority claims. No C programs execute. Finite
 compiler deadlines, private files, no source overwrites, no OS-sandbox claims.
+
+## Correctness amendment after first evaluation
+
+A test-owned Unicode-comment regression exposed a byte/code-point mismatch in
+the new empty-control-body check. Correct the Clang byte offsets, without changing
+weights, thresholds, providers or selection rules, then rerun development and
+both frozen evaluation splits. Preserve first-run records locally and verify
+decision changes explicitly. Two of the 180 sampled erroneous sources contain
+non-ASCII text; do not assume their decisions are unaffected. The new set was unexamined before its
+first run, but is exposed for this correctness rerun; make no pristine-test or
+strong generalization claim for the rerun. Do not use its outcomes to optimize.

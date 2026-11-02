@@ -12,10 +12,14 @@ def inserted_empty_body(source,candidate,tree):
             semicolons.update(e['offset']+shift+i for i,c in enumerate(e['inserted']) if c==';')
         shift+=len(e['inserted'])-len(e['deleted'])
     if not semicolons:return False,False
+    # Clang AST offsets count UTF-8 bytes; normalized editor edits count Unicode
+    # code points. Convert only after applying cumulative character shifts.
+    semicolons={len(candidate['source'][:at].encode('utf-8')) for at in semicolons}
+    source_bytes=source.encode('utf-8')
     unknown_mapping=False
     for f in tree.get('inner',[]):
         loc=f.get('loc',{});at=loc.get('offset');name=f.get('name','')
-        if f.get('kind')!='FunctionDecl' or 'includedFrom' in loc or at is None or source[at:at+len(name)]!=name:continue
+        if f.get('kind')!='FunctionDecl' or 'includedFrom' in loc or at is None or source_bytes[at:at+len(name.encode('utf-8'))]!=name.encode('utf-8'):continue
         pending=[f]
         while pending:
             node=pending.pop();children=[c for c in node.get('inner',[]) if c.get('kind')];pending.extend(children)
