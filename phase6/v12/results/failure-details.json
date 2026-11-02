@@ -668,7 +668,8 @@
         "column": 24
       }
     ],
-    "margin": 58.25
+    "margin": 58.25,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "ownership-missing",
@@ -1313,7 +1314,8 @@
         "column": 24
       }
     ],
-    "margin": 75
+    "margin": 75,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "else-verified",
@@ -1630,7 +1632,8 @@
         "column": 24
       }
     ],
-    "margin": 132.625
+    "margin": 132.625,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "else-missing",
@@ -1929,7 +1932,8 @@
         "column": 24
       }
     ],
-    "margin": 0
+    "margin": 0,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "while-verified",
@@ -2600,7 +2604,8 @@
         "column": 27
       }
     ],
-    "margin": 58.25
+    "margin": 58.25,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "while-missing",
@@ -3245,7 +3250,8 @@
         "column": 27
       }
     ],
-    "margin": 75
+    "margin": 75,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "for-verified",
@@ -3916,7 +3922,8 @@
         "column": 39
       }
     ],
-    "margin": 58.25
+    "margin": 58.25,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "for-missing",
@@ -4561,7 +4568,8 @@
         "column": 39
       }
     ],
-    "margin": 75
+    "margin": 75,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "shadow-verified",
@@ -5304,7 +5312,8 @@
         "column": 40
       }
     ],
-    "margin": 58.25
+    "margin": 58.25,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "shadow-missing",
@@ -6017,7 +6026,8 @@
         "column": 40
       }
     ],
-    "margin": 75
+    "margin": 75,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "expression-verified",
@@ -6556,7 +6566,8 @@
         "column": 37
       }
     ],
-    "margin": 41.25
+    "margin": 41.25,
+    "error_category": "expression grouping / missing parenthesis"
   },
   {
     "id": "expression-missing",
@@ -7073,7 +7084,8 @@
         "column": 37
       }
     ],
-    "margin": 55
+    "margin": 55,
+    "error_category": "expression grouping / missing parenthesis"
   },
   {
     "id": "pointer-verified",
@@ -7131,7 +7143,8 @@
         "column": 25
       }
     ],
-    "margin": null
+    "margin": null,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "pointer-missing",
@@ -7177,7 +7190,8 @@
         "column": 25
       }
     ],
-    "margin": null
+    "margin": null,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "multiple-verified",
@@ -7480,7 +7494,8 @@
         "column": 31
       }
     ],
-    "margin": null
+    "margin": null,
+    "error_category": "multiple missing semicolons"
   },
   {
     "id": "multiple-missing",
@@ -7765,7 +7780,8 @@
         "column": 31
       }
     ],
-    "margin": null
+    "margin": null,
+    "error_category": "multiple missing semicolons"
   },
   {
     "id": "misleading-valid-snapshot",
@@ -8436,7 +8452,8 @@
         "column": 24
       }
     ],
-    "margin": 208.25
+    "margin": 208.25,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "broken-version",
@@ -9093,7 +9110,8 @@
         "column": 24
       }
     ],
-    "margin": 75
+    "margin": 75,
+    "error_category": "missing block/function brace"
   },
   {
     "id": "repository-S01.c",
@@ -9344,7 +9362,8 @@
         "column": 13
       }
     ],
-    "margin": 35.25
+    "margin": 35.25,
+    "error_category": "missing semicolon"
   },
   {
     "id": "repository-full-c",
@@ -9499,6 +9518,7 @@
         "column": 33
       }
     ],
-    "margin": null
+    "margin": null,
+    "error_category": "missing semicolon"
   }
 ]

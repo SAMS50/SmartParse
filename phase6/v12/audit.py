@@ -29,7 +29,9 @@ def main():
     for case in cases():
         print(case['id'],flush=True);r=recover(case['source'],case['history']);failure,recoverable=classify(case,r)
         valid=[c for c in r['candidates'] if c['validation']['status']=='VALID']
-        rows.append(dict(**case,result=r,classification=failure,recoverable=recoverable,
+        correction_edits=edits(case['source'],case['ground_truth'])
+        category='multiple missing semicolons' if len(correction_edits)>1 else 'expression grouping / missing parenthesis' if any(')' in e['inserted'] for e in correction_edits) else 'missing block/function brace' if any('}' in e['inserted'] for e in correction_edits) else 'missing semicolon'
+        rows.append(dict(**case,error_category=category,result=r,classification=failure,recoverable=recoverable,
                          intended_edits=edits(case['source'],case['ground_truth']),
                          margin=valid[0]['score']-valid[1]['score'] if len(valid)>1 else None))
     path=Path(a.output);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(rows,indent=2),encoding='utf-8')
@@ -41,7 +43,7 @@ def main():
         r=row['result'];pool=r['candidates'];valid=[c for c in pool if c['validation']['status']=='VALID']
         correction='; '.join(f"{e['line']}:{e['column']} {e['deleted']!r} → {e['inserted']!r}" for e in row['intended_edits'])
         present=any(c['source']==row['ground_truth'] for c in pool)
-        md.append(f"| {row['id']} | `{correction}` | {len(pool)} / {len(valid)} / {present} | {row['margin']} | {r['decision']}: {r['reason']} | {row['classification']} | {row['recoverable']} |")
+        md.append(f"| {row['id']} / {row['error_category']} | `{correction}` | {len(pool)} / {len(valid)} / {present} | {row['margin']} | {r['decision']}: {r['reason']} | {row['classification']} | {row['recoverable']} |")
     md+=['','## Root causes and implementation decisions','',
         '* The misleading snapshot replays exactly. Its offsets and versions are valid. It deletes an EOF brace from a program whose return is inside an if block. Restoring it is structurally equal to history but differs from evaluator intent. Lowering history weight alone cannot identify that intention; structural evidence is not independent of the reference. Add a boundary-history ambiguity guard when supported alternatives disagree. Do not assert the history is corrupt.',
         '* Missing histories are mostly justified abstentions: multiple valid block/expression structures remain. A unique supported punctuation repair or unanimous supported candidate structure can provide narrower reference-free evidence; report this basis explicitly, without asserting preservation against an absent AST.',
