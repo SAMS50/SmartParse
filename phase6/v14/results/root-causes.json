@@ -1,0 +1,2156 @@
+[
+  {
+    "id": "3db39a1a10f4cd0a5e6d42f3",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "a9ae9aea789b39a45a1fe1ae",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "2ae2817d0b8a70863745dce9",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "1a09ec4a316d51ab072d0670",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "5b024207b1361c7c",
+        "source_sha256": "5b024207b1361c7cf22824a28fcde440fb9e6d2aacde7863d2f3d98732c83e4a",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 14,
+            "column": 27,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "d19bdbff34dbbd4c6d1f6535",
+    "error_category": "name/type",
+    "candidates": [
+      {
+        "id": "45f70ff8e6715121",
+        "source_sha256": "45f70ff8e6715121d9b6286d5f4d45a9433b247954a20c8fc162e8f4b7a86fd2",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 19,
+            "column": 37,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "5fd70bfa770da54050ed5658",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "4a7d6cc60767fde6",
+        "source_sha256": "4a7d6cc60767fde652a8f280d52f3c715e6213ca183d070b9a760b9da5f05561",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 35,
+            "column": 24,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "b68a717b0bb663662a524b74",
+    "error_category": "type/expression",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "f8adeceeb45f269d553954d5",
+    "error_category": "type/expression",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "dd415587480a949de22a2201",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "804a5018996dbc96bd757eee",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "dabe1d75f3dc3df9883dd10e",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "89e4c090e133bdb5",
+        "source_sha256": "89e4c090e133bdb5fdefa5fc7d0a50bbcce686ab280c03f0f47f4e54b5b04a84",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 22,
+            "column": 28,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "ab866d4b308fe719c2312dac",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "770e32b3de2790aa",
+        "source_sha256": "770e32b3de2790aa7f2706378dced4524406a87c2a53b2fe1e7285d1d3c6e1e4",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 5,
+            "column": 22,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "52d9fe82e6a48de77dfb49e0",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "9fce7ec31171e0412e70f07e",
+    "error_category": "name/type",
+    "candidates": [
+      {
+        "id": "a5190630eb8f907f",
+        "source_sha256": "a5190630eb8f907f4ec05195269745bb021857d774879cdcd7dd20c85e9abbb5",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 10,
+            "column": 62,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "295215b1636198187a1cf8ad",
+    "error_category": "type/expression",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "331173652ceab2f23f8c517f",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "2534bea980557586",
+        "source_sha256": "2534bea9805575860e728d3aea2309f87800fd77f1e6a40d623bdae08ae88879",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 18,
+            "column": 22,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "da68feed9bc319e6a2475a1f",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "f633f80ea3d4d21bd3609437",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "6611e685c75ca8d5",
+        "source_sha256": "6611e685c75ca8d5a979dd3d31c4821eca0e2ff1051fb8979af43598943caaf3",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 33,
+            "column": 23,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "b03e862de257e5ff77011979",
+    "error_category": "type/expression",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "56a96d003cf6b3c2cd7a6edd",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "24c4def1f11aab4b4e84978f",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "6f67a55a4667f474d6f1d001",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "d0500ad7effa4f3c6ed37af2",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "e094eb7ece6f3e912a077025",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "650263c77dead603bfefe339",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "f5faad32bd453f51",
+        "source_sha256": "f5faad32bd453f510bdce20c31728938ea8ea63a02dd5691f789c723e1b76b7d",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 11,
+            "column": 44,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "01e950795bb3e2f440ed622f",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "6b1e808b14c53edc1fe4dca6",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "d43660c3da53eade75ad5fca",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "3a49b8cd3127bac31f6fb79f",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "4ac4062e61ba0bf1",
+        "source_sha256": "4ac4062e61ba0bf1b92b14a14333f66edc249710c4ae1e2a91b699f07152dc6e",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 13,
+            "column": 15,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": false,
+    "existing_wrong": true,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "73f19c15332ac1eaa4daa977",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "1384ba97be222abf9aecd974",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "c51fab3abde843bad8c9e954",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "d78dbd8b7075ef05",
+        "source_sha256": "d78dbd8b7075ef05b8105a850dbededd2171039a963169c55b6e4b5d514d3eeb",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 14,
+            "column": 26,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "3352f6a69169c82fa6c1ea4a",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "2acba2c49b40982aaea415c2",
+    "error_category": "name/type",
+    "candidates": [
+      {
+        "id": "635f995a291c53d6",
+        "source_sha256": "635f995a291c53d6ced4804a949b7e0a7eeb29ae1f144c71311464fa243001ec",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 41,
+            "column": 40,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "baac60b36d43bc0a34566abc",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "4d12acf30d5e2abe",
+        "source_sha256": "4d12acf30d5e2abed1dc7332165c943cfd8be2c2747701e7a5cb287dba365c01",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 26,
+            "column": 70,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": false,
+    "existing_wrong": true,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "d7c5cb24a4f3de56df4e33cf",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "c503ebe358d436ac",
+        "source_sha256": "c503ebe358d436ac6c13fa068cf238b255511f84da9a162e86d88cb729dc4217",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 12,
+            "column": 36,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "5efa83ff4c832b62b945253e",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "1a42840481a61092778b449c",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "6aefeeb5263ae69d8bb6f6ba",
+    "error_category": "other",
+    "candidates": [
+      {
+        "id": "ebeb09652c53700f",
+        "source_sha256": "ebeb09652c53700ffb5cf9adcc0a965841120830957796b47d441e0b5bfe0222",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 43,
+            "column": 6,
+            "deleted_length": 2,
+            "inserted_length": 1,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "d41d4f6212bcf1486c79edf6",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "5f9a1145661b1542",
+        "source_sha256": "5f9a1145661b1542a0201bd6988e250f5eceee0dfe17b6b37c3bf5a4d93923ca",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 23,
+            "column": 28,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "15da60b7b649d3c4d511cb9a",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "7c574c4767902ed40e9da9a6",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "c9468ffe90cc6731c4d1320f",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "0ded616efdc6a53ab7c692c2",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "b4c008aa112507a3983226ca",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "9625a62527eb31c2",
+        "source_sha256": "9625a62527eb31c2c62c39386222f5c96bf21122fd4fb2eabf3c8382d3de6bcd",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 53,
+            "column": 36,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "9ebf768e96fac12afcc679b2",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "edae0a568771c85fb2f01e01",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "06ac9c4afd7a2f5b",
+        "source_sha256": "06ac9c4afd7a2f5b25a556daa536afa2fefbf00f3d54772ef245dee7fb922a5b",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 22,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "61746415835eafb3",
+        "source_sha256": "61746415835eafb32d3b6617ea3dbfb81f91306b8d656f83e2d8a5893f5f4195",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 17,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "6d1647953ffb51ff",
+        "source_sha256": "6d1647953ffb51ffc0bdb8d6d8a1774ecc4ba961767bdf72aa8710aea126c6ff",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 23,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "af08507cae9cf63e",
+        "source_sha256": "af08507cae9cf63e93fde46666ec66dc71a2eda6cf6a65b4036046bc683932a8",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 18,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "73bebc8e733f3707d0a3dc3b",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "41358c2c9f600d64fd22aeaf",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "0befd7cf976216349383b318",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "6b97566afe5ac92773310e6c",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "1e68ef4f1ad3040a",
+        "source_sha256": "1e68ef4f1ad3040a87bbfe0b1a6cf56645b74ea11709bd07f11fbafe43723a24",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 9,
+            "column": 23,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "8868f10a24286eeb2a71de63",
+    "error_category": "type/expression",
+    "candidates": [
+      {
+        "id": "678ce57ff929da59",
+        "source_sha256": "678ce57ff929da598e087452e2d70aa70a81dedd385205f2308e60486fbdad43",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 23,
+            "column": 13,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "47797a644243746ffaf3cc2b",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "59e7f37b66e59f8a",
+        "source_sha256": "59e7f37b66e59f8ab22655691c146bc88905ddd7f5f795e6d67752cfdbb1f106",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 24,
+            "column": 25,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "d4486d76e11cc74cacd91ed3",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "11c637ffcfb09d82",
+        "source_sha256": "11c637ffcfb09d8231de09115542ae9bd790afdec633ec78cd1182c62a88a169",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 28,
+            "column": 23,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "8bf730761a0949ad5df97dbd",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "0dce2b05da61927d8e2784a1",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "1f2409ed4b5bb384",
+        "source_sha256": "1f2409ed4b5bb384df6aaa6a473c6ec5843fdb90f4ad1a8e68ae227588af08ad",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 23,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "3d663830bc2ce63a",
+        "source_sha256": "3d663830bc2ce63a2cd7b12d6cb91eaeca8cb2669084e6dddfeb2b14c007184d",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 26,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "8c63ec2ef1fbc3ff",
+        "source_sha256": "8c63ec2ef1fbc3ff23fe4542043b365f9a4911f19ceb852a0a24c07b1deb8cf4",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 24,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "9b919c6818dae029",
+        "source_sha256": "9b919c6818dae0291d473968de9d869934947b8c3819ad4817ce46c76d160c0d",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 27,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "e1c5c0671518c9eb",
+        "source_sha256": "e1c5c0671518c9eb76afca6067a3784af439db580a858000593558f1c25076fa",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 30,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "f01332a114db819c",
+        "source_sha256": "f01332a114db819c04712345aa6ba98a7d716db8b55e908dd8aa373b0c6eb37b",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 29,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "f14177305d45a1a1",
+        "source_sha256": "f14177305d45a1a16ebd30b4e8647c5c9ce29b86981085f2bdecc4f0202f7d36",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 37,
+            "column": 32,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "c0c41e25b601c52f9ca9c869",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "d57c3fc5b8bec3c1b9abd002",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "9b50ae98a27dcf39936cdb87",
+    "error_category": "name/type",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "a37cee98aec81cb9c4e3d018",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "a4bb70e0d77b8dbd3bcf6653",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "72b95a659233f1dc",
+        "source_sha256": "72b95a659233f1dcaa474209494162ae295be04fb56866b5f5b83d69adc61ede",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 24,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": false,
+    "existing_wrong": true,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "f2ce1851dd1c844189e7181d",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "d59a37e740a54b03",
+        "source_sha256": "d59a37e740a54b03a0a6b10d2a737b9cb859cd893554b127be1ab7d866d9ffee",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 14,
+            "column": 24,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "dcdf5402328d1f69d6625567",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "8369e33be0563ee6",
+        "source_sha256": "8369e33be0563ee66368f9ac9941e3ce493a1daf4b19377bb51ad61f9bb05734",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 19,
+            "column": 31,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "a125cabd7fefd3f8dbb95abc",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "b101078f210294cd",
+        "source_sha256": "b101078f210294cd56f88bd9370f2f6ca4514b3fda0fb22723eb8b0351b140f9",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 13,
+            "column": 25,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "fa20df242731979f9f8b26e5",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "a9dd2a4ef1f5175e",
+        "source_sha256": "a9dd2a4ef1f5175e53005e4e7a679684f06f4d0047c1092e9fbd6666c9b664fc",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 8,
+            "column": 31,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "d0c8e27867f77176cdb1bd35",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "c20d999393eb8c15",
+        "source_sha256": "c20d999393eb8c1544d410e3c41e5a0bb5c934585954e535e29e5623f9a105da",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 22,
+            "column": 9,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": false,
+    "existing_wrong": true,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "5264170c8d5c8f1773844c2a",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "4373b47d4eb18c50e0d0cd75",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "7cf1260ab6b05219",
+        "source_sha256": "7cf1260ab6b0521967416a34b743ec3df74c65a521a7744a3d198ea61ca0250f",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 14,
+            "column": 45,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      },
+      {
+        "id": "f2bc053747e82beb",
+        "source_sha256": "f2bc053747e82beb2e83940495a45137aedef43cd17b0ca9f4a2ebf75e09d00e",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 14,
+            "column": 11,
+            "deleted_length": 1,
+            "inserted_length": 0,
+            "punctuation_only": false
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "e51dc0cca80e59f5c0c213f7",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "621fd36be110df19",
+        "source_sha256": "621fd36be110df19a521470dbd120e4823bfadc49b2aa001ad9897c8027f3a9f",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 4,
+            "column": 16,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "f179c4f09259453fa64ff9ea",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "d8b1d398ff37fd25843f5d31",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "3729d17d385c3743a733dfeb",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "10177366787df54c8ccc1b65",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "09f193cee0c8848765798a8d",
+    "error_category": "name/type",
+    "candidates": [
+      {
+        "id": "d3a274bba2ddf0f9",
+        "source_sha256": "d3a274bba2ddf0f955ed490ec8133d74a595a6305471f74b9850cc7a32e2d807",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 25,
+            "column": 20,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "bb96ef5455f26c985f1abc7b",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "1ffaad3e56ba9e260f66d4ff",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "6b54a1b4e94a9950",
+        "source_sha256": "6b54a1b4e94a9950f16b19fe5750ff02600d1b5e2598962f9fd217a07fe42b82",
+        "origin": "Clang fix-it",
+        "validation": "VALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 18,
+            "column": 26,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": true,
+    "history": "none",
+    "independent_compilation": {
+      "gcc": true,
+      "clang": true
+    },
+    "reason": "The behavioral impact could not be determined.",
+    "existing_exact": true,
+    "existing_wrong": false,
+    "fallback": "Lower-assurance compiler-valid syntax fallback possible; intent not proved"
+  },
+  {
+    "id": "08a5bacebc1effbb29e3f68d",
+    "error_category": "syntax/delimiter",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "3ecce859eacc822892d77e6e",
+    "error_category": "syntax/delimiter",
+    "candidates": [
+      {
+        "id": "f1625b9b0976c1bf",
+        "source_sha256": "f1625b9b0976c1bfc42ea06e6a40ab04140148cd1c7344da20777b28adea01fe",
+        "origin": "Clang fix-it",
+        "validation": "INVALID",
+        "score": 7,
+        "semantic": {
+          "statement_ownership": "UNKNOWN",
+          "block_boundaries": "UNKNOWN",
+          "variable_scope": "UNKNOWN",
+          "variable_binding": "UNKNOWN",
+          "expression_grouping": "UNKNOWN",
+          "function_boundaries": "UNKNOWN",
+          "control_flow": "UNKNOWN"
+        },
+        "changes": [
+          {
+            "line": 19,
+            "column": 18,
+            "deleted_length": 0,
+            "inserted_length": 1,
+            "punctuation_only": true
+          }
+        ]
+      }
+    ],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  },
+  {
+    "id": "526a5a4984c6157c9e9ccc11",
+    "error_category": "other",
+    "candidates": [],
+    "intended_generated": false,
+    "history": "none",
+    "independent_compilation": null,
+    "reason": "No candidate satisfies syntax validation",
+    "existing_exact": false,
+    "existing_wrong": false,
+    "fallback": "No validated candidate; ranking fallback cannot supply one"
+  }
+]
