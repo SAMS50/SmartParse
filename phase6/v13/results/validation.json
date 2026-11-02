@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-03",
+  "repository_tests": {
+    "total": 554,
+    "skipped": 28,
+    "result": "OK"
+  },
+  "targeted_tests": 15,
+  "frontend": {
+    "files": 8,
+    "tests": 69,
+    "result": "passed"
+  },
+  "production_build": "passed; existing large bundle warning",
+  "preservation": {
+    "files_checked": 1995,
+    "changed": [],
+    "test_exit_code": 0,
+    "v11_v12_included": true,
+    "legacy_timing_restored_to_prerun_bytes": true
+  },
+  "engine_hash": "70619faa7804ad53cec98992c7ebdb80a50fb0e0017eec3623e09ef1da6f5d56",
+  "raw_data_committed": false,
+  "student_source_committed": false,
+  "history_events_available": 0,
+  "final_primary_A": 79,
+  "final_category_B": 1,
+  "recovery_tuned": false,
+  "branch": "feature/milestone-13-real-world-validation",
+  "push_status": "not attempted; approval required"
+}

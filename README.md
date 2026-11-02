@@ -2,6 +2,15 @@
 
 ## SmartParse Studio workspace (Milestone 10.2)
 
+Milestone 13 adds a frozen-engine real-world evaluation pipeline using pinned
+TEGCER student error/correction pairs. On 79 locally verified final cases, full
+intent-aware recovery abstained on all cases; existing scoring and Clang fix-its
+each exactly repaired 20. **No real-world advantage was demonstrated.** There
+were no prior recorded edit histories, and future corrections were excluded from
+recovery inputs. See the [Milestone 13 report and reproduction commands](MILESTONE_13_REPORT.md)
+and [dataset provenance](phase6/v13/REAL_WORLD_DATASET.md). Student code and raw
+datasets are kept outside Git; earlier benchmark results remain unchanged.
+
 Milestone 12 is now the default for optional intent-aware recovery. It distinguishes
 history replay reliability from intent evidence, abstains on ambiguous EOF-brace
 histories, and supports bounded structural-consensus punctuation recovery when
