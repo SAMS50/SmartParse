@@ -330,3 +330,37 @@ The optional `--polish` checks add pointer/keyboard resizing, editor state and
 long-source scroll preservation, plus three desktop/laptop viewport measurements.
 The long benchmark is imported without analyzing or modifying it in that check.
 Historical Milestone 10.1 validation records remain local.
+
+
+## Evidence-adaptive recovery (Milestone 14)
+
+The existing Intent-aware recovery opt-in explicitly requests `intent_version:
+"v14"` from Studio. External API clients omitting this field retain v12 behavior.
+`intent_provider` accepts `custom`, `compiler` or `combined` (default). Older
+explicit v11/v12 requests remain supported. Run the API and Vite with the setup
+commands above; the application layout and editor workspace are unchanged.
+
+The Recovery tab displays recommended corrections, alternatives and abstention,
+available/missing evidence, structural impact and SmartParse/Clang origin.
+Rejected repairs, blocked repairs and unverified suggestions have distinct labels.
+Comparisons are read-only; normal editor undo remains available. Compilation alone
+does not establish the intended correction or behavioral equivalence. Syntax-only
+recommendations explicitly carry lower assurance; no percentages are invented.
+
+The five decision modes are `FULL_EVIDENCE`, `SEMANTIC_EVIDENCE`,
+`HISTORY_EVIDENCE`, `SYNTAX_ONLY` and `INSUFFICIENT_EVIDENCE`. Structural statuses
+are `VERIFIED_STRUCTURAL_CHANGE`, `NO_DETECTED_STRUCTURAL_CHANGE`, `UNKNOWN`,
+`UNSUPPORTED` and `CHECK_FAILED`. Unknown is no proof of safety; unsupported is no
+finding of a change. Verified changes, failed checks and unreliable macro mappings
+block automatic recommendation even when other evidence is missing. A supported
+structural comparison is limited to implemented checks, not program equivalence.
+
+Compiler calls are bounded and use temporary copies, never execute analyzed C,
+and do not overwrite imported files. This is not an OS security sandbox. No
+source is externally uploaded by the evaluation pipeline. See
+[implementation, benchmarks and PowerShell commands](../MILESTONE_14_REPORT.md).
+
+Tests: `python -m unittest phase6.v14.test_api phase6.v14.test_adaptive
+phase6.v14.test_dataset`; frontend `npm test -- --run` and `npm run build` from
+`studio`. With API/Vite running and Python Playwright installed, run
+`python -m phase6.v14.browser_smoke --chrome "C:\Program Files\Google\Chrome\Application\chrome.exe"`.

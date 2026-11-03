@@ -1,0 +1,43 @@
+{
+  "full_repository": {
+    "tests_run": 568,
+    "skipped": 28,
+    "failures": 0
+  },
+  "milestone_tests": {
+    "v11": 11,
+    "v12": 13,
+    "v13": 15,
+    "v14": 14
+  },
+  "backend": "included in full discovery; dedicated v14 API tests also pass",
+  "frontend": {
+    "test_files": 8,
+    "tests_passed": 71
+  },
+  "typescript": "tsc -b passed as part of production build",
+  "production_build": "passed; existing Monaco large-chunk warning",
+  "browser": {
+    "history_edit_undo_regression": true,
+    "adaptive_header_recovery": true,
+    "clang_origin_visible": true,
+    "evidence_availability_visible": true,
+    "original_source_unchanged": true,
+    "read_only_comparison": true,
+    "browser_errors": []
+  },
+  "historical_preservation": {
+    "files_checked": 2018,
+    "changed": [],
+    "test_exit_code": 0,
+    "v11_v12_v13_included": true,
+    "legacy_timing_restored_to_prerun_bytes": true
+  },
+  "correctness_rerun": "180 cases x 8 systems; zero decision/selected hash/provider/mode/candidate/reason changes",
+  "source_policy": "No analyzed C execution, no original source overwrite, no external upload",
+  "local_logs": "Ignored .studio-artifacts/m14/final-*.log; verified frontend/build logs",
+  "npm_process_exit_codes": {
+    "frontend": 0,
+    "build": 0
+  }
+}

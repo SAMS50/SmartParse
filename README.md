@@ -2,6 +2,18 @@
 
 ## SmartParse Studio workspace (Milestone 10.2)
 
+Milestone 14 integrates evidence-adaptive recovery into Studio's optional intent
+analysis. It distinguishes validated recommendations, alternatives and abstention,
+shows missing evidence and attributes compiler fixes to Clang. On a new 80-case
+TEGCER split it recommends 12 exact repairs with zero observed mismatches; all 12
+originate from Clang. Existing scoring repairs 13, and a post-hoc validated
+compiler-only singleton selector would repair 17 with zero mismatches. Four wrong
+recommendations remain on the previously exposed set. **Useful proposals are
+restored; algorithmic superiority and acceptable general error risk are not
+established.** See [Milestone 14 results and reproduction](MILESTONE_14_REPORT.md),
+[case-level evaluation](phase6/v14/EVALUATION_REPORT.md) and
+[developer validation](phase6/v14/VALIDATION.md). Proposals never apply themselves.
+
 Milestone 13 adds a frozen-engine real-world evaluation pipeline using pinned
 TEGCER student error/correction pairs. On 79 locally verified final cases, full
 intent-aware recovery abstained on all cases; existing scoring and Clang fix-its
@@ -11,7 +23,7 @@ recovery inputs. See the [Milestone 13 report and reproduction commands](MILESTO
 and [dataset provenance](phase6/v13/REAL_WORLD_DATASET.md). Student code and raw
 datasets are kept outside Git; earlier benchmark results remain unchanged.
 
-Milestone 12 is now the default for optional intent-aware recovery. It distinguishes
+Milestone 12 remains the default for API clients that omit an intent version. It distinguishes
 history replay reliability from intent evidence, abstains on ambiguous EOF-brace
 histories, and supports bounded structural-consensus punctuation recovery when
 history is absent. Studio retains read-only proposals and normal editor undo.
