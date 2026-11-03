@@ -1,0 +1,43 @@
+{
+  "reason": "UTF-8 character-to-Clang-byte offset correctness fix; no policy retuning",
+  "fix_commit": "2e395c1",
+  "case_counts": {
+    "development": 20,
+    "independent": 80,
+    "exposed": 80
+  },
+  "systems_per_case": 8,
+  "compared_fields": [
+    "recommended",
+    "exact",
+    "wrong",
+    "outcome",
+    "decision_mode",
+    "provider",
+    "selected_sha256",
+    "candidate_ids",
+    "reason"
+  ],
+  "fingerprints": {
+    "development": {
+      "first": "710e71f24e1ac18177004f86717d06c2aec74d845d29241315cc8791770b1565",
+      "corrected": "4fe8a3fbb4dce8398cf9240273a3695423b098e36dfe013593dda4d0d03446f7"
+    },
+    "independent": {
+      "first": "710e71f24e1ac18177004f86717d06c2aec74d845d29241315cc8791770b1565",
+      "corrected": "4fe8a3fbb4dce8398cf9240273a3695423b098e36dfe013593dda4d0d03446f7"
+    },
+    "exposed": {
+      "first": "710e71f24e1ac18177004f86717d06c2aec74d845d29241315cc8791770b1565",
+      "corrected": "4fe8a3fbb4dce8398cf9240273a3695423b098e36dfe013593dda4d0d03446f7"
+    }
+  },
+  "changed_case_systems": [],
+  "non_ascii_cases": {
+    "exposed": [
+      "edae0a568771c85fb2f01e01",
+      "0dce2b05da61927d8e2784a1"
+    ]
+  },
+  "rerun_is_not_pristine_unseen_evaluation": true
+}
